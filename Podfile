@@ -16,5 +16,5 @@ target 'Project' do
         pod 'AMapLocation'
         
         pod 'MJExtension'
-        
+  
 end

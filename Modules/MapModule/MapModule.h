@@ -9,6 +9,11 @@
 #ifndef MapModule_h
 #define MapModule_h
 
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import <AMap3DMap/MAMapKit/MAMapKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+
+
 #import "AKMediator+MapModule.h"
 
 

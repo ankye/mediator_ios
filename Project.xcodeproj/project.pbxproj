@@ -46,6 +46,8 @@
 		C5A731371DE2EB4600DB2788 /* HBBicycleBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731311DE2EB4600DB2788 /* HBBicycleBaseModel.m */; };
 		C5A731381DE2EB4600DB2788 /* HBBicycleResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731331DE2EB4600DB2788 /* HBBicycleResultModel.m */; };
 		C5A731391DE2EB4600DB2788 /* HBBicycleStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731351DE2EB4600DB2788 /* HBBicycleStationModel.m */; };
+		C5A731421DE2F09E00DB2788 /* HBMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7313E1DE2F09E00DB2788 /* HBMapManager.m */; };
+		C5A731431DE2F09E00DB2788 /* HBUserDefultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731401DE2F09E00DB2788 /* HBUserDefultsManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,10 @@
 		C5A731331DE2EB4600DB2788 /* HBBicycleResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBicycleResultModel.m; sourceTree = "<group>"; };
 		C5A731341DE2EB4600DB2788 /* HBBicycleStationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBicycleStationModel.h; sourceTree = "<group>"; };
 		C5A731351DE2EB4600DB2788 /* HBBicycleStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBicycleStationModel.m; sourceTree = "<group>"; };
+		C5A7313D1DE2F09E00DB2788 /* HBMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBMapManager.h; sourceTree = "<group>"; };
+		C5A7313E1DE2F09E00DB2788 /* HBMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBMapManager.m; sourceTree = "<group>"; };
+		C5A7313F1DE2F09E00DB2788 /* HBUserDefultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBUserDefultsManager.h; sourceTree = "<group>"; };
+		C5A731401DE2F09E00DB2788 /* HBUserDefultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBUserDefultsManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +294,7 @@
 		C5A7304B1DE2BD4200DB2788 /* MapModule */ = {
 			isa = PBXGroup;
 			children = (
+				C5A7313A1DE2F09E00DB2788 /* Manager */,
 				C5A731091DE2D93B00DB2788 /* MapModule.h */,
 				C5A730F71DE2D79000DB2788 /* MapModuleDefine.h */,
 				C5A731151DE2E8F000DB2788 /* MapModule.xcassets */,
@@ -570,6 +577,17 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
+		C5A7313A1DE2F09E00DB2788 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C5A7313D1DE2F09E00DB2788 /* HBMapManager.h */,
+				C5A7313E1DE2F09E00DB2788 /* HBMapManager.m */,
+				C5A7313F1DE2F09E00DB2788 /* HBUserDefultsManager.h */,
+				C5A731401DE2F09E00DB2788 /* HBUserDefultsManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -770,6 +788,8 @@
 				C5A730CB1DE2CD2F00DB2788 /* Helper.m in Sources */,
 				C5A730CE1DE2CD2F00DB2788 /* AKCYLPlusButton.m in Sources */,
 				C5A730F11DE2D3B700DB2788 /* AKMediator+LoginModule.m in Sources */,
+				C5A731431DE2F09E00DB2788 /* HBUserDefultsManager.m in Sources */,
+				C5A731421DE2F09E00DB2788 /* HBMapManager.m in Sources */,
 				C5A731041DE2D7CF00DB2788 /* ServiceMap.m in Sources */,
 				C5A731371DE2EB4600DB2788 /* HBBicycleBaseModel.m in Sources */,
 				C5A731291DE2EB3500DB2788 /* HBBicyclePopView.m in Sources */,

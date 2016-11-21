@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HBBicycleStationModel.h"
 
 @interface HBBicyclePopView : UIView
 //站点模型

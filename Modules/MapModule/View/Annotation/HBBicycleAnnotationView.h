@@ -6,7 +6,7 @@
 //  Copyright © 2016年 MADAO. All rights reserved.
 //
 
-#import <MAMapKit/MAMapKit.h>
+#import "MapModuleDefine.h"
 #import "HBBicyclePopView.h"
 #import "HBBicyclePointAnnotation.h"
 

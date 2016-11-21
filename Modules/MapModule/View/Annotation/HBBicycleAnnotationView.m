@@ -8,6 +8,7 @@
 
 #import "HBBicycleAnnotationView.h"
 
+
 @interface HBBicycleAnnotationView()
 
 /**
@@ -38,7 +39,7 @@ static CGFloat const kContentAdd = 70.f;
     }
     if (selected) {
         if (self.popView ==nil ) {
-            @WEAKSELF;
+            WEAKSELF;
             self.popView = [[HBBicyclePopView alloc] initWithFrame:CGRectMake(5, 5, kPopViewWidth, kPopViewHeight)];
             self.popView.handleTaped = ^() {
                 [weakSelf handlePopViewBeTappedMethod];

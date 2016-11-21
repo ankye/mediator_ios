@@ -7,6 +7,7 @@
 //
 
 #import "HBBicyclePointAnnotation.h"
+#import "HBBicycleStationModel.h"
 
 @interface HBBicyclePointAnnotation()
 

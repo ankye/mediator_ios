@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MapModuleDefine.h"
 
 @interface HBMapManager : NSObject
 

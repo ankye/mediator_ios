@@ -20,15 +20,7 @@
 #define HB_FONT_LIGHT_SIZE(x) [UIFont fontWithName:@"STHeitiSC-Light" size:x]
 #define HB_FONT_MEDIUM_SIZE(x) [UIFont fontWithName:@"STHeitiSC-Medium" size:x]
 
-//颜色
-#define HB_COLOR_DARKBLUE FHColorWithHexRGB(0x4F6C87)
-#define HB_COLOR_SOFTGREEN FHColorWithHexRGB(0xB3D66E)
-#define HB_COLOR_SOFTORANGE FHColorWithHexRGB(0xF8931D)
-#define HB_COLOR_TABLEVAIEWBACK FHColorWithHexRGB(0x8a8a8a)
-
-#define HB_COLOR_SLDMIN FHColorWithHexRGB(0x529ECD)
-#define HB_COLOR_SLDMID [UIColor lightGrayColor]
-#define HB_COLOR_SLDMAX FHColorWithHexRGB(0x4C5A68)
+#define WEAK_OBJ(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
 
 
 #define ImageInName(name) [UIImage imageNamed:name]

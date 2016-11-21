@@ -7,6 +7,7 @@
 //
 
 #import "HBBicyclePopView.h"
+#import "MapModuleDefine.h"
 
 @interface HBBicyclePopView()
 
@@ -59,7 +60,7 @@ static CGFloat const kArrorHeight = 10.f;
 
 - (void)setupSubViews {
     //毛玻璃
-    @WEAKSELF;
+    WEAKSELF;
     self.blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
     self.blurView.layer.mask = self.blurMaskLayer;
     [self addSubview:self.blurView];
@@ -155,11 +156,11 @@ static CGFloat const kArrorHeight = 10.f;
     NSTextAttachment *rentAttach = [[NSTextAttachment alloc] init];
     rentAttach.bounds = CGRectMake(13, -12, 32, 32);
 //    rentAttach.image = [self convertViewToImage:[self iconViewWithColor:HB_COLOR_SOFTGREEN]];
-    rentAttach.image = [UIImage roundSingleColorImageWithColor:HB_COLOR_SOFTGREEN];
+ //   rentAttach.image = [UIImage roundSingleColorImageWithColor:HB_COLOR_SOFTGREEN];
     
     NSTextAttachment *returnAttach = [[NSTextAttachment alloc] init];
     returnAttach.bounds = CGRectMake(13, -12, 32, 32);
-    returnAttach.image = [UIImage roundSingleColorImageWithColor:HB_COLOR_SOFTORANGE];
+  //  returnAttach.image = [UIImage roundSingleColorImageWithColor:HB_COLOR_SOFTORANGE];
     
     //合成字符串
     NSMutableAttributedString *rentString = [[NSMutableAttributedString attributedStringWithAttachment:rentAttach] mutableCopy];

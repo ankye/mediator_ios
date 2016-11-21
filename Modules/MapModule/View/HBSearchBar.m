@@ -7,6 +7,7 @@
 //
 
 #import "HBSearchBar.h"
+#import "MapModuleDefine.h"
 
 @interface HBSearchBar()<UITextFieldDelegate> {
     struct{
@@ -56,7 +57,7 @@ static NSTimeInterval const kAnimationDuration = 0.25f;
 
 - (void)setupSubViews {
     //设置子视图
-    @WEAKSELF;
+    WEAKSELF;
     self.iconView = [[UIImageView alloc] init];
     self.iconView.image = ImageInName(@"main_search");
     [self addSubview:self.iconView];
@@ -70,7 +71,7 @@ static NSTimeInterval const kAnimationDuration = 0.25f;
     self.searchTextField.delegate = self;
     self.searchTextField.placeholder = kPlaceholderSearch;
     self.searchTextField.returnKeyType = UIReturnKeySearch;
-    self.searchTextField.tintColor = HB_COLOR_DARKBLUE;
+  //  self.searchTextField.tintColor = HB_COLOR_DARKBLUE;
     [self addSubview:self.searchTextField];
     [self.searchTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(weakSelf.mas_left).with.offset(kInsetsNormal * 2 + kWidthIconView);
@@ -171,7 +172,7 @@ static NSTimeInterval const kAnimationDuration = 0.25f;
 }
 
 - (void)showBackButtonWithAnimated:(BOOL)animated {
-    @WEAKSELF;
+    WEAKSELF;
     if (animated) {
         [UIView animateWithDuration:kAnimationDuration animations:^{
             weakSelf.iconView.alpha = 0;
@@ -186,7 +187,7 @@ static NSTimeInterval const kAnimationDuration = 0.25f;
 }
 
 - (void)showSearchIconWithAnimated:(BOOL)animated {
-    @WEAKSELF;
+    WEAKSELF;
     if (animated) {
         [UIView animateWithDuration:kAnimationDuration animations:^{
             weakSelf.backButton.transform = CGAffineTransformMakeTranslation(0, 0);

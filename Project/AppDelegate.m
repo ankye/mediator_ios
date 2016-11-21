@@ -15,7 +15,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    UIViewController *controller = [[AKMediator sharedInstance] login_viewControllerForLogin];
+   
+     [AMapServices sharedServices].apiKey = @"d891bfde6b9133506a0a31d250178b6d";
+    
+    UIViewController *controller = [[AKMediator sharedInstance] map_viewController];
     
     
     self.window.rootViewController = controller;

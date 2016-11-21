@@ -79,18 +79,29 @@ static NSString *const kBicycleSearchURL = @"np_findNetPointByName.do";
                          failureCompletion:(YTKRequestCompletionBlock)failure {
     HBNearBicycleRequest *nearBicycleRequest =  [[HBNearBicycleRequest alloc] init];
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    [params setObjectOrNil:lon forKey:@"lng"];
-    [params setObjectOrNil:lat forKey:@"lat"];
-    [params setObjectOrNil:len forKey:@"len"];
+    [params setObject:lon forKey:@"lng"];
+    [params setObject:lat forKey:@"lat"];
+    [params setObject:len forKey:@"len"];
     nearBicycleRequest.requestArguments = params;
     [nearBicycleRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [HBHUDManager dismissWaitProgress];
+     //   [HBHUDManager dismissWaitProgress];
         NSData *resposneData = request.responseData;
-        success([NSDictionary fh_dictionaryWithData:resposneData]);
+        NSDictionary* result = [HBRequestManager dictionaryWithData:resposneData];
+        success(result);
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        [HBHUDManager showNetworkError];
+       // [HBHUDManager showNetworkError];
         failure(request);
     }];
+}
+
++ (NSDictionary *)dictionaryWithData:(NSData *)data;
+{
+    NSError *error;
+    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if (!error) {
+        return result;
+    }
+    return nil;
 }
 
 
@@ -98,19 +109,20 @@ static NSString *const kBicycleSearchURL = @"np_findNetPointByName.do";
                                  successJsonObject:(void(^)(NSDictionary *jsonDict))success
                                  failureCompletion:(YTKRequestCompletionBlock)failure {
     //显示网络加载
-    [HBHUDManager showWaitProgress];
+   // [HBHUDManager showWaitProgress];
     HBBicycleSearchReqeust *searchRequest = [[HBBicycleSearchReqeust alloc] init];
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    [params setObjectOrNil:option forKey:@"option"];
+    [params setObject:option forKey:@"option"];
     searchRequest.requestArguments = params;
     [searchRequest startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
         //结束加载状态
-        [HBHUDManager dismissWaitProgress];
+      //  [HBHUDManager dismissWaitProgress];
         NSData *resposneData = request.responseData;
-        success([NSDictionary fh_dictionaryWithData:resposneData]);
+        NSDictionary* result = [HBRequestManager dictionaryWithData:resposneData];
+        success(result);
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
 
-        [HBHUDManager showNetworkError];
+      //  [HBHUDManager showNetworkError];
         failure(request);
     }];
 }

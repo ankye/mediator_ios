@@ -9,7 +9,7 @@
 #import "AKMediator+MapModule.h"
 
 NSString * const kAKMMapModuleService = @"Map";
-NSString * const kAKMMapModuleFetchVC = @"fetchMapViewController:";
+NSString * const kAKMMapModuleFetchVC = @"fetchMapViewController";
 
 
 
@@ -19,6 +19,7 @@ NSString * const kAKMMapModuleFetchVC = @"fetchMapViewController:";
 
 - (UIViewController *)map_viewController
 {
+    
     UIViewController* viewController = [self performService:kAKMMapModuleService action:kAKMMapModuleFetchVC params:@{@"key":@"value"} shouldCacheService:NO];
     if ([viewController isKindOfClass:[UIViewController class]]) {
         // view controller 交付出去之后，可以由外界选择是push还是present

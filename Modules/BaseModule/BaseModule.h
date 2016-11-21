@@ -8,7 +8,7 @@
 
 #ifndef BaseModule_h
 #define BaseModule_h
-
+#import "Aspects.h"
 #import "AKAppDelegate.h"
 #import "AKBaseViewController.h"
 #import "AKMediator.h"

@@ -106,6 +106,7 @@ static CGFloat const kMapZoomLevel = 15;
     self.mapView.zoomLevel = 15;
     //无法调整角度
     self.mapView.rotateCameraEnabled = NO;
+    self.mapView.rotateEnabled = NO;
     self.mapView.delegate = self;
     
     //设置中心点
@@ -210,7 +211,7 @@ static CGFloat const kMapZoomLevel = 15;
             [self.mapView setZoomLevel:kMapZoomLevel animated:YES];
         }
     }else{
-#warning
+
     }
 }
 
@@ -240,7 +241,7 @@ static CGFloat const kMapZoomLevel = 15;
                 //截图提供背景
                 __block UIImage *screenshotImage = nil;
                 __block NSInteger resState = 0;
-                @WEAK_OBJ(annoation);
+              //  @WEAK_OBJ(annoation);
                 [weakSelf.mapView takeSnapshotInRect:weakSelf.view.frame withCompletionBlock:^(UIImage *resultImage, NSInteger state) {
                     screenshotImage = resultImage;
                     resState = state;

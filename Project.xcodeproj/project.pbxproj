@@ -48,6 +48,10 @@
 		C5A731391DE2EB4600DB2788 /* HBBicycleStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731351DE2EB4600DB2788 /* HBBicycleStationModel.m */; };
 		C5A731421DE2F09E00DB2788 /* HBMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7313E1DE2F09E00DB2788 /* HBMapManager.m */; };
 		C5A731431DE2F09E00DB2788 /* HBUserDefultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731401DE2F09E00DB2788 /* HBUserDefultsManager.m */; };
+		C5A7315D1DE3260600DB2788 /* Aspect-ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7315C1DE3260600DB2788 /* Aspect-ShareModule.m */; };
+		C5A731671DE3281800DB2788 /* Aspect-MapModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731661DE3281800DB2788 /* Aspect-MapModule.m */; };
+		C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7316C1DE32BFE00DB2788 /* AKMediator+ShareModule.m */; };
+		C5A731701DE32C0E00DB2788 /* ServerShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7316F1DE32C0E00DB2788 /* ServerShare.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +159,15 @@
 		C5A7313E1DE2F09E00DB2788 /* HBMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBMapManager.m; sourceTree = "<group>"; };
 		C5A7313F1DE2F09E00DB2788 /* HBUserDefultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBUserDefultsManager.h; sourceTree = "<group>"; };
 		C5A731401DE2F09E00DB2788 /* HBUserDefultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBUserDefultsManager.m; sourceTree = "<group>"; };
+		C5A7315B1DE3260600DB2788 /* Aspect-ShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect-ShareModule.h"; sourceTree = "<group>"; };
+		C5A7315C1DE3260600DB2788 /* Aspect-ShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect-ShareModule.m"; sourceTree = "<group>"; };
+		C5A731651DE3281800DB2788 /* Aspect-MapModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect-MapModule.h"; sourceTree = "<group>"; };
+		C5A731661DE3281800DB2788 /* Aspect-MapModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect-MapModule.m"; sourceTree = "<group>"; };
+		C5A731681DE3286800DB2788 /* ShareModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareModule.h; sourceTree = "<group>"; };
+		C5A7316B1DE32BFE00DB2788 /* AKMediator+ShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKMediator+ShareModule.h"; sourceTree = "<group>"; };
+		C5A7316C1DE32BFE00DB2788 /* AKMediator+ShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKMediator+ShareModule.m"; sourceTree = "<group>"; };
+		C5A7316E1DE32C0E00DB2788 /* ServerShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerShare.h; sourceTree = "<group>"; };
+		C5A7316F1DE32C0E00DB2788 /* ServerShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerShare.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +282,7 @@
 		C5A730481DE2BD4200DB2788 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C5A731441DE323D400DB2788 /* ShareModule */,
 				C5A730AE1DE2CD2F00DB2788 /* BaseModule */,
 				C5A7304A1DE2BD4200DB2788 /* LoginModule */,
 				C5A7304B1DE2BD4200DB2788 /* MapModule */,
@@ -294,6 +308,7 @@
 		C5A7304B1DE2BD4200DB2788 /* MapModule */ = {
 			isa = PBXGroup;
 			children = (
+				C5A731611DE3268300DB2788 /* Aspect */,
 				C5A7313A1DE2F09E00DB2788 /* Manager */,
 				C5A731091DE2D93B00DB2788 /* MapModule.h */,
 				C5A730F71DE2D79000DB2788 /* MapModuleDefine.h */,
@@ -588,6 +603,53 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		C5A731441DE323D400DB2788 /* ShareModule */ = {
+			isa = PBXGroup;
+			children = (
+				C5A731691DE32BDB00DB2788 /* Mediator */,
+				C5A7316A1DE32BDB00DB2788 /* Service */,
+				C5A731581DE325A800DB2788 /* Aspects */,
+				C5A731681DE3286800DB2788 /* ShareModule.h */,
+			);
+			path = ShareModule;
+			sourceTree = "<group>";
+		};
+		C5A731581DE325A800DB2788 /* Aspects */ = {
+			isa = PBXGroup;
+			children = (
+				C5A7315B1DE3260600DB2788 /* Aspect-ShareModule.h */,
+				C5A7315C1DE3260600DB2788 /* Aspect-ShareModule.m */,
+			);
+			path = Aspects;
+			sourceTree = "<group>";
+		};
+		C5A731611DE3268300DB2788 /* Aspect */ = {
+			isa = PBXGroup;
+			children = (
+				C5A731651DE3281800DB2788 /* Aspect-MapModule.h */,
+				C5A731661DE3281800DB2788 /* Aspect-MapModule.m */,
+			);
+			path = Aspect;
+			sourceTree = "<group>";
+		};
+		C5A731691DE32BDB00DB2788 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				C5A7316B1DE32BFE00DB2788 /* AKMediator+ShareModule.h */,
+				C5A7316C1DE32BFE00DB2788 /* AKMediator+ShareModule.m */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
+		C5A7316A1DE32BDB00DB2788 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C5A7316E1DE32C0E00DB2788 /* ServerShare.h */,
+				C5A7316F1DE32C0E00DB2788 /* ServerShare.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -784,20 +846,24 @@
 				C5A731261DE2EB3500DB2788 /* HBBicyclePointAnnotation.m in Sources */,
 				C5A731381DE2EB4600DB2788 /* HBBicycleResultModel.m in Sources */,
 				C5A731271DE2EB3500DB2788 /* HBBaseRoundButton.m in Sources */,
+				C5A731671DE3281800DB2788 /* Aspect-MapModule.m in Sources */,
 				C5A730E61DE2CF7000DB2788 /* AKLoginViewController.m in Sources */,
 				C5A730CB1DE2CD2F00DB2788 /* Helper.m in Sources */,
 				C5A730CE1DE2CD2F00DB2788 /* AKCYLPlusButton.m in Sources */,
 				C5A730F11DE2D3B700DB2788 /* AKMediator+LoginModule.m in Sources */,
 				C5A731431DE2F09E00DB2788 /* HBUserDefultsManager.m in Sources */,
+				C5A731701DE32C0E00DB2788 /* ServerShare.m in Sources */,
 				C5A731421DE2F09E00DB2788 /* HBMapManager.m in Sources */,
 				C5A731041DE2D7CF00DB2788 /* ServiceMap.m in Sources */,
 				C5A731371DE2EB4600DB2788 /* HBBicycleBaseModel.m in Sources */,
 				C5A731291DE2EB3500DB2788 /* HBBicyclePopView.m in Sources */,
 				C5A731361DE2EB4600DB2788 /* HBBaseDataModel.m in Sources */,
+				C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */,
 				C5A731071DE2D82800DB2788 /* AKMapViewController.m in Sources */,
 				C5A730CA1DE2CD2F00DB2788 /* AKTabbarControllerFactory.m in Sources */,
 				C5A730F61DE2D70700DB2788 /* ServiceLogin.m in Sources */,
 				C5A731011DE2D79000DB2788 /* AKMediator+MapModule.m in Sources */,
+				C5A7315D1DE3260600DB2788 /* Aspect-ShareModule.m in Sources */,
 				C5A730C91DE2CD2F00DB2788 /* AKPopupViewController.m in Sources */,
 				C5A730EB1DE2D2A600DB2788 /* AKLoginButton.m in Sources */,
 				C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */,

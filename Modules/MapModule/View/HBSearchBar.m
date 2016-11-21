@@ -105,8 +105,8 @@ static NSTimeInterval const kAnimationDuration = 0.25f;
 #pragma mark - LifeCycle
 - (void)didMoveToSuperview {
     [super didMoveToSuperview];
-    self.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.layer.shadowOffset = CGSizeMake(2, 2);
+    self.layer.shadowColor = [UIColor grayColor].CGColor;
+    self.layer.shadowOffset = CGSizeMake(1, 1);
     self.layer.shadowOpacity = 0.8;
 }
 

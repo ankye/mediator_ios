@@ -15,15 +15,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-   
-     [AMapServices sharedServices].apiKey = @"d891bfde6b9133506a0a31d250178b6d";
+    if( [super application:application didFinishLaunchingWithOptions:launchOptions] ){
+        
+       
     
-    UIViewController *controller = [[AKMediator sharedInstance] map_viewController];
+        UIViewController *controller = [[AKMediator sharedInstance] map_viewController];
     
     
-    self.window.rootViewController = controller;
-    [self.window makeKeyWindow];
-    [self.window makeKeyAndVisible];
+        self.window.rootViewController = controller;
+        [self.window makeKeyWindow];
+        [self.window makeKeyAndVisible];
+    }
     
     return YES;
 }

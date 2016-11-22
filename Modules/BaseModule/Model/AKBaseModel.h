@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AKDataCenterObjectProtocol.h"
 
-
-@interface AKBaseModel : NSObject
+@interface AKBaseModel : NSObject<AKDataCenterObjectProtocol,NSCoding, NSCopying>
 
 @end

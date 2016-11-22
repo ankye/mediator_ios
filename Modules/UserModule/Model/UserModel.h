@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface UserModel : NSObject
+@interface UserModel : NSObject<AKDataCenterObjectProtocol,NSCoding, NSCopying>
 
 @property (nonatomic, strong)NSNumber *uid;//Id号
 

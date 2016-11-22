@@ -17,7 +17,9 @@ NSString * const kAKMUserLoginSuccess = @"loginSuccess";
 -(BOOL)user_loginSuccess:(NSDictionary*)response
 {
    NSNumber* result = [self performService:kAKMUserModuleService action:kAKMUserLoginSuccess params:response shouldCacheService:NO];
-
+    if(result != 0){
+        return NO;
+    }
     return YES;
 }
 

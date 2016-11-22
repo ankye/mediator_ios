@@ -18,7 +18,7 @@
     // 设置基本一些属性
     [btn setTitle:title forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateHighlighted];
+    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
     [btn setImage:image forState:UIControlStateNormal];
     if(highlightedImage){
         [btn setImage:highlightedImage forState:UIControlStateHighlighted];

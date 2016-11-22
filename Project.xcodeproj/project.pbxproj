@@ -114,6 +114,7 @@
 		C55CBE451DE445B60000B1F6 /* AKBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseModel.m; sourceTree = "<group>"; };
 		C55CBE471DE447430000B1F6 /* AKDataCenter+UserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDataCenter+UserModule.h"; sourceTree = "<group>"; };
 		C55CBE481DE447430000B1F6 /* AKDataCenter+UserModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDataCenter+UserModule.m"; sourceTree = "<group>"; };
+		C55CBE4A1DE4708C0000B1F6 /* AKDataCenterObjectProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKDataCenterObjectProtocol.h; sourceTree = "<group>"; };
 		C5A730121DE2BB3400DB2788 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A730161DE2BB3400DB2788 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5A730181DE2BB3400DB2788 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -365,6 +366,7 @@
 			children = (
 				C55CBE3D1DE443DD0000B1F6 /* AKDataCenter.h */,
 				C55CBE3E1DE443DD0000B1F6 /* AKDataCenter.m */,
+				C55CBE4A1DE4708C0000B1F6 /* AKDataCenterObjectProtocol.h */,
 			);
 			path = DataCenter;
 			sourceTree = "<group>";

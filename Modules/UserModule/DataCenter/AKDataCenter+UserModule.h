@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserModel.h"
 
 @interface AKDataCenter (UserModule)
+
+-(void)setUserInfo:(UserModel*)user;
+
+-(UserModel*)getUserInfo:(NSString*)uid;
+
 
 @end

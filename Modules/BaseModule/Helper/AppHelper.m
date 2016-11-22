@@ -1,22 +1,17 @@
 //
-//  Helper.m
+//  AppHelper.m
 //  Project
 //
 //  Created by ankye on 2016/11/21.
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "Helper.h"
+#import "AppHelper.h"
 
 
-@implementation Helper
+@implementation AppHelper
 
 
-+(NSArray*)getPlist:(NSString*)name
-{
-    return [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:name ofType:@"plist"]];
-    
-}
 
 
 //判断空字符串
@@ -48,7 +43,7 @@
     return root;
 }
 + (UINavigationController*)getNaviController {
-    UIViewController* root = [Helper getRootController];
+    UIViewController* root = [AppHelper getRootController];
     if ([root isKindOfClass:[UITabBarController class]]) {
         UITabBarController* tab = (UITabBarController*)root;
         return tab.selectedViewController;

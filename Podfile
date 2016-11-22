@@ -1,5 +1,5 @@
 platform :ios, '8.0'
-inhibit_all_warnings!
+#inhibit_all_warnings!
 
 target 'Project' do
         pod 'Aspects'

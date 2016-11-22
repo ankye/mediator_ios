@@ -9,7 +9,6 @@
 #import "AKPopupManager.h"
 #import "AKPopupViewController.h"
 
-#import "Helper.h"
 
 
 @interface AKPopupManager()
@@ -106,7 +105,7 @@
     
     
     
-    [self.popupController presentInViewController:[Helper getRootController] completion:^{
+    [self.popupController presentInViewController:[AppHelper getRootController] completion:^{
         NSLog(@"Load Popup View Completed !");
         
     }];

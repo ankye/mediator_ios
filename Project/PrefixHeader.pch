@@ -14,6 +14,8 @@
 
 #define G_BASE_SITE  @"http://test.m.passport.blres.com"
 
+#define APP_CHANNEL  @"APPSTORE"
+
 #import "BaseModule.h"
 #import "LoginModule.h"
 #import "MapModule.h"

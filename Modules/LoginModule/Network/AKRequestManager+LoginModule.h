@@ -9,12 +9,10 @@
 #import <Foundation/Foundation.h>
 
 
-@interface LoginRequestFactory : NSObject
-
-+(LoginRequestFactory *)sharedInstance;
+@interface AKRequestManager (LoginModule)
 
 //请求三方登陆接口
--(BOOL)requestThridLogin:(NSString *)openid withToken:(NSString *)token withType:(NSString *)type;
+-(BOOL)login_requestThridLogin:(NSString *)openid withToken:(NSString *)token withType:(NSString *)type;
 
 
 @end

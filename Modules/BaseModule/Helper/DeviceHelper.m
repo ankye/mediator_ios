@@ -1,12 +1,13 @@
 //
-//  DeviceInformation.m
-//  JK360
+//  DeviceHelper.m
+//  Project
 //
-//  Created by wenlong on 16/5/3.
-//  Copyright © 2016年 youyi. All rights reserved.
+//  Created by ankye on 2016/11/22.
+//  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "DeviceInformation.h"
+#import "DeviceHelper.h"
+#import "AppHelper.h"
 #import <AdSupport/ASIdentifierManager.h>
 #include <sys/sysctl.h>
 
@@ -20,29 +21,12 @@
 #define IP_ADDR_IPv4    @"ipv4"
 #define IP_ADDR_IPv6    @"ipv6"
 
-@implementation DeviceInformation
 
-extern NSString *kReachabilityChangedNotification;
-
+@implementation DeviceHelper
 
 
-+ (instancetype)sharedInstance {
-    static DeviceInformation *devideInfo = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        devideInfo = [[DeviceInformation alloc] init];
-    });
-    return devideInfo;
-}
-
-- (NSString *)ip {
-    
-    _ip = [[self class] ip];
-    
-    return _ip;
-}
-
-+ (NSString *)ip {
+//获取本机IP
++(NSString*)getLocalIP {
     NSArray *searchArray = @[ IOS_VPN @"/" IP_ADDR_IPv4,
                               IOS_VPN @"/" IP_ADDR_IPv6,
                               IOS_WIFI @"/" IP_ADDR_IPv4,
@@ -60,6 +44,7 @@ extern NSString *kReachabilityChangedNotification;
      } ];
     return address ? address : @"0.0.0.0";
 }
+
 + (NSDictionary *)getIPAddresses
 {
     NSMutableDictionary *addresses = [NSMutableDictionary dictionaryWithCapacity:8];
@@ -99,6 +84,73 @@ extern NSString *kReachabilityChangedNotification;
     }
     return [addresses count] ? addresses : nil;
 }
+
+
+
+//获取网络IP
++(NSString*)getNetworkIP
+{
+    return nil;
+}
+
+//获取渠道号
++ (NSString *)channel
+{
+    NSString* appChannel = APP_CHANNEL;
+    if([AppHelper isNullString:appChannel]){
+        appChannel = @"AppStore";
+    }
+    return appChannel;
+}
+//获取Api版本
++ (NSNumber *)apiVersion
+{
+     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"apiVersion"];
+
+}
+//获取App版本字符串
++ (NSString *)appStringVersion
+{
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    return infoDic[@"CFBundleShortVersionString"];
+}
+//获取App版本数字号
++ (NSString *)appNumberVersion
+{
+    NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
+    return infoDic[@"CFBundleVersion"];
+}
+
+
+//获取设备系统os名称
++ (NSString *)deviceOSName
+{
+    return [[UIDevice currentDevice] systemName];
+}
+
+//获取系统版本号
++ (NSString *)deviceOSVersion
+{
+    return [[UIDevice currentDevice] systemVersion];
+
+}
+//获取设备系统os
++ (NSString *)deviceOS
+{
+    return [NSString stringWithFormat:@"%@%@",self.deviceOSName, self.deviceOSVersion];
+}
+//获取IDFA
++ (NSString *)IDFA
+{
+    return [[[[ASIdentifierManager alloc] init] advertisingIdentifier] UUIDString];
+}
+
+//获取IDFV
++ (NSString*)IDFV
+{
+    return [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+}
+
 + (NSString *)devicePlatform
 {
     size_t size;
@@ -109,9 +161,10 @@ extern NSString *kReachabilityChangedNotification;
     free(machine);
     return platform;
 }
-+ (NSString *)devicePlatformString
+//获取设备名称 iphone/ipad/itouch
++ (NSString *)deviceName
 {
-    NSString *platform = [[self class] devicePlatform];
+    NSString *platform = [DeviceHelper devicePlatform];
     // iPhone
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 2G";
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
@@ -127,6 +180,12 @@ extern NSString *kReachabilityChangedNotification;
     if ([platform isEqualToString:@"iPhone6,2"])    return @"iPhone 5S (Global)";
     if ([platform isEqualToString:@"iPhone7,1"])    return @"iPhone 6 Plus";
     if ([platform isEqualToString:@"iPhone7,2"])    return @"iPhone 6";
+    if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6s Plus";
+    if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6s";
+    if ([platform isEqualToString:@"iPhone8,4"])    return @"iPhone SE";
+    if ([platform isEqualToString:@"iPhone9,1"])    return @"iPhone 7 Plus";
+    if ([platform isEqualToString:@"iPhone9,1"])    return @"iPhone 7";
+    
     // iPod
     if ([platform isEqualToString:@"iPod1,1"])      return @"iPod Touch 1G";
     if ([platform isEqualToString:@"iPod2,1"])      return @"iPod Touch 2G";
@@ -166,49 +225,5 @@ extern NSString *kReachabilityChangedNotification;
     return platform;
 }
 
-- (BOOL)isCanCarmera {
-    if (!_isCanCarmera) {
-        NSString * deviceString =[[self class] devicePlatformString];
-        BOOL ret = YES;
-        if ([deviceString isEqualToString:@"iPhone 1G"] ) {
-            ret = NO;
-        }
-        if ([deviceString isEqualToString:@"iPhone 3G"] ) {
-            ret = NO;
-        }
-        if ([deviceString isEqualToString:@"iPod Touch 1G"] ) {
-            ret = NO;
-        }
-        if ([deviceString isEqualToString:@"iPod Touch 2G"] ) {
-            ret = NO;
-        }
-        if ([deviceString isEqualToString:@"iPod Touch 3G"] ) {
-            ret = NO;
-        }
-        if ([deviceString isEqualToString:@"iPad"] ) {
-            ret = NO;
-        }
-        if ([deviceString isEqualToString:@"Simulator"] ) {
-            ret = NO;
-        }
-        _isCanCarmera =  ret;
-    }
-    return _isCanCarmera;
-}
-- (NSString*)idfa {
-    if (!_idfa) {
-        if (TARGET_IPHONE_SIMULATOR) {
-            _idfa =  @"2B356577-2BF2-4AF7-8971-0A1D20BF43A9";
-        } else {
-            NSString *idfaString = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-            if (idfaString.length > 0) {
-                _idfa = idfaString;
-            } else {
-                _idfa = @"";
-            }
-        }
-    }
-    return _idfa;
-}
 
 @end

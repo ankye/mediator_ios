@@ -13,6 +13,8 @@
 #import <STPopup/STPopup.h>
 #import "AKPopupViewProtocol.h"
 #import <CYLTabBarController/CYLTabBarController.h>
-#import "Helper.h"
+#import "AppHelper.h"
+#import "FileHelper.h"
+#import "DeviceHelper.h"
 
 #endif /* BaseModuleDefine_h */

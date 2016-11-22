@@ -1,5 +1,5 @@
 //
-//  Helper.h
+//  AppHelper.h
 //  Project
 //
 //  Created by ankye on 2016/11/21.
@@ -10,15 +10,16 @@
 #import "BaseModuleDefine.h"
 
 
-@interface Helper : NSObject
+@interface AppHelper : NSObject
 
-+(NSArray*)getPlist:(NSString*)name;
+
 
 //判断空字符串
 +(BOOL)isNullString:(NSString *)string;
 
-
+//获取根节点UIViewController
 + (UIViewController*)getRootController ;
 
+//获取根节点UINavigationController
 + (UINavigationController*)getNaviController ;
 @end

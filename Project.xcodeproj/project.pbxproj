@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		087762743CE4650EF230D697 /* libPods-Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A30DD066B519865DD11DD4A9 /* libPods-Project.a */; };
-		C55CBE081DE3F0CB0000B1F6 /* DeviceInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE001DE3F0CB0000B1F6 /* DeviceInformation.m */; };
-		C55CBE091DE3F0CB0000B1F6 /* UIDevice+HardwareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE021DE3F0CB0000B1F6 /* UIDevice+HardwareInfo.m */; };
-		C55CBE0A1DE3F0CB0000B1F6 /* UIDevice+NetworkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE041DE3F0CB0000B1F6 /* UIDevice+NetworkInfo.m */; };
-		C55CBE0B1DE3F0CB0000B1F6 /* UIDevice+SoftwareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE061DE3F0CB0000B1F6 /* UIDevice+SoftwareInfo.m */; };
+		C55CBE0E1DE3F3F80000B1F6 /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE0D1DE3F3F80000B1F6 /* DeviceHelper.m */; };
+		C55CBE111DE3F6230000B1F6 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE101DE3F6230000B1F6 /* FileHelper.m */; };
+		C55CBE141DE3FBFF0000B1F6 /* AKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE131DE3FBFF0000B1F6 /* AKRequestManager.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
 		C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730191DE2BB3400DB2788 /* AppDelegate.m */; };
 		C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7301C1DE2BB3400DB2788 /* ViewController.m */; };
@@ -22,7 +21,7 @@
 		C5A7303B1DE2BB3500DB2788 /* ProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7303A1DE2BB3500DB2788 /* ProjectUITests.m */; };
 		C5A730C91DE2CD2F00DB2788 /* AKPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730B31DE2CD2F00DB2788 /* AKPopupViewController.m */; };
 		C5A730CA1DE2CD2F00DB2788 /* AKTabbarControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730B61DE2CD2F00DB2788 /* AKTabbarControllerFactory.m */; };
-		C5A730CB1DE2CD2F00DB2788 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730B91DE2CD2F00DB2788 /* Helper.m */; };
+		C5A730CB1DE2CD2F00DB2788 /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730B91DE2CD2F00DB2788 /* AppHelper.m */; };
 		C5A730CC1DE2CD2F00DB2788 /* AKMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730BC1DE2CD2F00DB2788 /* AKMediator.m */; };
 		C5A730CD1DE2CD2F00DB2788 /* AKPopupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730C11DE2CD2F00DB2788 /* AKPopupManager.m */; };
 		C5A730CE1DE2CD2F00DB2788 /* AKCYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730C61DE2CD2F00DB2788 /* AKCYLPlusButton.m */; };
@@ -56,7 +55,7 @@
 		C5A731671DE3281800DB2788 /* Aspect-MapModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731661DE3281800DB2788 /* Aspect-MapModule.m */; };
 		C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7316C1DE32BFE00DB2788 /* AKMediator+ShareModule.m */; };
 		C5A731701DE32C0E00DB2788 /* ServiceShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7316F1DE32C0E00DB2788 /* ServiceShare.m */; };
-		C5A731751DE3D7B100DB2788 /* LoginRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731741DE3D7B100DB2788 /* LoginRequestFactory.m */; };
+		C5A731751DE3D7B100DB2788 /* AKRequestManager+LoginModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731741DE3D7B100DB2788 /* AKRequestManager+LoginModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,14 +79,12 @@
 		3EF56A8A82919CDF6E89C8BF /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		A30DD066B519865DD11DD4A9 /* libPods-Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69DE62C8EB3C23ADC38EDB6 /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
-		C55CBDFF1DE3F0CB0000B1F6 /* DeviceInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceInformation.h; sourceTree = "<group>"; };
-		C55CBE001DE3F0CB0000B1F6 /* DeviceInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceInformation.m; sourceTree = "<group>"; };
-		C55CBE011DE3F0CB0000B1F6 /* UIDevice+HardwareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+HardwareInfo.h"; sourceTree = "<group>"; };
-		C55CBE021DE3F0CB0000B1F6 /* UIDevice+HardwareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+HardwareInfo.m"; sourceTree = "<group>"; };
-		C55CBE031DE3F0CB0000B1F6 /* UIDevice+NetworkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+NetworkInfo.h"; sourceTree = "<group>"; };
-		C55CBE041DE3F0CB0000B1F6 /* UIDevice+NetworkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+NetworkInfo.m"; sourceTree = "<group>"; };
-		C55CBE051DE3F0CB0000B1F6 /* UIDevice+SoftwareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+SoftwareInfo.h"; sourceTree = "<group>"; };
-		C55CBE061DE3F0CB0000B1F6 /* UIDevice+SoftwareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+SoftwareInfo.m"; sourceTree = "<group>"; };
+		C55CBE0C1DE3F3F80000B1F6 /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
+		C55CBE0D1DE3F3F80000B1F6 /* DeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceHelper.m; sourceTree = "<group>"; };
+		C55CBE0F1DE3F6230000B1F6 /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
+		C55CBE101DE3F6230000B1F6 /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
+		C55CBE121DE3FBFF0000B1F6 /* AKRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestManager.h; sourceTree = "<group>"; };
+		C55CBE131DE3FBFF0000B1F6 /* AKRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestManager.m; sourceTree = "<group>"; };
 		C5A730121DE2BB3400DB2788 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A730161DE2BB3400DB2788 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5A730181DE2BB3400DB2788 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,8 +106,8 @@
 		C5A730B31DE2CD2F00DB2788 /* AKPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupViewController.m; sourceTree = "<group>"; };
 		C5A730B51DE2CD2F00DB2788 /* AKTabbarControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTabbarControllerFactory.h; sourceTree = "<group>"; };
 		C5A730B61DE2CD2F00DB2788 /* AKTabbarControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTabbarControllerFactory.m; sourceTree = "<group>"; };
-		C5A730B81DE2CD2F00DB2788 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
-		C5A730B91DE2CD2F00DB2788 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		C5A730B81DE2CD2F00DB2788 /* AppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelper.h; sourceTree = "<group>"; };
+		C5A730B91DE2CD2F00DB2788 /* AppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelper.m; sourceTree = "<group>"; };
 		C5A730BB1DE2CD2F00DB2788 /* AKMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMediator.h; sourceTree = "<group>"; };
 		C5A730BC1DE2CD2F00DB2788 /* AKMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMediator.m; sourceTree = "<group>"; };
 		C5A730C01DE2CD2F00DB2788 /* AKPopupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupManager.h; sourceTree = "<group>"; };
@@ -181,8 +178,8 @@
 		C5A7316C1DE32BFE00DB2788 /* AKMediator+ShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKMediator+ShareModule.m"; sourceTree = "<group>"; };
 		C5A7316E1DE32C0E00DB2788 /* ServiceShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceShare.h; sourceTree = "<group>"; };
 		C5A7316F1DE32C0E00DB2788 /* ServiceShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceShare.m; sourceTree = "<group>"; };
-		C5A731731DE3D7B100DB2788 /* LoginRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestFactory.h; sourceTree = "<group>"; };
-		C5A731741DE3D7B100DB2788 /* LoginRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestFactory.m; sourceTree = "<group>"; };
+		C5A731731DE3D7B100DB2788 /* AKRequestManager+LoginModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKRequestManager+LoginModule.h"; sourceTree = "<group>"; };
+		C5A731741DE3D7B100DB2788 /* AKRequestManager+LoginModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKRequestManager+LoginModule.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,24 +228,8 @@
 		C55CBDFC1DE3F0CB0000B1F6 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				C55CBDFD1DE3F0CB0000B1F6 /* DeviceInfo */,
 			);
 			path = Libs;
-			sourceTree = "<group>";
-		};
-		C55CBDFD1DE3F0CB0000B1F6 /* DeviceInfo */ = {
-			isa = PBXGroup;
-			children = (
-				C55CBDFF1DE3F0CB0000B1F6 /* DeviceInformation.h */,
-				C55CBE001DE3F0CB0000B1F6 /* DeviceInformation.m */,
-				C55CBE011DE3F0CB0000B1F6 /* UIDevice+HardwareInfo.h */,
-				C55CBE021DE3F0CB0000B1F6 /* UIDevice+HardwareInfo.m */,
-				C55CBE031DE3F0CB0000B1F6 /* UIDevice+NetworkInfo.h */,
-				C55CBE041DE3F0CB0000B1F6 /* UIDevice+NetworkInfo.m */,
-				C55CBE051DE3F0CB0000B1F6 /* UIDevice+SoftwareInfo.h */,
-				C55CBE061DE3F0CB0000B1F6 /* UIDevice+SoftwareInfo.m */,
-			);
-			path = DeviceInfo;
 			sourceTree = "<group>";
 		};
 		C5A730091DE2BB3400DB2788 = {
@@ -415,8 +396,12 @@
 		C5A730B71DE2CD2F00DB2788 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				C5A730B81DE2CD2F00DB2788 /* Helper.h */,
-				C5A730B91DE2CD2F00DB2788 /* Helper.m */,
+				C5A730B81DE2CD2F00DB2788 /* AppHelper.h */,
+				C5A730B91DE2CD2F00DB2788 /* AppHelper.m */,
+				C55CBE0C1DE3F3F80000B1F6 /* DeviceHelper.h */,
+				C55CBE0D1DE3F3F80000B1F6 /* DeviceHelper.m */,
+				C55CBE0F1DE3F6230000B1F6 /* FileHelper.h */,
+				C55CBE101DE3F6230000B1F6 /* FileHelper.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -440,6 +425,8 @@
 		C5A730BE1DE2CD2F00DB2788 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C55CBE121DE3FBFF0000B1F6 /* AKRequestManager.h */,
+				C55CBE131DE3FBFF0000B1F6 /* AKRequestManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -512,8 +499,8 @@
 		C5A730D51DE2CF4000DB2788 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				C5A731731DE3D7B100DB2788 /* LoginRequestFactory.h */,
-				C5A731741DE3D7B100DB2788 /* LoginRequestFactory.m */,
+				C5A731731DE3D7B100DB2788 /* AKRequestManager+LoginModule.h */,
+				C5A731741DE3D7B100DB2788 /* AKRequestManager+LoginModule.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -887,13 +874,10 @@
 				C5A731261DE2EB3500DB2788 /* HBBicyclePointAnnotation.m in Sources */,
 				C5A731381DE2EB4600DB2788 /* HBBicycleResultModel.m in Sources */,
 				C5A731271DE2EB3500DB2788 /* HBBaseRoundButton.m in Sources */,
-				C55CBE0A1DE3F0CB0000B1F6 /* UIDevice+NetworkInfo.m in Sources */,
 				C5A731671DE3281800DB2788 /* Aspect-MapModule.m in Sources */,
 				C5A730E61DE2CF7000DB2788 /* AKLoginViewController.m in Sources */,
-				C55CBE081DE3F0CB0000B1F6 /* DeviceInformation.m in Sources */,
-				C5A730CB1DE2CD2F00DB2788 /* Helper.m in Sources */,
-				C55CBE091DE3F0CB0000B1F6 /* UIDevice+HardwareInfo.m in Sources */,
-				C55CBE0B1DE3F0CB0000B1F6 /* UIDevice+SoftwareInfo.m in Sources */,
+				C55CBE111DE3F6230000B1F6 /* FileHelper.m in Sources */,
+				C5A730CB1DE2CD2F00DB2788 /* AppHelper.m in Sources */,
 				C5A730CE1DE2CD2F00DB2788 /* AKCYLPlusButton.m in Sources */,
 				C5A730F11DE2D3B700DB2788 /* AKMediator+LoginModule.m in Sources */,
 				C5A731431DE2F09E00DB2788 /* HBUserDefultsManager.m in Sources */,
@@ -903,8 +887,9 @@
 				C5A731371DE2EB4600DB2788 /* HBBicycleBaseModel.m in Sources */,
 				C5A731291DE2EB3500DB2788 /* HBBicyclePopView.m in Sources */,
 				C5A731361DE2EB4600DB2788 /* HBBaseDataModel.m in Sources */,
+				C55CBE141DE3FBFF0000B1F6 /* AKRequestManager.m in Sources */,
 				C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */,
-				C5A731751DE3D7B100DB2788 /* LoginRequestFactory.m in Sources */,
+				C5A731751DE3D7B100DB2788 /* AKRequestManager+LoginModule.m in Sources */,
 				C5A731071DE2D82800DB2788 /* AKMapViewController.m in Sources */,
 				C5A730CA1DE2CD2F00DB2788 /* AKTabbarControllerFactory.m in Sources */,
 				C5A730F61DE2D70700DB2788 /* ServiceLogin.m in Sources */,
@@ -920,6 +905,7 @@
 				C5A7312A1DE2EB3500DB2788 /* HBSearchBar.m in Sources */,
 				C5A731251DE2EB3500DB2788 /* HBBicycleAnnotationView.m in Sources */,
 				C5A7312D1DE2EB3D00DB2788 /* HBRequestManager.m in Sources */,
+				C55CBE0E1DE3F3F80000B1F6 /* DeviceHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

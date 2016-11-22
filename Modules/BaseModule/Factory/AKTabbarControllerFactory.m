@@ -26,7 +26,7 @@
 
 -(UITabBarController*)createWithPlist:(NSString*)plist
 {
-    NSArray* tabs = [Helper getPlist:plist];
+    NSArray* tabs = [FileHelper getArrayFromPlist:plist];
     
     NSMutableArray* vcArrs = [[NSMutableArray alloc] init];
     NSMutableArray *attributes =  [[NSMutableArray alloc] init];
@@ -36,7 +36,7 @@
         
         NSString* plusButtonName = dic[@"plusButton"];
         
-        if(![Helper isNullString:plusButtonName]) {
+        if(![AppHelper isNullString:plusButtonName]) {
             //  Class plusClass =  NSClassFromString(dic[@"plusButton"]);
             NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
             
@@ -53,15 +53,15 @@
             
             NSMutableDictionary* dict = [[NSMutableDictionary alloc]init];
             NSString* title = dic[@"title"];
-            if( ![Helper isNullString:title]){
+            if( ![AppHelper isNullString:title]){
                 dict[CYLTabBarItemTitle] = title;
             }
             NSString* normal = dic[@"normal"];
-            if( ![Helper isNullString:normal]){
+            if( ![AppHelper isNullString:normal]){
                 dict[CYLTabBarItemImage] = normal;
             }
             NSString* selected = dic[@"selected"];
-            if( ![Helper isNullString:selected]){
+            if( ![AppHelper isNullString:selected]){
                 dict[CYLTabBarItemSelectedImage] = selected;
             }
             [attributes addObject:dict];
@@ -69,7 +69,7 @@
             Class aClass = NSClassFromString(dic[@"controller"]);
             
             UIViewController *viewController = [[aClass alloc] init];
-            if(![ Helper isNullString:dic[@"navigationController"]]){
+            if(![AppHelper isNullString:dic[@"navigationController"]]){
                 
                 Class nvClass = NSClassFromString(dic[@"navigationController"]);
                 UINavigationController *navigationController = [[nvClass alloc] initWithRootViewController:viewController];

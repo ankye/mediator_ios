@@ -11,9 +11,13 @@
 #import "Aspects.h"
 #import "AKAppDelegate.h"
 #import "AKBaseViewController.h"
+
+#import "AKRequestManager.h"
 #import "AKMediator.h"
 
-
+#import "AppHelper.h"
+#import "FileHelper.h"
+#import "DeviceHelper.h"
 
 #import <Masonry/Masonry.h>
 

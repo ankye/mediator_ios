@@ -21,6 +21,10 @@
     return nil;
 }
 
+-(void)fillData:(id<AKDataCenterObjectProtocol>)object
+{
+    
+}
 
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {

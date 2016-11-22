@@ -15,10 +15,12 @@
 //登陆成功处理逻辑
 -(NSNumber*)loginSuccess:(NSDictionary *)params
 {
-    //UserModel* user = [UserModel modelWithDictionary:params[@"data"]];
-   // NSLog(@"get user is %@",user);
+    UserModel* user = [UserModel modelWithDictionary:params[@"data"]];
     
-    return nil;
+    [[AKDataCenter sharedInstance] user_setUserInfo:user];
+    
+
+    return @(0);
 }
 
 

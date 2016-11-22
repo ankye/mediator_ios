@@ -57,7 +57,7 @@
     [bg addSubview:logo];
     [logo mas_makeConstraints:^(MASConstraintMaker *make) {
         
-        make.center.equalTo(bg).offset(-30);
+        make.center.equalTo(bg);
     }];
     
     

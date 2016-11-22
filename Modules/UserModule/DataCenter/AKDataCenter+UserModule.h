@@ -11,9 +11,9 @@
 
 @interface AKDataCenter (UserModule)
 
--(void)setUserInfo:(UserModel*)user;
+-(void)user_setUserInfo:(UserModel*)user;
 
--(UserModel*)getUserInfo:(NSString*)uid;
+-(UserModel*)user_getUserInfo:(NSString*)uid;
 
 
 @end

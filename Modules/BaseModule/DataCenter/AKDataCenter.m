@@ -48,10 +48,17 @@
  */
 -(BOOL)updatePool:(NSString*)poolKey withKey:(NSString*)key andObject:(AKBaseModel*)obj
 {
+    NSMutableDictionary* pool = [self getPool:poolKey];
     
-    AKBaseModel* object = [self getObjectFromPool:poolKey withKey:key];
-    
-    object = obj;
+    AKBaseModel* object = [pool objectForKey:key];
+
+    if(object == nil){
+        object = obj;
+        [pool setObject:obj forKey:key];
+    }else{
+        
+        [object fillData:obj];
+    }
     
     return YES;
 }
@@ -103,6 +110,7 @@
     Class objClass = NSClassFromString(poolKey);
     AKBaseModel* object = [[objClass alloc] init];
     [object setKey:key];
+    
     [self updatePool:poolKey withKey:key andObject:object];
     
     return object;

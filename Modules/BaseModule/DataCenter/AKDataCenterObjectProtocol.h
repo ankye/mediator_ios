@@ -26,7 +26,11 @@
  */
 -(NSString*)getKey;
 
-
+/**
+ 填充数据，禁止直接覆盖
+ @param object 填充数据
+ */
+-(void)fillData:(id<AKDataCenterObjectProtocol>)object;
 
 @end
 

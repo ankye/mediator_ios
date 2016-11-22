@@ -9,6 +9,7 @@ target 'Project' do
         pod 'STPopup'
         pod 'Masonry'
         pod 'CYLTabBarController'
+  
         
         #map
         pod 'AMapFoundation'

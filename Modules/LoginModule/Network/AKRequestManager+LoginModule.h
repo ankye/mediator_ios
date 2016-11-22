@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <YTKNetwork/YTKNetwork.h>
 
 @interface AKRequestManager (LoginModule)
 
 //请求三方登陆接口
--(BOOL)login_requestThridLogin:(NSString *)openid withToken:(NSString *)token withType:(NSString *)type;
+-(BOOL)login_requestThridLoginWithOpenID:(NSString *)openid withToken:(NSString *)token withPlatformType:(NSInteger)platformType Success:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure;
 
 
 @end

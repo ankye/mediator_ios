@@ -21,7 +21,7 @@
          
         
          //打开调试日志
-         [[UMSocialManager defaultManager] openLog:YES];
+         [[UMSocialManager defaultManager] openLog:NO];
          
          //设置友盟appkey
          [[UMSocialManager defaultManager] setUmSocialAppkey:UM_DATA_KEY];

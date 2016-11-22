@@ -11,14 +11,14 @@
 @interface DeviceHelper : NSObject
 
 //获取本机IP
-+(NSString*)getLocalIP;
++(NSString*)localIP;
 //获取网络IP
-+(NSString*)getNetworkIP;
++(NSString*)networkIP;
 
 //获取渠道号
 + (NSString *)channel;
 //获取Api版本
-+ (NSNumber *)apiVersion;
++ (NSString *)apiVersion;
 //获取App版本字符串
 + (NSString *)appStringVersion;
 //获取App版本数字号
@@ -38,7 +38,19 @@
 //获取IDFV
 + (NSString*)IDFV;
 
+//获取系统mac地址
++ (NSString*)macAddress;
 
 
+/**
+ *  获取当前系统语言
+ *
+ *  @return zh_CN, zh_TW, ja_JP, en_US
+ */
++ (NSString *)localeLanguage;
 
+//机器品牌
++ (NSString*)phoneBrand;
+//手机型号
++ (NSString*)phoneModel;
 @end

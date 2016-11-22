@@ -12,11 +12,12 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define G_BASE_SITE  @"http://test.m.passport.blres.com"
+#define G_BASE_AUTH_SITE  @"http://test.m.passport.blres.com"
 
-#define APP_CHANNEL  @"APPSTORE"
+#define APP_CHANNEL  @"app_store"
 
 #import "BaseModule.h"
+#import "UserModule.h"
 #import "LoginModule.h"
 #import "MapModule.h"
 #import "ShareModule.h"

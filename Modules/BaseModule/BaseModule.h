@@ -9,9 +9,13 @@
 #ifndef BaseModule_h
 #define BaseModule_h
 #import "Aspects.h"
+
+#import <YYKit/YYKit.h>
+
 #import "AKAppDelegate.h"
 #import "AKBaseViewController.h"
-
+#import "AKBaseModel.h"
+#import "AKDataCenter.h"
 #import "AKRequestManager.h"
 #import "AKMediator.h"
 

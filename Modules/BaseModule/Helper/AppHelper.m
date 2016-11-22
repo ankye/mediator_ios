@@ -13,6 +13,15 @@
 
 
 
++ (NSDictionary *)dictionaryWithData:(NSData *)data;
+{
+    NSError *error;
+    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if (!error) {
+        return result;
+    }
+    return nil;
+}
 
 //判断空字符串
 +(BOOL)isNullString:(NSString *)string

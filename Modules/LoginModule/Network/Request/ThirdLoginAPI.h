@@ -6,10 +6,10 @@
 //  Copyright © 2016年 luanys. All rights reserved.
 //
 
-#import "BLTVAPIBase.h"
+#import "AKBaseRequest.h"
 
-@interface ThirdLoginAPI : BLTVAPIBase
+@interface ThirdLoginAPI : AKBaseRequest
 
--(instancetype) init:(NSString *)openid WithToken:(NSString *)token AndType:(NSString *)type;
+-(instancetype) init:(NSString *)openid withToken:(NSString *)token andType:(NSString *)type;
 
 @end

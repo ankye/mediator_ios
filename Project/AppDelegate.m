@@ -20,8 +20,6 @@
         [[AKMediator sharedInstance] updateAppScheme:@"banliapp"];
     
         UIViewController *controller = [[AKMediator sharedInstance] login_viewControllerForLogin];
-    
-        NSString* appChannel = [DeviceHelper getLocalIP];
         
         self.window.rootViewController = controller;
         [self.window makeKeyWindow];

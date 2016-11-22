@@ -12,6 +12,7 @@
 #import "ServiceLogin.h"
 
 #import "AKMediator+LoginModule.h"
+#import "AKRequestManager+LoginModule.h"
 
 
 #endif /* LoginModule_h */

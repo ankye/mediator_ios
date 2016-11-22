@@ -10,10 +10,16 @@
 #import "AppHelper.h"
 #import <AdSupport/ASIdentifierManager.h>
 #include <sys/sysctl.h>
+#include <sys/sysctl.h>
+#include <net/if.h>
+#include <net/if_dl.h>
+#import <mach/mach.h>
+#import <sys/utsname.h>
+#import <dlfcn.h>
 
 #include <ifaddrs.h>
 #include <arpa/inet.h>
-#include <net/if.h>
+
 
 #define IOS_CELLULAR    @"pdp_ip0"
 #define IOS_WIFI        @"en0"
@@ -26,7 +32,7 @@
 
 
 //获取本机IP
-+(NSString*)getLocalIP {
++(NSString*)localIP {
     NSArray *searchArray = @[ IOS_VPN @"/" IP_ADDR_IPv4,
                               IOS_VPN @"/" IP_ADDR_IPv6,
                               IOS_WIFI @"/" IP_ADDR_IPv4,
@@ -88,7 +94,7 @@
 
 
 //获取网络IP
-+(NSString*)getNetworkIP
++(NSString*)networkIP
 {
     return nil;
 }
@@ -103,35 +109,44 @@
     return appChannel;
 }
 //获取Api版本
-+ (NSNumber *)apiVersion
++ (NSString *)apiVersion
 {
-     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"apiVersion"];
+     NSString* version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"apiVersion"];
 
+    return [AppHelper isNullString:version]?@"1.0":version;
+    
 }
 //获取App版本字符串
 + (NSString *)appStringVersion
 {
     NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
-    return infoDic[@"CFBundleShortVersionString"];
+    NSString* version = infoDic[@"CFBundleShortVersionString"];
+    
+    return [AppHelper isNullString:version]?@"1.0":version;
 }
 //获取App版本数字号
 + (NSString *)appNumberVersion
 {
     NSDictionary *infoDic = [[NSBundle mainBundle] infoDictionary];
-    return infoDic[@"CFBundleVersion"];
+    NSString* version = infoDic[@"CFBundleVersion"];
+    
+    return [AppHelper isNullString:version]?@"1.0":version;
 }
 
 
 //获取设备系统os名称
 + (NSString *)deviceOSName
 {
-    return [[UIDevice currentDevice] systemName];
+    NSString* name = [[UIDevice currentDevice] systemName];
+    
+    return [AppHelper isNullString:name]?@"ios":name;
 }
 
 //获取系统版本号
 + (NSString *)deviceOSVersion
 {
-    return [[UIDevice currentDevice] systemVersion];
+    NSString* version = [[UIDevice currentDevice] systemVersion];
+    return [AppHelper isNullString:version]?@"1.0":version;
 
 }
 //获取设备系统os
@@ -142,14 +157,68 @@
 //获取IDFA
 + (NSString *)IDFA
 {
-    return [[[[ASIdentifierManager alloc] init] advertisingIdentifier] UUIDString];
+    NSString* idfa = [[[[ASIdentifierManager alloc] init] advertisingIdentifier] UUIDString];
+    
+    return [AppHelper isNullString:idfa]?@"0.0.0.0":idfa;
 }
 
 //获取IDFV
 + (NSString*)IDFV
 {
-    return [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSString* idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    return [AppHelper isNullString:idfv]?@"0.0.0.0":idfv;
 }
+
+// Courtesy of FreeBSD hackers email list
+// Accidentally munged during previous update. Fixed thanks to mlamb.
++ (NSString*)macAddress
+{
+    NSString* result = @"0:0:0:0";
+    int mib[6];
+    size_t len;
+    char* buf;
+    unsigned char* ptr;
+    struct if_msghdr* ifm;
+    struct sockaddr_dl* sdl;
+    
+    mib[0] = CTL_NET;
+    mib[1] = AF_ROUTE;
+    mib[2] = 0;
+    mib[3] = AF_LINK;
+    mib[4] = NET_RT_IFLIST;
+    
+    if ((mib[5] = if_nametoindex("en0")) == 0) {
+        printf("Error: if_nametoindex error\n");
+        return result;
+    }
+    
+    if (sysctl(mib, 6, NULL, &len, NULL, 0) < 0) {
+        printf("Error: sysctl, take 1\n");
+        return result;
+    }
+    
+    if ((buf = malloc(len)) == NULL) {
+        printf("Error: Memory allocation error\n");
+        return result;
+    }
+    
+    if (sysctl(mib, 6, buf, &len, NULL, 0) < 0) {
+        printf("Error: sysctl, take 2\n");
+        free(buf); // Thanks, Remy "Psy" Demerest
+        return result;
+    }
+    
+    ifm = (struct if_msghdr*)buf;
+    sdl = (struct sockaddr_dl*)(ifm + 1);
+    ptr = (unsigned char*)LLADDR(sdl);
+    NSString* outstring = [NSString
+                           stringWithFormat:@"%02X:%02X:%02X:%02X:%02X:%02X", *ptr, *(ptr + 1),
+                           *(ptr + 2), *(ptr + 3), *(ptr + 4), *(ptr + 5)];
+    
+    free(buf);
+    return outstring;
+}
+
 
 + (NSString *)devicePlatform
 {
@@ -225,5 +294,35 @@
     return platform;
 }
 
+/**
+ *  获取当前系统语言
+ *
+ *  @return zh_CN, zh_TW, ja_JP, en_US
+ */
++ (NSString *)localeLanguage {
+    NSArray *languages = [NSLocale preferredLanguages];
+    NSString *strLang = [languages firstObject];
+    
+    if ([strLang hasPrefix:@"zh-Hans"]) {
+        strLang = @"zh_CN";
+    } else if ([strLang hasPrefix:@"zh-Hant"]) {
+        strLang = @"zh-TW";
+    }
+    
+    return strLang;
+}
+
+//机器品牌
++ (NSString*)phoneBrand
+{
+    NSString* name = [[UIDevice currentDevice] name];
+    return [AppHelper isNullString:name] ? @"iphone":name;
+}
+//手机型号
++ (NSString*)phoneModel
+{
+    NSString* name = [[UIDevice currentDevice] model];
+    return [AppHelper isNullString:name] ? @"iphone":name;
+}
 
 @end

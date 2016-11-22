@@ -17,6 +17,8 @@
 //判断空字符串
 +(BOOL)isNullString:(NSString *)string;
 
++ (NSDictionary *)dictionaryWithData:(NSData *)data;
+
 //获取根节点UIViewController
 + (UIViewController*)getRootController ;
 

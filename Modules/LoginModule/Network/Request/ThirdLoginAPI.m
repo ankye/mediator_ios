@@ -7,7 +7,8 @@
 //
 
 #import "ThirdLoginAPI.h"
-#import "DeviceInfo.h"
+#import "DeviceHelper.h"
+
 
 @interface ThirdLoginAPI()
 
@@ -22,26 +23,26 @@
 @end
 
 @implementation ThirdLoginAPI
--(instancetype) init:(NSString *)openid WithToken:(NSString *)token AndType:(NSString *)type
+-(instancetype) init:(NSString *)openid withToken:(NSString *)token andType:(NSString *)type
 {
     if (self = [super init])
     {
         self.openid     = openid;
         self.token      = token;
         self.type       = type;
-        self.deviceId   = [TTDADeviceInfo deviceIdentifer];
+        self.deviceId   = [DeviceHelper macAddress];
     }
     return self;
 }
 
 -(NSString *)baseUrl
 {
-    return M_PASSPORT_URL_Base;
+    return G_BASE_AUTH_SITE;
 }
 
 -(YTKRequestMethod) requestMethod
 {
-    return YTKRequestMethodPost;
+    return YTKRequestMethodPOST;
 }
 
 - (NSString *)requestUrl{
@@ -49,10 +50,7 @@
 }
 
 - (id)requestArgument{
-    if (![self verifyProperties]) {
-        return nil;
-    }
-
+    
     return @{
              @"access_token": _token    ? _token    : @"",
              @"openid"      : _openid   ? _openid   : @"",
@@ -61,30 +59,6 @@
              };
 }
 
-/**
- *  请求数据方法,复写父类的方法
- *
- */
-
-- (void)bl_data:(NSDictionary *)dic{
-    NSUInteger errcode = [dic[@"errcode"] integerValue];
-    if (errcode != 0) {
-        NSLog(@"login error");
-        return;
-    }
-    
-    if (dic[@"data"]) {
-        self.bl_model = [UserModel objectWithKeyValues:dic[@"data"]];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"LoginSuccess" object:nil userInfo:@{@"UserModel":self.bl_model}];
-    }else {
-        self.bl_error = EmptyError;
-    }
-
-}
-
-- (void)bl_error:(NSError *)error{
-    [super bl_error:error];
-}
 
 
 @end

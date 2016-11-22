@@ -85,14 +85,28 @@
         
         [[AKMediator sharedInstance] share_getUserInfoForPlatform:platformType withController:self withCompletion:^(UMSocialUserInfoResponse *userinfo, NSError *error) {
             
-            NSString *message = [NSString stringWithFormat:@"name: %@\n icon: %@\n gender: %@\n",userinfo.name,userinfo.iconurl,userinfo.gender];
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UserInfo"
-                                                            message:message
-                                                           delegate:nil
-                                                  cancelButtonTitle:NSLocalizedString(@"确定", nil)
-                                                  otherButtonTitles:nil];
-            [alert show];
-
+           
+           
+            [[AKRequestManager sharedInstance] login_requestThridLoginWithOpenID:userinfo.openid withToken:userinfo.accessToken withPlatformType:platformType Success:^(__kindof YTKBaseRequest * _Nonnull request) {
+                NSData* jsonData = request.responseData;
+                NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
+                NSLog(@"request login success %@",response);
+            
+                if([response[@"errcode"] integerValue] == 0){
+                    [[AKMediator sharedInstance] user_loginSuccess:response];
+                }else{
+                    NSString *message = [NSString stringWithFormat:@"message: %@\n",response[@"msg"]];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UserInfo"
+                                                                    message:message
+                                                                   delegate:nil
+                                                          cancelButtonTitle:NSLocalizedString(@"确定", nil)
+                                                          otherButtonTitles:nil];
+                    [alert show];
+                }
+                
+            } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                NSLog(@"Failed");
+            }];
             
         }];
     }

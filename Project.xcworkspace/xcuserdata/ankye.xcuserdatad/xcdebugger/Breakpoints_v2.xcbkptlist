@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Project/AppDelegate.m"
-            timestampString = "501480107.373006"
+            filePath = "Modules/BaseModule/Mediator/AKMediator.m"
+            timestampString = "501503165.732658"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "-application:didFinishLaunchingWithOptions:"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "-performService:action:params:shouldCacheService:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

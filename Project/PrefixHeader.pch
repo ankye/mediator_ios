@@ -12,6 +12,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#define G_BASE_SITE  @"http://test.m.passport.blres.com"
 
 #import "BaseModule.h"
 #import "LoginModule.h"

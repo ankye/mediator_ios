@@ -79,8 +79,8 @@ static NSString *const kBicycleSearchURL = @"np_findNetPointByName.do";
                          failureCompletion:(YTKRequestCompletionBlock)failure {
     HBNearBicycleRequest *nearBicycleRequest =  [[HBNearBicycleRequest alloc] init];
     NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-   // [params setObject:lon forKey:@"lng"];
-   // [params setObject:lat forKey:@"lat"];
+    [params setObject:lon forKey:@"lng"];
+    [params setObject:lat forKey:@"lat"];
  
     [params setObject:len forKey:@"len"];
     nearBicycleRequest.requestArguments = params;

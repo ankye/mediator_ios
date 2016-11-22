@@ -17,9 +17,9 @@
     
     if( [super application:application didFinishLaunchingWithOptions:launchOptions] ){
         
-       
+        [[AKMediator sharedInstance] updateAppScheme:@"banliapp"];
     
-        UIViewController *controller = [[AKMediator sharedInstance] map_viewController];
+        UIViewController *controller = [[AKMediator sharedInstance] login_viewControllerForLogin];
     
     
         self.window.rootViewController = controller;

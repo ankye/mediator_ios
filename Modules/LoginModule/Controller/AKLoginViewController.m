@@ -24,10 +24,10 @@
     self = [super init];
     if(self){
         self.loginBtnInfos = [NSArray arrayWithObjects:
-                              @{@"type":@"qq",@"title":@"QQ", @"nornal":@"denglu-qq",@"selected":@"denglu-qq"},
-                              @{@"type":@"weixin",@"title":@"微信", @"nornal":@"denglu-weix",@"selected":@"denglu-weix"},
+                              @{@"type":@(UMSocialPlatformType_QQ),@"title":@"QQ", @"nornal":@"denglu-qq",@"selected":@"denglu-qq"},
+                              @{@"type":@(UMSocialPlatformType_WechatSession),@"title":@"微信", @"nornal":@"denglu-weix",@"selected":@"denglu-weix"},
                               //   @{@"type":@"phone",@"title":@"手机", @"nornal":@"denglu-phone",@"selected":@"denglu-phone"},
-                              @{@"type":@"weibo",@"title":@"微博", @"nornal":@"denglu-xinlang",@"selected":@"denglu-xinlang"},
+                              @{@"type":@(UMSocialPlatformType_Sina),@"title":@"微博", @"nornal":@"denglu-xinlang",@"selected":@"denglu-xinlang"},
                               nil];
     }
     return self;
@@ -45,7 +45,7 @@
 -(void)setupViews
 {
     
-    UIImageView *bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"loginbg"]];
+    UIImageView *bg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"default"]];
     
     [self.view addSubview:bg];
     
@@ -80,7 +80,21 @@
 {
     if(index < [self.loginBtnInfos count]){
         NSDictionary* dic = [self.loginBtnInfos objectAtIndex:index];
-        NSLog(@"type == %@",dic[@"type"]);
+        
+        UMSocialPlatformType platformType = [dic[@"type"] integerValue];
+        
+        [[AKMediator sharedInstance] share_getUserInfoForPlatform:platformType withController:self withCompletion:^(UMSocialUserInfoResponse *userinfo, NSError *error) {
+            
+            NSString *message = [NSString stringWithFormat:@"name: %@\n icon: %@\n gender: %@\n",userinfo.name,userinfo.iconurl,userinfo.gender];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UserInfo"
+                                                            message:message
+                                                           delegate:nil
+                                                  cancelButtonTitle:NSLocalizedString(@"确定", nil)
+                                                  otherButtonTitles:nil];
+            [alert show];
+
+            
+        }];
     }
 }
 

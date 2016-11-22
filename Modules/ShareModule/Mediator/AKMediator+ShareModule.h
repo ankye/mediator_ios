@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AKMediator_ShareModule : NSObject
+@interface AKMediator (ShareModule)
+
+
+- (void)share_getUserInfoForPlatform:(UMSocialPlatformType) platformType withController:(UIViewController*)controller withCompletion:(shareGetUserinfoCompletion)completion;
 
 @end

@@ -10,9 +10,9 @@
 
 @interface ServiceLogin : NSObject
 
--(UIViewController*)fetchLoginViewController;
+-(UIViewController*)fetchLoginViewController:(NSDictionary *)params;
 
--(UIViewController*)fetchRegisterViewController;
+-(UIViewController*)fetchRegisterViewController:(NSDictionary *)params;
 
 
 @end

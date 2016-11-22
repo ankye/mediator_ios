@@ -8,6 +8,15 @@
 
 #import "AKMediator+ShareModule.h"
 
-@implementation AKMediator_ShareModule
+NSString * const kAKMShareModuleService = @"Share";
+NSString * const kAKMGetUserInfoForPlatform = @"getUserInfoForPlatform";
+
+
+@implementation AKMediator (ShareModule)
+
+- (void)share_getUserInfoForPlatform:(UMSocialPlatformType) platformType withController:(UIViewController*)controller withCompletion:(shareGetUserinfoCompletion)completion
+{
+     [self performService:kAKMShareModuleService action:kAKMGetUserInfoForPlatform params:@{@"platformType":@(platformType),@"controller":controller,@"completion":completion} shouldCacheService:NO];
+}
 
 @end

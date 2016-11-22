@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ServerShare : NSObject
+@interface ServiceShare : NSObject
 
 - (void)getUserInfoForPlatform:(NSDictionary *)params;
 

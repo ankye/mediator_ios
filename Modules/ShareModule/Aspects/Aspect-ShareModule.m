@@ -9,7 +9,9 @@
 #import "Aspect-ShareModule.h"
 #import "AKAppDelegate.h"
 
+
 @implementation Aspect_ShareModule
+
 +(void)load
 {
     [AKAppDelegate aspect_hookSelector:@selector(application:didFinishLaunchingWithOptions:)
@@ -22,20 +24,20 @@
          [[UMSocialManager defaultManager] openLog:YES];
          
          //设置友盟appkey
-         [[UMSocialManager defaultManager] setUmSocialAppkey:@"57b432afe0f55a9832001a0a"];
+         [[UMSocialManager defaultManager] setUmSocialAppkey:UM_DATA_KEY];
          
          // 获取友盟social版本号
          //NSLog(@"UMeng social version: %@", [UMSocialGlobal umSocialSDKVersion]);
          
          //设置微信的appKey和appSecret
-         [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdc1e388c3822c80b" appSecret:@"3baf1193c85774b3fd9d18447d76cab0" redirectURL:@"http://mobile.umeng.com/social"];
+         [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:UM_WEIXIN_APPID appSecret:UM_WEIXIN_APPSEC redirectURL:UM_WEIXIN_REDIRECT];
          
          
          //设置分享到QQ互联的appKey和appSecret
-         [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:@"100424468"  appSecret:nil redirectURL:@"http://mobile.umeng.com/social"];
+         [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:UM_QQ_APPID appSecret:UM_QQ_APPSEC redirectURL:UM_QQ_REDIRECT];
          
          //设置新浪的appKey和appSecret
-         [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:@"3921700954"  appSecret:@"04b48b094faeb16683c32669824ebdad" redirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+         [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:UM_WEIBO_APPKEY  appSecret:UM_WEIBO_APPSEC redirectURL:UM_WEIBO_REDIRECT];
          
       
          
@@ -44,14 +46,36 @@
             error:nil];
     
     
+    [AKAppDelegate aspect_hookSelector:@selector(application:handleOpenURL:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> info, UIApplication *applicaton,NSURL *url ){
+        
+
+        NSInvocation *invocation = info.originalInvocation;
+        BOOL returnValue = [[UMSocialManager defaultManager] handleOpenURL:url];
+        
+        
+        [invocation setReturnValue:&returnValue];
+        
+    }error:nil];
+    
+    [AKAppDelegate aspect_hookSelector:@selector(application:openURL:options:) withOptions:AspectPositionInstead usingBlock:^(id<AspectInfo> info,UIApplication *app ,NSURL *url ,NSDictionary<UIApplicationOpenURLOptionsKey,id> * options){
+        
+       
+        NSInvocation *invocation = info.originalInvocation;
+        BOOL returnValue = [[UMSocialManager defaultManager] handleOpenURL:url];
+        
+        
+        [invocation setReturnValue:&returnValue];
+        
+    }error:nil];
+    
     
     [AKAppDelegate aspect_hookSelector:@selector(application:openURL:sourceApplication:annotation:)
      												 withOptions:AspectPositionInstead
-     													usingBlock:^(id<AspectInfo> info)
+usingBlock:^(id<AspectInfo> info,UIApplication *application ,NSURL *url ,NSString *sourceApplication, id annotation)
             {
-     																NSArray *args = [info arguments];
+                
      																NSInvocation *invocation = info.originalInvocation;
-                                                            BOOL returnValue = [[UMSocialManager defaultManager] handleOpenURL:args[1]];
+                                                            BOOL returnValue = [[UMSocialManager defaultManager] handleOpenURL:url];
                                                             
                         
      															[invocation setReturnValue:&returnValue];

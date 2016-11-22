@@ -78,7 +78,7 @@
 {
     
     NSString *serviceClassString = [NSString stringWithFormat:@"%@%@",AKMediator_Service_PREFIX, serviceName];
-    NSString *actionString =actionName;
+    NSString *actionString =[NSString stringWithFormat:@"%@:",actionName];
     
     id service = self.serviceCache[serviceClassString];
     if (service == nil) {

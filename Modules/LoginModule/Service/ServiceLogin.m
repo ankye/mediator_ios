@@ -11,13 +11,13 @@
 
 @implementation ServiceLogin
 
--(UIViewController*)fetchLoginViewController
+-(UIViewController*)fetchLoginViewController:(NSDictionary *)params
 {
     UIViewController* controller = [[AKLoginViewController alloc] init];
     return controller;
 }
 
--(UIViewController*)fetchRegisterViewController
+-(UIViewController*)fetchRegisterViewController:(NSDictionary *)params
 {
     UIViewController* controller = [[AKLoginViewController alloc] init];
     return controller;

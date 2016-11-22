@@ -90,7 +90,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>projectapp</string>
+				<string>banliapp</string>
 			</array>
 		</dict>
 	</array>

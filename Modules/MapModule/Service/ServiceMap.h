@@ -10,6 +10,6 @@
 
 @interface ServiceMap : NSObject
 
--(UIViewController*)fetchMapViewController;
+-(UIViewController*)fetchMapViewController:(NSDictionary *)params;
 
 @end

@@ -51,7 +51,8 @@
 		C5A7315D1DE3260600DB2788 /* Aspect-ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7315C1DE3260600DB2788 /* Aspect-ShareModule.m */; };
 		C5A731671DE3281800DB2788 /* Aspect-MapModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731661DE3281800DB2788 /* Aspect-MapModule.m */; };
 		C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7316C1DE32BFE00DB2788 /* AKMediator+ShareModule.m */; };
-		C5A731701DE32C0E00DB2788 /* ServerShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7316F1DE32C0E00DB2788 /* ServerShare.m */; };
+		C5A731701DE32C0E00DB2788 /* ServiceShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7316F1DE32C0E00DB2788 /* ServiceShare.m */; };
+		C5A731751DE3D7B100DB2788 /* LoginRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731741DE3D7B100DB2788 /* LoginRequestFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -166,8 +167,10 @@
 		C5A731681DE3286800DB2788 /* ShareModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareModule.h; sourceTree = "<group>"; };
 		C5A7316B1DE32BFE00DB2788 /* AKMediator+ShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKMediator+ShareModule.h"; sourceTree = "<group>"; };
 		C5A7316C1DE32BFE00DB2788 /* AKMediator+ShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKMediator+ShareModule.m"; sourceTree = "<group>"; };
-		C5A7316E1DE32C0E00DB2788 /* ServerShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerShare.h; sourceTree = "<group>"; };
-		C5A7316F1DE32C0E00DB2788 /* ServerShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerShare.m; sourceTree = "<group>"; };
+		C5A7316E1DE32C0E00DB2788 /* ServiceShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceShare.h; sourceTree = "<group>"; };
+		C5A7316F1DE32C0E00DB2788 /* ServiceShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceShare.m; sourceTree = "<group>"; };
+		C5A731731DE3D7B100DB2788 /* LoginRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestFactory.h; sourceTree = "<group>"; };
+		C5A731741DE3D7B100DB2788 /* LoginRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestFactory.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -473,6 +476,8 @@
 		C5A730D51DE2CF4000DB2788 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				C5A731731DE3D7B100DB2788 /* LoginRequestFactory.h */,
+				C5A731741DE3D7B100DB2788 /* LoginRequestFactory.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -644,8 +649,8 @@
 		C5A7316A1DE32BDB00DB2788 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				C5A7316E1DE32C0E00DB2788 /* ServerShare.h */,
-				C5A7316F1DE32C0E00DB2788 /* ServerShare.m */,
+				C5A7316E1DE32C0E00DB2788 /* ServiceShare.h */,
+				C5A7316F1DE32C0E00DB2788 /* ServiceShare.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -852,13 +857,14 @@
 				C5A730CE1DE2CD2F00DB2788 /* AKCYLPlusButton.m in Sources */,
 				C5A730F11DE2D3B700DB2788 /* AKMediator+LoginModule.m in Sources */,
 				C5A731431DE2F09E00DB2788 /* HBUserDefultsManager.m in Sources */,
-				C5A731701DE32C0E00DB2788 /* ServerShare.m in Sources */,
+				C5A731701DE32C0E00DB2788 /* ServiceShare.m in Sources */,
 				C5A731421DE2F09E00DB2788 /* HBMapManager.m in Sources */,
 				C5A731041DE2D7CF00DB2788 /* ServiceMap.m in Sources */,
 				C5A731371DE2EB4600DB2788 /* HBBicycleBaseModel.m in Sources */,
 				C5A731291DE2EB3500DB2788 /* HBBicyclePopView.m in Sources */,
 				C5A731361DE2EB4600DB2788 /* HBBaseDataModel.m in Sources */,
 				C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */,
+				C5A731751DE3D7B100DB2788 /* LoginRequestFactory.m in Sources */,
 				C5A731071DE2D82800DB2788 /* AKMapViewController.m in Sources */,
 				C5A730CA1DE2CD2F00DB2788 /* AKTabbarControllerFactory.m in Sources */,
 				C5A730F61DE2D70700DB2788 /* ServiceLogin.m in Sources */,
@@ -932,6 +938,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -946,6 +953,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -980,6 +988,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -994,6 +1003,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

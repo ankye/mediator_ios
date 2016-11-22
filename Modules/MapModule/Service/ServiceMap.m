@@ -11,7 +11,7 @@
 
 @implementation ServiceMap
 
--(UIViewController*)fetchMapViewController
+-(UIViewController*)fetchMapViewController:(NSDictionary *)params
 {
     UIViewController* controller = [[AKMapViewController alloc] init];
     return controller;

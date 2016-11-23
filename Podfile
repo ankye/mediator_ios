@@ -11,14 +11,14 @@ target 'Project' do
         pod 'CYLTabBarController'
   
         
-        #map
+        #map Module
         pod 'AMapFoundation'
         pod 'AMap3DMap'
         pod 'AMapLocation'
         
         pod 'MJExtension'
   
-        #share
+        #share Module
         # U-Share SDK UI模块（分享面板，建议添加）
         pod 'UMengUShare/UI’
         # 集成新浪微博
@@ -27,4 +27,8 @@ target 'Project' do
         pod 'UMengUShare/Social/WeChat'
         # 集成QQ
         pod 'UMengUShare/Social/QQ'
+        
+        #IM Module
+        pod 'SocketRocket'
+        
 end

@@ -535,6 +535,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C55CBE901DE54CC90000B1F6 /* IMModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IMModule;
+			sourceTree = "<group>";
+		};
 		C5A730091DE2BB3400DB2788 = {
 			isa = PBXGroup;
 			children = (
@@ -605,6 +612,7 @@
 		C5A730481DE2BD4200DB2788 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C55CBE901DE54CC90000B1F6 /* IMModule */,
 				C55CBE4E1DE54AC90000B1F6 /* BaseModule */,
 				C55CBE261DE4428E0000B1F6 /* UserModule */,
 				C5A731441DE323D400DB2788 /* ShareModule */,

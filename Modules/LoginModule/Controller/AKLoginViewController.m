@@ -96,8 +96,8 @@
                     [[AKMediator sharedInstance] user_loginSuccess:response[@"data"]];
                     [self didTappedReturnButton:nil];
                 }else{
-                    NSString *message = [NSString stringWithFormat:@"message: %@\n",response[@"msg"]];
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UserInfo"
+                    NSString *message = [NSString stringWithFormat:@"[%@]请重试!\n",response[@"msg"]];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登录异常"
                                                                     message:message
                                                                    delegate:nil
                                                           cancelButtonTitle:NSLocalizedString(@"确定", nil)

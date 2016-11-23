@@ -23,6 +23,7 @@ PODS:
   - CYLTabBarController (1.6.5)
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
+  - SocketRocket (0.5.1)
   - STPopup (1.8.1)
   - UMengUShare/Core (6.0.3):
     - UMengUShare/Network
@@ -50,6 +51,7 @@ DEPENDENCIES:
   - CYLTabBarController
   - Masonry
   - MJExtension
+  - SocketRocket
   - STPopup
   - UMengUShare/Social/QQ
   - UMengUShare/Social/Sina
@@ -67,11 +69,12 @@ SPEC CHECKSUMS:
   CYLTabBarController: 04fcfef9a8d79ea8d3c6f677f720b3e4193b56bb
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
+  SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   STPopup: 47e8ae53d348fa5f9be2d08d5c513ebe12ca758d
   UMengUShare: f231fc086d789d4e560a5090dcc13a2db15c686d
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: e9468467d19f4be563ef1b5a7d4d58f702ac8ccf
+PODFILE CHECKSUM: a5cfdee0e2b9a6da34fcaa65c1e3270671ce1636
 
 COCOAPODS: 1.1.1

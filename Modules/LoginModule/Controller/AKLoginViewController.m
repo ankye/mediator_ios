@@ -93,7 +93,8 @@
                 NSLog(@"request login success %@",response);
             
                 if([response[@"errcode"] integerValue] == 0){
-                    [[AKMediator sharedInstance] user_loginSuccess:response];
+                    [[AKMediator sharedInstance] user_loginSuccess:response[@"data"]];
+                    [self didTappedReturnButton:nil];
                 }else{
                     NSString *message = [NSString stringWithFormat:@"message: %@\n",response[@"msg"]];
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"UserInfo"

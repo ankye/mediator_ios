@@ -7,20 +7,28 @@
 //
 
 #import "ServiceUser.h"
-#import "UserModel.h"
+#import "AKUserManager.h"
 
 @implementation ServiceUser
 
-
+/**
+ 用户是否已经登录
+ 
+ @return 是否登录
+ */
+-(NSNumber*)isUserLogin
+{
+    BOOL result=  [[AKUserManager sharedInstance] isUserLogin];
+    return @(result);
+}
 //登陆成功处理逻辑
 -(NSNumber*)loginSuccess:(NSDictionary *)params
 {
-    UserModel* user = [UserModel modelWithDictionary:params[@"data"]];
     
-    [[AKDataCenter sharedInstance] user_setUserInfo:user];
+    UserModel* user = [UserModel modelWithDictionary:params];
+    [[AKUserManager sharedInstance] userLogin:user];
     
-
-    return @(0);
+    return @(YES);
 }
 
 

@@ -11,6 +11,8 @@
 @interface AKMediator (UserModule)
 
 //登陆成功，更新用户信息
--(BOOL)user_loginSuccess:(NSDictionary*)response;
+-(BOOL)user_loginSuccess:(NSDictionary*)userinfo;
+
+-(BOOL)user_isUserLogin;
 
 @end

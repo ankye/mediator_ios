@@ -8,18 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		087762743CE4650EF230D697 /* libPods-Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A30DD066B519865DD11DD4A9 /* libPods-Project.a */; };
-		C55CBE0E1DE3F3F80000B1F6 /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE0D1DE3F3F80000B1F6 /* DeviceHelper.m */; };
-		C55CBE111DE3F6230000B1F6 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE101DE3F6230000B1F6 /* FileHelper.m */; };
-		C55CBE141DE3FBFF0000B1F6 /* AKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE131DE3FBFF0000B1F6 /* AKRequestManager.m */; };
-		C55CBE1B1DE40D560000B1F6 /* AKBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE1A1DE40D560000B1F6 /* AKBaseRequest.m */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C55CBE251DE4405E0000B1F6 /* ThirdLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE241DE4405E0000B1F6 /* ThirdLoginAPI.m */; };
 		C55CBE351DE4428E0000B1F6 /* AKMediator+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE2C1DE4428E0000B1F6 /* AKMediator+UserModule.m */; };
 		C55CBE3B1DE442FF0000B1F6 /* ServiceUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE3A1DE442FF0000B1F6 /* ServiceUser.m */; };
-		C55CBE3F1DE443DD0000B1F6 /* AKDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE3E1DE443DD0000B1F6 /* AKDataCenter.m */; };
 		C55CBE431DE445220000B1F6 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE421DE445220000B1F6 /* UserModel.m */; };
-		C55CBE461DE445B60000B1F6 /* AKBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE451DE445B60000B1F6 /* AKBaseModel.m */; };
 		C55CBE491DE447430000B1F6 /* AKDataCenter+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE481DE447430000B1F6 /* AKDataCenter+UserModule.m */; };
+		C55CBE4D1DE52D1F0000B1F6 /* AKUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE4C1DE52D1F0000B1F6 /* AKUserManager.m */; };
+		C55CBE811DE54AC90000B1F6 /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE511DE54AC90000B1F6 /* AKAppDelegate.m */; };
+		C55CBE821DE54AC90000B1F6 /* BaseModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55CBE531DE54AC90000B1F6 /* BaseModule.xcassets */; };
+		C55CBE831DE54AC90000B1F6 /* AKDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE581DE54AC90000B1F6 /* AKDataCenter.m */; };
+		C55CBE841DE54AC90000B1F6 /* AKMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE5C1DE54AC90000B1F6 /* AKMediator.m */; };
+		C55CBE851DE54AC90000B1F6 /* AKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE5F1DE54AC90000B1F6 /* AKRequestManager.m */; };
+		C55CBE861DE54AC90000B1F6 /* AKBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE621DE54AC90000B1F6 /* AKBaseRequest.m */; };
+		C55CBE871DE54AC90000B1F6 /* AKPopupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE651DE54AC90000B1F6 /* AKPopupManager.m */; };
+		C55CBE881DE54AC90000B1F6 /* AKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE691DE54AC90000B1F6 /* AKBaseViewController.m */; };
+		C55CBE891DE54AC90000B1F6 /* AKPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE6C1DE54AC90000B1F6 /* AKPopupViewController.m */; };
+		C55CBE8A1DE54AC90000B1F6 /* AKTabbarControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE6F1DE54AC90000B1F6 /* AKTabbarControllerFactory.m */; };
+		C55CBE8B1DE54AC90000B1F6 /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE721DE54AC90000B1F6 /* AppHelper.m */; };
+		C55CBE8C1DE54AC90000B1F6 /* DeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE741DE54AC90000B1F6 /* DeviceHelper.m */; };
+		C55CBE8D1DE54AC90000B1F6 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE761DE54AC90000B1F6 /* FileHelper.m */; };
+		C55CBE8E1DE54AC90000B1F6 /* AKBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE7B1DE54AC90000B1F6 /* AKBaseModel.m */; };
+		C55CBE8F1DE54AC90000B1F6 /* AKCYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE7E1DE54AC90000B1F6 /* AKCYLPlusButton.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
 		C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730191DE2BB3400DB2788 /* AppDelegate.m */; };
 		C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7301C1DE2BB3400DB2788 /* ViewController.m */; };
@@ -28,12 +38,6 @@
 		C5A730251DE2BB3400DB2788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A730231DE2BB3400DB2788 /* LaunchScreen.storyboard */; };
 		C5A730301DE2BB3500DB2788 /* ProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7302F1DE2BB3500DB2788 /* ProjectTests.m */; };
 		C5A7303B1DE2BB3500DB2788 /* ProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7303A1DE2BB3500DB2788 /* ProjectUITests.m */; };
-		C5A730C91DE2CD2F00DB2788 /* AKPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730B31DE2CD2F00DB2788 /* AKPopupViewController.m */; };
-		C5A730CA1DE2CD2F00DB2788 /* AKTabbarControllerFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730B61DE2CD2F00DB2788 /* AKTabbarControllerFactory.m */; };
-		C5A730CB1DE2CD2F00DB2788 /* AppHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730B91DE2CD2F00DB2788 /* AppHelper.m */; };
-		C5A730CC1DE2CD2F00DB2788 /* AKMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730BC1DE2CD2F00DB2788 /* AKMediator.m */; };
-		C5A730CD1DE2CD2F00DB2788 /* AKPopupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730C11DE2CD2F00DB2788 /* AKPopupManager.m */; };
-		C5A730CE1DE2CD2F00DB2788 /* AKCYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730C61DE2CD2F00DB2788 /* AKCYLPlusButton.m */; };
 		C5A730E61DE2CF7000DB2788 /* AKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730E51DE2CF7000DB2788 /* AKLoginViewController.m */; };
 		C5A730EB1DE2D2A600DB2788 /* AKLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730EA1DE2D2A600DB2788 /* AKLoginButton.m */; };
 		C5A730EE1DE2D32400DB2788 /* AKLoginButtonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730ED1DE2D32400DB2788 /* AKLoginButtonGroup.m */; };
@@ -42,10 +46,7 @@
 		C5A731011DE2D79000DB2788 /* AKMediator+MapModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730FC1DE2D79000DB2788 /* AKMediator+MapModule.m */; };
 		C5A731041DE2D7CF00DB2788 /* ServiceMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731031DE2D7CF00DB2788 /* ServiceMap.m */; };
 		C5A731071DE2D82800DB2788 /* AKMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731061DE2D82800DB2788 /* AKMapViewController.m */; };
-		C5A7310D1DE2D9A400DB2788 /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7310C1DE2D9A400DB2788 /* AKAppDelegate.m */; };
 		C5A7310F1DE2DCED00DB2788 /* LoginModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A7310E1DE2DCED00DB2788 /* LoginModule.xcassets */; };
-		C5A731111DE2E84600DB2788 /* BaseModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A731101DE2E84600DB2788 /* BaseModule.xcassets */; };
-		C5A731141DE2E8A800DB2788 /* AKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731131DE2E8A800DB2788 /* AKBaseViewController.m */; };
 		C5A731161DE2E8F000DB2788 /* MapModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A731151DE2E8F000DB2788 /* MapModule.xcassets */; };
 		C5A731251DE2EB3500DB2788 /* HBBicycleAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731191DE2EB3500DB2788 /* HBBicycleAnnotationView.m */; };
 		C5A731261DE2EB3500DB2788 /* HBBicyclePointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7311B1DE2EB3500DB2788 /* HBBicyclePointAnnotation.m */; };
@@ -88,14 +89,6 @@
 		3EF56A8A82919CDF6E89C8BF /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		A30DD066B519865DD11DD4A9 /* libPods-Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69DE62C8EB3C23ADC38EDB6 /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
-		C55CBE0C1DE3F3F80000B1F6 /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
-		C55CBE0D1DE3F3F80000B1F6 /* DeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceHelper.m; sourceTree = "<group>"; };
-		C55CBE0F1DE3F6230000B1F6 /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
-		C55CBE101DE3F6230000B1F6 /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
-		C55CBE121DE3FBFF0000B1F6 /* AKRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestManager.h; sourceTree = "<group>"; };
-		C55CBE131DE3FBFF0000B1F6 /* AKRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestManager.m; sourceTree = "<group>"; };
-		C55CBE191DE40D560000B1F6 /* AKBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseRequest.h; sourceTree = "<group>"; };
-		C55CBE1A1DE40D560000B1F6 /* AKBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseRequest.m; sourceTree = "<group>"; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
 		C55CBE231DE4405E0000B1F6 /* ThirdLoginAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdLoginAPI.h; sourceTree = "<group>"; };
@@ -106,15 +99,45 @@
 		C55CBE381DE442AF0000B1F6 /* UserModuleDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserModuleDefine.h; sourceTree = "<group>"; };
 		C55CBE391DE442FF0000B1F6 /* ServiceUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceUser.h; sourceTree = "<group>"; };
 		C55CBE3A1DE442FF0000B1F6 /* ServiceUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceUser.m; sourceTree = "<group>"; };
-		C55CBE3D1DE443DD0000B1F6 /* AKDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataCenter.h; sourceTree = "<group>"; };
-		C55CBE3E1DE443DD0000B1F6 /* AKDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDataCenter.m; sourceTree = "<group>"; };
 		C55CBE411DE445220000B1F6 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		C55CBE421DE445220000B1F6 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		C55CBE441DE445B60000B1F6 /* AKBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseModel.h; sourceTree = "<group>"; };
-		C55CBE451DE445B60000B1F6 /* AKBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseModel.m; sourceTree = "<group>"; };
 		C55CBE471DE447430000B1F6 /* AKDataCenter+UserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDataCenter+UserModule.h"; sourceTree = "<group>"; };
 		C55CBE481DE447430000B1F6 /* AKDataCenter+UserModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDataCenter+UserModule.m"; sourceTree = "<group>"; };
-		C55CBE4A1DE4708C0000B1F6 /* AKDataCenterObjectProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AKDataCenterObjectProtocol.h; sourceTree = "<group>"; };
+		C55CBE4B1DE52D1F0000B1F6 /* AKUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserManager.h; sourceTree = "<group>"; };
+		C55CBE4C1DE52D1F0000B1F6 /* AKUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserManager.m; sourceTree = "<group>"; };
+		C55CBE501DE54AC90000B1F6 /* AKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAppDelegate.h; sourceTree = "<group>"; };
+		C55CBE511DE54AC90000B1F6 /* AKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAppDelegate.m; sourceTree = "<group>"; };
+		C55CBE521DE54AC90000B1F6 /* BaseModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModule.h; sourceTree = "<group>"; };
+		C55CBE531DE54AC90000B1F6 /* BaseModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BaseModule.xcassets; sourceTree = "<group>"; };
+		C55CBE541DE54AC90000B1F6 /* BaseModuleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModuleDefine.h; sourceTree = "<group>"; };
+		C55CBE571DE54AC90000B1F6 /* AKDataCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataCenter.h; sourceTree = "<group>"; };
+		C55CBE581DE54AC90000B1F6 /* AKDataCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDataCenter.m; sourceTree = "<group>"; };
+		C55CBE591DE54AC90000B1F6 /* AKDataCenterObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataCenterObjectProtocol.h; sourceTree = "<group>"; };
+		C55CBE5B1DE54AC90000B1F6 /* AKMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMediator.h; sourceTree = "<group>"; };
+		C55CBE5C1DE54AC90000B1F6 /* AKMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMediator.m; sourceTree = "<group>"; };
+		C55CBE5E1DE54AC90000B1F6 /* AKRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestManager.h; sourceTree = "<group>"; };
+		C55CBE5F1DE54AC90000B1F6 /* AKRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestManager.m; sourceTree = "<group>"; };
+		C55CBE611DE54AC90000B1F6 /* AKBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseRequest.h; sourceTree = "<group>"; };
+		C55CBE621DE54AC90000B1F6 /* AKBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseRequest.m; sourceTree = "<group>"; };
+		C55CBE641DE54AC90000B1F6 /* AKPopupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupManager.h; sourceTree = "<group>"; };
+		C55CBE651DE54AC90000B1F6 /* AKPopupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupManager.m; sourceTree = "<group>"; };
+		C55CBE661DE54AC90000B1F6 /* AKPopupViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupViewProtocol.h; sourceTree = "<group>"; };
+		C55CBE681DE54AC90000B1F6 /* AKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseViewController.h; sourceTree = "<group>"; };
+		C55CBE691DE54AC90000B1F6 /* AKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseViewController.m; sourceTree = "<group>"; };
+		C55CBE6B1DE54AC90000B1F6 /* AKPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupViewController.h; sourceTree = "<group>"; };
+		C55CBE6C1DE54AC90000B1F6 /* AKPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupViewController.m; sourceTree = "<group>"; };
+		C55CBE6E1DE54AC90000B1F6 /* AKTabbarControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTabbarControllerFactory.h; sourceTree = "<group>"; };
+		C55CBE6F1DE54AC90000B1F6 /* AKTabbarControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTabbarControllerFactory.m; sourceTree = "<group>"; };
+		C55CBE711DE54AC90000B1F6 /* AppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelper.h; sourceTree = "<group>"; };
+		C55CBE721DE54AC90000B1F6 /* AppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelper.m; sourceTree = "<group>"; };
+		C55CBE731DE54AC90000B1F6 /* DeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceHelper.h; sourceTree = "<group>"; };
+		C55CBE741DE54AC90000B1F6 /* DeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceHelper.m; sourceTree = "<group>"; };
+		C55CBE751DE54AC90000B1F6 /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
+		C55CBE761DE54AC90000B1F6 /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
+		C55CBE7A1DE54AC90000B1F6 /* AKBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseModel.h; sourceTree = "<group>"; };
+		C55CBE7B1DE54AC90000B1F6 /* AKBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseModel.m; sourceTree = "<group>"; };
+		C55CBE7D1DE54AC90000B1F6 /* AKCYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCYLPlusButton.h; sourceTree = "<group>"; };
+		C55CBE7E1DE54AC90000B1F6 /* AKCYLPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCYLPlusButton.m; sourceTree = "<group>"; };
 		C5A730121DE2BB3400DB2788 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A730161DE2BB3400DB2788 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5A730181DE2BB3400DB2788 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -131,20 +154,6 @@
 		C5A730361DE2BB3500DB2788 /* ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A7303A1DE2BB3500DB2788 /* ProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectUITests.m; sourceTree = "<group>"; };
 		C5A7303C1DE2BB3500DB2788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C5A730AF1DE2CD2F00DB2788 /* BaseModuleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModuleDefine.h; sourceTree = "<group>"; };
-		C5A730B21DE2CD2F00DB2788 /* AKPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupViewController.h; sourceTree = "<group>"; };
-		C5A730B31DE2CD2F00DB2788 /* AKPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupViewController.m; sourceTree = "<group>"; };
-		C5A730B51DE2CD2F00DB2788 /* AKTabbarControllerFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTabbarControllerFactory.h; sourceTree = "<group>"; };
-		C5A730B61DE2CD2F00DB2788 /* AKTabbarControllerFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTabbarControllerFactory.m; sourceTree = "<group>"; };
-		C5A730B81DE2CD2F00DB2788 /* AppHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppHelper.h; sourceTree = "<group>"; };
-		C5A730B91DE2CD2F00DB2788 /* AppHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppHelper.m; sourceTree = "<group>"; };
-		C5A730BB1DE2CD2F00DB2788 /* AKMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMediator.h; sourceTree = "<group>"; };
-		C5A730BC1DE2CD2F00DB2788 /* AKMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMediator.m; sourceTree = "<group>"; };
-		C5A730C01DE2CD2F00DB2788 /* AKPopupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupManager.h; sourceTree = "<group>"; };
-		C5A730C11DE2CD2F00DB2788 /* AKPopupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupManager.m; sourceTree = "<group>"; };
-		C5A730C21DE2CD2F00DB2788 /* AKPopupViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupViewProtocol.h; sourceTree = "<group>"; };
-		C5A730C51DE2CD2F00DB2788 /* AKCYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCYLPlusButton.h; sourceTree = "<group>"; };
-		C5A730C61DE2CD2F00DB2788 /* AKCYLPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCYLPlusButton.m; sourceTree = "<group>"; };
 		C5A730E41DE2CF7000DB2788 /* AKLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKLoginViewController.h; sourceTree = "<group>"; };
 		C5A730E51DE2CF7000DB2788 /* AKLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKLoginViewController.m; sourceTree = "<group>"; };
 		C5A730E91DE2D2A600DB2788 /* AKLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKLoginButton.h; sourceTree = "<group>"; };
@@ -153,7 +162,6 @@
 		C5A730ED1DE2D32400DB2788 /* AKLoginButtonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKLoginButtonGroup.m; sourceTree = "<group>"; };
 		C5A730EF1DE2D3B700DB2788 /* AKMediator+LoginModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKMediator+LoginModule.h"; sourceTree = "<group>"; };
 		C5A730F01DE2D3B700DB2788 /* AKMediator+LoginModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKMediator+LoginModule.m"; sourceTree = "<group>"; };
-		C5A730F21DE2D3E800DB2788 /* BaseModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseModule.h; sourceTree = "<group>"; };
 		C5A730F31DE2D40900DB2788 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		C5A730F41DE2D70700DB2788 /* ServiceLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceLogin.h; sourceTree = "<group>"; };
 		C5A730F51DE2D70700DB2788 /* ServiceLogin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceLogin.m; sourceTree = "<group>"; };
@@ -166,12 +174,7 @@
 		C5A731061DE2D82800DB2788 /* AKMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMapViewController.m; sourceTree = "<group>"; };
 		C5A731081DE2D92D00DB2788 /* LoginModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginModule.h; sourceTree = "<group>"; };
 		C5A731091DE2D93B00DB2788 /* MapModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapModule.h; sourceTree = "<group>"; };
-		C5A7310B1DE2D9A400DB2788 /* AKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAppDelegate.h; sourceTree = "<group>"; };
-		C5A7310C1DE2D9A400DB2788 /* AKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAppDelegate.m; sourceTree = "<group>"; };
 		C5A7310E1DE2DCED00DB2788 /* LoginModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LoginModule.xcassets; sourceTree = "<group>"; };
-		C5A731101DE2E84600DB2788 /* BaseModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = BaseModule.xcassets; sourceTree = "<group>"; };
-		C5A731121DE2E8A800DB2788 /* AKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseViewController.h; sourceTree = "<group>"; };
-		C5A731131DE2E8A800DB2788 /* AKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseViewController.m; sourceTree = "<group>"; };
 		C5A731151DE2E8F000DB2788 /* MapModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MapModule.xcassets; sourceTree = "<group>"; };
 		C5A731181DE2EB3500DB2788 /* HBBicycleAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBicycleAnnotationView.h; sourceTree = "<group>"; };
 		C5A731191DE2EB3500DB2788 /* HBBicycleAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBicycleAnnotationView.m; sourceTree = "<group>"; };
@@ -255,22 +258,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		C55CBDFC1DE3F0CB0000B1F6 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
-		C55CBE181DE40D3C0000B1F6 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				C55CBE191DE40D560000B1F6 /* AKBaseRequest.h */,
-				C55CBE1A1DE40D560000B1F6 /* AKBaseRequest.m */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
 		C55CBE1E1DE436350000B1F6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +303,8 @@
 		C55CBE291DE4428E0000B1F6 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C55CBE4B1DE52D1F0000B1F6 /* AKUserManager.h */,
+				C55CBE4C1DE52D1F0000B1F6 /* AKUserManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -361,16 +350,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		C55CBE3C1DE443B70000B1F6 /* DataCenter */ = {
-			isa = PBXGroup;
-			children = (
-				C55CBE3D1DE443DD0000B1F6 /* AKDataCenter.h */,
-				C55CBE3E1DE443DD0000B1F6 /* AKDataCenter.m */,
-				C55CBE4A1DE4708C0000B1F6 /* AKDataCenterObjectProtocol.h */,
-			);
-			path = DataCenter;
-			sourceTree = "<group>";
-		};
 		C55CBE401DE445180000B1F6 /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -378,6 +357,182 @@
 				C55CBE481DE447430000B1F6 /* AKDataCenter+UserModule.m */,
 			);
 			path = DataCenter;
+			sourceTree = "<group>";
+		};
+		C55CBE4E1DE54AC90000B1F6 /* BaseModule */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE4F1DE54AC90000B1F6 /* App */,
+				C55CBE521DE54AC90000B1F6 /* BaseModule.h */,
+				C55CBE531DE54AC90000B1F6 /* BaseModule.xcassets */,
+				C55CBE541DE54AC90000B1F6 /* BaseModuleDefine.h */,
+				C55CBE551DE54AC90000B1F6 /* Component */,
+				C55CBE671DE54AC90000B1F6 /* Controller */,
+				C55CBE6D1DE54AC90000B1F6 /* Factory */,
+				C55CBE701DE54AC90000B1F6 /* Helper */,
+				C55CBE771DE54AC90000B1F6 /* Libs */,
+				C55CBE791DE54AC90000B1F6 /* Model */,
+				C55CBE7C1DE54AC90000B1F6 /* Tabbar */,
+				C55CBE7F1DE54AC90000B1F6 /* Theme */,
+				C55CBE801DE54AC90000B1F6 /* View */,
+			);
+			path = BaseModule;
+			sourceTree = "<group>";
+		};
+		C55CBE4F1DE54AC90000B1F6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE501DE54AC90000B1F6 /* AKAppDelegate.h */,
+				C55CBE511DE54AC90000B1F6 /* AKAppDelegate.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		C55CBE551DE54AC90000B1F6 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE561DE54AC90000B1F6 /* DataCenter */,
+				C55CBE5A1DE54AC90000B1F6 /* Mediator */,
+				C55CBE5D1DE54AC90000B1F6 /* Network */,
+				C55CBE631DE54AC90000B1F6 /* Popup */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		C55CBE561DE54AC90000B1F6 /* DataCenter */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE571DE54AC90000B1F6 /* AKDataCenter.h */,
+				C55CBE581DE54AC90000B1F6 /* AKDataCenter.m */,
+				C55CBE591DE54AC90000B1F6 /* AKDataCenterObjectProtocol.h */,
+			);
+			path = DataCenter;
+			sourceTree = "<group>";
+		};
+		C55CBE5A1DE54AC90000B1F6 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE5B1DE54AC90000B1F6 /* AKMediator.h */,
+				C55CBE5C1DE54AC90000B1F6 /* AKMediator.m */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
+		C55CBE5D1DE54AC90000B1F6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE5E1DE54AC90000B1F6 /* AKRequestManager.h */,
+				C55CBE5F1DE54AC90000B1F6 /* AKRequestManager.m */,
+				C55CBE601DE54AC90000B1F6 /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C55CBE601DE54AC90000B1F6 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE611DE54AC90000B1F6 /* AKBaseRequest.h */,
+				C55CBE621DE54AC90000B1F6 /* AKBaseRequest.m */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		C55CBE631DE54AC90000B1F6 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE641DE54AC90000B1F6 /* AKPopupManager.h */,
+				C55CBE651DE54AC90000B1F6 /* AKPopupManager.m */,
+				C55CBE661DE54AC90000B1F6 /* AKPopupViewProtocol.h */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		C55CBE671DE54AC90000B1F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE681DE54AC90000B1F6 /* AKBaseViewController.h */,
+				C55CBE691DE54AC90000B1F6 /* AKBaseViewController.m */,
+				C55CBE6A1DE54AC90000B1F6 /* Popup */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C55CBE6A1DE54AC90000B1F6 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE6B1DE54AC90000B1F6 /* AKPopupViewController.h */,
+				C55CBE6C1DE54AC90000B1F6 /* AKPopupViewController.m */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		C55CBE6D1DE54AC90000B1F6 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE6E1DE54AC90000B1F6 /* AKTabbarControllerFactory.h */,
+				C55CBE6F1DE54AC90000B1F6 /* AKTabbarControllerFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		C55CBE701DE54AC90000B1F6 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE711DE54AC90000B1F6 /* AppHelper.h */,
+				C55CBE721DE54AC90000B1F6 /* AppHelper.m */,
+				C55CBE731DE54AC90000B1F6 /* DeviceHelper.h */,
+				C55CBE741DE54AC90000B1F6 /* DeviceHelper.m */,
+				C55CBE751DE54AC90000B1F6 /* FileHelper.h */,
+				C55CBE761DE54AC90000B1F6 /* FileHelper.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C55CBE771DE54AC90000B1F6 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE781DE54AC90000B1F6 /* DeviceInfo */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		C55CBE781DE54AC90000B1F6 /* DeviceInfo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeviceInfo;
+			sourceTree = "<group>";
+		};
+		C55CBE791DE54AC90000B1F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE7A1DE54AC90000B1F6 /* AKBaseModel.h */,
+				C55CBE7B1DE54AC90000B1F6 /* AKBaseModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C55CBE7C1DE54AC90000B1F6 /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				C55CBE7D1DE54AC90000B1F6 /* AKCYLPlusButton.h */,
+				C55CBE7E1DE54AC90000B1F6 /* AKCYLPlusButton.m */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		C55CBE7F1DE54AC90000B1F6 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		C55CBE801DE54AC90000B1F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C5A730091DE2BB3400DB2788 = {
@@ -450,7 +605,7 @@
 		C5A730481DE2BD4200DB2788 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				C5A730AE1DE2CD2F00DB2788 /* BaseModule */,
+				C55CBE4E1DE54AC90000B1F6 /* BaseModule */,
 				C55CBE261DE4428E0000B1F6 /* UserModule */,
 				C5A731441DE323D400DB2788 /* ShareModule */,
 				C5A7304A1DE2BD4200DB2788 /* LoginModule */,
@@ -490,139 +645,6 @@
 				C5A731001DE2D79000DB2788 /* View */,
 			);
 			path = MapModule;
-			sourceTree = "<group>";
-		};
-		C5A730AE1DE2CD2F00DB2788 /* BaseModule */ = {
-			isa = PBXGroup;
-			children = (
-				C5A730F21DE2D3E800DB2788 /* BaseModule.h */,
-				C5A730AF1DE2CD2F00DB2788 /* BaseModuleDefine.h */,
-				C5A731101DE2E84600DB2788 /* BaseModule.xcassets */,
-				C55CBE3C1DE443B70000B1F6 /* DataCenter */,
-				C5A7310A1DE2D9A400DB2788 /* App */,
-				C55CBDFC1DE3F0CB0000B1F6 /* Libs */,
-				C5A730B01DE2CD2F00DB2788 /* Controller */,
-				C5A730B41DE2CD2F00DB2788 /* Factory */,
-				C5A730B71DE2CD2F00DB2788 /* Helper */,
-				C5A730BA1DE2CD2F00DB2788 /* Mediator */,
-				C5A730BD1DE2CD2F00DB2788 /* Model */,
-				C5A730BE1DE2CD2F00DB2788 /* Network */,
-				C5A730BF1DE2CD2F00DB2788 /* Popup */,
-				C5A730C31DE2CD2F00DB2788 /* Service */,
-				C5A730C41DE2CD2F00DB2788 /* Tabbar */,
-				C5A730C71DE2CD2F00DB2788 /* Theme */,
-				C5A730C81DE2CD2F00DB2788 /* View */,
-			);
-			path = BaseModule;
-			sourceTree = "<group>";
-		};
-		C5A730B01DE2CD2F00DB2788 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				C5A731121DE2E8A800DB2788 /* AKBaseViewController.h */,
-				C5A731131DE2E8A800DB2788 /* AKBaseViewController.m */,
-				C5A730B11DE2CD2F00DB2788 /* Popup */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		C5A730B11DE2CD2F00DB2788 /* Popup */ = {
-			isa = PBXGroup;
-			children = (
-				C5A730B21DE2CD2F00DB2788 /* AKPopupViewController.h */,
-				C5A730B31DE2CD2F00DB2788 /* AKPopupViewController.m */,
-			);
-			path = Popup;
-			sourceTree = "<group>";
-		};
-		C5A730B41DE2CD2F00DB2788 /* Factory */ = {
-			isa = PBXGroup;
-			children = (
-				C5A730B51DE2CD2F00DB2788 /* AKTabbarControllerFactory.h */,
-				C5A730B61DE2CD2F00DB2788 /* AKTabbarControllerFactory.m */,
-			);
-			path = Factory;
-			sourceTree = "<group>";
-		};
-		C5A730B71DE2CD2F00DB2788 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				C5A730B81DE2CD2F00DB2788 /* AppHelper.h */,
-				C5A730B91DE2CD2F00DB2788 /* AppHelper.m */,
-				C55CBE0C1DE3F3F80000B1F6 /* DeviceHelper.h */,
-				C55CBE0D1DE3F3F80000B1F6 /* DeviceHelper.m */,
-				C55CBE0F1DE3F6230000B1F6 /* FileHelper.h */,
-				C55CBE101DE3F6230000B1F6 /* FileHelper.m */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		C5A730BA1DE2CD2F00DB2788 /* Mediator */ = {
-			isa = PBXGroup;
-			children = (
-				C5A730BB1DE2CD2F00DB2788 /* AKMediator.h */,
-				C5A730BC1DE2CD2F00DB2788 /* AKMediator.m */,
-			);
-			path = Mediator;
-			sourceTree = "<group>";
-		};
-		C5A730BD1DE2CD2F00DB2788 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C55CBE441DE445B60000B1F6 /* AKBaseModel.h */,
-				C55CBE451DE445B60000B1F6 /* AKBaseModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C5A730BE1DE2CD2F00DB2788 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				C55CBE181DE40D3C0000B1F6 /* Request */,
-				C55CBE121DE3FBFF0000B1F6 /* AKRequestManager.h */,
-				C55CBE131DE3FBFF0000B1F6 /* AKRequestManager.m */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		C5A730BF1DE2CD2F00DB2788 /* Popup */ = {
-			isa = PBXGroup;
-			children = (
-				C5A730C01DE2CD2F00DB2788 /* AKPopupManager.h */,
-				C5A730C11DE2CD2F00DB2788 /* AKPopupManager.m */,
-				C5A730C21DE2CD2F00DB2788 /* AKPopupViewProtocol.h */,
-			);
-			path = Popup;
-			sourceTree = "<group>";
-		};
-		C5A730C31DE2CD2F00DB2788 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		C5A730C41DE2CD2F00DB2788 /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				C5A730C51DE2CD2F00DB2788 /* AKCYLPlusButton.h */,
-				C5A730C61DE2CD2F00DB2788 /* AKCYLPlusButton.m */,
-			);
-			path = Tabbar;
-			sourceTree = "<group>";
-		};
-		C5A730C71DE2CD2F00DB2788 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Theme;
-			sourceTree = "<group>";
-		};
-		C5A730C81DE2CD2F00DB2788 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C5A730CF1DE2CF4000DB2788 /* Controller */ = {
@@ -742,15 +764,6 @@
 				C5A731241DE2EB3500DB2788 /* HBSearchBar.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C5A7310A1DE2D9A400DB2788 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				C5A7310B1DE2D9A400DB2788 /* AKAppDelegate.h */,
-				C5A7310C1DE2D9A400DB2788 /* AKAppDelegate.m */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		C5A731171DE2EB3500DB2788 /* Annotation */ = {
@@ -943,9 +956,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55CBE821DE54AC90000B1F6 /* BaseModule.xcassets in Resources */,
 				C5A730251DE2BB3400DB2788 /* LaunchScreen.storyboard in Resources */,
 				C5A730221DE2BB3400DB2788 /* Assets.xcassets in Resources */,
-				C5A731111DE2E84600DB2788 /* BaseModule.xcassets in Resources */,
 				C5A730201DE2BB3400DB2788 /* Main.storyboard in Resources */,
 				C5A731161DE2E8F000DB2788 /* MapModule.xcassets in Resources */,
 				C5A7310F1DE2DCED00DB2788 /* LoginModule.xcassets in Resources */,
@@ -1021,55 +1034,56 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55CBE881DE54AC90000B1F6 /* AKBaseViewController.m in Sources */,
+				C55CBE891DE54AC90000B1F6 /* AKPopupViewController.m in Sources */,
 				C55CBE491DE447430000B1F6 /* AKDataCenter+UserModule.m in Sources */,
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
-				C5A731141DE2E8A800DB2788 /* AKBaseViewController.m in Sources */,
 				C5A731281DE2EB3500DB2788 /* HBLocationButton.m in Sources */,
-				C5A730CC1DE2CD2F00DB2788 /* AKMediator.m in Sources */,
+				C55CBE4D1DE52D1F0000B1F6 /* AKUserManager.m in Sources */,
 				C55CBE431DE445220000B1F6 /* UserModel.m in Sources */,
-				C5A7310D1DE2D9A400DB2788 /* AKAppDelegate.m in Sources */,
-				C55CBE461DE445B60000B1F6 /* AKBaseModel.m in Sources */,
+				C55CBE851DE54AC90000B1F6 /* AKRequestManager.m in Sources */,
 				C5A731261DE2EB3500DB2788 /* HBBicyclePointAnnotation.m in Sources */,
+				C55CBE831DE54AC90000B1F6 /* AKDataCenter.m in Sources */,
 				C5A731381DE2EB4600DB2788 /* HBBicycleResultModel.m in Sources */,
 				C5A731271DE2EB3500DB2788 /* HBBaseRoundButton.m in Sources */,
 				C5A731671DE3281800DB2788 /* Aspect-MapModule.m in Sources */,
 				C5A730E61DE2CF7000DB2788 /* AKLoginViewController.m in Sources */,
-				C55CBE111DE3F6230000B1F6 /* FileHelper.m in Sources */,
-				C5A730CB1DE2CD2F00DB2788 /* AppHelper.m in Sources */,
-				C5A730CE1DE2CD2F00DB2788 /* AKCYLPlusButton.m in Sources */,
+				C55CBE871DE54AC90000B1F6 /* AKPopupManager.m in Sources */,
 				C5A730F11DE2D3B700DB2788 /* AKMediator+LoginModule.m in Sources */,
+				C55CBE8A1DE54AC90000B1F6 /* AKTabbarControllerFactory.m in Sources */,
 				C5A731431DE2F09E00DB2788 /* HBUserDefultsManager.m in Sources */,
 				C5A731701DE32C0E00DB2788 /* ServiceShare.m in Sources */,
 				C5A731421DE2F09E00DB2788 /* HBMapManager.m in Sources */,
 				C5A731041DE2D7CF00DB2788 /* ServiceMap.m in Sources */,
+				C55CBE861DE54AC90000B1F6 /* AKBaseRequest.m in Sources */,
 				C5A731371DE2EB4600DB2788 /* HBBicycleBaseModel.m in Sources */,
+				C55CBE8D1DE54AC90000B1F6 /* FileHelper.m in Sources */,
 				C5A731291DE2EB3500DB2788 /* HBBicyclePopView.m in Sources */,
 				C5A731361DE2EB4600DB2788 /* HBBaseDataModel.m in Sources */,
-				C55CBE141DE3FBFF0000B1F6 /* AKRequestManager.m in Sources */,
 				C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */,
+				C55CBE8C1DE54AC90000B1F6 /* DeviceHelper.m in Sources */,
 				C5A731751DE3D7B100DB2788 /* AKRequestManager+LoginModule.m in Sources */,
+				C55CBE811DE54AC90000B1F6 /* AKAppDelegate.m in Sources */,
 				C5A731071DE2D82800DB2788 /* AKMapViewController.m in Sources */,
-				C5A730CA1DE2CD2F00DB2788 /* AKTabbarControllerFactory.m in Sources */,
 				C55CBE3B1DE442FF0000B1F6 /* ServiceUser.m in Sources */,
+				C55CBE8F1DE54AC90000B1F6 /* AKCYLPlusButton.m in Sources */,
 				C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */,
-				C55CBE3F1DE443DD0000B1F6 /* AKDataCenter.m in Sources */,
 				C5A730F61DE2D70700DB2788 /* ServiceLogin.m in Sources */,
-				C55CBE1B1DE40D560000B1F6 /* AKBaseRequest.m in Sources */,
 				C5A731011DE2D79000DB2788 /* AKMediator+MapModule.m in Sources */,
 				C5A7315D1DE3260600DB2788 /* Aspect-ShareModule.m in Sources */,
-				C5A730C91DE2CD2F00DB2788 /* AKPopupViewController.m in Sources */,
 				C5A730EB1DE2D2A600DB2788 /* AKLoginButton.m in Sources */,
 				C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */,
 				C5A730EE1DE2D32400DB2788 /* AKLoginButtonGroup.m in Sources */,
 				C55CBE351DE4428E0000B1F6 /* AKMediator+UserModule.m in Sources */,
 				C5A731391DE2EB4600DB2788 /* HBBicycleStationModel.m in Sources */,
-				C5A730CD1DE2CD2F00DB2788 /* AKPopupManager.m in Sources */,
 				C5A730171DE2BB3400DB2788 /* main.m in Sources */,
 				C5A7312A1DE2EB3500DB2788 /* HBSearchBar.m in Sources */,
 				C5A731251DE2EB3500DB2788 /* HBBicycleAnnotationView.m in Sources */,
 				C55CBE251DE4405E0000B1F6 /* ThirdLoginAPI.m in Sources */,
+				C55CBE8B1DE54AC90000B1F6 /* AppHelper.m in Sources */,
+				C55CBE8E1DE54AC90000B1F6 /* AKBaseModel.m in Sources */,
 				C5A7312D1DE2EB3D00DB2788 /* HBRequestManager.m in Sources */,
-				C55CBE0E1DE3F3F80000B1F6 /* DeviceHelper.m in Sources */,
+				C55CBE841DE54AC90000B1F6 /* AKMediator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

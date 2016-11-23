@@ -51,6 +51,7 @@
     }
     return root;
 }
+
 + (UINavigationController*)getNaviController {
     UIViewController* root = [AppHelper getRootController];
     if ([root isKindOfClass:[UITabBarController class]]) {

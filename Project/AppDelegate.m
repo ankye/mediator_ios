@@ -19,11 +19,16 @@
         
         [[AKMediator sharedInstance] updateAppScheme:@"banliapp"];
     
-        UIViewController *controller = [[AKMediator sharedInstance] login_viewControllerForLogin];
+        UIViewController *controller = [[AKMediator sharedInstance] map_viewController];
         
         self.window.rootViewController = controller;
         [self.window makeKeyWindow];
         [self.window makeKeyAndVisible];
+        
+        if(![[AKMediator sharedInstance] user_isUserLogin]){
+            UIViewController* loginController = [[AKMediator sharedInstance] login_viewControllerForLogin];
+            [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
+        }
     }
     
     return YES;

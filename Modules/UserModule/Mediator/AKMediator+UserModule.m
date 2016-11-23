@@ -10,17 +10,21 @@
 
 NSString * const kAKMUserModuleService = @"User";
 NSString * const kAKMUserLoginSuccess = @"loginSuccess";
-
+NSString * const kAKMUserIsLogin = @"isUserLogin";
 
 @implementation AKMediator (UserModule)
 
--(BOOL)user_loginSuccess:(NSDictionary*)response
+-(BOOL)user_loginSuccess:(NSDictionary*)userinfo
 {
-   NSNumber* result = [self performService:kAKMUserModuleService action:kAKMUserLoginSuccess params:response shouldCacheService:NO];
-    if(result != 0){
-        return NO;
-    }
-    return YES;
+   NSNumber* result = [self performService:kAKMUserModuleService action:kAKMUserLoginSuccess params:userinfo shouldCacheService:NO];
+    return [result boolValue];
 }
+
+-(BOOL)user_isUserLogin
+{
+    NSNumber* result = [self performService:kAKMUserModuleService action:kAKMUserIsLogin params:nil shouldCacheService:NO];
+    return [result boolValue];
+}
+
 
 @end

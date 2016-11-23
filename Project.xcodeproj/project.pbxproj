@@ -30,6 +30,7 @@
 		C55CBE8D1DE54AC90000B1F6 /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE761DE54AC90000B1F6 /* FileHelper.m */; };
 		C55CBE8E1DE54AC90000B1F6 /* AKBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE7B1DE54AC90000B1F6 /* AKBaseModel.m */; };
 		C55CBE8F1DE54AC90000B1F6 /* AKCYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE7E1DE54AC90000B1F6 /* AKCYLPlusButton.m */; };
+		C55CBF521DE5614E0000B1F6 /* AKTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBF511DE5614E0000B1F6 /* AKTimerManager.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
 		C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730191DE2BB3400DB2788 /* AppDelegate.m */; };
 		C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7301C1DE2BB3400DB2788 /* ViewController.m */; };
@@ -89,6 +90,7 @@
 		3EF56A8A82919CDF6E89C8BF /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		A30DD066B519865DD11DD4A9 /* libPods-Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69DE62C8EB3C23ADC38EDB6 /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
+		C538064E1DE5724400A2322D /* AKTimerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTimerProtocol.h; sourceTree = "<group>"; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
 		C55CBE231DE4405E0000B1F6 /* ThirdLoginAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdLoginAPI.h; sourceTree = "<group>"; };
@@ -138,6 +140,8 @@
 		C55CBE7B1DE54AC90000B1F6 /* AKBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseModel.m; sourceTree = "<group>"; };
 		C55CBE7D1DE54AC90000B1F6 /* AKCYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCYLPlusButton.h; sourceTree = "<group>"; };
 		C55CBE7E1DE54AC90000B1F6 /* AKCYLPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCYLPlusButton.m; sourceTree = "<group>"; };
+		C55CBF501DE5614E0000B1F6 /* AKTimerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTimerManager.h; sourceTree = "<group>"; };
+		C55CBF511DE5614E0000B1F6 /* AKTimerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTimerManager.m; sourceTree = "<group>"; };
 		C5A730121DE2BB3400DB2788 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A730161DE2BB3400DB2788 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5A730181DE2BB3400DB2788 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -362,11 +366,11 @@
 		C55CBE4E1DE54AC90000B1F6 /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
-				C55CBE4F1DE54AC90000B1F6 /* App */,
 				C55CBE521DE54AC90000B1F6 /* BaseModule.h */,
-				C55CBE531DE54AC90000B1F6 /* BaseModule.xcassets */,
 				C55CBE541DE54AC90000B1F6 /* BaseModuleDefine.h */,
 				C55CBE551DE54AC90000B1F6 /* Component */,
+				C55CBE531DE54AC90000B1F6 /* BaseModule.xcassets */,
+				C55CBE4F1DE54AC90000B1F6 /* App */,
 				C55CBE671DE54AC90000B1F6 /* Controller */,
 				C55CBE6D1DE54AC90000B1F6 /* Factory */,
 				C55CBE701DE54AC90000B1F6 /* Helper */,
@@ -391,6 +395,7 @@
 		C55CBE551DE54AC90000B1F6 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				C55CBF4F1DE5613E0000B1F6 /* Timer */,
 				C55CBE561DE54AC90000B1F6 /* DataCenter */,
 				C55CBE5A1DE54AC90000B1F6 /* Mediator */,
 				C55CBE5D1DE54AC90000B1F6 /* Network */,
@@ -540,6 +545,16 @@
 			children = (
 			);
 			path = IMModule;
+			sourceTree = "<group>";
+		};
+		C55CBF4F1DE5613E0000B1F6 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				C538064E1DE5724400A2322D /* AKTimerProtocol.h */,
+				C55CBF501DE5614E0000B1F6 /* AKTimerManager.h */,
+				C55CBF511DE5614E0000B1F6 /* AKTimerManager.m */,
+			);
+			path = Timer;
 			sourceTree = "<group>";
 		};
 		C5A730091DE2BB3400DB2788 = {
@@ -1086,6 +1101,7 @@
 				C5A731391DE2EB4600DB2788 /* HBBicycleStationModel.m in Sources */,
 				C5A730171DE2BB3400DB2788 /* main.m in Sources */,
 				C5A7312A1DE2EB3500DB2788 /* HBSearchBar.m in Sources */,
+				C55CBF521DE5614E0000B1F6 /* AKTimerManager.m in Sources */,
 				C5A731251DE2EB3500DB2788 /* HBBicycleAnnotationView.m in Sources */,
 				C55CBE251DE4405E0000B1F6 /* ThirdLoginAPI.m in Sources */,
 				C55CBE8B1DE54AC90000B1F6 /* AppHelper.m in Sources */,

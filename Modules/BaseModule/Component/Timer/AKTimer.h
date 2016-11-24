@@ -1,5 +1,5 @@
 //
-//  AKTimerProtocol.h
+//  AKTimer.h
 //  Project
 //
 //  Created by ankye on 2016/11/23.
@@ -7,18 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AKTimerProtocol.h"
 
-
-@protocol AKTimerProtocol;
-
-//定时器fire事件回调，传入定时器
-typedef void(^timerFireAction)(id<AKTimerProtocol> timer);
-#define KAK_TIMER_MAIN_GROUP @"mainGroup"
-
-/**
- 定时器协议，通过AKTimerManager管理的定时器类都要遵循此协议
- */
-@protocol AKTimerProtocol <NSObject>
+@interface AKTimer : NSObject<AKTimerProtocol>
 
 @property (nonatomic,copy)   NSString*          group;        //定时器组
 @property (nonatomic,assign) NSInteger          interval;       //定时器时间间隔
@@ -34,5 +25,3 @@ typedef void(^timerFireAction)(id<AKTimerProtocol> timer);
 
 
 @end
-
-

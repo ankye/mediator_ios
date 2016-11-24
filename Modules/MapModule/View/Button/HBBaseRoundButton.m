@@ -54,10 +54,10 @@ CGFloat const kHBRoundButtonContentInsets = 10.f;
 - (void)setupSubViews {
     self.iconView = [[UIImageView alloc] initWithImage:self.iconImage];
     [self addSubview:self.iconView];
-    WEAKSELF;
+    
     [self.iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(weakSelf).with.offset(kHBRoundButtonContentInsets);
-        make.right.bottom.equalTo(weakSelf).with.offset(-kHBRoundButtonContentInsets);
+        make.left.top.equalTo(self).with.offset(kHBRoundButtonContentInsets);
+        make.right.bottom.equalTo(self).with.offset(-kHBRoundButtonContentInsets);
     }];
 }
 

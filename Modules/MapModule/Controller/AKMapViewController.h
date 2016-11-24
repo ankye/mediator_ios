@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MapModuleDefine.h"
 
-#import "HBSearchBar.h"
 
 @interface AKMapViewController : AKBaseViewController
-/**
- 搜索栏
- */
-@property (nonatomic, strong) HBSearchBar *searchBar;
+
+
+@property (nonatomic, strong) MAMapView *mapView;
+
+@property (nonatomic, strong) AMapLocationManager *locationManager;
 
 @end

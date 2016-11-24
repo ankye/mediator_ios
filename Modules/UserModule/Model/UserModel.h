@@ -80,4 +80,8 @@
 
 @property (strong, nonatomic)NSString * last_login_time;//最后一次登录时间 为空表示首次登录
 
+@property (nonatomic,assign) double latitude;  //纬度
+
+@property (nonatomic,assign) double longitude;  //经度
+
 @end

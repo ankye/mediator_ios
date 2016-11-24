@@ -16,22 +16,7 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 
 
-//字体
-#define HB_FONT_LIGHT_SIZE(x) [UIFont fontWithName:@"STHeitiSC-Light" size:x]
-#define HB_FONT_MEDIUM_SIZE(x) [UIFont fontWithName:@"STHeitiSC-Medium" size:x]
 
-#define WEAK_OBJ(o) autoreleasepool{} __weak typeof(o) o##Weak = o;
-
-
-#define ImageInName(name) [UIImage imageNamed:name]
-
-// block self
-#define WEAKSELF typeof(self) __weak weakSelf = self;
-#define STRONGSELF typeof(weakSelf) __strong strongSelf = weakSelf;
-
-
-
-#define kNotificationOfflineMapFinished  @"kNotificationOfflineMapFinished"
 
 
 #endif /* AKMapModuleDefine_h */

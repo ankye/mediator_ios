@@ -29,12 +29,12 @@
 }
 
 - (void)setupActivityIndicator {
-    WEAKSELF;
+
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [self addSubview:self.activityIndicator];
     [self.activityIndicator mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.equalTo(weakSelf).with.offset(kHBRoundButtonContentInsets);
-        make.right.bottom.equalTo(weakSelf).with.offset(-kHBRoundButtonContentInsets);
+        make.left.top.equalTo(self).with.offset(kHBRoundButtonContentInsets);
+        make.right.bottom.equalTo(self).with.offset(-kHBRoundButtonContentInsets);
     }];
     self.activityIndicator.hidden = YES;
 }

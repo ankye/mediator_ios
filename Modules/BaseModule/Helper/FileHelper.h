@@ -13,5 +13,6 @@
 //通过plist名称获得数组
 +(NSArray*)getArrayFromPlist:(NSString*)name;
 
++ (YYWebImageManager *)avatarImageManager;
 
 @end

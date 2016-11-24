@@ -19,9 +19,15 @@
         
         [[AKMediator sharedInstance] updateAppScheme:@"banliapp"];
     
-        UIViewController *controller = [[AKMediator sharedInstance] map_viewController];
         
-        self.window.rootViewController = controller;
+        UIViewController *controller = [[AKMediator sharedInstance] map_viewController];
+        UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+        
+    
+        
+        self.window.rootViewController = navigationController;
+        
+        
         [self.window makeKeyWindow];
         [self.window makeKeyAndVisible];
         
@@ -29,6 +35,8 @@
             UIViewController* loginController = [[AKMediator sharedInstance] login_viewControllerForLogin];
             [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
         }
+        
+       
     }
     
     return YES;

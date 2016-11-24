@@ -7,6 +7,7 @@
 //
 
 #import "AKTimerManager.h"
+#import "AKTimer.h"
 
 @interface AKTimerManager ()
 
@@ -66,6 +67,61 @@
         [_timer invalidate];
         _timer = nil;
     }
+}
+
+
+/**
+ 默认group创建定时器,延迟启动
+ 默认都可以在后台模式运行
+ 
+ @param interval 定时器时间间隔
+ @param delay 延迟启动
+ @param uniqueID 定时器唯一标识
+ @param repeatTimes 循环次数，-1表示一直执行
+ @param action 定时器fire事件
+ */
+-(void)addTimerWithInterval:(NSInteger)interval withDelay:(double)delay withUniqueID:(double)uniqueID withRepeatTimes:(NSInteger)repeatTimes withTimerFireAction:(timerFireAction)action
+{
+    [self addTimerWithGroup:KAK_TIMER_MAIN_GROUP withInterval:interval withDelay:delay withUniqueID:uniqueID withRunBackground:YES withRepeatTimes:repeatTimes withTimerFireAction:action];
+}
+
+
+/**
+ 默认group创建定时器,0延迟启动
+ 默认都可以在后台模式运行
+ @param interval 定时器时间间隔
+ @param uniqueID 定时器唯一标识
+ @param repeatTimes 循环次数，-1表示一直执行
+ @param action 定时器fire事件
+ */
+- (void) addTimerWithInterval:(NSInteger)interval withUniqueID:(double)uniqueID withRepeatTimes:(NSInteger)repeatTimes withTimerFireAction:(timerFireAction)action
+{
+    [self addTimerWithGroup:KAK_TIMER_MAIN_GROUP withInterval:interval withDelay:0 withUniqueID:uniqueID withRunBackground:YES withRepeatTimes:repeatTimes withTimerFireAction:action];
+}
+
+/**
+ 参数方式创建定时器
+ 
+ @param group 定时器组
+ @param interval 定时器时间间隔
+ @param delay 延迟启动
+ @param uniqueID 定时器唯一标识
+ @param canRunBackground 是否可以运行在后台模式
+ @param repeatTimes 循环次数，-1表示一直执行
+ @param action 定时器fire事件
+ */
+-(void)addTimerWithGroup:(NSString*)group withInterval:(NSInteger)interval withDelay:(double)delay withUniqueID:(double)uniqueID withRunBackground:(BOOL)canRunBackground withRepeatTimes:(NSInteger)repeatTimes withTimerFireAction:(timerFireAction)action
+{
+    AKTimer* timer = [[AKTimer alloc] init];
+    timer.group = group;
+    timer.interval = interval;
+    timer.delay = delay;
+    timer.uniqueID = uniqueID;
+    timer.canRunBackground = canRunBackground;
+    timer.repeatTimes = repeatTimes;
+    timer.action = action;
+    
+    [self addTimer:timer];
 }
 
 
@@ -158,8 +214,10 @@
                 
                 [timer setCurrentTimes: [timer currentTimes]+1];
                 [timer setLastTimestamp:[AppHelper getCurrentTimestamp]];
-                
-                [timer action](timer);
+                timerFireAction action = [timer action];
+                if(action){
+                    action(timer);
+                }
             }
             //已经完成就移除
             if([self timerIsComplete:timer]){

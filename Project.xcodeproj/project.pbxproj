@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		087762743CE4650EF230D697 /* libPods-Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A30DD066B519865DD11DD4A9 /* libPods-Project.a */; };
+		C53806531DE59D9800A2322D /* AKTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806521DE59D9800A2322D /* AKTimer.m */; };
+		C53806581DE68C9B00A2322D /* AKUserPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806571DE68C9B00A2322D /* AKUserPointAnnotation.m */; };
+		C538065B1DE6922100A2322D /* AKUserPinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C538065A1DE6922100A2322D /* AKUserPinAnnotationView.m */; };
+		C538065E1DE6B4C300A2322D /* AKMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C538065D1DE6B4C300A2322D /* AKMapManager.m */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C55CBE251DE4405E0000B1F6 /* ThirdLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE241DE4405E0000B1F6 /* ThirdLoginAPI.m */; };
 		C55CBE351DE4428E0000B1F6 /* AKMediator+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE2C1DE4428E0000B1F6 /* AKMediator+UserModule.m */; };
@@ -49,19 +53,8 @@
 		C5A731071DE2D82800DB2788 /* AKMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731061DE2D82800DB2788 /* AKMapViewController.m */; };
 		C5A7310F1DE2DCED00DB2788 /* LoginModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A7310E1DE2DCED00DB2788 /* LoginModule.xcassets */; };
 		C5A731161DE2E8F000DB2788 /* MapModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5A731151DE2E8F000DB2788 /* MapModule.xcassets */; };
-		C5A731251DE2EB3500DB2788 /* HBBicycleAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731191DE2EB3500DB2788 /* HBBicycleAnnotationView.m */; };
-		C5A731261DE2EB3500DB2788 /* HBBicyclePointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7311B1DE2EB3500DB2788 /* HBBicyclePointAnnotation.m */; };
 		C5A731271DE2EB3500DB2788 /* HBBaseRoundButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7311E1DE2EB3500DB2788 /* HBBaseRoundButton.m */; };
 		C5A731281DE2EB3500DB2788 /* HBLocationButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731201DE2EB3500DB2788 /* HBLocationButton.m */; };
-		C5A731291DE2EB3500DB2788 /* HBBicyclePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731221DE2EB3500DB2788 /* HBBicyclePopView.m */; };
-		C5A7312A1DE2EB3500DB2788 /* HBSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731241DE2EB3500DB2788 /* HBSearchBar.m */; };
-		C5A7312D1DE2EB3D00DB2788 /* HBRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7312C1DE2EB3D00DB2788 /* HBRequestManager.m */; };
-		C5A731361DE2EB4600DB2788 /* HBBaseDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7312F1DE2EB4600DB2788 /* HBBaseDataModel.m */; };
-		C5A731371DE2EB4600DB2788 /* HBBicycleBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731311DE2EB4600DB2788 /* HBBicycleBaseModel.m */; };
-		C5A731381DE2EB4600DB2788 /* HBBicycleResultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731331DE2EB4600DB2788 /* HBBicycleResultModel.m */; };
-		C5A731391DE2EB4600DB2788 /* HBBicycleStationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731351DE2EB4600DB2788 /* HBBicycleStationModel.m */; };
-		C5A731421DE2F09E00DB2788 /* HBMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7313E1DE2F09E00DB2788 /* HBMapManager.m */; };
-		C5A731431DE2F09E00DB2788 /* HBUserDefultsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731401DE2F09E00DB2788 /* HBUserDefultsManager.m */; };
 		C5A7315D1DE3260600DB2788 /* Aspect-ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7315C1DE3260600DB2788 /* Aspect-ShareModule.m */; };
 		C5A731671DE3281800DB2788 /* Aspect-MapModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A731661DE3281800DB2788 /* Aspect-MapModule.m */; };
 		C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7316C1DE32BFE00DB2788 /* AKMediator+ShareModule.m */; };
@@ -91,6 +84,14 @@
 		A30DD066B519865DD11DD4A9 /* libPods-Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69DE62C8EB3C23ADC38EDB6 /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		C538064E1DE5724400A2322D /* AKTimerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTimerProtocol.h; sourceTree = "<group>"; };
+		C53806511DE59D9800A2322D /* AKTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTimer.h; sourceTree = "<group>"; };
+		C53806521DE59D9800A2322D /* AKTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTimer.m; sourceTree = "<group>"; };
+		C53806561DE68C9B00A2322D /* AKUserPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserPointAnnotation.h; sourceTree = "<group>"; };
+		C53806571DE68C9B00A2322D /* AKUserPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserPointAnnotation.m; sourceTree = "<group>"; };
+		C53806591DE6922100A2322D /* AKUserPinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserPinAnnotationView.h; sourceTree = "<group>"; };
+		C538065A1DE6922100A2322D /* AKUserPinAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserPinAnnotationView.m; sourceTree = "<group>"; };
+		C538065C1DE6B4C300A2322D /* AKMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMapManager.h; sourceTree = "<group>"; };
+		C538065D1DE6B4C300A2322D /* AKMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMapManager.m; sourceTree = "<group>"; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
 		C55CBE231DE4405E0000B1F6 /* ThirdLoginAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdLoginAPI.h; sourceTree = "<group>"; };
@@ -180,32 +181,10 @@
 		C5A731091DE2D93B00DB2788 /* MapModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapModule.h; sourceTree = "<group>"; };
 		C5A7310E1DE2DCED00DB2788 /* LoginModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LoginModule.xcassets; sourceTree = "<group>"; };
 		C5A731151DE2E8F000DB2788 /* MapModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = MapModule.xcassets; sourceTree = "<group>"; };
-		C5A731181DE2EB3500DB2788 /* HBBicycleAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBicycleAnnotationView.h; sourceTree = "<group>"; };
-		C5A731191DE2EB3500DB2788 /* HBBicycleAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBicycleAnnotationView.m; sourceTree = "<group>"; };
-		C5A7311A1DE2EB3500DB2788 /* HBBicyclePointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBicyclePointAnnotation.h; sourceTree = "<group>"; };
-		C5A7311B1DE2EB3500DB2788 /* HBBicyclePointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBicyclePointAnnotation.m; sourceTree = "<group>"; };
 		C5A7311D1DE2EB3500DB2788 /* HBBaseRoundButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBaseRoundButton.h; sourceTree = "<group>"; };
 		C5A7311E1DE2EB3500DB2788 /* HBBaseRoundButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBaseRoundButton.m; sourceTree = "<group>"; };
 		C5A7311F1DE2EB3500DB2788 /* HBLocationButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBLocationButton.h; sourceTree = "<group>"; };
 		C5A731201DE2EB3500DB2788 /* HBLocationButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBLocationButton.m; sourceTree = "<group>"; };
-		C5A731211DE2EB3500DB2788 /* HBBicyclePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBicyclePopView.h; sourceTree = "<group>"; };
-		C5A731221DE2EB3500DB2788 /* HBBicyclePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBicyclePopView.m; sourceTree = "<group>"; };
-		C5A731231DE2EB3500DB2788 /* HBSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBSearchBar.h; sourceTree = "<group>"; };
-		C5A731241DE2EB3500DB2788 /* HBSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBSearchBar.m; sourceTree = "<group>"; };
-		C5A7312B1DE2EB3D00DB2788 /* HBRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBRequestManager.h; sourceTree = "<group>"; };
-		C5A7312C1DE2EB3D00DB2788 /* HBRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBRequestManager.m; sourceTree = "<group>"; };
-		C5A7312E1DE2EB4600DB2788 /* HBBaseDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBaseDataModel.h; sourceTree = "<group>"; };
-		C5A7312F1DE2EB4600DB2788 /* HBBaseDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBaseDataModel.m; sourceTree = "<group>"; };
-		C5A731301DE2EB4600DB2788 /* HBBicycleBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBicycleBaseModel.h; sourceTree = "<group>"; };
-		C5A731311DE2EB4600DB2788 /* HBBicycleBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBicycleBaseModel.m; sourceTree = "<group>"; };
-		C5A731321DE2EB4600DB2788 /* HBBicycleResultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBicycleResultModel.h; sourceTree = "<group>"; };
-		C5A731331DE2EB4600DB2788 /* HBBicycleResultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBicycleResultModel.m; sourceTree = "<group>"; };
-		C5A731341DE2EB4600DB2788 /* HBBicycleStationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBicycleStationModel.h; sourceTree = "<group>"; };
-		C5A731351DE2EB4600DB2788 /* HBBicycleStationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBicycleStationModel.m; sourceTree = "<group>"; };
-		C5A7313D1DE2F09E00DB2788 /* HBMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBMapManager.h; sourceTree = "<group>"; };
-		C5A7313E1DE2F09E00DB2788 /* HBMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBMapManager.m; sourceTree = "<group>"; };
-		C5A7313F1DE2F09E00DB2788 /* HBUserDefultsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBUserDefultsManager.h; sourceTree = "<group>"; };
-		C5A731401DE2F09E00DB2788 /* HBUserDefultsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBUserDefultsManager.m; sourceTree = "<group>"; };
 		C5A7315B1DE3260600DB2788 /* Aspect-ShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect-ShareModule.h"; sourceTree = "<group>"; };
 		C5A7315C1DE3260600DB2788 /* Aspect-ShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect-ShareModule.m"; sourceTree = "<group>"; };
 		C5A731651DE3281800DB2788 /* Aspect-MapModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect-MapModule.h"; sourceTree = "<group>"; };
@@ -553,6 +532,8 @@
 				C538064E1DE5724400A2322D /* AKTimerProtocol.h */,
 				C55CBF501DE5614E0000B1F6 /* AKTimerManager.h */,
 				C55CBF511DE5614E0000B1F6 /* AKTimerManager.m */,
+				C53806511DE59D9800A2322D /* AKTimer.h */,
+				C53806521DE59D9800A2322D /* AKTimer.m */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -746,14 +727,6 @@
 		C5A730FD1DE2D79000DB2788 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C5A7312E1DE2EB4600DB2788 /* HBBaseDataModel.h */,
-				C5A7312F1DE2EB4600DB2788 /* HBBaseDataModel.m */,
-				C5A731301DE2EB4600DB2788 /* HBBicycleBaseModel.h */,
-				C5A731311DE2EB4600DB2788 /* HBBicycleBaseModel.m */,
-				C5A731321DE2EB4600DB2788 /* HBBicycleResultModel.h */,
-				C5A731331DE2EB4600DB2788 /* HBBicycleResultModel.m */,
-				C5A731341DE2EB4600DB2788 /* HBBicycleStationModel.h */,
-				C5A731351DE2EB4600DB2788 /* HBBicycleStationModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -761,8 +734,6 @@
 		C5A730FE1DE2D79000DB2788 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				C5A7312B1DE2EB3D00DB2788 /* HBRequestManager.h */,
-				C5A7312C1DE2EB3D00DB2788 /* HBRequestManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -781,10 +752,6 @@
 			children = (
 				C5A731171DE2EB3500DB2788 /* Annotation */,
 				C5A7311C1DE2EB3500DB2788 /* Button */,
-				C5A731211DE2EB3500DB2788 /* HBBicyclePopView.h */,
-				C5A731221DE2EB3500DB2788 /* HBBicyclePopView.m */,
-				C5A731231DE2EB3500DB2788 /* HBSearchBar.h */,
-				C5A731241DE2EB3500DB2788 /* HBSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -792,10 +759,10 @@
 		C5A731171DE2EB3500DB2788 /* Annotation */ = {
 			isa = PBXGroup;
 			children = (
-				C5A731181DE2EB3500DB2788 /* HBBicycleAnnotationView.h */,
-				C5A731191DE2EB3500DB2788 /* HBBicycleAnnotationView.m */,
-				C5A7311A1DE2EB3500DB2788 /* HBBicyclePointAnnotation.h */,
-				C5A7311B1DE2EB3500DB2788 /* HBBicyclePointAnnotation.m */,
+				C53806561DE68C9B00A2322D /* AKUserPointAnnotation.h */,
+				C53806571DE68C9B00A2322D /* AKUserPointAnnotation.m */,
+				C53806591DE6922100A2322D /* AKUserPinAnnotationView.h */,
+				C538065A1DE6922100A2322D /* AKUserPinAnnotationView.m */,
 			);
 			path = Annotation;
 			sourceTree = "<group>";
@@ -814,10 +781,8 @@
 		C5A7313A1DE2F09E00DB2788 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				C5A7313D1DE2F09E00DB2788 /* HBMapManager.h */,
-				C5A7313E1DE2F09E00DB2788 /* HBMapManager.m */,
-				C5A7313F1DE2F09E00DB2788 /* HBUserDefultsManager.h */,
-				C5A731401DE2F09E00DB2788 /* HBUserDefultsManager.m */,
+				C538065C1DE6B4C300A2322D /* AKMapManager.h */,
+				C538065D1DE6B4C300A2322D /* AKMapManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1063,26 +1028,22 @@
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
 				C5A731281DE2EB3500DB2788 /* HBLocationButton.m in Sources */,
 				C55CBE4D1DE52D1F0000B1F6 /* AKUserManager.m in Sources */,
+				C538065E1DE6B4C300A2322D /* AKMapManager.m in Sources */,
 				C55CBE431DE445220000B1F6 /* UserModel.m in Sources */,
 				C55CBE851DE54AC90000B1F6 /* AKRequestManager.m in Sources */,
-				C5A731261DE2EB3500DB2788 /* HBBicyclePointAnnotation.m in Sources */,
 				C55CBE831DE54AC90000B1F6 /* AKDataCenter.m in Sources */,
-				C5A731381DE2EB4600DB2788 /* HBBicycleResultModel.m in Sources */,
 				C5A731271DE2EB3500DB2788 /* HBBaseRoundButton.m in Sources */,
+				C538065B1DE6922100A2322D /* AKUserPinAnnotationView.m in Sources */,
 				C5A731671DE3281800DB2788 /* Aspect-MapModule.m in Sources */,
 				C5A730E61DE2CF7000DB2788 /* AKLoginViewController.m in Sources */,
 				C55CBE871DE54AC90000B1F6 /* AKPopupManager.m in Sources */,
 				C5A730F11DE2D3B700DB2788 /* AKMediator+LoginModule.m in Sources */,
 				C55CBE8A1DE54AC90000B1F6 /* AKTabbarControllerFactory.m in Sources */,
-				C5A731431DE2F09E00DB2788 /* HBUserDefultsManager.m in Sources */,
 				C5A731701DE32C0E00DB2788 /* ServiceShare.m in Sources */,
-				C5A731421DE2F09E00DB2788 /* HBMapManager.m in Sources */,
+				C53806581DE68C9B00A2322D /* AKUserPointAnnotation.m in Sources */,
 				C5A731041DE2D7CF00DB2788 /* ServiceMap.m in Sources */,
 				C55CBE861DE54AC90000B1F6 /* AKBaseRequest.m in Sources */,
-				C5A731371DE2EB4600DB2788 /* HBBicycleBaseModel.m in Sources */,
 				C55CBE8D1DE54AC90000B1F6 /* FileHelper.m in Sources */,
-				C5A731291DE2EB3500DB2788 /* HBBicyclePopView.m in Sources */,
-				C5A731361DE2EB4600DB2788 /* HBBaseDataModel.m in Sources */,
 				C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */,
 				C55CBE8C1DE54AC90000B1F6 /* DeviceHelper.m in Sources */,
 				C5A731751DE3D7B100DB2788 /* AKRequestManager+LoginModule.m in Sources */,
@@ -1098,15 +1059,12 @@
 				C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */,
 				C5A730EE1DE2D32400DB2788 /* AKLoginButtonGroup.m in Sources */,
 				C55CBE351DE4428E0000B1F6 /* AKMediator+UserModule.m in Sources */,
-				C5A731391DE2EB4600DB2788 /* HBBicycleStationModel.m in Sources */,
 				C5A730171DE2BB3400DB2788 /* main.m in Sources */,
-				C5A7312A1DE2EB3500DB2788 /* HBSearchBar.m in Sources */,
 				C55CBF521DE5614E0000B1F6 /* AKTimerManager.m in Sources */,
-				C5A731251DE2EB3500DB2788 /* HBBicycleAnnotationView.m in Sources */,
+				C53806531DE59D9800A2322D /* AKTimer.m in Sources */,
 				C55CBE251DE4405E0000B1F6 /* ThirdLoginAPI.m in Sources */,
 				C55CBE8B1DE54AC90000B1F6 /* AppHelper.m in Sources */,
 				C55CBE8E1DE54AC90000B1F6 /* AKBaseModel.m in Sources */,
-				C5A7312D1DE2EB3D00DB2788 /* HBRequestManager.m in Sources */,
 				C55CBE841DE54AC90000B1F6 /* AKMediator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

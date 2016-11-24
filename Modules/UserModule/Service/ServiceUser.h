@@ -15,12 +15,18 @@
  
  @return 是否登录
  */
--(NSNumber*)isUserLogin;
+-(NSNumber*)isUserLogin:(NSDictionary *)params;
 
 
 //登陆成功处理逻辑
 -(NSNumber*)loginSuccess:(NSDictionary *)params;
 
 
+/**
+ 获取登陆用户信息
+
+ @return UserModel
+ */
+-(UserModel*)getMe:(NSDictionary *)params;
 
 @end

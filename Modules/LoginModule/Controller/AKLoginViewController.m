@@ -13,7 +13,7 @@
 
 @property (nonatomic,strong) NSArray* loginBtnInfos;
 
-@property (nonatomic,strong) UIButton* returnButton;
+//@property (nonatomic,strong) UIButton* returnButton;
 
 @end
 
@@ -83,11 +83,13 @@
         
         UMSocialPlatformType platformType = [dic[@"type"] integerValue];
         
+        @weakify(self);
         [[AKMediator sharedInstance] share_getUserInfoForPlatform:platformType withController:self withCompletion:^(UMSocialUserInfoResponse *userinfo, NSError *error) {
             
            
-           
+            @strongify(self);
             [[AKRequestManager sharedInstance] login_requestThridLoginWithOpenID:userinfo.openid withToken:userinfo.accessToken withPlatformType:platformType Success:^(__kindof YTKBaseRequest * _Nonnull request) {
+                @strongify(self);
                 NSData* jsonData = request.responseData;
                 NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
                 NSLog(@"request login success %@",response);
@@ -120,16 +122,16 @@
 }
 
 
-- (UIButton *)returnButton
-{
-    if (_returnButton == nil) {
-        _returnButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_returnButton addTarget:self action:@selector(didTappedReturnButton:) forControlEvents:UIControlEventTouchUpInside];
-        [_returnButton setTitle:@"return" forState:UIControlStateNormal];
-        [_returnButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    }
-    return _returnButton;
-}
+//- (UIButton *)returnButton
+//{
+//    if (_returnButton == nil) {
+//        _returnButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        [_returnButton addTarget:self action:@selector(didTappedReturnButton:) forControlEvents:UIControlEventTouchUpInside];
+//        [_returnButton setTitle:@"return" forState:UIControlStateNormal];
+//        [_returnButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+//    }
+//    return _returnButton;
+//}
 
 #pragma mark - event response
 - (void)didTappedReturnButton:(UIButton *)button

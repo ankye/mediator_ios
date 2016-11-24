@@ -7,10 +7,15 @@
 //
 
 #import "AKDataCenter.h"
+
+
+#define KAK_FMDB_NAME @"AK_FMDB"
+
 @interface AKDataCenter()
 
 @property (nonatomic,strong) NSMutableDictionary* dataPools;
-    
+
+
 
 @end
 
@@ -33,6 +38,7 @@
     self = [super init];
     if(self){
         _dataPools = [[NSMutableDictionary alloc] init];
+        
     }
     return self;
 }

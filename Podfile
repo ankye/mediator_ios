@@ -9,7 +9,8 @@ target 'Project' do
         pod 'STPopup'
         pod 'Masonry'
         pod 'CYLTabBarController'
-  
+        pod 'GVUserDefaults'
+        pod 'FMDB'
         
         #map Module
         pod 'AMapFoundation'

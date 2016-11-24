@@ -18,6 +18,7 @@
 #import "AKDataCenter.h"
 #import "AKRequestManager.h"
 #import "AKMediator.h"
+#import "AKDBManager.h"
 
 #import "AppHelper.h"
 #import "FileHelper.h"

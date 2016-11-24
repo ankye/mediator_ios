@@ -12,6 +12,8 @@
 		C53806581DE68C9B00A2322D /* AKUserPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806571DE68C9B00A2322D /* AKUserPointAnnotation.m */; };
 		C538065B1DE6922100A2322D /* AKUserPinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C538065A1DE6922100A2322D /* AKUserPinAnnotationView.m */; };
 		C538065E1DE6B4C300A2322D /* AKMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C538065D1DE6B4C300A2322D /* AKMapManager.m */; };
+		C53806631DE6D06400A2322D /* AKDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806621DE6D06400A2322D /* AKDBManager.m */; };
+		C538066C1DE71A0900A2322D /* AKDBManager+UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C538066B1DE71A0900A2322D /* AKDBManager+UserModel.m */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C55CBE251DE4405E0000B1F6 /* ThirdLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE241DE4405E0000B1F6 /* ThirdLoginAPI.m */; };
 		C55CBE351DE4428E0000B1F6 /* AKMediator+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE2C1DE4428E0000B1F6 /* AKMediator+UserModule.m */; };
@@ -92,6 +94,11 @@
 		C538065A1DE6922100A2322D /* AKUserPinAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserPinAnnotationView.m; sourceTree = "<group>"; };
 		C538065C1DE6B4C300A2322D /* AKMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMapManager.h; sourceTree = "<group>"; };
 		C538065D1DE6B4C300A2322D /* AKMapManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMapManager.m; sourceTree = "<group>"; };
+		C53806611DE6D06400A2322D /* AKDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDBManager.h; sourceTree = "<group>"; };
+		C53806621DE6D06400A2322D /* AKDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDBManager.m; sourceTree = "<group>"; };
+		C53806641DE6D48F00A2322D /* AKMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMacro.h; sourceTree = "<group>"; };
+		C538066A1DE71A0900A2322D /* AKDBManager+UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDBManager+UserModel.h"; sourceTree = "<group>"; };
+		C538066B1DE71A0900A2322D /* AKDBManager+UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDBManager+UserModel.m"; sourceTree = "<group>"; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
 		C55CBE231DE4405E0000B1F6 /* ThirdLoginAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdLoginAPI.h; sourceTree = "<group>"; };
@@ -241,6 +248,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C53806601DE6D05800A2322D /* DBManager */ = {
+			isa = PBXGroup;
+			children = (
+				C53806611DE6D06400A2322D /* AKDBManager.h */,
+				C53806621DE6D06400A2322D /* AKDBManager.m */,
+			);
+			path = DBManager;
+			sourceTree = "<group>";
+		};
 		C55CBE1E1DE436350000B1F6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,6 +354,8 @@
 			children = (
 				C55CBE471DE447430000B1F6 /* AKDataCenter+UserModule.h */,
 				C55CBE481DE447430000B1F6 /* AKDataCenter+UserModule.m */,
+				C538066A1DE71A0900A2322D /* AKDBManager+UserModel.h */,
+				C538066B1DE71A0900A2322D /* AKDBManager+UserModel.m */,
 			);
 			path = DataCenter;
 			sourceTree = "<group>";
@@ -345,6 +363,7 @@
 		C55CBE4E1DE54AC90000B1F6 /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
+				C53806641DE6D48F00A2322D /* AKMacro.h */,
 				C55CBE521DE54AC90000B1F6 /* BaseModule.h */,
 				C55CBE541DE54AC90000B1F6 /* BaseModuleDefine.h */,
 				C55CBE551DE54AC90000B1F6 /* Component */,
@@ -386,6 +405,7 @@
 		C55CBE561DE54AC90000B1F6 /* DataCenter */ = {
 			isa = PBXGroup;
 			children = (
+				C53806601DE6D05800A2322D /* DBManager */,
 				C55CBE571DE54AC90000B1F6 /* AKDataCenter.h */,
 				C55CBE581DE54AC90000B1F6 /* AKDataCenter.m */,
 				C55CBE591DE54AC90000B1F6 /* AKDataCenterObjectProtocol.h */,
@@ -1034,6 +1054,7 @@
 				C55CBE831DE54AC90000B1F6 /* AKDataCenter.m in Sources */,
 				C5A731271DE2EB3500DB2788 /* HBBaseRoundButton.m in Sources */,
 				C538065B1DE6922100A2322D /* AKUserPinAnnotationView.m in Sources */,
+				C538066C1DE71A0900A2322D /* AKDBManager+UserModel.m in Sources */,
 				C5A731671DE3281800DB2788 /* Aspect-MapModule.m in Sources */,
 				C5A730E61DE2CF7000DB2788 /* AKLoginViewController.m in Sources */,
 				C55CBE871DE54AC90000B1F6 /* AKPopupManager.m in Sources */,
@@ -1052,6 +1073,7 @@
 				C55CBE3B1DE442FF0000B1F6 /* ServiceUser.m in Sources */,
 				C55CBE8F1DE54AC90000B1F6 /* AKCYLPlusButton.m in Sources */,
 				C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */,
+				C53806631DE6D06400A2322D /* AKDBManager.m in Sources */,
 				C5A730F61DE2D70700DB2788 /* ServiceLogin.m in Sources */,
 				C5A731011DE2D79000DB2788 /* AKMediator+MapModule.m in Sources */,
 				C5A7315D1DE3260600DB2788 /* Aspect-ShareModule.m in Sources */,

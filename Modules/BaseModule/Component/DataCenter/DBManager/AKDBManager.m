@@ -16,25 +16,8 @@
 
 @implementation AKDBManager
 
+SINGLETON_IMPL(AKDBManager)
 
-SHARED_METHOD_IMPLEMENTATION
-
-
-/**
- 判断是否存在DB
-
- @param dbname DB名称
- @return YES OR NO
- */
--(BOOL)isExistDB:(NSString*)dbname
-{
-    NSString* dbPath = [FileHelper getFMDBPath:dbname];
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:dbPath]){
-        return NO;
-    }
-    return YES;
-}
 
 
 /**
@@ -218,6 +201,13 @@ SHARED_METHOD_IMPLEMENTATION
 }
 
 
+/**
+ 创建表
+
+ @param queue FMDatabaseQueue
+ @param tname 表名
+ @param arrColumns 属性列表
+ */
 -(void)createTable:(FMDatabaseQueue*)queue withTableName:(NSString*)tname withColumns:(NSMutableArray*)arrColumns
 {
     
@@ -240,7 +230,7 @@ SHARED_METHOD_IMPLEMENTATION
             [createSql appendString:@")"];
         }
         [createSql appendString:@" "];
-        if (i == 0) { //数组第一个默认为主键
+        if ([[arrColumn objectAtIndex:3] boolValue]) {
             [createSql appendString:@"PRIMARY KEY NOT NULL"];
         }
         if (i < [arrColumns count]-1) {
@@ -252,11 +242,42 @@ SHARED_METHOD_IMPLEMENTATION
         
     }
     
+    NSLog(@"sql = %@",createSql);
+    
     [self execute:queue withSql:createSql];
     
 }
 
 
+
+/**
+ 判断一张表是否已经存在
+
+ @param queue 队列
+ @param tname 表名
+ @return 返回YES OR NO
+ */
+- (BOOL)isExistTable:(FMDatabaseQueue*)queue withTableName:(NSString *)tname
+{
+
+     __block BOOL ret = 0;
+     [queue inDatabase:^(FMDatabase *db)   {
+        FMResultSet *rs = [db executeQuery:@"select count(*) as 'count' from sqlite_master where type ='table' and name = ?", tname];
+        while ([rs next])
+        {
+            NSInteger count = [rs intForColumn:@"count"];
+            if (0 == count){
+                ret = NO;
+            }
+            else{
+                ret = YES;
+            }
+
+        }
+        
+    }];
+    return ret;
+}
 
 
 

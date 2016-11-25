@@ -51,9 +51,9 @@
                                        transform:nil
                                       completion:nil];
         [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.center.equalTo(self);
+            make.centerX.mas_equalTo(self.centerX);
             make.size.mas_equalTo(CGSizeMake(34, 34));
-            make.centerY.offset(-6);
+            make.centerY.mas_equalTo(self.centerY).offset(-6);
         }];
     }
 }

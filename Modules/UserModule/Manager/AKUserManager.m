@@ -43,6 +43,8 @@
 {
     [[AKDataCenter sharedInstance] user_setUserInfo:user];
     
+    
+    
     [[AKRequestManager sharedInstance] updateHttpHeaderField:@"USER-UID" withValue:[user.uid stringValue]];
     [[AKRequestManager sharedInstance] updateHttpHeaderField:@"USER-TOKEN" withValue:user.token];
 

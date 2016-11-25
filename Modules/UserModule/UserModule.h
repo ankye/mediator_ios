@@ -10,7 +10,7 @@
 #define UserModule_h
 
 #import "AKDataCenter+UserModule.h"
-
+#import "AKDBManager+UserModel.h"
 #import "AKMediator+UserModule.h"
 
 #endif /* UserModule_h */

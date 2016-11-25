@@ -12,13 +12,9 @@
 
 @interface AKDBManager : NSObject
 
-/**
- 判断是否存在DB
- 
- @param dbname DB名称
- @return YES OR NO
- */
--(BOOL)isExistDB:(NSString*)dbname;
+SINGLETON_INTR(AKDBManager)
+
+
 
 /**
  获取DB操作队列，一个DB一个操作队列
@@ -80,4 +76,25 @@
  @return int value
  */
 - (int)getResultToInt:(FMDatabaseQueue*)queue withSql:(NSString *)sql;
+
+
+/**
+ 判断一张表是否已经存在
+ 
+ @param queue 队列
+ @param tname 表名
+ @return 返回YES OR NO
+ */
+- (BOOL)isExistTable:(FMDatabaseQueue*)queue withTableName:(NSString *)tname;
+
+
+/**
+ 创建表
+ 
+ @param queue FMDatabaseQueue
+ @param tname 表名
+ @param arrColumns 属性列表
+ */
+-(void)createTable:(FMDatabaseQueue*)queue withTableName:(NSString*)tname withColumns:(NSMutableArray*)arrColumns;
+
 @end

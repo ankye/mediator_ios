@@ -14,6 +14,12 @@
 		C538065E1DE6B4C300A2322D /* AKMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C538065D1DE6B4C300A2322D /* AKMapManager.m */; };
 		C53806631DE6D06400A2322D /* AKDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806621DE6D06400A2322D /* AKDBManager.m */; };
 		C538066C1DE71A0900A2322D /* AKDBManager+UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C538066B1DE71A0900A2322D /* AKDBManager+UserModel.m */; };
+		C538066E1DE7327900A2322D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C538066D1DE7327900A2322D /* libsqlite3.tbd */; };
+		C53806721DE7365700A2322D /* Aspect+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806711DE7365700A2322D /* Aspect+UserModule.m */; };
+		C53806811DE7E5D000A2322D /* DataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C538067E1DE7E5D000A2322D /* DataBaseManager.m */; };
+		C53806821DE7E5D000A2322D /* DBBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806801DE7E5D000A2322D /* DBBaseObject.m */; };
+		C53806851DE7E6FD00A2322D /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806841DE7E6FD00A2322D /* NSString+Tools.m */; };
+		C53806881DE8090B00A2322D /* NSObject+DBPropertyListing.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806871DE8090B00A2322D /* NSObject+DBPropertyListing.m */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C55CBE251DE4405E0000B1F6 /* ThirdLoginAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE241DE4405E0000B1F6 /* ThirdLoginAPI.m */; };
 		C55CBE351DE4428E0000B1F6 /* AKMediator+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE2C1DE4428E0000B1F6 /* AKMediator+UserModule.m */; };
@@ -99,6 +105,17 @@
 		C53806641DE6D48F00A2322D /* AKMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMacro.h; sourceTree = "<group>"; };
 		C538066A1DE71A0900A2322D /* AKDBManager+UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDBManager+UserModel.h"; sourceTree = "<group>"; };
 		C538066B1DE71A0900A2322D /* AKDBManager+UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDBManager+UserModel.m"; sourceTree = "<group>"; };
+		C538066D1DE7327900A2322D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C53806701DE7365700A2322D /* Aspect+UserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect+UserModule.h"; sourceTree = "<group>"; };
+		C53806711DE7365700A2322D /* Aspect+UserModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect+UserModule.m"; sourceTree = "<group>"; };
+		C538067D1DE7E5D000A2322D /* DataBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBaseManager.h; sourceTree = "<group>"; };
+		C538067E1DE7E5D000A2322D /* DataBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBaseManager.m; sourceTree = "<group>"; };
+		C538067F1DE7E5D000A2322D /* DBBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBaseObject.h; sourceTree = "<group>"; };
+		C53806801DE7E5D000A2322D /* DBBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBBaseObject.m; sourceTree = "<group>"; };
+		C53806831DE7E6FD00A2322D /* NSString+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Tools.h"; sourceTree = "<group>"; };
+		C53806841DE7E6FD00A2322D /* NSString+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Tools.m"; sourceTree = "<group>"; };
+		C53806861DE8090B00A2322D /* NSObject+DBPropertyListing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DBPropertyListing.h"; sourceTree = "<group>"; };
+		C53806871DE8090B00A2322D /* NSObject+DBPropertyListing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DBPropertyListing.m"; sourceTree = "<group>"; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
 		C55CBE231DE4405E0000B1F6 /* ThirdLoginAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdLoginAPI.h; sourceTree = "<group>"; };
@@ -210,6 +227,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C538066E1DE7327900A2322D /* libsqlite3.tbd in Frameworks */,
 				087762743CE4650EF230D697 /* libPods-Project.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -234,6 +252,7 @@
 		5081BDA2465C07284CD0B97C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C538066D1DE7327900A2322D /* libsqlite3.tbd */,
 				A30DD066B519865DD11DD4A9 /* libPods-Project.a */,
 			);
 			name = Frameworks;
@@ -251,10 +270,34 @@
 		C53806601DE6D05800A2322D /* DBManager */ = {
 			isa = PBXGroup;
 			children = (
+				C538067D1DE7E5D000A2322D /* DataBaseManager.h */,
+				C538067E1DE7E5D000A2322D /* DataBaseManager.m */,
+				C538067F1DE7E5D000A2322D /* DBBaseObject.h */,
+				C53806801DE7E5D000A2322D /* DBBaseObject.m */,
 				C53806611DE6D06400A2322D /* AKDBManager.h */,
 				C53806621DE6D06400A2322D /* AKDBManager.m */,
 			);
 			path = DBManager;
+			sourceTree = "<group>";
+		};
+		C538066F1DE7363700A2322D /* Aspect */ = {
+			isa = PBXGroup;
+			children = (
+				C53806701DE7365700A2322D /* Aspect+UserModule.h */,
+				C53806711DE7365700A2322D /* Aspect+UserModule.m */,
+			);
+			path = Aspect;
+			sourceTree = "<group>";
+		};
+		C53806791DE7E57F00A2322D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C53806861DE8090B00A2322D /* NSObject+DBPropertyListing.h */,
+				C53806871DE8090B00A2322D /* NSObject+DBPropertyListing.m */,
+				C53806831DE7E6FD00A2322D /* NSString+Tools.h */,
+				C53806841DE7E6FD00A2322D /* NSString+Tools.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		C55CBE1E1DE436350000B1F6 /* Network */ = {
@@ -278,6 +321,7 @@
 		C55CBE261DE4428E0000B1F6 /* UserModule */ = {
 			isa = PBXGroup;
 			children = (
+				C538066F1DE7363700A2322D /* Aspect */,
 				C55CBE401DE445180000B1F6 /* DataCenter */,
 				C55CBE281DE4428E0000B1F6 /* Controller */,
 				C55CBE291DE4428E0000B1F6 /* Manager */,
@@ -363,6 +407,7 @@
 		C55CBE4E1DE54AC90000B1F6 /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
+				C53806791DE7E57F00A2322D /* Category */,
 				C53806641DE6D48F00A2322D /* AKMacro.h */,
 				C55CBE521DE54AC90000B1F6 /* BaseModule.h */,
 				C55CBE541DE54AC90000B1F6 /* BaseModuleDefine.h */,
@@ -1061,12 +1106,14 @@
 				C5A730F11DE2D3B700DB2788 /* AKMediator+LoginModule.m in Sources */,
 				C55CBE8A1DE54AC90000B1F6 /* AKTabbarControllerFactory.m in Sources */,
 				C5A731701DE32C0E00DB2788 /* ServiceShare.m in Sources */,
+				C53806851DE7E6FD00A2322D /* NSString+Tools.m in Sources */,
 				C53806581DE68C9B00A2322D /* AKUserPointAnnotation.m in Sources */,
 				C5A731041DE2D7CF00DB2788 /* ServiceMap.m in Sources */,
 				C55CBE861DE54AC90000B1F6 /* AKBaseRequest.m in Sources */,
 				C55CBE8D1DE54AC90000B1F6 /* FileHelper.m in Sources */,
 				C5A7316D1DE32BFE00DB2788 /* AKMediator+ShareModule.m in Sources */,
 				C55CBE8C1DE54AC90000B1F6 /* DeviceHelper.m in Sources */,
+				C53806811DE7E5D000A2322D /* DataBaseManager.m in Sources */,
 				C5A731751DE3D7B100DB2788 /* AKRequestManager+LoginModule.m in Sources */,
 				C55CBE811DE54AC90000B1F6 /* AKAppDelegate.m in Sources */,
 				C5A731071DE2D82800DB2788 /* AKMapViewController.m in Sources */,
@@ -1074,7 +1121,9 @@
 				C55CBE8F1DE54AC90000B1F6 /* AKCYLPlusButton.m in Sources */,
 				C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */,
 				C53806631DE6D06400A2322D /* AKDBManager.m in Sources */,
+				C53806821DE7E5D000A2322D /* DBBaseObject.m in Sources */,
 				C5A730F61DE2D70700DB2788 /* ServiceLogin.m in Sources */,
+				C53806721DE7365700A2322D /* Aspect+UserModule.m in Sources */,
 				C5A731011DE2D79000DB2788 /* AKMediator+MapModule.m in Sources */,
 				C5A7315D1DE3260600DB2788 /* Aspect-ShareModule.m in Sources */,
 				C5A730EB1DE2D2A600DB2788 /* AKLoginButton.m in Sources */,
@@ -1088,6 +1137,7 @@
 				C55CBE8B1DE54AC90000B1F6 /* AppHelper.m in Sources */,
 				C55CBE8E1DE54AC90000B1F6 /* AKBaseModel.m in Sources */,
 				C55CBE841DE54AC90000B1F6 /* AKMediator.m in Sources */,
+				C53806881DE8090B00A2322D /* NSObject+DBPropertyListing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

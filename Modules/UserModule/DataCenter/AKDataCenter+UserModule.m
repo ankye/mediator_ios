@@ -19,6 +19,7 @@
 {
     [[AKDataCenter sharedInstance] updatePool:KAKD_USERModel withKey:[user getKey] andObject:(AKBaseModel*)user];
     
+
 }
 -(UserModel*)user_getUserInfo:(NSString*)uid
 {

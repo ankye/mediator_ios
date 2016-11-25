@@ -10,12 +10,15 @@
 
 //单例宏定义
 
-#define SHARED_METHOD_IMPLEMENTATION \
-+ (instancetype)sharedInstance { \
-    static id _Instance = nil; \
-    static dispatch_once_t onceToken; \
-    dispatch_once(&onceToken, ^{ \
-        _Instance = [self new]; \
-    }); \
-    return _Instance; \
+#define SINGLETON_INTR( _name ) + ( _name *) sharedInstance;
+
+#define SINGLETON_IMPL( _name ) \
++ ( _name *) sharedInstance { \
+__strong static _name * _sharedInstance = nil; \
+static dispatch_once_t oncePredicate = 0; \
+dispatch_once( &oncePredicate, ^{_sharedInstance = [[ _name alloc] init];} ); \
+return _sharedInstance; \
 }
+
+
+

@@ -12,6 +12,13 @@
 
 
 /**
+ 判断是否存在用户表
+ 
+ @return YES OR NO
+ */
+-(BOOL)isExistUserTable;
+
+/**
  创建用户表
 
  @return YES OR NO

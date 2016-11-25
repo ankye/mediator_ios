@@ -36,51 +36,51 @@
  */
 -(BOOL) createUserTable
 {
-    NSMutableArray* columns = [[NSMutableArray alloc] initWithObjects:
-        [NSArray arrayWithObjects:@"uid",@"NVARCHAR",@"32",@(YES),nil],
-        [NSArray arrayWithObjects:@"usernum",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"head",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"nickname",@"NVARCHAR",@"128",@(NO),nil],
-        [NSArray arrayWithObjects:@"sign",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"phone",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"email",@"NVARCHAR",@"64",@(NO),nil],
-        [NSArray arrayWithObjects:@"token",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"money",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"third",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"viplevel",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"lastmodnickname",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"sex",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"fans",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"follow",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"address",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"rz",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"security",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"is_manager",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"head_640",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"birthday",@"NVARCHAR",@"64",@(NO),nil],
-        [NSArray arrayWithObjects:@"hometown",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"version",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"user_tag",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"anchor",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"show_author_type_tag",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"gameb",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"after_noble_exp",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"before_noble_exp",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"noble_exp",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"upgrade_progress",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"medal_id",@"NVARCHAR",@"256",@(NO),nil],
-        [NSArray arrayWithObjects:@"last_login_time",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"latitude",@"NVARCHAR",@"32",@(NO),nil],
-        [NSArray arrayWithObjects:@"longitude",@"NVARCHAR",@"32",@(NO),nil],
-        nil];
-   
-    
+//    NSMutableArray* columns = [[NSMutableArray alloc] initWithObjects:
+//        [NSArray arrayWithObjects:@"uid",@"NVARCHAR",@"32",@(YES),nil],
+//        [NSArray arrayWithObjects:@"usernum",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"head",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"nickname",@"NVARCHAR",@"128",@(NO),nil],
+//        [NSArray arrayWithObjects:@"sign",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"phone",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"email",@"NVARCHAR",@"64",@(NO),nil],
+//        [NSArray arrayWithObjects:@"token",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"money",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"third",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"viplevel",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"lastmodnickname",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"sex",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"fans",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"follow",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"address",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"rz",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"security",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"is_manager",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"head_640",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"birthday",@"NVARCHAR",@"64",@(NO),nil],
+//        [NSArray arrayWithObjects:@"hometown",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"version",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"user_tag",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"anchor",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"show_author_type_tag",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"gameb",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"after_noble_exp",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"before_noble_exp",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"noble_exp",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"upgrade_progress",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"medal_id",@"NVARCHAR",@"256",@(NO),nil],
+//        [NSArray arrayWithObjects:@"last_login_time",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"latitude",@"NVARCHAR",@"32",@(NO),nil],
+//        [NSArray arrayWithObjects:@"longitude",@"NVARCHAR",@"32",@(NO),nil],
+//        nil];
+//   
+//    
 
     
     FMDatabaseQueue* queue = [self getQueue:KAK_USER_DBNAME];
     
-    
-    [self createTable:queue withTableName:KAK_USER_TNAME withColumns:columns];
+    [self createTable:queue withModelClass:[UserModel class]];
+   // [self createTable:queue withTableName:KAK_USER_TNAME withColumns:columns];
     
     
   

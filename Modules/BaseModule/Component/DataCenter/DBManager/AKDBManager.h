@@ -97,4 +97,13 @@ SINGLETON_INTR(AKDBManager)
  */
 -(void)createTable:(FMDatabaseQueue*)queue withTableName:(NSString*)tname withColumns:(NSMutableArray*)arrColumns;
 
+
+/**
+ 通过Model创建表
+ 
+ @param queue FMDatabaseQueue
+ @param mClass 模型类
+ */
+- (void)createTable:(FMDatabaseQueue*)queue withModelClass:(Class)mClass;
+
 @end

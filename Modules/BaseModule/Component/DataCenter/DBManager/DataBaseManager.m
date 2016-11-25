@@ -21,7 +21,7 @@
 /**
  *  GCD的queue，定义为串行队列，因为fmdb本身的队列也是串行的，所以这个定义为串行的问题不大，反而更贴合实际应用场景，因为有时候是先插入数据再进行查询数据，那么就要保持一定的顺序性
  */
-@property (nonatomic, strong) dispatch_queue_t dbGCDQueue;
+
 @end
 
 @implementation DataBaseManager
@@ -42,9 +42,7 @@ static DataBaseManager *_instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[self alloc] init];
-        _instance.dbGCDQueue = dispatch_queue_create("DataBaseManager", NULL);
-        
-        NSString *filename = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:DBName];
+              NSString *filename = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingPathComponent:DBName];
         
         _instance.dbQueue = [[FMDatabaseQueue alloc] initWithPath:filename];//建库
     });
@@ -100,14 +98,12 @@ static DataBaseManager *_instance;
 }
 
 - (void)querySomething:(NSString *)sqlString withBlock:(dbQueryResultBlock)block{
-    dispatch_async(self.dbGCDQueue, ^{
         //做了些数据库操作，然后完成之后，就使用主线程调用block
         if (block) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 block(NO, nil);
             });
         }
-    });
 }
 
 - (void)queryWithSql:(NSString *)sqlString withBlock:(dbQueryResultBlock)block toModelClass:(Class)mClass{
@@ -148,13 +144,13 @@ static DataBaseManager *_instance;
         }
     }];
     
-    dispatch_async(self.dbGCDQueue, ^{
+   
         if (block) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 block(YES, modelArray);
             });
         }
-    });
+    
 }
 
 - (void)queryAllToModelClass:(Class)mClass withBlock:(dbQueryResultBlock)block{
@@ -222,13 +218,13 @@ static DataBaseManager *_instance;
         
     }];
     
-    dispatch_async(self.dbGCDQueue, ^{
+  
         if (block) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 block(result);
             });
         }
-    });
+   
 }
 
 - (void)updateModels:(NSMutableArray *)modelArray withBlock:(dbUpdateResultBlock)block{
@@ -276,13 +272,13 @@ static DataBaseManager *_instance;
         
     }];
     
-    dispatch_async(self.dbGCDQueue, ^{
+    
         if (block) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 block(result);
             });
         }
-    });
+
 }
 
 - (void)insertOrUpdateModelArray:(NSMutableArray *)modelArray withBlock:(dbUpdateResultBlock)block{
@@ -305,13 +301,13 @@ static DataBaseManager *_instance;
         result = [db executeUpdate:sql withArgumentsInArray:@[[model valueForKey:@"pk_cid"]]];
     }];
     
-    dispatch_async(self.dbGCDQueue, ^{
+ 
         if (block) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 block(result);
             });
         }
-    });
+    
 }
 
 - (void)deleteModelArray:(NSMutableArray *)modelArray withBlock:(dbUpdateResultBlock)block{
@@ -335,13 +331,13 @@ static DataBaseManager *_instance;
         
     }];
     
-    dispatch_async(self.dbGCDQueue, ^{
+ 
         if (block) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 block(result);
             });
         }
-    });
+    
 }
 
 

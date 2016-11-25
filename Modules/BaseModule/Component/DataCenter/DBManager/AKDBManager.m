@@ -7,6 +7,10 @@
 //
 
 #import "AKDBManager.h"
+#import "DBBaseObject.h"
+#import <objc/runtime.h>
+#import "NSString+Tools.h"
+
 
 @interface AKDBManager()
 
@@ -279,6 +283,56 @@ SINGLETON_IMPL(AKDBManager)
     return ret;
 }
 
+
+
+/**
+ 通过Model创建表
+
+ @param queue FMDatabaseQueue
+ @param mClass 模型类
+ */
+- (void)createTable:(FMDatabaseQueue*)queue withModelClass:(Class)mClass
+{
+    NSAssert([mClass isSubclassOfClass:[DBBaseObject class]], @"录入数据库的模型，必须要继承DBBaseObject！");
+    
+    [queue inDatabase:^(FMDatabase *db) {
+        NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@ (pk_cid INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL", NSStringFromClass(mClass)];
+        
+        @try {
+            NSArray *keys, *attrs;
+            id mObject = [[mClass alloc]init];
+            keys = [mObject fetchDBObjectPropertyList];
+            attrs = [mObject fetchDBObjectPropertyAttributes];
+            for (int i = 0 ; i < keys.count ; i++) {
+                if ([keys[i] isEqualToString:@"pk_cid"]) {
+                    continue;
+                }
+             
+                if ([attrs[i] startWithSubString:kPropertyAttrString]) {
+                    sql = [NSString stringWithFormat:@"%@,'%@' VARCHAR", sql, keys[i]];
+                }else if ([attrs[i] startWithSubString:kPropertyAttrShort]) {
+                    sql = [NSString stringWithFormat:@"%@,'%@' INTEGER", sql, keys[i]];
+                }else if ([attrs[i] startWithSubString:kPropertyAttrFloat]) {
+                    sql = [NSString stringWithFormat:@"%@,'%@' FLOAT", sql, keys[i]];
+                }else{
+                    sql = [NSString stringWithFormat:@"%@,'%@' VARCHAR", sql, keys[i]];
+                }
+                
+                
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"exception = %@",exception);
+        }
+        @finally {
+            
+        }
+        
+        sql = [NSString stringWithFormat:@"%@)",sql];
+        NSLog(@"sql %@",sql);
+        [db executeStatements:sql];
+    }];
+}
 
 
 @end

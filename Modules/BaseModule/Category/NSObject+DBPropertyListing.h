@@ -12,6 +12,7 @@
  * 不同变量类型的Attributes的开头，具体可调用fetchPropertyAttributes方法来看看
  */
 #define kPropertyAttrString @"T@\"NSString\""
+#define kPropertyAttrNumber @"T@\"NSNumber\""
 #define kPropertyAttrShort @"Ts"
 #define kPropertyAttrFloat @"Tf"
 #define kPropertyAttrLong @"Tq"

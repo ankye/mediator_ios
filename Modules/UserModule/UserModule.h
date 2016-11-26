@@ -12,5 +12,6 @@
 #import "AKDataCenter+UserModule.h"
 #import "AKDBManager+UserModel.h"
 #import "AKMediator+UserModule.h"
+#import "GVUserDefaults+UserModule.h"
 
 #endif /* UserModule_h */

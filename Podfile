@@ -11,6 +11,7 @@ target 'Project' do
         pod 'CYLTabBarController'
         pod 'GVUserDefaults'
         pod 'FMDB'
+        pod 'AFMInfoBanner'
         
         #map Module
         pod 'AMapFoundation'

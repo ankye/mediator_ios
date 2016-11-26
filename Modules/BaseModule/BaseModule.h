@@ -11,6 +11,8 @@
 #import "Aspects.h"
 
 #import <YYKit/YYKit.h>
+#import <Masonry/Masonry.h>
+#import <AFMInfoBanner/AFMInfoBanner.h>
 
 #import "AKAppDelegate.h"
 #import "AKBaseViewController.h"
@@ -19,11 +21,10 @@
 #import "AKRequestManager.h"
 #import "AKMediator.h"
 #import "AKDBManager.h"
-
+#import "AKBaseManager.h"
 #import "AppHelper.h"
 #import "FileHelper.h"
 #import "DeviceHelper.h"
 
-#import <Masonry/Masonry.h>
 
 #endif /* BaseModule_h */

@@ -23,6 +23,10 @@
     return propertiesArray;
 }
 
+
+
+
+
 - (NSArray *)fetchPropertyAttributes{
     u_int count;
     objc_property_t *properties  =class_copyPropertyList([self class], &count);

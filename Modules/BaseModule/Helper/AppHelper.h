@@ -9,6 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "BaseModuleDefine.h"
 
+#define NETWORK_STATE_NO @"无网络"
+#define NETWORK_STATE_2G @"2G"
+#define NETWORK_STATE_3G @"3G"
+#define NETWORK_STATE_4G @"4G"
+#define NETWORK_STATE_WIFI @"WIFI"
+
+#define NETWORK_STATE_NO_MESSAGE @"当前网络状态异常,请检查网络"
+#define NETWORK_STATE_2G_MESSAGE @"您正在使用2G/3G/4G网络，可能产生额外流量"
+#define NETWORK_STATE_3G_MESSAGE @"您正在使用2G/3G/4G网络，可能产生额外流量"
+#define NETWORK_STATE_4G_MESSAGE @"您正在使用2G/3G/4G网络，可能产生额外流量"
+#define NETWORK_STATE_WIFI_MESSAGE @"WIFI"
+
 
 @interface AppHelper : NSObject
 
@@ -30,6 +42,13 @@
  */
 + (NSDictionary *)dictionaryWithData:(NSData *)data;
 
+/**
+ 通过NSData获取数组，通常用于json的nsdata数据
+ 
+ @param data NSData数据（由json转化过来）
+ @return 返回数组
+ */
++ (NSMutableArray *)arrayWithData:(NSData *)data;
 
 /**
  获取当前时间戳
@@ -57,4 +76,18 @@
 + (UINavigationController*)getNaviController ;
 
 
+/**
+ 毫秒级别当前时间
+ 
+ @return 毫秒
+ */
++(uint64_t)getCurrentMSTime;
+
+
+/**
+ 获取网络状态
+ 
+ @return 状态结果
+ */
++(NSString *)getNetWorkStates;
 @end

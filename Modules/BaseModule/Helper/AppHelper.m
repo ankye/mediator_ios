@@ -9,6 +9,8 @@
 #import "AppHelper.h"
 
 
+
+
 @implementation AppHelper
 
 
@@ -22,6 +24,22 @@
 {
     NSError *error;
     NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    if (!error) {
+        return result;
+    }
+    return nil;
+}
+
+/**
+ 通过NSData获取数组，通常用于json的nsdata数据
+ 
+ @param data NSData数据（由json转化过来）
+ @return 返回数组
+ */
++ (NSMutableArray *)arrayWithData:(NSData *)data;
+{
+    NSError *error;
+    NSMutableArray *result = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
     if (!error) {
         return result;
     }
@@ -94,6 +112,69 @@
         return tab.selectedViewController;
     }
     return (UINavigationController*)root;
+}
+
+
+/**
+ 毫秒级别当前时间
+
+ @return 毫秒
+ */
++(uint64_t)getCurrentMSTime
+{
+    return [[NSDate date] timeIntervalSince1970]*1000;
+}
+
+
+/**
+ 获取网络状态
+
+ @return 状态结果
+ */
++(NSString *)getNetWorkStates
+{
+    UIApplication *app = [UIApplication sharedApplication];
+    NSArray *children = [[[app valueForKeyPath:@"statusBar"]valueForKeyPath:@"foregroundView"]subviews];
+    NSString *state = [[NSString alloc]init];
+    state = NETWORK_STATE_NO;
+    int netType = 0;
+    //获取到网络返回码
+    for (id child in children) {
+        if ([child isKindOfClass:NSClassFromString(@"UIStatusBarDataNetworkItemView")]) {
+            //获取到状态栏
+            netType = [[child valueForKeyPath:@"dataNetworkType"]intValue];
+            
+            switch (netType) {
+                case 0:
+                    state = NETWORK_STATE_NO;
+                    //无网模式
+                    break;
+                case 1:
+                    state = NETWORK_STATE_NO;//NETWORK_STATE_2G;
+                    break;
+                case 2:
+                    state = NETWORK_STATE_3G;
+                    break;
+                case 3:
+                    state = NETWORK_STATE_4G;
+                    break;
+                case 4:
+                    state = NETWORK_STATE_4G;
+                 
+                    break;
+                case 5:
+                {
+                    state = NETWORK_STATE_WIFI;
+                }
+                    break;
+                default:
+                    state = NETWORK_STATE_4G;
+                    break;
+            }
+        }
+    }
+    //根据状态选择
+    return state;
 }
 
 

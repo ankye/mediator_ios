@@ -31,12 +31,18 @@
         [self.window makeKeyWindow];
         [self.window makeKeyAndVisible];
         
+        [[AKMediator sharedInstance] im_requestIMServerList];
+       
         if(![[AKMediator sharedInstance] user_isUserLogin]){
             UIViewController* loginController = [[AKMediator sharedInstance] login_viewControllerForLogin];
             [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
+        }else{
+            UserModel* me = [[AKMediator sharedInstance] user_me];
+            [[AKMediator sharedInstance] im_requestIMToken:me.uid withUserToken:me.token];
         }
         
-       
+        
+        
     }
     
     return YES;

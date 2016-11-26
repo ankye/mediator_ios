@@ -25,6 +25,13 @@
  */
 -(BOOL) createUserTable;
 
+/**
+ 判断是否存在某个用户名
+ 
+ @param uid 用户ID
+ @return YES OR NO
+ */
+-(BOOL)isExistUser:(NSInteger)uid;
 
 /**
  查询用户返回字典数据
@@ -32,7 +39,7 @@
  @param uid 用户id string格式
  @return YES OR NO
  */
--(NSDictionary*) queryUserByUid:(NSString*)uid;
+-(UserModel*) queryUserByUid:(NSInteger)uid;
 
 
 /**

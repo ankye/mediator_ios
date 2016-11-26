@@ -10,6 +10,10 @@
 #import "BaseModuleDefine.h"
 #import <FMDB/FMDB.h>
 
+
+
+
+
 @interface AKDBManager : NSObject
 
 SINGLETON_INTR(AKDBManager)
@@ -39,63 +43,25 @@ SINGLETON_INTR(AKDBManager)
 -(void)closeQueues;
 
 
-/**
- 操作一条SQL，并加事务处理
- 
- @param queue FMDatabaseQueue
- @param sql String sql
- @return YES OR NO
- */
-- (BOOL)execute:(FMDatabaseQueue*)queue withSql:(NSString *)sql;
-
 
 /**
- 取得查询结果，返回值为数据字典，key为字段名 数据结构：<row <columnName value>>
- 
- @param queue FMDatabaseQueue
- @param sql String sql
- @return 数据字典集合
- */
-- (NSMutableDictionary *)getResultsByColName:(FMDatabaseQueue*)queue withSql:(NSString *)sql;
-
-
-/**
- 取得查询结果，返回值为数据字典，key为字段名 数据结构：<row <columnName value>>
- 
- @param queue FMDatabaseQueue
- @param sql String sql
- @return 数据数组集合
- */
-- (NSMutableArray *)executeQuery:(FMDatabaseQueue*)queue withSql:(NSString *)sql;
-
-/**
- 取得查询结果，返回值为int类型，保证一条数据的情况下使用该方法
+ 取得执行结果，返回值为int类型，保证一条数据的情况下使用该方法
  
  @param queue FMDatabaseQueue
  @param sql String sql
  @return int value
  */
-- (int)getResultToInt:(FMDatabaseQueue*)queue withSql:(NSString *)sql;
+- (int)executeForInt:(FMDatabaseQueue*)queue withSql:(NSString *)sql;
 
 
 /**
  判断一张表是否已经存在
  
  @param queue 队列
- @param tname 表名
+ @param mClass Model Class
  @return 返回YES OR NO
  */
-- (BOOL)isExistTable:(FMDatabaseQueue*)queue withTableName:(NSString *)tname;
-
-
-/**
- 创建表
- 
- @param queue FMDatabaseQueue
- @param tname 表名
- @param arrColumns 属性列表
- */
--(void)createTable:(FMDatabaseQueue*)queue withTableName:(NSString*)tname withColumns:(NSMutableArray*)arrColumns;
+- (BOOL)isExistTable:(FMDatabaseQueue*)queue withModelClass:(Class)mClass;
 
 
 /**
@@ -105,5 +71,74 @@ SINGLETON_INTR(AKDBManager)
  @param mClass 模型类
  */
 - (void)createTable:(FMDatabaseQueue*)queue withModelClass:(Class)mClass;
+
+
+
+
+/**
+ 插入Models记录，一条和多条
+ 
+ @param queue FMDatabaseQueue队列
+ @param modelArray 数据Model集
+ */
+- (BOOL)insertModels:(FMDatabaseQueue*)queue withModelArray:(NSMutableArray *)modelArray;
+
+
+/**
+ 更新数据Models
+ 
+ @param queue FMDatabaseQueue
+ @param modelArray 数据集Model
+ 
+ */
+- (BOOL)updateModels:(FMDatabaseQueue*)queue withModelArray:(NSMutableArray *)modelArray;
+
+
+/**
+ 删除单个Model
+ 
+ @param queue FMDatabaseQueue
+ @param model Model数据
+ */
+- (BOOL)deleteModel:(FMDatabaseQueue*)queue withModel:(id)model;
+
+
+/**
+ 删除多个model
+ 
+ @param queue FMDatabaseQueue
+ @param modelArray model数组
+ */
+- (BOOL)deleteModelArray:(FMDatabaseQueue*)queue withModelArray:(NSMutableArray *)modelArray ;
+
+
+
+/**
+ 查询数据
+ 
+ @param queue FMDatabaseQueue
+ @param sqlString sql语句
+ @param mClass Model class
+ @return 返回model数组
+ */
+- (NSMutableArray*)query:(FMDatabaseQueue*)queue withSql:(NSString *)sqlString toModelClass:(Class)mClass;
+
+
+/**
+ 查询所有的数据
+ 
+ @param queue FMDatabaseQueue
+ @param mClass Model Class
+ @return Model数组
+ */
+- (NSMutableArray*)queryAllToModel:(FMDatabaseQueue*)queue toModelClass:(Class)mClass;
+/**
+ 查询单个数据
+ 
+ @param queue FMDatabaseQueue
+ @param mClass Model Class
+ @return Model 或者 nil
+ */
+- (id)queryToModel:(FMDatabaseQueue*)queue withSql:(NSString*)sqlString toModelClass:(Class)mClass;
 
 @end

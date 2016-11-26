@@ -29,6 +29,12 @@
  */
 -(BOOL)isUserLogin
 {
+    if(self.me == nil){
+        NSNumber* uid = [GVUserDefaults standardUserDefaults].uid;
+        if(uid){ //本地有存储
+            self.me = [[AKDBManager sharedInstance] queryUserByUid:[uid integerValue]];
+        }
+    }
     return self.me == nil? NO:YES;
 }
 
@@ -42,8 +48,12 @@
 -(BOOL)userLogin:(UserModel*)user
 {
     [[AKDataCenter sharedInstance] user_setUserInfo:user];
+    [GVUserDefaults standardUserDefaults].uid = user.uid;
     
-    
+    if(![[AKDBManager sharedInstance] isExistUser:[user.uid integerValue]]){
+       
+        [[AKDBManager sharedInstance] insertUser:user];
+    }
     
     [[AKRequestManager sharedInstance] updateHttpHeaderField:@"USER-UID" withValue:[user.uid stringValue]];
     [[AKRequestManager sharedInstance] updateHttpHeaderField:@"USER-TOKEN" withValue:user.token];

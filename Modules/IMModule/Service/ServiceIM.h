@@ -28,7 +28,13 @@
 -(NSNumber*)requestIMToken:(NSDictionary*)params;
 
 
+/**
+ 聊天列表
 
+ @param params 参数列表
+ @return 返回聊天列表视图
+ */
+-(UIView*)conversationView:(NSDictionary*)params;
 
 
 @end

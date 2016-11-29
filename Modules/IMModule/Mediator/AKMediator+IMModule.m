@@ -7,11 +7,14 @@
 //
 
 #import "AKMediator+IMModule.h"
+#import "AKPopupManager.h"
 
 
 NSString * const kAKMIMModuleService = @"IM";
 NSString * const kAKMIMModuleRequestIMServerList = @"requestIMServerList";
 NSString * const kAKMIMModuleRequestIMToken = @"requestIMToken";
+NSString * const kAKMIMModuleRequestIMConversationView = @"conversationView";
+
 
 @implementation AKMediator (IMModule)
 
@@ -35,5 +38,15 @@ NSString * const kAKMIMModuleRequestIMToken = @"requestIMToken";
     
 }
 
-
+-(UIView*)im_popupConversationView
+{
+    UIView<AKPopupViewProtocol>* view = [self performService:kAKMIMModuleService action:kAKMIMModuleRequestIMConversationView params:nil shouldCacheService:NO];
+    NSMutableDictionary* params = [AKPopupManager buildPopupAttributes:NO showNav:YES style:STPopupStyleBottomSheet onClick:^(NSInteger channel, NSMutableDictionary *attributes) {
+        NSLog(@"Click");
+    } onClose:^(NSMutableDictionary *attributes) {
+        NSLog(@"close");
+    }];
+    [[AKPopupManager sharedManager] showView:view withAttributes:params];
+    return view;
+}
 @end

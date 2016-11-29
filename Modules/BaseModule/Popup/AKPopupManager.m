@@ -86,6 +86,8 @@
             UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
             self.popupController.backgroundView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         }
+    }else{
+        [self.popupController.backgroundView setBackgroundColor:[UIColor clearColor]];
     }
     
     [self.popupController.backgroundView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroundViewDidTap)]];
@@ -117,6 +119,7 @@
     attributes[AK_Popup_Controller] = controller;
     [self.popupQueue addObject:attributes];
     
+    [self show];
     
 }
 

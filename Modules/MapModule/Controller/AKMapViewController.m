@@ -12,6 +12,7 @@
 #import "AKMapManager.h"
 #import "HBLocationButton.h"
 #import "HBBaseRoundButton.h"
+#import "AKPopupManager.h"
 
 //按钮宽度
 static CGFloat const kButtonWidth = 50.f;
@@ -34,7 +35,7 @@ static void *xxcontext = &xxcontext;
 /**
  设置按钮
  */
-@property (nonatomic, strong) HBBaseRoundButton *settingButton;
+@property (nonatomic, strong) HBBaseRoundButton *friendButton;
 
 
 @end
@@ -144,11 +145,11 @@ static void *xxcontext = &xxcontext;
         make.right.equalTo(self.view.mas_right).with.offset(-kContentInsets);
     }];
     
-    self.settingButton = [[HBBaseRoundButton alloc] initWithIconImage:ImageInName(@"main_friend") clickBlock:^{
-       
+    self.friendButton = [[HBBaseRoundButton alloc] initWithIconImage:ImageInName(@"main_friend") clickBlock:^{
+        [[AKMediator sharedInstance] im_popupConversationView];
     }];
-    [self.view addSubview:self.settingButton];
-    [self.settingButton mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.view addSubview:self.friendButton];
+    [self.friendButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(kButtonWidth);
         make.top.equalTo(self.locationButton.mas_bottom).with.offset(kContentInsets);
         make.right.equalTo(self.locationButton.mas_right);

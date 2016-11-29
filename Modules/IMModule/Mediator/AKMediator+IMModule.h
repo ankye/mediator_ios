@@ -28,5 +28,6 @@
 -(void)im_requestIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken;
 
 
+-(UIView*)im_popupConversationView;
 
 @end

@@ -11,6 +11,7 @@
 #import "AKIMManager+Message.h"
 #import "AKIMManager+IM.h"
 #import "AKIMManager+Room.h"
+#import "TLConversationView.h"
 
 @implementation ServiceIM
 
@@ -35,5 +36,16 @@
     return @(YES);
 }
 
+/**
+ 聊天列表
+ 
+ @param params 参数列表
+ @return 返回聊天列表视图
+ */
+-(UIView*)conversationView:(NSDictionary*)params
+{
+    UIView* view = [[TLConversationView alloc] init];
+    return view;
+}
 
 @end

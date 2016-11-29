@@ -42,8 +42,10 @@ SINGLETON_INTR(AKIMManager);
 
 -(void)setIMServerList:(NSMutableArray*)serverList;
 
+-(BOOL)isConnected;
 
 -(BOOL)sendData:(NSString*)commandStr;
 
+-(BOOL)postMessage:(id<IMMessageDelegate>)message;
 
 @end

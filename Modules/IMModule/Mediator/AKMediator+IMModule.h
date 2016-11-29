@@ -7,6 +7,7 @@
 //
 
 #import "AKMediator.h"
+#import "IMMessageDef.h"
 
 @interface AKMediator (IMModule)
 
@@ -25,6 +26,7 @@
  @param userToken 用户授权登录Token
  */
 -(void)im_requestIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken;
+
 
 
 @end

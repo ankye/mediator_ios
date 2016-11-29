@@ -29,4 +29,12 @@
  */
 -(UserModel*)getMe:(NSDictionary *)params;
 
+
+/**
+ 获取用户信息
+
+ @param params 参数
+ @return 返回用户信息
+ */
+-(UserModel*)getUserInfo:(NSDictionary*)params;
 @end

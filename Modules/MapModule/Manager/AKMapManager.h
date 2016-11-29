@@ -8,6 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AKMapManager : NSObject
+@interface AKMapManager : NSObject < AMapLocationManagerDelegate>
+
+@property (nonatomic, strong) AMapLocationManager *locationManager;
+
+@property (nonatomic, strong) UserModel* me;
+
+@property (nonatomic,strong) NSMutableArray* userlist;
+
+SINGLETON_INTR(AKMapManager);
+
 
 @end

@@ -8,7 +8,10 @@
 
 #import "AKIMManager.h"
 #import "AKIMManager+Message.h"
+#import "AKIMManager+Common.h"
+
 #import "AKTimerManager.h"
+
 
 @interface AKIMManager ()
 {
@@ -55,6 +58,7 @@ SINGLETON_IMPL(AKIMManager);
         
         [self messageRegister];
         
+        [self setupTimer];
         
     }
     return self;
@@ -74,9 +78,12 @@ SINGLETON_IMPL(AKIMManager);
         NSMutableArray* response = [AppHelper arrayWithData:request.responseData];
         if(response){
             [[AKIMManager sharedInstance] setIMServerList:response];
+        }else{
+           
         }
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSLog(@"请求服务器列表失败,请重试");
+        [self setIMServerList:[[NSMutableArray alloc] initWithObjects:@"test.im.blres.com:13001", nil]];
     }];
     
 }
@@ -98,6 +105,8 @@ SINGLETON_IMPL(AKIMManager);
                 [GVUserDefaults standardUserDefaults].imToken = data[@"token"];
                 [GVUserDefaults standardUserDefaults].imTime = data[@"time"];
                 
+                //请求成功，尝试连接IM
+                [self connect];
             }
         }else{
             NSLog(@"请求失败,请重试");
@@ -155,11 +164,36 @@ SINGLETON_IMPL(AKIMManager);
 }
 
 
+/**
+ 安装定时器
+ */
+-(void)setupTimer
+{
+    //IM服务器链接10检测一次，断开重连
+    [[AKTimerManager sharedInstance] addTimerWithInterval:10 withUniqueID:@"AKIMConnectCheckTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
+        if( [self isConnected] == NO){
+            NSLog(@"重新连接IM服务器");
+            [self connect];
+        }
+    }];
+ 
+    [[AKTimerManager sharedInstance] addTimerWithInterval:10 withUniqueID:@"AKIMHeartBeatTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
+        if([self isConnected]){
+            NSLog(@"执行心跳处理");
+            [self heartbeat];
+        }
+    }];
+    
+    
+    
+}
 
 -(BOOL)connect
 {
     
     if(_wsClient == nil){
+        
+        _lastConnectTime = [AppHelper getCurrentTimestamp];
         
         UserModel* me = [[AKMediator sharedInstance] user_me];
         if(!me){
@@ -215,7 +249,7 @@ SINGLETON_IMPL(AKIMManager);
 
 -(BOOL)isConnected
 {
-    if([_wsClient readyState] == SR_OPEN){
+    if(_wsClient && [_wsClient readyState] == SR_OPEN){
         return YES;
     }else{
         return NO;
@@ -232,8 +266,8 @@ SINGLETON_IMPL(AKIMManager);
         return YES;
     }else{
         
-        if( [ AppHelper getCurrentTimestamp] - _lastConnectTime >=   IM_HEARTBEAT_TIME){
-
+        if( _wsClient == nil){
+            [self connect];
         }
         return NO;
     }
@@ -260,10 +294,8 @@ SINGLETON_IMPL(AKIMManager);
                 if( [dic objectForKey:@"code"] !=nil && [dic objectForKey:@"name"] != nil){
                     
                     NSString* err = [NSString stringWithFormat: @"[WebSocket] cmd:(%@) Code:( %@ ) Value:( %@ )", cmd,[dic objectForKey:@"code"],[dic objectForKey:@"name"]];
+                    NSLog(@"socket 接受数据错误 %@",err);
                     
-#ifdef DEBUG
-                    [AFMInfoBanner showAndHideWithText:err style:AFMInfoBannerStyleInfo];
-#endif
                 }
                 
             }
@@ -290,7 +322,7 @@ SINGLETON_IMPL(AKIMManager);
 }
 
 
-
+//这个OPEN状态以后才可以发送数据
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
@@ -298,22 +330,22 @@ SINGLETON_IMPL(AKIMManager);
 }
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error
 {
-    
+    [self disconnect];
 }
+
 - (void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean
 {
-    
+    [self disconnect];
 }
+
 - (void)webSocket:(SRWebSocket *)webSocket didReceivePong:(NSData *)pongPayload
 {
     
 }
 
-// Return YES to convert messages sent as Text to an NSString. Return NO to skip NSData -> NSString conversion for Text messages. Defaults to YES.
-- (BOOL)webSocketShouldConvertTextFrameToString:(SRWebSocket *)webSocket
-{
-    return YES;
-}
+
+
+
 
 
 @end

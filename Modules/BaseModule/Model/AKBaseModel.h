@@ -11,4 +11,5 @@
 
 @interface AKBaseModel : NSObject<AKDataCenterObjectProtocol,NSCoding, NSCopying>
 
+
 @end

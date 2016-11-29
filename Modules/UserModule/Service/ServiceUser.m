@@ -41,4 +41,17 @@
     return [AKUserManager sharedInstance].me;
 }
 
+
+/**
+ 获取用户信息
+ 
+ @param params 参数
+ @return 返回用户信息
+ */
+-(UserModel*)getUserInfo:(NSDictionary*)params
+{
+    
+    return [[AKUserManager sharedInstance] getUserInfo:params[@"uid"]];
+}
+
 @end

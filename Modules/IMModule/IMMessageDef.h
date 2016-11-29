@@ -10,6 +10,10 @@
 
 #import <MJExtension/MJExtension.h>
 
+
+typedef void(^imRequestCompletion)(BOOL result ,NSArray* response);
+
+
 /**
  client |--------->  request  --------------->|server
         |<---------  response <---------------|

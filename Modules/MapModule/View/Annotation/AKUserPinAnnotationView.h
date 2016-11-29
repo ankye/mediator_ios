@@ -13,6 +13,6 @@
 
 @property (nonatomic,strong) UserModel* user;
 
--(void)updateViews:(UserModel*)user;
+
 
 @end

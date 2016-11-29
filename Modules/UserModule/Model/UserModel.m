@@ -13,6 +13,8 @@
 
 @implementation UserModel
 
+
+
 -(void)setKey:(NSString*)key
 {
     NSInteger num = [key integerValue];
@@ -81,6 +83,21 @@
 }
 - (BOOL)isEqual:(id)object {
     return [self modelIsEqual:object];
+}
+
+
+
+-(void)setLongitude:(double)longitude
+{
+    _longitude = longitude;
+  //  [self.onUserUpdate dispatch:self];
+}
+-(void)setLatitude:(double)latitude
+{
+
+    _latitude = latitude;
+   
+    //[self.onUserUpdate dispatch:self];
 }
 
 @end

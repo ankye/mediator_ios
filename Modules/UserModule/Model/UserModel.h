@@ -85,4 +85,7 @@
 
 @property (nonatomic,assign) double longitude;  //经度
 
+
+
+
 @end

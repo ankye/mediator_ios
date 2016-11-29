@@ -8,7 +8,6 @@
 @property (assign,nonatomic) int        page;
 
 -(BOOL)request;
--(BOOL)response:(NSArray*)info;
 
 
 -(BOOL)timeout;

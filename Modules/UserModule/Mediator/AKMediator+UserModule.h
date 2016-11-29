@@ -34,4 +34,7 @@
  */
 -(UserModel*)user_me;
 
+
+-(UserModel*)user_getUserInfo:(NSNumber*)uid;
+
 @end

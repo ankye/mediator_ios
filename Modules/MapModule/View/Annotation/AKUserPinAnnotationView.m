@@ -26,6 +26,22 @@
     if(self){
         self.avatarView = [[UIImageView alloc] init];
         [self addSubview:self.avatarView];
+        
+        [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.mas_equalTo(self.centerX);
+            make.size.mas_equalTo(CGSizeMake(34, 34));
+            make.centerY.mas_equalTo(self.centerY).offset(-6);
+        }];
+        @weakify(self);
+        [self addObserverBlockForKeyPath:@"user" block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
+            @strongify(self);
+            UserModel* user = newVal;
+            UserModel* oldUser = oldVal;
+            if(user.uid != oldUser.uid || user.latitude != oldUser.latitude || user.longitude != oldUser.longitude){
+                [self updateViews:user];
+            }
+            
+        }];
     }
     return self;
 }
@@ -50,11 +66,7 @@
                                         progress:nil
                                        transform:nil
                                       completion:nil];
-        [self.avatarView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerX.mas_equalTo(self.centerX);
-            make.size.mas_equalTo(CGSizeMake(34, 34));
-            make.centerY.mas_equalTo(self.centerY).offset(-6);
-        }];
+        
     }
 }
 

@@ -40,6 +40,21 @@
     return _requestID;
 }
 
+-(BOOL)response:(NSArray *)info
+{
+    if(self.complete){
+        self.complete(YES,info);
+    }
+    return YES;
+}
+
+-(BOOL)timeout
+{
+    if(self.complete){
+        self.complete(NO,nil);
+    }
+    return YES;
+}
 
 
 -(IMMessageType)getMessageType

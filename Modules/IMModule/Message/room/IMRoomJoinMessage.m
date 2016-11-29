@@ -31,7 +31,9 @@
 
 -(BOOL)response:(NSArray *)info
 {
-    
+    if(self.complete){
+        self.complete(YES,info);
+    }
     return YES;
 }
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-#define UM_DATA_KEY         @"569ee7fee0f55a180b0035b0"
+#define UM_DATA_KEY         @"583958d7717c194d3000008f"
 //#define UM_DATA_KEY         @"568dfc3d67e58e63fe001938"
 
 #define UM_QQ_APPID         @"101312194"

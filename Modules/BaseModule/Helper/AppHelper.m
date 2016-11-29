@@ -86,6 +86,20 @@
 
 
 /**
+ 获取当前时间string
+
+ @return 当前时间
+ */
++(NSString*) getCurrentTime
+{
+    NSDateFormatter * formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSString *datetime = [formatter stringFromDate:[NSDate date]];
+    return datetime;
+}
+
+
+/**
  获取根节点UIViewController
  
  @return UIViewController

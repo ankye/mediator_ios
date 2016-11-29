@@ -16,7 +16,8 @@
 #import <AMapLocationKit/AMapLocationKit.h>
 
 
+#define ImageInName(name) [UIImage imageNamed:name]
 
-
+#define  AK_MAP_ROOMID @"1000000"
 
 #endif /* AKMapModuleDefine_h */

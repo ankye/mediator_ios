@@ -42,7 +42,8 @@ CGFloat const kHBRoundButtonContentInsets = 10.f;
         [self addTarget:self action:@selector(handleButtonOnClick:) forControlEvents:UIControlEventTouchUpInside];
         
         //设置背景色
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor =[UIColor whiteColor];
+        
         [self setupSubViews];
     }
     return self;

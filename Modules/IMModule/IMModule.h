@@ -9,8 +9,12 @@
 #ifndef IMModule_h
 #define IMModule_h
 
+
+
 #import "GVUserDefaults+IMModule.h"
 #import "AKRequestManager+IMModule.h"
 #import "AKMediator+IMModule.h"
+#import "AKIMManager.h"
+#import "AKIMManager+Room.h"
 
 #endif /* IMModule_h */

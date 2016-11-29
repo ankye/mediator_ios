@@ -12,6 +12,7 @@ NSString * const kAKMUserModuleService = @"User";
 NSString * const kAKMUserLoginSuccess = @"loginSuccess";
 NSString * const kAKMUserIsLogin = @"isUserLogin";
 NSString * const kAKMUserMe = @"getMe";
+NSString * const kAKMUserGetInfo = @"getUserInfo";
 
 @implementation AKMediator (UserModule)
 
@@ -49,5 +50,18 @@ NSString * const kAKMUserMe = @"getMe";
     UserModel* me = [self performService:kAKMUserModuleService action:kAKMUserMe params:nil shouldCacheService:NO];
     return me;
 }
+
+/**
+ 当前用户信息
+ 
+ @return 用户信息或者nil
+ */
+-(UserModel*)user_getUserInfo:(NSNumber*)uid
+{
+    UserModel* user = [self performService:kAKMUserModuleService action:kAKMUserGetInfo params:@{@"uid":uid} shouldCacheService:NO];
+    return user;
+}
+
+
 
 @end

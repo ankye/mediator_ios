@@ -9,6 +9,8 @@
 #import "ServiceIM.h"
 #import "AKIMManager.h"
 #import "AKIMManager+Message.h"
+#import "AKIMManager+IM.h"
+#import "AKIMManager+Room.h"
 
 @implementation ServiceIM
 
@@ -32,4 +34,6 @@
     [[AKIMManager sharedInstance] requestIMToken:params[@"uid"] withUserToken:params[@"userToken"]];
     return @(YES);
 }
+
+
 @end

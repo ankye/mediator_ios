@@ -26,4 +26,9 @@
  @return YES OR NO
  */
 -(NSNumber*)requestIMToken:(NSDictionary*)params;
+
+
+
+
+
 @end

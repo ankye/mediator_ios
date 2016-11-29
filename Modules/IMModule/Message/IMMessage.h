@@ -15,6 +15,7 @@
 @interface IMMessage : NSObject <IMMessageDelegate>
 
 @property (assign,nonatomic) IMMessageType messageType;
+@property (nonatomic,copy)   imRequestCompletion complete;
 
 
 -(void)setRequestID:(int)seqID;

@@ -8,6 +8,7 @@
 
 #import "AKMediator+IMModule.h"
 
+
 NSString * const kAKMIMModuleService = @"IM";
 NSString * const kAKMIMModuleRequestIMServerList = @"requestIMServerList";
 NSString * const kAKMIMModuleRequestIMToken = @"requestIMToken";

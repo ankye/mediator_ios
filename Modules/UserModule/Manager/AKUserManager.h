@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AKSignal.h"
 
 @interface AKUserManager : NSObject
 
@@ -15,6 +16,8 @@
 
 + (instancetype)sharedInstance;
 
+
+-(UserModel*)getUserInfo:(NSNumber*)uid;
 
 
 /**

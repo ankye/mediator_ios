@@ -58,6 +58,12 @@
 +(double) getCurrentTimestamp;
 
 
+/**
+ 获取当前时间string
+ 
+ @return 当前时间
+ */
++(NSString*) getCurrentTime;
 //
 
 /**

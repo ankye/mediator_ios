@@ -37,14 +37,14 @@
             UIViewController* loginController = [[AKMediator sharedInstance] login_viewControllerForLogin];
             [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
         }
+       
         
         
-        
+      
     }
     
     return YES;
 }
-
 
 
 @end

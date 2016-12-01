@@ -33,6 +33,7 @@ SINGLETON_IMPL(AKMapManager);
         [self configLocationManager];
         self.joinRoomStep = 1;
         self.userlist = [[NSMutableArray alloc] init];
+        self.friendList = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -110,6 +111,14 @@ SINGLETON_IMPL(AKMapManager);
    // [_userlist addObject:user];
     [self addUser:user];
     
+    if(self.me != user){
+        
+//        TLConversation* converstation = [[TLConversation alloc] init];
+//        converstation.partner = user;
+//        
+//        [self addFriend:converstation];
+     
+    }
 }
 
 -(void)reloadFriends
@@ -188,6 +197,7 @@ SINGLETON_IMPL(AKMapManager);
         }
         if(self.me == nil){
             self.me = [[AKMediator sharedInstance] user_me];
+             [self reloadFriends];
         }
         if(self.me.latitude != location.coordinate.latitude || self.me.longitude != location.coordinate.latitude){
           
@@ -195,10 +205,10 @@ SINGLETON_IMPL(AKMapManager);
             self.me.latitude = location.coordinate.latitude;
             self.me.longitude = location.coordinate.longitude;
             if(_joinRoomStep == 3){
-                NSString* msg = [NSString stringWithFormat:@"%f,%f",location.coordinate.latitude +rand()%5,location.coordinate.longitude+rand()%5];
+                NSString* msg = [NSString stringWithFormat:@"%f,%f",location.coordinate.latitude,location.coordinate.longitude];
                 NSLog(@"发送同步坐标数据 %@ %@ 116464 11383838",[AppHelper getCurrentTime],msg);
                 [[AKIMManager sharedInstance] roomSay:msg isShowDanmu:0 room_uid:AK_MAP_ROOMID];
-                
+               
             }
         }
     }
@@ -208,17 +218,26 @@ SINGLETON_IMPL(AKMapManager);
 }
 
 
+
+
+
 - (NSMutableArray *)userArray {
     return [self mutableArrayValueForKey:NSStringFromSelector(@selector(userlist))];
-}
-
-- (void)addUserList:(NSArray *)list {
-    [[self userArray] addObjectsFromArray:list];
 }
 
 - (void)addUser:(UserModel *)user {
     [[self userArray] addObject:user];
 }
 
+- (NSMutableArray *)friendArray {
+    return [self mutableArrayValueForKey:NSStringFromSelector(@selector(friendList))];
+}
+
+//- (void)addFriend:(TLConversation *)user {
+//
+//   
+//    [[self friendArray] addObject:user];
+//
+//}
 
 @end

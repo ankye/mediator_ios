@@ -13,6 +13,7 @@ target 'Project' do
         pod 'GVUserDefaults'
         pod 'FMDB'
         pod 'AFMInfoBanner'
+        pod 'ReactiveObjC'
         
         #map Module
         pod 'AMapFoundation'
@@ -38,5 +39,8 @@ target 'Project' do
         pod 'CocoaLumberjack'
         pod 'BlocksKit'
         pod 'MWPhotoBrowser'
-        
+        pod 'UMengAnalytics'
+        pod 'SVProgressHUD'
+        pod 'BlocksKit'
+
 end

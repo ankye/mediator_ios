@@ -8,6 +8,7 @@
 
 #import "ServiceMap.h"
 #import "AKMapViewController.h"
+#import "UserCardView.h"
 
 @implementation ServiceMap
 
@@ -17,4 +18,20 @@
     return controller;
 }
 
+
+-(UIView<AKPopupViewProtocol>*)popupUserCardView:(NSDictionary*)params
+{
+    UserModel* user = (UserModel*)params[@"user"];
+    UIView<AKPopupViewProtocol>* view = [[UserCardView alloc] init];
+    NSMutableDictionary* popAttrs = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet onClick:^(NSInteger channel, NSMutableDictionary *attributes) {
+        NSLog(@"Click");
+    } onClose:^(NSMutableDictionary *attributes) {
+        NSLog(@"complete");
+    }];
+    
+    [[AKPopupManager sharedManager] showView:view withAttributes:popAttrs];
+    [view loadData:user];
+    
+    return view;
+}
 @end

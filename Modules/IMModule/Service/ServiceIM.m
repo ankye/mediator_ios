@@ -11,7 +11,7 @@
 #import "AKIMManager+Message.h"
 #import "AKIMManager+IM.h"
 #import "AKIMManager+Room.h"
-#import "TLConversationView.h"
+
 
 @implementation ServiceIM
 
@@ -42,10 +42,19 @@
  @param params 参数列表
  @return 返回聊天列表视图
  */
--(UIView*)conversationView:(NSDictionary*)params
+-(UIView<AKPopupViewProtocol>*)popConversationView:(NSDictionary*)params
 {
-    UIView* view = [[TLConversationView alloc] init];
-    return view;
+//    UIView<AKPopupViewProtocol>* view = [[TLConversationView alloc] init];
+//    
+//    NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:YES style:STPopupStyleBottomSheet onClick:^(NSInteger channel, NSMutableDictionary *attributes) {
+//        NSLog(@"Click");
+//    } onClose:^(NSMutableDictionary *attributes) {
+//        NSLog(@"close");
+//    }];
+//    [[AKPopupManager sharedManager] showView:view withAttributes:attributes];
+//    
+//    return view;
+    return nil;
 }
 
 @end

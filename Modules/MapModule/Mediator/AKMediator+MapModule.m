@@ -10,7 +10,7 @@
 
 NSString * const kAKMMapModuleService = @"Map";
 NSString * const kAKMMapModuleFetchVC = @"fetchMapViewController";
-
+NSString * const kAKMMapModulePopupUserCardView = @"popupUserCardView";
 
 
 @implementation AKMediator (MapModule)
@@ -30,5 +30,10 @@ NSString * const kAKMMapModuleFetchVC = @"fetchMapViewController";
     }
 }
 
+-(UIView<AKPopupViewProtocol>*)map_popUserCardView:(UserModel*)user
+{
+    UIView<AKPopupViewProtocol>* view = [self performService:kAKMMapModuleService action:kAKMMapModulePopupUserCardView params:@{@"user":user} shouldCacheService:NO];
+    return view;
+}
 
 @end

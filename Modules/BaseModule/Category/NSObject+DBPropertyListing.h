@@ -13,6 +13,7 @@
  */
 #define kPropertyAttrString @"T@\"NSString\""
 #define kPropertyAttrNumber @"T@\"NSNumber\""
+#define kPropertyAttrSignal @"T@\"AKSignal\""
 #define kPropertyAttrShort @"Ts"
 #define kPropertyAttrFloat @"Tf"
 #define kPropertyAttrLong @"Tq"

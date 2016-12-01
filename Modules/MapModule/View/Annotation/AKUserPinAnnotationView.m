@@ -42,6 +42,8 @@
             }
             
         }];
+        self.userInteractionEnabled = YES;
+        
     }
     return self;
 }
@@ -69,6 +71,8 @@
         
     }
 }
+
+
 
 -(void)dealloc
 {

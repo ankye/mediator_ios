@@ -182,6 +182,8 @@ SINGLETON_IMPL(AKDBManager)
                     sql = [NSString stringWithFormat:@"%@,'%@' INTEGER", sql, keys[i]];
                 }else if ([attrs[i] startWithSubString:kPropertyAttrFloat]) {
                     sql = [NSString stringWithFormat:@"%@,'%@' FLOAT", sql, keys[i]];
+                }else if ([attrs[i] startWithSubString:kPropertyAttrSignal]){
+                    //忽略
                 }else{
                     sql = [NSString stringWithFormat:@"%@,'%@' VARCHAR", sql, keys[i]];
                 }
@@ -225,6 +227,8 @@ SINGLETON_IMPL(AKDBManager)
         
         NSMutableString *sql = [NSMutableString stringWithFormat:@"INSERT INTO %@", NSStringFromClass([[modelArray objectAtIndex:0] class])];
         NSArray *keys = [[modelArray objectAtIndex:0] fetchDBObjectPropertyList];
+         NSArray *attrs = [[modelArray objectAtIndex:0] fetchDBObjectPropertyAttributes];
+        
         [sql appendFormat:@" ("];
         for (int i =0; i< keys.count; i++) {
             if ([keys[i] isEqualToString:@"pk_cid"]) {
@@ -249,6 +253,9 @@ SINGLETON_IMPL(AKDBManager)
             if( [filterIDs containsObject:@(i)] == YES){
                 continue;
             }
+            if([attrs[i] startWithSubString:kPropertyAttrSignal]){
+                continue;
+            }
             [sql appendFormat:@" ?,"];
         }
         if ([[sql substringWithRange:NSMakeRange(sql.length - 1, 1)] isEqualToString:@","]) {
@@ -265,6 +272,9 @@ SINGLETON_IMPL(AKDBManager)
                     continue;
                 }
                 if ([self.filterAttrs containsObject:keys[i]] == YES){
+                    continue;
+                }
+                if([attrs[i] startWithSubString:kPropertyAttrSignal]){
                     continue;
                 }
                 id obj = [model valueForKey:keys[i]];
@@ -310,6 +320,8 @@ SINGLETON_IMPL(AKDBManager)
         
         
         NSArray *keys = [[modelArray objectAtIndex:0] fetchDBObjectPropertyList];
+        NSArray *attrs = [[modelArray objectAtIndex:0] fetchDBObjectPropertyAttributes];
+
         [sql appendFormat:@" SET"];
         for (int i =0; i< keys.count; i++) {
             if ([keys[i] isEqualToString:@"pk_cid"]) {
@@ -317,6 +329,9 @@ SINGLETON_IMPL(AKDBManager)
             }
             if ([self.filterAttrs containsObject:keys[i]] == YES){
                
+                continue;
+            }
+            if([attrs[i] startWithSubString:kPropertyAttrSignal]){
                 continue;
             }
             [sql appendFormat:@" %@ = ?,",keys[i]];
@@ -335,6 +350,9 @@ SINGLETON_IMPL(AKDBManager)
                     continue;
                 }
                 if ([self.filterAttrs containsObject:keys[i]] == YES){
+                    continue;
+                }
+                if([attrs[i] startWithSubString:kPropertyAttrSignal]){
                     continue;
                 }
                 id obj = [model valueForKey:keys[i]];
@@ -463,6 +481,8 @@ SINGLETON_IMPL(AKDBManager)
                     [model setValue:@([resultSet doubleForColumn:keys[i]]) forKey:keys[i]];
                 }else if ([attrs[i] startWithSubString:kPropertyAttrNumber]) {
                     [model setValue:@([resultSet doubleForColumn:keys[i]]) forKey:keys[i]];
+                }else if([attrs[i] startWithSubString:kPropertyAttrSignal]){
+                    
                 }else{
                     [model setValue:[resultSet stringForColumn:keys[i]] forKey:keys[i]];
                 }

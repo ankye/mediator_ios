@@ -13,12 +13,15 @@
 #import <YYKit/YYKit.h>
 #import <Masonry/Masonry.h>
 #import <AFMInfoBanner/AFMInfoBanner.h>
+#import <ReactiveObjC/ReactiveObjC.h>
+
 #import "AKSignal.h"
 #import "AKAppDelegate.h"
 #import "AKBaseViewController.h"
 #import "AKBaseModel.h"
 #import "AKDataCenter.h"
 #import "AKRequestManager.h"
+#import "AKPopupManager.h"
 #import "AKMediator.h"
 #import "AKDBManager.h"
 #import "AKBaseManager.h"

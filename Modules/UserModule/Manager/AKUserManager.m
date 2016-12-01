@@ -55,7 +55,10 @@
     user.nickname = params[@"nickname"];
     user.longitude = [params[@"longitude"] doubleValue];
     user.latitude = [params[@"latitude"] doubleValue];
+    user.last_login_time = [AppHelper getCurrentTime];
 
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"UserSendPositionUpdate" object:params];
     
 }
 

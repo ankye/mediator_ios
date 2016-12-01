@@ -12,4 +12,6 @@
 
 -(UIViewController*)fetchMapViewController:(NSDictionary *)params;
 
+-(UIView<AKPopupViewProtocol>*)popupUserCardView:(NSDictionary*)params;
+
 @end

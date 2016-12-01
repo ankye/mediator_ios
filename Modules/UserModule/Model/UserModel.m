@@ -13,7 +13,13 @@
 
 @implementation UserModel
 
-
+-(id)init
+{
+    self = [super init];
+    if(self){
+    }
+    return self;
+}
 
 -(void)setKey:(NSString*)key
 {
@@ -90,14 +96,14 @@
 -(void)setLongitude:(double)longitude
 {
     _longitude = longitude;
-  //  [self.onUserUpdate dispatch:self];
+  //  [self.onUserPositionUpdate dispatch:self];
+    
 }
 -(void)setLatitude:(double)latitude
 {
 
     _latitude = latitude;
-   
-    //[self.onUserUpdate dispatch:self];
+    // [self.onUserPositionUpdate dispatch:self];
 }
 
 @end

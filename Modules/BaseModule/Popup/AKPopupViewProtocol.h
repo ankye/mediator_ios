@@ -36,6 +36,12 @@ typedef void(^AKPopupOnClose)( NSMutableDictionary* attributes);
 -(CGSize)landscapeSize;
 
 
+/**
+ 加载数据
+
+ @param data 数据
+ */
+-(void)loadData:(NSObject*)data;
 
 @end
 

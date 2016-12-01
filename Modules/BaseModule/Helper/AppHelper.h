@@ -96,4 +96,16 @@
  @return 状态结果
  */
 +(NSString *)getNetWorkStates;
+
+
+/**
+ 获得2个点直接的距离,单位米
+ 
+ @param from 起始点
+ @param to 结束点
+ @return 返回距离
+ */
++(int) getDistance:(CLLocationCoordinate2D)from to:(CLLocationCoordinate2D)to;
+
++(int) getDistance:(double)latitude longitude:(double)longitude toLatitude:(double)toLatitude toLongitude:(double)toLongitude;
 @end

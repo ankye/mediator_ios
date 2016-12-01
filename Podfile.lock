@@ -60,11 +60,14 @@ PODS:
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
     - SDWebImage (!= 3.7.2, ~> 3.7)
+  - ReactiveObjC (2.0.0)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SocketRocket (0.5.1)
   - STPopup (1.8.1)
+  - SVProgressHUD (2.0.4)
+  - UMengAnalytics (4.1.4)
   - UMengUShare/Core (6.0.3):
     - UMengUShare/Network
   - UMengUShare/Network (6.0.3)
@@ -98,9 +101,12 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - MWPhotoBrowser
+  - ReactiveObjC
   - SDWebImage
   - SocketRocket
   - STPopup
+  - SVProgressHUD
+  - UMengAnalytics
   - UMengUShare/Social/QQ
   - UMengUShare/Social/Sina
   - UMengUShare/Social/WeChat
@@ -127,13 +133,16 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
+  ReactiveObjC: d92f5be3f4336aaba9e839286b879f541ffd1cd6
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   STPopup: 47e8ae53d348fa5f9be2d08d5c513ebe12ca758d
+  SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
+  UMengAnalytics: 0bde5737767dfc18afb03a4cd6ba9d57bb2ad10d
   UMengUShare: f231fc086d789d4e560a5090dcc13a2db15c686d
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: ee71cc8ba6309ccdf798760e2b079adaf7c09398
+PODFILE CHECKSUM: 1b793e748d026e3b854adb72ca20e713f1c34a17
 
 COCOAPODS: 1.1.1

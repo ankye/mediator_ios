@@ -15,8 +15,8 @@
 @property (nonatomic, strong) UserModel* me;
 
 @property (nonatomic,strong) NSMutableArray* userlist;
-
+@property (nonatomic,strong) NSMutableArray* friendList;
 SINGLETON_INTR(AKMapManager);
 
-
+-(void)reloadLocation;
 @end

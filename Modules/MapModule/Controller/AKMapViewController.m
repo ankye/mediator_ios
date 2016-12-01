@@ -92,6 +92,10 @@ static void *xxcontext = &xxcontext;
         [[AKMapManager sharedInstance] addObserver:self forKeyPath:@"userlist" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:xxcontext];
 
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeUserPosition:) name:@"UserSendPositionUpdate" object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:)
+                                                     name:UIApplicationWillEnterForegroundNotification object:nil]; //监听是否重新进入程序程序.
         
 //        [[AKMapManager sharedInstance].userlist addObserverBlockForKeyPath:@"count" block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
 //            @strongify(self);
@@ -119,6 +123,10 @@ static void *xxcontext = &xxcontext;
     }
 }
 
+- (void)applicationDidBecomeActive:(NSNotification *)notic{
+    [[AKMapManager sharedInstance] reloadLocation];
+    [self updateUserPointAnnotation];
+}
 
 -(void)dealloc
 {
@@ -130,6 +138,21 @@ static void *xxcontext = &xxcontext;
     for(UserModel* user in [AKMapManager sharedInstance].userlist){
         [self updateUserPosition: user];
     }
+}
+
+-(void)changeUserPosition:(NSNotification*)notify
+{
+    NSDictionary* dic = (NSDictionary*)notify.object;
+    if(dic){
+        
+      
+            UserModel* user = [[AKDataCenter sharedInstance] user_getUserInfo:dic[@"uid"]];
+            
+            [self updateUserPosition:user];
+        
+        
+    }
+
 }
 
 - (void)setupButtons {
@@ -146,7 +169,8 @@ static void *xxcontext = &xxcontext;
     }];
     
     self.friendButton = [[HBBaseRoundButton alloc] initWithIconImage:ImageInName(@"main_friend") clickBlock:^{
-        [[AKMediator sharedInstance] im_popupConversationView];
+        UIView<AKPopupViewProtocol>* view = [[AKMediator sharedInstance] im_popupConversationView];
+        [view loadData:[AKMapManager sharedInstance].friendList];
     }];
     [self.view addSubview:self.friendButton];
     [self.friendButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -204,8 +228,10 @@ static void *xxcontext = &xxcontext;
     self.annotaitonList = [[NSMutableDictionary alloc] init];
     [self initMapView];
     [self setupButtons];
-   
+ 
 }
+
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -224,6 +250,17 @@ static void *xxcontext = &xxcontext;
    
 }
 
+/**
+ * @brief 当选中一个annotation views时，调用此接口
+ * @param mapView 地图View
+ * @param view 选中的annotation views
+ */
+- (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view
+{
+    AKUserPinAnnotationView* v = (AKUserPinAnnotationView*)view;
+    [[AKMediator sharedInstance] map_popUserCardView:v.user];
+     [self.mapView deselectAnnotation:view.annotation animated:YES];
+}
 #pragma mark - MAMapView Delegate
 
 - (MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation
@@ -238,6 +275,7 @@ static void *xxcontext = &xxcontext;
             annotationView = [[AKUserPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndetifier];
         }
         AKUserPointAnnotation* pointAnnotation = (AKUserPointAnnotation*)annotation;
+        
         
         annotationView.user = pointAnnotation.user;
         

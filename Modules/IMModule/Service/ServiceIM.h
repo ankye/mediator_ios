@@ -34,7 +34,7 @@
  @param params 参数列表
  @return 返回聊天列表视图
  */
--(UIView*)conversationView:(NSDictionary*)params;
+-(UIView<AKPopupViewProtocol>*)popConversationView:(NSDictionary*)params;
 
 
 @end

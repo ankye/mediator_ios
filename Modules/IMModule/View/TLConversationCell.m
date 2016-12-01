@@ -54,19 +54,21 @@
 {
     _conversation = conversation;
     
-//    if (conversation.avatarPath.length > 0) {
-//     //   NSString *path = [NSFileManager pathUserAvatar:conversation.avatarPath];
-//        [self.avatarImageView setImage:[UIImage imageNamed:conversation.avatarURL]];
-//    }
-//    else if (conversation.avatarURL.length > 0){
-//        [self.avatarImageView sd_setImageWithURL:conversation.avatarURL placeholderImage:[UIImage imageNamed:DEFAULT_AVATAR_PATH]];
-//    }
-//    else {
-//        [self.avatarImageView setImage:nil];
-//    }
-    [self.usernameLabel setText:conversation.partnerName];
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:conversation.partner.head] placeholderImage:nil];
+
+    UserModel* me = [[AKMediator sharedInstance] user_me];
+   
+    [self.usernameLabel setText:conversation.partner.nickname];
+    int distance = [AppHelper getDistance:me.latitude longitude:me.longitude toLatitude:conversation.partner.latitude toLongitude:conversation.partner.longitude];
+    if(conversation.partner.longitude == 0 && conversation.partner.latitude == 0){
+        conversation.content = [NSString stringWithFormat:@"定位未获取,请稍后"];
+    }else{
+        conversation.content = [NSString stringWithFormat:@"距离  :%d 米",distance];
+    }
     [self.detailLabel setText:conversation.content];
-//    [self.timeLabel setText:conversation.date.conversaionTimeInfo];
+    
+    [self.timeLabel setText:conversation.partner.last_login_time];
+    
     switch (conversation.remindType) {
         case TLMessageRemindTypeNormal:
             [self.remindImageView setHidden:YES];

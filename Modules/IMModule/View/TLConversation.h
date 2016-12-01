@@ -49,26 +49,7 @@ typedef NS_ENUM(NSInteger, TLMessageRemindType) {
  */
 @property (nonatomic, assign) TLMessageRemindType remindType;
 
-/**
- *  用户ID
- */
-@property (nonatomic, strong) NSString *partnerID;
-
-/**
- *  用户名
- */
-@property (nonatomic, strong) NSString *partnerName;
-
-/**
- *  头像地址（网络）
- */
-@property (nonatomic, strong) NSString *avatarURL;
-
-/**
- *  头像地址（本地）
- */
-@property (nonatomic, strong) NSString *avatarPath;
-
+@property (nonatomic, strong) UserModel* partner;
 /**
  *  时间
  */

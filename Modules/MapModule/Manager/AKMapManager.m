@@ -9,7 +9,7 @@
 #import "AKMapManager.h"
 #import "MapModuleDefine.h"
 #import "AKTimerManager.h"
-#import "AKConversation.h"
+#import "TLConversation.h"
 #define DefaultLocationTimeout  6
 #define DefaultReGeocodeTimeout 3
 

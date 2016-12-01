@@ -67,6 +67,7 @@ PODS:
   - SocketRocket (0.5.1)
   - STPopup (1.8.1)
   - SVProgressHUD (2.0.4)
+  - UberSignals (2.5.0)
   - UMengAnalytics (4.1.4)
   - UMengUShare/Core (6.0.3):
     - UMengUShare/Network
@@ -106,6 +107,7 @@ DEPENDENCIES:
   - SocketRocket
   - STPopup
   - SVProgressHUD
+  - UberSignals
   - UMengAnalytics
   - UMengUShare/Social/QQ
   - UMengUShare/Social/Sina
@@ -138,11 +140,12 @@ SPEC CHECKSUMS:
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   STPopup: 47e8ae53d348fa5f9be2d08d5c513ebe12ca758d
   SVProgressHUD: bfde85ed6c573ea802b9cb37894ed9b629034f1b
+  UberSignals: abd80d8aa926828e30b75d3bd79d6ed07e4ed08a
   UMengAnalytics: 0bde5737767dfc18afb03a4cd6ba9d57bb2ad10d
   UMengUShare: f231fc086d789d4e560a5090dcc13a2db15c686d
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 1b793e748d026e3b854adb72ca20e713f1c34a17
+PODFILE CHECKSUM: 02455f0674262a1037f8adccdfbbed1b24d9af96
 
 COCOAPODS: 1.1.1

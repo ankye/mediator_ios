@@ -11,16 +11,7 @@
 
 @implementation AKMediator
 
-#pragma mark - public methods
-+ (instancetype)sharedInstance
-{
-    static AKMediator *mediator;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        mediator = [[AKMediator alloc] init];
-    });
-    return mediator;
-}
+SINGLETON_IMPL(AKMediator)
 
 
 -(void)updateAppScheme:(NSString*)scheme

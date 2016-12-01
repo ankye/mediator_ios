@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModuleDefine.h"
 #import "AKTimerProtocol.h"
 
 /**
@@ -14,7 +15,7 @@
  */
 @interface AKTimerManager : NSObject
 
-+ (instancetype)sharedInstance;
+SINGLETON_INTR(AKTimerManager)
 
 
 /**

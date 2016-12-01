@@ -13,7 +13,7 @@
 
 
 
-@interface TLConversationView : UIView<UITableViewDelegate,AKPopupViewProtocol>
+@interface TLConversationView : UIView<UITableViewDelegate,UITableViewDataSource,AKPopupViewProtocol>
 
 
 @property (nonatomic, strong) NSMutableArray *data;

@@ -1,6 +1,7 @@
 
 
 #import <Foundation/Foundation.h>
+#import "BaseModuleDefine.h"
 
 #define AKMediator_RPC_PREFIX @"app"
 
@@ -9,7 +10,7 @@
 
 @interface AKMediator : NSObject
 
-+ (instancetype)sharedInstance;
+SINGLETON_INTR(AKMediator)
 
 -(void)updateAppScheme:(NSString*)scheme;
 

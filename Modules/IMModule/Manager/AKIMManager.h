@@ -17,7 +17,7 @@
 #define IM_REQUEST_TIMEOUT      30 // 默认请求超时时间
 
 
-@interface AKIMManager : AKBaseManager <SRWebSocketDelegate>
+@interface AKIMManager : NSObject <SRWebSocketDelegate>
 
 
 @property (strong,nonatomic,readwrite) SRWebSocket *wsClient;

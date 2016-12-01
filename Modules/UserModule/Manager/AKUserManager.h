@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AKSignal.h"
+
 
 @interface AKUserManager : NSObject
 

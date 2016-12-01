@@ -15,7 +15,7 @@
 #import <AFMInfoBanner/AFMInfoBanner.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 
-#import "AKSignal.h"
+
 #import "AKAppDelegate.h"
 #import "AKBaseViewController.h"
 #import "AKBaseModel.h"
@@ -24,7 +24,7 @@
 #import "AKPopupManager.h"
 #import "AKMediator.h"
 #import "AKDBManager.h"
-#import "AKBaseManager.h"
+
 #import "AppHelper.h"
 #import "FileHelper.h"
 #import "DeviceHelper.h"

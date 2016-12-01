@@ -15,7 +15,7 @@
 @interface AKPopupManager : NSObject <UIGestureRecognizerDelegate,STPopupControllerTransitioning>
 
 
-+(AKPopupManager *)sharedManager;
+SINGLETON_INTR(AKPopupManager)
 
 
 

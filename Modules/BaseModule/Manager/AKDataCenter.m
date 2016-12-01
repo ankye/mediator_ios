@@ -21,17 +21,8 @@
 
 @implementation AKDataCenter
 
-#pragma mark - public methods
-+ (instancetype)sharedInstance
-{
-    static AKDataCenter *_dataCenter;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _dataCenter = [[AKDataCenter alloc] init];
-        
-    });
-    return _dataCenter;
-}
+SINGLETON_IMPL(AKDataCenter)
+
 
 -(id)init
 {

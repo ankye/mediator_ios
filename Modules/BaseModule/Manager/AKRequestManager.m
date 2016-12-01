@@ -17,16 +17,7 @@
 @implementation AKRequestManager
 
 
-#pragma mark - public methods
-+ (instancetype)sharedInstance
-{
-    static AKRequestManager *_requestManager;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _requestManager = [[AKRequestManager alloc] init];
-    });
-    return _requestManager;
-}
+SINGLETON_IMPL(AKRequestManager)
 
 
 //删除http request header 某个field信息

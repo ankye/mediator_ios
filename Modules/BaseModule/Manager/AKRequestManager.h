@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModuleDefine.h"
 
 @interface AKRequestManager : NSObject
-+ (instancetype)sharedInstance;
+
+SINGLETON_INTR(AKRequestManager)
 
 //删除http request header 某个field信息
 -(void)removeHttpHeaderField:(NSString*)key;

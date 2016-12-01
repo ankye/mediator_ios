@@ -43,4 +43,5 @@ target 'Project' do
         pod 'SVProgressHUD'
         pod 'BlocksKit'
 
+        pod 'UberSignals'
 end

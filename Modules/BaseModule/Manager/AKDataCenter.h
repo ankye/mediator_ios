@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseModuleDefine.h"
 #import "AKBaseModel.h"
 
 
 
 @interface AKDataCenter : NSObject
 
-+ (instancetype)sharedInstance;
+SINGLETON_INTR(AKDataCenter)
 
 
 /**

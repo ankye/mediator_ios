@@ -22,6 +22,8 @@
 
 @implementation AKPopupManager 
 
+SINGLETON_IMPL(AKPopupManager)
+
 -(id)init
 {
     self = [super init];
@@ -49,16 +51,6 @@
 }
 
 
-#pragma mark - Initialization Methods
-+(AKPopupManager *)sharedManager
-{
-    static AKPopupManager *_sharedManager  = nil;
-    static dispatch_once_t oncePredicate;
-    dispatch_once(&oncePredicate,^{
-        _sharedManager = [[AKPopupManager alloc]init];
-    });
-    return _sharedManager;
-}
 
 //最终显示弹窗的地方
 -(void)show

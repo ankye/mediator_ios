@@ -21,6 +21,8 @@
 
 @implementation AKTimerManager
 
+SINGLETON_IMPL(AKTimerManager)
+
 - (id) init
 {
     self = [super init];
@@ -30,18 +32,6 @@
         [self startTimer];
     }
     return self;
-}
-/*
- * 单例创建
- */
-+ (instancetype)sharedInstance
-{
-    static AKTimerManager *_timerManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        _timerManager = [[AKTimerManager alloc] init];
-    });
-    return _timerManager;
 }
 
 

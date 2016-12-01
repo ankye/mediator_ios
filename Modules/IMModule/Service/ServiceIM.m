@@ -11,7 +11,7 @@
 #import "AKIMManager+Message.h"
 #import "AKIMManager+IM.h"
 #import "AKIMManager+Room.h"
-
+#import "TLConversationView.h"
 
 @implementation ServiceIM
 
@@ -44,17 +44,16 @@
  */
 -(UIView<AKPopupViewProtocol>*)popConversationView:(NSDictionary*)params
 {
-//    UIView<AKPopupViewProtocol>* view = [[TLConversationView alloc] init];
-//    
-//    NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:YES style:STPopupStyleBottomSheet onClick:^(NSInteger channel, NSMutableDictionary *attributes) {
-//        NSLog(@"Click");
-//    } onClose:^(NSMutableDictionary *attributes) {
-//        NSLog(@"close");
-//    }];
-//    [[AKPopupManager sharedManager] showView:view withAttributes:attributes];
-//    
-//    return view;
-    return nil;
+    UIView<AKPopupViewProtocol>* view = [[TLConversationView alloc] init];
+    
+    NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:YES style:STPopupStyleBottomSheet onClick:^(NSInteger channel, NSMutableDictionary *attributes) {
+        NSLog(@"Click");
+    } onClose:^(NSMutableDictionary *attributes) {
+        NSLog(@"close");
+    }];
+    [[AKPopupManager sharedManager] showView:view withAttributes:attributes];
+    
+    return view;
 }
 
 @end

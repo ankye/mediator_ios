@@ -72,6 +72,10 @@
 		C515A2EA1DF00B8100353FC4 /* AKIMServerListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C515A1831DF00B8100353FC4 /* AKIMServerListRequest.m */; };
 		C515A2EB1DF00B8100353FC4 /* AKIMTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C515A1851DF00B8100353FC4 /* AKIMTokenRequest.m */; };
 		C515A2EC1DF00B8100353FC4 /* ServiceIM.m in Sources */ = {isa = PBXBuildFile; fileRef = C515A1881DF00B8100353FC4 /* ServiceIM.m */; };
+		C515AB2A1DF01A7B00353FC4 /* TLConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AB231DF01A7B00353FC4 /* TLConversation.m */; };
+		C515AB2B1DF01A7B00353FC4 /* TLConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AB251DF01A7B00353FC4 /* TLConversationCell.m */; };
+		C515AB2C1DF01A7B00353FC4 /* TLConversationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AB271DF01A7B00353FC4 /* TLConversationView.m */; };
+		C515AB2D1DF01A7B00353FC4 /* TLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AB291DF01A7B00353FC4 /* TLTableViewCell.m */; };
 		C52A015C1DEE83C300C64FF4 /* UserCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C52A015B1DEE83C300C64FF4 /* UserCardView.m */; };
 		C53806581DE68C9B00A2322D /* AKUserPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = C53806571DE68C9B00A2322D /* AKUserPointAnnotation.m */; };
 		C538065B1DE6922100A2322D /* AKUserPinAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C538065A1DE6922100A2322D /* AKUserPinAnnotationView.m */; };
@@ -287,6 +291,14 @@
 		C515A1851DF00B8100353FC4 /* AKIMTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKIMTokenRequest.m; sourceTree = "<group>"; };
 		C515A1871DF00B8100353FC4 /* ServiceIM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceIM.h; sourceTree = "<group>"; };
 		C515A1881DF00B8100353FC4 /* ServiceIM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceIM.m; sourceTree = "<group>"; };
+		C515AB221DF01A7B00353FC4 /* TLConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLConversation.h; sourceTree = "<group>"; };
+		C515AB231DF01A7B00353FC4 /* TLConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLConversation.m; sourceTree = "<group>"; };
+		C515AB241DF01A7B00353FC4 /* TLConversationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLConversationCell.h; sourceTree = "<group>"; };
+		C515AB251DF01A7B00353FC4 /* TLConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLConversationCell.m; sourceTree = "<group>"; };
+		C515AB261DF01A7B00353FC4 /* TLConversationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLConversationView.h; sourceTree = "<group>"; };
+		C515AB271DF01A7B00353FC4 /* TLConversationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLConversationView.m; sourceTree = "<group>"; };
+		C515AB281DF01A7B00353FC4 /* TLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTableViewCell.h; sourceTree = "<group>"; };
+		C515AB291DF01A7B00353FC4 /* TLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTableViewCell.m; sourceTree = "<group>"; };
 		C52A015A1DEE83C300C64FF4 /* UserCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCardView.h; sourceTree = "<group>"; };
 		C52A015B1DEE83C300C64FF4 /* UserCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCardView.m; sourceTree = "<group>"; };
 		C53806561DE68C9B00A2322D /* AKUserPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserPointAnnotation.h; sourceTree = "<group>"; };
@@ -711,6 +723,21 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		C515AB211DF01A7B00353FC4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C515AB221DF01A7B00353FC4 /* TLConversation.h */,
+				C515AB231DF01A7B00353FC4 /* TLConversation.m */,
+				C515AB241DF01A7B00353FC4 /* TLConversationCell.h */,
+				C515AB251DF01A7B00353FC4 /* TLConversationCell.m */,
+				C515AB261DF01A7B00353FC4 /* TLConversationView.h */,
+				C515AB271DF01A7B00353FC4 /* TLConversationView.m */,
+				C515AB281DF01A7B00353FC4 /* TLTableViewCell.h */,
+				C515AB291DF01A7B00353FC4 /* TLTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C52A01541DEE837700C64FF4 /* Card */ = {
 			isa = PBXGroup;
 			children = (
@@ -1063,6 +1090,7 @@
 		C55CBE901DE54CC90000B1F6 /* IMModule */ = {
 			isa = PBXGroup;
 			children = (
+				C515AB211DF01A7B00353FC4 /* View */,
 				C515A0F81DF00B8000353FC4 /* Data */,
 				C515A0FB1DF00B8000353FC4 /* IMMessageDef.h */,
 				C515A0FC1DF00B8000353FC4 /* IMModule.h */,
@@ -1586,8 +1614,10 @@
 				C515A2D21DF00B8100353FC4 /* IMRoomHostBroadcastMessage.m in Sources */,
 				C515A2E31DF00B8100353FC4 /* ShowRenQiUpdatePush.m in Sources */,
 				C515A2EC1DF00B8100353FC4 /* ServiceIM.m in Sources */,
+				C515AB2C1DF01A7B00353FC4 /* TLConversationView.m in Sources */,
 				C552824B1DEC1CE900348BEB /* AKMediator.m in Sources */,
 				C515A2AF1DF00B8100353FC4 /* AKIMManager+IM.m in Sources */,
+				C515AB2B1DF01A7B00353FC4 /* TLConversationCell.m in Sources */,
 				C515A2C91DF00B8100353FC4 /* BroadcastAnnouncedPush.m in Sources */,
 				C515A2DD1DF00B8100353FC4 /* IMRoomSayMessage.m in Sources */,
 				C515A2BA1DF00B8100353FC4 /* NumgameWinnerChangePush.m in Sources */,
@@ -1611,6 +1641,7 @@
 				C515A2BC1DF00B8100353FC4 /* IMBroadcastNoticeUpdatedPush.m in Sources */,
 				C515A2C81DF00B8100353FC4 /* IMMessage.m in Sources */,
 				C55282421DEC1CE900348BEB /* AKPopupViewController.m in Sources */,
+				C515AB2D1DF01A7B00353FC4 /* TLTableViewCell.m in Sources */,
 				C515A2C51DF00B8100353FC4 /* IMSaidPush.m in Sources */,
 				C538066C1DE71A0900A2322D /* AKDBManager+UserModel.m in Sources */,
 				C515A2E11DF00B8100353FC4 /* PhpBroadcastedPush.m in Sources */,
@@ -1678,6 +1709,7 @@
 				C55282521DEC1CE900348BEB /* AKTimer.m in Sources */,
 				C5D3DE6B1DE85D4D001E55B3 /* GVUserDefaults+UserModule.m in Sources */,
 				C515A2AD1DF00B8100353FC4 /* GVUserDefaults+IMModule.m in Sources */,
+				C515AB2A1DF01A7B00353FC4 /* TLConversation.m in Sources */,
 				C515A2E61DF00B8100353FC4 /* IMSessionSetIsMassModePush.m in Sources */,
 				C515A2CD1DF00B8100353FC4 /* IMRoomGetUDsMessage.m in Sources */,
 				C55282531DEC1CE900348BEB /* AKTimerManager.m in Sources */,
@@ -1845,7 +1877,6 @@
 				DEVELOPMENT_TEAM = 5DD9UH248V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Modules/IMModule/Controller/Extensions/Vendors/JSPatch",
 					"$(PROJECT_DIR)/Modules/IMModule/Chat/Extensions/Vendors/JSPatch",
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Project/PrefixHeader.pch";
@@ -1867,7 +1898,6 @@
 				DEVELOPMENT_TEAM = 5DD9UH248V;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Modules/IMModule/Controller/Extensions/Vendors/JSPatch",
 					"$(PROJECT_DIR)/Modules/IMModule/Chat/Extensions/Vendors/JSPatch",
 				);
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Project/PrefixHeader.pch";

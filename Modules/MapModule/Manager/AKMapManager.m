@@ -9,7 +9,7 @@
 #import "AKMapManager.h"
 #import "MapModuleDefine.h"
 #import "AKTimerManager.h"
-
+#import "AKConversation.h"
 #define DefaultLocationTimeout  6
 #define DefaultReGeocodeTimeout 3
 
@@ -113,10 +113,10 @@ SINGLETON_IMPL(AKMapManager);
     
     if(self.me != user){
         
-//        TLConversation* converstation = [[TLConversation alloc] init];
-//        converstation.partner = user;
-//        
-//        [self addFriend:converstation];
+        TLConversation* converstation = [[TLConversation alloc] init];
+        converstation.partner = user;
+        
+        [self addFriend:converstation];
      
     }
 }
@@ -233,11 +233,11 @@ SINGLETON_IMPL(AKMapManager);
     return [self mutableArrayValueForKey:NSStringFromSelector(@selector(friendList))];
 }
 
-//- (void)addFriend:(TLConversation *)user {
-//
-//   
-//    [[self friendArray] addObject:user];
-//
-//}
+- (void)addFriend:(TLConversation *)user {
+
+   
+    [[self friendArray] addObject:user];
+
+}
 
 @end

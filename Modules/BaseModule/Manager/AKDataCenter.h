@@ -10,7 +10,7 @@
 #import "BaseModuleDefine.h"
 #import "AKBaseModel.h"
 
-
+#define AK_DATA_CENTER [AKDataCenter sharedInstance]
 
 @interface AKDataCenter : NSObject
 

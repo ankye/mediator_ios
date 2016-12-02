@@ -10,6 +10,9 @@
 #import "BaseModuleDefine.h"
 #import "AKTimerProtocol.h"
 
+#define AK_TIME_MANAGER [AKTimerManager sharedInstance]
+
+
 /**
  定时器管理类，精度为1s
  */

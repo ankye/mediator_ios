@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "BaseModuleDefine.h"
 
+#define AK_REQUEST_MANAGER [AKRequestManager sharedInstance]
+
 @interface AKRequestManager : NSObject
 
 SINGLETON_INTR(AKRequestManager)

@@ -29,7 +29,7 @@
         NSLog(@"complete");
     }];
     
-    [[AKPopupManager sharedInstance] showView:view withAttributes:popAttrs];
+    [AK_POPUP_MANAGER showView:view withAttributes:popAttrs];
     [view loadData:user];
     
     return view;

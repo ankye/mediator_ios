@@ -10,6 +10,7 @@
 #import "AKPopupViewProtocol.h"
 #import "BaseModuleDefine.h"
 
+#define AK_POPUP_MANAGER [AKPopupManager sharedInstance]
 
 
 @interface AKPopupManager : NSObject <UIGestureRecognizerDelegate,STPopupControllerTransitioning>

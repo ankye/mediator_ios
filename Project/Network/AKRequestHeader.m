@@ -27,7 +27,7 @@
         @"USER-MPHONE-OS-VER":[DeviceHelper deviceOSVersion]//系统版本号
         }];
     
-    [[AKRequestManager sharedInstance] setHttpHeaderWithDictionary:dic];
+    [AK_REQUEST_MANAGER setHttpHeaderWithDictionary:dic];
     
 
 }

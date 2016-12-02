@@ -7,6 +7,7 @@
 
 #define AKMediator_Service_PREFIX @"Service"
 
+#define AK_MEDIATOR [AKMediator sharedInstance]
 
 @interface AKMediator : NSObject
 

@@ -23,9 +23,9 @@
 -(void)im_getIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken success:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure
 {
  
-    [[AKRequestManager sharedInstance] updateHttpHeaderField:@"API-VERSION" withValue:@"2.0"];
-     [[AKRequestManager sharedInstance] updateHttpHeaderField:@"USER-UID" withValue: [uid stringValue]];
-     [[AKRequestManager sharedInstance] updateHttpHeaderField:@"USER-TOKEN" withValue:userToken];
+    [AK_REQUEST_MANAGER updateHttpHeaderField:@"API-VERSION" withValue:@"2.0"];
+     [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-UID" withValue: [uid stringValue]];
+     [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-TOKEN" withValue:userToken];
 
     AKIMTokenRequest* request = [[AKIMTokenRequest alloc] init:uid];
     [request startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {

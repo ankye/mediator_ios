@@ -56,7 +56,7 @@
     
     [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:conversation.partner.head] placeholderImage:nil];
 
-    UserModel* me = [[AKMediator sharedInstance] user_me];
+    UserModel* me = [AK_MEDIATOR user_me];
    
     [self.usernameLabel setText:conversation.partner.nickname];
     int distance = [AppHelper getDistance:me.latitude longitude:me.longitude toLatitude:conversation.partner.latitude toLongitude:conversation.partner.longitude];

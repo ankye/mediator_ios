@@ -13,8 +13,8 @@
 
 +(void)load
 {
-    if( ![[AKDBManager sharedInstance] isExistUserTable]){
-        [[AKDBManager sharedInstance] createUserTable];
+    if( ![AK_DB_MANAGER isExistUserTable]){
+        [AK_DB_MANAGER createUserTable];
     }
 }
 @end

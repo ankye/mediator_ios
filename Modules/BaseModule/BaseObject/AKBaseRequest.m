@@ -13,7 +13,7 @@
 
 - (NSDictionary *)requestHeaderFieldValueDictionary {
     
-    return [[AKRequestManager sharedInstance] getHttpHeaderField];
+    return [AK_REQUEST_MANAGER getHttpHeaderField];
 }
 
 @end

@@ -74,7 +74,7 @@ SINGLETON_IMPL(AKIMManager);
 
 -(void)requestIMServerList
 {
-    [[AKRequestManager sharedInstance] im_getIMServerList:^(__kindof YTKBaseRequest * _Nonnull request) {
+    [AK_REQUEST_MANAGER im_getIMServerList:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSMutableArray* response = [AppHelper arrayWithData:request.responseData];
         if(response){
             [[AKIMManager sharedInstance] setIMServerList:response];
@@ -96,7 +96,7 @@ SINGLETON_IMPL(AKIMManager);
  */
 -(void)requestIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken
 {
-    [[AKRequestManager sharedInstance] im_getIMToken:uid withUserToken:userToken success:^(__kindof YTKBaseRequest * _Nonnull request) {
+    [AK_REQUEST_MANAGER im_getIMToken:uid withUserToken:userToken success:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSDictionary* response = [AppHelper dictionaryWithData:request.responseData];
         if(response && [response[@"errcode"] intValue] == 0){
             NSLog(@"result = %@",response);
@@ -170,14 +170,14 @@ SINGLETON_IMPL(AKIMManager);
 -(void)setupTimer
 {
     //IM服务器链接10检测一次，断开重连
-    [[AKTimerManager sharedInstance] addTimerWithInterval:10 withUniqueID:@"AKIMConnectCheckTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
+    [AK_TIME_MANAGER addTimerWithInterval:10 withUniqueID:@"AKIMConnectCheckTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
         if( [self isConnected] == NO){
             NSLog(@"重新连接IM服务器");
             [self connect];
         }
     }];
  
-    [[AKTimerManager sharedInstance] addTimerWithInterval:10 withUniqueID:@"AKIMHeartBeatTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
+    [AK_TIME_MANAGER addTimerWithInterval:10 withUniqueID:@"AKIMHeartBeatTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
         if([self isConnected]){
             NSLog(@"执行心跳处理");
             [self heartbeat];
@@ -195,7 +195,7 @@ SINGLETON_IMPL(AKIMManager);
         
         _lastConnectTime = [AppHelper getCurrentTimestamp];
         
-        UserModel* me = [[AKMediator sharedInstance] user_me];
+        UserModel* me = [AK_MEDIATOR user_me];
         if(!me){
             return NO;
         }

@@ -90,7 +90,7 @@
 -(BOOL) insertUser:(UserModel*)user
 {
     FMDatabaseQueue* queue = [self getQueue:KAK_USER_DBNAME];
-    return [[AKDBManager sharedInstance] insertModels:queue withModelArray:[[NSMutableArray alloc] initWithObjects:user,nil]];
+    return [AK_DB_MANAGER insertModels:queue withModelArray:[[NSMutableArray alloc] initWithObjects:user,nil]];
     
    
 }
@@ -105,7 +105,7 @@
 -(BOOL) updateUser:(UserModel*)user
 {
     FMDatabaseQueue* queue = [self getQueue:KAK_USER_DBNAME];
-    return [[AKDBManager sharedInstance] updateModels:queue withModelArray:[[NSMutableArray alloc] initWithObjects:user,nil]];
+    return [AK_DB_MANAGER updateModels:queue withModelArray:[[NSMutableArray alloc] initWithObjects:user,nil]];
 
 }
 

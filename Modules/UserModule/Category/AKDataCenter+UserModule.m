@@ -17,14 +17,14 @@
 
 -(void)user_setUserInfo:(UserModel*)user
 {
-    [[AKDataCenter sharedInstance] updatePool:KAKD_USERModel withKey:[user getKey] andObject:(AKBaseModel*)user];
+    [AK_DATA_CENTER updatePool:KAKD_USERModel withKey:[user getKey] andObject:(AKBaseModel*)user];
     [GVUserDefaults standardUserDefaults].uid = user.uid;
     
-    if(![[AKDBManager sharedInstance] isExistUser:[user.uid integerValue]]){
+    if(![AK_DB_MANAGER isExistUser:[user.uid integerValue]]){
         
-        [[AKDBManager sharedInstance] insertUser:user];
+        [AK_DB_MANAGER insertUser:user];
     }else{
-        [[AKDBManager sharedInstance] updateUser:user];
+        [AK_DB_MANAGER updateUser:user];
     }
     
 
@@ -32,9 +32,9 @@
 -(UserModel*)user_getUserInfo:(NSString*)uid
 {
     
-    UserModel* user = (UserModel*)[[AKDataCenter sharedInstance] getObjectFromPool:KAKD_USERModel withKey:uid];
+    UserModel* user = (UserModel*)[AK_DATA_CENTER getObjectFromPool:KAKD_USERModel withKey:uid];
     if(user.pk_cid <= 0){
-        UserModel *tempUser = [[AKDBManager sharedInstance] queryUserByUid:[uid integerValue]];
+        UserModel *tempUser = [AK_DB_MANAGER queryUserByUid:[uid integerValue]];
         if(tempUser){
             [user fillData:tempUser];
         }

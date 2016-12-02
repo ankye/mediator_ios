@@ -17,10 +17,10 @@
     
     if( [super application:application didFinishLaunchingWithOptions:launchOptions] ){
         
-        [[AKMediator sharedInstance] updateAppScheme:@"banliapp"];
+        [AK_MEDIATOR updateAppScheme:@"banliapp"];
     
         
-        UIViewController *controller = [[AKMediator sharedInstance] map_viewController];
+        UIViewController *controller = [AK_MEDIATOR map_viewController];
         UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
         
     
@@ -31,10 +31,10 @@
         [self.window makeKeyWindow];
         [self.window makeKeyAndVisible];
         
-        [[AKMediator sharedInstance] im_requestIMServerList];
+        [AK_MEDIATOR im_requestIMServerList];
        
-        if(![[AKMediator sharedInstance] user_isUserLogin]){
-            UIViewController* loginController = [[AKMediator sharedInstance] login_viewControllerForLogin];
+        if(![AK_MEDIATOR user_isUserLogin]){
+            UIViewController* loginController = [AK_MEDIATOR login_viewControllerForLogin];
             [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
         }
        

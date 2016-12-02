@@ -72,12 +72,12 @@ SINGLETON_IMPL(AKMapManager);
     
     //进行单次定位请求
     @weakify(self);
-//    [[AKTimerManager sharedInstance] addTimerWithInterval:20 withUniqueID:@"LocationReloadTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
+//    [AK_TIME_MANAGER addTimerWithInterval:20 withUniqueID:@"LocationReloadTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
 //        @strongify(self);
 //        [self reloadLocation];
 //    }];
     
-    [[AKTimerManager sharedInstance] addTimerWithInterval:5 withUniqueID:@"RoomLoginStateTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
+    [AK_TIME_MANAGER addTimerWithInterval:5 withUniqueID:@"RoomLoginStateTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
         @strongify(self);
         if([[AKIMManager sharedInstance] isConnected]){
             if(self.joinRoomStep <= 1 ){
@@ -93,7 +93,7 @@ SINGLETON_IMPL(AKMapManager);
         }
     }];
     
-    [[AKTimerManager sharedInstance] addTimerWithInterval:10 withUniqueID:@"RoomGetUDsTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
+    [AK_TIME_MANAGER addTimerWithInterval:10 withUniqueID:@"RoomGetUDsTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
         @strongify(self);
         [self reloadFriends];
     }];
@@ -136,7 +136,7 @@ SINGLETON_IMPL(AKMapManager);
                 if(info){
                     NSInteger uid = [info[@"uid"] integerValue];
                     
-                    UserModel* user = [[AKMediator sharedInstance] user_getUserInfo:@(uid)];
+                    UserModel* user = [AK_MEDIATOR user_getUserInfo:@(uid)];
             
                     user.head = info[@"face"];
                     user.uid = @(uid);
@@ -191,12 +191,12 @@ SINGLETON_IMPL(AKMapManager);
     //得到定位信息，添加annotation
     if (location)
     {
-        if( ! [[AKMediator sharedInstance] user_isUserLogin]){
+        if( ! [AK_MEDIATOR user_isUserLogin]){
             NSLog(@"User Not Login");
             return ;
         }
         if(self.me == nil){
-            self.me = [[AKMediator sharedInstance] user_me];
+            self.me = [AK_MEDIATOR user_me];
              [self reloadFriends];
         }
         if(self.me.latitude != location.coordinate.latitude || self.me.longitude != location.coordinate.latitude){

@@ -11,7 +11,7 @@
 #import <FMDB/FMDB.h>
 
 
-
+#define AK_DB_MANAGER [AKDBManager sharedInstance]
 
 
 @interface AKDBManager : NSObject

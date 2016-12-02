@@ -43,7 +43,7 @@
     NSDictionary* dic = (NSDictionary*)notify.object;
     if(dic){
         
-        UserModel* user = [[AKDataCenter sharedInstance] user_getUserInfo:dic[@"uid"]];
+        UserModel* user = [AK_DATA_CENTER user_getUserInfo:dic[@"uid"]];
         if(user && user != self.me){
             [self updateUserInfo:user params:dic];
         }
@@ -64,7 +64,7 @@
 
 -(UserModel*)getUserInfo:(NSNumber*)uid
 {
-    UserModel* user = [[AKDataCenter sharedInstance] user_getUserInfo:[uid stringValue]];
+    UserModel* user = [AK_DATA_CENTER user_getUserInfo:[uid stringValue]];
     return user;
 }
 /**
@@ -77,7 +77,7 @@
     if(self.me == nil){
         NSNumber* uid = [GVUserDefaults standardUserDefaults].uid;
         if(uid){ //本地有存储
-            UserModel* user = [[AKDBManager sharedInstance] queryUserByUid:[uid integerValue]];
+            UserModel* user = [AK_DB_MANAGER queryUserByUid:[uid integerValue]];
             if(user){
                 [self userLogin:user];
             }
@@ -95,17 +95,17 @@
  */
 -(BOOL)userLogin:(UserModel*)user
 {
-    [[AKDataCenter sharedInstance] user_setUserInfo:user];
+    [AK_DATA_CENTER user_setUserInfo:user];
   
     
-    [[AKRequestManager sharedInstance] updateHttpHeaderField:@"USER-UID" withValue:[user.uid stringValue]];
-    [[AKRequestManager sharedInstance] updateHttpHeaderField:@"USER-TOKEN" withValue:user.token];
+    [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-UID" withValue:[user.uid stringValue]];
+    [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-TOKEN" withValue:user.token];
 
-    self.me = [[AKDataCenter sharedInstance] user_getUserInfo:[user getKey]];
+    self.me = [AK_DATA_CENTER user_getUserInfo:[user getKey]];
     
 
     
-    [[AKMediator sharedInstance] im_requestIMToken:self.me.uid withUserToken:self.me.token];
+    [AK_MEDIATOR im_requestIMToken:self.me.uid withUserToken:self.me.token];
     
     if(self.me == nil){
         return NO;

@@ -146,7 +146,7 @@ static void *xxcontext = &xxcontext;
     if(dic){
         
       
-            UserModel* user = [[AKDataCenter sharedInstance] user_getUserInfo:dic[@"uid"]];
+            UserModel* user = [AK_DATA_CENTER user_getUserInfo:dic[@"uid"]];
             
             [self updateUserPosition:user];
         
@@ -169,7 +169,7 @@ static void *xxcontext = &xxcontext;
     }];
     
     self.friendButton = [[HBBaseRoundButton alloc] initWithIconImage:ImageInName(@"main_friend") clickBlock:^{
-        UIView<AKPopupViewProtocol>* view = [[AKMediator sharedInstance] im_popupConversationView];
+        UIView<AKPopupViewProtocol>* view = [AK_MEDIATOR im_popupConversationView];
         [view loadData:[AKMapManager sharedInstance].friendList];
     }];
     [self.view addSubview:self.friendButton];
@@ -258,7 +258,7 @@ static void *xxcontext = &xxcontext;
 - (void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view
 {
     AKUserPinAnnotationView* v = (AKUserPinAnnotationView*)view;
-    [[AKMediator sharedInstance] map_popUserCardView:v.user];
+    [AK_MEDIATOR map_popUserCardView:v.user];
      [self.mapView deselectAnnotation:view.annotation animated:YES];
 }
 #pragma mark - MAMapView Delegate

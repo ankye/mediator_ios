@@ -84,18 +84,18 @@
         UMSocialPlatformType platformType = [dic[@"type"] integerValue];
         
         @weakify(self);
-        [[AKMediator sharedInstance] share_getUserInfoForPlatform:platformType withController:self withCompletion:^(UMSocialUserInfoResponse *userinfo, NSError *error) {
+        [AK_MEDIATOR share_getUserInfoForPlatform:platformType withController:self withCompletion:^(UMSocialUserInfoResponse *userinfo, NSError *error) {
             
            
             @strongify(self);
-            [[AKRequestManager sharedInstance] login_requestThridLoginWithOpenID:userinfo.openid withToken:userinfo.accessToken withPlatformType:platformType Success:^(__kindof YTKBaseRequest * _Nonnull request) {
+            [AK_REQUEST_MANAGER login_requestThridLoginWithOpenID:userinfo.openid withToken:userinfo.accessToken withPlatformType:platformType Success:^(__kindof YTKBaseRequest * _Nonnull request) {
                 @strongify(self);
                 NSData* jsonData = request.responseData;
                 NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
                 NSLog(@"request login success %@",response);
             
                 if([response[@"errcode"] integerValue] == 0){
-                    [[AKMediator sharedInstance] user_loginSuccess:response[@"data"]];
+                    [AK_MEDIATOR user_loginSuccess:response[@"data"]];
                     [self didTappedReturnButton:nil];
                 }else{
                     NSString *message = [NSString stringWithFormat:@"[%@]请重试!\n",response[@"msg"]];

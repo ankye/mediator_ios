@@ -106,7 +106,7 @@
                             progress:nil
                            transform:nil
                           completion:nil];
-    UserModel *me = [[AKMediator sharedInstance] user_me];
+    UserModel *me = [AK_MEDIATOR user_me];
     
     if(_user.latitude == 0 && _user.longitude == 0){
         [_distanceLabel setText:@"地理位置未获取到"];

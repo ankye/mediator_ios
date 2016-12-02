@@ -51,7 +51,7 @@
     } onClose:^(NSMutableDictionary *attributes) {
         NSLog(@"close");
     }];
-    [[AKPopupManager sharedInstance] showView:view withAttributes:attributes];
+    [AK_POPUP_MANAGER showView:view withAttributes:attributes];
     
     return view;
 }

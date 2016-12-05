@@ -22,10 +22,8 @@ static void *xxcontext = &xxcontext;
 
 @interface AKMapViewController () <MAMapViewDelegate>
 
-
-//@property (nonatomic, strong) AKUserPointAnnotation *pointAnnotaiton;
 @property (nonatomic,strong) NSMutableDictionary* annotaitonList;
-
+@property (nonatomic,assign) BOOL       isSetMeToCenter;
 
 /**
  定位按钮
@@ -66,99 +64,38 @@ static void *xxcontext = &xxcontext;
         //设置倾斜角度
         [self.mapView setCameraDegree:30.f animated:YES duration:0.5];
         
-       
-       
-        
         [self.view addSubview:self.mapView];
         
+    }
+    //已经登录直接更新
+    if( [AKMapManager sharedInstance].me == nil && [AK_MEDIATOR user_isUserLogin] ){
+        [[AKMapManager sharedInstance] mapLogin];
+        
+    }
     
-        @weakify(self)
-        
-        [[AKMapManager sharedInstance] addObserverBlockForKeyPath:@"me" block:^(id  _Nonnull obj, id  _Nonnull oldVal, id  _Nonnull newVal) {
-            @strongify(self);
-           dispatch_async(dispatch_get_main_queue(), ^{
-               @strongify(self);
-               UserModel* me = newVal;
-               if(oldVal == nil){
-                    [self setMeToMapCenter:me];
-                   
-               }else{
-                   [self updateUserPosition:me];
-               }
-           });
-            
-        }];
-        
-        [[AKMapManager sharedInstance] addObserver:self forKeyPath:@"userlist" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:xxcontext];
-
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeUserPosition:) name:@"UserSendPositionUpdate" object:nil];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:)
-                                                     name:UIApplicationWillEnterForegroundNotification object:nil]; //监听是否重新进入程序程序.
-        
-//        [[AKMapManager sharedInstance].userlist addObserverBlockForKeyPath:@"count" block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
-//            @strongify(self);
-//            [self updateUserPointAnnotation];
-//            
-//        }];
-    }
+    
 }
 
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if (context == xxcontext) {
-        if ([keyPath isEqualToString:@"userlist"]) {
-            NSNumber *kind = change[NSKeyValueChangeKindKey];
-            NSArray *userlist = change[NSKeyValueChangeNewKey];
-            NSArray *oldUserlist = change[NSKeyValueChangeOldKey];
-            NSIndexSet *changedIndexs = change[NSKeyValueChangeIndexesKey];
-            
-            NSLog(@"kind: %@, students: %@, oldStudent: %@, changedIndexs: %@", kind, userlist , oldUserlist, changedIndexs);
-            [self updateUserPointAnnotation];
-           
-        }
-    } else {
-        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-    }
-}
 
-- (void)applicationDidBecomeActive:(NSNotification *)notic{
-    [[AKMapManager sharedInstance] reloadLocation];
-    [self updateUserPointAnnotation];
-}
+
 
 -(void)dealloc
 {
-     [[AKMapManager sharedInstance] removeObserver:self forKeyPath:@"userlist"];
-}
-
--(void)updateUserPointAnnotation
-{
-    for(UserModel* user in [AKMapManager sharedInstance].userlist){
-        [self updateUserPosition: user];
-    }
-}
-
--(void)changeUserPosition:(NSNotification*)notify
-{
-    NSDictionary* dic = (NSDictionary*)notify.object;
-    if(dic){
-        
-      
-            UserModel* user = [AK_DATA_CENTER user_getUserInfo:dic[@"uid"]];
-            
-            [self updateUserPosition:user];
-        
-        
-    }
+    [AK_SIGNAL_MANAGER.onMapAddOnlineUser removeObserver:self];
+    [AK_SIGNAL_MANAGER.onMapRemoveOnlineUser removeObserver:self];
+    [AK_SIGNAL_MANAGER.onUserPositionChange removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 
 }
+
+
 
 - (void)setupButtons {
    
     self.locationButton = [[HBLocationButton alloc] initWithIconImage:ImageInName(@"main_location") clickBlock:^{
-        [self setMeToMapCenter:[AKMapManager sharedInstance].me];
+        self.isSetMeToCenter = NO;
+        [self updateUserPosition:[AKMapManager sharedInstance].me];
         
     }];
     [self.view addSubview:self.locationButton];
@@ -170,8 +107,9 @@ static void *xxcontext = &xxcontext;
     
     self.friendButton = [[HBBaseRoundButton alloc] initWithIconImage:ImageInName(@"main_friend") clickBlock:^{
         UIView<AKPopupViewProtocol>* view = [AK_MEDIATOR im_popupConversationView];
-        [view loadData:[AKMapManager sharedInstance].friendList];
+        [view loadData:[AKMapManager sharedInstance].converstationList];
     }];
+    
     [self.view addSubview:self.friendButton];
     [self.friendButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.mas_equalTo(kButtonWidth);
@@ -180,17 +118,7 @@ static void *xxcontext = &xxcontext;
     }];
 }
 
--(void) setMeToMapCenter:(UserModel*)user
-{
-    if(user){
-        CLLocationCoordinate2D coordinate;
-        coordinate.longitude = user.longitude;
-        coordinate.latitude = user.latitude;
-        [self updateUserPosition:user];
-        [self.mapView setCenterCoordinate:coordinate];
-        [self.mapView setZoomLevel:15.1 animated:NO];
-    }
-}
+
 
 -(void) updateUserPosition:(UserModel*) user
 {
@@ -198,12 +126,30 @@ static void *xxcontext = &xxcontext;
     CLLocationCoordinate2D coordinate;
     coordinate.longitude = user.longitude;
     coordinate.latitude = user.latitude;
-    
+    if(user.latitude ==0 || user.longitude == 0 )return;
     AKUserPointAnnotation* pa = [self getUserPointAnnotation:user];
     [pa setCoordinate:coordinate];
     
+    if(self.isSetMeToCenter && user == [AKMapManager sharedInstance].me){
+        [self.mapView setCenterCoordinate:coordinate];
+        [self.mapView setZoomLevel:15.1 animated:NO];
+        self.isSetMeToCenter = NO;
+    }
 
 }
+
+
+
+-(void) removeUserFromMap:(UserModel*)user
+{
+    NSString* key = [user.uid stringValue];
+    AKUserPointAnnotation* pa = [self.annotaitonList objectForKey:key];
+    if(pa){
+        [self.mapView removeAnnotation:pa];
+        [self.annotaitonList removeObjectForKey:key];
+    }
+}
+
 
 -(AKUserPointAnnotation*)getUserPointAnnotation:(UserModel*)user
 {
@@ -225,13 +171,46 @@ static void *xxcontext = &xxcontext;
     
     [self.view setBackgroundColor:[UIColor whiteColor]];
     
+    self.isSetMeToCenter = YES;
+    
+    [self setupSignals];
+    
     self.annotaitonList = [[NSMutableDictionary alloc] init];
     [self initMapView];
+    
     [self setupButtons];
  
 }
 
+-(void)setupSignals
+{
+ 
+   
+    [AK_SIGNAL_MANAGER.onMapAddOnlineUser addObserver:self callback:^(id self, UserModel *user) {
+      
+        [self updateUserPosition:user];
+    }];
+    
+    [AK_SIGNAL_MANAGER.onUserPositionChange addObserver:self callback:^(id self, UserModel *user) {
+        
+        [self updateUserPosition:user];
+    }];
+    
+    [AK_SIGNAL_MANAGER.onMapRemoveOnlineUser addObserver:self callback:^(id self, UserModel *user) {
+        
+        [self removeUserFromMap:user];
+    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:)
+                                                 name:UIApplicationWillEnterForegroundNotification object:nil]; //监听是否重新进入程序程序.
+    
+}
 
+- (void)applicationDidBecomeActive:(NSNotification *)notic{
+    self.isSetMeToCenter = YES;
+    [[AKMapManager sharedInstance] reloadLocation];
+    
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -277,7 +256,7 @@ static void *xxcontext = &xxcontext;
         AKUserPointAnnotation* pointAnnotation = (AKUserPointAnnotation*)annotation;
         
         
-        annotationView.user = pointAnnotation.user;
+        [annotationView updateViews:pointAnnotation.user];
         
         return annotationView;
     }

@@ -13,6 +13,7 @@ NSString * const kAKMUserLoginSuccess = @"loginSuccess";
 NSString * const kAKMUserIsLogin = @"isUserLogin";
 NSString * const kAKMUserMe = @"getMe";
 NSString * const kAKMUserGetInfo = @"getUserInfo";
+NSString * const kAKMUserUpdateInfo = @"updateUserInfo";
 
 @implementation AKMediator (UserModule)
 
@@ -62,6 +63,10 @@ NSString * const kAKMUserGetInfo = @"getUserInfo";
     return user;
 }
 
-
+-(UserModel*)user_updateUserInfo:(NSMutableDictionary*)params
+{
+    UserModel* user = [self performService:kAKMUserModuleService action:kAKMUserUpdateInfo params:params shouldCacheService:NO];
+    return user;
+}
 
 @end

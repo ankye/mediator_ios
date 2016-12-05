@@ -54,4 +54,13 @@
     return [[AKUserManager sharedInstance] getUserInfo:params[@"uid"]];
 }
 
+
+-(UserModel*)updateUserInfo:(NSDictionary*)params
+{
+    UserModel* user = [[AKUserManager sharedInstance] getUserInfo:params[@"uid"]];
+    
+    return [[AKUserManager sharedInstance] updateUserInfo:user params:params];
+    
+}
+
 @end

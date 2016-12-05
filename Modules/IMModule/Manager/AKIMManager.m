@@ -222,7 +222,7 @@ SINGLETON_IMPL(AKIMManager);
         
         
         
-        _serverUrl = [NSString stringWithFormat:@"ws://%@?client_os=ios&client_version=%@&locale=%@&uid=%ld&room_uid=0&time=%ld&token=%@",server,[DeviceHelper appStringVersion],[DeviceHelper localeLanguage],[me.uid integerValue],[imTime integerValue],imToken];
+        _serverUrl = [NSString stringWithFormat:@"ws://%@?client_os=ios&client_version=%@&locale=%@&uid=%ld&room_uid=0&time=%ld&token=%@",server,[DeviceHelper appStringVersion],[DeviceHelper localeLanguage],(long)[me.uid integerValue],[imTime integerValue],imToken];
         
         _wsClient = [[SRWebSocket alloc] initWithURL:[NSURL URLWithString:_serverUrl]];
         _wsClient.delegate = self;

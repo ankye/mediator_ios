@@ -51,7 +51,7 @@ SINGLETON_IMPL(AKDataCenter)
 
     if(object == nil){
         object = obj;
-        [pool setObject:obj forKey:key];
+        [pool setObject:object forKey:key];
     }else{
         
         [object fillData:obj];

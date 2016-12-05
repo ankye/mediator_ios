@@ -25,11 +25,13 @@
         
         NSArray* position = [msgArr[0] componentsSeparatedByString:NSLocalizedString(@",", nil)];
         if(position && [position count]>=2){
-            dic[@"latitude"] = position[0];
-            dic[@"longitude"] = position[1];
+            dic[@"latitude"] =   [position[0] stringByReplacingOccurrencesOfString:@"**" withString:@"17"];
+            dic[@"longitude"] = [position[1] stringByReplacingOccurrencesOfString:@"**" withString:@"17"];;
         }
+        AK_SIGNAL_MANAGER.onUserInfoChange.fire(dic);
         
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserPositionUpdate" object:dic];
+
+       
     }
     
    return YES;

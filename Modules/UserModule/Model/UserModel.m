@@ -96,14 +96,10 @@
 -(void)setLongitude:(double)longitude
 {
     _longitude = longitude;
-  //  [self.onUserPositionUpdate dispatch:self];
-    
 }
 -(void)setLatitude:(double)latitude
 {
 
     _latitude = latitude;
-    // [self.onUserPositionUpdate dispatch:self];
 }
-
 @end

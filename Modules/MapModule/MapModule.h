@@ -13,6 +13,7 @@
 #import <AMap3DMap/MAMapKit/MAMapKit.h>
 #import <AMapLocationKit/AMapLocationKit.h>
 
+#import "AKSignalManager+MapModule.h"
 
 #import "AKMediator+MapModule.h"
 

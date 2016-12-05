@@ -14,9 +14,12 @@
 
 @property (nonatomic, strong) UserModel* me;
 
-@property (nonatomic,strong) NSMutableArray* userlist;
-@property (nonatomic,strong) NSMutableArray* friendList;
+@property (nonatomic,strong) NSMutableArray* userOnlinelist;
+@property (nonatomic,strong) NSMutableArray* converstationList;
+
 SINGLETON_INTR(AKMapManager);
 
 -(void)reloadLocation;
+
+-(void)mapLogin;
 @end

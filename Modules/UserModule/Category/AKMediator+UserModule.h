@@ -37,4 +37,8 @@
 
 -(UserModel*)user_getUserInfo:(NSNumber*)uid;
 
+
+-(UserModel*)user_updateUserInfo:(NSMutableDictionary*)params;
+
+
 @end

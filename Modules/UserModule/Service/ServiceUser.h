@@ -37,4 +37,8 @@
  @return 返回用户信息
  */
 -(UserModel*)getUserInfo:(NSDictionary*)params;
+
+
+-(UserModel*)updateUserInfo:(NSDictionary*)params;
+
 @end

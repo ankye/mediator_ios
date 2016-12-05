@@ -356,7 +356,7 @@ SINGLETON_IMPL(AKDBManager)
                     continue;
                 }
                 id obj = [model valueForKey:keys[i]];
-                if(obj == nil){
+                if(obj != nil){
                     [arguments addObject:obj];
                 }
             }

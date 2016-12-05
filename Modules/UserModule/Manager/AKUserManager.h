@@ -36,6 +36,7 @@
 -(BOOL)userLogin:(UserModel*)user;
 
 
+-(UserModel*)updateUserInfo:(UserModel*)user params:(NSDictionary*)params;
 
 
 @end

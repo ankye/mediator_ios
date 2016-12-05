@@ -18,7 +18,7 @@
 -(void)user_setUserInfo:(UserModel*)user
 {
     [AK_DATA_CENTER updatePool:KAKD_USERModel withKey:[user getKey] andObject:(AKBaseModel*)user];
-    [GVUserDefaults standardUserDefaults].uid = user.uid;
+    
     
     if(![AK_DB_MANAGER isExistUser:[user.uid integerValue]]){
         

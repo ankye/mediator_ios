@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "AKSignalManager+MapModule.h"
+#import "AKSignalManager+UserModule.h"
 
 
 @implementation AppDelegate
@@ -38,11 +40,10 @@
             [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
         }
        
+   
         
-        
-      
     }
-    
+
     return YES;
 }
 

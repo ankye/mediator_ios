@@ -12,7 +12,7 @@
 @interface AKUserPinAnnotationView()
 
 @property (nonatomic,strong) UIImageView* avatarView;
-
+@property (nonatomic,strong) UILabel*    nicknameLabel;
 @end
 
 
@@ -24,6 +24,16 @@
 {
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if(self){
+        
+        self.nicknameLabel = [[UILabel alloc] init];
+        [self addSubview:self.nicknameLabel];
+        
+        [self.nicknameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(self.mas_top).offset(-20);
+            make.centerX.mas_equalTo(self.centerX);
+            make.size.mas_equalTo(CGSizeMake(100, 20));
+            
+        }];
         self.avatarView = [[UIImageView alloc] init];
         [self addSubview:self.avatarView];
         
@@ -32,18 +42,15 @@
             make.size.mas_equalTo(CGSizeMake(34, 34));
             make.centerY.mas_equalTo(self.centerY).offset(-6);
         }];
-        @weakify(self);
-        [self addObserverBlockForKeyPath:@"user" block:^(id  _Nonnull obj, id  _Nullable oldVal, id  _Nullable newVal) {
-            @strongify(self);
-            UserModel* user = newVal;
-            UserModel* oldUser = oldVal;
-            if(user.uid != oldUser.uid || user.latitude != oldUser.latitude || user.longitude != oldUser.longitude){
-                [self updateViews:user];
-            }
-            
-        }];
+       
         self.userInteractionEnabled = YES;
-        
+  
+        [AK_SIGNAL_MANAGER.onUserFaceChange addObserver:self callback:^(typeof(self) self, UserModel *user) {
+          
+            if(user == self.user){
+                [self updateFace];
+            }
+        }];
     }
     return self;
 }
@@ -60,22 +67,31 @@
         }else{
             self.image            = [UIImage imageNamed:@"pinkbgFace"];
         }
-        
-        [self.avatarView setImageWithURL: [NSURL URLWithString:user.head]
-                                     placeholder:nil
-                                         options:kNilOptions
-                                         manager:[FileHelper avatarImageManager]
-                                        progress:nil
-                                       transform:nil
-                                      completion:nil];
+        [self.nicknameLabel setFont:[UIFont systemFontOfSize:12]];
+        [self.nicknameLabel setTextColor:[UIColor blueColor]];
+        [self.nicknameLabel setTextAlignment:NSTextAlignmentCenter];
+        [self.nicknameLabel setText:user.nickname];
+        [self updateFace];
         
     }
 }
 
 
+-(void)updateFace
+{
+    [self.avatarView setImageWithURL: [NSURL URLWithString:_user.head]
+                         placeholder:nil
+                             options:kNilOptions
+                             manager:[FileHelper avatarImageManager]
+                            progress:nil
+                           transform:nil
+                          completion:nil];
+}
+
 
 -(void)dealloc
 {
     self.user = nil;
+    [AK_SIGNAL_MANAGER.onUserFaceChange removeObserver:self];
 }
 @end

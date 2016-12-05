@@ -35,38 +35,87 @@
 
 -(void)setupNotify
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeUserPosition:) name:@"UserPositionUpdate" object:nil];
-}
-
--(void)changeUserPosition:(NSNotification*)notify
-{
-    NSDictionary* dic = (NSDictionary*)notify.object;
-    if(dic){
+   
+    [AK_SIGNAL_MANAGER.onUserInfoChange addObserver:self callback:^(id self, NSDictionary * _Nonnull dictionary) {
+     
+        NSInteger uid = [dictionary[@"uid"] integerValue];
         
-        UserModel* user = [AK_DATA_CENTER user_getUserInfo:dic[@"uid"]];
-        if(user && user != self.me){
-            [self updateUserInfo:user params:dic];
-        }
-    }
+        UserModel* user = [self getUserInfo:@(uid)];
+        [self updateUserInfo:user params:dictionary];
+        
+    }];
 }
 
--(void)updateUserInfo:(UserModel*)user params:(NSDictionary*)params
-{
-    user.nickname = params[@"nickname"];
-    user.longitude = [params[@"longitude"] doubleValue];
-    user.latitude = [params[@"latitude"] doubleValue];
-    user.last_login_time = [AppHelper getCurrentTime];
 
+
+-(UserModel*)updateUserInfo:(UserModel*)user params:(NSDictionary*)params
+{
+    BOOL positionNeedChange = NO;
+    BOOL faceNeedChange = NO;
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"UserSendPositionUpdate" object:params];
+    if(user){
+        if(params[@"nickname"]){
+            user.nickname = params[@"nickname"];
+        }
+        if(params[@"longitude"]){
+            double longitude = [params[@"longitude"] doubleValue];
+            if(longitude != user.longitude ){
+                user.longitude  = longitude;
+                positionNeedChange = YES;
+            }
+            
+        }
+        if(params[@"latitude"]){
+            double latitude = [params[@"latitude"] doubleValue];
+            if(user.latitude != latitude){
+                user.latitude = latitude;
+                positionNeedChange = YES;
+            }
+        }
+        if(params[@"head"] ){
+            NSString* head = params[@"head"];
+            if(![head isEqualToString:user.head]){
+                user.head = head;
+                faceNeedChange = YES;
+            }
+        }
+        
+        if(params[@"face"] ){
+            NSString* head = params[@"face"];
+            if(![head isEqualToString:user.head]){
+                user.head = head;
+                faceNeedChange = YES;
+            }
+        }
+
+        
+        user.last_login_time = [AppHelper getCurrentTime];
+    }
+   
+    if(positionNeedChange){
+        AK_SIGNAL_MANAGER.onUserPositionChange.fire(user);
+    }
     
+    if(faceNeedChange){
+        AK_SIGNAL_MANAGER.onUserFaceChange.fire(user);
+    }
+    
+    return user;
 }
 
 -(UserModel*)getUserInfo:(NSNumber*)uid
 {
-    UserModel* user = [AK_DATA_CENTER user_getUserInfo:[uid stringValue]];
+    NSString* uidString ;
+    if([uid isKindOfClass:[NSString class]]){
+        uidString = (NSString*)uid;
+    }else{
+        uidString = [uid stringValue];
+    }
+    UserModel* user = [AK_DATA_CENTER user_getUserInfo:uidString];
     return user;
 }
+
+
 /**
  用户是否已经登录
  
@@ -77,7 +126,7 @@
     if(self.me == nil){
         NSNumber* uid = [GVUserDefaults standardUserDefaults].uid;
         if(uid){ //本地有存储
-            UserModel* user = [AK_DB_MANAGER queryUserByUid:[uid integerValue]];
+            UserModel* user = [AK_DATA_CENTER user_getUserInfo:[uid stringValue]];
             if(user){
                 [self userLogin:user];
             }
@@ -97,6 +146,7 @@
 {
     [AK_DATA_CENTER user_setUserInfo:user];
   
+    [GVUserDefaults standardUserDefaults].uid = user.uid;
     
     [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-UID" withValue:[user.uid stringValue]];
     [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-TOKEN" withValue:user.token];
@@ -106,6 +156,8 @@
 
     
     [AK_MEDIATOR im_requestIMToken:self.me.uid withUserToken:self.me.token];
+    
+    AK_SIGNAL_MANAGER.onUserLogin.fire(self.me);
     
     if(self.me == nil){
         return NO;

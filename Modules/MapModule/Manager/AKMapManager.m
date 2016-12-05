@@ -30,12 +30,80 @@ SINGLETON_IMPL(AKMapManager);
 {
     self =[super init];
     if(self){
+        [self setupSignals];
         [self configLocationManager];
         self.joinRoomStep = 1;
-        self.userlist = [[NSMutableArray alloc] init];
-        self.friendList = [[NSMutableArray alloc] init];
+        self.userOnlinelist = [[NSMutableArray alloc] init];
+        self.converstationList = [[NSMutableArray alloc] init];
+        [self setupTimer];
+        
     }
     return self;
+}
+-(void)setupSignals
+{
+    
+    [AK_SIGNAL_MANAGER.onUserLogin addObserver:self callback:^(typeof(self) self, UserModel *user) {
+        
+        [self mapLogin];
+    }];
+    
+ 
+}
+
+-(void)setupTimer
+{
+    @weakify(self);
+    
+    [AK_TIME_MANAGER addTimerWithInterval:5 withUniqueID:@"RoomLoginStateTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
+        @strongify(self);
+        [self joinMapRoom];
+    }];
+    
+    [AK_TIME_MANAGER addTimerWithInterval:10 withUniqueID:@"RoomGetUDsTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
+        @strongify(self);
+        [self reloadFriends];
+    }];
+}
+
+-(void)joinMapRoom
+{
+    if(!self.me){
+        return;
+    }
+    if([[AKIMManager sharedInstance] isConnected]){
+        if(self.joinRoomStep <= 1 ){
+            self.joinRoomStep = 2;
+            @weakify(self);
+            [[AKIMManager sharedInstance] roomJoin:AK_MAP_ROOMID withComplete:^(BOOL result, NSArray *response) {
+                NSLog(@"用户进房成功 %@",response);
+                @strongify(self);
+                self.joinRoomStep = 3;
+            }];
+            
+        }
+    }else{
+        self.joinRoomStep = 1;
+    }
+
+}
+
+-(void)mapLogin
+{
+    [AKMapManager sharedInstance].me = [AK_MEDIATOR user_me];
+    
+    [self addUserToOnlineList:[AKMapManager sharedInstance].me];
+
+    
+    self.joinRoomStep = 1;
+    [self joinMapRoom];
+    [self reloadLocation];
+    
+}
+-(void)dealloc
+{
+    [AK_SIGNAL_MANAGER.onUserLogin removeObserver:self];
+    
 }
 
 - (void)configLocationManager
@@ -70,59 +138,57 @@ SINGLETON_IMPL(AKMapManager);
 //    
      [self.locationManager startUpdatingLocation];
     
-    //进行单次定位请求
-    @weakify(self);
-//    [AK_TIME_MANAGER addTimerWithInterval:20 withUniqueID:@"LocationReloadTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
-//        @strongify(self);
-//        [self reloadLocation];
-//    }];
-    
-    [AK_TIME_MANAGER addTimerWithInterval:5 withUniqueID:@"RoomLoginStateTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
-        @strongify(self);
-        if([[AKIMManager sharedInstance] isConnected]){
-            if(self.joinRoomStep <= 1 ){
-                self.joinRoomStep = 2;
-                [[AKIMManager sharedInstance] roomJoin:AK_MAP_ROOMID withComplete:^(BOOL result, NSArray *response) {
-                    NSLog(@"用户进房成功 %@",response);
-                    self.joinRoomStep = 3;
-                }];
-                
-            }
-        }else{
-            self.joinRoomStep = 1;
-        }
-    }];
-    
-    [AK_TIME_MANAGER addTimerWithInterval:10 withUniqueID:@"RoomGetUDsTimer" withRepeatTimes:-1 withTimerFireAction:^(id<AKTimerProtocol> timer) {
-        @strongify(self);
-        [self reloadFriends];
-    }];
+
 }
 
--(void)addUserToList:(UserModel*)user
+-(void)addUserToOnlineList:(UserModel*)user
 {
 
-    NSInteger count = [_userlist count];
+    NSInteger count = [_userOnlinelist count];
     for(NSInteger i=0;i<count;i++){
-        if([_userlist objectAtIndex:i] == user){
+        if([_userOnlinelist objectAtIndex:i] == user){
             return;
         }
     }
-   // [_userlist addObject:user];
-    [self addUser:user];
     
+    [_userOnlinelist addObject:user];
+    
+    AK_SIGNAL_MANAGER.onMapAddOnlineUser.fire(user);
+    
+  
     if(self.me != user){
         
         TLConversation* converstation = [[TLConversation alloc] init];
         converstation.partner = user;
         
-        [self addFriend:converstation];
+        [_converstationList addObject:converstation];
      
+        AK_SIGNAL_MANAGER.onMapAddConverstation.fire(converstation);
+        
+    }
+}
+
+-(void)removeUserToOnlineList:(UserModel*)user
+{
+    [_userOnlinelist removeObject:user];
+    AK_SIGNAL_MANAGER.onMapRemoveOnlineUser.fire(user);
+    
+    NSInteger count = _converstationList.count;
+    for(NSInteger i=count -1; i>= 0; i--){
+        TLConversation* conversation = [_converstationList objectAtIndex:i];
+        if(conversation.partner == user){
+            [_converstationList removeObjectAtIndex:i];
+            AK_SIGNAL_MANAGER.onMapRemoveConverstation.fire(conversation);
+            
+            break;
+        }
     }
 }
 
 -(void)reloadFriends
 {
+    if(self.me == nil || self.joinRoomStep < 3) return;
+    
     @weakify(self);
     [[AKIMManager sharedInstance] roomGetUDs:AK_MAP_ROOMID page:0 withComplete:^(BOOL result, NSArray *response) {
         @strongify(self);
@@ -130,22 +196,26 @@ SINGLETON_IMPL(AKMapManager);
         if(response && [response count]>=2){
             NSArray* list = (NSArray*)response[1];
             NSInteger count = [list count];
+            NSMutableDictionary* currentOnline = [[NSMutableDictionary alloc] init];
             for(NSInteger i=0;i<count ; i++)
             {
-                NSDictionary* info = [list objectAtIndex:i];
+                NSMutableDictionary* info = [list objectAtIndex:i];
+              
                 if(info){
-                    NSInteger uid = [info[@"uid"] integerValue];
-                    
-                    UserModel* user = [AK_MEDIATOR user_getUserInfo:@(uid)];
-            
-                    user.head = info[@"face"];
-                    user.uid = @(uid);
-                    user.nickname = info[@"nickname"];
-                    
-                    [self addUserToList:user];
-                    
+                   
+                   UserModel* user = [AK_MEDIATOR user_updateUserInfo:info];
+                   [self addUserToOnlineList:user];
+                    [currentOnline setObject:user.uid forKey:[user.uid stringValue]];
                 }
             }
+            count = [_userOnlinelist count];
+            for(NSInteger i=count-1; i>=0; i--){
+                UserModel* user = [_userOnlinelist objectAtIndex:i];
+                if(user && ![currentOnline objectForKey:[user.uid stringValue]]){
+                    [self removeUserToOnlineList:user];
+                }
+            }
+            
         }
     }];
     
@@ -191,26 +261,26 @@ SINGLETON_IMPL(AKMapManager);
     //得到定位信息，添加annotation
     if (location)
     {
-        if( ! [AK_MEDIATOR user_isUserLogin]){
+        if( ! self.me ){
             NSLog(@"User Not Login");
             return ;
         }
-        if(self.me == nil){
-            self.me = [AK_MEDIATOR user_me];
-             [self reloadFriends];
+        
+        NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
+        dic[@"uid"] = self.me.uid;
+        dic[@"latitude"] = @(location.coordinate.latitude);
+        dic[@"longitude"] = @(location.coordinate.longitude);
+        
+        [AK_MEDIATOR user_updateUserInfo:dic];
+        
+        
+        if(_joinRoomStep == 3 && (location.coordinate.latitude != self.me.latitude || location.coordinate.longitude != self.me.longitude)){
+            NSString* msg = [NSString stringWithFormat:@"%f,%f",location.coordinate.latitude,location.coordinate.longitude];
+            NSLog(@"发送同步坐标数据 %@ %@ ",[AppHelper getCurrentTime],msg);
+            [[AKIMManager sharedInstance] roomSay:msg isShowDanmu:0 room_uid:AK_MAP_ROOMID];
         }
-        if(self.me.latitude != location.coordinate.latitude || self.me.longitude != location.coordinate.latitude){
-          
-       
-            self.me.latitude = location.coordinate.latitude;
-            self.me.longitude = location.coordinate.longitude;
-            if(_joinRoomStep == 3){
-                NSString* msg = [NSString stringWithFormat:@"%f,%f",location.coordinate.latitude,location.coordinate.longitude];
-                NSLog(@"发送同步坐标数据 %@ %@ 116464 11383838",[AppHelper getCurrentTime],msg);
-                [[AKIMManager sharedInstance] roomSay:msg isShowDanmu:0 room_uid:AK_MAP_ROOMID];
-               
-            }
-        }
+        
+        
     }
 
     
@@ -219,25 +289,5 @@ SINGLETON_IMPL(AKMapManager);
 
 
 
-
-
-- (NSMutableArray *)userArray {
-    return [self mutableArrayValueForKey:NSStringFromSelector(@selector(userlist))];
-}
-
-- (void)addUser:(UserModel *)user {
-    [[self userArray] addObject:user];
-}
-
-- (NSMutableArray *)friendArray {
-    return [self mutableArrayValueForKey:NSStringFromSelector(@selector(friendList))];
-}
-
-- (void)addFriend:(TLConversation *)user {
-
-   
-    [[self friendArray] addObject:user];
-
-}
 
 @end

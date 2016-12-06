@@ -526,6 +526,69 @@ SINGLETON_IMPL(AKDBManager)
 }
 
 
+- (BOOL)createTable:(FMDatabaseQueue*)queue withTableName:(NSString *)tableName withSQL:(NSString *)sqlString
+{
+    __block BOOL ok = YES;
+    [queue inDatabase:^(FMDatabase *db) {
+        if(![db tableExists:tableName]){
+            ok = [db executeUpdate:sqlString withArgumentsInArray:nil];
+        }
+    }];
+    return ok;
+}
+
+- (BOOL)excuteSQL:(FMDatabaseQueue*)queue withSql:(NSString *)sqlString withArrParameter:(NSArray *)arrParameter
+{
+    __block BOOL ok = NO;
+    if (queue) {
+        [queue inDatabase:^(FMDatabase *db) {
+            ok = [db executeUpdate:sqlString withArgumentsInArray:arrParameter];
+        }];
+    }
+    return ok;
+}
+
+- (BOOL)excuteSQL:(FMDatabaseQueue*)queue withSql:(NSString *)sqlString withDicParameter:(NSDictionary *)dicParameter
+{
+    __block BOOL ok = NO;
+    if (queue) {
+        [queue inDatabase:^(FMDatabase *db) {
+            ok = [db executeUpdate:sqlString withParameterDictionary:dicParameter];
+        }];
+    }
+    return ok;
+}
+
+- (BOOL)excuteSQL:(FMDatabaseQueue*)queue withSql:(NSString *)sqlString,...
+{
+    __block BOOL ok = NO;
+    if (queue) {
+        va_list args;
+        va_list *p_args;
+        p_args = &args;
+        va_start(args, sqlString);
+        [queue inDatabase:^(FMDatabase *db) {
+            ok = [db executeUpdate:sqlString withVAList:*p_args];
+        }];
+        va_end(args);
+    }
+    return ok;
+}
+
+- (void)excuteQuery:(FMDatabaseQueue*)queue withSql:(NSString*)sqlStr resultBlock:(void(^)(FMResultSet * rsSet))resultBlock
+{
+    if (queue) {
+        [queue inDatabase:^(FMDatabase *db) {
+            FMResultSet * retSet = [db executeQuery:sqlStr];
+            if (resultBlock) {
+                resultBlock(retSet);
+            }
+        }];
+    }
+}
+
+
+
 @end
 
 

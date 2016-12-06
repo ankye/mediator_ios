@@ -125,7 +125,7 @@ SINGLETON_INTR(AKDBManager)
 
 
 /**
- 查询所有的数据
+ 查询所有的数据 转化为model
  
  @param queue FMDatabaseQueue
  @param mClass Model Class
@@ -133,12 +133,40 @@ SINGLETON_INTR(AKDBManager)
  */
 - (NSMutableArray*)queryAllToModel:(FMDatabaseQueue*)queue toModelClass:(Class)mClass;
 /**
- 查询单个数据
+ 查询单个数据 转化为model
  
  @param queue FMDatabaseQueue
  @param mClass Model Class
  @return Model 或者 nil
  */
 - (id)queryToModel:(FMDatabaseQueue*)queue withSql:(NSString*)sqlString toModelClass:(Class)mClass;
+
+
+
+/**
+ *  表创建
+ */
+- (BOOL)createTable:(FMDatabaseQueue*)queue withTableName:(NSString*)tableName withSQL:(NSString*)sqlString;
+
+/*
+ *  执行带数组参数的sql语句 (增，删，改)
+ */
+-(BOOL)excuteSQL:(FMDatabaseQueue*)queue withSql:(NSString*)sqlString withArrParameter:(NSArray*)arrParameter;
+
+/*
+ *  执行带字典参数的sql语句 (增，删，改)
+ */
+-(BOOL)excuteSQL:(FMDatabaseQueue*)queue withSql:(NSString*)sqlString withDicParameter:(NSDictionary*)dicParameter;
+
+/*
+ *  执行格式化的sql语句 (增，删，改)
+ */
+- (BOOL)excuteSQL:(FMDatabaseQueue*)queue withSql:(NSString *)sqlString,...;
+
+/**
+ *  执行查询指令
+ */
+- (void)excuteQuery:(FMDatabaseQueue*)queue withSql:(NSString*)sqlStr resultBlock:(void(^)(FMResultSet * rsSet))resultBlock;
+
 
 @end

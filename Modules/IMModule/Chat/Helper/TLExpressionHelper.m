@@ -8,10 +8,15 @@
 
 #import "TLExpressionHelper.h"
 #import "NSFileManager+TLChat.h"
+#import "AKDBManager+TLChat.h"
+#import "TLEmojiKBHelper.h"
+#import "TLChatMacros.h"
+#import "TLHostHelper.h"
+#import "TLSettingGroup.h"
+#import "TLUserHelper.h"
 
 @interface TLExpressionHelper ()
 
-@property (nonatomic, strong) TLDBExpressionStore *store;
 
 @end
 
@@ -30,14 +35,14 @@
     return helper;
 }
 
-- (NSArray *)userEmojiGroups
+- (NSArray *)userEmojiGroups:(NSString*)uid
 {
-    return [self.store expressionGroupsByUid:[TLUserHelper sharedHelper].userID];
+    return [AK_DB_MANAGER expressionGroupsByUid:uid];
 }
 
 - (BOOL)addExpressionGroup:(TLEmojiGroup *)emojiGroup
 {
-    BOOL ok = [self.store addExpressionGroup:emojiGroup forUid:[TLUserHelper sharedHelper].userID];
+    BOOL ok = [AK_DB_MANAGER addExpressionGroup:emojiGroup forUid:[TLUserHelper sharedHelper].userID];
     if (ok) {       // 通知表情键盘
         [[TLEmojiKBHelper sharedKBHelper] updateEmojiGroupData];
     }
@@ -46,7 +51,7 @@
 
 - (BOOL)deleteExpressionGroupByID:(NSString *)groupID
 {
-    BOOL ok = [self.store deleteExpressionGroupByID:groupID forUid:[TLUserHelper sharedHelper].userID];
+    BOOL ok = [AK_DB_MANAGER deleteExpressionGroupByID:groupID forUid:[TLUserHelper sharedHelper].userID];
     if (ok) {       // 通知表情键盘
         [[TLEmojiKBHelper sharedKBHelper] updateEmojiGroupData];
     }
@@ -55,7 +60,7 @@
 
 - (BOOL)didExpressionGroupAlwaysInUsed:(NSString *)groupID
 {
-    NSInteger count = [self.store countOfUserWhoHasExpressionGroup:groupID];
+    NSInteger count = [AK_DB_MANAGER countOfUserWhoHasExpressionGroup:groupID];
     return count > 0;
 }
 
@@ -89,10 +94,10 @@
             }
             else {
                 TLEmoji *emoji = group.data[i];
-                NSString *urlString = [TLHost expressionDownloadURLWithEid:emoji.emojiID];
+                NSString *urlString = [TLHostHelper expressionDownloadURLWithEid:emoji.emojiID];
                 data = [NSData dataWithContentsOfURL:TLURL(urlString)];
                 if (data == nil) {
-                    urlString = [TLHost expressionURLWithEid:emoji.emojiID];
+                    urlString = [TLHostHelper expressionURLWithEid:emoji.emojiID];
                     data = [NSData dataWithContentsOfURL:TLURL(urlString)];
                 }
                 emojiPath = [NSString stringWithFormat:@"%@%@", groupPath, emoji.emojiID];
@@ -106,19 +111,11 @@
     });
 }
 
-#pragma mark - # Getter
-- (TLDBExpressionStore *)store
-{
-    if (_store == nil) {
-        _store = [[TLDBExpressionStore alloc] init];
-    }
-    return _store;
-}
 
 - (NSMutableArray *)myExpressionListData
 {
     NSMutableArray *data = [[NSMutableArray alloc] init];
-    NSMutableArray *myEmojiGroups = [NSMutableArray arrayWithArray:[self.store expressionGroupsByUid:[TLUserHelper sharedHelper].userID]];
+    NSMutableArray *myEmojiGroups = [NSMutableArray arrayWithArray:[AK_DB_MANAGER expressionGroupsByUid:[TLUserHelper sharedHelper].userID]];
     if (myEmojiGroups.count > 0) {
         TLSettingGroup *group1 = TLCreateSettingGroup(@"聊天面板中的表情", nil, myEmojiGroups);
         [data addObject:group1];

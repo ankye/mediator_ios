@@ -7,6 +7,9 @@
 //
 
 #import "TLTextMessage.h"
+#import "UIFont+TLChat.h"
+#import "NSString+Message.h"
+#import "TLChatMacros.h"
 
 
 static UILabel *textLabel = nil;

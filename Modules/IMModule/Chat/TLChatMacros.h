@@ -9,6 +9,7 @@
 #ifndef TLChatMacros_h
 #define TLChatMacros_h
 
+
 #pragma mark - # Debug
 #define     DEBUG_LOCAL_SERVER      // 使用本地测试服务器
 //#define     DEBUG_MEMERY            // 内存测试
@@ -29,6 +30,15 @@
 #define     MIN_MESSAGE_IMAGE_WIDTH         SCREEN_WIDTH * 0.25
 #define     MAX_MESSAGE_EXPRESSION_WIDTH    SCREEN_WIDTH * 0.35
 #define     MIN_MESSAGE_EXPRESSION_WIDTH    SCREEN_WIDTH * 0.2
+
+
+#pragma mark - # Methods
+#define     TLURL(urlString)    [NSURL URLWithString:urlString]
+#define     TLNoNilString(str)  (str.length > 0 ? str : @"")
+#define     TLWeakSelf(type)    __weak typeof(type) weak##type = type;
+#define     TLStrongSelf(type)  __strong typeof(type) strong##type = type;
+#define     TLTimeStamp(date)   ([NSString stringWithFormat:@"%lf", [date timeIntervalSince1970]])
+#define     TLColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a]
 
 typedef NS_ENUM(NSInteger, TLEmojiType) {
     TLEmojiTypeEmoji,

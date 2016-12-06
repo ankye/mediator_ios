@@ -19,6 +19,7 @@
 #define APP_CHANNEL  @"app_store"
 
 #import "BaseModule.h"
+#import "LoggerModule.h"
 #import "UserModule.h"
 #import "LoginModule.h"
 #import "MapModule.h"

@@ -147,6 +147,23 @@
 		C52E76C11DF66D76006B2183 /* TLMessageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76B11DF66D75006B2183 /* TLMessageFrame.m */; };
 		C52E76C21DF66D76006B2183 /* TLTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76B41DF66D75006B2183 /* TLTextMessage.m */; };
 		C52E76C31DF66D76006B2183 /* TLVoiceMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76B61DF66D75006B2183 /* TLVoiceMessage.m */; };
+		C52E76CA1DF67308006B2183 /* AKFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76C61DF67308006B2183 /* AKFileLogger.m */; };
+		C52E76CB1DF67308006B2183 /* AKLoggerFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76C81DF67308006B2183 /* AKLoggerFormatter.m */; };
+		C52E76CF1DF6815A006B2183 /* TLEmojiKBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76CE1DF6815A006B2183 /* TLEmojiKBHelper.m */; };
+		C52E76D21DF681C7006B2183 /* AKDBManager+TLChat.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76D11DF681C7006B2183 /* AKDBManager+TLChat.m */; };
+		C52E76DC1DF69297006B2183 /* Aspect-LoggerModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76DB1DF69297006B2183 /* Aspect-LoggerModule.m */; };
+		C52E76E11DF698A2006B2183 /* TLSettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76DE1DF698A2006B2183 /* TLSettingGroup.m */; };
+		C52E76E21DF698A2006B2183 /* TLSettingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76E01DF698A2006B2183 /* TLSettingItem.m */; };
+		C52E76E51DF698FD006B2183 /* TLUIUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76E41DF698FD006B2183 /* TLUIUtility.m */; };
+		C52E76E81DF69953006B2183 /* TLGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76E71DF69953006B2183 /* TLGroup.m */; };
+		C52E76F31DF69983006B2183 /* TLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76EA1DF69983006B2183 /* TLUser.m */; };
+		C52E76F41DF69983006B2183 /* TLUserChatSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76EC1DF69983006B2183 /* TLUserChatSetting.m */; };
+		C52E76F51DF69983006B2183 /* TLUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76EE1DF69983006B2183 /* TLUserDetail.m */; };
+		C52E76F61DF69983006B2183 /* TLUserGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76F01DF69983006B2183 /* TLUserGroup.m */; };
+		C52E76F71DF69983006B2183 /* TLUserSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76F21DF69983006B2183 /* TLUserSetting.m */; };
+		C52E76FA1DF6999D006B2183 /* TLBaseDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76F91DF6999D006B2183 /* TLBaseDataModel.m */; };
+		C52E76FD1DF699DC006B2183 /* NSString+PinYin.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76FC1DF699DC006B2183 /* NSString+PinYin.m */; };
+		C52E77001DF69A73006B2183 /* TLUserHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76FF1DF69A73006B2183 /* TLUserHelper.m */; };
 		C538066E1DE7327900A2322D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C538066D1DE7327900A2322D /* libsqlite3.tbd */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
@@ -471,6 +488,42 @@
 		C52E76B41DF66D75006B2183 /* TLTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTextMessage.m; sourceTree = "<group>"; };
 		C52E76B51DF66D75006B2183 /* TLVoiceMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLVoiceMessage.h; sourceTree = "<group>"; };
 		C52E76B61DF66D75006B2183 /* TLVoiceMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLVoiceMessage.m; sourceTree = "<group>"; };
+		C52E76C51DF67308006B2183 /* AKFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKFileLogger.h; sourceTree = "<group>"; };
+		C52E76C61DF67308006B2183 /* AKFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKFileLogger.m; sourceTree = "<group>"; };
+		C52E76C71DF67308006B2183 /* AKLoggerFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKLoggerFormatter.h; sourceTree = "<group>"; };
+		C52E76C81DF67308006B2183 /* AKLoggerFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKLoggerFormatter.m; sourceTree = "<group>"; };
+		C52E76CC1DF680C1006B2183 /* LoggerModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoggerModule.h; sourceTree = "<group>"; };
+		C52E76CD1DF6815A006B2183 /* TLEmojiKBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLEmojiKBHelper.h; sourceTree = "<group>"; };
+		C52E76CE1DF6815A006B2183 /* TLEmojiKBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLEmojiKBHelper.m; sourceTree = "<group>"; };
+		C52E76D01DF681C7006B2183 /* AKDBManager+TLChat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDBManager+TLChat.h"; sourceTree = "<group>"; };
+		C52E76D11DF681C7006B2183 /* AKDBManager+TLChat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDBManager+TLChat.m"; sourceTree = "<group>"; };
+		C52E76D51DF6826E006B2183 /* TLDBExpressionSQL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TLDBExpressionSQL.h; sourceTree = "<group>"; };
+		C52E76DA1DF69297006B2183 /* Aspect-LoggerModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect-LoggerModule.h"; sourceTree = "<group>"; };
+		C52E76DB1DF69297006B2183 /* Aspect-LoggerModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect-LoggerModule.m"; sourceTree = "<group>"; };
+		C52E76DD1DF698A2006B2183 /* TLSettingGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingGroup.h; sourceTree = "<group>"; };
+		C52E76DE1DF698A2006B2183 /* TLSettingGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSettingGroup.m; sourceTree = "<group>"; };
+		C52E76DF1DF698A2006B2183 /* TLSettingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSettingItem.h; sourceTree = "<group>"; };
+		C52E76E01DF698A2006B2183 /* TLSettingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLSettingItem.m; sourceTree = "<group>"; };
+		C52E76E31DF698FD006B2183 /* TLUIUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUIUtility.h; sourceTree = "<group>"; };
+		C52E76E41DF698FD006B2183 /* TLUIUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUIUtility.m; sourceTree = "<group>"; };
+		C52E76E61DF69953006B2183 /* TLGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLGroup.h; sourceTree = "<group>"; };
+		C52E76E71DF69953006B2183 /* TLGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLGroup.m; sourceTree = "<group>"; };
+		C52E76E91DF69983006B2183 /* TLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUser.h; sourceTree = "<group>"; };
+		C52E76EA1DF69983006B2183 /* TLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUser.m; sourceTree = "<group>"; };
+		C52E76EB1DF69983006B2183 /* TLUserChatSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserChatSetting.h; sourceTree = "<group>"; };
+		C52E76EC1DF69983006B2183 /* TLUserChatSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserChatSetting.m; sourceTree = "<group>"; };
+		C52E76ED1DF69983006B2183 /* TLUserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserDetail.h; sourceTree = "<group>"; };
+		C52E76EE1DF69983006B2183 /* TLUserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserDetail.m; sourceTree = "<group>"; };
+		C52E76EF1DF69983006B2183 /* TLUserGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserGroup.h; sourceTree = "<group>"; };
+		C52E76F01DF69983006B2183 /* TLUserGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserGroup.m; sourceTree = "<group>"; };
+		C52E76F11DF69983006B2183 /* TLUserSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserSetting.h; sourceTree = "<group>"; };
+		C52E76F21DF69983006B2183 /* TLUserSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserSetting.m; sourceTree = "<group>"; };
+		C52E76F81DF6999D006B2183 /* TLBaseDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLBaseDataModel.h; sourceTree = "<group>"; };
+		C52E76F91DF6999D006B2183 /* TLBaseDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLBaseDataModel.m; sourceTree = "<group>"; };
+		C52E76FB1DF699DC006B2183 /* NSString+PinYin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PinYin.h"; sourceTree = "<group>"; };
+		C52E76FC1DF699DC006B2183 /* NSString+PinYin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin.m"; sourceTree = "<group>"; };
+		C52E76FE1DF69A73006B2183 /* TLUserHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserHelper.h; sourceTree = "<group>"; };
+		C52E76FF1DF69A73006B2183 /* TLUserHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserHelper.m; sourceTree = "<group>"; };
 		C538066D1DE7327900A2322D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
@@ -1260,6 +1313,7 @@
 		C52E76601DF65BBB006B2183 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				C52E76D41DF68266006B2183 /* Sql */,
 				C52E76991DF66D75006B2183 /* Category */,
 				C52E76A41DF66D75006B2183 /* Model */,
 				C52E76831DF66588006B2183 /* Helper */,
@@ -1287,10 +1341,16 @@
 		C52E76831DF66588006B2183 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C52E76FE1DF69A73006B2183 /* TLUserHelper.h */,
+				C52E76FF1DF69A73006B2183 /* TLUserHelper.m */,
+				C52E76E31DF698FD006B2183 /* TLUIUtility.h */,
+				C52E76E41DF698FD006B2183 /* TLUIUtility.m */,
 				C52E76841DF66593006B2183 /* TLExpressionHelper.h */,
 				C52E76851DF66593006B2183 /* TLExpressionHelper.m */,
 				C52E76961DF66B9D006B2183 /* TLHostHelper.h */,
 				C52E76971DF66B9D006B2183 /* TLHostHelper.m */,
+				C52E76CD1DF6815A006B2183 /* TLEmojiKBHelper.h */,
+				C52E76CE1DF6815A006B2183 /* TLEmojiKBHelper.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1298,6 +1358,8 @@
 		C52E76991DF66D75006B2183 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C52E76FB1DF699DC006B2183 /* NSString+PinYin.h */,
+				C52E76FC1DF699DC006B2183 /* NSString+PinYin.m */,
 				C52E769A1DF66D75006B2183 /* NSFileManager+ExpressionGroup.h */,
 				C52E769B1DF66D75006B2183 /* NSFileManager+ExpressionGroup.m */,
 				C52E769C1DF66D75006B2183 /* NSFileManager+TLChat.h */,
@@ -1308,6 +1370,8 @@
 				C52E76A11DF66D75006B2183 /* UIColor+TLChat.m */,
 				C52E76A21DF66D75006B2183 /* UIFont+TLChat.h */,
 				C52E76A31DF66D75006B2183 /* UIFont+TLChat.m */,
+				C52E76D01DF681C7006B2183 /* AKDBManager+TLChat.h */,
+				C52E76D11DF681C7006B2183 /* AKDBManager+TLChat.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1315,6 +1379,22 @@
 		C52E76A41DF66D75006B2183 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C52E76E91DF69983006B2183 /* TLUser.h */,
+				C52E76EA1DF69983006B2183 /* TLUser.m */,
+				C52E76EB1DF69983006B2183 /* TLUserChatSetting.h */,
+				C52E76EC1DF69983006B2183 /* TLUserChatSetting.m */,
+				C52E76ED1DF69983006B2183 /* TLUserDetail.h */,
+				C52E76EE1DF69983006B2183 /* TLUserDetail.m */,
+				C52E76EF1DF69983006B2183 /* TLUserGroup.h */,
+				C52E76F01DF69983006B2183 /* TLUserGroup.m */,
+				C52E76F11DF69983006B2183 /* TLUserSetting.h */,
+				C52E76F21DF69983006B2183 /* TLUserSetting.m */,
+				C52E76E61DF69953006B2183 /* TLGroup.h */,
+				C52E76E71DF69953006B2183 /* TLGroup.m */,
+				C52E76DD1DF698A2006B2183 /* TLSettingGroup.h */,
+				C52E76DE1DF698A2006B2183 /* TLSettingGroup.m */,
+				C52E76DF1DF698A2006B2183 /* TLSettingItem.h */,
+				C52E76E01DF698A2006B2183 /* TLSettingItem.m */,
 				C52E76A51DF66D75006B2183 /* TLChatUserProtocol.h */,
 				C52E76A61DF66D75006B2183 /* TLEmoji.h */,
 				C52E76A71DF66D75006B2183 /* TLEmoji.m */,
@@ -1333,8 +1413,40 @@
 				C52E76B41DF66D75006B2183 /* TLTextMessage.m */,
 				C52E76B51DF66D75006B2183 /* TLVoiceMessage.h */,
 				C52E76B61DF66D75006B2183 /* TLVoiceMessage.m */,
+				C52E76F81DF6999D006B2183 /* TLBaseDataModel.h */,
+				C52E76F91DF6999D006B2183 /* TLBaseDataModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C52E76C41DF67308006B2183 /* LoggerModule */ = {
+			isa = PBXGroup;
+			children = (
+				C52E76D91DF69280006B2183 /* Aspect */,
+				C52E76C51DF67308006B2183 /* AKFileLogger.h */,
+				C52E76C61DF67308006B2183 /* AKFileLogger.m */,
+				C52E76C71DF67308006B2183 /* AKLoggerFormatter.h */,
+				C52E76C81DF67308006B2183 /* AKLoggerFormatter.m */,
+				C52E76CC1DF680C1006B2183 /* LoggerModule.h */,
+			);
+			path = LoggerModule;
+			sourceTree = "<group>";
+		};
+		C52E76D41DF68266006B2183 /* Sql */ = {
+			isa = PBXGroup;
+			children = (
+				C52E76D51DF6826E006B2183 /* TLDBExpressionSQL.h */,
+			);
+			path = Sql;
+			sourceTree = "<group>";
+		};
+		C52E76D91DF69280006B2183 /* Aspect */ = {
+			isa = PBXGroup;
+			children = (
+				C52E76DA1DF69297006B2183 /* Aspect-LoggerModule.h */,
+				C52E76DB1DF69297006B2183 /* Aspect-LoggerModule.m */,
+			);
+			path = Aspect;
 			sourceTree = "<group>";
 		};
 		C55CBE1E1DE436350000B1F6 /* Network */ = {
@@ -1416,6 +1528,7 @@
 		C5A730481DE2BD4200DB2788 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C52E76C41DF67308006B2183 /* LoggerModule */,
 				C515ACFB1DF0568100353FC4 /* UserModule */,
 				C515ACCD1DF0554400353FC4 /* MapModule */,
 				C515ACAD1DF0552600353FC4 /* LoginModule */,
@@ -1628,7 +1741,9 @@
 				C515AB791DF051BA00353FC4 /* AKTimerManager.m in Sources */,
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
 				C515AD181DF0568100353FC4 /* AKDBManager+UserModel.m in Sources */,
+				C52E76E11DF698A2006B2183 /* TLSettingGroup.m in Sources */,
 				C515AD201DF0591100353FC4 /* NSObject+CategoryWithProperty.m in Sources */,
+				C52E76E21DF698A2006B2183 /* TLSettingItem.m in Sources */,
 				C515AC6D1DF0549C00353FC4 /* PhpBroadcastedPush.m in Sources */,
 				C52E76BE1DF66D75006B2183 /* TLExpressionMessage.m in Sources */,
 				C52E76C11DF66D76006B2183 /* TLMessageFrame.m in Sources */,
@@ -1642,6 +1757,7 @@
 				C515AC521DF0549C00353FC4 /* IMSayMessage.m in Sources */,
 				C515AC4E1DF0549C00353FC4 /* IMRemoveMessage.m in Sources */,
 				C515AB691DF051BA00353FC4 /* AKBaseRequest.m in Sources */,
+				C52E76E51DF698FD006B2183 /* TLUIUtility.m in Sources */,
 				C515ACF61DF0554400353FC4 /* AKUserPinAnnotationView.m in Sources */,
 				C52E76BA1DF66D75006B2183 /* UIColor+TLChat.m in Sources */,
 				C515AC611DF0549C00353FC4 /* IMRoomJoinMessage.m in Sources */,
@@ -1649,6 +1765,7 @@
 				C515AC411DF0549C00353FC4 /* VotePublishPush.m in Sources */,
 				C515AC5D1DF0549C00353FC4 /* IMRoomHostBroadcastedPush.m in Sources */,
 				C515AB711DF051BA00353FC4 /* AppHelper.m in Sources */,
+				C52E76DC1DF69297006B2183 /* Aspect-LoggerModule.m in Sources */,
 				C515ACA41DF054F500353FC4 /* ServiceShare.m in Sources */,
 				C515AC471DF0549C00353FC4 /* IMHeartBeatNotify.m in Sources */,
 				C515AC711DF0549C00353FC4 /* IMSessionKickPush.m in Sources */,
@@ -1658,6 +1775,8 @@
 				C515AC601DF0549C00353FC4 /* IMRoomJoinedPush.m in Sources */,
 				C515AC5B1DF0549C00353FC4 /* IMRoomGived2Push.m in Sources */,
 				C52E76C21DF66D76006B2183 /* TLTextMessage.m in Sources */,
+				C52E76CB1DF67308006B2183 /* AKLoggerFormatter.m in Sources */,
+				C52E76E81DF69953006B2183 /* TLGroup.m in Sources */,
 				C515AB771DF051BA00353FC4 /* AKPopupManager.m in Sources */,
 				C515AB6C1DF051BA00353FC4 /* AKTimer.m in Sources */,
 				C515AC6B1DF0549C00353FC4 /* IMRoomSetRMPush.m in Sources */,
@@ -1667,11 +1786,14 @@
 				C515AB671DF051BA00353FC4 /* AKAppDelegate.m in Sources */,
 				C515AC6C1DF0549C00353FC4 /* IMRoomWhereAmIMessage.m in Sources */,
 				C52E76C01DF66D76006B2183 /* TLMessage.m in Sources */,
+				C52E76F71DF69983006B2183 /* TLUserSetting.m in Sources */,
 				C515AC4F1DF0549C00353FC4 /* IMRevokedPush.m in Sources */,
 				C515AC5E1DF0549C00353FC4 /* IMRoomHostBroadcastMessage.m in Sources */,
 				C515AC451DF0549C00353FC4 /* NumgameStateChangedPush.m in Sources */,
 				C52E76BD1DF66D75006B2183 /* TLEmojiGroup.m in Sources */,
 				C515AC6A1DF0549C00353FC4 /* IMRoomSetNutsPush.m in Sources */,
+				C52E76F31DF69983006B2183 /* TLUser.m in Sources */,
+				C52E76FD1DF699DC006B2183 /* NSString+PinYin.m in Sources */,
 				C52E76861DF66593006B2183 /* TLExpressionHelper.m in Sources */,
 				C515AC7A1DF0549C00353FC4 /* TLConversationView.m in Sources */,
 				C515AC4A1DF0549C00353FC4 /* IMFollowUpdated.m in Sources */,
@@ -1687,6 +1809,7 @@
 				C515AC681DF0549C00353FC4 /* IMRoomSaidPush.m in Sources */,
 				C515AD161DF0568100353FC4 /* Aspect+UserModule.m in Sources */,
 				C52E76981DF66B9D006B2183 /* TLHostHelper.m in Sources */,
+				C52E76F61DF69983006B2183 /* TLUserGroup.m in Sources */,
 				C515AC531DF0549C00353FC4 /* IMUserInfoUpdatedPush.m in Sources */,
 				C515AD1B1DF0568100353FC4 /* AKUserManager.m in Sources */,
 				C515ACCA1DF0552600353FC4 /* ServiceLogin.m in Sources */,
@@ -1709,6 +1832,7 @@
 				C515ACA31DF054F500353FC4 /* AKMediator+ShareModule.m in Sources */,
 				C52E76BB1DF66D75006B2183 /* UIFont+TLChat.m in Sources */,
 				C515AD1A1DF0568100353FC4 /* GVUserDefaults+UserModule.m in Sources */,
+				C52E76F41DF69983006B2183 /* TLUserChatSetting.m in Sources */,
 				C515AC3C1DF0549C00353FC4 /* AKIMManager+IM.m in Sources */,
 				C515AC491DF0549C00353FC4 /* IMClearUnreadNumMessage.m in Sources */,
 				C515AB7A1DF051BA00353FC4 /* AKCYLPlusButton.m in Sources */,
@@ -1716,9 +1840,13 @@
 				C515AD231DF0597B00353FC4 /* AKSignalManager.m in Sources */,
 				C515AC3D1DF0549C00353FC4 /* AKIMManager+Message.m in Sources */,
 				C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */,
+				C52E76CA1DF67308006B2183 /* AKFileLogger.m in Sources */,
 				C515AD291DF1167900353FC4 /* AKSignalManager+UserModule.m in Sources */,
+				C52E76CF1DF6815A006B2183 /* TLEmojiKBHelper.m in Sources */,
+				C52E77001DF69A73006B2183 /* TLUserHelper.m in Sources */,
 				C515AC5A1DF0549C00353FC4 /* IMRoomGetUIDsMessage.m in Sources */,
 				C515ACCB1DF0552600353FC4 /* AKLoginButton.m in Sources */,
+				C52E76FA1DF6999D006B2183 /* TLBaseDataModel.m in Sources */,
 				C515AC581DF0549C00353FC4 /* IMRoomBroadCastMessage.m in Sources */,
 				C515ACFA1DF0554400353FC4 /* UserCardView.m in Sources */,
 				C515AB681DF051BA00353FC4 /* AKBaseModel.m in Sources */,
@@ -1730,6 +1858,7 @@
 				C515AC461DF0549C00353FC4 /* NumgameWinnerChangePush.m in Sources */,
 				C515ACC71DF0552600353FC4 /* AKLoginViewController.m in Sources */,
 				C515AC741DF0549C00353FC4 /* WebSocketModel.m in Sources */,
+				C52E76D21DF681C7006B2183 /* AKDBManager+TLChat.m in Sources */,
 				C515AC641DF0549C00353FC4 /* IMRoomLovedPush.m in Sources */,
 				C52E767F1DF663D2006B2183 /* NSFileManager+Paths.m in Sources */,
 				C515AC771DF0549C00353FC4 /* ServiceIM.m in Sources */,
@@ -1750,6 +1879,7 @@
 				C515AB781DF051BA00353FC4 /* AKRequestManager.m in Sources */,
 				C515AC391DF0549C00353FC4 /* AKRequestManager+IMModule.m in Sources */,
 				C515AC4C1DF0549C00353FC4 /* IMGetMessage.m in Sources */,
+				C52E76F51DF69983006B2183 /* TLUserDetail.m in Sources */,
 				C515AC781DF0549C00353FC4 /* TLConversation.m in Sources */,
 				C515AC6F1DF0549C00353FC4 /* ShowRenQiUpdatePush.m in Sources */,
 				C52E76B71DF66D75006B2183 /* NSFileManager+ExpressionGroup.m in Sources */,

@@ -1,13 +1,12 @@
 //
 //  TLEmojiGroup.m
-//  Project
+//  TLChat
 //
-//  Created by ankye on 2016/12/6.
-//  Copyright © 2016年 ankye. All rights reserved.
+//  Created by 李伯坤 on 16/2/19.
+//  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
 #import "TLEmojiGroup.h"
-#import "NSFileManager+ExpressionGroup.h"
 
 @implementation TLEmojiGroup
 

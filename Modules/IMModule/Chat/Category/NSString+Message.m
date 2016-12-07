@@ -1,15 +1,14 @@
 //
 //  NSString+Message.m
-//  Project
+//  TLChat
 //
-//  Created by ankye on 2016/12/6.
-//  Copyright © 2016年 ankye. All rights reserved.
+//  Created by 李伯坤 on 16/3/15.
+//  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
 #import "NSString+Message.h"
-#import "UIFont+TLChat.h"
-#import "TLEmojiGroup.h"
 #import "TLExpressionHelper.h"
+#import "UIFont+TLChat.h"
 
 @implementation NSString (Message)
 
@@ -24,7 +23,7 @@
     NSError *error = nil;
     NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:regex_emoji options:NSRegularExpressionCaseInsensitive error:&error];
     if (!re) {
-        DDLogInfo(@"[NSString toMessageString]: %@", [error localizedDescription]);
+        NSLog(@"[NSString toMessageString]: %@", [error localizedDescription]);
         return attributeString;
     }
     
@@ -70,7 +69,6 @@
     }
     return attributeString;
 }
-
 
 
 @end

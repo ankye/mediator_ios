@@ -1,15 +1,14 @@
 //
 //  NSString+Message.h
-//  Project
+//  TLChat
 //
-//  Created by ankye on 2016/12/6.
-//  Copyright © 2016年 ankye. All rights reserved.
+//  Created by 李伯坤 on 16/3/15.
+//  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @interface NSString (Message)
-
 
 - (NSAttributedString *)toMessageString;
 

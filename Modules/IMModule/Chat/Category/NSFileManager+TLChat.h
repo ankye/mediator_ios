@@ -1,9 +1,9 @@
 //
 //  NSFileManager+TLChat.h
-//  Project
+//  TLChat
 //
-//  Created by ankye on 2016/12/6.
-//  Copyright © 2016年 ankye. All rights reserved.
+//  Created by 李伯坤 on 16/3/3.
+//  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -59,12 +59,12 @@
 /**
  *  数据库 — 通用
  */
-+ (NSString *)pathDBCommon:(NSString*)uid;
++ (NSString *)pathDBCommon;
 
 /**
  *  数据库 — 聊天
  */
-+ (NSString *)pathDBMessage:(NSString*)uid;
++ (NSString *)pathDBMessage;
 
 /**
  *  缓存

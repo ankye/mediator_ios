@@ -1,12 +1,13 @@
 //
 //  TLEmojiKBHelper.h
-//  Project
+//  TLChat
 //
-//  Created by ankye on 2016/12/6.
-//  Copyright © 2016年 ankye. All rights reserved.
+//  Created by 李伯坤 on 16/2/20.
+//  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "TLEmojiGroup.h"
 
 @interface TLEmojiKBHelper : NSObject
 
@@ -15,6 +16,5 @@
 - (void)emojiGroupDataByUserID:(NSString *)userID complete:(void (^)(NSMutableArray *))complete;
 
 - (void)updateEmojiGroupData;
-
 
 @end

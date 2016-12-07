@@ -20,6 +20,10 @@
 #define     IEXPRESSION_HOST_URL        @"http://123.57.155.230/ibiaoqing/admin/"
 
 
+#define     HEIGHT_STATUSBAR            20.0f
+#define     HEIGHT_TABBAR               49.0f
+#define     HEIGHT_NAVBAR               44.0f
+#define     NAVBAR_ITEM_FIXED_SPACE     5.0f
 
 #define     HEIGHT_CHATBAR_TEXTVIEW         36.0f
 #define     HEIGHT_MAX_CHATBAR_TEXTVIEW     111.5f
@@ -31,6 +35,8 @@
 #define     MAX_MESSAGE_EXPRESSION_WIDTH    SCREEN_WIDTH * 0.35
 #define     MIN_MESSAGE_EXPRESSION_WIDTH    SCREEN_WIDTH * 0.2
 
+#define mark - # Default
+#define     DEFAULT_AVATAR_PATH    @"default_head"
 
 #pragma mark - # Methods
 #define     TLURL(urlString)    [NSURL URLWithString:urlString]
@@ -57,6 +63,22 @@ typedef NS_ENUM(NSInteger, TLChatBarStatus) {
     TLChatBarStatusEmoji,
     TLChatBarStatusMore,
     TLChatBarStatusKeyboard,
+};
+
+
+
+typedef NS_ENUM(NSUInteger, TLMoreKeyboardItemType) {
+    TLMoreKeyboardItemTypeImage,
+    TLMoreKeyboardItemTypeCamera,
+    TLMoreKeyboardItemTypeVideo,
+    TLMoreKeyboardItemTypeVideoCall,
+    TLMoreKeyboardItemTypeWallet,
+    TLMoreKeyboardItemTypeTransfer,
+    TLMoreKeyboardItemTypePosition,
+    TLMoreKeyboardItemTypeFavorite,
+    TLMoreKeyboardItemTypeBusinessCard,
+    TLMoreKeyboardItemTypeVoice,
+    TLMoreKeyboardItemTypeCards,
 };
 
 

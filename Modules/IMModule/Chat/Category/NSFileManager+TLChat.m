@@ -1,9 +1,9 @@
 //
 //  NSFileManager+TLChat.m
-//  Project
+//  TLChat
 //
-//  Created by ankye on 2016/12/6.
-//  Copyright © 2016年 ankye. All rights reserved.
+//  Created by 李伯坤 on 16/3/3.
+//  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
 #import "NSFileManager+TLChat.h"
@@ -129,9 +129,9 @@
     return [path stringByAppendingString:imageName];
 }
 
-+ (NSString *)pathDBCommon:(NSString*)uid
++ (NSString *)pathDBCommon
 {
-    NSString *path = [NSString stringWithFormat:@"%@/User/%@/Setting/DB/", [NSFileManager documentsPath], uid];
+    NSString *path = [NSString stringWithFormat:@"%@/User/%@/Setting/DB/", [NSFileManager documentsPath], [TLUserHelper sharedHelper].userID];
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         NSError *error;
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
@@ -142,9 +142,9 @@
     return [path stringByAppendingString:@"common.sqlite3"];
 }
 
-+ (NSString *)pathDBMessage:(NSString*)uid
++ (NSString *)pathDBMessage
 {
-    NSString *path = [NSString stringWithFormat:@"%@/User/%@/Chat/DB/", [NSFileManager documentsPath], uid];
+    NSString *path = [NSString stringWithFormat:@"%@/User/%@/Chat/DB/", [NSFileManager documentsPath], [TLUserHelper sharedHelper].userID];
     if (![[NSFileManager defaultManager] fileExistsAtPath:path]) {
         NSError *error;
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];

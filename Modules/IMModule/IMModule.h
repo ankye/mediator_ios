@@ -18,5 +18,18 @@
 #import "AKIMManager+Room.h"
 
 
+#import "UIImage+Color.h"
+#import "UIView+Frame.h"
+#import "NSDate+Utilities.h"
+#import "NSString+Tools.h"
+#import "NSString+PinYin.h"
+#import "NSFileManager+TLChat.h"
+#import "NSFileManager+ExpressionGroup.h"
+#import "NSString+Message.h"
+#import "AKDBManager+TLChat.h"
+#import "TLUIUtility.h"
+#import "UIFont+TLChat.h"
+#import "UIColor+TLChat.h"
+#import "TLUserHelper.h"
 
 #endif /* IMModule_h */

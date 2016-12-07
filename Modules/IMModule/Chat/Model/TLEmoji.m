@@ -1,17 +1,14 @@
 //
 //  TLEmoji.m
-//  Project
+//  TLChat
 //
-//  Created by ankye on 2016/12/6.
-//  Copyright © 2016年 ankye. All rights reserved.
+//  Created by 李伯坤 on 16/2/20.
+//  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
 #import "TLEmoji.h"
-#import "NSFileManager+Paths.h"
-#import "NSFileManager+ExpressionGroup.h"
 
 @implementation TLEmoji
-
 
 + (NSDictionary *)replacedKeyFromPropertyName
 {
@@ -23,8 +20,6 @@
              @"size" : @"size",
              };
 }
-
-
 
 - (NSString *)emojiPath
 {

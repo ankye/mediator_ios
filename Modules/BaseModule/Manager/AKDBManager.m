@@ -192,14 +192,14 @@ SINGLETON_IMPL(AKDBManager)
             }
         }
         @catch (NSException *exception) {
-            NSLog(@"exception = %@",exception);
+            DDLogError(@"exception = %@",exception);
         }
         @finally {
             
         }
         
         sql = [NSString stringWithFormat:@"%@)",sql];
-        NSLog(@"sql %@",sql);
+        DDLogInfo(@"sql %@",sql);
         [db executeStatements:sql];
     }];
 }
@@ -216,7 +216,7 @@ SINGLETON_IMPL(AKDBManager)
     [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         //判断数据库是否已经打开，如果没有打开，提示失败
         if (![db open]) {
-            NSLog(@"数据库打开失败");
+            DDLogError(@"数据库打开失败");
             return;
         }
         
@@ -262,7 +262,7 @@ SINGLETON_IMPL(AKDBManager)
             sql = [[sql substringToIndex:sql.length - 1] mutableCopy];
         }
         [sql appendFormat:@" )"];
-        NSLog(@"--sql: -->%@",sql);
+        DDLogInfo(@"--sql: -->%@",sql);
         
         for (int k = 0; k < modelArray.count; k++) {
             id model = [modelArray objectAtIndex:k];
@@ -308,7 +308,7 @@ SINGLETON_IMPL(AKDBManager)
     [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         //判断数据库是否已经打开，如果没有打开，提示失败
         if (![db open]) {
-            NSLog(@"数据库打开失败");
+            DDLogError(@"数据库打开失败");
             return;
         }
         
@@ -340,7 +340,7 @@ SINGLETON_IMPL(AKDBManager)
             sql = [[sql substringToIndex:sql.length - 1] mutableCopy];
         }
         [sql appendFormat:@" WHERE pk_cid = ?"];
-        NSLog(@"--sql: -->%@",sql);
+        DDLogInfo(@"--sql: -->%@",sql);
         
         for (int k = 0; k < modelArray.count; k++) {
             id model = [modelArray objectAtIndex:k];
@@ -383,7 +383,7 @@ SINGLETON_IMPL(AKDBManager)
     [queue inDatabase:^(FMDatabase *db) {
         //判断数据库是否已经打开，如果没有打开，提示失败
         if (![db open]) {
-            NSLog(@"数据库打开失败");
+            DDLogError(@"数据库打开失败");
             return;
         }
         
@@ -407,7 +407,7 @@ SINGLETON_IMPL(AKDBManager)
     [queue inTransaction:^(FMDatabase *db, BOOL *rollback) {
         //判断数据库是否已经打开，如果没有打开，提示失败
         if (![db open]) {
-            NSLog(@"数据库打开失败");
+            DDLogError(@"数据库打开失败");
             return;
         }
         
@@ -443,7 +443,7 @@ SINGLETON_IMPL(AKDBManager)
     [queue inDatabase:^(FMDatabase *db) {
         //判断数据库是否已经打开，如果没有打开，提示失败
         if (![db open]) {
-            NSLog(@"数据库打开失败");
+            DDLogError(@"数据库打开失败");
             return;
         }
         

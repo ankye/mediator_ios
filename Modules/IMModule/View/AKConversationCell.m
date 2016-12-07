@@ -6,7 +6,7 @@
 //  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
-#import "TLConversationCell.h"
+#import "AKConversationCell.h"
 #import <UIImageView+WebCache.h>
 
 
@@ -14,7 +14,7 @@
 #define     CONV_SPACE_Y            9.5f
 #define     REDPOINT_WIDTH          10.0f
 
-@interface TLConversationCell()
+@interface AKConversationCell()
 
 @property (nonatomic, strong) UIImageView *avatarImageView;
 
@@ -30,7 +30,7 @@
 
 @end
 
-@implementation TLConversationCell
+@implementation AKConversationCell
 
 - (id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -50,7 +50,7 @@
 }
 
 #pragma mark - Public Methods
-- (void) setConversation:(TLConversation *)conversation
+- (void) setConversation:(AKConversation *)conversation
 {
     _conversation = conversation;
     

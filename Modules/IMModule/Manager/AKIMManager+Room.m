@@ -33,7 +33,7 @@
 #endif
     
  
-    NSLog(@"开始进房");
+    DDLogInfo(@"开始进房");
     IMRoomJoinMessage* message = (IMRoomJoinMessage*)[self createMessage:@"room.join"];
     message.room_uid = room_uid;
     message.complete = complete;
@@ -102,7 +102,7 @@
 {
 #ifdef DEBUG
     NSAssert(room_uid != nil, @"roomGetUIDs room_uid not nil");
-    NSLog(@"Room getUDS roomid=[%@] and page=[%d]",room_uid,page);
+    DDLogInfo(@"Room getUDS roomid=[%@] and page=[%d]",room_uid,page);
     
 #else
     if (room_uid == nil) return;

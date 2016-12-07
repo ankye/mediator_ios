@@ -7,10 +7,10 @@
 //
 
 #import "AKSignalManager.h"
-#import "TLConversation.h"
+#import "AKConversation.h"
 
 CreateSignalType(MapUserOnline, UserModel *user)
-CreateSignalType(MapUserConverstation, TLConversation* conversation)
+CreateSignalType(MapUserConverstation, AKConversation* conversation)
 
 @interface AKSignalManager (MapModule)
 

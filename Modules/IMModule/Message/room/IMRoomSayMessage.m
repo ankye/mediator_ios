@@ -29,7 +29,7 @@
 -(BOOL)response:(NSArray *)info
 {
     //TODO:通知错误消息
-    NSLog(@"message___response:%@",info);
+    DDLogInfo(@"message___response:%@",info);
  
     
     return YES;

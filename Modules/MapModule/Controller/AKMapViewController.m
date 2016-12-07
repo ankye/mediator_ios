@@ -122,7 +122,7 @@ static void *xxcontext = &xxcontext;
 
 -(void) updateUserPosition:(UserModel*) user
 {
-    NSLog(@"Update User info");
+    DDLogInfo(@"Update User info");
     CLLocationCoordinate2D coordinate;
     coordinate.longitude = user.longitude;
     coordinate.latitude = user.latitude;

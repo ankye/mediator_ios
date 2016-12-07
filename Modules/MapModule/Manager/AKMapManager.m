@@ -9,7 +9,7 @@
 #import "AKMapManager.h"
 #import "MapModuleDefine.h"
 #import "AKTimerManager.h"
-#import "TLConversation.h"
+#import "AKConversation.h"
 #define DefaultLocationTimeout  6
 #define DefaultReGeocodeTimeout 3
 
@@ -76,7 +76,7 @@ SINGLETON_IMPL(AKMapManager);
             self.joinRoomStep = 2;
             @weakify(self);
             [[AKIMManager sharedInstance] roomJoin:AK_MAP_ROOMID withComplete:^(BOOL result, NSArray *response) {
-                NSLog(@"用户进房成功 %@",response);
+                DDLogInfo(@"用户进房成功 %@",response);
                 @strongify(self);
                 self.joinRoomStep = 3;
             }];
@@ -158,7 +158,7 @@ SINGLETON_IMPL(AKMapManager);
   
     if(self.me != user){
         
-        TLConversation* converstation = [[TLConversation alloc] init];
+        AKConversation* converstation = [[AKConversation alloc] init];
         converstation.partner = user;
         
         [_converstationList addObject:converstation];
@@ -175,7 +175,7 @@ SINGLETON_IMPL(AKMapManager);
     
     NSInteger count = _converstationList.count;
     for(NSInteger i=count -1; i>= 0; i--){
-        TLConversation* conversation = [_converstationList objectAtIndex:i];
+        AKConversation* conversation = [_converstationList objectAtIndex:i];
         if(conversation.partner == user){
             [_converstationList removeObjectAtIndex:i];
             AK_SIGNAL_MANAGER.onMapRemoveConverstation.fire(conversation);
@@ -192,7 +192,7 @@ SINGLETON_IMPL(AKMapManager);
     @weakify(self);
     [[AKIMManager sharedInstance] roomGetUDs:AK_MAP_ROOMID page:0 withComplete:^(BOOL result, NSArray *response) {
         @strongify(self);
-        NSLog(@"GetUDs %@",response);
+        DDLogInfo(@"GetUDs %@",response);
         if(response && [response count]>=2){
             NSArray* list = (NSArray*)response[1];
             NSInteger count = [list count];
@@ -230,7 +230,7 @@ SINGLETON_IMPL(AKMapManager);
         
         if (error)
         {
-            NSLog(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
+            DDLogError(@"locError:{%ld - %@};", (long)error.code, error.localizedDescription);
             
             //如果为定位失败的error，则不进行annotation的添加
             if (error.code == AMapLocationErrorLocateFailed)
@@ -252,7 +252,7 @@ SINGLETON_IMPL(AKMapManager);
 
 - (void)amapLocationManager:(AMapLocationManager *)manager didFailWithError:(NSError *)error
 {
-    NSLog(@"%s, amapLocationManager = %@, error = %@", __func__, [manager class], error);
+    DDLogInfo(@"%s, amapLocationManager = %@, error = %@", __func__, [manager class], error);
 }
 
 - (void)amapLocationManager:(AMapLocationManager *)manager didUpdateLocation:(CLLocation *)location reGeocode:(AMapLocationReGeocode *)reGeocode
@@ -262,7 +262,7 @@ SINGLETON_IMPL(AKMapManager);
     if (location)
     {
         if( ! self.me ){
-            NSLog(@"User Not Login");
+            DDLogWarn(@"User Not Login");
             return ;
         }
         
@@ -276,7 +276,7 @@ SINGLETON_IMPL(AKMapManager);
         
         if(_joinRoomStep == 3 && (location.coordinate.latitude != self.me.latitude || location.coordinate.longitude != self.me.longitude)){
             NSString* msg = [NSString stringWithFormat:@"%f,%f",location.coordinate.latitude,location.coordinate.longitude];
-            NSLog(@"发送同步坐标数据 %@ %@ ",[AppHelper getCurrentTime],msg);
+            DDLogInfo(@"发送同步坐标数据 %@ %@ ",[AppHelper getCurrentTime],msg);
             [[AKIMManager sharedInstance] roomSay:msg isShowDanmu:0 room_uid:AK_MAP_ROOMID];
         }
         

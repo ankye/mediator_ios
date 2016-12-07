@@ -1,5 +1,5 @@
 //
-//  TLConversation.h
+//  AKConversation
 //  TLChat
 //
 //  Created by 李伯坤 on 16/1/23.
@@ -36,7 +36,7 @@ typedef NS_ENUM(NSInteger, TLMessageRemindType) {
 
 
 
-@interface TLConversation : NSObject
+@interface AKConversation : NSObject
 
 
 /**

@@ -30,7 +30,7 @@ SINGLETON_IMPL(AKMediator)
 {
 
     if(!self.scheme){
-        NSLog(@"Please set APP Scheme use updateAppScheme method !");
+        DDLogError(@"Please set APP Scheme use updateAppScheme method !");
         return @(NO);
     }
     if (![url.scheme isEqualToString:self.scheme]) {

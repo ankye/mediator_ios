@@ -11,7 +11,7 @@
 #import "AKIMManager+Message.h"
 #import "AKIMManager+IM.h"
 #import "AKIMManager+Room.h"
-#import "TLConversationView.h"
+#import "AKConversationView.h"
 
 @implementation ServiceIM
 
@@ -44,12 +44,12 @@
  */
 -(UIView<AKPopupViewProtocol>*)popConversationView:(NSDictionary*)params
 {
-    UIView<AKPopupViewProtocol>* view = [[TLConversationView alloc] init];
+    UIView<AKPopupViewProtocol>* view = [[AKConversationView alloc] init];
     
     NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:YES style:STPopupStyleBottomSheet onClick:^(NSInteger channel, NSMutableDictionary *attributes) {
-        NSLog(@"Click");
+        DDLogInfo(@"Click");
     } onClose:^(NSMutableDictionary *attributes) {
-        NSLog(@"close");
+        DDLogInfo(@"close");
     }];
     [AK_POPUP_MANAGER showView:view withAttributes:attributes];
     

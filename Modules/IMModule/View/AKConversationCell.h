@@ -6,12 +6,12 @@
 //  Copyright © 2016年 李伯坤. All rights reserved.
 
 #import "TLTableViewCell.h"
-#import "TLConversation.h"
+#import "AKConversation.h"
 
-@interface TLConversationCell : TLTableViewCell
+@interface AKConversationCell : TLTableViewCell
 
 /// 会话Model
-@property (nonatomic, strong) TLConversation *conversation;
+@property (nonatomic, strong) AKConversation *conversation;
 
 #pragma mark - Public Methods
 /**

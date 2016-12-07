@@ -100,7 +100,7 @@ SINGLETON_IMPL(AKPopupManager)
     
     
     [self.popupController presentInViewController:[AppHelper getRootController] completion:^{
-        NSLog(@"Load Popup View Completed !");
+        DDLogInfo(@"Load Popup View Completed !");
         
     }];
 

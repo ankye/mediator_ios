@@ -93,10 +93,9 @@
 		C515AC751DF0549C00353FC4 /* AKIMServerListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC291DF0549C00353FC4 /* AKIMServerListRequest.m */; };
 		C515AC761DF0549C00353FC4 /* AKIMTokenRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC2B1DF0549C00353FC4 /* AKIMTokenRequest.m */; };
 		C515AC771DF0549C00353FC4 /* ServiceIM.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC2E1DF0549C00353FC4 /* ServiceIM.m */; };
-		C515AC781DF0549C00353FC4 /* TLConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC311DF0549C00353FC4 /* TLConversation.m */; };
-		C515AC791DF0549C00353FC4 /* TLConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC331DF0549C00353FC4 /* TLConversationCell.m */; };
-		C515AC7A1DF0549C00353FC4 /* TLConversationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC351DF0549C00353FC4 /* TLConversationView.m */; };
-		C515AC7B1DF0549C00353FC4 /* TLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC371DF0549C00353FC4 /* TLTableViewCell.m */; };
+		C515AC781DF0549C00353FC4 /* AKConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC311DF0549C00353FC4 /* AKConversation.m */; };
+		C515AC791DF0549C00353FC4 /* AKConversationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC331DF0549C00353FC4 /* AKConversationCell.m */; };
+		C515AC7A1DF0549C00353FC4 /* AKConversationView.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC351DF0549C00353FC4 /* AKConversationView.m */; };
 		C515ACA21DF054F500353FC4 /* Aspect-ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC7F1DF054F500353FC4 /* Aspect-ShareModule.m */; };
 		C515ACA31DF054F500353FC4 /* AKMediator+ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC821DF054F500353FC4 /* AKMediator+ShareModule.m */; };
 		C515ACA41DF054F500353FC4 /* ServiceShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AC851DF054F500353FC4 /* ServiceShare.m */; };
@@ -164,6 +163,10 @@
 		C52E76FA1DF6999D006B2183 /* TLBaseDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76F91DF6999D006B2183 /* TLBaseDataModel.m */; };
 		C52E76FD1DF699DC006B2183 /* NSString+PinYin.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76FC1DF699DC006B2183 /* NSString+PinYin.m */; };
 		C52E77001DF69A73006B2183 /* TLUserHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E76FF1DF69A73006B2183 /* TLUserHelper.m */; };
+		C52E77091DF6C326006B2183 /* Aspect-IMModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E77081DF6C326006B2183 /* Aspect-IMModule.m */; };
+		C52E770F1DF6DEB3006B2183 /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E770E1DF6DEB3006B2183 /* NSDate+Utilities.m */; };
+		C52E77131DF6E1B2006B2183 /* TLConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E77121DF6E1B2006B2183 /* TLConversation.m */; };
+		C52E77161DF6E2B3006B2183 /* TLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E77151DF6E2B3006B2183 /* TLTableViewCell.m */; };
 		C538066E1DE7327900A2322D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C538066D1DE7327900A2322D /* libsqlite3.tbd */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
@@ -373,14 +376,12 @@
 		C515AC2B1DF0549C00353FC4 /* AKIMTokenRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKIMTokenRequest.m; sourceTree = "<group>"; };
 		C515AC2D1DF0549C00353FC4 /* ServiceIM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceIM.h; sourceTree = "<group>"; };
 		C515AC2E1DF0549C00353FC4 /* ServiceIM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceIM.m; sourceTree = "<group>"; };
-		C515AC301DF0549C00353FC4 /* TLConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLConversation.h; sourceTree = "<group>"; };
-		C515AC311DF0549C00353FC4 /* TLConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLConversation.m; sourceTree = "<group>"; };
-		C515AC321DF0549C00353FC4 /* TLConversationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLConversationCell.h; sourceTree = "<group>"; };
-		C515AC331DF0549C00353FC4 /* TLConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLConversationCell.m; sourceTree = "<group>"; };
-		C515AC341DF0549C00353FC4 /* TLConversationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLConversationView.h; sourceTree = "<group>"; };
-		C515AC351DF0549C00353FC4 /* TLConversationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLConversationView.m; sourceTree = "<group>"; };
-		C515AC361DF0549C00353FC4 /* TLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTableViewCell.h; sourceTree = "<group>"; };
-		C515AC371DF0549C00353FC4 /* TLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTableViewCell.m; sourceTree = "<group>"; };
+		C515AC301DF0549C00353FC4 /* AKConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKConversation.h; sourceTree = "<group>"; };
+		C515AC311DF0549C00353FC4 /* AKConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKConversation.m; sourceTree = "<group>"; };
+		C515AC321DF0549C00353FC4 /* AKConversationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKConversationCell.h; sourceTree = "<group>"; };
+		C515AC331DF0549C00353FC4 /* AKConversationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKConversationCell.m; sourceTree = "<group>"; };
+		C515AC341DF0549C00353FC4 /* AKConversationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKConversationView.h; sourceTree = "<group>"; };
+		C515AC351DF0549C00353FC4 /* AKConversationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKConversationView.m; sourceTree = "<group>"; };
 		C515AC7E1DF054F500353FC4 /* Aspect-ShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect-ShareModule.h"; sourceTree = "<group>"; };
 		C515AC7F1DF054F500353FC4 /* Aspect-ShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect-ShareModule.m"; sourceTree = "<group>"; };
 		C515AC811DF054F500353FC4 /* AKMediator+ShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKMediator+ShareModule.h"; sourceTree = "<group>"; };
@@ -524,6 +525,18 @@
 		C52E76FC1DF699DC006B2183 /* NSString+PinYin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PinYin.m"; sourceTree = "<group>"; };
 		C52E76FE1DF69A73006B2183 /* TLUserHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserHelper.h; sourceTree = "<group>"; };
 		C52E76FF1DF69A73006B2183 /* TLUserHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserHelper.m; sourceTree = "<group>"; };
+		C52E77071DF6C326006B2183 /* Aspect-IMModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect-IMModule.h"; sourceTree = "<group>"; };
+		C52E77081DF6C326006B2183 /* Aspect-IMModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect-IMModule.m"; sourceTree = "<group>"; };
+		C52E770C1DF6DCF0006B2183 /* TLDBMessageStoreSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBMessageStoreSQL.h; sourceTree = "<group>"; };
+		C52E770D1DF6DEB3006B2183 /* NSDate+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Utilities.h"; sourceTree = "<group>"; };
+		C52E770E1DF6DEB3006B2183 /* NSDate+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Utilities.m"; sourceTree = "<group>"; };
+		C52E77101DF6DF3B006B2183 /* TLDBConversationSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBConversationSQL.h; sourceTree = "<group>"; };
+		C52E77111DF6E1B2006B2183 /* TLConversation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLConversation.h; sourceTree = "<group>"; };
+		C52E77121DF6E1B2006B2183 /* TLConversation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLConversation.m; sourceTree = "<group>"; };
+		C52E77141DF6E2B3006B2183 /* TLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTableViewCell.h; sourceTree = "<group>"; };
+		C52E77151DF6E2B3006B2183 /* TLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTableViewCell.m; sourceTree = "<group>"; };
+		C52E77171DF6E50C006B2183 /* TLDBFriendSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBFriendSQL.h; sourceTree = "<group>"; };
+		C52E77181DF6E50C006B2183 /* TLDBGroupSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBGroupSQL.h; sourceTree = "<group>"; };
 		C538066D1DE7327900A2322D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
@@ -719,6 +732,7 @@
 		C515AB9E1DF0549C00353FC4 /* IMModule */ = {
 			isa = PBXGroup;
 			children = (
+				C52E77061DF6C318006B2183 /* Aspect */,
 				C52E76601DF65BBB006B2183 /* Chat */,
 				C515AB9F1DF0549C00353FC4 /* Category */,
 				C515ABA61DF0549C00353FC4 /* IMMessageDef.h */,
@@ -970,14 +984,12 @@
 		C515AC2F1DF0549C00353FC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C515AC301DF0549C00353FC4 /* TLConversation.h */,
-				C515AC311DF0549C00353FC4 /* TLConversation.m */,
-				C515AC321DF0549C00353FC4 /* TLConversationCell.h */,
-				C515AC331DF0549C00353FC4 /* TLConversationCell.m */,
-				C515AC341DF0549C00353FC4 /* TLConversationView.h */,
-				C515AC351DF0549C00353FC4 /* TLConversationView.m */,
-				C515AC361DF0549C00353FC4 /* TLTableViewCell.h */,
-				C515AC371DF0549C00353FC4 /* TLTableViewCell.m */,
+				C515AC301DF0549C00353FC4 /* AKConversation.h */,
+				C515AC311DF0549C00353FC4 /* AKConversation.m */,
+				C515AC321DF0549C00353FC4 /* AKConversationCell.h */,
+				C515AC331DF0549C00353FC4 /* AKConversationCell.m */,
+				C515AC341DF0549C00353FC4 /* AKConversationView.h */,
+				C515AC351DF0549C00353FC4 /* AKConversationView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1334,6 +1346,8 @@
 		C52E76631DF65BED006B2183 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C52E77141DF6E2B3006B2183 /* TLTableViewCell.h */,
+				C52E77151DF6E2B3006B2183 /* TLTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1358,6 +1372,8 @@
 		C52E76991DF66D75006B2183 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				C52E770D1DF6DEB3006B2183 /* NSDate+Utilities.h */,
+				C52E770E1DF6DEB3006B2183 /* NSDate+Utilities.m */,
 				C52E76FB1DF699DC006B2183 /* NSString+PinYin.h */,
 				C52E76FC1DF699DC006B2183 /* NSString+PinYin.m */,
 				C52E769A1DF66D75006B2183 /* NSFileManager+ExpressionGroup.h */,
@@ -1379,6 +1395,8 @@
 		C52E76A41DF66D75006B2183 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C52E77111DF6E1B2006B2183 /* TLConversation.h */,
+				C52E77121DF6E1B2006B2183 /* TLConversation.m */,
 				C52E76E91DF69983006B2183 /* TLUser.h */,
 				C52E76EA1DF69983006B2183 /* TLUser.m */,
 				C52E76EB1DF69983006B2183 /* TLUserChatSetting.h */,
@@ -1435,6 +1453,10 @@
 		C52E76D41DF68266006B2183 /* Sql */ = {
 			isa = PBXGroup;
 			children = (
+				C52E77171DF6E50C006B2183 /* TLDBFriendSQL.h */,
+				C52E77181DF6E50C006B2183 /* TLDBGroupSQL.h */,
+				C52E77101DF6DF3B006B2183 /* TLDBConversationSQL.h */,
+				C52E770C1DF6DCF0006B2183 /* TLDBMessageStoreSQL.h */,
 				C52E76D51DF6826E006B2183 /* TLDBExpressionSQL.h */,
 			);
 			path = Sql;
@@ -1445,6 +1467,15 @@
 			children = (
 				C52E76DA1DF69297006B2183 /* Aspect-LoggerModule.h */,
 				C52E76DB1DF69297006B2183 /* Aspect-LoggerModule.m */,
+			);
+			path = Aspect;
+			sourceTree = "<group>";
+		};
+		C52E77061DF6C318006B2183 /* Aspect */ = {
+			isa = PBXGroup;
+			children = (
+				C52E77071DF6C326006B2183 /* Aspect-IMModule.h */,
+				C52E77081DF6C326006B2183 /* Aspect-IMModule.m */,
 			);
 			path = Aspect;
 			sourceTree = "<group>";
@@ -1740,6 +1771,7 @@
 				C515AD2C1DF11B0A00353FC4 /* AKSignalManager+MapModule.m in Sources */,
 				C515AB791DF051BA00353FC4 /* AKTimerManager.m in Sources */,
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
+				C52E77091DF6C326006B2183 /* Aspect-IMModule.m in Sources */,
 				C515AD181DF0568100353FC4 /* AKDBManager+UserModel.m in Sources */,
 				C52E76E11DF698A2006B2183 /* TLSettingGroup.m in Sources */,
 				C515AD201DF0591100353FC4 /* NSObject+CategoryWithProperty.m in Sources */,
@@ -1795,7 +1827,7 @@
 				C52E76F31DF69983006B2183 /* TLUser.m in Sources */,
 				C52E76FD1DF699DC006B2183 /* NSString+PinYin.m in Sources */,
 				C52E76861DF66593006B2183 /* TLExpressionHelper.m in Sources */,
-				C515AC7A1DF0549C00353FC4 /* TLConversationView.m in Sources */,
+				C515AC7A1DF0549C00353FC4 /* AKConversationView.m in Sources */,
 				C515AC4A1DF0549C00353FC4 /* IMFollowUpdated.m in Sources */,
 				C515AB761DF051BA00353FC4 /* AKMediator.m in Sources */,
 				C52E76B81DF66D75006B2183 /* NSFileManager+TLChat.m in Sources */,
@@ -1816,7 +1848,7 @@
 				C515ACC51DF0552600353FC4 /* AKMediator+LoginModule.m in Sources */,
 				C515AC381DF0549C00353FC4 /* AKMediator+IMModule.m in Sources */,
 				C52E76BF1DF66D76006B2183 /* TLImageMessage.m in Sources */,
-				C515AC791DF0549C00353FC4 /* TLConversationCell.m in Sources */,
+				C515AC791DF0549C00353FC4 /* AKConversationCell.m in Sources */,
 				C515AC631DF0549C00353FC4 /* IMRoomLiveofflinePush.m in Sources */,
 				C515AC401DF0549C00353FC4 /* VoteClosePush.m in Sources */,
 				C52E76B91DF66D75006B2183 /* NSString+Message.m in Sources */,
@@ -1837,10 +1869,12 @@
 				C515AC491DF0549C00353FC4 /* IMClearUnreadNumMessage.m in Sources */,
 				C515AB7A1DF051BA00353FC4 /* AKCYLPlusButton.m in Sources */,
 				C515ACF31DF0554400353FC4 /* AKMapManager.m in Sources */,
+				C52E77161DF6E2B3006B2183 /* TLTableViewCell.m in Sources */,
 				C515AD231DF0597B00353FC4 /* AKSignalManager.m in Sources */,
 				C515AC3D1DF0549C00353FC4 /* AKIMManager+Message.m in Sources */,
 				C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */,
 				C52E76CA1DF67308006B2183 /* AKFileLogger.m in Sources */,
+				C52E770F1DF6DEB3006B2183 /* NSDate+Utilities.m in Sources */,
 				C515AD291DF1167900353FC4 /* AKSignalManager+UserModule.m in Sources */,
 				C52E76CF1DF6815A006B2183 /* TLEmojiKBHelper.m in Sources */,
 				C52E77001DF69A73006B2183 /* TLUserHelper.m in Sources */,
@@ -1859,6 +1893,7 @@
 				C515ACC71DF0552600353FC4 /* AKLoginViewController.m in Sources */,
 				C515AC741DF0549C00353FC4 /* WebSocketModel.m in Sources */,
 				C52E76D21DF681C7006B2183 /* AKDBManager+TLChat.m in Sources */,
+				C52E77131DF6E1B2006B2183 /* TLConversation.m in Sources */,
 				C515AC641DF0549C00353FC4 /* IMRoomLovedPush.m in Sources */,
 				C52E767F1DF663D2006B2183 /* NSFileManager+Paths.m in Sources */,
 				C515AC771DF0549C00353FC4 /* ServiceIM.m in Sources */,
@@ -1872,7 +1907,6 @@
 				C5A730171DE2BB3400DB2788 /* main.m in Sources */,
 				C515AD1C1DF0568100353FC4 /* UserModel.m in Sources */,
 				C515AC671DF0549C00353FC4 /* IMRoomRenqiChangePush.m in Sources */,
-				C515AC7B1DF0549C00353FC4 /* TLTableViewCell.m in Sources */,
 				C515AC661DF0549C00353FC4 /* IMRoomMutedPush.m in Sources */,
 				C515AB6E1DF051BA00353FC4 /* NSObject+DBPropertyListing.m in Sources */,
 				C515AC731DF0549C00353FC4 /* IMUserErrorPush.m in Sources */,
@@ -1880,7 +1914,7 @@
 				C515AC391DF0549C00353FC4 /* AKRequestManager+IMModule.m in Sources */,
 				C515AC4C1DF0549C00353FC4 /* IMGetMessage.m in Sources */,
 				C52E76F51DF69983006B2183 /* TLUserDetail.m in Sources */,
-				C515AC781DF0549C00353FC4 /* TLConversation.m in Sources */,
+				C515AC781DF0549C00353FC4 /* AKConversation.m in Sources */,
 				C515AC6F1DF0549C00353FC4 /* ShowRenQiUpdatePush.m in Sources */,
 				C52E76B71DF66D75006B2183 /* NSFileManager+ExpressionGroup.m in Sources */,
 				C515ACF81DF0554400353FC4 /* HBBaseRoundButton.m in Sources */,

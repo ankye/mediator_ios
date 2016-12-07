@@ -9,32 +9,14 @@
 #ifndef LoggerModule_h
 #define LoggerModule_h
 
-// Disable legacy macros
-#ifndef DD_LEGACY_MACROS
-#define DD_LEGACY_MACROS 1
-#endif
+#import <CocoaLumberjack/CocoaLumberjack.h>
 
-// Core
-#import "DDLog.h"
-
-// Main macros
-#import "DDLogMacros.h"
-#import "DDAssertMacros.h"
-
-// Capture ASL
-#import "DDASLLogCapture.h"
-
-// Loggers
-#import "DDTTYLogger.h"
-#import "DDASLLogger.h"
-#import "DDFileLogger.h"
-
-
-#ifdef DEBUG
-static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#if DEBUG
+static const DDLogLevel ddLogLevel = DDLogLevelVerbose;
 #else
-static const int ddLogLevel = LOG_LEVEL_WARN;
+static const DDLogLevel ddLogLevel = DDLogLevelWarning;
 #endif
+
 
 
 #import "AKFileLogger.h"

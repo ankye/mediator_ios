@@ -15,7 +15,7 @@ SINGLETON_IMPL(AKFileLogger)
 {
     
     // Enable XcodeColors利用XcodeColors显示色彩（不写没效果）
-    setenv("XcodeColors", "YES", 0);
+   // setenv("XcodeColors", "YES", 0);
     
     [DDLog addLogger:[DDASLLogger sharedInstance]];
     [DDLog addLogger:[DDTTYLogger sharedInstance]];

@@ -7,6 +7,8 @@
 //
 
 #import "TLTableViewCell.h"
+#import "UIColor+TLChat.h"
+#import "TLChatMacros.h"
 
 @implementation TLTableViewCell
 
@@ -49,7 +51,7 @@
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, BORDER_WIDTH_1PX * 2);
- //   CGContextSetStrokeColorWithColor(context, [UIColor colorGrayLine].CGColor);
+    CGContextSetStrokeColorWithColor(context, [UIColor colorGrayLine].CGColor);
     if (self.topLineStyle != TLCellLineStyleNone) {
         CGContextBeginPath(context);
         CGFloat startX = (self.topLineStyle == TLCellLineStyleFill ? 0 : _leftSeparatorSpace);

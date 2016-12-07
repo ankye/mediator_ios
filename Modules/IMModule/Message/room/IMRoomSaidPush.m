@@ -18,7 +18,7 @@
     if(info && [info count]>=2){
         NSArray* msgArr = info[1];
         NSString* msg = [NSString stringWithFormat:@"%@-%@-%@",msgArr[0],msgArr[1],msgArr[2]];
-        NSLog(@"接收同步数据: %@",msg);
+        DDLogInfo(@"接收同步数据: %@",msg);
         NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
         dic[@"uid"] = msgArr[1];
         dic[@"nickname"]=msgArr[2];

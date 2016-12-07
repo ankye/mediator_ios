@@ -18,7 +18,7 @@
         NSError *error;
         [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:&error];
         if (error) {
-            NSLog(@"File Create Failed: %@", path);
+            DDLogError(@"File Create Failed: %@", path);
         }
     }
     return path;

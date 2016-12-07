@@ -6,10 +6,10 @@
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "TLConversationView.h"
-#import "TLConversationCell.h"
+#import "AKConversationView.h"
+#import "AKConversationCell.h"
 
-@implementation TLConversationView
+@implementation AKConversationView
 
 -(id)init
 {
@@ -30,7 +30,7 @@
 
 - (void)registerCellClass
 {
-    [self.tableView registerClass:[TLConversationCell class] forCellReuseIdentifier:@"TLConversationCell"];
+    [self.tableView registerClass:[AKConversationCell class] forCellReuseIdentifier:@"AKConversationCell"];
 }
 
 
@@ -42,8 +42,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    TLConversation *conversation = [self.data objectAtIndex:indexPath.row];
-    TLConversationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TLConversationCell"];
+    AKConversation *conversation = [self.data objectAtIndex:indexPath.row];
+    AKConversationCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AKConversationCell"];
     [cell setConversation:conversation];
     [cell setBottomLineStyle:indexPath.row == self.data.count - 1 ? TLCellLineStyleFill : TLCellLineStyleDefault];
     

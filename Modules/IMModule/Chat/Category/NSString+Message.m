@@ -24,7 +24,7 @@
     NSError *error = nil;
     NSRegularExpression *re = [NSRegularExpression regularExpressionWithPattern:regex_emoji options:NSRegularExpressionCaseInsensitive error:&error];
     if (!re) {
-        NSLog(@"[NSString toMessageString]: %@", [error localizedDescription]);
+        DDLogInfo(@"[NSString toMessageString]: %@", [error localizedDescription]);
         return attributeString;
     }
     

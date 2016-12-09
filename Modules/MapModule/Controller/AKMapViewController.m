@@ -85,6 +85,7 @@ static void *xxcontext = &xxcontext;
     [AK_SIGNAL_MANAGER.onMapAddOnlineUser removeObserver:self];
     [AK_SIGNAL_MANAGER.onMapRemoveOnlineUser removeObserver:self];
     [AK_SIGNAL_MANAGER.onUserPositionChange removeObserver:self];
+  
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
 }
@@ -204,6 +205,7 @@ static void *xxcontext = &xxcontext;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:)
                                                  name:UIApplicationWillEnterForegroundNotification object:nil]; //监听是否重新进入程序程序.
     
+   
 }
 
 - (void)applicationDidBecomeActive:(NSNotification *)notic{

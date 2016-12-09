@@ -12,7 +12,7 @@
 #import "TLChatGroupDetailViewController.h"
 #import "TLMoreKBHelper.h"
 #import "TLEmojiKBHelper.h"
-
+#import "TLChatBaseViewController+Proxy.h"
 
 
 @interface TLChatViewController()
@@ -33,6 +33,10 @@ SINGLETON_IMPL(TLChatViewController)
 {
     [super viewDidLoad];
     [self.navigationItem setRightBarButtonItem:self.rightBarButton];
+
+    
+    self.contentSizeInPopup =CGSizeMake(YYScreenSize().width, YYScreenSize().height/2.0);
+    self.landscapeContentSizeInPopup = CGSizeMake(YYScreenSize().height, YYScreenSize().width/2.0);
     
     self.user = (id<TLChatUserProtocol>)[TLUserHelper sharedHelper].user;
     self.moreKBhelper = [[TLMoreKBHelper alloc] init];
@@ -41,6 +45,13 @@ SINGLETON_IMPL(TLChatViewController)
     TLWeakSelf(self);
     [self.emojiKBHelper emojiGroupDataByUserID:[TLUserHelper sharedHelper].userID complete:^(NSMutableArray *emojiGroups) {
         [weakself setChatEmojiKeyboardData:emojiGroups];
+    }];
+    
+    [AK_SIGNAL_MANAGER.onIMMessageReceived addObserver:self callback:^(typeof(self) self, TLMessage *message) {
+        
+        if(self.partner && [[message.fromUser chat_userID] isEqualToString:[self.partner chat_userID]]){
+            [self receivedMessage:message];
+        }
     }];
 }
 
@@ -58,6 +69,8 @@ SINGLETON_IMPL(TLChatViewController)
 
 - (void)dealloc
 {
+    
+    [AK_SIGNAL_MANAGER.onIMMessageReceived removeObserver:self];
 #ifdef DEBUG_MEMERY
     NSLog(@"dealloc ChatVC");
 #endif

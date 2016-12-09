@@ -59,13 +59,6 @@
     message.date = [NSDate date];
     [self addToShowMessage:message];    // 添加到列表
     
-    [[TLMessageManager sharedInstance] sendMessage:message progress:^(TLMessage * message, CGFloat pregress) {
-        
-    } success:^(TLMessage * message) {
-        NSLog(@"send success");
-    } failure:^(TLMessage * message) {
-        NSLog(@"send failure");
-    }];
 }
 
 @end

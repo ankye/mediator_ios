@@ -17,7 +17,7 @@
 
 @property (nonatomic,assign) NSInteger joinRoomStep; //1 request 2 sending 3 complete
 
-
+@property (nonatomic,assign) NSInteger lastSyncPositionTime;
 
 @end
 
@@ -36,6 +36,7 @@ SINGLETON_IMPL(AKMapManager);
         self.userOnlinelist = [[NSMutableArray alloc] init];
         self.converstationList = [[NSMutableArray alloc] init];
         [self setupTimer];
+        self.lastSyncPositionTime = [AppHelper getCurrentTimestamp];
         
     }
     return self;
@@ -48,7 +49,7 @@ SINGLETON_IMPL(AKMapManager);
         [self mapLogin];
     }];
     
- 
+
 }
 
 -(void)setupTimer
@@ -64,6 +65,8 @@ SINGLETON_IMPL(AKMapManager);
         @strongify(self);
         [self reloadFriends];
     }];
+    
+    
 }
 
 -(void)joinMapRoom
@@ -79,6 +82,8 @@ SINGLETON_IMPL(AKMapManager);
                 DDLogInfo(@"用户进房成功 %@",response);
                 @strongify(self);
                 self.joinRoomStep = 3;
+                
+                               
             }];
             
         }
@@ -273,8 +278,11 @@ SINGLETON_IMPL(AKMapManager);
         
         [AK_MEDIATOR user_updateUserInfo:dic];
         
+        NSInteger time = [AppHelper getCurrentTimestamp] - self.lastSyncPositionTime;
         
-        if(_joinRoomStep == 3 && (location.coordinate.latitude != self.me.latitude || location.coordinate.longitude != self.me.longitude)){
+        if(_joinRoomStep == 3 && (location.coordinate.latitude != self.me.latitude || location.coordinate.longitude != self.me.longitude || time > 10 )){
+            self.lastSyncPositionTime = [AppHelper getCurrentTimestamp];
+            
             NSString* msg = [NSString stringWithFormat:@"%f,%f",location.coordinate.latitude,location.coordinate.longitude];
             DDLogInfo(@"发送同步坐标数据 %@ %@ ",[AppHelper getCurrentTime],msg);
             [[AKIMManager sharedInstance] roomSay:msg isShowDanmu:0 room_uid:AK_MAP_ROOMID];

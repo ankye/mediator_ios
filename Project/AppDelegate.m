@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "AKSignalManager+MapModule.h"
 #import "AKSignalManager+UserModule.h"
-
+#import "AKTabbarControllerFactory.h"
 
 @implementation AppDelegate
 
@@ -22,13 +22,15 @@
         [AK_MEDIATOR updateAppScheme:@"banliapp"];
     
         
-        UIViewController *controller = [AK_MEDIATOR map_viewController];
-        UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
-        
-    
-        
-        self.window.rootViewController = navigationController;
-        
+//        UIViewController *controller = [AK_MEDIATOR map_viewController];
+//        UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:controller];
+//        
+//    
+//        
+//        self.window.rootViewController = navigationController;
+//
+        self.window.rootViewController = [[AKTabbarControllerFactory sharedInstance] createWithPlist:@"TabBar"];
+        [self customizeInterface];
         
         [self.window makeKeyWindow];
         [self.window makeKeyAndVisible];
@@ -45,6 +47,28 @@
     }
 
     return YES;
+}
+
+
+/**
+ *  tabBarItem 的选中和不选中文字属性、背景图片
+ */
+- (void)customizeInterface {
+    
+    // 普通状态下的文字属性
+    NSMutableDictionary *normalAttrs = [NSMutableDictionary dictionary];
+    normalAttrs[NSForegroundColorAttributeName] = [UIColor grayColor];
+    
+    // 选中状态下的文字属性
+    NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
+    selectedAttrs[NSForegroundColorAttributeName] = [HXColor colorWithHexString:@"#09bb07"];
+    
+    // 设置文字属性
+    UITabBarItem *tabBar = [UITabBarItem appearance];
+    [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
+    [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
+    
+
 }
 
 

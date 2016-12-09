@@ -16,7 +16,8 @@
 #import "AKMediator+IMModule.h"
 #import "AKIMManager.h"
 #import "AKIMManager+Room.h"
-
+#import "AKIMManager+IM.h"
+#import "AKSignalManager+IMModule.h"
 
 #import "UIImage+Color.h"
 #import "UIView+Frame.h"

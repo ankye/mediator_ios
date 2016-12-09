@@ -17,4 +17,8 @@
 
 + (TLUserHelper *) sharedHelper;
 
+-(void)setUserModel:(UserModel*)model;
+
++(TLUser*)userModelToTLUser:(UserModel*)model;
+
 @end

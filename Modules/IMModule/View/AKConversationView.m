@@ -8,6 +8,7 @@
 
 #import "AKConversationView.h"
 #import "AKConversationCell.h"
+#import "TLChatViewController.h"
 
 @implementation AKConversationView
 
@@ -54,6 +55,36 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return HEIGHT_CONVERSATION_CELL;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    
+    AKConversation *conversation = [self.data objectAtIndex:indexPath.row];
+    
+    
+    TLChatViewController *chatVC = [TLChatViewController sharedInstance];
+ 
+    TLUser* user = [TLUser new];
+    
+    UserModel* partner = conversation.partner;
+    
+    user.userID = [partner.uid stringValue];
+    
+    user.username = [partner.uid stringValue];
+    user.nikeName = partner.nickname;
+   
+    user.avatarURL = partner.head;
+    
+    
+    
+    [chatVC setPartner:user];
+    
+    [AK_POPUP_MANAGER push:chatVC];
+    
+ 
 }
 
 

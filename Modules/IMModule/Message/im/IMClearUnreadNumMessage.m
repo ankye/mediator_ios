@@ -27,15 +27,10 @@
     return [[AKIMManager sharedInstance]sendData:str];
 }
 
-- (BOOL)response:(NSArray *)info
+-(BOOL)timeout
 {
-   
-    return YES;
-}
-
-- (BOOL)timeout
-{
-  
     return NO;
 }
+
+
 @end

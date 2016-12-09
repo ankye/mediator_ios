@@ -16,7 +16,6 @@
 
 -(BOOL)request;
 
--(BOOL)response:(NSArray*)info;
 
 -(BOOL)timeout;
 @end

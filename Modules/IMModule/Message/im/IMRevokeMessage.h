@@ -15,6 +15,6 @@
 @property(nonatomic, strong)NSNumber *revokeIndex;
 
 -(BOOL)request;
--(BOOL)response:(NSArray*)info;
+
 -(BOOL)timeout;
 @end

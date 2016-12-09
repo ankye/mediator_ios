@@ -326,6 +326,7 @@ SINGLETON_IMPL(AKIMManager);
 
 - (void)webSocketDidOpen:(SRWebSocket *)webSocket
 {
+    AK_SIGNAL_MANAGER.onIMConnected.fire();
     
 }
 - (void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error

@@ -11,7 +11,7 @@
 
 @interface AKTabbarControllerFactory : NSObject
 
-+ (instancetype)defaultFactory;
+SINGLETON_INTR(AKTabbarControllerFactory)
 
 -(UITabBarController*)createWithPlist:(NSString*)plist;
 

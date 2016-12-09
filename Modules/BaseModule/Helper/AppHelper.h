@@ -64,6 +64,10 @@
  @return 当前时间
  */
 +(NSString*) getCurrentTime;
+
++(NSDate*) getCurrentDate;
+
++(NSDate*) getDateFromMSTime:(double)time;
 //
 
 /**

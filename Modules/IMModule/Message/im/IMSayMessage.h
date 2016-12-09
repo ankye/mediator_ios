@@ -8,7 +8,6 @@
 @property (assign,nonatomic) NSString* content;
 
 -(BOOL)request;
--(BOOL)response:(NSArray*)info;
 
 
 -(BOOL)timeout;

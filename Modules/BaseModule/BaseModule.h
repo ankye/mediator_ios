@@ -28,6 +28,6 @@
 #import "AppHelper.h"
 #import "FileHelper.h"
 #import "DeviceHelper.h"
-
+#import "HexColor.h"
 
 #endif /* BaseModule_h */

@@ -64,5 +64,6 @@
  */
 @property (nonatomic, assign) NSInteger unreadCount;
 
+@property (nonatomic, assign) NSInteger maxIndex;  //最大index
 
 @end

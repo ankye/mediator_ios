@@ -8,7 +8,7 @@
 
 #import "AKPopupManager.h"
 #import "AKPopupViewController.h"
-
+#import <AFMInfoBanner/AFMInfoBanner.h>
 
 
 @interface AKPopupManager()
@@ -106,6 +106,12 @@ SINGLETON_IMPL(AKPopupManager)
 
 }
 
+-(void)push:(UIViewController*)controller
+{
+    [self.popupController pushViewController:controller animated:YES];
+    
+}
+
 -(void)showController:(UIViewController*)controller withAttributes:(NSMutableDictionary *)attributes
 {
     attributes[AK_Popup_Controller] = controller;
@@ -123,6 +129,7 @@ SINGLETON_IMPL(AKPopupManager)
     [self showController:vc withAttributes:attributes];
     
 }
+
 
 -(void)backgroundViewDidTap
 {
@@ -172,4 +179,19 @@ SINGLETON_IMPL(AKPopupManager)
     }
 }
 
+-(void)showTips:(NSString *)text
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [AFMInfoBanner showAndHideWithText:text style:AFMInfoBannerStyleInfo];
+    });
+    
+}
+
+-(void)showErrorTips:(NSString *)text
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [AFMInfoBanner showAndHideWithText:text style:AFMInfoBannerStyleError];
+    });
+    
+}
 @end

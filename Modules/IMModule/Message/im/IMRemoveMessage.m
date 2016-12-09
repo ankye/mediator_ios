@@ -28,10 +28,7 @@
     return YES;
 }
 
-- (BOOL)response:(NSArray *)info
-{
-        return YES;
-}
+
 
 - (BOOL)timeout
 {

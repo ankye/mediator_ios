@@ -9,7 +9,6 @@
 @property (assign,nonatomic) int endIndex;
 
 -(BOOL)request;
--(BOOL)response:(NSArray*)info;
 
 
 -(BOOL)timeout;

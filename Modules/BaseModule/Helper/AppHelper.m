@@ -84,6 +84,10 @@
     
 }
 
++(NSDate*) getCurrentDate
+{
+    return [NSDate date];
+}
 
 /**
  获取当前时间string
@@ -98,7 +102,10 @@
     return datetime;
 }
 
-
++(NSDate*)getDateFromMSTime:(double)time
+{
+   return [NSDate dateWithTimeIntervalSince1970:time/1000];
+}
 /**
  获取根节点UIViewController
  
@@ -138,6 +145,7 @@
 {
     return [[NSDate date] timeIntervalSince1970]*1000;
 }
+
 
 
 /**

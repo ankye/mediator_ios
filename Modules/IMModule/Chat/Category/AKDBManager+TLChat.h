@@ -10,6 +10,7 @@
 #import "TLEmojiGroup.h"
 #import "TLMessage.h"
 #import "TLGroup.h"
+#import "TLConversation.h"
 
 @interface AKDBManager (TLChat)
 
@@ -23,10 +24,14 @@
  */
 - (BOOL)addConversationByUid:(NSString *)uid fid:(NSString *)fid type:(NSInteger)type date:(NSDate *)date;
 
+//查询单条conversion
+-(TLConversation*)conversationMessageByUid:(NSString*)uid fid:(NSString*)fid;
+
 /**
- *  更新会话状态（已读）
+ *  更新会话
  */
-- (void)updateConversationByUid:(NSString *)uid fid:(NSString *)fid;
+- (BOOL)updateConversation:(NSString*)uid withConversation:(TLConversation*)conv;
+
 
 /**
  *  查询所有会话

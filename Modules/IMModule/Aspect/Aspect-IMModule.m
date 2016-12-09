@@ -8,6 +8,8 @@
 
 #import "Aspect-IMModule.h"
 #import "AKDBManager+TLChat.h"
+#import "TLMessageManager.h"
+
 @implementation Aspect_IMModule
 
 +(void)load
@@ -17,5 +19,11 @@
     [AK_DB_MANAGER createExpressionGroupTable];
     [AK_DB_MANAGER createGroupTable];
     
+    [TLMessageManager sharedInstance];
+    
 }
+
+
+
+
 @end

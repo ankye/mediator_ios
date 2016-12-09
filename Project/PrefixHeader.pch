@@ -12,9 +12,11 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#define G_BASE_AUTH_SITE     @"http://test.m.passport.blres.com"
-#define G_BASE_IM_AUTH_SITE  @"http://test.api.m.blres.com"
-#define G_IM_SERVER_LIST_URL @"http://test.im.blres.com:13000"
+
+
+#define G_BASE_AUTH_SITE      @"https://test-m-passport.banli.com"
+#define G_BASE_IM_AUTH_SITE  @"https://test-api-m.banli.com"
+#define G_IM_SERVER_LIST_URL @"https://test-im.banli.com"
 
 #define APP_CHANNEL  @"app_store"
 

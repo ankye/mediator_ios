@@ -47,6 +47,7 @@ SINGLETON_IMPL(AKDBManager)
     FMDatabaseQueue* queue = [_dbQueues objectForKey:dbname];
     if(queue == nil){
         queue = [FMDatabaseQueue databaseQueueWithPath: [FileHelper getFMDBPath:dbname]];
+        NSLog(@"DB Path %@",[FileHelper getFMDBPath:dbname]);
         [_dbQueues setObject:queue forKey:dbname];
     }
     

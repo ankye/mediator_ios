@@ -12,17 +12,7 @@
 
 @implementation AKTabbarControllerFactory
 
-+ (instancetype)defaultFactory
-{
-    
-    static dispatch_once_t pred;
-    static AKTabbarControllerFactory *sharedInstance = nil;
-    dispatch_once(&pred, ^{
-        sharedInstance = [[AKTabbarControllerFactory alloc] init];
-    });
-    return sharedInstance;
-    
-}
+SINGLETON_IMPL(AKTabbarControllerFactory)
 
 -(UITabBarController*)createWithPlist:(NSString*)plist
 {

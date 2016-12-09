@@ -17,7 +17,14 @@
 -(BOOL)push:(NSArray *)info
 {
     
-   
+    if(info && [info count]>=2){
+        
+        NSDictionary* msg = info[1];
+        AK_SIGNAL_MANAGER.onIMMessagePush.fire(msg);
+        
+        
+    }
+
     return YES;
 }
 

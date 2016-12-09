@@ -40,5 +40,8 @@ SINGLETON_INTR(AKPopupManager)
 
 -(void)hide;
 
+-(void)push:(UIViewController*)controller;
 
+-(void)showTips:(NSString*)text;
+-(void)showErrorTips:(NSString *)text;
 @end

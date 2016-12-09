@@ -19,6 +19,7 @@
                                         conv_type INTEGER DEFAULT (0), \
                                         date TEXT,\
                                         unread_count INTEGER DEFAULT (0),\
+                                        max_index INTEGER DEFAULT (0), \
                                         ext1 TEXT,\
                                         ext2 TEXT,\
                                         ext3 TEXT,\
@@ -27,11 +28,13 @@
                                         PRIMARY KEY(uid, fid))"
 
 
-#define     SQL_ADD_CONV                @"REPLACE INTO %@ ( uid, fid, conv_type, date, unread_count, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+#define     SQL_ADD_CONV                @"REPLACE INTO %@ ( uid, fid, conv_type, date, unread_count,max_index, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 
 
 #define     SQL_SELECT_CONVS            @"SELECT * FROM %@ WHERE uid = %@ ORDER BY date DESC"
 #define     SQL_SELECT_CONV_UNREAD      @"SELECT unread_count FROM %@ WHERE uid = '%@' and fid = '%@'"
+
+#define     SQL_SELECT_CONV             @"SELECT * FROM %@ WHERE uid = '%@' and fid = '%@'"
 
 
 #define     SQL_DELETE_CONV             @"DELETE FROM %@ WHERE uid = '%@' and fid = '%@'"

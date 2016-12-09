@@ -159,6 +159,7 @@
     
     AK_SIGNAL_MANAGER.onUserLogin.fire(self.me);
     
+   
     if(self.me == nil){
         return NO;
     }

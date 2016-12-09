@@ -30,9 +30,13 @@
     return [self createTable:queue withTableName:CONV_TABLE_NAME withSQL:sqlString];
 }
 
-- (BOOL)addConversationByUid:(NSString *)uid fid:(NSString *)fid type:(NSInteger)type date:(NSDate *)date;
+- (BOOL)addConversationByUid:(NSString *)uid fid:(NSString *)fid type:(NSInteger)type date:(NSDate *)date
 {
-    NSInteger unreadCount = [self unreadMessageByUid:uid fid:fid] + 1;
+    
+    
+    TLConversation* conv = [self conversationMessageByUid:uid fid:fid];
+    NSInteger unreadCount = conv.unreadCount + 1;
+    NSInteger maxIndex = conv.maxIndex +1;
     NSString *sqlString = [NSString stringWithFormat:SQL_ADD_CONV, CONV_TABLE_NAME];
     NSArray *arrPara = [NSArray arrayWithObjects:
                         uid,
@@ -40,6 +44,7 @@
                         [NSNumber numberWithInteger:type],
                         TLTimeStamp(date),
                         [NSNumber numberWithInteger:unreadCount],
+                        [NSNumber numberWithInteger:maxIndex],
                         @"", @"", @"", @"", @"", nil];
     FMDatabaseQueue* queue = [self getQueue:KAK_TLCHAT_DBNAME];
     
@@ -48,11 +53,24 @@
 }
 
 /**
- *  更新会话状态（已读）
+ *  更新会话
  */
-- (void)updateConversationByUid:(NSString *)uid fid:(NSString *)fid
+- (BOOL)updateConversation:(NSString*)uid withConversation:(TLConversation*)conv
 {
+   
+    NSString *sqlString = [NSString stringWithFormat:SQL_ADD_CONV, CONV_TABLE_NAME];
+    NSArray *arrPara = [NSArray arrayWithObjects:
+                        uid,
+                        conv.partnerID,
+                        [NSNumber numberWithInteger:conv.convType],
+                        TLTimeStamp(conv.date),
+                        [NSNumber numberWithInteger:conv.unreadCount],
+                        [NSNumber numberWithInteger:conv.maxIndex],
+                        @"", @"", @"", @"", @"", nil];
+    FMDatabaseQueue* queue = [self getQueue:KAK_TLCHAT_DBNAME];
     
+    BOOL ok = [self excuteSQL:queue withSql:sqlString withArrParameter:arrPara];
+    return ok;
 }
 
 /**
@@ -71,6 +89,7 @@
             NSString *dateString = [retSet stringForColumn:@"date"];
             conversation.date = [NSDate dateWithTimeIntervalSince1970:dateString.doubleValue];
             conversation.unreadCount = [retSet intForColumn:@"unread_count"];
+            conversation.maxIndex = [retSet intForColumn:@"max_index"];
             [data addObject:conversation];
         }
         [retSet close];
@@ -86,6 +105,29 @@
     }
     
     return data;
+}
+
+//查询单条conversion
+-(TLConversation*)conversationMessageByUid:(NSString*)uid fid:(NSString*)fid
+{
+    NSString *sqlString = [NSString stringWithFormat:SQL_SELECT_CONV, CONV_TABLE_NAME, uid, fid];
+    
+    FMDatabaseQueue* queue = [self getQueue:KAK_TLCHAT_DBNAME];
+    __block TLConversation *conversation = nil;
+
+    [self excuteQuery:queue withSql:sqlString resultBlock:^(FMResultSet *retSet) {
+        if ([retSet next]) {
+            conversation = [[TLConversation alloc] init];
+            conversation.partnerID = [retSet stringForColumn:@"fid"];
+            conversation.convType = [retSet intForColumn:@"conv_type"];
+            NSString *dateString = [retSet stringForColumn:@"date"];
+            conversation.date = [NSDate dateWithTimeIntervalSince1970:dateString.doubleValue];
+            conversation.unreadCount = [retSet intForColumn:@"unread_count"];
+            conversation.maxIndex = [retSet intForColumn:@"max_index"];
+        }
+        [retSet close];
+    }];
+    return conversation;
 }
 
 - (NSInteger)unreadMessageByUid:(NSString *)uid fid:(NSString *)fid

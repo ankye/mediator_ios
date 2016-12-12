@@ -6,9 +6,9 @@
 //  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
-#import "TLUser.h"
+#import "AKUser.h"
 #import "TLChatUserProtocol.h"
 
-@interface TLUser (ChatModel) <TLChatUserProtocol>
+@interface AKUser (ChatModel) <TLChatUserProtocol>
 
 @end

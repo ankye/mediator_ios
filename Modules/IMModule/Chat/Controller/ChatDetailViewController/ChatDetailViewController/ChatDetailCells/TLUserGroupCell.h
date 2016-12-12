@@ -10,7 +10,7 @@
 
 @protocol TLUserGroupCellDelegate <NSObject>
 
-- (void)userGroupCellDidSelectUser:(TLUser *)user;
+- (void)userGroupCellDidSelectUser:(AKUser *)user;
 
 - (void)userGroupCellAddUserButtonDown;
 

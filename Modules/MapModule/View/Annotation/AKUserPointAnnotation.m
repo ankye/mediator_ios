@@ -10,7 +10,7 @@
 
 @implementation AKUserPointAnnotation
 
--(id)initWithUser:(UserModel*)user
+-(id)initWithUser:(AKUser*)user
 {
     if(self = [super init]){
     

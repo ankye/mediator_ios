@@ -10,9 +10,9 @@
 #import "TLUser+ChatModel.h"
 #import "TLGroup+ChatModel.h"
 
-@interface TLConversation (TLUser)
+@interface TLConversation (AKUser)
 
-- (void)updateUserInfo:(TLUser *)user;
+- (void)updateUserInfo:(AKUser *)user;
 
 - (void)updateGroupInfo:(TLGroup *)group;
 

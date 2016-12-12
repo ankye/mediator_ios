@@ -9,7 +9,7 @@
 #import "TLChatFontViewController.h"
 #import "TLChatMessageDisplayView.h"
 #import "TLChatFontSettingView.h"
-#import "TLUser+ChatModel.h"
+#import "AKUser+ChatModel.h"
 #import "TLUserHelper.h"
 @interface TLChatFontViewController ()
 
@@ -63,7 +63,7 @@
     message.ownerTyper = TLMessageOwnerTypeSelf;
     message.text = @"预览字体大小";
     
-    TLUser *user = [[TLUser alloc] init];
+    AKUser *user = [[AKUser alloc] init];
     user.avatarPath = @"AppIcon";
     NSString *path = [NSFileManager pathUserAvatar:@"AppIcon"];
     if (![[NSFileManager defaultManager] isExecutableFileAtPath:path]) {

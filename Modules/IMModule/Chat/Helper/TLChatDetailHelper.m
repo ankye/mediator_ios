@@ -11,7 +11,7 @@
 @implementation TLChatDetailHelper
 
 
-- (NSMutableArray *)chatDetailDataByUserInfo:(TLUser *)userInfo
+- (NSMutableArray *)chatDetailDataByUserInfo:(AKUser *)userInfo
 {
     TLSettingItem *users = TLCreateSettingItem(@"users");
     users.type = TLSettingItemTypeOther;

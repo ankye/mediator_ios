@@ -40,7 +40,7 @@
      
         NSInteger uid = [dictionary[@"uid"] integerValue];
         
-        UserModel* user = [self getUserInfo:@(uid)];
+        AKUser* user = [self getUserInfo:@(uid)];
         [self updateUserInfo:user params:dictionary];
         
     }];
@@ -48,7 +48,7 @@
 
 
 
--(UserModel*)updateUserInfo:(UserModel*)user params:(NSDictionary*)params
+-(AKUser*)updateUserInfo:(AKUser*)user params:(NSDictionary*)params
 {
     BOOL positionNeedChange = NO;
     BOOL faceNeedChange = NO;
@@ -59,37 +59,37 @@
         }
         if(params[@"longitude"]){
             double longitude = [params[@"longitude"] doubleValue];
-            if(longitude != user.longitude ){
-                user.longitude  = longitude;
+            if(longitude != user.detail.longitude ){
+                user.detail.longitude  = longitude;
                 positionNeedChange = YES;
             }
             
         }
         if(params[@"latitude"]){
             double latitude = [params[@"latitude"] doubleValue];
-            if(user.latitude != latitude){
-                user.latitude = latitude;
+            if(user.detail.latitude != latitude){
+                user.detail.latitude = latitude;
                 positionNeedChange = YES;
             }
         }
         if(params[@"head"] ){
             NSString* head = params[@"head"];
-            if(![head isEqualToString:user.head]){
-                user.head = head;
+            if(![head isEqualToString:user.avatar]){
+                user.avatar = head;
                 faceNeedChange = YES;
             }
         }
         
         if(params[@"face"] ){
             NSString* head = params[@"face"];
-            if(![head isEqualToString:user.head]){
-                user.head = head;
+            if(![head isEqualToString:user.avatar]){
+                user.avatar = head;
                 faceNeedChange = YES;
             }
         }
 
         
-        user.last_login_time = [AppHelper getCurrentTime];
+        user.lastLoginTime = @([AppHelper getCurrentTimestamp]);
     }
    
     if(positionNeedChange){
@@ -103,15 +103,9 @@
     return user;
 }
 
--(UserModel*)getUserInfo:(NSNumber*)uid
+-(AKUser*)getUserInfo:(NSString*)uid
 {
-    NSString* uidString ;
-    if([uid isKindOfClass:[NSString class]]){
-        uidString = (NSString*)uid;
-    }else{
-        uidString = [uid stringValue];
-    }
-    UserModel* user = [AK_DATA_CENTER user_getUserInfo:uidString];
+    AKUser* user = [AK_DATA_CENTER user_getUserInfo:uid];
     return user;
 }
 
@@ -124,9 +118,9 @@
 -(BOOL)isUserLogin
 {
     if(self.me == nil){
-        NSNumber* uid = [GVUserDefaults standardUserDefaults].uid;
+        NSString* uid = [GVUserDefaults standardUserDefaults].uid;
         if(uid){ //本地有存储
-            UserModel* user = [AK_DATA_CENTER user_getUserInfo:[uid stringValue]];
+            AKUser* user = [AK_DATA_CENTER user_getUserInfo:uid];
             if(user){
                 [self userLogin:user];
             }
@@ -139,23 +133,23 @@
 /**
  用户登录
  
- @param user UserModel信息
+ @param user AKUser信息
  @return 是否登录成功
  */
--(BOOL)userLogin:(UserModel*)user
+-(BOOL)userLogin:(AKUser*)user
 {
     [AK_DATA_CENTER user_setUserInfo:user];
   
     [GVUserDefaults standardUserDefaults].uid = user.uid;
     
-    [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-UID" withValue:[user.uid stringValue]];
-    [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-TOKEN" withValue:user.token];
+    [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-UID" withValue:user.uid];
+    [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-TOKEN" withValue:[GVUserDefaults standardUserDefaults].token];
 
-    self.me = [AK_DATA_CENTER user_getUserInfo:[user getKey]];
+    self.me = [AK_DATA_CENTER user_getUserInfo:user.uid];
     
 
     
-    [AK_MEDIATOR im_requestIMToken:self.me.uid withUserToken:self.me.token];
+    [AK_MEDIATOR im_requestIMToken:user.uid withUserToken:[GVUserDefaults standardUserDefaults].token];
     
     AK_SIGNAL_MANAGER.onUserLogin.fire(self.me);
     

@@ -1,14 +1,15 @@
 //
-//  TLUserDetail.h
-//  TLChat
+//  AKUserDetail.h
+//  Project
 //
-//  Created by 李伯坤 on 16/3/22.
-//  Copyright © 2016年 李伯坤. All rights reserved.
+//  Created by ankye on 2016/12/12.
+//  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "TLBaseDataModel.h"
+#import "AKUserDetailProtocol.h"
 
-@protocol AKUserDetailProtocol <NSObject>
+@interface AKUserDetail : TLBaseDataModel<AKUserDetailProtocol>
 
 
 @property (nonatomic, strong) NSString *uid;

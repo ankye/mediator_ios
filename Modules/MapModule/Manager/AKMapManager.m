@@ -44,7 +44,7 @@ SINGLETON_IMPL(AKMapManager);
 -(void)setupSignals
 {
     
-    [AK_SIGNAL_MANAGER.onUserLogin addObserver:self callback:^(typeof(self) self, UserModel *user) {
+    [AK_SIGNAL_MANAGER.onUserLogin addObserver:self callback:^(typeof(self) self, AKUser *user) {
         
         [self mapLogin];
     }];
@@ -146,7 +146,7 @@ SINGLETON_IMPL(AKMapManager);
 
 }
 
--(void)addUserToOnlineList:(UserModel*)user
+-(void)addUserToOnlineList:(AKUser*)user
 {
 
     NSInteger count = [_userOnlinelist count];
@@ -173,7 +173,7 @@ SINGLETON_IMPL(AKMapManager);
     }
 }
 
--(void)removeUserToOnlineList:(UserModel*)user
+-(void)removeUserToOnlineList:(AKUser*)user
 {
     [_userOnlinelist removeObject:user];
     AK_SIGNAL_MANAGER.onMapRemoveOnlineUser.fire(user);
@@ -208,15 +208,15 @@ SINGLETON_IMPL(AKMapManager);
               
                 if(info){
                    
-                   UserModel* user = [AK_MEDIATOR user_updateUserInfo:info];
+                   AKUser* user = [AK_MEDIATOR user_updateUserInfo:info];
                    [self addUserToOnlineList:user];
-                    [currentOnline setObject:user.uid forKey:[user.uid stringValue]];
+                    [currentOnline setObject:user.uid forKey:user.uid];
                 }
             }
             count = [_userOnlinelist count];
             for(NSInteger i=count-1; i>=0; i--){
-                UserModel* user = [_userOnlinelist objectAtIndex:i];
-                if(user && ![currentOnline objectForKey:[user.uid stringValue]]){
+                AKUser* user = [_userOnlinelist objectAtIndex:i];
+                if(user && ![currentOnline objectForKey:user.uid]){
                     [self removeUserToOnlineList:user];
                 }
             }
@@ -280,7 +280,7 @@ SINGLETON_IMPL(AKMapManager);
         
         NSInteger time = [AppHelper getCurrentTimestamp] - self.lastSyncPositionTime;
         
-        if(_joinRoomStep == 3 && (location.coordinate.latitude != self.me.latitude || location.coordinate.longitude != self.me.longitude || time > 10 )){
+        if(_joinRoomStep == 3 && (location.coordinate.latitude != self.me.detail.latitude || location.coordinate.longitude != self.me.detail.longitude || time > 10 )){
             self.lastSyncPositionTime = [AppHelper getCurrentTimestamp];
             
             NSString* msg = [NSString stringWithFormat:@"%f,%f",location.coordinate.latitude,location.coordinate.longitude];

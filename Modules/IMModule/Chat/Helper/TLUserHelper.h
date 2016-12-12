@@ -7,18 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TLUser.h"
+#import "AKUser.h"
 
 @interface TLUserHelper : NSObject
 
-@property (nonatomic, strong) TLUser *user;
+@property (nonatomic, strong) AKUser *user;
 
 @property (nonatomic, strong, readonly) NSString *userID;
 
 + (TLUserHelper *) sharedHelper;
 
--(void)setUserModel:(UserModel*)model;
+-(void)setUserModel:(AKUser*)model;
 
-+(TLUser*)userModelToTLUser:(UserModel*)model;
 
 @end

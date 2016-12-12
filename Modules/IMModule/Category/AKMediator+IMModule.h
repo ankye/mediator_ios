@@ -25,7 +25,7 @@
  @param uid 用户id
  @param userToken 用户授权登录Token
  */
--(void)im_requestIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken;
+-(void)im_requestIMToken:(NSString*)uid withUserToken:(NSString*)userToken;
 
 
 -(UIView<AKPopupViewProtocol>*)im_popupConversationView;

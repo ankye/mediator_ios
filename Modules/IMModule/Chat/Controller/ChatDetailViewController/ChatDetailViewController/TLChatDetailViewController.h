@@ -10,6 +10,6 @@
 
 @interface TLChatDetailViewController : TLSettingViewController
 
-@property (nonatomic, strong) TLUser *user;
+@property (nonatomic, strong) AKUser *user;
 
 @end

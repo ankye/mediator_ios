@@ -54,20 +54,20 @@
 {
     _conversation = conversation;
     
-    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:conversation.partner.head] placeholderImage:nil];
+    [self.avatarImageView sd_setImageWithURL:[NSURL URLWithString:conversation.partner.avatar] placeholderImage:nil];
 
-    UserModel* me = [AK_MEDIATOR user_me];
+    AKUser* me = [AK_MEDIATOR user_me];
    
     [self.usernameLabel setText:conversation.partner.nickname];
-    int distance = [AppHelper getDistance:me.latitude longitude:me.longitude toLatitude:conversation.partner.latitude toLongitude:conversation.partner.longitude];
-    if(conversation.partner.longitude == 0 && conversation.partner.latitude == 0){
+    int distance = [AppHelper getDistance:me.detail.latitude longitude:me.detail.longitude toLatitude:conversation.partner.detail.latitude toLongitude:conversation.partner.detail.longitude];
+    if(conversation.partner.detail.longitude == 0 && conversation.partner.detail.latitude == 0){
         conversation.content = [NSString stringWithFormat:@"定位未获取,请稍后"];
     }else{
         conversation.content = [NSString stringWithFormat:@"距离  :%d 米",distance];
     }
     [self.detailLabel setText:conversation.content];
     
-    [self.timeLabel setText:conversation.partner.last_login_time];
+    [self.timeLabel setText:[conversation.partner.lastLoginTime stringValue]];
     
     switch (conversation.remindType) {
         case TLMessageRemindTypeNormal:

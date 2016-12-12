@@ -94,7 +94,7 @@ SINGLETON_IMPL(AKIMManager);
  
  @param uid 用户UID，可为空
  */
--(void)requestIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken
+-(void)requestIMToken:(NSString*)uid withUserToken:(NSString*)userToken
 {
     [AK_REQUEST_MANAGER im_getIMToken:uid withUserToken:userToken success:^(__kindof YTKBaseRequest * _Nonnull request) {
         NSDictionary* response = [AppHelper dictionaryWithData:request.responseData];
@@ -195,7 +195,7 @@ SINGLETON_IMPL(AKIMManager);
         
         _lastConnectTime = [AppHelper getCurrentTimestamp];
         
-        UserModel* me = [AK_MEDIATOR user_me];
+        AKUser* me = [AK_MEDIATOR user_me];
         if(!me){
             return NO;
         }

@@ -10,8 +10,8 @@
 
 @interface TLUserGroupItemCell : UICollectionViewCell
 
-@property (nonatomic, strong) TLUser *user;
+@property (nonatomic, strong) AKUser *user;
 
-@property (nonatomic, strong) void (^clickBlock)(TLUser *user);
+@property (nonatomic, strong) void (^clickBlock)(AKUser *user);
 
 @end

@@ -11,9 +11,9 @@
 
 @interface AKUserPinAnnotationView : MAPinAnnotationView
 
-@property (nonatomic,strong) UserModel* user;
+@property (nonatomic,strong) AKUser* user;
 
--(void)updateViews:(UserModel*)user;
+-(void)updateViews:(AKUser*)user;
 
 
 @end

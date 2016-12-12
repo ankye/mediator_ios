@@ -19,7 +19,7 @@
  @param success 成功回调
  @param failure 失败回调
  */
--(void)im_getIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken success:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure;
+-(void)im_getIMToken:(NSString*)uid withUserToken:(NSString*)userToken success:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure;
 
 /**
  请求获取IM服务器列表

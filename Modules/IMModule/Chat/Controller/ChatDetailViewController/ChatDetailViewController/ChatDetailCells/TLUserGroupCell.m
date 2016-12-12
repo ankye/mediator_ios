@@ -49,7 +49,7 @@
     else {
         [cell setUser:nil];
     }
-    [cell setClickBlock:^(TLUser *user) {
+    [cell setClickBlock:^(AKUser *user) {
         if (user && _delegate && [_delegate respondsToSelector:@selector(userGroupCellDidSelectUser:)]) {
             [_delegate userGroupCellDidSelectUser:user];
         }

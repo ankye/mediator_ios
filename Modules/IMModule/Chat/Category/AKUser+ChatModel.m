@@ -6,23 +6,23 @@
 //  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
-#import "TLUser+ChatModel.h"
+#import "AKUser+ChatModel.h"
 
-@implementation TLUser (ChatModel)
+@implementation AKUser (ChatModel)
 
 - (NSString *)chat_userID
 {
-    return self.userID;
+    return self.uid;
 }
 
 - (NSString *)chat_username
 {
-    return self.showName;
+    return self.nickname;
 }
 
 - (NSString *)chat_avatarURL
 {
-    return self.avatarURL;
+    return self.avatar;
 }
 
 - (NSString *)chat_avatarPath

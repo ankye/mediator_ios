@@ -70,7 +70,7 @@
 }
 
 //MARK: TLMessageCellDelegate
-- (void)messageCellDidClickAvatarForUser:(TLUser *)user
+- (void)messageCellDidClickAvatarForUser:(AKUser *)user
 {
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatMessageDisplayView:didClickUserAvatar:)]) {
         [self.delegate chatMessageDisplayView:self didClickUserAvatar:user];

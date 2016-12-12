@@ -6,11 +6,11 @@
 //  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
-#import "TLConversation+TLUser.h"
+#import "TLConversation+AKUser.h"
 
-@implementation TLConversation (TLUser)
+@implementation TLConversation (AKUser)
 
-- (void)updateUserInfo:(TLUser *)user
+- (void)updateUserInfo:(AKUser *)user
 {
     self.partnerName = user.showName;
     self.avatarPath = user.avatarPath;

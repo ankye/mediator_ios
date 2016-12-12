@@ -43,7 +43,7 @@
  *  用户头像点击事件
  */
 - (void)chatMessageDisplayView:(TLChatMessageDisplayView *)chatTVC
-            didClickUserAvatar:(TLUser *)user;
+            didClickUserAvatar:(AKUser *)user;
 
 /**
  *  Message点击事件

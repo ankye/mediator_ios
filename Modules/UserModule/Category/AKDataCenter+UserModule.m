@@ -8,37 +8,35 @@
 
 #import "AKDataCenter+UserModule.h"
 
-#import "UserModel.h"
+#import "AKUser.h"
 
 #define  KAKD_USERModel @"UserModel"
 
 
 @implementation AKDataCenter (UserModule)
 
--(void)user_setUserInfo:(UserModel*)user
+-(void)user_setUserInfo:(AKUser*)user
 {
-    [AK_DATA_CENTER updatePool:KAKD_USERModel withKey:[user getKey] andObject:(AKBaseModel*)user];
+    [AK_DATA_CENTER updatePool:KAKD_USERModel withKey:user.uid andObject:(AKBaseModel*)user];
     
     
-    if(![AK_DB_MANAGER isExistUser:[user.uid integerValue]]){
-        
-        [AK_DB_MANAGER insertUser:user];
-    }else{
-        [AK_DB_MANAGER updateUser:user];
-    }
+    [AK_DB_MANAGER insertOrUpdateUser:user];
+    
     
 
 }
--(UserModel*)user_getUserInfo:(NSString*)uid
+-(AKUser*)user_getUserInfo:(NSString*)uid
 {
     
-    UserModel* user = (UserModel*)[AK_DATA_CENTER getObjectFromPool:KAKD_USERModel withKey:uid];
-    if(user.pk_cid <= 0){
-        UserModel *tempUser = [AK_DB_MANAGER queryUserByUid:[uid integerValue]];
+    AKUser* user = (AKUser*)[AK_DATA_CENTER getObjectFromPool:KAKD_USERModel withKey:uid];
+    if(user){
+        
+        id<AKUserProtocol> tempUser = [AK_DB_MANAGER queryUserByID:uid];
         if(tempUser){
             [user fillData:tempUser];
         }
     }
+    
     return user;
 }
 

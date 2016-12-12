@@ -11,7 +11,7 @@
 #import "TLConversation.h"
 #import "TLMessage.h"
 #import "TLTextMessage.h"
-#import "TLUser+ChatModel.h"
+#import "AKUser+ChatModel.h"
 
 
 static TLMessageManager *messageManager;
@@ -40,7 +40,7 @@ static TLMessageManager *messageManager;
 {
   
     [AK_SIGNAL_MANAGER.onIMConnected addObserver:self callback:^(id  _Nonnull self) {
-        UserModel* me = [AK_MEDIATOR user_me];
+        AKUser* me = [AK_MEDIATOR user_me];
         if(me){
             [[TLUserHelper sharedHelper] setUserModel:me];
         }
@@ -56,11 +56,11 @@ static TLMessageManager *messageManager;
 
 -(void)processMessage:(NSDictionary*)info showTips:(BOOL)showTips
 {
-    UserModel* me = [AK_MEDIATOR user_me];
-    NSString* myUid = [me.uid stringValue];
-    NSInteger fid = [info[@"uid"] integerValue];
-    UserModel* friend = [AK_MEDIATOR user_getUserInfo:@(fid)];
-    TLUser* user = [TLUserHelper userModelToTLUser:friend];
+    AKUser* me = [AK_MEDIATOR user_me];
+    NSString* myUid = me.uid;
+    NSString* fid = info[@"uid"];
+    AKUser* friend = [AK_MEDIATOR user_getUserInfo:fid];
+    AKUser* user = [TLUserHelper userModelToTLUser:friend];
     
     TLTextMessage* message = (TLTextMessage*)[TLMessage createMessageByType:TLMessageTypeText];
    
@@ -86,8 +86,8 @@ static TLMessageManager *messageManager;
 {
     [[AKIMManager sharedInstance] imGetUnreadList:^(BOOL result, NSArray *response) {
         
-        UserModel* me = [AK_MEDIATOR user_me];
-        NSString* myUid = [me.uid stringValue];
+        AKUser* me = [AK_MEDIATOR user_me];
+        NSString* myUid = me.uid;
         NSDictionary* info = response[1];
    
         NSArray* keys = info.allKeys;

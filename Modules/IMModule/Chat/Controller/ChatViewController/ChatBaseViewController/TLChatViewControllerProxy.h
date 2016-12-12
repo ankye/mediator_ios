@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TLUser.h"
+#import "AKUser.h"
 
 @class TLImageMessage;
 @protocol TLChatViewControllerProxy <NSObject>
 
 @optional;
-- (void)didClickedUserAvatar:(TLUser *)user;
+- (void)didClickedUserAvatar:(AKUser *)user;
 
 - (void)didClickedImageMessages:(NSArray *)imageMessages atIndex:(NSInteger)index;
 

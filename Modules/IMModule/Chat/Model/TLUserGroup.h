@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TLUser.h"
+#import "AKUser.h"
 
 @interface TLUserGroup : NSObject
 

@@ -25,7 +25,7 @@
 -(NSNumber*)loginSuccess:(NSDictionary *)params
 {
     
-    UserModel* user = [UserModel modelWithDictionary:params];
+    AKUser* user = [AKUser modelWithDictionary:params];
     [[AKUserManager sharedInstance] userLogin:user];
     
     return @(YES);
@@ -34,9 +34,9 @@
 /**
  获取登陆用户信息
  
- @return UserModel
+ @return AKUser
  */
--(UserModel*)getMe:(NSDictionary *)params
+-(AKUser*)getMe:(NSDictionary *)params
 {
     return [AKUserManager sharedInstance].me;
 }
@@ -48,16 +48,16 @@
  @param params 参数
  @return 返回用户信息
  */
--(UserModel*)getUserInfo:(NSDictionary*)params
+-(AKUser*)getUserInfo:(NSDictionary*)params
 {
     
     return [[AKUserManager sharedInstance] getUserInfo:params[@"uid"]];
 }
 
 
--(UserModel*)updateUserInfo:(NSDictionary*)params
+-(AKUser*)updateUserInfo:(NSDictionary*)params
 {
-    UserModel* user = [[AKUserManager sharedInstance] getUserInfo:params[@"uid"]];
+    AKUser* user = [[AKUserManager sharedInstance] getUserInfo:params[@"uid"]];
     
     return [[AKUserManager sharedInstance] updateUserInfo:user params:params];
     

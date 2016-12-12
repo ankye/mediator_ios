@@ -38,7 +38,7 @@ SINGLETON_INTR(AKIMManager);
  @param uid 用户UID，可为空
  @param userToken 用户web登录授权token
  */
--(void)requestIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken;
+-(void)requestIMToken:(NSString*)uid withUserToken:(NSString*)userToken;
 
 -(void)setIMServerList:(NSMutableArray*)serverList;
 

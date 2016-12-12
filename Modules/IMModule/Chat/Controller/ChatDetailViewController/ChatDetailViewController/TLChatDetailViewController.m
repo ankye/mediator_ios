@@ -57,13 +57,13 @@
     TLSettingItem *item = [self.data[indexPath.section] objectAtIndex:indexPath.row];
     if ([item.title isEqualToString:@"聊天文件"]) {
         TLChatFileViewController *chatFileVC = [[TLChatFileViewController alloc] init];
-        [chatFileVC setPartnerID:self.user.userID];
+        [chatFileVC setPartnerID:self.user.uid];
         [self setHidesBottomBarWhenPushed:YES];
         [self.navigationController pushViewController:chatFileVC animated:YES];
     }
     else if ([item.title isEqualToString:@"设置当前聊天背景"]) {
         TLChatBackgroundSettingViewController *chatBGSettingVC = [[TLChatBackgroundSettingViewController alloc] init];
-        [chatBGSettingVC setPartnerID:self.user.userID];
+        [chatBGSettingVC setPartnerID:self.user.uid];
         [self setHidesBottomBarWhenPushed:YES];
         [self.navigationController pushViewController:chatBGSettingVC animated:YES];
     }
@@ -101,7 +101,7 @@
 //}
 
 //MARK: TLUserGroupCellDelegate
-- (void)userGroupCellDidSelectUser:(TLUser *)user
+- (void)userGroupCellDidSelectUser:(AKUser *)user
 {
 //    TLFriendDetailViewController *detailVC = [[TLFriendDetailViewController alloc] init];
 //    [detailVC setUser:user];

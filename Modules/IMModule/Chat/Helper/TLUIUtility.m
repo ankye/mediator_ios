@@ -47,10 +47,10 @@ static UILabel *hLabel = nil;
         [view setBackgroundColor:[UIColor colorWithWhite:0.8 alpha:0.6]];
         __block NSInteger count = 0;        // 下载完成图片计数器
         for (NSInteger i = usersCount - 1; i >= 0; i--) {
-            TLUser *user = [group.users objectAtIndex:i];
+            AKUser *user = [group.users objectAtIndex:i];
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, width, width)];
             [view addSubview:imageView];
-            [imageView sd_setImageWithURL:TLURL(user.avatarURL) placeholderImage:[UIImage imageNamed:@"default_face"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            [imageView sd_setImageWithURL:TLURL(user.avatar) placeholderImage:[UIImage imageNamed:@"default_face"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 count ++;
                 if (count == usersCount) {     // 图片全部下载完成
                     UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 2.0);

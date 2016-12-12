@@ -10,6 +10,6 @@
 
 @interface AKIMTokenRequest : AKBaseRequest
 
--(instancetype) init:(NSNumber*)uid;
+-(instancetype) init:(NSString*)uid;
 
 @end

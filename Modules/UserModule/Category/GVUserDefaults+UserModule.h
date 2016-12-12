@@ -10,6 +10,7 @@
 #import <GVUserDefaults/GVUserDefaults.h>
 @interface GVUserDefaults (UserModule)
 
-@property (nonatomic, weak) NSNumber *uid;
+@property (nonatomic, weak) NSString *uid;
+@property (nonatomic, weak) NSString *token;
 
 @end

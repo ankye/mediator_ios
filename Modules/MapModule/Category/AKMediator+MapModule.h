@@ -15,7 +15,7 @@
 
 
 
--(UIView<AKPopupViewProtocol>*)map_popUserCardView:(UserModel*)user;
+-(UIView<AKPopupViewProtocol>*)map_popUserCardView:(AKUser*)user;
 
 
 

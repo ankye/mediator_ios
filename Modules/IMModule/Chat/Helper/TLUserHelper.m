@@ -36,22 +36,13 @@ static TLUserHelper *helper;
 }
 
 
--(void)setUserModel:(UserModel*)model
+-(void)setUserModel:(AKUser*)model
 {
     self.user = [TLUserHelper userModelToTLUser:model];
  
 }
 
 
-+(TLUser*)userModelToTLUser:(UserModel*)model
-{
-    TLUser* user = [[TLUser alloc] init];
-    user.userID = [model.uid stringValue];
-    user.avatarURL = model.head;
-    user.nikeName = model.nickname;
-    user.username = [model.uid stringValue];
-    user.detailInfo.sex = [model.sex integerValue] == 0 ? @"男":@"女";
-    return user;
-}
+
 
 @end

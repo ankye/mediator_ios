@@ -30,7 +30,7 @@
     return self;
 }
 
-- (void)setUser:(TLUser *)user
+- (void)setUser:(AKUser *)user
 {
     _user = user;
     if (user != nil) {

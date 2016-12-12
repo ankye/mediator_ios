@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) AMapLocationManager *locationManager;
 
-@property (nonatomic, strong) UserModel* me;
+@property (nonatomic, strong) AKUser* me;
 
 @property (nonatomic,strong) NSMutableArray* userOnlinelist;
 @property (nonatomic,strong) NSMutableArray* converstationList;

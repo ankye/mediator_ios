@@ -69,7 +69,7 @@
 }
 
 //MARK: TLChatViewControllerProxy
-- (void)didClickedUserAvatar:(TLUser *)user
+- (void)didClickedUserAvatar:(AKUser *)user
 {
 //    TLFriendDetailViewController *detailVC = [[TLFriendDetailViewController alloc] init];
 //    [detailVC setUser:user];

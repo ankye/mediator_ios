@@ -12,7 +12,7 @@
 
 @interface TLChatDetailHelper : NSObject
 
-- (NSMutableArray *)chatDetailDataByUserInfo:(TLUser *)userInfo;
+- (NSMutableArray *)chatDetailDataByUserInfo:(AKUser *)userInfo;
 
 - (NSMutableArray *)chatDetailDataByGroupInfo:(TLGroup *)groupInfo;
 

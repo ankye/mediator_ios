@@ -1,34 +1,42 @@
-//
-//  TLDBUserSQL.h
-//  TLChat
-//
-//  Created by 李伯坤 on 16/3/22.
-//  Copyright © 2016年 李伯坤. All rights reserved.
-//
+
 
 #ifndef TLDBUSERSQL_H
 #define TLDBUSERSQL_H
 
-#define     USER_TABLE_NAME              @"User"
+#define     TABLE_NAME_USER              @"User"
 
-#define     SQL_CREATE_USER_TABLE        @"CREATE TABLE IF NOT EXISTS %@(\
+#define     SQL_CREATE_TABLE_USER        @"CREATE TABLE IF NOT EXISTS %@(\
                                             uid TEXT,\
-                                            fid TEXT,\
+                                            usernum TEXT,\
                                             username TEXT,\
-                                            nikename TEXT, \
+                                            nickname TEXT, \
                                             avatar TEXT,\
-                                            remark TEXT,\
+                                            avatarHD TEXT,\
+                                            avatarPath TEXT,\
+                                            remarkName TEXT,\
+                                            money TEXT,\
+                                            coin TEXT,\
+                                            lastNicknameModifyTime TEXT,\
+                                            lastLoginTime TEXT,\
+                                            lastPayTime TEXT,\
+                                            pinyin TEXT,\
+                                            pinyinInitial TEXT,\
                                             ext1 TEXT,\
                                             ext2 TEXT,\
                                             ext3 TEXT,\
                                             ext4 TEXT,\
                                             ext5 TEXT,\
-                                            PRIMARY KEY(uid, fid))"
+                                            PRIMARY KEY(uid))"
 
-#define     SQL_UPDATE_USER               @"REPLACE INTO %@ ( uid, fid, username, nikename, avatar, remark, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+#define     SQL_INSERT_OR_UPDATE_USER               @"REPLACE INTO %@ ( uid, usernum, username, nickname, avatar, avatorHD,avatarPath,remarkName,money,coin,lastNicknameModifyTime,lastLoginTime,lastPayTime,pinyin,pinyinInitial, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 
-#define     SQL_SELECT_USERS              @"SELECT * FROM %@ WHERE uid = %@"
 
-#define     SQL_DELETE_USER               @"DELETE FROM %@ WHERE uid = '%@' and fid = '%@'"
+
+#define     SQL_SELECT_USER_ROW              @"SELECT * FROM %@ WHERE uid = %@"
+
+#define     SQL_SELECT_USER_ROWS              @"SELECT * FROM %@ WHERE uid IN (%@)"
+
+#define     SQL_DELETE_USER               @"DELETE FROM %@ WHERE uid = '%@'"
 
 #endif /* TLDBUSERSQL_H */
+

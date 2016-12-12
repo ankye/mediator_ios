@@ -46,9 +46,9 @@ NSString * const kAKMUserUpdateInfo = @"updateUserInfo";
  
  @return 用户信息或者nil
  */
--(UserModel*)user_me
+-(AKUser*)user_me
 {
-    UserModel* me = [self performService:kAKMUserModuleService action:kAKMUserMe params:nil shouldCacheService:NO];
+    AKUser* me = [self performService:kAKMUserModuleService action:kAKMUserMe params:nil shouldCacheService:NO];
     return me;
 }
 
@@ -57,15 +57,15 @@ NSString * const kAKMUserUpdateInfo = @"updateUserInfo";
  
  @return 用户信息或者nil
  */
--(UserModel*)user_getUserInfo:(NSNumber*)uid
+-(AKUser*)user_getUserInfo:(NSString*)uid
 {
-    UserModel* user = [self performService:kAKMUserModuleService action:kAKMUserGetInfo params:@{@"uid":uid} shouldCacheService:NO];
+    AKUser* user = [self performService:kAKMUserModuleService action:kAKMUserGetInfo params:@{@"uid":uid} shouldCacheService:NO];
     return user;
 }
 
--(UserModel*)user_updateUserInfo:(NSMutableDictionary*)params
+-(AKUser*)user_updateUserInfo:(NSMutableDictionary*)params
 {
-    UserModel* user = [self performService:kAKMUserModuleService action:kAKMUserUpdateInfo params:params shouldCacheService:NO];
+    AKUser* user = [self performService:kAKMUserModuleService action:kAKMUserUpdateInfo params:params shouldCacheService:NO];
     return user;
 }
 

@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, TLMessageRemindType) {
  */
 @property (nonatomic, assign) TLMessageRemindType remindType;
 
-@property (nonatomic, strong) UserModel* partner;
+@property (nonatomic, strong) AKUser* partner;
 /**
  *  时间
  */

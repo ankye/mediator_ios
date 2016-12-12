@@ -45,7 +45,7 @@
        
         self.userInteractionEnabled = YES;
   
-        [AK_SIGNAL_MANAGER.onUserFaceChange addObserver:self callback:^(typeof(self) self, UserModel *user) {
+        [AK_SIGNAL_MANAGER.onUserFaceChange addObserver:self callback:^(typeof(self) self, AKUser *user) {
           
             if(user == self.user){
                 [self updateFace];
@@ -55,14 +55,14 @@
     return self;
 }
 
--(void)updateViews:(UserModel*)user
+-(void)updateViews:(AKUser*)user
 {
     if(user){
         self.user = user;
         self.canShowCallout   = NO;
         self.animatesDrop     = NO;
         self.draggable        = NO;
-        if([self.user.sex integerValue] == 1){
+        if(self.user.detail.sex  == 1){
             self.image            = [UIImage imageNamed:@"blugbgFace"];
         }else{
             self.image            = [UIImage imageNamed:@"pinkbgFace"];
@@ -79,7 +79,7 @@
 
 -(void)updateFace
 {
-    [self.avatarView setImageWithURL: [NSURL URLWithString:_user.head]
+    [self.avatarView setImageWithURL: [NSURL URLWithString:_user.avatar]
                          placeholder:nil
                              options:kNilOptions
                              manager:[FileHelper avatarImageManager]

@@ -10,7 +10,7 @@
 
 @interface UserCardView()
 {
-    UserModel* _user;
+    AKUser* _user;
     UIImageView* _avatarView;
     UILabel*    _nicknameLabel;
     UILabel*    _uidLabel;
@@ -92,29 +92,29 @@
  */
 -(void)loadData:(NSObject*)data
 {
-    _user = (UserModel*)data;
+    _user = (AKUser*)data;
     [self updateUser];
     
 }
 
 -(void)updateUser
 {
-    [_avatarView setImageWithURL: [NSURL URLWithString:_user.head]
+    [_avatarView setImageWithURL: [NSURL URLWithString:_user.avatar]
                          placeholder:nil
                              options:kNilOptions
                              manager:[FileHelper avatarImageManager]
                             progress:nil
                            transform:nil
                           completion:nil];
-    UserModel *me = [AK_MEDIATOR user_me];
+    AKUser *me = [AK_MEDIATOR user_me];
     
-    if(_user.latitude == 0 && _user.longitude == 0){
+    if(_user.detail.latitude == 0 && _user.detail.longitude == 0){
         [_distanceLabel setText:@"地理位置未获取到"];
     }else{
-        [ _distanceLabel setText: [NSString stringWithFormat:@"距离:%d米",[AppHelper getDistance:me.latitude longitude:me.longitude toLatitude:_user.latitude toLongitude:_user.longitude]]];
+        [ _distanceLabel setText: [NSString stringWithFormat:@"距离:%d米",[AppHelper getDistance:me.detail.latitude longitude:me.detail.longitude toLatitude:_user.detail.latitude toLongitude:_user.detail.longitude]]];
     }
     [_nicknameLabel setText:_user.nickname];
-    [_uidLabel setText:[_user.uid stringValue]];
+    [_uidLabel setText:_user.uid];
 
     
 }

@@ -80,7 +80,7 @@
     return [[TLMessageManager sharedInstance] deleteMessageByMsgID:message.messageID];
 }
 
-- (void)chatMessageDisplayView:(TLChatMessageDisplayView *)chatTVC didClickUserAvatar:(TLUser *)user
+- (void)chatMessageDisplayView:(TLChatMessageDisplayView *)chatTVC didClickUserAvatar:(AKUser *)user
 {
     if ([self respondsToSelector:@selector(didClickedUserAvatar:)]) {
         [self didClickedUserAvatar:user];

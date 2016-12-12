@@ -120,7 +120,6 @@
 		C515ACFA1DF0554400353FC4 /* UserCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C515ACEF1DF0554400353FC4 /* UserCardView.m */; };
 		C515AD161DF0568100353FC4 /* Aspect+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C515ACFE1DF0568100353FC4 /* Aspect+UserModule.m */; };
 		C515AD171DF0568100353FC4 /* AKDataCenter+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AD011DF0568100353FC4 /* AKDataCenter+UserModule.m */; };
-		C515AD181DF0568100353FC4 /* AKDBManager+UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AD031DF0568100353FC4 /* AKDBManager+UserModel.m */; };
 		C515AD191DF0568100353FC4 /* AKMediator+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AD051DF0568100353FC4 /* AKMediator+UserModule.m */; };
 		C515AD1A1DF0568100353FC4 /* GVUserDefaults+UserModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AD071DF0568100353FC4 /* GVUserDefaults+UserModule.m */; };
 		C515AD1B1DF0568100353FC4 /* AKUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AD0B1DF0568100353FC4 /* AKUserManager.m */; };
@@ -163,7 +162,7 @@
 		C52E77131DF6E1B2006B2183 /* TLConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E77121DF6E1B2006B2183 /* TLConversation.m */; };
 		C52E77161DF6E2B3006B2183 /* TLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E77151DF6E2B3006B2183 /* TLTableViewCell.m */; };
 		C52E771D1DF7AFB9006B2183 /* TLGroup+ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E771A1DF7AFB9006B2183 /* TLGroup+ChatModel.m */; };
-		C52E771E1DF7AFB9006B2183 /* TLUser+ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E771C1DF7AFB9006B2183 /* TLUser+ChatModel.m */; };
+		C52E771E1DF7AFB9006B2183 /* AKUser+ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E771C1DF7AFB9006B2183 /* AKUser+ChatModel.m */; };
 		C52E77911DF7AFFE006B2183 /* TLTalkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E77231DF7AFFD006B2183 /* TLTalkButton.m */; };
 		C52E77921DF7AFFE006B2183 /* TLChatBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E77251DF7AFFD006B2183 /* TLChatBar.m */; };
 		C52E77931DF7AFFE006B2183 /* TLChatBaseViewController+ChatBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E77291DF7AFFD006B2183 /* TLChatBaseViewController+ChatBar.m */; };
@@ -253,6 +252,7 @@
 		C52E78A71DF7F1DD006B2183 /* Mine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C52E789E1DF7F1DD006B2183 /* Mine.xcassets */; };
 		C52E78AA1DF824FD006B2183 /* AKSignalManager+IMModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E78A91DF824FD006B2183 /* AKSignalManager+IMModule.m */; };
 		C538066E1DE7327900A2322D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C538066D1DE7327900A2322D /* libsqlite3.tbd */; };
+		C53DDCC11DFE8E9B00D66D74 /* AKUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC01DFE8E9B00D66D74 /* AKUserDetail.m */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57DF5E21DFA84EE00D3D154 /* TabBar.plist */; };
 		C57DF5E91DFA9DF900D3D154 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C57DF5E81DFA9DF900D3D154 /* HexColor.m */; };
@@ -266,10 +266,11 @@
 		C5A7303B1DE2BB3500DB2788 /* ProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7303A1DE2BB3500DB2788 /* ProjectUITests.m */; };
 		C5FC0C6F1DFAA1B200159913 /* TLConversation+TLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0C6E1DFAA1B200159913 /* TLConversation+TLUser.m */; };
 		C5FC0C9F1DFAC05000159913 /* AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0C9E1DFAC05000159913 /* AKUser.m */; };
-		C5FC0CA81DFAC40F00159913 /* TLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0CA11DFAC40F00159913 /* TLUser.m */; };
 		C5FC0CA91DFAC40F00159913 /* TLUserChatSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0CA31DFAC40F00159913 /* TLUserChatSetting.m */; };
 		C5FC0CAA1DFAC40F00159913 /* TLUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0CA51DFAC40F00159913 /* TLUserDetail.m */; };
 		C5FC0CAB1DFAC40F00159913 /* TLUserSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0CA71DFAC40F00159913 /* TLUserSetting.m */; };
+		C5FC0CB61DFE4ACC00159913 /* AKDBManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0CB51DFE4ACC00159913 /* AKDBManager+User.m */; };
+		C5FC0CBD1DFE824000159913 /* AKDBManager+UserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0CBC1DFE824000159913 /* AKDBManager+UserDetail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -525,8 +526,6 @@
 		C515ACFE1DF0568100353FC4 /* Aspect+UserModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect+UserModule.m"; sourceTree = "<group>"; };
 		C515AD001DF0568100353FC4 /* AKDataCenter+UserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDataCenter+UserModule.h"; sourceTree = "<group>"; };
 		C515AD011DF0568100353FC4 /* AKDataCenter+UserModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDataCenter+UserModule.m"; sourceTree = "<group>"; };
-		C515AD021DF0568100353FC4 /* AKDBManager+UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDBManager+UserModel.h"; sourceTree = "<group>"; };
-		C515AD031DF0568100353FC4 /* AKDBManager+UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDBManager+UserModel.m"; sourceTree = "<group>"; };
 		C515AD041DF0568100353FC4 /* AKMediator+UserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKMediator+UserModule.h"; sourceTree = "<group>"; };
 		C515AD051DF0568100353FC4 /* AKMediator+UserModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKMediator+UserModule.m"; sourceTree = "<group>"; };
 		C515AD061DF0568100353FC4 /* GVUserDefaults+UserModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+UserModule.h"; sourceTree = "<group>"; };
@@ -622,8 +621,8 @@
 		C52E77181DF6E50C006B2183 /* TLDBGroupSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBGroupSQL.h; sourceTree = "<group>"; };
 		C52E77191DF7AFB9006B2183 /* TLGroup+ChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLGroup+ChatModel.h"; sourceTree = "<group>"; };
 		C52E771A1DF7AFB9006B2183 /* TLGroup+ChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLGroup+ChatModel.m"; sourceTree = "<group>"; };
-		C52E771B1DF7AFB9006B2183 /* TLUser+ChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLUser+ChatModel.h"; sourceTree = "<group>"; };
-		C52E771C1DF7AFB9006B2183 /* TLUser+ChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLUser+ChatModel.m"; sourceTree = "<group>"; };
+		C52E771B1DF7AFB9006B2183 /* AKUser+ChatModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKUser+ChatModel.h"; sourceTree = "<group>"; };
+		C52E771C1DF7AFB9006B2183 /* AKUser+ChatModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKUser+ChatModel.m"; sourceTree = "<group>"; };
 		C52E77221DF7AFFD006B2183 /* TLTalkButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTalkButton.h; sourceTree = "<group>"; };
 		C52E77231DF7AFFD006B2183 /* TLTalkButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTalkButton.m; sourceTree = "<group>"; };
 		C52E77241DF7AFFD006B2183 /* TLChatBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLChatBar.h; sourceTree = "<group>"; };
@@ -804,6 +803,8 @@
 		C52E78A81DF824FD006B2183 /* AKSignalManager+IMModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKSignalManager+IMModule.h"; sourceTree = "<group>"; };
 		C52E78A91DF824FD006B2183 /* AKSignalManager+IMModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKSignalManager+IMModule.m"; sourceTree = "<group>"; };
 		C538066D1DE7327900A2322D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C53DDCBF1DFE8E9B00D66D74 /* AKUserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserDetail.h; sourceTree = "<group>"; };
+		C53DDCC01DFE8E9B00D66D74 /* AKUserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserDetail.m; sourceTree = "<group>"; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
 		C57DF5DF1DF927F900D3D154 /* BanLiTV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BanLiTV.entitlements; sourceTree = "<group>"; };
@@ -832,8 +833,6 @@
 		C5FC0C7A1DFAA99A00159913 /* TLDBUserSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBUserSQL.h; sourceTree = "<group>"; };
 		C5FC0C9D1DFAC05000159913 /* AKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUser.h; sourceTree = "<group>"; };
 		C5FC0C9E1DFAC05000159913 /* AKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUser.m; sourceTree = "<group>"; };
-		C5FC0CA01DFAC40F00159913 /* TLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUser.h; sourceTree = "<group>"; };
-		C5FC0CA11DFAC40F00159913 /* TLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUser.m; sourceTree = "<group>"; };
 		C5FC0CA21DFAC40F00159913 /* TLUserChatSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserChatSetting.h; sourceTree = "<group>"; };
 		C5FC0CA31DFAC40F00159913 /* TLUserChatSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUserChatSetting.m; sourceTree = "<group>"; };
 		C5FC0CA41DFAC40F00159913 /* TLUserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUserDetail.h; sourceTree = "<group>"; };
@@ -845,8 +844,12 @@
 		C5FC0CAF1DFAD54B00159913 /* AKUserHonorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserHonorProtocol.h; sourceTree = "<group>"; };
 		C5FC0CB01DFAD54B00159913 /* AKUserLiveProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserLiveProtocol.h; sourceTree = "<group>"; };
 		C5FC0CB11DFAD54B00159913 /* AKUserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserProtocol.h; sourceTree = "<group>"; };
-		C5FC0CB21DFAD54B00159913 /* AKUserSettingProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserSettingProtocol.h; sourceTree = "<group>"; };
 		C5FC0CB31DFAD54B00159913 /* AKUserWeiboProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserWeiboProtocol.h; sourceTree = "<group>"; };
+		C5FC0CB41DFE4ACC00159913 /* AKDBManager+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDBManager+User.h"; sourceTree = "<group>"; };
+		C5FC0CB51DFE4ACC00159913 /* AKDBManager+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDBManager+User.m"; sourceTree = "<group>"; };
+		C5FC0CBA1DFE7ECF00159913 /* TLDBUserDetailSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBUserDetailSQL.h; sourceTree = "<group>"; };
+		C5FC0CBB1DFE824000159913 /* AKDBManager+UserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDBManager+UserDetail.h"; sourceTree = "<group>"; };
+		C5FC0CBC1DFE824000159913 /* AKDBManager+UserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDBManager+UserDetail.m"; sourceTree = "<group>"; };
 		D149EDE515283AE8903E9AF5 /* libPods-Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1558,14 +1561,16 @@
 			children = (
 				C515AD001DF0568100353FC4 /* AKDataCenter+UserModule.h */,
 				C515AD011DF0568100353FC4 /* AKDataCenter+UserModule.m */,
-				C515AD021DF0568100353FC4 /* AKDBManager+UserModel.h */,
-				C515AD031DF0568100353FC4 /* AKDBManager+UserModel.m */,
 				C515AD041DF0568100353FC4 /* AKMediator+UserModule.h */,
 				C515AD051DF0568100353FC4 /* AKMediator+UserModule.m */,
 				C515AD061DF0568100353FC4 /* GVUserDefaults+UserModule.h */,
 				C515AD071DF0568100353FC4 /* GVUserDefaults+UserModule.m */,
 				C515AD271DF1167900353FC4 /* AKSignalManager+UserModule.h */,
 				C515AD281DF1167900353FC4 /* AKSignalManager+UserModule.m */,
+				C5FC0CB41DFE4ACC00159913 /* AKDBManager+User.h */,
+				C5FC0CB51DFE4ACC00159913 /* AKDBManager+User.m */,
+				C5FC0CBB1DFE824000159913 /* AKDBManager+UserDetail.h */,
+				C5FC0CBC1DFE824000159913 /* AKDBManager+UserDetail.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1591,6 +1596,8 @@
 			children = (
 				C5FC0C9D1DFAC05000159913 /* AKUser.h */,
 				C5FC0C9E1DFAC05000159913 /* AKUser.m */,
+				C53DDCBF1DFE8E9B00D66D74 /* AKUserDetail.h */,
+				C53DDCC01DFE8E9B00D66D74 /* AKUserDetail.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1701,8 +1708,8 @@
 				C52E77BC1DF7B0B9006B2183 /* UIView+Frame.m */,
 				C52E77191DF7AFB9006B2183 /* TLGroup+ChatModel.h */,
 				C52E771A1DF7AFB9006B2183 /* TLGroup+ChatModel.m */,
-				C52E771B1DF7AFB9006B2183 /* TLUser+ChatModel.h */,
-				C52E771C1DF7AFB9006B2183 /* TLUser+ChatModel.m */,
+				C52E771B1DF7AFB9006B2183 /* AKUser+ChatModel.h */,
+				C52E771C1DF7AFB9006B2183 /* AKUser+ChatModel.m */,
 				C52E770D1DF6DEB3006B2183 /* NSDate+Utilities.h */,
 				C52E770E1DF6DEB3006B2183 /* NSDate+Utilities.m */,
 				C52E76FB1DF699DC006B2183 /* NSString+PinYin.h */,
@@ -1726,8 +1733,6 @@
 		C52E76A41DF66D75006B2183 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C5FC0CA01DFAC40F00159913 /* TLUser.h */,
-				C5FC0CA11DFAC40F00159913 /* TLUser.m */,
 				C5FC0CA21DFAC40F00159913 /* TLUserChatSetting.h */,
 				C5FC0CA31DFAC40F00159913 /* TLUserChatSetting.m */,
 				C5FC0CA41DFAC40F00159913 /* TLUserDetail.h */,
@@ -2390,6 +2395,7 @@
 		C5FC0C791DFAA97A00159913 /* Sql */ = {
 			isa = PBXGroup;
 			children = (
+				C5FC0CBA1DFE7ECF00159913 /* TLDBUserDetailSQL.h */,
 				C5FC0C7A1DFAA99A00159913 /* TLDBUserSQL.h */,
 			);
 			path = Sql;
@@ -2403,7 +2409,6 @@
 				C5FC0CAF1DFAD54B00159913 /* AKUserHonorProtocol.h */,
 				C5FC0CB01DFAD54B00159913 /* AKUserLiveProtocol.h */,
 				C5FC0CB11DFAD54B00159913 /* AKUserProtocol.h */,
-				C5FC0CB21DFAD54B00159913 /* AKUserSettingProtocol.h */,
 				C5FC0CB31DFAD54B00159913 /* AKUserWeiboProtocol.h */,
 			);
 			path = Protocol;
@@ -2630,7 +2635,6 @@
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
 				C52E77F91DF7B831006B2183 /* TLChatFileCell.m in Sources */,
 				C52E77091DF6C326006B2183 /* Aspect-IMModule.m in Sources */,
-				C515AD181DF0568100353FC4 /* AKDBManager+UserModel.m in Sources */,
 				C52E76E11DF698A2006B2183 /* TLSettingGroup.m in Sources */,
 				C52E77991DF7AFFE006B2183 /* TLImageExpressionDisplayView.m in Sources */,
 				C52E77AC1DF7AFFE006B2183 /* TLEmojiGroupCell.m in Sources */,
@@ -2650,7 +2654,7 @@
 				C515AD171DF0568100353FC4 /* AKDataCenter+UserModule.m in Sources */,
 				C515AC3B1DF0549C00353FC4 /* AKIMManager+Common.m in Sources */,
 				C52E77971DF7AFFE006B2183 /* TLChatCellMenuView.m in Sources */,
-				C52E771E1DF7AFB9006B2183 /* TLUser+ChatModel.m in Sources */,
+				C52E771E1DF7AFB9006B2183 /* AKUser+ChatModel.m in Sources */,
 				C515AC3F1DF0549C00353FC4 /* AKIMManager.m in Sources */,
 				C515AC521DF0549C00353FC4 /* IMSayMessage.m in Sources */,
 				C515AC4E1DF0549C00353FC4 /* IMRemoveMessage.m in Sources */,
@@ -2679,6 +2683,7 @@
 				C515AB6B1DF051BA00353FC4 /* AKPopupViewController.m in Sources */,
 				C515AB721DF051BA00353FC4 /* DeviceHelper.m in Sources */,
 				C52E78771DF7BA58006B2183 /* TLChatBackgroundSelectViewController.m in Sources */,
+				C5FC0CBD1DFE824000159913 /* AKDBManager+UserDetail.m in Sources */,
 				C52E77B91DF7AFFE006B2183 /* TLChatViewController+Delegate.m in Sources */,
 				C515AC601DF0549C00353FC4 /* IMRoomJoinedPush.m in Sources */,
 				C52E779B1DF7AFFE006B2183 /* TLTextDisplayView.m in Sources */,
@@ -2795,8 +2800,8 @@
 				C52E77AB1DF7AFFE006B2183 /* TLEmojiGroupDisplayView.m in Sources */,
 				C52E77001DF69A73006B2183 /* TLUserHelper.m in Sources */,
 				C52E77921DF7AFFE006B2183 /* TLChatBar.m in Sources */,
-				C5FC0CA81DFAC40F00159913 /* TLUser.m in Sources */,
 				C52E77B21DF7AFFE006B2183 /* TLEmojiKeyboard+EmojiGroupControl.m in Sources */,
+				C53DDCC11DFE8E9B00D66D74 /* AKUserDetail.m in Sources */,
 				C52E77BD1DF7B0B9006B2183 /* UIView+Frame.m in Sources */,
 				C52E77C01DF7B0E2006B2183 /* UIImage+Color.m in Sources */,
 				C52E77B81DF7AFFE006B2183 /* TLBaseKeyboard.m in Sources */,
@@ -2811,6 +2816,7 @@
 				C515AB681DF051BA00353FC4 /* AKBaseModel.m in Sources */,
 				C52E779C1DF7AFFE006B2183 /* TLExpressionMessageCell.m in Sources */,
 				C52E77B41DF7AFFE006B2183 /* TLMoreKeyboardCell.m in Sources */,
+				C5FC0CB61DFE4ACC00159913 /* AKDBManager+User.m in Sources */,
 				C515AC6E1DF0549C00353FC4 /* RoomSendHotGift.m in Sources */,
 				C52E77DD1DF7B6D5006B2183 /* TLAudioPlayer.m in Sources */,
 				C515AC4B1DF0549C00353FC4 /* IMGetMaxIndicesMessage.m in Sources */,

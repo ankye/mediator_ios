@@ -20,11 +20,11 @@
  @param success 成功回调
  @param failure 失败回调
  */
--(void)im_getIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken success:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure
+-(void)im_getIMToken:(NSString*)uid withUserToken:(NSString*)userToken success:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure
 {
  
     [AK_REQUEST_MANAGER updateHttpHeaderField:@"API-VERSION" withValue:@"2.0"];
-     [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-UID" withValue: [uid stringValue]];
+     [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-UID" withValue: uid];
      [AK_REQUEST_MANAGER updateHttpHeaderField:@"USER-TOKEN" withValue:userToken];
 
     AKIMTokenRequest* request = [[AKIMTokenRequest alloc] init:uid];

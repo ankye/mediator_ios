@@ -108,7 +108,7 @@
 //}
 
 //MARK: TLUserGroupCellDelegate
-- (void)userGroupCellDidSelectUser:(TLUser *)user
+- (void)userGroupCellDidSelectUser:(AKUser *)user
 {
 //    TLFriendDetailViewController *detailVC = [[TLFriendDetailViewController alloc] init];
 //    [detailVC setUser:user];

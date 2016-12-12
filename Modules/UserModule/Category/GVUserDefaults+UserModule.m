@@ -11,5 +11,5 @@
 @implementation GVUserDefaults (UserModule)
 
 @dynamic uid;
-
+@dynamic token;
 @end

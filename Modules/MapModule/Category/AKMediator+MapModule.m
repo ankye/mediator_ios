@@ -30,7 +30,7 @@ NSString * const kAKMMapModulePopupUserCardView = @"popupUserCardView";
     }
 }
 
--(UIView<AKPopupViewProtocol>*)map_popUserCardView:(UserModel*)user
+-(UIView<AKPopupViewProtocol>*)map_popUserCardView:(AKUser*)user
 {
     UIView<AKPopupViewProtocol>* view = [self performService:kAKMMapModuleService action:kAKMMapModulePopupUserCardView params:@{@"user":user} shouldCacheService:NO];
     return view;

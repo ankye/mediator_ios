@@ -93,7 +93,7 @@ SINGLETON_IMPL(TLChatViewController)
 {
     if ([self.partner chat_userType] == TLChatUserTypeUser) {
         TLChatDetailViewController *chatDetailVC = [[TLChatDetailViewController alloc] init];
-        [chatDetailVC setUser:(TLUser *)self.partner];
+        [chatDetailVC setUser:(AKUser *)self.partner];
         [self setHidesBottomBarWhenPushed:YES];
         [self.navigationController pushViewController:chatDetailVC animated:YES];
     }

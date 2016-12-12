@@ -27,7 +27,7 @@
     NSString *sqlString = [NSString stringWithFormat:SQL_CREATE_CONV_TABLE, CONV_TABLE_NAME];
      FMDatabaseQueue* queue = [self getQueue:KAK_TLCHAT_DBNAME];
     
-    return [self createTable:queue withTableName:CONV_TABLE_NAME withSQL:sqlString];
+    return [self createTableWithQueue:queue withTableName:CONV_TABLE_NAME withSQL:sqlString];
 }
 
 - (BOOL)addConversationByUid:(NSString *)uid fid:(NSString *)fid type:(NSInteger)type date:(NSDate *)date
@@ -178,10 +178,10 @@
 
     
     NSString *sqlString = [NSString stringWithFormat:SQL_CREATE_GROUPS_TABLE, GROUPS_TABLE_NAME];
-    BOOL ok = [self createTable:queue withTableName:GROUPS_TABLE_NAME withSQL:sqlString];
+    BOOL ok = [self createTableWithQueue:queue withTableName:GROUPS_TABLE_NAME withSQL:sqlString];
     if (ok) {
         sqlString = [NSString stringWithFormat:SQL_CREATE_GROUP_MEMBERS_TABLE, GROUP_MEMBER_TABLE_NAMGE];
-        ok = [self createTable:queue withTableName:GROUP_MEMBER_TABLE_NAMGE withSQL:sqlString];
+        ok = [self createTableWithQueue:queue withTableName:GROUP_MEMBER_TABLE_NAMGE withSQL:sqlString];
     }
     return ok;
 }
@@ -270,7 +270,7 @@
 
 
 #pragma mark - # Group Members
-- (BOOL)addGroupMember:(TLUser *)user forUid:(NSString *)uid andGid:(NSString *)gid
+- (BOOL)addGroupMember:(AKUser *)user forUid:(NSString *)uid andGid:(NSString *)gid
 {
     NSString *sqlString = [NSString stringWithFormat:SQL_UPDATE_GROUP_MEMBER, GROUP_MEMBER_TABLE_NAMGE];
     NSArray *arrPara = [NSArray arrayWithObjects:
@@ -294,10 +294,10 @@
     if (oldData.count > 0) {
         // 建立新数据的hash表，用于删除数据库中的过时数据
         NSMutableDictionary *newDataHash = [[NSMutableDictionary alloc] init];
-        for (TLUser *user in users) {
+        for (AKUser *user in users) {
             [newDataHash setValue:@"YES" forKey:user.userID];
         }
-        for (TLUser *user in oldData) {
+        for (AKUser *user in oldData) {
             if ([newDataHash objectForKey:user.userID] == nil) {
                 BOOL ok = [self deleteGroupMemberForUid:uid gid:gid andFid:user.userID];
                 if (!ok) {
@@ -306,7 +306,7 @@
             }
         }
     }
-    for (TLUser *user in users) {
+    for (AKUser *user in users) {
         BOOL ok = [self addGroupMember:user forUid:uid andGid:gid];
         if (!ok) {
             return NO;
@@ -323,7 +323,7 @@
 
     [self excuteQuery:queue withSql:sqlString resultBlock:^(FMResultSet *retSet) {
         while ([retSet next]) {
-            TLUser *user = [[TLUser alloc] init];
+            AKUser *user = [[AKUser alloc] init];
             user.userID = [retSet stringForColumn:@"uid"];
             user.username = [retSet stringForColumn:@"username"];
             user.nikeName = [retSet stringForColumn:@"nikename"];
@@ -353,10 +353,8 @@
 //创建聊天表
 - (BOOL)createChatMessageTable
 {
-     FMDatabaseQueue* queue = [self getQueue:KAK_TLCHAT_DBNAME];
+   return [self createTableWithDBName:KAK_TLCHAT_DBNAME withTableName:MESSAGE_TABLE_NAME withSql:SQL_CREATE_MESSAGE_TABLE];
     
-    NSString *sqlString = [NSString stringWithFormat:SQL_CREATE_MESSAGE_TABLE, MESSAGE_TABLE_NAME];
-    return [self createTable:queue withTableName:MESSAGE_TABLE_NAME withSQL:sqlString];
 }
 
 - (BOOL)addMessage:(TLMessage *)message
@@ -551,12 +549,12 @@
     FMDatabaseQueue* queue = [self getQueue:KAK_TLCHAT_DBNAME];
     
     NSString *sqlString = [NSString stringWithFormat:SQL_CREATE_EXP_GROUP_TABLE, EXP_GROUP_TABLE_NAME];
-    BOOL ok = [AK_DB_MANAGER createTable:queue withTableName:EXP_GROUP_TABLE_NAME withSQL:sqlString];
+    BOOL ok = [AK_DB_MANAGER createTableWithQueue:queue withTableName:EXP_GROUP_TABLE_NAME withSQL:sqlString];
     if (!ok) {
         return NO;
     }
     sqlString = [NSString stringWithFormat:SQL_CREATE_EXPS_TABLE, EXPS_TABLE_NAME];
-    ok = [AK_DB_MANAGER createTable:queue withTableName:EXPS_TABLE_NAME withSQL:sqlString];
+    ok = [AK_DB_MANAGER createTableWithQueue:queue withTableName:EXPS_TABLE_NAME withSQL:sqlString];
     return ok;
 }
 

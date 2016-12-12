@@ -9,8 +9,11 @@
 #ifndef UserModule_h
 #define UserModule_h
 
+#import "AKUser.h"
+
+
 #import "AKDataCenter+UserModule.h"
-#import "AKDBManager+UserModel.h"
+#import "AKDBManager+User.h"
 #import "AKMediator+UserModule.h"
 #import "GVUserDefaults+UserModule.h"
 #import "AKSignalManager+UserModule.h"

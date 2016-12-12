@@ -7,7 +7,7 @@
 //
 
 
-#import "TLUser.h"
+#import "AKUser.h"
 
 @interface TLGroup : NSObject
 
@@ -52,6 +52,6 @@
 
 - (id)objectAtIndex:(NSUInteger)index;
 
-- (TLUser *)memberByUserID:(NSString *)uid;
+- (AKUser *)memberByUserID:(NSString *)uid;
 
 @end

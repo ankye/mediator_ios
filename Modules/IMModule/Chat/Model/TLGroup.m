@@ -16,7 +16,7 @@
 {
     if (self = [super init]) {
         [TLGroup mj_setupObjectClassInArray:^NSDictionary *{
-            return @{ @"users" : @"TLUser" };
+            return @{ @"users" : @"AKUser" };
         }];
     }
     return self;
@@ -37,9 +37,9 @@
     return [self.users objectAtIndex:index];
 }
 
-- (TLUser *)memberByUserID:(NSString *)uid
+- (AKUser *)memberByUserID:(NSString *)uid
 {
-    for (TLUser *user in self.users) {
+    for (AKUser *user in self.users) {
         if ([user.userID isEqualToString:uid]) {
             return user;
         }
@@ -50,7 +50,7 @@
 - (NSString *)groupName
 {
     if (_groupName == nil || _groupName.length == 0) {
-        for (TLUser *user in self.users) {
+        for (AKUser *user in self.users) {
             if (user.showName.length > 0) {
                 if (_groupName == nil || _groupName.length <= 0) {
                     _groupName = user.showName;

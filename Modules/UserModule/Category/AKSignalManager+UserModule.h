@@ -8,8 +8,8 @@
 
 #import "AKSignalManager.h"
 
-CreateSignalType(UserPosition, UserModel *user)
-CreateSignalType(User, UserModel *user)
+CreateSignalType(UserPosition, AKUser *user)
+CreateSignalType(User, AKUser *user)
 
 
 @interface AKSignalManager (UserModule)

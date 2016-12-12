@@ -46,4 +46,6 @@
 
 @property (nonatomic, strong) NSString *pinyinInitial;
 
+-(void)fillData:(id<AKUserProtocol>)user;
+
 @end

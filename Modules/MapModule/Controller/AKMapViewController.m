@@ -121,13 +121,13 @@ static void *xxcontext = &xxcontext;
 
 
 
--(void) updateUserPosition:(UserModel*) user
+-(void) updateUserPosition:(AKUser*) user
 {
     DDLogInfo(@"Update User info");
     CLLocationCoordinate2D coordinate;
-    coordinate.longitude = user.longitude;
-    coordinate.latitude = user.latitude;
-    if(user.latitude ==0 || user.longitude == 0 )return;
+    coordinate.longitude = user.detail.longitude;
+    coordinate.latitude = user.detail.latitude;
+    if(user.detail.latitude ==0 || user.detail.longitude == 0 )return;
     AKUserPointAnnotation* pa = [self getUserPointAnnotation:user];
     [pa setCoordinate:coordinate];
     
@@ -141,9 +141,9 @@ static void *xxcontext = &xxcontext;
 
 
 
--(void) removeUserFromMap:(UserModel*)user
+-(void) removeUserFromMap:(AKUser*)user
 {
-    NSString* key = [user.uid stringValue];
+    NSString* key = user.uid;
     AKUserPointAnnotation* pa = [self.annotaitonList objectForKey:key];
     if(pa){
         [self.mapView removeAnnotation:pa];
@@ -152,9 +152,9 @@ static void *xxcontext = &xxcontext;
 }
 
 
--(AKUserPointAnnotation*)getUserPointAnnotation:(UserModel*)user
+-(AKUserPointAnnotation*)getUserPointAnnotation:(AKUser*)user
 {
-    NSString* key = [user.uid stringValue];
+    NSString* key = user.uid;
     AKUserPointAnnotation* pa = [self.annotaitonList objectForKey:key];
     if(pa == nil){
         pa = [[AKUserPointAnnotation alloc] initWithUser:user];
@@ -187,17 +187,17 @@ static void *xxcontext = &xxcontext;
 {
  
    
-    [AK_SIGNAL_MANAGER.onMapAddOnlineUser addObserver:self callback:^(id self, UserModel *user) {
+    [AK_SIGNAL_MANAGER.onMapAddOnlineUser addObserver:self callback:^(id self, AKUser *user) {
       
         [self updateUserPosition:user];
     }];
     
-    [AK_SIGNAL_MANAGER.onUserPositionChange addObserver:self callback:^(id self, UserModel *user) {
+    [AK_SIGNAL_MANAGER.onUserPositionChange addObserver:self callback:^(id self, AKUser *user) {
         
         [self updateUserPosition:user];
     }];
     
-    [AK_SIGNAL_MANAGER.onMapRemoveOnlineUser addObserver:self callback:^(id self, UserModel *user) {
+    [AK_SIGNAL_MANAGER.onMapRemoveOnlineUser addObserver:self callback:^(id self, AKUser *user) {
         
         [self removeUserFromMap:user];
     }];

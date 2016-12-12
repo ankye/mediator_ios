@@ -11,13 +11,13 @@
 
 @interface AKIMTokenRequest()
 
-@property(strong, nonatomic) NSNumber *uid;
+@property(strong, nonatomic) NSString *uid;
 
 @end
 
 @implementation AKIMTokenRequest
 
--(instancetype) init:(NSNumber*)uid
+-(instancetype) init:(NSString*)uid
 {
     if (self = [super init])
     {

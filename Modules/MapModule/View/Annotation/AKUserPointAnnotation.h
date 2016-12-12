@@ -10,8 +10,8 @@
 
 @interface AKUserPointAnnotation : MAPointAnnotation
 
-@property (nonatomic,strong) UserModel* user;
+@property (nonatomic,strong) AKUser* user;
 
--(id)initWithUser:(UserModel*)user;
+-(id)initWithUser:(AKUser*)user;
 
 @end

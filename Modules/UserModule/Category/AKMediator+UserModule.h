@@ -32,13 +32,13 @@
 
  @return 用户信息或者nil
  */
--(UserModel*)user_me;
+-(AKUser*)user_me;
 
 
--(UserModel*)user_getUserInfo:(NSNumber*)uid;
+-(AKUser*)user_getUserInfo:(NSString*)uid;
 
 
--(UserModel*)user_updateUserInfo:(NSMutableDictionary*)params;
+-(AKUser*)user_updateUserInfo:(NSMutableDictionary*)params;
 
 
 @end

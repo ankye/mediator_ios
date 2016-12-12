@@ -32,7 +32,7 @@ NSString * const kAKMIMModuleRequestIMConversationView = @"popConversationView";
  
  @param userToken 用户授权登录Token
  */
--(void)im_requestIMToken:(NSNumber*)uid withUserToken:(NSString*)userToken
+-(void)im_requestIMToken:(NSString*)uid withUserToken:(NSString*)userToken
 {
     [self performService:kAKMIMModuleService action:kAKMIMModuleRequestIMToken params:@{@"uid":uid,@"userToken":userToken} shouldCacheService:NO];
     

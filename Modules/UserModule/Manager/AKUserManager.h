@@ -11,13 +11,13 @@
 
 @interface AKUserManager : NSObject
 
-@property (nonatomic,strong) UserModel* me;
+@property (nonatomic,strong) AKUser* me;
 
 
 + (instancetype)sharedInstance;
 
 
--(UserModel*)getUserInfo:(NSNumber*)uid;
+-(AKUser*)getUserInfo:(NSString*)uid;
 
 
 /**
@@ -30,13 +30,13 @@
 /**
  用户登录
 
- @param user UserModel信息
+ @param user AKUser信息
  @return 是否登录成功
  */
--(BOOL)userLogin:(UserModel*)user;
+-(BOOL)userLogin:(AKUser*)user;
 
 
--(UserModel*)updateUserInfo:(UserModel*)user params:(NSDictionary*)params;
+-(AKUser*)updateUserInfo:(AKUser*)user params:(NSDictionary*)params;
 
 
 @end

@@ -67,16 +67,16 @@
     
     TLChatViewController *chatVC = [TLChatViewController sharedInstance];
  
-    TLUser* user = [TLUser new];
+    AKUser* user = [AKUser new];
     
-    UserModel* partner = conversation.partner;
+    AKUser* partner = conversation.partner;
     
-    user.userID = [partner.uid stringValue];
+    user.userID = partner.uid;
     
-    user.username = [partner.uid stringValue];
+    user.username = partner.uid;
     user.nikeName = partner.nickname;
    
-    user.avatarURL = partner.head;
+    user.avatarURL = partner.avatar;
     
     
     

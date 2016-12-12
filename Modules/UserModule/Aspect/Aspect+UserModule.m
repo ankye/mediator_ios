@@ -7,14 +7,15 @@
 //
 
 #import "Aspect+UserModule.h"
-#import "AKDBManager+UserModel.h"
+#import "AKDBManager+User.h"
+#import "AKDBManager+UserDetail.h"
 
 @implementation Aspect_UserModule
 
 +(void)load
 {
-    if( ![AK_DB_MANAGER isExistUserTable]){
-        [AK_DB_MANAGER createUserTable];
-    }
+    [AK_DB_MANAGER createTableUser];
+    [AK_DB_MANAGER createTableUserDetail];
+    
 }
 @end

@@ -21,7 +21,7 @@
 
 -(UIView<AKPopupViewProtocol>*)popupUserCardView:(NSDictionary*)params
 {
-    UserModel* user = (UserModel*)params[@"user"];
+    AKUser* user = (AKUser*)params[@"user"];
     UIView<AKPopupViewProtocol>* view = [[UserCardView alloc] init];
     NSMutableDictionary* popAttrs = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet onClick:^(NSInteger channel, NSMutableDictionary *attributes) {
         DDLogInfo(@"Click");

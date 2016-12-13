@@ -25,7 +25,7 @@
     }
     
     NSString *formatStr
-    = [NSString stringWithFormat:@"%@ %@ [%@][line %ld] %@ %@", logLevel,[self stringWithFormat:@"yyyy-MM-dd HH:mm:ss.S" dateTime:logMessage.timestamp], logMessage.fileName, logMessage.line, logMessage.function, logMessage.message];
+    = [NSString stringWithFormat:@"%@ %@ [%@][line %ld] %@ %@", logLevel,[self stringWithFormat:@"yyyy-MM-dd HH:mm:ss.S" dateTime:logMessage.timestamp], logMessage.fileName, (unsigned long)logMessage.line, logMessage.function, logMessage.message];
     return formatStr;
 }
 

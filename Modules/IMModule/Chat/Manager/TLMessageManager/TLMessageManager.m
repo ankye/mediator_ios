@@ -60,7 +60,6 @@ static TLMessageManager *messageManager;
     NSString* myUid = me.uid;
     NSString* fid = info[@"uid"];
     AKUser* friend = [AK_MEDIATOR user_getUserInfo:fid];
-    AKUser* user = [TLUserHelper userModelToTLUser:friend];
     
     TLTextMessage* message = (TLTextMessage*)[TLMessage createMessageByType:TLMessageTypeText];
    
@@ -70,15 +69,15 @@ static TLMessageManager *messageManager;
     message.friendID = info[@"uid"];
     
     message.userID = myUid;
-    message.fromUser = user;
+    message.fromUser = friend;
     message.partnerType = TLPartnerTypeUser;
     message.ownerTyper = TLMessageOwnerTypeFriend;
     
     [AK_DB_MANAGER addMessage:message];
     
     AK_SIGNAL_MANAGER.onIMMessageReceived.fire(message);
-    if(showTips && user && ![AppHelper isNullString:[user chat_username]]){
-        [AK_POPUP_MANAGER showTips:[NSString stringWithFormat:@"%@给你发了一条消息",[user chat_username]]];
+    if(showTips && friend && ![AppHelper isNullString:[friend chat_username]]){
+        [AK_POPUP_MANAGER showTips:[NSString stringWithFormat:@"%@给你发了一条消息",[friend chat_username]]];
     }
 }
 

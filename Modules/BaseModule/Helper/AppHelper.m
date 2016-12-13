@@ -102,6 +102,18 @@
     return datetime;
 }
 
++(double)getTimestampFromString:(NSString*)string
+{
+    if([AppHelper isNullString:string]){
+        return 0;
+    }
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *date = [dateFormatter dateFromString:string];
+    return [date timeIntervalSince1970];
+}
+
 +(NSDate*)getDateFromMSTime:(double)time
 {
    return [NSDate dateWithTimeIntervalSince1970:time/1000];

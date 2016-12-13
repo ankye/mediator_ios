@@ -12,9 +12,9 @@
 
 - (void)updateUserInfo:(AKUser *)user
 {
-    self.partnerName = user.showName;
+    self.partnerName = user.nickname;
     self.avatarPath = user.avatarPath;
-    self.avatarURL = user.avatarURL;
+    self.avatarURL = user.avatar;
 }
 
 - (void)updateGroupInfo:(TLGroup *)group

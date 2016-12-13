@@ -106,8 +106,7 @@ SINGLETON_IMPL(AKDataCenter)
 {
     Class objClass = NSClassFromString(poolKey);
     AKBaseModel* object = [[objClass alloc] init];
-    [object setKey:key];
-    
+   
     [self updatePool:poolKey withKey:key andObject:object];
     
     return object;
@@ -128,7 +127,7 @@ SINGLETON_IMPL(AKDataCenter)
     NSInteger keyCount = [keys count];
     for(NSInteger i=0; i<keyCount; i++){
         NSString* key = [keys objectAtIndex:i];
-        id<AKDataCenterObjectProtocol> object = [pool objectForKey:key];
+        id<AKDataObjectProtocol> object = [pool objectForKey:key];
         if(object == nil){
             object = [self createEmptyObjectForPool:poolKey withKey:key];
         }

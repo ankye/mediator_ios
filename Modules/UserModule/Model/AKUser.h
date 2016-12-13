@@ -6,7 +6,7 @@
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "TLBaseDataModel.h"
+#import "AKBaseModel.h"
 #import "AKUserProtocol.h"
 #import "AKUserChatSettingProtocol.h"
 #import "AKUserDetailProtocol.h"
@@ -14,7 +14,7 @@
 #import "AKUserHonorProtocol.h"
 
 
-@interface AKUser : TLBaseDataModel<AKUserProtocol>
+@interface AKUser : AKBaseModel<AKUserProtocol>
 
 /// 用户ID
 @property (nonatomic, strong) NSString *uid;
@@ -46,11 +46,11 @@
 @property (nonatomic, strong) NSNumber *coin;
 
 //最后一次修改昵称时间
-@property (nonatomic, assign) NSNumber* lastNicknameModifyTime;
+@property (nonatomic, strong) NSNumber* lastNicknameModifyTime;
 //最后一次登录时间 为空表示首次登录
-@property (nonatomic, assign) NSNumber* lastLoginTime;
+@property (nonatomic, strong) NSNumber* lastLoginTime;
 //最后一次充值时间 为空表示首次支付
-@property (nonatomic, assign) NSNumber* lastPayTime;
+@property (nonatomic, strong) NSNumber* lastPayTime;
 
 
 #pragma mark - 列表用
@@ -60,12 +60,12 @@
 @property (nonatomic, strong) NSString *pinyinInitial;
 
 
-@property (nonatomic,strong) id<AKUserDetailProtocol> detail;
-@property (nonatomic,strong) id<AKUserHonorProtocol> honor;
-@property (nonatomic,strong) id<AKUserWeiboProtocol> weibo;
-@property (nonatomic,strong) id<AKUserChatSettingProtocol> chatSetting;
+@property (nonatomic,strong) id<AKUserDetailProtocol,AKDataObjectProtocol> detail;
+@property (nonatomic,strong) id<AKUserHonorProtocol,AKDataObjectProtocol> honor;
+@property (nonatomic,strong) id<AKUserWeiboProtocol,AKDataObjectProtocol> weibo;
+@property (nonatomic,strong) id<AKUserChatSettingProtocol,AKDataObjectProtocol> chatSetting;
 
 
--(void)fillData:(id)data;
+-(void)fillData:(AKUser*)data;
 
 @end

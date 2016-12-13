@@ -3,7 +3,7 @@
 #ifndef TLDBUSERDETAILSQL_H
 #define TLDBUSERDETAILSQL_H
 
-#define     TABLE_NAME_USERDETAIL              @"UserDetail"
+#define     TABLE_NAME_USERDETAIL              @"user_detail"
 
 #define     SQL_CREATE_TABLE_USERDETAIL    @"CREATE TABLE IF NOT EXISTS %@(\
                                             uid TEXT,\

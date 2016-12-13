@@ -14,6 +14,7 @@ target 'Project' do
         pod 'FMDB'
         pod 'AFMInfoBanner'
         pod 'ReactiveObjC'
+        pod 'JKCategories'
         
         #map Module
         pod 'AMapFoundation'

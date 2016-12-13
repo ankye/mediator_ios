@@ -21,12 +21,12 @@ NSString * const kAKMUserUpdateInfo = @"updateUserInfo";
 /**
  登陆成功，更新用户信息
  
- @param userinfo 用户信息字典
+ @param user AKUser结构
  @return 是否登陆成功
  */
--(BOOL)user_loginSuccess:(NSDictionary*)userinfo
+-(BOOL)user_loginSuccess:(AKUser*)user
 {
-   NSNumber* result = [self performService:kAKMUserModuleService action:kAKMUserLoginSuccess params:userinfo shouldCacheService:NO];
+    NSNumber* result = [self performService:kAKMUserModuleService action:kAKMUserLoginSuccess params:@{@"user":user} shouldCacheService:NO];
     return [result boolValue];
 }
 

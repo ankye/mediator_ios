@@ -9,5 +9,7 @@
 #ifndef UserModuleDefine_h
 #define UserModuleDefine_h
 
+#define KAK_TLUSER_DBNAME @"TLUser"
+
 
 #endif /* UserModuleDefine_h */

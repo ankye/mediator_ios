@@ -14,10 +14,10 @@
 /**
  登陆成功，更新用户信息
 
- @param userinfo 用户信息字典
+ @param user AKUser
  @return 是否登陆成功
  */
--(BOOL)user_loginSuccess:(NSDictionary*)userinfo;
+-(BOOL)user_loginSuccess:(AKUser*)user;
 
 /**
  判断是否有用户已经登陆

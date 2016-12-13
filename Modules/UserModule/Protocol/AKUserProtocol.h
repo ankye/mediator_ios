@@ -33,11 +33,11 @@
 @property (nonatomic, strong) NSNumber *coin;
 
 //最后一次修改昵称时间
-@property (nonatomic, assign) NSNumber* lastNicknameModifyTime;
+@property (nonatomic, strong) NSNumber* lastNicknameModifyTime;
 //最后一次登录时间 为空表示首次登录
-@property (nonatomic, assign) NSNumber* lastLoginTime;
+@property (nonatomic, strong) NSNumber* lastLoginTime;
 //最后一次充值时间 为空表示首次支付
-@property (nonatomic, assign) NSNumber* lastPayTime;
+@property (nonatomic, strong) NSNumber* lastPayTime;
 
 
 #pragma mark - 列表用

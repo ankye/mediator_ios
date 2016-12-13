@@ -7,6 +7,7 @@
 //
 
 #import "AKUserManager.h"
+#import "AKUserDetail.h"
 
 @implementation AKUserManager
 
@@ -38,9 +39,9 @@
    
     [AK_SIGNAL_MANAGER.onUserInfoChange addObserver:self callback:^(id self, NSDictionary * _Nonnull dictionary) {
      
-        NSInteger uid = [dictionary[@"uid"] integerValue];
+        NSString* uid =dictionary[@"uid"];
         
-        AKUser* user = [self getUserInfo:@(uid)];
+        AKUser* user = [self getUserInfo:uid];
         [self updateUserInfo:user params:dictionary];
         
     }];
@@ -121,7 +122,8 @@
         NSString* uid = [GVUserDefaults standardUserDefaults].uid;
         if(uid){ //本地有存储
             AKUser* user = [AK_DATA_CENTER user_getUserInfo:uid];
-            if(user){
+            if(user && user.uid != nil){
+                
                 [self userLogin:user];
             }
         }

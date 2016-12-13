@@ -13,6 +13,70 @@
 
 #define AK_DB_MANAGER [AKDBManager sharedInstance]
 
+//创建表
+
+#define AKDB_CREATE_TABLE_INTR(_prefix) \
+- ( BOOL ) _prefix##_createTable;
+
+#define AKDB_CREATE_TABLE_IMPL(_prefix , _dbname,_tablename,_sqlformat) \
+- (BOOL)_prefix##_createTable \
+{ \
+    return [self createTableWithDBName:_dbname withTableName:_tablename withSql:_sqlformat]; \
+}
+//插入或者更新用户数据
+#define AKDB_INSERT_OR_UPDATE_INTR(_prefix, _model ) \
+- (BOOL)_prefix##_insertOrUpdate:( _model *)model;
+
+#define AKDB_INSERT_OR_UPDATE_IMPL( _prefix,_model , _dbname , _tablename , _sqlformat) \
+- (BOOL)_prefix##_insertOrUpdate:( _model *)model \
+{ \
+    return [self insertOrUpdate:model withDBName:_dbname withTableName:_tablename withSqlFormat:_sqlformat]; \
+}
+
+//通过主键更新单条记录
+#define AKDB_UPDATE_BY_ID_INTR(_prefix) \
+-(BOOL)_prefix##_updateByID:(NSString*)keyValue withAttributes:(NSArray*)attributes withValues:(NSArray*)values;
+
+#define AKDB_UPDATE_BY_ID_IMPL(_prefix,_keyname,_dbname,_tablename) \
+-(BOOL)_prefix##_updateByID:(NSString*)keyValue withAttributes:(NSArray*)attributes withValues:(NSArray*)values \
+{ \
+    return [self updateByID:_keyname withKeyValue:keyValue withDBName:_dbname withTableName:_tablename withAttributes:attributes withValues:values]; \
+}
+
+//查询多个信息记录
+#define AKDB_QUERY_ROWS_BY_ID_INTR(_prefix) \
+- (NSArray *)_prefix##_queryRowsByID:(NSArray *)keyValues;
+
+#define AKDB_QUERY_ROWS_BY_ID_IMPL(_prefix,_model,_dbname,_tablename,_sqlformat) \
+- (NSArray *) _prefix##_queryRowsByID:(NSArray *)keyValues \
+{ \
+    return [self queryRowsByID:keyValues withModel:[_model class] withDBName:_dbname withTableName:_tablename withSqlFormat:_sqlformat]; \
+}
+
+//查询单条信息记录
+#define AKDB_QUERY_ROW_BY_ID_INTR(_prefix , _model) \
+-(_model*) _prefix##_queryRowByID:(NSString*)keyValue;
+
+#define AKDB_QUERY_ROW_BY_ID_IMPL(_prefix,_model,_dbname,_tablename,_sqlformat) \
+-(_model*) _prefix##_queryRowByID:(NSString*)keyValue \
+{ \
+    return (_model*)[self queryRowByID:keyValue withModel:[_model class] withDBName:_dbname withTableName:_tablename withSqlFormat:_sqlformat]; \
+}
+
+//通过主键删除记录
+#define AKDB_DELETE_BY_ID_INTR(_prefix) \
+- (BOOL)_prefix##_deleteByID:(NSString *)keyValue;
+
+#define AKDB_DELETE_BY_ID_IMPL(_prefix,_dbname,_tablename,_sqlformat) \
+- (BOOL)_prefix##_deleteByID:(NSString *)keyValue \
+{ \
+    return [self deleteByID:keyValue withDBName:_dbname withTableName:_tablename withSqlFormat:_sqlformat]; \
+}
+
+
+
+
+
 
 @interface AKDBManager : NSObject
 
@@ -181,6 +245,40 @@ SINGLETON_INTR(AKDBManager)
 -(NSString*)getUpdateSqlFormatWithTableName:(NSString*)tableName withKey:(NSString*)key withKeyValue:(NSString*)value withAttributes:(NSArray*)attributes;
 
 
+/**
+ 插入或者更新整条数据
+
+ @param model 数据Model
+ @param dbname 库名
+ @param tableName 表名
+ @param sqlFormat sql格式化语句
+ @return YES OR NO
+ */
+- (BOOL)insertOrUpdate:(id<AKDataObjectProtocol>)model withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat;
+
+/**
+ 查询多条记录
+
+ @param keyValues 查询多个主键值
+ @param aClass Model类
+ @param dbname 库名
+ @param tableName 表名
+ @param sqlFormat sql格式化语句
+ @return 多条数组记录
+ */
+- (NSArray *)queryRowsByID:(NSArray *)keyValues withModel:(Class)aClass withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat;
+
+/**
+ 查询单条记录
+
+ @param keyValue 主键值
+ @param aClass Model类
+ @param dbname 库名
+ @param tableName 表名
+ @param sqlFormat sql格式化语句
+ @return 单条记录Model
+ */
+-(AKBaseModel*)queryRowByID:(NSString*)keyValue withModel:(Class)aClass withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat;
 
 /**
  更新byID

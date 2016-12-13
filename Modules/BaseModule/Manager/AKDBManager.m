@@ -7,7 +7,7 @@
 //
 
 #import "AKDBManager.h"
-#import "DBBaseObject.h"
+
 #import <objc/runtime.h>
 #import "NSString+Tools.h"
 
@@ -579,6 +579,48 @@ SINGLETON_IMPL(AKDBManager)
 }
 
 /**
+ *  查询多条信息
+ */
+- (NSArray *)queryRowsByID:(NSArray *)keyValues withModel:(Class)aClass withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
+{
+    __block NSMutableArray *data = [[NSMutableArray alloc] init];
+    NSString* allKeys =  [keyValues componentsJoinedByString:@","];
+    NSString *sqlString = [NSString stringWithFormat: sqlFormat, tableName, allKeys];
+    FMDatabaseQueue* queue = [self getQueue:KAK_TLUSER_DBNAME];
+    [self excuteQuery:queue withSql:sqlString resultBlock:^(FMResultSet *retSet) {
+        while ([retSet next]) {
+            AKBaseModel* model = aClass.new;
+            [model resultSetToModel:retSet];
+            [data addObject:model];
+        }
+        [retSet close];
+    }];
+    
+    return data;
+}
+
+
+//查询单条详细信息
+-(AKBaseModel*)queryRowByID:(NSString*)keyValue withModel:(Class)aClass withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
+{
+    NSString *sqlString = [NSString stringWithFormat:sqlFormat, tableName, keyValue];
+    
+    FMDatabaseQueue* queue = [self getQueue:dbname];
+    __block  AKBaseModel* model = nil;
+    
+    [self excuteQuery:queue withSql:sqlString resultBlock:^(FMResultSet *retSet) {
+        if ([retSet next]) {
+            model = aClass.new;
+            [model resultSetToModel:retSet];
+            
+        }
+        [retSet close];
+    }];
+    return model;
+}
+
+
+/**
  *  删除单条会话
  */
 - (BOOL)deleteByID:(NSString *)keyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
@@ -588,6 +630,20 @@ SINGLETON_IMPL(AKDBManager)
     
     BOOL ok = [self excuteSQL:queue withSql:sql, nil];
     return ok;
+}
+
+
+- (BOOL)insertOrUpdate:(id<AKDataObjectProtocol>)model withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
+{
+    NSString *sqlString = [NSString stringWithFormat:sqlFormat, tableName];
+    
+    NSArray *arrPara = [model modelToDBRecord];
+    
+    FMDatabaseQueue* queue = [self getQueue:dbname];
+    
+    BOOL ok = [self excuteSQL:queue withSql:sqlString withArrParameter:arrPara];
+    return ok;
+    
 }
 
 

@@ -6,10 +6,10 @@
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "TLBaseDataModel.h"
+#import "AKBaseModel.h"
 #import "AKUserDetailProtocol.h"
 
-@interface AKUserDetail : TLBaseDataModel<AKUserDetailProtocol>
+@interface AKUserDetail : AKBaseModel<AKUserDetailProtocol>
 
 
 @property (nonatomic, strong) NSString *uid;

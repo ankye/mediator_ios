@@ -95,7 +95,28 @@
                 NSLog(@"request login success %@",response);
             
                 if([response[@"errcode"] integerValue] == 0){
-                    [AK_MEDIATOR user_loginSuccess:response[@"data"]];
+                    NSDictionary* dic = response[@"data"];
+                    AKUser* user = [AK_MEDIATOR user_getUserInfo:dic[@"uid"]];
+                    
+                    user.uid = dic[@"uid"];
+                    user.avatar = dic[@"head"];
+                    user.avatarHD = dic[@"head_640"];
+                    user.lastLoginTime = @([AppHelper getTimestampFromString:dic[@"last_login_time"]]);
+                    user.money = @([dic[@"money"] integerValue]);
+                    user.nickname = dic[@"nickname"];
+                    [GVUserDefaults standardUserDefaults].token = dic[@"token"];
+                    [GVUserDefaults standardUserDefaults].uid = dic[@"uid"];
+                    NSNumber* time = @([dic[@"imtime"] integerValue]);
+                    [GVUserDefaults standardUserDefaults].imTime = time;
+                    [GVUserDefaults standardUserDefaults].imToken = dic[@"imtoken"];
+                    
+                    user.usernum = dic[@"usernum"];
+                    user.detail.sex = [dic[@"sex"] integerValue];
+                    user.detail.address = dic[@"address"];
+                    user.detail.birthday = dic[@"birthday"];
+                    user.detail.hometown = dic[@"hometown"];
+                    
+                    [AK_MEDIATOR user_loginSuccess:user];
                     [self didTappedReturnButton:nil];
                 }else{
                     NSString *message = [NSString stringWithFormat:@"[%@]请重试!\n",response[@"msg"]];

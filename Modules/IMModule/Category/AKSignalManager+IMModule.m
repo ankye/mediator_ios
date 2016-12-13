@@ -13,6 +13,7 @@
 
 GET_SIGNAL_INSTALL(EmptySignal, onIMConnected)
 
+GET_SIGNAL_INSTALL(EmptySignal, onIMDisConnected)
 
 GET_SIGNAL_INSTALL(IMMessageSignal, onIMMessageReceived)
 

@@ -13,46 +13,38 @@
 - (NSString *)chatTimeInfo
 {
     if ([self isToday]) {       // 今天
-        return self.formatHM;
+        return self.jk_hmsFormat;
     }
     else if ([self isYesterday]) {      // 昨天
-        return [NSString stringWithFormat:@"昨天 %@", self.formatHM];
+        return [NSString stringWithFormat:@"昨天 %@", self.jk_formatYMD];
     }
-    else if ([self isThisWeek]){        // 本周
-        return [NSString stringWithFormat:@"%@ %@", self.dayFromWeekday, self.formatHM];
+    else if ([self jk_isThisWeek]){        // 本周
+        return [NSString stringWithFormat:@"%@ %@", self.jk_dayFromWeekday, self.jk_formatYMD];
     }
     else {
-        return [NSString stringWithFormat:@"%@ %@", self.formatYMD, self.formatHM];
+        return [NSString stringWithFormat:@"%@ %@", self.jk_formatYMD, self.jk_hmsFormat];
     }
 }
 
 - (NSString *)conversaionTimeInfo
 {
     if ([self isToday]) {       // 今天
-        return self.formatHM;
+        return self.jk_hmsFormat;
     }
     else if ([self isYesterday]) {      // 昨天
         return @"昨天";
     }
-    else if ([self isThisWeek]){        // 本周
-        return self.dayFromWeekday;
+    else if ([self jk_isThisWeek]){        // 本周
+        return self.jk_dayFromWeekday;
     }
     else {
-        return [self formatYMDWith:@"/"];
+        return [self jk_stringWithFormat:@"/"];
     }
 }
 
 - (NSString *)chatFileTimeInfo
 {
-    if ([self isThisWeek]) {
-        return @"本周";
-    }
-    else if ([self isThisMonth]) {
-        return @"这个月";
-    }
-    else {
-        return [NSString stringWithFormat:@"%ld年%ld月", (long)self.year, (long)self.month];
-    }
+    return [self jk_timeInfo];
 }
 
 @end

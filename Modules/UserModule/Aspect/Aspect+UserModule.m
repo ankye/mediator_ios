@@ -14,8 +14,8 @@
 
 +(void)load
 {
-    [AK_DB_MANAGER createTableUser];
-    [AK_DB_MANAGER createTableUserDetail];
+    [AK_DB_MANAGER user_createTable];
+    [AK_DB_MANAGER user_detail_createTable];
     
 }
 @end

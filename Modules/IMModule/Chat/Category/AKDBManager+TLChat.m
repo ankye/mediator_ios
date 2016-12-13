@@ -11,8 +11,8 @@
 #import "TLDBMessageStoreSQL.h"
 #import "TLDBConversationSQL.h"
 #import "TLConversation.h"
-#import "NSDate+Utilities.h"
-#import "TLDBGroupSQL.h"
+#import "NSDate+JKUtilities.h"
+
 
 #define KAK_TLCHAT_DBNAME @"TLChat"
 
@@ -276,10 +276,10 @@
     NSArray *arrPara = [NSArray arrayWithObjects:
                         TLNoNilString(uid),
                         TLNoNilString(gid),
-                        TLNoNilString(user.userID),
+                        TLNoNilString(user.uid),
                         TLNoNilString(user.username),
-                        TLNoNilString(user.nikeName),
-                        TLNoNilString(user.avatarURL),
+                        TLNoNilString(user.nickname),
+                        TLNoNilString(user.avatar),
                         TLNoNilString(user.remarkName),
                         @"", @"", @"", @"", @"", nil];
     FMDatabaseQueue* queue = [self getQueue:KAK_TLCHAT_DBNAME];
@@ -295,11 +295,11 @@
         // 建立新数据的hash表，用于删除数据库中的过时数据
         NSMutableDictionary *newDataHash = [[NSMutableDictionary alloc] init];
         for (AKUser *user in users) {
-            [newDataHash setValue:@"YES" forKey:user.userID];
+            [newDataHash setValue:@"YES" forKey:user.uid];
         }
         for (AKUser *user in oldData) {
-            if ([newDataHash objectForKey:user.userID] == nil) {
-                BOOL ok = [self deleteGroupMemberForUid:uid gid:gid andFid:user.userID];
+            if ([newDataHash objectForKey:user.uid] == nil) {
+                BOOL ok = [self deleteGroupMemberForUid:uid gid:gid andFid:user.uid];
                 if (!ok) {
                     DDLogError(@"DBError: 删除过期好友失败");
                 }
@@ -324,10 +324,10 @@
     [self excuteQuery:queue withSql:sqlString resultBlock:^(FMResultSet *retSet) {
         while ([retSet next]) {
             AKUser *user = [[AKUser alloc] init];
-            user.userID = [retSet stringForColumn:@"uid"];
+            user.uid = [retSet stringForColumn:@"uid"];
             user.username = [retSet stringForColumn:@"username"];
-            user.nikeName = [retSet stringForColumn:@"nikename"];
-            user.avatarURL = [retSet stringForColumn:@"avatar"];
+            user.nickname = [retSet stringForColumn:@"nikename"];
+            user.avatar = [retSet stringForColumn:@"avatar"];
             user.remarkName = [retSet stringForColumn:@"remark"];
             [data addObject:user];
         }
@@ -435,7 +435,7 @@
     [self excuteQuery:queue withSql:sqlString resultBlock:^(FMResultSet *retSet) {
         while ([retSet next]) {
             TLMessage * message = [self p_createDBMessageByFMResultSet:retSet];
-            if (([message.date isThisWeek] && [lastDate isThisWeek]) || (![message.date isThisWeek] && [lastDate isSameMonthAsDate:message.date])) {
+            if (([message.date jk_isThisWeek] && [lastDate jk_isThisWeek]) || (![message.date jk_isThisWeek] && [lastDate jk_isSameMonthAsDate:message.date])) {
                 [array addObject:message];
             }
             else {

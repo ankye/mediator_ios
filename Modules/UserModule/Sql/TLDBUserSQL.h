@@ -3,7 +3,7 @@
 #ifndef TLDBUSERSQL_H
 #define TLDBUSERSQL_H
 
-#define     TABLE_NAME_USER              @"User"
+#define     TABLE_NAME_USER              @"user"
 
 #define     SQL_CREATE_TABLE_USER        @"CREATE TABLE IF NOT EXISTS %@(\
                                             uid TEXT,\
@@ -28,7 +28,7 @@
                                             ext5 TEXT,\
                                             PRIMARY KEY(uid))"
 
-#define     SQL_INSERT_OR_UPDATE_USER               @"REPLACE INTO %@ ( uid, usernum, username, nickname, avatar, avatorHD,avatarPath,remarkName,money,coin,lastNicknameModifyTime,lastLoginTime,lastPayTime,pinyin,pinyinInitial, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+#define     SQL_INSERT_OR_UPDATE_USER               @"REPLACE INTO %@ ( uid, usernum, username, nickname, avatar, avatarHD,avatarPath,remarkName,money,coin,lastNicknameModifyTime,lastLoginTime,lastPayTime,pinyin,pinyinInitial, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 
 
 

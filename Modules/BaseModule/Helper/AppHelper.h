@@ -68,6 +68,8 @@
 +(NSDate*) getCurrentDate;
 
 +(NSDate*) getDateFromMSTime:(double)time;
+
++(double)getTimestampFromString:(NSString*)string;
 //
 
 /**

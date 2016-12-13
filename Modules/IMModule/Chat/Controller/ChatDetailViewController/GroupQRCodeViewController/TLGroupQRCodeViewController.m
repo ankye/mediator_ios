@@ -9,7 +9,7 @@
 
 #import "TLGroupQRCodeViewController.h"
 #import "TLQRCodeViewController.h"
-#import "NSDate+Utilities.h"
+#import "NSDate+JKUtilities.h"
 #import "UIColor+TLChat.h"
 //@interface TLGroupQRCodeViewController () <TLActionSheetDelegate>
 
@@ -30,8 +30,8 @@
     [self.view addSubview:self.qrCodeVC.view];
     [self addChildViewController:self.qrCodeVC];
     
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_more"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonDown:)];
-    [self.navigationItem setRightBarButtonItem:rightBarButtonItem];
+//    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_more"] style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonDown:)];
+//    [self.navigationItem setRightBarButtonItem:rightBarButtonItem];
 }
 
 - (void)setGroup:(TLGroup *)group
@@ -40,7 +40,7 @@
     self.qrCodeVC.avatarPath = group.groupAvatarPath;
     self.qrCodeVC.username = group.groupName;
     self.qrCodeVC.qrCode = group.groupID;
-    NSDate *date = [NSDate dateWithDaysFromNow:7];
+    NSDate *date = [NSDate jk_dateWithDaysFromNow:7];
     self.qrCodeVC.introduction = [NSString stringWithFormat:@"该二维码7天内(%lu月%lu日前)有效，重新进入将更新", (long)date.month, (long)date.day];
 }
 

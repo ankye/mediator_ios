@@ -7,31 +7,47 @@
 //
 
 #import "AKDBManager.h"
+#import "TLDBUserDetailSQL.h"
+#import "AKUserDetail.h"
 
 @interface AKDBManager (UserDetail)
 
 
-//创建用户Detail表
-- (BOOL)createTableUserDetail;
+AKDB_CREATE_TABLE_INTR(user_detail)
 
-//插入或者更新用户Detail数据
-- (BOOL)insertOrUpdateUserDetail:(id<AKUserDetailProtocol>)user;
+AKDB_INSERT_OR_UPDATE_INTR(user_detail,AKUserDetail)
 
-//更新用户detail信息
--(BOOL)updateUserDetailByID:(NSString*)uid withAttributes:(NSArray*)attributes withValues:(NSArray*)values;
+AKDB_UPDATE_BY_ID_INTR(user_detail)
 
-/**
- *  查询多个用户详细信息
- */
-- (NSArray *)queryUserDetailsByID:(NSArray *)uids;
+AKDB_QUERY_ROWS_BY_ID_INTR(user_detail)
 
-//查询单条User详细信息
--(id<AKUserDetailProtocol>)queryUserDetailByID:(NSString*)uid;
+AKDB_QUERY_ROW_BY_ID_INTR(user_detail, AKUserDetail )
 
-/**
- *  删除单条用户详情
- */
-- (BOOL)deleteUserDetailByID:(NSString *)uid;
+AKDB_DELETE_BY_ID_INTR(user_detail)
 
+
+
+////创建用户Detail表
+//- (BOOL)userDetail_createTable;
+//
+////插入或者更新用户Detail数据
+//- (BOOL)userDetail_insertOrUpdate:(id<AKUserDetailProtocol,AKDataObjectProtocol>)user;
+//
+////更新用户detail信息
+//-(BOOL)userDetail_updateByID:(NSString*)uid withAttributes:(NSArray*)attributes withValues:(NSArray*)values;
+//
+///**
+// *  查询多个用户详细信息
+// */
+//- (NSArray *)userDetail_queryRowsByID:(NSArray *)uids;
+//
+////查询单条User详细信息
+//-(id<AKUserDetailProtocol>)userDetail_queryRowByID:(NSString*)uid;
+//
+///**
+// *  删除单条用户详情
+// */
+//- (BOOL)userDetail_deleteByID:(NSString *)uid;
+//
 
 @end

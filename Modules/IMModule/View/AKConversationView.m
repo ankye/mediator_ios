@@ -9,6 +9,7 @@
 #import "AKConversationView.h"
 #import "AKConversationCell.h"
 #import "TLChatViewController.h"
+#import "AKUser+ChatModel.h"
 
 @implementation AKConversationView
 
@@ -67,20 +68,9 @@
     
     TLChatViewController *chatVC = [TLChatViewController sharedInstance];
  
-    AKUser* user = [AKUser new];
+  
     
-    AKUser* partner = conversation.partner;
-    
-    user.userID = partner.uid;
-    
-    user.username = partner.uid;
-    user.nikeName = partner.nickname;
-   
-    user.avatarURL = partner.avatar;
-    
-    
-    
-    [chatVC setPartner:user];
+    [chatVC setPartner:conversation.partner];
     
     [AK_POPUP_MANAGER push:chatVC];
     

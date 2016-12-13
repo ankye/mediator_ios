@@ -23,7 +23,7 @@ static TLUserHelper *helper;
 
 - (NSString *)userID
 {
-    return self.user.userID;
+    return self.user.uid;
 }
 
 - (id) init
@@ -38,7 +38,7 @@ static TLUserHelper *helper;
 
 -(void)setUserModel:(AKUser*)model
 {
-    self.user = [TLUserHelper userModelToTLUser:model];
+    self.user = model;
  
 }
 

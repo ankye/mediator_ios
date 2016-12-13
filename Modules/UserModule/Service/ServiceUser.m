@@ -24,10 +24,10 @@
 //登陆成功处理逻辑
 -(NSNumber*)loginSuccess:(NSDictionary *)params
 {
-    
-    AKUser* user = [AKUser modelWithDictionary:params];
-    [[AKUserManager sharedInstance] userLogin:user];
-    
+    AKUser* user = params[@"user"];
+    if(user){
+        [[AKUserManager sharedInstance] userLogin:user];
+    }
     return @(YES);
 }
 

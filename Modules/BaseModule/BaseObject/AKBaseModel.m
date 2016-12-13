@@ -11,22 +11,22 @@
 @implementation AKBaseModel
 
 
--(void)setKey:(NSString*)key
+
+
+-(void)fillData:(id<AKDataObjectProtocol>)object
 {
     
 }
 
--(NSString*)getKey
+-(void)resultSetToModel:(FMResultSet *)set
+{
+    
+}
+
+-(NSArray*)modelToDBRecord
 {
     return nil;
 }
-
--(void)fillData:(id<AKDataCenterObjectProtocol>)object
-{
-    
-}
-
-
 - (void)encodeWithCoder:(NSCoder *)aCoder {
     [self modelEncodeWithCoder:aCoder];
 }

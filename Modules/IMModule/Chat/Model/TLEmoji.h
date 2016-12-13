@@ -6,10 +6,10 @@
 //  Copyright © 2016年 李伯坤. All rights reserved.
 //
 
-#import "TLBaseDataModel.h"
+#import "AKBaseModel.h"
 #import "TLChatMacros.h"
 
-@interface TLEmoji : TLBaseDataModel
+@interface TLEmoji : AKBaseModel
 
 @property (nonatomic, assign) TLEmojiType type;
 

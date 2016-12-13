@@ -40,7 +40,7 @@
 - (AKUser *)memberByUserID:(NSString *)uid
 {
     for (AKUser *user in self.users) {
-        if ([user.userID isEqualToString:uid]) {
+        if ([user.uid isEqualToString:uid]) {
             return user;
         }
     }
@@ -51,12 +51,12 @@
 {
     if (_groupName == nil || _groupName.length == 0) {
         for (AKUser *user in self.users) {
-            if (user.showName.length > 0) {
+            if (user.nickname.length > 0) {
                 if (_groupName == nil || _groupName.length <= 0) {
-                    _groupName = user.showName;
+                    _groupName = user.nickname;
                 }
                 else {
-                    _groupName = [NSString stringWithFormat:@"%@,%@", _groupName, user.showName];
+                    _groupName = [NSString stringWithFormat:@"%@,%@", _groupName, user.nickname];
                 }
             }
         }
@@ -67,7 +67,7 @@
 - (NSString *)myNikeName
 {
     if (_myNikeName.length == 0) {
-        _myNikeName = [TLUserHelper sharedHelper].user.showName;
+        _myNikeName = [TLUserHelper sharedHelper].user.nickname;
     }
     return _myNikeName;
 }

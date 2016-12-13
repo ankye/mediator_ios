@@ -34,8 +34,8 @@
 {
     _user = user;
     if (user != nil) {
-        [self.avatarView sd_setImageWithURL:TLURL(user.avatarURL) forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:DEFAULT_AVATAR_PATH]];
-        [self.usernameLabel setText:user.showName];
+        [self.avatarView sd_setImageWithURL:TLURL(user.avatar) forState:UIControlStateNormal placeholderImage:[UIImage imageNamed:DEFAULT_AVATAR_PATH]];
+        [self.usernameLabel setText:user.nickname];
     }
     else {
         [self.avatarView setImage:[UIImage imageNamed:@"chatdetail_add_member"] forState:UIControlStateNormal];

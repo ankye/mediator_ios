@@ -7,7 +7,7 @@
 //
 
 #import "TLConversation.h"
-#import "TLUser+ChatModel.h"
+#import "AKUser+ChatModel.h"
 #import "TLGroup+ChatModel.h"
 
 @interface TLConversation (AKUser)

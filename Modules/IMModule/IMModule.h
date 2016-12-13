@@ -21,7 +21,7 @@
 
 #import "UIImage+Color.h"
 #import "UIView+Frame.h"
-#import "NSDate+Utilities.h"
+#import "NSDate+JKUtilities.h"
 #import "NSString+Tools.h"
 #import "NSString+PinYin.h"
 #import "NSFileManager+TLChat.h"

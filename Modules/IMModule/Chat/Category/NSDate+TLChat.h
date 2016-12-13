@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSDate+Extension.h"
-#import "NSDate+Utilities.h"
+#import "NSDate+JKExtension.h"
+#import "NSDate+JKUtilities.h"
 
 @interface NSDate (TLChat)
 

@@ -52,6 +52,7 @@ PODS:
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
   - GVUserDefaults (1.0.2)
+  - JKCategories (1.4)
   - Masonry (1.0.2)
   - MBProgressHUD (0.9.2)
   - MJExtension (3.0.13)
@@ -98,6 +99,7 @@ DEPENDENCIES:
   - CYLTabBarController
   - FMDB
   - GVUserDefaults
+  - JKCategories
   - Masonry
   - MJExtension
   - MJRefresh
@@ -130,6 +132,7 @@ SPEC CHECKSUMS:
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   GVUserDefaults: 52d48cf8ba578b40a1a76312b196dfc9134ba36a
+  JKCategories: 7575c5e39a54e664c44969ee2fab36d75a9c1d17
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
@@ -146,6 +149,6 @@ SPEC CHECKSUMS:
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 02455f0674262a1037f8adccdfbbed1b24d9af96
+PODFILE CHECKSUM: b33ea3f6b617f77da060908335e13b6664b37614
 
 COCOAPODS: 1.1.1

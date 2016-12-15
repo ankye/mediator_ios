@@ -43,6 +43,27 @@
     return [self updateByID:_keyname withKeyValue:keyValue withDBName:_dbname withTableName:_tablename withAttributes:attributes withValues:values]; \
 }
 
+//通过2联合主键更新单条记录
+#define AKDB_UPDATE_BY_ID_AND_SECOND_INTR(_prefix) \
+-(BOOL)_prefix##_updateByID:(NSString*)keyValue withSecondID:(NSString*)secondKeyValue withAttributes:(NSArray*)attributes withValues:(NSArray*)values;
+
+#define AKDB_UPDATE_BY_ID_AND_SECOND_IMPL(_prefix,_keyname,_secondkeyname,_dbname,_tablename) \
+-(BOOL)_prefix##_updateByID:(NSString*)keyValue withSecondID:(NSString*)secondKeyValue withAttributes:(NSArray*)attributes withValues:(NSArray*)values \
+{ \
+return [self updateByID:_keyname withKeyValue:keyValue withSecondKey:_secondkeyname withSecondKeyValue:secondKeyValue  withDBName:_dbname withTableName:_tablename withAttributes:attributes withValues:values]; \
+}
+
+//通过3联合主键更新单条记录
+#define AKDB_UPDATE_BY_ID_AND_SECOND_AND_THRID_INTR(_prefix) \
+-(BOOL)_prefix##_updateByID:(NSString*)keyValue withSecondID:(NSString*)secondKeyValue withThridID:(NSString*)thridKeyValue withAttributes:(NSArray*)attributes withValues:(NSArray*)values;
+
+#define AKDB_UPDATE_BY_ID_AND_SECOND_AND_THRID_IMPL(_prefix,_keyname,_secondkeyname,_thridkeyname,_dbname,_tablename) \
+-(BOOL)_prefix##_updateByID:(NSString*)keyValue withSecondID:(NSString*)secondKeyValue withThridID:(NSString*)thridKeyValue withAttributes:(NSArray*)attributes withValues:(NSArray*)values \
+{ \
+return [self updateByID: _keyname withKeyValue:keyValue withSecondKey:_secondkeyname withSecondValue:secondKeyValue  withThridKey:_thridkeyname withThridValue:thridKeyValue withDBName:_dbname withTableName:_tableName withAttributes:attributes withValues:values]; \
+}
+
+
 //查询多个信息记录
 #define AKDB_QUERY_ROWS_BY_ID_INTR(_prefix) \
 - (NSArray *)_prefix##_queryRowsByID:(NSArray *)keyValues;
@@ -74,8 +95,25 @@
 }
 
 
+//通过主键删除记录,2联合主键
+#define AKDB_DELETE_BY_ID_AND_SECOND_INTR(_prefix) \
+- (BOOL)_prefix##_deleteByID:(NSString *)keyValue withAnotherID:(NSString*)anotherKeyValue;
 
+#define AKDB_DELETE_BY_ID_AND_SECOND_IMPL(_prefix,_dbname,_tablename,_sqlformat) \
+- (BOOL)_prefix##_deleteByID:(NSString *)keyValue withSecondID:(NSString*)secondKeyValue\
+{ \
+return [self deleteByID:keyValue withSecondKeyValue:anotherKeyValue withDBName:_dbname withTableName:_tablename withSqlFormat:_sqlformat]; \
+}
 
+//通过主键删除记录,3联合主键
+#define AKDB_DELETE_BY_ID_AND_SECOND_ID_AND_THRID_ID_INTR(_prefix) \
+- (BOOL)_prefix##_deleteByID:(NSString *)keyValue withSecondID:(NSString*)secondKeyValue withThridID:(NSString*)thridKeyValue;
+
+#define AKDB_DELETE_BY_ID_AND_SECOND_ID_AND_THRID_ID_IMPL(_prefix,_dbname,_tablename,_sqlformat) \
+- (BOOL)_prefix##_deleteByID:(NSString *)keyValue withSecondID:(NSString*)secondKeyValue withThridID:(NSString*)thridKeyValue \
+{ \
+return [self deleteByID:keyValue withSecondKeyValue:secondKeyValue withThridKeyValue:thridKeyValue withDBName:_dbname withTableName:_tablename withSqlFormat:_sqlformat]; \
+}
 
 
 @interface AKDBManager : NSObject
@@ -292,6 +330,10 @@ SINGLETON_INTR(AKDBManager)
  */
 -(BOOL)updateByID:(NSString*)key withKeyValue:(NSString*)value withDBName:(NSString*)dbname withTableName:(NSString*)tableName withAttributes:(NSArray*)attributes withValues:(NSArray*)values;
 
+-(BOOL)updateByID:(NSString*)key withKeyValue:(NSString*)value withSecondKey:(NSString*)secondKey withSecondKeyValue:(NSString*)secondKeyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withAttributes:(NSArray*)attributes withValues:(NSArray*)values;
+
+-(BOOL)updateByID:(NSString*)key withKeyValue:(NSString*)value withSecondKey:(NSString*)secondKey withSecondValue:(NSString*)secondValue  withThridKey:(NSString*)thridKey withThridValue:(NSString*)thridValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withAttributes:(NSArray*)attributes withValues:(NSArray*)values;
+
 /**
  删除byID
 
@@ -302,6 +344,12 @@ SINGLETON_INTR(AKDBManager)
  @return YES OR NO
  */
 - (BOOL)deleteByID:(NSString *)keyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat;
+
+
+- (BOOL)deleteByID:(NSString *)keyValue withSecondKeyValue:(NSString*)secondKeyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat;
+
+
+- (BOOL)deleteByID:(NSString *)keyValue withSecondKeyValue:(NSString*)secondKeyValue withThridKeyValue:(NSString*)thridKeyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat;
 
 /*
  *  执行带数组参数的sql语句 (增，删，改)

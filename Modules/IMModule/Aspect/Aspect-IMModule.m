@@ -17,7 +17,7 @@
     [AK_DB_MANAGER createConversationTable];
     [AK_DB_MANAGER createChatMessageTable];
     [AK_DB_MANAGER createExpressionGroupTable];
-    [AK_DB_MANAGER createGroupTable];
+  //  [AK_DB_MANAGER createGroupTable];
     
     [TLMessageManager sharedInstance];
     

@@ -9,6 +9,7 @@
 #import "Aspect+UserModule.h"
 #import "AKDBManager+User.h"
 #import "AKDBManager+UserDetail.h"
+#import "AKDBManager+UserGroup.h"
 
 @implementation Aspect_UserModule
 
@@ -16,6 +17,7 @@
 {
     [AK_DB_MANAGER user_createTable];
     [AK_DB_MANAGER user_detail_createTable];
+    [AK_DB_MANAGER user_group_createTable];
     
 }
 @end

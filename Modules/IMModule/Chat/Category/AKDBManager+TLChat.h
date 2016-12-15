@@ -57,18 +57,18 @@
 //GROUP
 ////
 
-- (BOOL)createGroupTable;
-
-- (BOOL)updateGroupsData:(NSArray *)groupData
-                  forUid:(NSString *)uid;
-
-- (BOOL)addGroup:(TLGroup *)group forUid:(NSString *)uid;
-
-
-- (NSMutableArray *)groupsDataByUid:(NSString *)uid;
-
-- (BOOL)deleteGroupByGid:(NSString *)gid forUid:(NSString *)uid;
-
+//- (BOOL)createGroupTable;
+//
+//- (BOOL)updateGroupsData:(NSArray *)groupData
+//                  forUid:(NSString *)uid;
+//
+//- (BOOL)addGroup:(TLGroup *)group forUid:(NSString *)uid;
+//
+//
+//- (NSMutableArray *)groupsDataByUid:(NSString *)uid;
+//
+//- (BOOL)deleteGroupByGid:(NSString *)gid forUid:(NSString *)uid;
+//
 
 
 //chat///////////////

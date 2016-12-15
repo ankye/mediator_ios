@@ -578,6 +578,41 @@ SINGLETON_IMPL(AKDBManager)
     
 }
 
+-(NSString*)getUpdateSqlFormatWithTableName:(NSString*)tableName withKey:(NSString*)key withKeyValue:(NSString*)value withAnotherKey:(NSString*)anotherKey withAnotherKeyValue:(NSString*)anotherKeyValue withAttributes:(NSArray*)attributes
+{
+    NSString* sqlString = [NSString stringWithFormat:@"UPDATE %@ SET ",tableName];
+    
+    NSInteger count = attributes.count;
+    for(NSInteger i=0; i<count; i++){
+        [sqlString stringByAppendingFormat:@" %@ = ?",[attributes objectAtIndex:i]];
+        if(i < count +1){
+            [sqlString stringByAppendingString:@","];
+        }
+    }
+    [sqlString stringByAppendingFormat:@" WHERE %@ = '%@' and %@ = '%@'",key,value,anotherKey,anotherKeyValue];
+    
+    return sqlString;
+    
+}
+
+-(NSString*)getUpdateSqlFormatWithTableName:(NSString*)tableName withKey:(NSString*)key firstValue:(NSString*)firstValue withSecondKey:(NSString*)secondKey withSecondValue:(NSString*)secondValue  withThridKey:(NSString*)thridKey withThridValue:(NSString*)thridValue withAttributes:(NSArray*)attributes
+{
+    NSString* sqlString = [NSString stringWithFormat:@"UPDATE %@ SET ",tableName];
+    
+    NSInteger count = attributes.count;
+    for(NSInteger i=0; i<count; i++){
+        [sqlString stringByAppendingFormat:@" %@ = ?",[attributes objectAtIndex:i]];
+        if(i < count +1){
+            [sqlString stringByAppendingString:@","];
+        }
+    }
+    [sqlString stringByAppendingFormat:@" WHERE %@ = '%@' and %@ = '%@' and %@ = '%@'",key,firstValue,secondKey,secondValue,thridKey,thridValue];
+    
+    return sqlString;
+    
+}
+
+
 /**
  *  查询多条信息
  */
@@ -632,6 +667,31 @@ SINGLETON_IMPL(AKDBManager)
     return ok;
 }
 
+/**
+ *  删除单条会话
+ */
+- (BOOL)deleteByID:(NSString *)keyValue withAnotherKeyValue:(NSString*)anotherKeyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
+{
+    NSString *sql = [NSString stringWithFormat:sqlFormat, tableName, keyValue,anotherKeyValue];
+    FMDatabaseQueue* queue = [self getQueue:dbname];
+    
+    BOOL ok = [self excuteSQL:queue withSql:sql, nil];
+    return ok;
+}
+
+/**
+ *  删除单条会话
+ */
+- (BOOL)deleteByID:(NSString *)keyValue withSecondKeyValue:(NSString*)secondKeyValue withThridKeyValue:(NSString*)thridKeyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
+{
+    NSString *sql = [NSString stringWithFormat:sqlFormat, tableName, keyValue,secondKeyValue,thridKeyValue];
+    FMDatabaseQueue* queue = [self getQueue:dbname];
+    
+    BOOL ok = [self excuteSQL:queue withSql:sql, nil];
+    return ok;
+}
+
+
 
 - (BOOL)insertOrUpdate:(id<AKDataObjectProtocol>)model withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
 {
@@ -658,6 +718,27 @@ SINGLETON_IMPL(AKDBManager)
     
 }
 
+-(BOOL)updateByID:(NSString*)key withKeyValue:(NSString*)value withAnotherKey:(NSString*)anotherKey withAnotherKeyValue:(NSString*)anotherKeyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withAttributes:(NSArray*)attributes withValues:(NSArray*)values
+{
+    NSString* sqlFormat = [self getUpdateSqlFormatWithTableName:tableName withKey:key withKeyValue:value withAnotherKey:anotherKey withAnotherKeyValue:anotherKeyValue withAttributes:attributes];
+    
+    FMDatabaseQueue* queue = [self getQueue:dbname];
+    
+    BOOL ok = [self excuteSQL:queue withSql:sqlFormat withArrParameter:values];
+    return ok;
+    
+}
+
+-(BOOL)updateByID:(NSString*)key firstValue:(NSString*)firstValue withSecondKey:(NSString*)secondKey withSecondValue:(NSString*)secondValue  withThridKey:(NSString*)thridKey withThridValue:(NSString*)thridValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withAttributes:(NSArray*)attributes withValues:(NSArray*)values
+{
+    NSString* sqlFormat = [self getUpdateSqlFormatWithTableName:tableName withKey:key firstValue:firstValue withSecondKey:secondKey withSecondValue:secondValue withThridKey:thridKey withThridValue:thridValue withAttributes:values];
+    
+    FMDatabaseQueue* queue = [self getQueue:dbname];
+    
+    BOOL ok = [self excuteSQL:queue withSql:sqlFormat withArrParameter:values];
+    return ok;
+
+}
 
 - (BOOL)excuteSQL:(FMDatabaseQueue*)queue withSql:(NSString *)sqlString withArrParameter:(NSArray *)arrParameter
 {

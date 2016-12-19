@@ -34,9 +34,9 @@
     AKUser* user = (AKUser*)[AK_DATA_CENTER getObjectFromPool:KAKD_USERModel withKey:uid];
     if(user &&  [AppHelper isNullString: user.uid] ){
         
-        AKUser* tempUser = [AK_DB_MANAGER user_queryRowByID:uid];
+        AKUser* tempUser = [AK_DB_MANAGER user_queryByID:uid];
         if(tempUser){
-            id<AKUserDetailProtocol> detail = [AK_DB_MANAGER user_detail_queryRowByID:uid];
+            id<AKUserDetailProtocol> detail = [AK_DB_MANAGER user_detail_queryByID:uid];
             if(detail != nil && detail.uid != nil){
                 [tempUser.detail fillData:detail];
             }

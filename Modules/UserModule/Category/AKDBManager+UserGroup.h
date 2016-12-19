@@ -16,12 +16,13 @@ AKDB_CREATE_TABLE_INTR(user_group)
 
 AKDB_INSERT_OR_UPDATE_INTR(user_group,AKUserGroup)
 
-AKDB_UPDATE_BY_ID_AND_ANOTHER_ID_INTR(user_group)
+-(BOOL)user_group_updateByID:(NSString*)uid withGid:(NSString*)gid withAttirbutes:(NSDictionary*)attributes;
 
-AKDB_QUERY_ROWS_BY_ID_INTR(user_group)
 
-AKDB_QUERY_ROW_BY_ID_INTR(user_group,AKUserGroup)
+-(AKUserGroup*)user_group_queryByID:(NSString*)uid withGid:(NSString*)gid;
 
-AKDB_DELETE_BY_ID_AND_ANOTHER_ID_INTR(user_group)
+
+-(BOOL)user_group_deleteByUid:(NSString*)uid andGid:(NSString*)gid;
+
 
 @end

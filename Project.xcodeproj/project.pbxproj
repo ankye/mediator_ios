@@ -261,6 +261,11 @@
 		C5A730251DE2BB3400DB2788 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5A730231DE2BB3400DB2788 /* LaunchScreen.storyboard */; };
 		C5A730301DE2BB3500DB2788 /* ProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7302F1DE2BB3500DB2788 /* ProjectTests.m */; };
 		C5A7303B1DE2BB3500DB2788 /* ProjectUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7303A1DE2BB3500DB2788 /* ProjectUITests.m */; };
+		C5B986E31E02A14400AB548A /* res.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B986E21E02A14400AB548A /* res.png */; };
+		C5B987001E02CAAC00AB548A /* AKDBManager+UserGroupMember.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B986FF1E02CAAC00AB548A /* AKDBManager+UserGroupMember.m */; };
+		C5B987031E02CB2600AB548A /* AKUserGroupMember.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B987021E02CB2600AB548A /* AKUserGroupMember.m */; };
+		C5D0BA581E042BB80054DF0E /* UIImage+UIImage_YY.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D0BA571E042BB80054DF0E /* UIImage+UIImage_YY.m */; };
+		C5D0BA5B1E077B4F0054DF0E /* AKResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */; };
 		C5FC0C6F1DFAA1B200159913 /* TLConversation+AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0C6E1DFAA1B200159913 /* TLConversation+AKUser.m */; };
 		C5FC0C9F1DFAC05000159913 /* AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0C9E1DFAC05000159913 /* AKUser.m */; };
 		C5FC0CA91DFAC40F00159913 /* TLUserChatSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0CA31DFAC40F00159913 /* TLUserChatSetting.m */; };
@@ -820,6 +825,16 @@
 		C5A7303A1DE2BB3500DB2788 /* ProjectUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectUITests.m; sourceTree = "<group>"; };
 		C5A7303C1DE2BB3500DB2788 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5A730F31DE2D40900DB2788 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C5B986E21E02A14400AB548A /* res.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = res.png; sourceTree = "<group>"; };
+		C5B986FE1E02CAAC00AB548A /* AKDBManager+UserGroupMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDBManager+UserGroupMember.h"; sourceTree = "<group>"; };
+		C5B986FF1E02CAAC00AB548A /* AKDBManager+UserGroupMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDBManager+UserGroupMember.m"; sourceTree = "<group>"; };
+		C5B987011E02CB2600AB548A /* AKUserGroupMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserGroupMember.h; sourceTree = "<group>"; };
+		C5B987021E02CB2600AB548A /* AKUserGroupMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserGroupMember.m; sourceTree = "<group>"; };
+		C5B987041E02CCEC00AB548A /* AKUserGroupMemberProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserGroupMemberProtocol.h; sourceTree = "<group>"; };
+		C5D0BA561E042BB80054DF0E /* UIImage+UIImage_YY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UIImage_YY.h"; sourceTree = "<group>"; };
+		C5D0BA571E042BB80054DF0E /* UIImage+UIImage_YY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UIImage_YY.m"; sourceTree = "<group>"; };
+		C5D0BA591E077B4F0054DF0E /* AKResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKResourceManager.h; sourceTree = "<group>"; };
+		C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKResourceManager.m; sourceTree = "<group>"; };
 		C5FC0C6D1DFAA1B200159913 /* TLConversation+AKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLConversation+AKUser.h"; sourceTree = "<group>"; };
 		C5FC0C6E1DFAA1B200159913 /* TLConversation+AKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLConversation+AKUser.m"; sourceTree = "<group>"; };
 		C5FC0C7A1DFAA99A00159913 /* TLDBUserSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBUserSQL.h; sourceTree = "<group>"; };
@@ -938,6 +953,8 @@
 				C515AD1F1DF0591100353FC4 /* NSObject+CategoryWithProperty.m */,
 				C52E767D1DF663D2006B2183 /* NSFileManager+Paths.h */,
 				C52E767E1DF663D2006B2183 /* NSFileManager+Paths.m */,
+				C5D0BA561E042BB80054DF0E /* UIImage+UIImage_YY.h */,
+				C5D0BA571E042BB80054DF0E /* UIImage+UIImage_YY.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -981,6 +998,8 @@
 				C515AB5D1DF051BA00353FC4 /* AKTimerManager.m */,
 				C515AD211DF0597B00353FC4 /* AKSignalManager.h */,
 				C515AD221DF0597B00353FC4 /* AKSignalManager.m */,
+				C5D0BA591E077B4F0054DF0E /* AKResourceManager.h */,
+				C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1561,6 +1580,8 @@
 				C5FC0CBC1DFE824000159913 /* AKDBManager+UserDetail.m */,
 				C53DDCC51DFFC4BB00D66D74 /* AKDBManager+UserGroup.h */,
 				C53DDCC61DFFC4BB00D66D74 /* AKDBManager+UserGroup.m */,
+				C5B986FE1E02CAAC00AB548A /* AKDBManager+UserGroupMember.h */,
+				C5B986FF1E02CAAC00AB548A /* AKDBManager+UserGroupMember.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1590,6 +1611,8 @@
 				C5FC0C9E1DFAC05000159913 /* AKUser.m */,
 				C53DDCBF1DFE8E9B00D66D74 /* AKUserDetail.h */,
 				C53DDCC01DFE8E9B00D66D74 /* AKUserDetail.m */,
+				C5B987011E02CB2600AB548A /* AKUserGroupMember.h */,
+				C5B987021E02CB2600AB548A /* AKUserGroupMember.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2316,6 +2339,7 @@
 		C5A730141DE2BB3400DB2788 /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				C5B986E11E02A14400AB548A /* res */,
 				C57DF5E21DFA84EE00D3D154 /* TabBar.plist */,
 				C57DF5DF1DF927F900D3D154 /* BanLiTV.entitlements */,
 				C55CBE1E1DE436350000B1F6 /* Network */,
@@ -2363,14 +2387,22 @@
 			isa = PBXGroup;
 			children = (
 				C52E76C41DF67308006B2183 /* LoggerModule */,
+				C515AB2E1DF051BA00353FC4 /* BaseModule */,
 				C515ACFB1DF0568100353FC4 /* UserModule */,
 				C515ACCD1DF0554400353FC4 /* MapModule */,
 				C515ACAD1DF0552600353FC4 /* LoginModule */,
 				C515AC7C1DF054F500353FC4 /* ShareModule */,
 				C515AB9E1DF0549C00353FC4 /* IMModule */,
-				C515AB2E1DF051BA00353FC4 /* BaseModule */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		C5B986E11E02A14400AB548A /* res */ = {
+			isa = PBXGroup;
+			children = (
+				C5B986E21E02A14400AB548A /* res.png */,
+			);
+			path = res;
 			sourceTree = "<group>";
 		};
 		C5FC0C791DFAA97A00159913 /* Sql */ = {
@@ -2387,6 +2419,7 @@
 		C5FC0CAC1DFAD54B00159913 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				C5B987041E02CCEC00AB548A /* AKUserGroupMemberProtocol.h */,
 				C53DDCCC1DFFCAD900D66D74 /* AKUserGroupProtocol.h */,
 				C5FC0CAD1DFAD54B00159913 /* AKUserChatSettingProtocol.h */,
 				C5FC0CAE1DFAD54B00159913 /* AKUserDetailProtocol.h */,
@@ -2512,6 +2545,7 @@
 				C515AB661DF051BA00353FC4 /* BaseModule.xcassets in Resources */,
 				C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */,
 				C52E78A51DF7F1DD006B2183 /* Friends.xcassets in Resources */,
+				C5B986E31E02A14400AB548A /* res.png in Resources */,
 				C52E78A11DF7F1DD006B2183 /* Chat.xcassets in Resources */,
 				C52E78A01DF7F1DD006B2183 /* SystemEmoji.json in Resources */,
 				C515ACC81DF0552600353FC4 /* LoginModule.xcassets in Resources */,
@@ -2644,6 +2678,7 @@
 				C515AC3F1DF0549C00353FC4 /* AKIMManager.m in Sources */,
 				C515AC521DF0549C00353FC4 /* IMSayMessage.m in Sources */,
 				C515AC4E1DF0549C00353FC4 /* IMRemoveMessage.m in Sources */,
+				C5D0BA581E042BB80054DF0E /* UIImage+UIImage_YY.m in Sources */,
 				C515AB691DF051BA00353FC4 /* AKBaseRequest.m in Sources */,
 				C52E76E51DF698FD006B2183 /* TLUIUtility.m in Sources */,
 				C515ACF61DF0554400353FC4 /* AKUserPinAnnotationView.m in Sources */,
@@ -2724,6 +2759,7 @@
 				C515AC551DF0549C00353FC4 /* BroadcastAnnouncedPush.m in Sources */,
 				C515AD1D1DF0568100353FC4 /* ServiceUser.m in Sources */,
 				C515ACCC1DF0552600353FC4 /* AKLoginButtonGroup.m in Sources */,
+				C5D0BA5B1E077B4F0054DF0E /* AKResourceManager.m in Sources */,
 				C515AC541DF0549C00353FC4 /* IMMessage.m in Sources */,
 				C515AC681DF0549C00353FC4 /* IMRoomSaidPush.m in Sources */,
 				C515AD161DF0568100353FC4 /* Aspect+UserModule.m in Sources */,
@@ -2735,8 +2771,10 @@
 				C515ACCA1DF0552600353FC4 /* ServiceLogin.m in Sources */,
 				C515ACC51DF0552600353FC4 /* AKMediator+LoginModule.m in Sources */,
 				C52E77FC1DF7B831006B2183 /* TLGroupQRCodeViewController.m in Sources */,
+				C5B987031E02CB2600AB548A /* AKUserGroupMember.m in Sources */,
 				C515AC381DF0549C00353FC4 /* AKMediator+IMModule.m in Sources */,
 				C52E76BF1DF66D76006B2183 /* TLImageMessage.m in Sources */,
+				C5B987001E02CAAC00AB548A /* AKDBManager+UserGroupMember.m in Sources */,
 				C515AC791DF0549C00353FC4 /* AKConversationCell.m in Sources */,
 				C52E77951DF7AFFE006B2183 /* TLChatBaseViewController+Proxy.m in Sources */,
 				C5FC0CAB1DFAC40F00159913 /* TLUserSetting.m in Sources */,

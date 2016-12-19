@@ -55,6 +55,9 @@
     BOOL faceNeedChange = NO;
     
     if(user){
+        if(params[@"uid"]){
+            user.uid = params[@"uid"];
+        }
         if(params[@"nickname"]){
             user.nickname = params[@"nickname"];
         }

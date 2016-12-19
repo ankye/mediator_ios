@@ -15,7 +15,7 @@
 
 @property (nonatomic,strong) STPopupController*     popupController;
 @property (nonatomic,strong) NSMutableArray*        popupQueue;
-@property (nonatomic,strong) NSMutableDictionary*   currentAttributes;
+@property (nonatomic,copy) NSMutableDictionary*   currentAttributes;
 
 
 @end

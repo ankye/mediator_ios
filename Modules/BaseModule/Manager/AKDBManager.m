@@ -15,7 +15,6 @@
 @interface AKDBManager()
 
 @property (nonatomic,strong) NSMutableDictionary* dbQueues;
-@property (nonatomic,strong) NSArray* filterAttrs;
 
 @end
 
@@ -23,15 +22,7 @@
 
 SINGLETON_IMPL(AKDBManager)
 
--(id)init
-{
-    self = [super init];
-    if(self){
-        self.filterAttrs = @[@"superclass", @"description", @"debugDescription", @"hash"];
-        
-    }
-    return self;
-}
+
 
 /**
  获取DB操作队列，一个DB一个操作队列
@@ -561,68 +552,25 @@ SINGLETON_IMPL(AKDBManager)
     return ok;
 }
 
--(NSString*)getUpdateSqlFormatWithTableName:(NSString*)tableName withKey:(NSString*)key withKeyValue:(NSString*)value withAttributes:(NSArray*)attributes
+
+
+
+
+-(NSArray*)queryRowsByParams:(NSDictionary*)params withModel:(Class)aClass withDBName:(NSString*)dbname withTableName:(NSString*)tableName
 {
-    NSString* sqlString = [NSString stringWithFormat:@"UPDATE %@ SET ",tableName];
-    
-    NSInteger count = attributes.count;
-    for(NSInteger i=0; i<count; i++){
-        [sqlString stringByAppendingFormat:@" %@ = ?",[attributes objectAtIndex:i]];
-        if(i < count +1){
-            [sqlString stringByAppendingString:@","];
+    NSString* sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE ",tableName];
+    NSArray* keys = params.allKeys;
+    for(NSInteger i=0; i< keys.count; i++){
+        NSString* key = [keys objectAtIndex:i];
+        sql = [sql stringByAppendingFormat:@"%@ = '%@'",key, [params objectForKey:key]];
+        if(i < keys.count -1){
+            sql = [sql stringByAppendingString:@" and "];
         }
     }
-    [sqlString stringByAppendingFormat:@" WHERE %@ = '%@'",key,value];
-   
-    return sqlString;
+     __block NSMutableArray *data = [[NSMutableArray alloc] init];
     
-}
-
--(NSString*)getUpdateSqlFormatWithTableName:(NSString*)tableName withKey:(NSString*)key withKeyValue:(NSString*)value withAnotherKey:(NSString*)anotherKey withAnotherKeyValue:(NSString*)anotherKeyValue withAttributes:(NSArray*)attributes
-{
-    NSString* sqlString = [NSString stringWithFormat:@"UPDATE %@ SET ",tableName];
-    
-    NSInteger count = attributes.count;
-    for(NSInteger i=0; i<count; i++){
-        [sqlString stringByAppendingFormat:@" %@ = ?",[attributes objectAtIndex:i]];
-        if(i < count +1){
-            [sqlString stringByAppendingString:@","];
-        }
-    }
-    [sqlString stringByAppendingFormat:@" WHERE %@ = '%@' and %@ = '%@'",key,value,anotherKey,anotherKeyValue];
-    
-    return sqlString;
-    
-}
-
--(NSString*)getUpdateSqlFormatWithTableName:(NSString*)tableName withKey:(NSString*)key firstValue:(NSString*)firstValue withSecondKey:(NSString*)secondKey withSecondValue:(NSString*)secondValue  withThridKey:(NSString*)thridKey withThridValue:(NSString*)thridValue withAttributes:(NSArray*)attributes
-{
-    NSString* sqlString = [NSString stringWithFormat:@"UPDATE %@ SET ",tableName];
-    
-    NSInteger count = attributes.count;
-    for(NSInteger i=0; i<count; i++){
-        [sqlString stringByAppendingFormat:@" %@ = ?",[attributes objectAtIndex:i]];
-        if(i < count +1){
-            [sqlString stringByAppendingString:@","];
-        }
-    }
-    [sqlString stringByAppendingFormat:@" WHERE %@ = '%@' and %@ = '%@' and %@ = '%@'",key,firstValue,secondKey,secondValue,thridKey,thridValue];
-    
-    return sqlString;
-    
-}
-
-
-/**
- *  查询多条信息
- */
-- (NSArray *)queryRowsByID:(NSArray *)keyValues withModel:(Class)aClass withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
-{
-    __block NSMutableArray *data = [[NSMutableArray alloc] init];
-    NSString* allKeys =  [keyValues componentsJoinedByString:@","];
-    NSString *sqlString = [NSString stringWithFormat: sqlFormat, tableName, allKeys];
     FMDatabaseQueue* queue = [self getQueue:KAK_TLUSER_DBNAME];
-    [self excuteQuery:queue withSql:sqlString resultBlock:^(FMResultSet *retSet) {
+    [self excuteQuery:queue withSql:sql resultBlock:^(FMResultSet *retSet) {
         while ([retSet next]) {
             AKBaseModel* model = aClass.new;
             [model resultSetToModel:retSet];
@@ -630,20 +578,25 @@ SINGLETON_IMPL(AKDBManager)
         }
         [retSet close];
     }];
-    
     return data;
 }
 
-
-//查询单条详细信息
--(AKBaseModel*)queryRowByID:(NSString*)keyValue withModel:(Class)aClass withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
+-(AKBaseModel*)queryRowByParams:(NSDictionary*)params withModel:(Class)aClass withDBName:(NSString*)dbname withTableName:(NSString*)tableName
 {
-    NSString *sqlString = [NSString stringWithFormat:sqlFormat, tableName, keyValue];
+    NSString* sql = [NSString stringWithFormat:@"SELECT * FROM %@ WHERE ",tableName];
+    NSArray* keys = params.allKeys;
+    for(NSInteger i=0; i< keys.count; i++){
+        NSString* key = [keys objectAtIndex:i];
+        sql = [sql stringByAppendingFormat:@" %@ = %@",key, [params objectForKey:key]];
+        if(i < keys.count -1){
+            sql =[sql stringByAppendingString:@" and "];
+        }
+    }
     
-    FMDatabaseQueue* queue = [self getQueue:dbname];
+    FMDatabaseQueue* queue = [self getQueue:KAK_TLUSER_DBNAME];
     __block  AKBaseModel* model = nil;
     
-    [self excuteQuery:queue withSql:sqlString resultBlock:^(FMResultSet *retSet) {
+    [self excuteQuery:queue withSql:sql resultBlock:^(FMResultSet *retSet) {
         if ([retSet next]) {
             model = aClass.new;
             [model resultSetToModel:retSet];
@@ -654,44 +607,54 @@ SINGLETON_IMPL(AKDBManager)
     return model;
 }
 
-
-/**
- *  删除单条会话
- */
-- (BOOL)deleteByID:(NSString *)keyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
+-(BOOL)updateByParams:(NSDictionary*)params withDBName:(NSString*)dbname withTableName:(NSString*)tableName withAttributes:(NSDictionary*)attributes
 {
-    NSString *sql = [NSString stringWithFormat:sqlFormat, tableName, keyValue];
-    FMDatabaseQueue* queue = [self getQueue:dbname];
+    NSString* sql = [NSString stringWithFormat:@"UPDATE %@ SET ",tableName];
     
+    NSArray* attrKeys = attributes.allKeys;
+    for(NSInteger i=0; i< attrKeys.count; i++){
+        NSString* key = [attrKeys objectAtIndex:i];
+        sql = [sql stringByAppendingFormat:@"%@ = '%@'",key, [attributes objectForKey:key]];
+        if(i < attrKeys.count -1){
+            sql = [sql stringByAppendingString:@" , "];
+        }else{
+            sql = [sql stringByAppendingString:@" WHERE "];
+        }
+    }
+    
+    NSArray* keys = params.allKeys;
+    for(NSInteger i=0; i< keys.count; i++){
+        NSString* key = [keys objectAtIndex:i];
+        sql = [sql stringByAppendingFormat:@"%@ = '%@'",key, [params objectForKey:key]];
+        if(i < keys.count -1){
+            sql = [sql stringByAppendingString:@" and "];
+        }
+    }
+    
+    FMDatabaseQueue* queue = [self getQueue:dbname];
     BOOL ok = [self excuteSQL:queue withSql:sql, nil];
     return ok;
-}
-
-/**
- *  删除单条会话
- */
-- (BOOL)deleteByID:(NSString *)keyValue withAnotherKeyValue:(NSString*)anotherKeyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
-{
-    NSString *sql = [NSString stringWithFormat:sqlFormat, tableName, keyValue,anotherKeyValue];
-    FMDatabaseQueue* queue = [self getQueue:dbname];
     
-    BOOL ok = [self excuteSQL:queue withSql:sql, nil];
-    return ok;
-}
-
-/**
- *  删除单条会话
- */
-- (BOOL)deleteByID:(NSString *)keyValue withSecondKeyValue:(NSString*)secondKeyValue withThridKeyValue:(NSString*)thridKeyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
-{
-    NSString *sql = [NSString stringWithFormat:sqlFormat, tableName, keyValue,secondKeyValue,thridKeyValue];
-    FMDatabaseQueue* queue = [self getQueue:dbname];
-    
-    BOOL ok = [self excuteSQL:queue withSql:sql, nil];
-    return ok;
 }
 
 
+
+-(BOOL) deleteByParams:(NSDictionary*)params withDBName:(NSString*)dbname withTableName:(NSString*)tableName
+{
+    NSString* sql = [NSString stringWithFormat:@"delete from %@ where ",tableName];
+    NSArray* keys = params.allKeys;
+    for(NSInteger i=0; i< keys.count; i++){
+        NSString* key = [keys objectAtIndex:i];
+        sql = [sql stringByAppendingFormat:@"%@ = '%@'",key, [params objectForKey:key]];
+        if(i < keys.count -1){
+            sql = [sql stringByAppendingString:@" and "];
+        }
+    }
+    
+    FMDatabaseQueue* queue = [self getQueue:dbname];
+    BOOL ok = [self excuteSQL:queue withSql:sql, nil];
+    return ok;
+}
 
 - (BOOL)insertOrUpdate:(id<AKDataObjectProtocol>)model withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat
 {
@@ -707,38 +670,6 @@ SINGLETON_IMPL(AKDBManager)
 }
 
 
--(BOOL)updateByID:(NSString*)key withKeyValue:(NSString*)value withDBName:(NSString*)dbname withTableName:(NSString*)tableName withAttributes:(NSArray*)attributes withValues:(NSArray*)values
-{
-    NSString* sqlFormat = [self getUpdateSqlFormatWithTableName:tableName withKey:key withKeyValue:value withAttributes:attributes];
-    
-    FMDatabaseQueue* queue = [self getQueue:dbname];
-    
-    BOOL ok = [self excuteSQL:queue withSql:sqlFormat withArrParameter:values];
-    return ok;
-    
-}
-
--(BOOL)updateByID:(NSString*)key withKeyValue:(NSString*)value withAnotherKey:(NSString*)anotherKey withAnotherKeyValue:(NSString*)anotherKeyValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withAttributes:(NSArray*)attributes withValues:(NSArray*)values
-{
-    NSString* sqlFormat = [self getUpdateSqlFormatWithTableName:tableName withKey:key withKeyValue:value withAnotherKey:anotherKey withAnotherKeyValue:anotherKeyValue withAttributes:attributes];
-    
-    FMDatabaseQueue* queue = [self getQueue:dbname];
-    
-    BOOL ok = [self excuteSQL:queue withSql:sqlFormat withArrParameter:values];
-    return ok;
-    
-}
-
--(BOOL)updateByID:(NSString*)key firstValue:(NSString*)firstValue withSecondKey:(NSString*)secondKey withSecondValue:(NSString*)secondValue  withThridKey:(NSString*)thridKey withThridValue:(NSString*)thridValue withDBName:(NSString*)dbname withTableName:(NSString*)tableName withAttributes:(NSArray*)attributes withValues:(NSArray*)values
-{
-    NSString* sqlFormat = [self getUpdateSqlFormatWithTableName:tableName withKey:key firstValue:firstValue withSecondKey:secondKey withSecondValue:secondValue withThridKey:thridKey withThridValue:thridValue withAttributes:values];
-    
-    FMDatabaseQueue* queue = [self getQueue:dbname];
-    
-    BOOL ok = [self excuteSQL:queue withSql:sqlFormat withArrParameter:values];
-    return ok;
-
-}
 
 - (BOOL)excuteSQL:(FMDatabaseQueue*)queue withSql:(NSString *)sqlString withArrParameter:(NSArray *)arrParameter
 {

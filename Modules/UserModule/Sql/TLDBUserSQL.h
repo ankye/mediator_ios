@@ -32,11 +32,8 @@
 
 
 
-#define     SQL_SELECT_USER_ROW              @"SELECT * FROM %@ WHERE uid = %@"
 
-#define     SQL_SELECT_USER_ROWS              @"SELECT * FROM %@ WHERE uid IN (%@)"
 
-#define     SQL_DELETE_USER               @"DELETE FROM %@ WHERE uid = '%@'"
 
 #endif /* TLDBUSERSQL_H */
 

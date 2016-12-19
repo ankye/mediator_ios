@@ -26,11 +26,7 @@
 
 #define     SQL_INSERT_OR_UPDATE_GROUP                @"REPLACE INTO %@ ( uid, gid, name, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )"
 
-#define     SQL_SELECT_USER_GROUPS               @"SELECT * FROM %@ WHERE uid = '%@'"
 
-#define     SQL_SELECT_USER_GROUP               @"SELECT * FROM %@ WHERE uid = '%@' AND gid= '%@'"
-
-#define     SQL_DELETE_GROUP                @"DELETE FROM %@ WHERE uid = '%@' and gid = '%@'"
 
 
 

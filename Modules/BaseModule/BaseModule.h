@@ -20,6 +20,9 @@
 #import "AKBaseViewController.h"
 #import "AKBaseModel.h"
 #import "AKDataCenter.h"
+#import "AKResourceManager.h"
+
+
 #import "AKRequestManager.h"
 #import "AKPopupManager.h"
 #import "AKMediator.h"

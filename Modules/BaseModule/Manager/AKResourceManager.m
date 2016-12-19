@@ -7,57 +7,57 @@
 //
 
 #import "AKResourceManager.h"
-@interface AKResourceManager()
 
-@property (nonatomic,strong)NSMutableDictionary* imageDic;
+static NSMutableDictionary  *_imageCacheDic;
 
-@end
+
 
 @implementation AKResourceManager
 
--(id)init
++ (void)initialize
 {
-    if(self=[super init]){
-        _imageDic = [[NSMutableDictionary alloc] init];
-    }
-    return self;
+    _imageCacheDic = [NSMutableDictionary dictionary];
 }
 
-
-SINGLETON_IMPL(AKResourceManager)
-
--(void)removeUnusedResource
++(void)removeUnusedResource
 {
     // 由于遍历键值对时候不能做添加和删除操作, 所以把要删除的key放到一个数组中
     NSMutableArray *keyArr = [NSMutableArray array];
-    [self.imageDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, NSObject * _Nonnull obj, BOOL * _Nonnull stop) {
-        NSInteger count = [self retainCount:obj];
+    [_imageCacheDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, NSObject * _Nonnull obj, BOOL * _Nonnull stop) {
+        NSInteger count = CFGetRetainCount((__bridge CFTypeRef)obj);
+
         if(count == 2) {// 字典持有 + obj参数持有 = 2
             [keyArr addObject:key];
         }
     }];
     [keyArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [self.imageDic removeObjectForKey:obj];
+        DDLogInfo(@"remove Unused image %@",obj);
+        [_imageCacheDic removeObjectForKey:obj];
+        obj = nil;
     }];
-}
-
-- (NSUInteger)retainCount:(NSObject*)obj {
-    return [[obj valueForKey:@"retainCount"] unsignedLongValue];
+    
 }
 
 
-- (void)weak_setObject:(id)anObject forKey:(NSString *)aKey {
-    [self.imageDic setObject:makeWeakReference(anObject) forKey:aKey];
-}
-
-- (void)weak_setObjectWithDictionary:(NSDictionary *)dic {
-    for (NSString *key in dic.allKeys) {
-        [self.imageDic setObject:makeWeakReference(dic[key]) forKey:key];
++(UIImage*)imageNamed:(NSString*)name
+{
+    UIImage* image = [_imageCacheDic objectForKey:name];
+    
+    if(image == nil){
+      
+        image = [YYImage imageNamed:name];
+        if(image){
+            [_imageCacheDic setObject:image forKey:name];
+        }
+        
     }
-}
-
-- (id)weak_getObjectForKey:(NSString *)key {
-    return weakReferenceNonretainedObjectValue(self.imageDic[key]);
+    
+    //.xcassets里面的资源尝试获取
+    if(image == nil){
+        image = [UIImage imageNamed:name];
+    }
+    return image;
+    
 }
 
 @end

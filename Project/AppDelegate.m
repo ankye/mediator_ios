@@ -10,6 +10,7 @@
 #import "AKSignalManager+MapModule.h"
 #import "AKSignalManager+UserModule.h"
 #import "AKTabbarControllerFactory.h"
+#import "ViewController.h"
 
 @implementation AppDelegate
 
@@ -20,17 +21,9 @@
     if( [super application:application didFinishLaunchingWithOptions:launchOptions] ){
         
         [AK_MEDIATOR updateAppScheme:@"banliapp"];
-        double time1 = [AppHelper getCurrentMSTime];
         
-        for(NSInteger i=0; i<1000;i++){
-            
-            //UIImage *image = [UIImage imageNamed:@"res.png"]; cost 307.000000 ms
-            UIImage *image = [YYImage imageNamed:@"res.png"];
-        }
-        double time2 = [AppHelper getCurrentMSTime];
-        
-        NSLog(@"cost %f ms",time2 - time1);
-        
+ 
+       
         
 //        UIViewController *controller = [AK_MEDIATOR map_viewController];
 //        UINavigationController* navigationController = [[UINavigationController alloc] initWithRootViewController:controller];

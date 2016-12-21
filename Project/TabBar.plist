@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>消息</string>
+		<string>新闻</string>
 		<key>normal</key>
 		<string>tabbar_mainframe</string>
 		<key>selected</key>
@@ -14,9 +14,9 @@
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>TLConversationViewController</string>
+		<string>AKNewsViewController</string>
 		<key>navigationController</key>
-		<string>UINavigationController</string>
+		<string></string>
 	</dict>
 	<dict>
 		<key>title</key>

@@ -15,6 +15,9 @@ target 'Project' do
         pod 'AFMInfoBanner'
         pod 'ReactiveObjC'
         pod 'JKCategories'
+        pod 'UberSignals'
+        pod 'SIAlertView'        
+        pod 'M13BadgeView'
         
         #map Module
         pod 'AMapFoundation'
@@ -35,6 +38,11 @@ target 'Project' do
         
         #IM Module
         pod 'SocketRocket'
+        
+        #Wallpaper Module
+        pod 'CHTCollectionViewWaterfallLayout'
+
+        
         pod 'MJRefresh'
         pod 'SDWebImage'
         pod 'CocoaLumberjack'
@@ -44,5 +52,5 @@ target 'Project' do
         pod 'SVProgressHUD'
         pod 'BlocksKit'
 
-        pod 'UberSignals'
+
 end

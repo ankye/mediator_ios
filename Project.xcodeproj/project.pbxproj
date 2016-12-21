@@ -250,7 +250,12 @@
 		C53DDCC11DFE8E9B00D66D74 /* AKUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC01DFE8E9B00D66D74 /* AKUserDetail.m */; };
 		C53DDCC71DFFC4BB00D66D74 /* AKDBManager+UserGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC61DFFC4BB00D66D74 /* AKDBManager+UserGroup.m */; };
 		C53DDCCA1DFFC50A00D66D74 /* AKUserGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC91DFFC50A00D66D74 /* AKUserGroup.m */; };
+		C55A770D1E090847002E164A /* HSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A770A1E090847002E164A /* HSelectionList.m */; };
+		C55A77101E090D3A002E164A /* AKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A770F1E090D3A002E164A /* AKNewsViewController.m */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
+		C5660E361E09578A000BF5E3 /* HSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E331E09578A000BF5E3 /* HSelectionListCustomViewCell.m */; };
+		C5660E371E09578A000BF5E3 /* HSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E351E09578A000BF5E3 /* HSelectionListLabelCell.m */; };
+		C5660E3A1E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E391E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m */; };
 		C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57DF5E21DFA84EE00D3D154 /* TabBar.plist */; };
 		C57DF5E91DFA9DF900D3D154 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C57DF5E81DFA9DF900D3D154 /* HexColor.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
@@ -800,8 +805,20 @@
 		C53DDCC81DFFC50A00D66D74 /* AKUserGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserGroup.h; sourceTree = "<group>"; };
 		C53DDCC91DFFC50A00D66D74 /* AKUserGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserGroup.m; sourceTree = "<group>"; };
 		C53DDCCC1DFFCAD900D66D74 /* AKUserGroupProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserGroupProtocol.h; sourceTree = "<group>"; };
+		C55A77041E090847002E164A /* HSelectionListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListCell.h; sourceTree = "<group>"; };
+		C55A77091E090847002E164A /* HSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionList.h; sourceTree = "<group>"; };
+		C55A770A1E090847002E164A /* HSelectionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSelectionList.m; sourceTree = "<group>"; };
+		C55A770E1E090D3A002E164A /* AKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKNewsViewController.h; sourceTree = "<group>"; };
+		C55A770F1E090D3A002E164A /* AKNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKNewsViewController.m; sourceTree = "<group>"; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
+		C5660E321E09578A000BF5E3 /* HSelectionListCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListCustomViewCell.h; sourceTree = "<group>"; };
+		C5660E331E09578A000BF5E3 /* HSelectionListCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSelectionListCustomViewCell.m; sourceTree = "<group>"; };
+		C5660E341E09578A000BF5E3 /* HSelectionListLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListLabelCell.h; sourceTree = "<group>"; };
+		C5660E351E09578A000BF5E3 /* HSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSelectionListLabelCell.m; sourceTree = "<group>"; };
+		C5660E381E096EB8000BF5E3 /* GVUserDefaults+NewsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+NewsModule.h"; sourceTree = "<group>"; };
+		C5660E391E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+NewsModule.m"; sourceTree = "<group>"; };
+		C5660E3B1E0972D0000BF5E3 /* HSelectionListProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListProtocol.h; sourceTree = "<group>"; };
 		C57DF5DF1DF927F900D3D154 /* BanLiTV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BanLiTV.entitlements; sourceTree = "<group>"; };
 		C57DF5E21DFA84EE00D3D154 /* TabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TabBar.plist; sourceTree = "<group>"; };
 		C57DF5E71DFA9DF900D3D154 /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
@@ -832,6 +849,8 @@
 		C5D0BA591E077B4F0054DF0E /* AKResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKResourceManager.h; sourceTree = "<group>"; };
 		C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKResourceManager.m; sourceTree = "<group>"; };
 		C5D0BA5F1E0788B80054DF0E /* BaseModuleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModuleDefine.h; sourceTree = "<group>"; };
+		C5D0BA711E07D8180054DF0E /* NewsModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsModule.h; sourceTree = "<group>"; };
+		C5D0BA731E08C48E0054DF0E /* WallpaperModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WallpaperModule.h; sourceTree = "<group>"; };
 		C5FC0C6D1DFAA1B200159913 /* TLConversation+AKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLConversation+AKUser.h"; sourceTree = "<group>"; };
 		C5FC0C6E1DFAA1B200159913 /* TLConversation+AKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLConversation+AKUser.m"; sourceTree = "<group>"; };
 		C5FC0C7A1DFAA99A00159913 /* TLDBUserSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBUserSQL.h; sourceTree = "<group>"; };
@@ -1012,6 +1031,7 @@
 		C515AB621DF051BA00353FC4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C55A77021E090847002E164A /* HSelectionList */,
 				C515AB631DF051BA00353FC4 /* Tabbar */,
 			);
 			path = View;
@@ -2299,6 +2319,89 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		C55A76F31E090439002E164A /* Aspect */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Aspect;
+			sourceTree = "<group>";
+		};
+		C55A76F41E090439002E164A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C5660E381E096EB8000BF5E3 /* GVUserDefaults+NewsModule.h */,
+				C5660E391E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C55A76F51E090439002E164A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C55A770E1E090D3A002E164A /* AKNewsViewController.h */,
+				C55A770F1E090D3A002E164A /* AKNewsViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C55A76F61E090439002E164A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C55A76F71E090439002E164A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C55A76F81E090439002E164A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C55A76F91E090439002E164A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C55A76FA1E090439002E164A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C55A77021E090847002E164A /* HSelectionList */ = {
+			isa = PBXGroup;
+			children = (
+				C55A77031E090847002E164A /* Cells */,
+				C55A77091E090847002E164A /* HSelectionList.h */,
+				C55A770A1E090847002E164A /* HSelectionList.m */,
+				C5660E3B1E0972D0000BF5E3 /* HSelectionListProtocol.h */,
+			);
+			path = HSelectionList;
+			sourceTree = "<group>";
+		};
+		C55A77031E090847002E164A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C5660E321E09578A000BF5E3 /* HSelectionListCustomViewCell.h */,
+				C5660E331E09578A000BF5E3 /* HSelectionListCustomViewCell.m */,
+				C5660E341E09578A000BF5E3 /* HSelectionListLabelCell.h */,
+				C5660E351E09578A000BF5E3 /* HSelectionListLabelCell.m */,
+				C55A77041E090847002E164A /* HSelectionListCell.h */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		C55CBE1E1DE436350000B1F6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -2381,6 +2484,8 @@
 		C5A730481DE2BD4200DB2788 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C5D0BA721E08C4800054DF0E /* WallpaperModule */,
+				C5D0BA701E07D80D0054DF0E /* NewsModule */,
 				C52E76C41DF67308006B2183 /* LoggerModule */,
 				C515AB2E1DF051BA00353FC4 /* BaseModule */,
 				C515ACFB1DF0568100353FC4 /* UserModule */,
@@ -2398,6 +2503,30 @@
 				C5B986E21E02A14400AB548A /* res.png */,
 			);
 			path = res;
+			sourceTree = "<group>";
+		};
+		C5D0BA701E07D80D0054DF0E /* NewsModule */ = {
+			isa = PBXGroup;
+			children = (
+				C55A76F31E090439002E164A /* Aspect */,
+				C55A76F41E090439002E164A /* Category */,
+				C55A76F51E090439002E164A /* Controller */,
+				C55A76F61E090439002E164A /* Manager */,
+				C55A76F71E090439002E164A /* Model */,
+				C55A76F81E090439002E164A /* Network */,
+				C55A76F91E090439002E164A /* Service */,
+				C55A76FA1E090439002E164A /* View */,
+				C5D0BA711E07D8180054DF0E /* NewsModule.h */,
+			);
+			path = NewsModule;
+			sourceTree = "<group>";
+		};
+		C5D0BA721E08C4800054DF0E /* WallpaperModule */ = {
+			isa = PBXGroup;
+			children = (
+				C5D0BA731E08C48E0054DF0E /* WallpaperModule.h */,
+			);
+			path = WallpaperModule;
 			sourceTree = "<group>";
 		};
 		C5FC0C791DFAA97A00159913 /* Sql */ = {
@@ -2651,6 +2780,7 @@
 				C52E77091DF6C326006B2183 /* Aspect-IMModule.m in Sources */,
 				C52E76E11DF698A2006B2183 /* TLSettingGroup.m in Sources */,
 				C52E77991DF7AFFE006B2183 /* TLImageExpressionDisplayView.m in Sources */,
+				C55A770D1E090847002E164A /* HSelectionList.m in Sources */,
 				C52E77AC1DF7AFFE006B2183 /* TLEmojiGroupCell.m in Sources */,
 				C53DDCCA1DFFC50A00D66D74 /* AKUserGroup.m in Sources */,
 				C515AD201DF0591100353FC4 /* NSObject+CategoryWithProperty.m in Sources */,
@@ -2701,6 +2831,7 @@
 				C5FC0CBD1DFE824000159913 /* AKDBManager+UserDetail.m in Sources */,
 				C52E77B91DF7AFFE006B2183 /* TLChatViewController+Delegate.m in Sources */,
 				C515AC601DF0549C00353FC4 /* IMRoomJoinedPush.m in Sources */,
+				C5660E361E09578A000BF5E3 /* HSelectionListCustomViewCell.m in Sources */,
 				C52E779B1DF7AFFE006B2183 /* TLTextDisplayView.m in Sources */,
 				C52E77B71DF7AFFE006B2183 /* TLMoreKeyboard.m in Sources */,
 				C52E77931DF7AFFE006B2183 /* TLChatBaseViewController+ChatBar.m in Sources */,
@@ -2744,6 +2875,7 @@
 				C515AB761DF051BA00353FC4 /* AKMediator.m in Sources */,
 				C52E779F1DF7AFFE006B2183 /* TLMessageImageView.m in Sources */,
 				C52E77941DF7AFFE006B2183 /* TLChatBaseViewController+MessageDisplayView.m in Sources */,
+				C5660E3A1E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m in Sources */,
 				C52E77D61DF7B547006B2183 /* TLMessageManager+MessageRecord.m in Sources */,
 				C52E783F1DF7B970006B2183 /* NSDate+TLChat.m in Sources */,
 				C52E76B81DF66D75006B2183 /* NSFileManager+TLChat.m in Sources */,
@@ -2765,6 +2897,7 @@
 				C515ACCA1DF0552600353FC4 /* ServiceLogin.m in Sources */,
 				C515ACC51DF0552600353FC4 /* AKMediator+LoginModule.m in Sources */,
 				C52E77FC1DF7B831006B2183 /* TLGroupQRCodeViewController.m in Sources */,
+				C5660E371E09578A000BF5E3 /* HSelectionListLabelCell.m in Sources */,
 				C5B987031E02CB2600AB548A /* AKUserGroupMember.m in Sources */,
 				C515AC381DF0549C00353FC4 /* AKMediator+IMModule.m in Sources */,
 				C52E76BF1DF66D76006B2183 /* TLImageMessage.m in Sources */,
@@ -2782,6 +2915,7 @@
 				C515AC561DF0549C00353FC4 /* IMLivePingMessage.m in Sources */,
 				C515AB6F1DF051BA00353FC4 /* NSString+Tools.m in Sources */,
 				C52E77FA1DF7B831006B2183 /* TLChatFileHeaderView.m in Sources */,
+				C55A77101E090D3A002E164A /* AKNewsViewController.m in Sources */,
 				C515AB6A1DF051BA00353FC4 /* AKBaseViewController.m in Sources */,
 				C52E76C31DF66D76006B2183 /* TLVoiceMessage.m in Sources */,
 				C515ACF51DF0554400353FC4 /* ServiceMap.m in Sources */,

@@ -31,7 +31,7 @@ static NSMutableDictionary  *_imageCacheDic;
         }
     }];
     [keyArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        DDLogInfo(@"remove Unused image %@",obj);
+        DDLogInfo(@"Remove Unused %@",obj);
         [_imageCacheDic removeObjectForKey:obj];
         obj = nil;
     }];

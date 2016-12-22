@@ -38,7 +38,7 @@ SINGLETON_INTR(AKPopupManager)
  */
 -(void)showController:(UIViewController*)controller withAttributes:(NSMutableDictionary*)attributes;
 
--(void)hide;
+-(void)hidden;
 
 -(void)push:(UIViewController*)controller;
 

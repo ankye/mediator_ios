@@ -7,7 +7,6 @@
 //
 
 #import "AKBaseViewController.h"
-
 @interface AKNewsViewController : UIViewController
 
 @end

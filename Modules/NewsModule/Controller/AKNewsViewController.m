@@ -9,12 +9,14 @@
 #import "AKNewsViewController.h"
 #import "GVUserDefaults+NewsModule.h"
 
+
 #import "HSelectionList.h"
 
 @interface AKNewsViewController () <HSelectionListDelegate, HSelectionListDataSource>
 
 @property (nonatomic, strong) HSelectionList *hSelectionList;
-@property (nonatomic, strong) NSMutableArray *hSelectionChannels;
+@property (nonatomic, strong) NSMutableArray *hSelectedChannels;
+@property (nonatomic, strong) NSMutableArray *hUnSelectedChannels;
 
 
 
@@ -28,18 +30,36 @@
     [self setupHSelectionList];
 }
 
--(NSMutableArray*)hSelectionChannels
+
+
+
+-(NSMutableArray*)hUnSelectedChannels
 {
-    if(_hSelectionChannels == nil){
-        _hSelectionChannels = [GVUserDefaults standardUserDefaults].hSelectionChannels;
+    if(_hUnSelectedChannels == nil){
+        _hUnSelectedChannels = [GVUserDefaults standardUserDefaults].hUnSelectedChannels;
         
-        if(_hSelectionChannels != nil){
-            _hSelectionChannels =  [[NSMutableArray alloc] initWithObjects:@"新闻",@"美图",@"美女",@"a1",@"a2",@"a3",@"a4",@"a5",@"a6",@"a7",@"a8",@"a9",@"b4",@"b5",@"b6",@"b7",@"b8",@"b9" ,nil];
-            [GVUserDefaults standardUserDefaults].hSelectionChannels = _hSelectionChannels;
+        if(_hUnSelectedChannels == nil){
+            _hUnSelectedChannels =  [[NSMutableArray alloc] initWithObjects:@"新闻1",@"美图2",@"美女1",nil];
+            [GVUserDefaults standardUserDefaults].hUnSelectedChannels = _hUnSelectedChannels;
         }
     }
     
-    return _hSelectionChannels;
+    return _hUnSelectedChannels;
+
+}
+
+-(NSMutableArray*)hSelectionChannels
+{
+    if(_hSelectedChannels == nil){
+        _hSelectedChannels = [GVUserDefaults standardUserDefaults].hSelectedChannels;
+        
+        if(_hSelectedChannels == nil){
+            _hSelectedChannels =  [[NSMutableArray alloc] initWithObjects:@"新闻",@"美图",@"美女",@"a1",@"a2",@"a3",@"a4",@"a5",@"a6",@"a7",@"a8",@"a9",@"b4",@"b5",@"b6",@"b7",@"b8",@"b9" ,nil];
+            [GVUserDefaults standardUserDefaults].hSelectedChannels = _hSelectedChannels;
+        }
+    }
+    
+    return _hSelectedChannels;
 }
 
 -(void)setupHSelectionList
@@ -71,8 +91,7 @@
 
 - (void)selectionList:(id<HSelectionListProtocol>)selectionList didSelectButtonWithIndex:(NSInteger)index {
     // update the view for the corresponding index
-    NSLog(@"selection list %ld",index);
-    
+ 
 }
 
 @end

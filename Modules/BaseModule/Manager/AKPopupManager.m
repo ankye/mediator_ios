@@ -82,7 +82,7 @@ SINGLETON_IMPL(AKPopupManager)
         [self.popupController.backgroundView setBackgroundColor:[UIColor clearColor]];
     }
     
-    [self.popupController.backgroundView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(backgroundViewDidTap)]];
+    [self.popupController.backgroundView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidden)]];
     
     if([attributes[AK_Popup_ShowNav] boolValue]) {
         
@@ -131,17 +131,14 @@ SINGLETON_IMPL(AKPopupManager)
 }
 
 
--(void)backgroundViewDidTap
+-(void)hidden
 {
     [self.popupController popViewControllerAnimated:YES]; // Popup will be dismissed if there is only one view controller in the popup view controller stack
     [self.popupController dismiss];
     self.popupController = nil;
 }
 
--(void)hide
-{
-    
-}
+
 
 - (NSTimeInterval)popupControllerTransitionDuration:(STPopupControllerTransitioningContext *)context
 {

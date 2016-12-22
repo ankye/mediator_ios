@@ -96,9 +96,10 @@
             
                 if([response[@"errcode"] integerValue] == 0){
                     NSDictionary* dic = response[@"data"];
-                    AKUser* user = [AK_MEDIATOR user_getUserInfo:dic[@"uid"]];
+                    NSString* uid = [NSString stringWithFormat:@"%@",dic[@"uid"]];
+                    AKUser* user = [AK_MEDIATOR user_getUserInfo:uid];
                     
-                    user.uid = dic[@"uid"];
+                    user.uid = uid;
                     user.avatar = dic[@"head"];
                     user.avatarHD = dic[@"head_640"];
                     user.lastLoginTime = @([AppHelper getTimestampFromString:dic[@"last_login_time"]]);

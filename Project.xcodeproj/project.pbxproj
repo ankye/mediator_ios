@@ -256,6 +256,8 @@
 		C5660E361E09578A000BF5E3 /* HSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E331E09578A000BF5E3 /* HSelectionListCustomViewCell.m */; };
 		C5660E371E09578A000BF5E3 /* HSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E351E09578A000BF5E3 /* HSelectionListLabelCell.m */; };
 		C5660E3A1E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E391E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m */; };
+		C5660E481E0A7A10000BF5E3 /* NewsModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5660E471E0A7A10000BF5E3 /* NewsModule.xcassets */; };
+		C5660E591E0B73AE000BF5E3 /* ChannelTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E581E0B73AE000BF5E3 /* ChannelTagViewController.m */; };
 		C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57DF5E21DFA84EE00D3D154 /* TabBar.plist */; };
 		C57DF5E91DFA9DF900D3D154 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C57DF5E81DFA9DF900D3D154 /* HexColor.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
@@ -819,6 +821,9 @@
 		C5660E381E096EB8000BF5E3 /* GVUserDefaults+NewsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+NewsModule.h"; sourceTree = "<group>"; };
 		C5660E391E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+NewsModule.m"; sourceTree = "<group>"; };
 		C5660E3B1E0972D0000BF5E3 /* HSelectionListProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListProtocol.h; sourceTree = "<group>"; };
+		C5660E471E0A7A10000BF5E3 /* NewsModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NewsModule.xcassets; sourceTree = "<group>"; };
+		C5660E571E0B73AE000BF5E3 /* ChannelTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelTagViewController.h; sourceTree = "<group>"; };
+		C5660E581E0B73AE000BF5E3 /* ChannelTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelTagViewController.m; sourceTree = "<group>"; };
 		C57DF5DF1DF927F900D3D154 /* BanLiTV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BanLiTV.entitlements; sourceTree = "<group>"; };
 		C57DF5E21DFA84EE00D3D154 /* TabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TabBar.plist; sourceTree = "<group>"; };
 		C57DF5E71DFA9DF900D3D154 /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
@@ -2375,6 +2380,7 @@
 		C55A76FA1E090439002E164A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C5660E561E0B73AE000BF5E3 /* ChannelTagView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2409,6 +2415,15 @@
 				C55CBE201DE436570000B1F6 /* AKRequestHeader.m */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		C5660E561E0B73AE000BF5E3 /* ChannelTagView */ = {
+			isa = PBXGroup;
+			children = (
+				C5660E571E0B73AE000BF5E3 /* ChannelTagViewController.h */,
+				C5660E581E0B73AE000BF5E3 /* ChannelTagViewController.m */,
+			);
+			path = ChannelTagView;
 			sourceTree = "<group>";
 		};
 		C5A730091DE2BB3400DB2788 = {
@@ -2517,6 +2532,7 @@
 				C55A76F91E090439002E164A /* Service */,
 				C55A76FA1E090439002E164A /* View */,
 				C5D0BA711E07D8180054DF0E /* NewsModule.h */,
+				C5660E471E0A7A10000BF5E3 /* NewsModule.xcassets */,
 			);
 			path = NewsModule;
 			sourceTree = "<group>";
@@ -2668,6 +2684,7 @@
 				C52E78A21DF7F1DD006B2183 /* Common.xcassets in Resources */,
 				C515AB661DF051BA00353FC4 /* BaseModule.xcassets in Resources */,
 				C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */,
+				C5660E481E0A7A10000BF5E3 /* NewsModule.xcassets in Resources */,
 				C52E78A51DF7F1DD006B2183 /* Friends.xcassets in Resources */,
 				C5B986E31E02A14400AB548A /* res.png in Resources */,
 				C52E78A11DF7F1DD006B2183 /* Chat.xcassets in Resources */,
@@ -2767,6 +2784,7 @@
 				C52E77A21DF7AFFE006B2183 /* TLVoiceMessageCell.m in Sources */,
 				C515AB731DF051BA00353FC4 /* FileHelper.m in Sources */,
 				C515AB751DF051BA00353FC4 /* AKDBManager.m in Sources */,
+				C5660E591E0B73AE000BF5E3 /* ChannelTagViewController.m in Sources */,
 				C515AB741DF051BA00353FC4 /* AKDataCenter.m in Sources */,
 				C515ACF01DF0554400353FC4 /* Aspect-MapModule.m in Sources */,
 				C515AD2C1DF11B0A00353FC4 /* AKSignalManager+MapModule.m in Sources */,

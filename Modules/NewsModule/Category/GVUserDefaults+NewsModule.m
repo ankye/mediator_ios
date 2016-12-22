@@ -10,6 +10,6 @@
 
 @implementation GVUserDefaults (NewsModule)
 
-@dynamic hSelectionChannels;
-
+@dynamic hSelectedChannels;
+@dynamic hUnSelectedChannels;
 @end

@@ -280,9 +280,9 @@
 		C5660EBC1E0D1C08000BF5E3 /* NormalContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5660EAB1E0D1C08000BF5E3 /* NormalContentCell.xib */; };
 		C5660EBD1E0D1C08000BF5E3 /* SinglePicCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660EAD1E0D1C08000BF5E3 /* SinglePicCollectCell.m */; };
 		C5660EBE1E0D1C08000BF5E3 /* SinglePicCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5660EAE1E0D1C08000BF5E3 /* SinglePicCollectCell.xib */; };
-		C5660EBF1E0D1C08000BF5E3 /* CenterTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660EB01E0D1C08000BF5E3 /* CenterTableView.m */; };
+		C5660EBF1E0D1C08000BF5E3 /* AKCustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660EB01E0D1C08000BF5E3 /* AKCustomTableView.m */; };
 		C5660EC01E0D1C08000BF5E3 /* CmsTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660EB21E0D1C08000BF5E3 /* CmsTableHandler.m */; };
-		C5660EC31E0D1C57000BF5E3 /* RootTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660EC21E0D1C57000BF5E3 /* RootTableView.m */; };
+		C5660EC31E0D1C57000BF5E3 /* AKBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660EC21E0D1C57000BF5E3 /* AKBaseTableView.m */; };
 		C5660EC81E0D1E57000BF5E3 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660EC51E0D1E57000BF5E3 /* Content.m */; };
 		C5660EC91E0D1E57000BF5E3 /* Images.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660EC71E0D1E57000BF5E3 /* Images.m */; };
 		C5660ED21E0D1EEA000BF5E3 /* UIColor+AllColors.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660ECC1E0D1EEA000BF5E3 /* UIColor+AllColors.m */; };
@@ -918,12 +918,12 @@
 		C5660EAC1E0D1C08000BF5E3 /* SinglePicCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePicCollectCell.h; sourceTree = "<group>"; };
 		C5660EAD1E0D1C08000BF5E3 /* SinglePicCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinglePicCollectCell.m; sourceTree = "<group>"; };
 		C5660EAE1E0D1C08000BF5E3 /* SinglePicCollectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinglePicCollectCell.xib; sourceTree = "<group>"; };
-		C5660EAF1E0D1C08000BF5E3 /* CenterTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterTableView.h; sourceTree = "<group>"; };
-		C5660EB01E0D1C08000BF5E3 /* CenterTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterTableView.m; sourceTree = "<group>"; };
+		C5660EAF1E0D1C08000BF5E3 /* AKCustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomTableView.h; sourceTree = "<group>"; };
+		C5660EB01E0D1C08000BF5E3 /* AKCustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomTableView.m; sourceTree = "<group>"; };
 		C5660EB11E0D1C08000BF5E3 /* CmsTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmsTableHandler.h; sourceTree = "<group>"; };
 		C5660EB21E0D1C08000BF5E3 /* CmsTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CmsTableHandler.m; sourceTree = "<group>"; };
-		C5660EC11E0D1C57000BF5E3 /* RootTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTableView.h; sourceTree = "<group>"; };
-		C5660EC21E0D1C57000BF5E3 /* RootTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTableView.m; sourceTree = "<group>"; };
+		C5660EC11E0D1C57000BF5E3 /* AKBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseTableView.h; sourceTree = "<group>"; };
+		C5660EC21E0D1C57000BF5E3 /* AKBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseTableView.m; sourceTree = "<group>"; };
 		C5660EC41E0D1E57000BF5E3 /* Content.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Content.h; sourceTree = "<group>"; };
 		C5660EC51E0D1E57000BF5E3 /* Content.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Content.m; sourceTree = "<group>"; };
 		C5660EC61E0D1E57000BF5E3 /* Images.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Images.h; sourceTree = "<group>"; };
@@ -2613,12 +2613,12 @@
 		C5660E841E0D1B8B000BF5E3 /* AKMutableTableView */ = {
 			isa = PBXGroup;
 			children = (
-				C5660EC11E0D1C57000BF5E3 /* RootTableView.h */,
-				C5660EC21E0D1C57000BF5E3 /* RootTableView.m */,
+				C5660EC11E0D1C57000BF5E3 /* AKBaseTableView.h */,
+				C5660EC21E0D1C57000BF5E3 /* AKBaseTableView.m */,
 				C5660E9A1E0D1C08000BF5E3 /* Banner */,
 				C5660EA21E0D1C08000BF5E3 /* Cell */,
-				C5660EAF1E0D1C08000BF5E3 /* CenterTableView.h */,
-				C5660EB01E0D1C08000BF5E3 /* CenterTableView.m */,
+				C5660EAF1E0D1C08000BF5E3 /* AKCustomTableView.h */,
+				C5660EB01E0D1C08000BF5E3 /* AKCustomTableView.m */,
 				C5660EB11E0D1C08000BF5E3 /* CmsTableHandler.h */,
 				C5660EB21E0D1C08000BF5E3 /* CmsTableHandler.m */,
 				C5660E851E0D1B8B000BF5E3 /* AKMutableView.h */,
@@ -3230,7 +3230,7 @@
 				C515AB6B1DF051BA00353FC4 /* AKPopupViewController.m in Sources */,
 				C5660F121E0D2906000BF5E3 /* Acategory.m in Sources */,
 				C515AB721DF051BA00353FC4 /* DeviceHelper.m in Sources */,
-				C5660EC31E0D1C57000BF5E3 /* RootTableView.m in Sources */,
+				C5660EC31E0D1C57000BF5E3 /* AKBaseTableView.m in Sources */,
 				C52E78771DF7BA58006B2183 /* TLChatBackgroundSelectViewController.m in Sources */,
 				C5FC0CBD1DFE824000159913 /* AKDBManager+UserDetail.m in Sources */,
 				C5660EE81E0D218E000BF5E3 /* XTLoopScrollView.m in Sources */,
@@ -3373,7 +3373,7 @@
 				C52E77B51DF7AFFE006B2183 /* TLMoreKeyboardItem.m in Sources */,
 				C52E77AB1DF7AFFE006B2183 /* TLEmojiGroupDisplayView.m in Sources */,
 				C52E77001DF69A73006B2183 /* TLUserHelper.m in Sources */,
-				C5660EBF1E0D1C08000BF5E3 /* CenterTableView.m in Sources */,
+				C5660EBF1E0D1C08000BF5E3 /* AKCustomTableView.m in Sources */,
 				C52E77921DF7AFFE006B2183 /* TLChatBar.m in Sources */,
 				C52E77B21DF7AFFE006B2183 /* TLEmojiKeyboard+EmojiGroupControl.m in Sources */,
 				C53DDCC11DFE8E9B00D66D74 /* AKUserDetail.m in Sources */,

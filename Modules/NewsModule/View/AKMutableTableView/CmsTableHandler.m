@@ -12,8 +12,7 @@
 #import "BannerCell.h"
 #import "BigImgContentCell.h"
 #import "MultiPictureContentCell.h"
-#import "RootTableView.h" 
-#import "CenterTableView.h"
+#import "AKCustomTableView.h"
 #import "ServerRequest.h"
 #import "AKNewsChannel.h"
 #import "Content.h"
@@ -369,12 +368,12 @@ static int const kPageSize = 20 ;
 
 - (void)handleTableDatasourceAndDelegate:(UITableView *)table
 {
-    if ([table isKindOfClass:[RootTableView class]])
+    if ([table isKindOfClass:[AKBaseTableView class]])
     {
-        ((RootTableView *)table).xt_Delegate = self ;
+        ((AKBaseTableView *)table).xt_Delegate = self ;
         
         // offset Y value changed.
-        __weak CenterTableView *tableCenter = (CenterTableView *)table ;
+        __weak AKCustomTableView *tableCenter = (AKCustomTableView *)table ;
         tableCenter.offsetYHasChangedValue = ^(CGFloat offsetY) {
             
             if (tableCenter.mj_header.isRefreshing) return ;
@@ -401,8 +400,8 @@ static int const kPageSize = 20 ;
 
 - (void)centerHandlerRefreshing
 {
-    if ([self.table isKindOfClass:[CenterTableView class]]) {
-        [(CenterTableView *)self.table clearImage] ;
+    if ([self.table isKindOfClass:[AKCustomTableView class]]) {
+        [(AKCustomTableView *)self.table clearImage] ;
     }
     [self.handlerDelegate handlerRefreshing:self] ;
 }

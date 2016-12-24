@@ -7,7 +7,7 @@
 //
 
 #import "BannerCell.h"
-#import "CenterTableView.h"
+#import "AKCustomTableView.h"
 #import "Content.h"
 #import "UIColor+AllColors.h"
 
@@ -82,9 +82,9 @@
 
 - (void)layoutHeaderViewForScrollViewOffset:(CGPoint)offset scrollView:(UIScrollView *)scrollView
 {
-    if (![scrollView isKindOfClass:[CenterTableView class]]) return ;
+    if (![scrollView isKindOfClass:[AKCustomTableView class]]) return ;
 
-    CenterTableView *table = (CenterTableView *)scrollView ;
+    AKCustomTableView *table = (AKCustomTableView *)scrollView ;
     if ([table.mj_header isRefreshing]) return ;
     
 //    NSLog(@"offset.y : %@",@(offset.y)) ;

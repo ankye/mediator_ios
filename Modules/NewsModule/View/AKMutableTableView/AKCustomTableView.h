@@ -6,11 +6,11 @@
 //  Copyright © 2016年 teason. All rights reserved.
 //
 
-#import "RootTableView.h"
+#import "AKBaseTableView.h"
 
 
 
-@interface CenterTableView : RootTableView
+@interface AKCustomTableView : AKBaseTableView
 
 @property (nonatomic,copy) void(^offsetYHasChangedValue)(CGFloat offsetY) ;
 - (void)refreshImage:(NSString *)imgStr ;

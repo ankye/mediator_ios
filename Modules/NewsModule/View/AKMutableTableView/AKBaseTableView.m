@@ -6,13 +6,13 @@
 //  Copyright © 2015年 teason. All rights reserved.
 //
 
-#import "RootTableView.h"
+#import "AKBaseTableView.h"
 
-@interface RootTableView ()
+@interface AKBaseTableView ()
 @property (nonatomic,strong) NSArray *gifImageList ;
 @end
 
-@implementation RootTableView
+@implementation AKBaseTableView
 #pragma mark --
 #pragma mark - Public
 - (void)pullDownRefreshHeader

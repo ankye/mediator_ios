@@ -20,7 +20,7 @@
 
 @end
 
-@interface RootTableView : UITableView
+@interface AKBaseTableView : UITableView
 
 // SET myDelegate TO YOUR CTRLLER
 @property (nonatomic,weak) id <RootTableViewDelegate> xt_Delegate ;

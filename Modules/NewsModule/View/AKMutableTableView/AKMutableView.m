@@ -9,7 +9,7 @@
 #import "AKMutableView.h"
 #import "XTTableViewRootHandler.h"
 #import "CmsTableHandler.h"
-#import "CenterTableView.h"
+#import "AKCustomTableView.h"
 #import "UIColor+AllColors.h"
 
 static int IMAGEVIEW_COUNT = 3 ;
@@ -17,7 +17,7 @@ static int IMAGEVIEW_COUNT = 3 ;
 @interface AKMutableView () <UIScrollViewDelegate>
 
 @property (nonatomic,strong) UITableView        *leftTable ;
-@property (nonatomic,strong) CenterTableView    *centerTable ;
+@property (nonatomic,strong) AKCustomTableView    *centerTable ;
 @property (nonatomic,strong) UITableView        *rightTable ;
 
 @property (nonatomic)        int         allCount ;
@@ -120,12 +120,12 @@ static int IMAGEVIEW_COUNT = 3 ;
     return _leftTable ;
 }
 
-- (CenterTableView *)centerTable
+- (AKCustomTableView *)centerTable
 {
     if (!_centerTable) {
         CGRect rectCenter = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height) ;
         rectCenter.origin.x += rectCenter.size.width ;
-        _centerTable = [[CenterTableView alloc] initWithFrame:rectCenter] ;
+        _centerTable = [[AKCustomTableView alloc] initWithFrame:rectCenter] ;
 //        _centerTable.contentInset = UIEdgeInsetsMake(0, 0, 10, 0) ;
         if (![_centerTable superview]) {
             [self addSubview:_centerTable] ;
@@ -249,5 +249,8 @@ static int IMAGEVIEW_COUNT = 3 ;
     }
 }
 
-
+-(void)reloadTable
+{
+    
+}
 @end

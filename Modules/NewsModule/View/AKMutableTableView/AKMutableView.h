@@ -8,7 +8,7 @@
 
 
 #import <UIKit/UIKit.h>
-@class XTTableDataDelegate ;
+
 @class AKNewsChannel;
 @class AKMutableView;
 

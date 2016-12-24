@@ -6,11 +6,11 @@
 //  Copyright © 2016年 teason. All rights reserved.
 //
 
-#import "CenterTableView.h"
+#import "AKCustomTableView.h"
 #import "UIImageView+WebCache.h"
 #import "UIColor+AllColors.h"
 
-@interface CenterTableView ()
+@interface AKCustomTableView ()
 
 @property (nonatomic,strong) UIView *backView ;
 @property (nonatomic,strong) UIImageView *bgImgView ;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation CenterTableView
+@implementation AKCustomTableView
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

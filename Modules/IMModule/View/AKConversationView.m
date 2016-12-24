@@ -90,6 +90,11 @@
     return CGSizeMake(YYScreenSize().height, YYScreenSize().width/2.0);
 }
 
+-(BOOL)isFullScreen
+{
+    return NO;
+}
+
 -(void)loadData:(NSObject *)data
 {
     self.data = (NSMutableArray*)data;

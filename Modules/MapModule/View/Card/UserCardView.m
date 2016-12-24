@@ -84,7 +84,10 @@
 {
     return CGSizeMake(250, 260);
 }
-
+-(BOOL)isFullScreen
+{
+    return NO;
+}
 /**
  加载数据
  

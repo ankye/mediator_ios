@@ -10,7 +10,7 @@
 
 @interface GVUserDefaults (NewsModule)
 
-@property (nonatomic, weak) NSMutableArray *hSelectedChannels;
-@property (nonatomic, weak) NSMutableArray *hUnSelectedChannels;
+@property (nonatomic, weak) NSData *hNewsSelectedChannels;
+@property (nonatomic, weak) NSData *hNewsUnSelectedChannels;
 
 @end

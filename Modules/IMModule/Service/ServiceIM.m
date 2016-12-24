@@ -44,11 +44,11 @@
  */
 -(UIView<AKPopupViewProtocol>*)popConversationView:(NSDictionary*)params
 {
-    UIView<AKPopupViewProtocol>* view = [[AKConversationView alloc] init];
+    AKBasePopupView* view = [[AKConversationView alloc] init];
     
-    NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:YES style:STPopupStyleBottomSheet onClick:^(NSInteger channel, NSMutableDictionary *attributes) {
+    NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:YES style:STPopupStyleBottomSheet onClick:^(NSInteger channel, NSDictionary *attributes) {
         DDLogInfo(@"Click");
-    } onClose:^(NSMutableDictionary *attributes) {
+    } onClose:^(NSDictionary *attributes) {
         DDLogInfo(@"close");
     }];
     [AK_POPUP_MANAGER showView:view withAttributes:attributes];

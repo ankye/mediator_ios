@@ -24,6 +24,7 @@
 
 
 #import "AKRequestManager.h"
+#import "AKBasePopupView.h"
 #import "AKPopupManager.h"
 #import "AKMediator.h"
 #import "AKDBManager.h"

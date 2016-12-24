@@ -9,6 +9,10 @@
 #ifndef NewsModule_h
 #define NewsModule_h
 
+
+#import "AKSignalManager+NewsModule.h"
+#import "AKRequestManager+NewsModule.h"
+
 #import "AKNewsViewController.h"
 
 #endif /* NewsModule_h */

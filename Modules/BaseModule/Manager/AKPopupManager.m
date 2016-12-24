@@ -121,10 +121,21 @@ SINGLETON_IMPL(AKPopupManager)
     
 }
 
--(void)showView:(UIView<AKPopupViewProtocol>*)customView withAttributes:(NSMutableDictionary *)attributes
+-(void)showView:(AKBasePopupView*)customView withAttributes:(NSMutableDictionary *)attributes
 {
     
     AKPopupViewController* vc = [[AKPopupViewController alloc] initWithView:customView];
+    AKPopupOnClose closeBlock = [attributes objectForKey:AK_Popup_OnClose];
+    @weakify(self);
+    attributes[AK_Popup_OnClose] = ^( NSDictionary* attributes){
+        
+        @strongify(self);
+        [self hidden];
+        closeBlock(attributes);
+        
+    };
+    customView.onClick = [attributes objectForKey:AK_Popup_OnClick];
+    customView.onClose = [attributes objectForKey:AK_Popup_OnClose];
     
     [self showController:vc withAttributes:attributes];
     

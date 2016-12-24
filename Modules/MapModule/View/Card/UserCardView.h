@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "AKPopupViewProtocol.h"
 
-@interface UserCardView : UIView<AKPopupViewProtocol>
+@interface UserCardView : AKBasePopupView
 
 @end

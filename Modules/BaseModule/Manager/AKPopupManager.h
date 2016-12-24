@@ -28,7 +28,7 @@ SINGLETON_INTR(AKPopupManager)
  @param customView 定制的显示视图
  @param attributes 属性字典，参考构建者 [AKPopupManager buildPopupAttributes]
  */
--(void)showView:(UIView<AKPopupViewProtocol>*)customView withAttributes:(NSMutableDictionary*)attributes;
+-(void)showView:(AKBasePopupView*)customView withAttributes:(NSMutableDictionary*)attributes;
 
 /**
  弹出窗，注入Controller

@@ -11,7 +11,7 @@
 
 @interface AKPopupViewController()
 {
-    UIView<AKPopupViewProtocol>* _customView;
+    AKBasePopupView* _customView;
 }
 
 @end
@@ -33,15 +33,19 @@
     return self;
 }
 
--(id)initWithView:(UIView<AKPopupViewProtocol>*)customView
+-(id)initWithView:(AKBasePopupView*)customView
 {
     if(self = [self init]){
         _customView = customView;
         [self.view addSubview:customView];
-        
-        self.contentSizeInPopup = [customView portraitSize];
-        self.landscapeContentSizeInPopup = [customView landscapeSize];
-        
+        if([customView isFullScreen]){
+            CGSize size = [self.view size];
+            self.contentSizeInPopup = CGSizeMake(size.width, size.height);
+            self.landscapeContentSizeInPopup = CGSizeMake(size.height, size.width);
+        }else{
+            self.contentSizeInPopup = [customView portraitSize];
+            self.landscapeContentSizeInPopup = [customView landscapeSize];
+        }
         
         [customView mas_makeConstraints:^(MASConstraintMaker *make) {
             

@@ -22,10 +22,10 @@
 -(UIView<AKPopupViewProtocol>*)popupUserCardView:(NSDictionary*)params
 {
     AKUser* user = (AKUser*)params[@"user"];
-    UIView<AKPopupViewProtocol>* view = [[UserCardView alloc] init];
-    NSMutableDictionary* popAttrs = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet onClick:^(NSInteger channel, NSMutableDictionary *attributes) {
+    AKBasePopupView* view = [[UserCardView alloc] init];
+    NSMutableDictionary* popAttrs = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet onClick:^(NSInteger channel, NSDictionary *attributes) {
         DDLogInfo(@"Click");
-    } onClose:^(NSMutableDictionary *attributes) {
+    } onClose:^(NSDictionary *attributes) {
         DDLogInfo(@"complete");
     }];
     

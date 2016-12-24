@@ -18,7 +18,8 @@ target 'Project' do
         pod 'UberSignals'
         pod 'SIAlertView'        
         pod 'M13BadgeView'
-        
+      
+        pod 'MJRefresh'
         #map Module
         pod 'AMapFoundation'
         pod 'AMap3DMap'

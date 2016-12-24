@@ -11,6 +11,6 @@
 
 @interface AKPopupViewController : UIViewController
 
--(id)initWithView:(UIView<AKPopupViewProtocol>*)customView;
+-(id)initWithView:(AKBasePopupView*)customView;
 
 @end

@@ -41,13 +41,13 @@
         [self.window makeKeyWindow];
         [self.window makeKeyAndVisible];
         
-        [AK_MEDIATOR im_requestIMServerList];
-       
-        if(![AK_MEDIATOR user_isUserLogin]){
-            UIViewController* loginController = [AK_MEDIATOR login_viewControllerForLogin];
-            [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
-        }
-       
+//        [AK_MEDIATOR im_requestIMServerList];
+//       
+//        if(![AK_MEDIATOR user_isUserLogin]){
+//            UIViewController* loginController = [AK_MEDIATOR login_viewControllerForLogin];
+//            [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
+//        }
+//       
    
        
         

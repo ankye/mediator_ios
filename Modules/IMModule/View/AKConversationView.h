@@ -13,7 +13,7 @@
 
 
 
-@interface AKConversationView : UIView<UITableViewDelegate,UITableViewDataSource,AKPopupViewProtocol>
+@interface AKConversationView : AKBasePopupView<UITableViewDelegate,UITableViewDataSource>
 
 
 @property (nonatomic, strong) NSMutableArray *data;

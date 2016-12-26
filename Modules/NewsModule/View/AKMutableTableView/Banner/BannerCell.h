@@ -24,7 +24,7 @@ static NSString *identifier_bannercell = @"BannerCell" ;
 
 @property (weak,nonatomic) id <BannerCellDelegate> delegate ;
 // prop .
-- (void)setupLoopInfo:(NSArray *)loopInfoList kindID:(int)kindId ;
+- (void)setupLoopInfo:(NSArray *)loopInfoList channelID:(NSString*)cid ;
 + (float)getHeight ;
 
 // in scroll view did scroll delegate .

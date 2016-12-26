@@ -46,6 +46,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.backgroundColor            = [UIColor clearColor] ;
     self.lb_Kind.backgroundColor    = [UIColor xt_mainColor] ;
     self.lb_Kind.textColor          = [UIColor whiteColor] ;

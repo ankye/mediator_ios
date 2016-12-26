@@ -314,6 +314,7 @@
 		C5660F721E0D2F4E000BF5E3 /* UIImageView+QNExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660F711E0D2F4E000BF5E3 /* UIImageView+QNExtention.m */; };
 		C5660F771E0D39DB000BF5E3 /* ChannelListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660F761E0D39DB000BF5E3 /* ChannelListAPI.m */; };
 		C5660F7A1E0D3A85000BF5E3 /* AKRequestManager+NewsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660F791E0D3A85000BF5E3 /* AKRequestManager+NewsModule.m */; };
+		C5660F7D1E0E514F000BF5E3 /* AKNewsContentListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660F7C1E0E514F000BF5E3 /* AKNewsContentListAPI.m */; };
 		C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57DF5E21DFA84EE00D3D154 /* TabBar.plist */; };
 		C57DF5E91DFA9DF900D3D154 /* HexColor.m in Sources */ = {isa = PBXBuildFile; fileRef = C57DF5E81DFA9DF900D3D154 /* HexColor.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
@@ -991,6 +992,8 @@
 		C5660F761E0D39DB000BF5E3 /* ChannelListAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelListAPI.m; sourceTree = "<group>"; };
 		C5660F781E0D3A85000BF5E3 /* AKRequestManager+NewsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKRequestManager+NewsModule.h"; sourceTree = "<group>"; };
 		C5660F791E0D3A85000BF5E3 /* AKRequestManager+NewsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKRequestManager+NewsModule.m"; sourceTree = "<group>"; };
+		C5660F7B1E0E514F000BF5E3 /* AKNewsContentListAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKNewsContentListAPI.h; sourceTree = "<group>"; };
+		C5660F7C1E0E514F000BF5E3 /* AKNewsContentListAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKNewsContentListAPI.m; sourceTree = "<group>"; };
 		C57DF5DF1DF927F900D3D154 /* BanLiTV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BanLiTV.entitlements; sourceTree = "<group>"; };
 		C57DF5E21DFA84EE00D3D154 /* TabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TabBar.plist; sourceTree = "<group>"; };
 		C57DF5E71DFA9DF900D3D154 /* HexColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexColor.h; sourceTree = "<group>"; };
@@ -2786,6 +2789,8 @@
 			children = (
 				C5660F751E0D39DB000BF5E3 /* ChannelListAPI.h */,
 				C5660F761E0D39DB000BF5E3 /* ChannelListAPI.m */,
+				C5660F7B1E0E514F000BF5E3 /* AKNewsContentListAPI.h */,
+				C5660F7C1E0E514F000BF5E3 /* AKNewsContentListAPI.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -3333,6 +3338,7 @@
 				C52E77911DF7AFFE006B2183 /* TLTalkButton.m in Sources */,
 				C52E76B91DF66D75006B2183 /* NSString+Message.m in Sources */,
 				C515AC561DF0549C00353FC4 /* IMLivePingMessage.m in Sources */,
+				C5660F7D1E0E514F000BF5E3 /* AKNewsContentListAPI.m in Sources */,
 				C515AB6F1DF051BA00353FC4 /* NSString+Tools.m in Sources */,
 				C5660EDD1E0D20DF000BF5E3 /* XTJson.m in Sources */,
 				C52E77FA1DF7B831006B2183 /* TLChatFileHeaderView.m in Sources */,

@@ -112,7 +112,6 @@ DEPENDENCIES:
   - MJRefresh
   - MWPhotoBrowser
   - ReactiveObjC
-  - SDWebImage
   - SIAlertView
   - SocketRocket
   - STPopup
@@ -160,6 +159,6 @@ SPEC CHECKSUMS:
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: cc534b279c26af3cd49f9580f7dfe3ef1f6f65ea
+PODFILE CHECKSUM: fa1a32fa4f7f57160a358229326e1db00676ead1
 
 COCOAPODS: 1.1.1

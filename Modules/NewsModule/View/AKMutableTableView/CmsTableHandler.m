@@ -149,48 +149,48 @@ static int const kPageSize = 20 ;
 #pragma mark - RootTableViewDelegate
 - (void)loadNewData
 {
+
     NSMutableArray*tmpList_data = [@[] mutableCopy] ;
     NSMutableArray*tmpList_slide = [@[] mutableCopy] ;
     NSMutableArray*tmpList_top = [@[] mutableCopy] ;
+    DDLogInfo(@"加载新数据:%@",self.channel.name);
+
+    [AK_REQUEST_MANAGER news_requestContentList:self.channel.cid withPageSize:kPageSize withSendTime:0 WithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        NSData* jsonData = request.responseData;
+        NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
+        NSDictionary *retDic = response[@"returnData"] ;
+        
+        NSArray *retlist = retDic[@"list"] ;
+        NSArray *retSlide = retDic[@"slide"] ;
+        NSArray *retTop = retDic[@"top"] ;
+        for (NSDictionary *dic in retlist) {
+            Content *aContent = [Content modelWithJSON:dic] ;
+            [tmpList_data addObject:aContent] ;
+        }
+        for (NSDictionary *dic in retSlide) {
+            Content *aContent = [Content modelWithJSON:dic] ;
+            [tmpList_slide addObject:aContent] ;
+        }
+        for (NSDictionary *dic in retTop) {
+            Content *aContent = [Content modelWithJSON:dic] ;
+            [tmpList_top addObject:aContent] ;
+        }
+
+        self.slideList = tmpList_slide ;
+        self.topList = tmpList_top ;
+        self.dataList = tmpList_data ;
+
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
     
-    [ServerRequest getContentListWithKindID:self.channel.cid
-                                   sendtime:0
-                                       size:kPageSize
-                                    success:^(id json) {
-                                        
-                                        ResultParsered *result = [ResultParsered modelWithJSON:json] ;
-                                        if (result.errCode == 1001)
-                                        {
-                                            NSDictionary *retDic = result.info ;
-                                            NSArray *retlist = retDic[@"list"] ;
-                                            NSArray *retSlide = retDic[@"slide"] ;
-                                            NSArray *retTop = retDic[@"top"] ;
-                                            for (NSDictionary *dic in retlist) {
-                                                Content *aContent = [Content modelWithJSON:dic] ;
-                                                [tmpList_data addObject:aContent] ;
-                                            }
-                                            for (NSDictionary *dic in retSlide) {
-                                                Content *aContent = [Content modelWithJSON:dic] ;
-                                                [tmpList_slide addObject:aContent] ;
-                                            }
-                                            for (NSDictionary *dic in retTop) {
-                                                Content *aContent = [Content modelWithJSON:dic] ;
-                                                [tmpList_top addObject:aContent] ;
-                                            }
-                                            
-                                            self.slideList = tmpList_slide ;
-                                            self.topList = tmpList_top ;
-                                            self.dataList = tmpList_data ;
-                                        }
-                                        
-                                    } fail:^{
-                                        
-                                    }] ;
     
 }
 
 - (void)loadMoreData
 {
+  
     if (!self.dataList.count) {
         return ;
     }
@@ -199,26 +199,23 @@ static int const kPageSize = 20 ;
     
     NSMutableArray*tmpList_data = self.dataList ;
     
-    [ServerRequest getContentListWithKindID:self.channel.cid
-                                   sendtime:lastContent.sendtime
-                                       size:kPageSize
-                                    success:^(id json) {
-                                        
-                                        ResultParsered *result = [ResultParsered modelWithJSON:json] ;
-                                        if (result.errCode == 1001)
-                                        {
-                                            NSDictionary *retDic = result.info ;
-                                            NSArray *retlist = retDic[@"list"] ;
-                                            for (NSDictionary *dic in retlist) {
-                                                Content *aContent = [Content modelWithJSON:dic] ;
-                                                [tmpList_data addObject:aContent] ;
-                                            }
-                                            self.dataList = tmpList_data ;
-                                        }
-                                        
-                                    } fail:^{
-                                        
-                                    }] ;
+    [AK_REQUEST_MANAGER news_requestContentList:self.channel.cid withPageSize:kPageSize withSendTime:lastContent.sendtime WithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+        NSData* jsonData = request.responseData;
+        NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
+        NSDictionary *retDic = response[@"returnData"] ;
+        NSArray *retlist = retDic[@"list"] ;
+        for (NSDictionary *dic in retlist) {
+            Content *aContent = [Content modelWithJSON:dic] ;
+            [tmpList_data addObject:aContent] ;
+        }
+        self.dataList = tmpList_data ;
+        
+    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+        
+    }];
+    
+
 }
 
 
@@ -257,6 +254,7 @@ static int const kPageSize = 20 ;
             cell = [tableView dequeueReusableCellWithIdentifier:identifier_normalContentcell] ;
         }
         cell.aContent = aContent ;
+       
         return cell ;
     }
     else if (aContent.displayType == 1) {
@@ -266,6 +264,7 @@ static int const kPageSize = 20 ;
             cell = [tableView dequeueReusableCellWithIdentifier:identifier_BigImgContentCell] ;
         }
         cell.aContent = aContent ;
+      
         return cell ;
     }
     else if (aContent.displayType == 2) {
@@ -275,6 +274,7 @@ static int const kPageSize = 20 ;
             cell = [tableView dequeueReusableCellWithIdentifier:identifier_MultiPictureContentCell] ;
         }
         cell.aContent = aContent ;
+    
         return cell ;
     }
     return nil ;
@@ -303,8 +303,9 @@ static int const kPageSize = 20 ;
         if (!cell) {
             cell = [[BannerCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier_bannercell] ;
         }
+    
         [cell setupLoopInfo:self.slideList
-                     kindID:self.channel.cid] ;
+                     channelID:self.channel.cid] ;
         cell.delegate = self ;
         return cell ;
     }

@@ -11,6 +11,7 @@
 #import "UIImageView+WebCache.h"
 #import "UIColor+AllColors.h"
 //#import "UIImageView+QNExtention.h"
+#import <YYKit/UIImageView+YYWebImage.h>
 
 @interface BigImgContentCell ()
 
@@ -34,8 +35,10 @@
     _aContent = aContent ;
         
 //    [_imgView photoFromQiNiu:aContent.cover] ;
-    [_imgView sd_setImageWithURL:[NSURL URLWithString:aContent.cover]] ;
+  //  [_imgView setImageWithURL:[NSURL URLWithString:aContent.cover]] ;
 
+[_imgView setImageWithURL:[NSURL URLWithString:aContent.cover]
+options:YYWebImageOptionProgressiveBlur | YYWebImageOptionShowNetworkActivity | YYWebImageOptionSetImageWithFadeAnimation];
     
     _labelTitle.text = aContent.title ;
     _labelKind.text = aContent.kindName ;

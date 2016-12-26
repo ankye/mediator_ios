@@ -18,32 +18,24 @@
 
 @end
 
-@protocol AKMutableViewDataSource <NSObject>
 
-- (NSInteger)numberOfChannels:(AKMutableView*)mutableView;
-
-- (AKNewsChannel*)channelForItemAtIndex:(AKMutableView*)mutableView atIndex:(NSInteger)index;
-
-
-@end
 
 
 
 @interface AKMutableView : UIScrollView
 
-@property (nonatomic,strong) NSArray     *list_handlers ; // Class `XTTableDataDelegate` objects list.
+//@property (nonatomic,strong) NSArray     *list_handlers ; // Class `XTTableDataDelegate` objects list.
 
 @property (nonatomic, weak) id <AKMutableViewDelegate>   akDelegate ;
-@property (nonatomic, weak) id <AKMutableViewDataSource> dataSourceDelegate;
+
 @property (nonatomic,readonly) NSInteger currentIndex ;
 
 - (void)mutableViewDidMoveAtIndex:(NSInteger)index;
 
 - (void)pulldownCenterTableIfNeeded;
 
-- (instancetype)initWithFrame:(CGRect)frame
-                     handlers:(NSArray *)handlersList ;
+- (instancetype)initWithFrame:(CGRect)frame;
 
--(void)reloadTable;
+-(void)reloadHandlers:(NSMutableArray*)handlerList;
 
 @end

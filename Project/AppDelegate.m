@@ -76,6 +76,8 @@
     [tabBar setTitleTextAttributes:normalAttrs forState:UIControlStateNormal];
     [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
     
+    UITabBar *tabBarAppearance = [UITabBar appearance];
+    [tabBarAppearance setBackgroundColor:[HXColor colorWithHexString:@"#eeeeee"]];
 
 }
 

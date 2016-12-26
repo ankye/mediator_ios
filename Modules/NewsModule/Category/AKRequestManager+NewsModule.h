@@ -13,4 +13,6 @@
 //请求ChannelList
 -(BOOL)news_requestChannelListWithSuccess:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure;
 
+//请求新闻列表
+-(BOOL)news_requestContentList:(NSString*)cid withPageSize:(NSInteger)pagesize withSendTime:(double)time WithSuccess:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure;
 @end

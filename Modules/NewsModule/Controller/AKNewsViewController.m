@@ -19,16 +19,19 @@
 #import "ResultParsered.h"
 #import "ServerRequest.h"
 
+#import "BannerCell.h"
+static const float kCriticalPoint = 5. ;
+
 //#define TopRect             CGRectMake(0, 0, SCREEN_WIDTH, 40)
 //#define MainRect            CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 49.)
 //#define TopImageRect        CGRectMake(0, 0, SCREEN_WIDTH, [BannerCell getHeight])
 //#define TopNavgationRect    CGRectMake(0, 0, SCREEN_WIDTH, 40. + 20.)
 //#define TopAndNavRect       CGRectMake(0, 20, SCREEN_WIDTH, 40. + 20.)
-//#define OverLength          ([BannerCell getHeight] - 40. - 20.)
+#define OverLength          ([BannerCell getHeight] - 40. - 20.)
 
 
 
-@interface AKNewsViewController () <HSelectionListDelegate, HSelectionListDataSource,AKMutableViewDelegate,AKMutableViewDataSource,CmsTableHandlerDelegate>
+@interface AKNewsViewController () <HSelectionListDelegate, HSelectionListDataSource,AKMutableViewDelegate,CmsTableHandlerDelegate>
 
 
 @property (nonatomic, strong) HSelectionList *hSelectionList;
@@ -44,12 +47,16 @@
     [super viewDidLoad];
 
     [self setupHSelectionList];
+    [self setupMutableView] ;
     
-    [self showTheScence] ;
     
+
+    
+
     
     [AK_SIGNAL_MANAGER.onNewsSelectedChannelChange addObserver:self callback:^(typeof(self) self, NSMutableArray * _Nonnull mutableArray) {
         [self.hSelectionList reloadData];
+        [self reloadTableHandlers];
     }];
     
     
@@ -57,32 +64,31 @@
 }
 
 
-- (void)showTheScence
+- (void)setupMutableView
 {
     // 1. XTMultipleTables
-    NSMutableArray *tableHandlersList = [@[] mutableCopy] ;
-    NSMutableArray* channelList = [AKNewsManager sharedInstance].selectedChannels;
     
+    self.mutableView = [[AKMutableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-112)] ;
+    self.mutableView.akDelegate = self ;
+    
+    [self.view addSubview:self.mutableView] ;
+    
+    
+    [self reloadTableHandlers];
+}
+
+-(void)reloadTableHandlers
+{
+    NSMutableArray* channelList = [AKNewsManager sharedInstance].selectedChannels;
+    NSMutableArray *tableHandlersList = [@[] mutableCopy] ;
     for (AKNewsChannel *channel in channelList) {
         CmsTableHandler *handler_Cms = [[CmsTableHandler alloc] initWithChannel:channel] ;
         handler_Cms.handlerDelegate = self ;
         [tableHandlersList addObject:handler_Cms] ;
     }
-    self.mutableView = [[AKMutableView alloc] initWithFrame:SCREEN_FRAME
-                                                           handlers:tableHandlersList] ;
-    self.mutableView.akDelegate = self ;
-    self.mutableView.dataSourceDelegate = self;
-    
-    [self.view addSubview:self.mutableView] ;
-    
-    [_mutableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(_hSelectionList.bottom);
-        make.left.right.bottom.equalTo(self.view);
-    }];
 
-    _mutableView.backgroundColor = [UIColor redColor];
+    [self.mutableView reloadHandlers:tableHandlersList];
 }
-
 
 -(void)setupHSelectionList
 {
@@ -168,34 +174,69 @@
 // callback in did scroll and
 - (void)tableDidScrollWithOffsetY:(float)offsetY
 {
-   // [self makeNavBarDisplayWithOffsetY:offsetY] ;
+    [self makeNavBarDisplayWithOffsetY:offsetY] ;
 }
 
 // callback in will end dragging .
 - (void)tablelWillEndDragWithOffsetY:(float)offsetY WithVelocity:(CGPoint)velocity
 {
     //    NSLog(@"offsetY : %lf",offsetY) ;
-  //  [self makeNavigationbarDisplayWithOffsetY:offsetY Velocity:velocity] ;
+    [self makeNavigationbarDisplayWithOffsetY:offsetY Velocity:velocity] ;
 }
 
 - (void)handlerRefreshing:(id)handler
 {
-//    float offsetY = ((CmsTableHandler *)handler).offsetY ;
-//    float overLength = OverLength ;
-//    
-//    //    NSLog(@"offsetY : %lf",offsetY) ;
-//    if (offsetY > overLength) {
-//        [self makeNavigationbarDisplayWithOffsetY:offsetY Velocity:CGPointZero] ;
-//    }
-//    else {
-//        [self makeNavBarDisplayWithOffsetY:offsetY] ;
-//    }
+    float offsetY = ((CmsTableHandler *)handler).offsetY ;
+    float overLength = OverLength ;
+    
+    //    NSLog(@"offsetY : %lf",offsetY) ;
+    if (offsetY > overLength) {
+        [self makeNavigationbarDisplayWithOffsetY:offsetY Velocity:CGPointZero] ;
+    }
+    else {
+        [self makeNavBarDisplayWithOffsetY:offsetY] ;
+    }
 }
 
 
+#pragma mark --
+#pragma mark - func nav & seg
+- (void)makeNavBarDisplayWithOffsetY:(float)offsetY
+{
+    float overLength = OverLength ;
+    
+    //1. 顶部 临界点15 .  控制nav和seg 显示
+    if (offsetY <= kCriticalPoint)
+    {
+        
+       
+        
+    }
+    else if (offsetY > kCriticalPoint && offsetY <= overLength)
+    {
+       
+    }
+    
+}
+
+- (void)makeNavigationbarDisplayWithOffsetY:(float)offsetY Velocity:(CGPoint)velocity
+{
+    float overLength = OverLength ;
+    
+    if (offsetY > overLength) {
+        //  NSLog(@"vel y %@",NSStringFromCGPoint(velocity)) ;
+        
+        
+    }
+}
+
+- (void)hideAll
+{
+    
+}
 
 
-#pragma mark - XTMultipleTablesDelegate
+#pragma mark - AKMutableViewDelegate
 - (void)viewDidMovedAtIndex:(AKMutableView*)mutableView atIndex:(NSInteger)index
 {
     NSLog(@"moveToIndexCallBack %@",@(index)) ;
@@ -208,8 +249,11 @@
 }
 
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
 
-
+}
 
 
 -(void)dealloc

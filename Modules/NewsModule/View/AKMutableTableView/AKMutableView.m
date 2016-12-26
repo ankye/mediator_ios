@@ -17,10 +17,12 @@ static int IMAGEVIEW_COUNT = 3 ;
 @interface AKMutableView () <UIScrollViewDelegate>
 
 @property (nonatomic,strong) UITableView        *leftTable ;
-@property (nonatomic,strong) AKCustomTableView    *centerTable ;
+@property (nonatomic,strong) AKCustomTableView  *centerTable ;
 @property (nonatomic,strong) UITableView        *rightTable ;
 
-@property (nonatomic)        int         allCount ;
+@property (nonatomic,assign) NSInteger          allCount ;
+@property (nonatomic,strong) NSMutableArray     *handlerList;
+
 
 @end
 
@@ -37,7 +39,7 @@ static int IMAGEVIEW_COUNT = 3 ;
 
 - (void)pulldownCenterTableIfNeeded
 {
-    CmsTableHandler *handlerCenter = (CmsTableHandler *)_list_handlers[_currentIndex] ;
+    CmsTableHandler *handlerCenter = (CmsTableHandler *)_handlerList[_currentIndex] ;
     if ( ![handlerCenter hasDataSource] ) {
         [_centerTable pullDownRefreshHeader] ;
     }
@@ -45,12 +47,10 @@ static int IMAGEVIEW_COUNT = 3 ;
 
 #pragma mark - Initialization
 - (instancetype)initWithFrame:(CGRect)frame
-                     handlers:(NSArray *)handlersList
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-        self.list_handlers = handlersList ;
         [self setup] ;
     }
     return self;
@@ -58,12 +58,12 @@ static int IMAGEVIEW_COUNT = 3 ;
 
 - (void)setup
 {
-    [self configureScrollView] ;
+    [self setupScrollView] ;
     [self setupTables] ;
-    [self setupDefaultTable] ;
+    [self setupDefaultTable];
 }
 
-- (void)configureScrollView
+- (void)setupScrollView
 {
     self.delegate = self ;
     self.contentSize = CGSizeMake(IMAGEVIEW_COUNT * self.frame.size.width, self.frame.size.height) ;
@@ -78,26 +78,28 @@ static int IMAGEVIEW_COUNT = 3 ;
     [self leftTable] ;
     [self centerTable] ;
     [self rightTable] ;
+    
 }
 
 - (void)setupDefaultTable
 {
+    
     // set default center , left and right if needed .
-    if (_list_handlers.count > 0) {
-        [(XTTableViewRootHandler *)_list_handlers[0] handleTableDatasourceAndDelegate:_centerTable] ;
-        [(XTTableViewRootHandler *)_list_handlers[0] centerHandlerRefreshing] ;
+    if (_handlerList.count > 0) {
+        [(XTTableViewRootHandler *)_handlerList[0] handleTableDatasourceAndDelegate:_centerTable] ;
+        [(XTTableViewRootHandler *)_handlerList[0] centerHandlerRefreshing] ;
     }
     
     if (self.allCount > 1)
     {
-        [(XTTableViewRootHandler *)_list_handlers[self.allCount - 1] handleTableDatasourceAndDelegate:_leftTable] ;
-        [(XTTableViewRootHandler *)_list_handlers[1] handleTableDatasourceAndDelegate:_rightTable] ;
+        [(XTTableViewRootHandler *)_handlerList[self.allCount - 1] handleTableDatasourceAndDelegate:_leftTable] ;
+        [(XTTableViewRootHandler *)_handlerList[1] handleTableDatasourceAndDelegate:_rightTable] ;
         
-        if ([_list_handlers[self.allCount - 1] isKindOfClass:[CmsTableHandler class]]) {
-            [((CmsTableHandler *)_list_handlers[self.allCount - 1]) tableIsFromCenter:false] ;
+        if ([_handlerList[self.allCount - 1] isKindOfClass:[CmsTableHandler class]]) {
+            [((CmsTableHandler *)_handlerList[self.allCount - 1]) tableIsFromCenter:false] ;
         }
-        if ([_list_handlers[1] isKindOfClass:[CmsTableHandler class]]) {
-            [((CmsTableHandler *)_list_handlers[1]) tableIsFromCenter:false] ;
+        if ([_handlerList[1] isKindOfClass:[CmsTableHandler class]]) {
+            [((CmsTableHandler *)_handlerList[1]) tableIsFromCenter:false] ;
         }
     }
     
@@ -112,7 +114,7 @@ static int IMAGEVIEW_COUNT = 3 ;
         _leftTable = [[UITableView alloc] initWithFrame:rectLeft style:UITableViewStylePlain] ;
         _leftTable.separatorStyle = 0 ;
         _leftTable.backgroundColor = [UIColor xt_cellSeperate] ;
-//        _leftTable.contentInset = UIEdgeInsetsMake(0, 0, 10, 0) ;
+      
         if (![_leftTable superview]) {
             [self addSubview:_leftTable] ;
         }
@@ -127,6 +129,7 @@ static int IMAGEVIEW_COUNT = 3 ;
         rectCenter.origin.x += rectCenter.size.width ;
         _centerTable = [[AKCustomTableView alloc] initWithFrame:rectCenter] ;
 //        _centerTable.contentInset = UIEdgeInsetsMake(0, 0, 10, 0) ;
+     
         if (![_centerTable superview]) {
             [self addSubview:_centerTable] ;
         }
@@ -143,6 +146,7 @@ static int IMAGEVIEW_COUNT = 3 ;
         _rightTable.separatorStyle = 0 ;
         _rightTable.backgroundColor = [UIColor xt_cellSeperate] ;
 //        _rightTable.contentInset = UIEdgeInsetsMake(0, 0, 10, 0) ;
+
         if (![_rightTable superview]) {
             [self addSubview:_rightTable] ;
         }
@@ -150,26 +154,21 @@ static int IMAGEVIEW_COUNT = 3 ;
     return _rightTable ;
 }
 
-- (int)allCount
+- (NSInteger)allCount
 {
-    if (!_allCount && self.list_handlers != nil) {
-        _allCount = (int)self.list_handlers.count ;
+    if (!_allCount && _handlerList != nil) {
+        _allCount = (int)_handlerList.count ;
     }
     return _allCount ;
 }
 
-- (void)setList_handlers:(NSArray *)list_handlers
-{
-    _list_handlers = list_handlers ;
-    
-    self.scrollEnabled = (list_handlers.count > 1) ;
-}
+
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
     // cache tableview offset Y.
-    ((XTTableViewRootHandler *)_list_handlers[_currentIndex]).offsetY = _centerTable.contentOffset.y ;
+    ((XTTableViewRootHandler *)_handlerList[_currentIndex]).offsetY = _centerTable.contentOffset.y ;
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
@@ -204,53 +203,55 @@ static int IMAGEVIEW_COUNT = 3 ;
 
 - (void)resetTableHandersList
 {
-    int leftIndex , rightIndex ;
+    NSInteger leftIndex , rightIndex ;
     // reset handler of center .
-    [(XTTableViewRootHandler *)_list_handlers[_currentIndex] handleTableDatasourceAndDelegate:_centerTable] ;
+    [(XTTableViewRootHandler *)_handlerList[_currentIndex] handleTableDatasourceAndDelegate:_centerTable] ;
     
     
     // reset handler of left and right .
     leftIndex   = (_currentIndex + self.allCount - 1) % self.allCount ;
     rightIndex  = (_currentIndex + 1) % self.allCount ;
-    [(XTTableViewRootHandler *)_list_handlers[leftIndex] handleTableDatasourceAndDelegate:_leftTable] ;
-    [(XTTableViewRootHandler *)_list_handlers[rightIndex] handleTableDatasourceAndDelegate:_rightTable] ;
+    [(XTTableViewRootHandler *)_handlerList[leftIndex] handleTableDatasourceAndDelegate:_leftTable] ;
+    [(XTTableViewRootHandler *)_handlerList[rightIndex] handleTableDatasourceAndDelegate:_rightTable] ;
 }
 
 - (void)resetOffsetYOfEveryTable
 {
     // reset tableview offset Y.
-    [((XTTableViewRootHandler *)_list_handlers[_currentIndex]) refreshOffsetY] ;
-    int leftIndex   = (_currentIndex + self.allCount - 1) % self.allCount ;
-    int rightIndex  = (_currentIndex + 1) % self.allCount ;
-    [(XTTableViewRootHandler *)_list_handlers[leftIndex] refreshOffsetY] ;
-    [(XTTableViewRootHandler *)_list_handlers[rightIndex] refreshOffsetY] ;
+    [((XTTableViewRootHandler *)_handlerList[_currentIndex]) refreshOffsetY] ;
+    NSInteger leftIndex   = (_currentIndex + self.allCount - 1) % self.allCount ;
+    NSInteger rightIndex  = (_currentIndex + 1) % self.allCount ;
+    [(XTTableViewRootHandler *)_handlerList[leftIndex] refreshOffsetY] ;
+    [(XTTableViewRootHandler *)_handlerList[rightIndex] refreshOffsetY] ;
     
     // reset center table banner cell 's loop timer to origin .
     [self resetLoopTimer] ;
     
     [self.akDelegate viewDidMovedAtIndex:self atIndex:_currentIndex] ;
     
-    [((XTTableViewRootHandler *)_list_handlers[_currentIndex]) centerHandlerRefreshing] ;
+    [((XTTableViewRootHandler *)_handlerList[_currentIndex]) centerHandlerRefreshing] ;
 }
 
 - (void)resetLoopTimer
 {
-    int leftIndex   = (_currentIndex + self.allCount - 1) % self.allCount ;
-    int rightIndex  = (_currentIndex + 1) % self.allCount ;
-    if ([_list_handlers[leftIndex] isKindOfClass:[CmsTableHandler class]]) {
-        [((CmsTableHandler *)_list_handlers[leftIndex]) tableIsFromCenter:false] ;
+    NSInteger leftIndex   = (_currentIndex + self.allCount - 1) % self.allCount ;
+    NSInteger rightIndex  = (_currentIndex + 1) % self.allCount ;
+    if ([_handlerList[leftIndex] isKindOfClass:[CmsTableHandler class]]) {
+        [((CmsTableHandler *)_handlerList[leftIndex]) tableIsFromCenter:false] ;
     }
-    if ([_list_handlers[rightIndex] isKindOfClass:[CmsTableHandler class]]) {
-        [((CmsTableHandler *)_list_handlers[rightIndex]) tableIsFromCenter:false] ;
+    if ([_handlerList[rightIndex] isKindOfClass:[CmsTableHandler class]]) {
+        [((CmsTableHandler *)_handlerList[rightIndex]) tableIsFromCenter:false] ;
     }
     
-    if ([_list_handlers[_currentIndex] isKindOfClass:[CmsTableHandler class]]) {
-        [((CmsTableHandler *)_list_handlers[_currentIndex]) tableIsFromCenter:true] ;
+    if ([_handlerList[_currentIndex] isKindOfClass:[CmsTableHandler class]]) {
+        [((CmsTableHandler *)_handlerList[_currentIndex]) tableIsFromCenter:true] ;
     }
 }
 
--(void)reloadTable
+-(void)reloadHandlers:(NSMutableArray*)handlerList
 {
-    
+    self.handlerList = handlerList;
+    self.scrollEnabled = (_handlerList.count > 1) ;
+    [self setupDefaultTable];
 }
 @end

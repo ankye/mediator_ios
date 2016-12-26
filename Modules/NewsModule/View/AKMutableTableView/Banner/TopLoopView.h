@@ -16,7 +16,7 @@
 
 @interface TopLoopView : UIView
 
-- (void)setupWithKindID:(int)kindID
+- (void)setupWithChannelID:(NSString*)cid
        changingDatalist:(NSArray *)datalist ;
 
 @property (nonatomic,weak) id <TopLoopViewDelegate> delegate ;

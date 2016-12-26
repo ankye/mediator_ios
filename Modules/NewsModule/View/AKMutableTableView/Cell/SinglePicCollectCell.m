@@ -7,8 +7,9 @@
 //
 
 #import "SinglePicCollectCell.h"
-#import "UIImageView+WebCache.h"
+//#import "UIImageView+WebCache.h"
 #import "Images.h"
+#import <YYKit/UIImageView+YYWebImage.h>
 
 @interface SinglePicCollectCell ()
 
@@ -29,8 +30,9 @@
 {
     _images = images ;
     
-    [_imageView sd_setImageWithURL:[NSURL URLWithString:images.img]] ;
-
+ //   [_imageView setImageWithURL:[NSURL URLWithString:images.img]] ;
+    [_imageView setImageWithURL:[NSURL URLWithString:images.img]
+                        options:YYWebImageOptionProgressiveBlur | YYWebImageOptionShowNetworkActivity | YYWebImageOptionSetImageWithFadeAnimation];
 }
 
 @end

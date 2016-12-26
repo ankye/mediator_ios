@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="94" height="70"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="paf-oY-RSK">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="paf-oY-RSK">
                         <rect key="frame" x="0.0" y="0.0" width="94" height="70"/>
                     </imageView>
                 </subviews>
@@ -36,7 +36,4 @@
             <point key="canvasLocation" x="288" y="306"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="1" width="600" height="337"/>
-    </resources>
 </document>

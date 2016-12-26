@@ -9,7 +9,7 @@
 #import "AKCustomTableView.h"
 #import "UIImageView+WebCache.h"
 #import "UIColor+AllColors.h"
-
+#import <YYKit/UIImageView+YYWebImage.h>
 @interface AKCustomTableView ()
 
 @property (nonatomic,strong) UIView *backView ;
@@ -43,6 +43,7 @@
     self.backgroundView = self.backView ;
     self.separatorStyle = 0 ;
     self.backgroundColor = [UIColor clearColor] ;
+    
     [self setBgViewHidden:NO] ;
     [self addObserver:self
            forKeyPath:@"contentOffset"
@@ -88,7 +89,7 @@
         [self.bgImgView addSubview:self.gradientImgView] ;
         
         UIView *blackPartView = [[UIView alloc] init];
-        blackPartView.backgroundColor = [UIColor redColor] ;
+      //  blackPartView.backgroundColor = [UIColor blackColor] ;
         blackPartView.frame = CGRectMake(0, [[self class] getHeight], SCREEN_WIDTH, 130) ;
         [_backView addSubview:blackPartView] ;
     }
@@ -102,9 +103,9 @@
         CGRect rect = CGRectZero ;
         rect.size.width = SCREEN_WIDTH ;
         rect.size.height = [[self class] getHeight] ;
-
+        
         _bgImgView = [[UIImageView alloc] initWithFrame:rect] ;
-        _bgImgView.backgroundColor = [UIColor greenColor] ;
+    //    _bgImgView.backgroundColor = [UIColor blackColor] ;
         _bgImgView.contentMode = UIViewContentModeScaleAspectFill ;
         _bgImgView.layer.masksToBounds = YES ;
     }
@@ -136,7 +137,11 @@
 - (void)refreshImage:(NSString *)imgStr
 {
     // sd web .
-    [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:imgStr]] ;
+   // [self.bgImgView setImageWithURL:[NSURL URLWithString:imgStr]] ;
+    
+    [self.bgImgView setImageWithURL:[NSURL URLWithString:imgStr]
+                           options:YYWebImageOptionProgressiveBlur | YYWebImageOptionShowNetworkActivity | YYWebImageOptionSetImageWithFadeAnimation];
+
 }
 
 - (void)clearImage

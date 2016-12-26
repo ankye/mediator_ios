@@ -32,7 +32,7 @@ static int IMAGEVIEW_COUNT = 3 ;
 @property (nonatomic)         int           imageCount ;
 @property (nonatomic,strong)  UIPageControl *pageControl ;
 @property (nonatomic,strong)  NSArray       *datalist ;          //dataSource list , string .
-@property (nonatomic)         int           kindID ;
+@property (nonatomic)         NSString*      cid ;
 
 @end
 
@@ -117,8 +117,8 @@ color_pageControl = _color_pageControl ;
     _timerOverflow = nil ;
     
     [self removeObserver:self
-              forKeyPath:@"kindID"
-                 context:&self->_kindID] ;
+              forKeyPath:@"cid"
+                 context:&self->_cid] ;
 }
 
 
@@ -129,12 +129,12 @@ color_pageControl = _color_pageControl ;
     self = [super init];
     if (self)
     {
-        _kindID = - 1 ;
+        _cid = @"-1" ;
         // KVO
         [self addObserver:self
-               forKeyPath:@"kindID"
+               forKeyPath:@"cid"
                   options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
-                  context:&self->_kindID] ;
+                  context:&self->_cid] ;
         
         self.frame = frame ;
         _bLoop = canLoop ;
@@ -152,7 +152,7 @@ color_pageControl = _color_pageControl ;
                         change:(NSDictionary<NSString *,id> *)change
                        context:(void *)context
 {
-    if (context == &self->_kindID)
+    if (context == &self->_cid)
     {
         id old = change[@"old"] ;
         id new = change[@"new"] ;
@@ -171,11 +171,11 @@ color_pageControl = _color_pageControl ;
 
 #pragma mark -
 
-- (void)setupWithKindID:(int)kindID
+- (void)setupWithChannelID:(NSString*)cid
        changingDatalist:(NSArray *)datalist
 {
     self.datalist = datalist ;
-    self.kindID = kindID ;
+    self.cid = cid ;
 }
 
 - (void)refreshUIs

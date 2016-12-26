@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8w-a3-q26">
@@ -33,7 +33,7 @@
                             <constraint firstAttribute="width" constant="10" id="1IT-58-7dm"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="1E9-4i-ZJn">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1E9-4i-ZJn">
                         <rect key="frame" x="10" y="10" width="300" height="169"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="1E9-4i-ZJn" secondAttribute="height" multiplier="705:398" id="Xaa-C1-2ZN"/>
@@ -72,7 +72,7 @@
                             <constraint firstAttribute="height" constant="10" id="UYM-P8-5Ro"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnTop" translatesAutoresizingMaskIntoConstraints="NO" id="yH8-W3-yFY">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yH8-W3-yFY">
                         <rect key="frame" x="270" y="15" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="7bd-Tt-wIr"/>
@@ -117,8 +117,4 @@
             <point key="canvasLocation" x="282" y="250"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="2" width="600" height="337"/>
-        <image name="OnTop" width="41" height="41"/>
-    </resources>
 </document>

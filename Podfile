@@ -45,7 +45,7 @@ target 'Project' do
 
         
         pod 'MJRefresh'
-        pod 'SDWebImage'
+   
         pod 'CocoaLumberjack'
         pod 'BlocksKit'
         pod 'MWPhotoBrowser'

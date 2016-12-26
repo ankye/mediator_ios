@@ -63,14 +63,8 @@ SINGLETON_IMPL(AKNewsManager)
         
         if(_unSelectedChannels == nil){
             _unSelectedChannels =  [[NSMutableArray alloc] init];
-            [_unSelectedChannels addObject: [[AKNewsChannel alloc] initWithChannel:@"5" withName:@"热点" withFixed:NO]];
-            [_unSelectedChannels addObject: [[AKNewsChannel alloc] initWithChannel:@"6" withName:@"小说" withFixed:NO]];
-            [_unSelectedChannels addObject: [[AKNewsChannel alloc] initWithChannel:@"7" withName:@"电影" withFixed:NO]];
-            [_unSelectedChannels addObject: [[AKNewsChannel alloc] initWithChannel:@"8" withName:@"时尚" withFixed:NO]];
-            [_unSelectedChannels addObject: [[AKNewsChannel alloc] initWithChannel:@"9" withName:@"旅游" withFixed:NO]];
-            [_unSelectedChannels addObject: [[AKNewsChannel alloc] initWithChannel:@"10" withName:@"手机" withFixed:NO]];
-            [_unSelectedChannels addObject: [[AKNewsChannel alloc] initWithChannel:@"11" withName:@"图片" withFixed:NO]];
-            [_unSelectedChannels addObject: [[AKNewsChannel alloc] initWithChannel:@"12" withName:@"动漫" withFixed:NO]];
+            [_unSelectedChannels addObject: [[AKNewsChannel alloc] initWithChannel:@"1" withName:@"热点" withFixed:NO]];
+          
             
             [GVUserDefaults standardUserDefaults].hNewsUnSelectedChannels = [NSKeyedArchiver archivedDataWithRootObject:_unSelectedChannels];
         }
@@ -81,9 +75,22 @@ SINGLETON_IMPL(AKNewsManager)
 
 -(void)setSelectedChannels:(NSMutableArray *)selectedChannels
 {
+    if(_selectedChannels && selectedChannels && _selectedChannels.count == selectedChannels.count){
+        NSInteger count = _selectedChannels.count;
+        BOOL cantEq = NO;
+        for(NSInteger i=0; i<count; i++){
+            if( [((AKNewsChannel*)[_selectedChannels objectAtIndex:i]).cid integerValue] != [((AKNewsChannel*)[selectedChannels objectAtIndex:i]).cid integerValue]){
+                cantEq = YES;
+                break;
+            }
+        }
+        if(cantEq==NO){
+            return;
+        }
+    }
     _selectedChannels = selectedChannels;
     [GVUserDefaults standardUserDefaults].hNewsSelectedChannels = [NSKeyedArchiver archivedDataWithRootObject:_selectedChannels];
-;
+
     AK_SIGNAL_MANAGER.onNewsSelectedChannelChange.fire(selectedChannels);
     
 }

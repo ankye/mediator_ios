@@ -70,9 +70,9 @@
     return _loopScroll ;
 }
 
-- (void)setupLoopInfo:(NSArray *)loopInfoList kindID:(int)kindId
+- (void)setupLoopInfo:(NSArray *)loopInfoList channelID:(NSString*)cid
 {
-    [self.loopScroll setupWithKindID:kindId changingDatalist:loopInfoList] ;
+    [self.loopScroll setupWithChannelID:cid changingDatalist:loopInfoList] ;
 }
 
 - (void)showCenterLoopImageHide:(BOOL)hidden

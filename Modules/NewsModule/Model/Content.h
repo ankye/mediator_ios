@@ -31,6 +31,6 @@
 
 @property (nonatomic,copy)    NSString  *kindName ;
 
-- (NSString *)getFinalLink ;
+
 
 @end

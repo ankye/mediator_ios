@@ -16,8 +16,8 @@
 #import "AKMutableView.h"
 
 #import "CmsTableHandler.h"
-#import "ResultParsered.h"
-#import "ServerRequest.h"
+
+
 
 #import "BannerCell.h"
 static const float kCriticalPoint = 5. ;

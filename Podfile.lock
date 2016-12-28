@@ -37,6 +37,9 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
   - CHTCollectionViewWaterfallLayout (0.9.5):
     - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.5)
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.5)
@@ -100,6 +103,7 @@ DEPENDENCIES:
   - AMapLocation
   - Aspects
   - BlocksKit
+  - ChameleonFramework
   - CHTCollectionViewWaterfallLayout
   - CocoaLumberjack
   - CYLTabBarController
@@ -133,6 +137,7 @@ SPEC CHECKSUMS:
   AMapLocation: 3f2005c6dec6a7a1107258d0cde43b9d7399d217
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
   CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
   CVKHierarchySearcher: 7be8d3bcbcc6f86ff07f785e6c632b5e40da2553
@@ -159,6 +164,6 @@ SPEC CHECKSUMS:
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: fa1a32fa4f7f57160a358229326e1db00676ead1
+PODFILE CHECKSUM: d94696bf449f39eb4dc01c4c55743ff6ca9840c4
 
 COCOAPODS: 1.1.1

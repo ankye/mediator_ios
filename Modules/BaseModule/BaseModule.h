@@ -9,7 +9,7 @@
 #ifndef BaseModule_h
 #define BaseModule_h
 #import "Aspects.h"
-
+#import <AFNetworking/AFNetworking.h>
 #import <YYKit/YYKit.h>
 #import <Masonry/Masonry.h>
 #import <AFMInfoBanner/AFMInfoBanner.h>

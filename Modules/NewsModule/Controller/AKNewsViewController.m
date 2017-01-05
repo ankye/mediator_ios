@@ -7,75 +7,78 @@
 //
 
 #import "AKNewsViewController.h"
-#import "GVUserDefaults+NewsModule.h"
-
-#import "AKChannelTagView.h"
-#import "AKNewsManager.h"
-#import "AKNewsChannel.h"
-#import "HSelectionList.h"
-#import "AKMutableView.h"
-
+#import "AKHContentView.h"
 #import "CmsTableHandler.h"
+#import "AKNewsManager.h"
+#import "AKCustomTableView.h"
 
-
-
-#import "BannerCell.h"
-static const float kCriticalPoint = 5. ;
-
-//#define TopRect             CGRectMake(0, 0, SCREEN_WIDTH, 40)
-//#define MainRect            CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 49.)
-//#define TopImageRect        CGRectMake(0, 0, SCREEN_WIDTH, [BannerCell getHeight])
-//#define TopNavgationRect    CGRectMake(0, 0, SCREEN_WIDTH, 40. + 20.)
-//#define TopAndNavRect       CGRectMake(0, 20, SCREEN_WIDTH, 40. + 20.)
-#define OverLength          ([BannerCell getHeight] - 40. - 20.)
-
-
-
-@interface AKNewsViewController () <HSelectionListDelegate, HSelectionListDataSource,AKMutableViewDelegate,CmsTableHandlerDelegate>
-
-
-@property (nonatomic, strong) HSelectionList *hSelectionList;
-@property (nonatomic,strong)  AKMutableView  *mutableView;
-
-
-
-@end
 
 @implementation AKNewsViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-    [self setupHSelectionList];
-    [self setupMutableView] ;
-    
-    
-
-    
-
-    
-    [AK_SIGNAL_MANAGER.onNewsSelectedChannelChange addObserver:self callback:^(typeof(self) self, NSMutableArray * _Nonnull mutableArray) {
-        [self.hSelectionList reloadData];
-        [self reloadTableHandlers];
-    }];
-    
-    
-    
-}
-
-
-- (void)setupMutableView
+- (void)viewDidLoad
 {
-    // 1. XTMultipleTables
+    [super viewDidLoad];
     
-    self.mutableView = [[AKMutableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-112)] ;
-    self.mutableView.akDelegate = self ;
+    self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.view addSubview:self.mutableView] ;
+    CGFloat barHeight = self.navigationController?SCREEN_NAV_HEIGHT:0;
+    CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
     
     
     [self reloadTableHandlers];
+    
+    // 设置整体内容尺寸（包含标题滚动视图和底部内容滚动视图）
+    [self setUpContentViewFrame:^(UIView *contentView) {
+        
+        CGFloat contentX = 0;
+        
+        CGFloat contentY = barHeight;
+        
+        CGFloat contentH = screenH - contentY -SCREEN_TABBAR_HEIGHT  ;
+        
+        contentView.frame = CGRectMake(contentX, contentY, screenW, contentH);
+        
+    }];
+    
+    /****** 标题渐变 ******/
+    // 推荐方式(设置标题颜色渐变) // 默认RGB样式
+    [self setUpTitleGradient:^(HSTB_TitleColorGradientStyle *titleColorGradientStyle, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor) {
+        *norColor = [UIColor blackColor];
+        *selColor = [UIColor redColor];
+    }];
+    
+    [self setUpTitleEffect:^(UIColor *__autoreleasing *titleScrollViewColor, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor, UIFont *__autoreleasing *titleFont, CGFloat* headerHeight, CGFloat *titleHeight, CGFloat *titleWidth) {
+        *headerHeight = SCREEN_NAV_HEIGHT;
+        *titleHeight = 40;
+        *titleFont = [UIFont systemFontOfSize:15];
+        
+    }];
+    
+    [self setUpTitleScale:^(CGFloat *titleScale) {
+        *titleScale = 1.3;
+    }];
+    
+    /****** 设置遮盖 ******/
+    // *推荐方式(设置遮盖)
+    //    [self setUpCoverEffect:^(UIColor **coverColor, CGFloat *coverCornerRadius) {
+    //
+    //        // 设置蒙版颜色
+    //        *coverColor = [UIColor colorWithWhite:0.7 alpha:0.4];
+    //
+    //        // 设置蒙版圆角半径
+    //        *coverCornerRadius = 5;
+    //    }];
+    
+    // 推荐方式（设置下标）
+    [self setUpUnderLineEffect:^(BOOL *isUnderLineDelayScroll, CGFloat *underLineH, UIColor *__autoreleasing *underLineColor,BOOL *isUnderLineEqualTitleWidth) {
+        // 标题填充模式
+        *underLineColor = [UIColor redColor];
+        *underLineH = 3.0f;
+    }];
+    
 }
+
 
 -(void)reloadTableHandlers
 {
@@ -86,174 +89,52 @@ static const float kCriticalPoint = 5. ;
         handler_Cms.handlerDelegate = self ;
         [tableHandlersList addObject:handler_Cms] ;
     }
-
-    [self.mutableView reloadHandlers:tableHandlersList];
-}
-
--(void)setupHSelectionList
-{
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.hSelectionList = [[HSelectionList alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 64)];
-    self.hSelectionList.delegate = self;
-    self.hSelectionList.dataSource = self;
-    self.hSelectionList.showsEdgeFadeEffect = YES;
-    self.hSelectionList.snapToCenter = YES;
-    self.hSelectionList.selectionIndicatorAnimationMode = HSelectionIndicatorAnimationModeNoBounce;
-    self.hSelectionList.selectionIndicatorColor = [UIColor redColor];
-    [self.hSelectionList setTitleFont:[UIFont systemFontOfSize:15] forState:UIControlStateNormal];
-    [self.hSelectionList setTitleFont:[UIFont boldSystemFontOfSize:18] forState:UIControlStateSelected];
-    [self.view addSubview:self.hSelectionList];
-    [_hSelectionList mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self.view);
-        make.height.mas_equalTo(64);
-    }];
-}
-
-#pragma mark - HSelectionListDataSource Protocol Methods
-
-- (NSInteger)numberOfItemsInSelectionList:(id<HSelectionListProtocol>)selectionList {
-    return [[AKNewsManager sharedInstance].selectedChannels count];
-}
-
-- (NSString *)selectionList:(id<HSelectionListProtocol>)selectionList titleForItemWithIndex:(NSInteger)index {
-    AKNewsChannel* channel = [[AKNewsManager sharedInstance].selectedChannels objectAtIndex:index];
-    return channel.name;
-}
-
-#pragma mark - HSelectionListDelegate Protocol Methods
-
-- (void)selectionList:(id<HSelectionListProtocol>)selectionList didSelectButtonWithIndex:(NSInteger)index {
-    // update the view for the corresponding index
-  
     
-     [self.mutableView mutableViewDidMoveAtIndex:index] ;
-}
-
--(void)showChooseTagDlg
-{
-    AKChannelTagView *vc = [[AKChannelTagView alloc] init];
     
-    NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet onClick:^(NSInteger channel, NSDictionary *attributes) {
-        
-    } onClose:^(NSDictionary *attributes) {
-        
-        [AKNewsManager sharedInstance].selectedChannels = [attributes[@"selected"] mutableCopy];
-        [AKNewsManager sharedInstance].unSelectedChannels = [attributes[@"unSelected"] mutableCopy];
-        
-    }];
-    
-    [vc loadData:@{@"selected":[AKNewsManager sharedInstance].selectedChannels,@"unSelected":[AKNewsManager sharedInstance].unSelectedChannels}];
-    [AK_POPUP_MANAGER showView:vc withAttributes:attributes];
+    [self reloadTables:tableHandlersList];
 }
-
-
-
-
-
-
-#pragma mark - CmsTableHandlerDelegate
-- (void)bannerSelected:(Content *)content
+-(void)reloadTables:(NSMutableArray*)handlerList
 {
-    [self jump2DetailVC:content] ;
+    NSInteger count = [handlerList count];
+    for(NSInteger i=0; i<count; i++){
+        CmsTableHandler* handler = [handlerList objectAtIndex:i];
+        
+        if([self.contentViews count] > i){
+            AKHContentView* tempView = [self.contentViews objectAtIndex:i];
+            tempView.contentView = [[AKCustomTableView alloc] initWithFrame:tempView.frame];
+            tempView.handler = handler;
+        }else{
+            AKHContentView* tempView = [[AKHContentView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SCREEN_NAV_HEIGHT-SCREEN_TABBAR_HEIGHT)];
+            tempView.contentView = [[AKCustomTableView alloc] initWithFrame:tempView.frame];
+            tempView.handler = handler;
+            [self.contentViews addObject:tempView];
+        }
+    }
 }
 
-- (void)didSelectRowWithContent:(Content *)content
-{
-    [self jump2DetailVC:content] ;
-}
-
-- (void)jump2DetailVC:(Content *)content
-{
-//    DetailCtrller *detailVC = (DetailCtrller *)[[self class] getCtrllerFromStory:@"Index" controllerIdentifier:@"DetailCtrller"] ;
-//    detailVC.content = content ;
-//    [detailVC setHidesBottomBarWhenPushed:YES] ;
-//    [self.navigationController pushViewController:detailVC animated:YES] ;
-}
 
 
-// callback in did scroll and
 - (void)tableDidScrollWithOffsetY:(float)offsetY
 {
-    [self makeNavBarDisplayWithOffsetY:offsetY] ;
+    
 }
-
-// callback in will end dragging .
 - (void)tablelWillEndDragWithOffsetY:(float)offsetY WithVelocity:(CGPoint)velocity
 {
-    //    NSLog(@"offsetY : %lf",offsetY) ;
-    [self makeNavigationbarDisplayWithOffsetY:offsetY Velocity:velocity] ;
+    
 }
-
 - (void)handlerRefreshing:(id)handler
 {
-    float offsetY = ((CmsTableHandler *)handler).offsetY ;
-    float overLength = OverLength ;
     
-    //    NSLog(@"offsetY : %lf",offsetY) ;
-    if (offsetY > overLength) {
-        [self makeNavigationbarDisplayWithOffsetY:offsetY Velocity:CGPointZero] ;
-    }
-    else {
-        [self makeNavBarDisplayWithOffsetY:offsetY] ;
-    }
 }
-
-
-#pragma mark --
-#pragma mark - func nav & seg
-- (void)makeNavBarDisplayWithOffsetY:(float)offsetY
+- (void)didSelectRowWithContent:(Content *)content
 {
-    float overLength = OverLength ;
-    
-    //1. 顶部 临界点15 .  控制nav和seg 显示
-    if (offsetY <= kCriticalPoint)
-    {
-        
-       
-        
-    }
-    else if (offsetY > kCriticalPoint && offsetY <= overLength)
-    {
-       
-    }
     
 }
-
-- (void)makeNavigationbarDisplayWithOffsetY:(float)offsetY Velocity:(CGPoint)velocity
-{
-    float overLength = OverLength ;
-    
-    if (offsetY > overLength) {
-        //  NSLog(@"vel y %@",NSStringFromCGPoint(velocity)) ;
-        
-        
-    }
-}
-
-- (void)hideAll
+- (void)bannerSelected:(Content *)content
 {
     
 }
 
-
-#pragma mark - AKMutableViewDelegate
-- (void)viewDidMovedAtIndex:(AKMutableView*)mutableView atIndex:(NSInteger)index
-{
-    NSLog(@"moveToIndexCallBack %@",@(index)) ;
-    
-    [self.hSelectionList setSelectedButtonIndex:index animated:YES];
-    
-    [self.mutableView pulldownCenterTableIfNeeded] ;
-    
-   
-}
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-
-}
 
 
 -(void)dealloc

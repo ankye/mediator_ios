@@ -39,8 +39,12 @@
 		</dict>
 		<key>table</key>
 		<dict>
-			<key>cellColor</key>
+			<key>cellBackgroundColor</key>
+			<string>ffffff</string>
+			<key>cellTextColor</key>
 			<string>222230</string>
+			<key>cellTextFontSize</key>
+			<integer>12</integer>
 			<key>cellSelectedColor</key>
 			<string>1e1e2e</string>
 			<key>cellSeparatorColor</key>
@@ -83,6 +87,22 @@
 			<string>939393</string>
 			<key>cellTitleFontColor</key>
 			<string>0c0c0c</string>
+		</dict>
+	</dict>
+	<key>component</key>
+	<dict>
+		<key>hselectionlist</key>
+		<dict>
+			<key>backgroundColor</key>
+			<string>ffffff</string>
+			<key>indicatorColor</key>
+			<string>ff0000</string>
+			<key>normalTitleColor</key>
+			<string>000000</string>
+			<key>normalTitleFontSize</key>
+			<integer>15</integer>
+			<key>selectedTitleFontSize</key>
+			<integer>18</integer>
 		</dict>
 	</dict>
 </dict>

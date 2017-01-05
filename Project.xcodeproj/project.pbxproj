@@ -27,7 +27,6 @@
 		C515AB771DF051BA00353FC4 /* AKPopupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AB591DF051BA00353FC4 /* AKPopupManager.m */; };
 		C515AB781DF051BA00353FC4 /* AKRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AB5B1DF051BA00353FC4 /* AKRequestManager.m */; };
 		C515AB791DF051BA00353FC4 /* AKTimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AB5D1DF051BA00353FC4 /* AKTimerManager.m */; };
-		C515AB7A1DF051BA00353FC4 /* AKCYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C515AB651DF051BA00353FC4 /* AKCYLPlusButton.m */; };
 		C515AC381DF0549C00353FC4 /* AKMediator+IMModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C515ABA11DF0549C00353FC4 /* AKMediator+IMModule.m */; };
 		C515AC391DF0549C00353FC4 /* AKRequestManager+IMModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C515ABA31DF0549C00353FC4 /* AKRequestManager+IMModule.m */; };
 		C515AC3A1DF0549C00353FC4 /* GVUserDefaults+IMModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C515ABA51DF0549C00353FC4 /* GVUserDefaults+IMModule.m */; };
@@ -247,14 +246,12 @@
 		C52E78A71DF7F1DD006B2183 /* Mine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C52E789E1DF7F1DD006B2183 /* Mine.xcassets */; };
 		C52E78AA1DF824FD006B2183 /* AKSignalManager+IMModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C52E78A91DF824FD006B2183 /* AKSignalManager+IMModule.m */; };
 		C538066E1DE7327900A2322D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C538066D1DE7327900A2322D /* libsqlite3.tbd */; };
+		C538A64A1E160F3C001E1FA7 /* AKThemeManager+HSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = C538A6491E160F3C001E1FA7 /* AKThemeManager+HSelectionList.m */; };
 		C53DDCC11DFE8E9B00D66D74 /* AKUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC01DFE8E9B00D66D74 /* AKUserDetail.m */; };
 		C53DDCC71DFFC4BB00D66D74 /* AKDBManager+UserGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC61DFFC4BB00D66D74 /* AKDBManager+UserGroup.m */; };
 		C53DDCCA1DFFC50A00D66D74 /* AKUserGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC91DFFC50A00D66D74 /* AKUserGroup.m */; };
-		C55A770D1E090847002E164A /* HSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A770A1E090847002E164A /* HSelectionList.m */; };
 		C55A77101E090D3A002E164A /* AKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C55A770F1E090D3A002E164A /* AKNewsViewController.m */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
-		C5660E361E09578A000BF5E3 /* HSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E331E09578A000BF5E3 /* HSelectionListCustomViewCell.m */; };
-		C5660E371E09578A000BF5E3 /* HSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E351E09578A000BF5E3 /* HSelectionListLabelCell.m */; };
 		C5660E3A1E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E391E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m */; };
 		C5660E481E0A7A10000BF5E3 /* NewsModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5660E471E0A7A10000BF5E3 /* NewsModule.xcassets */; };
 		C5660E6A1E0BBE94000BF5E3 /* AKBasePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5660E691E0BBE94000BF5E3 /* AKBasePopupView.m */; };
@@ -286,7 +283,6 @@
 		C5E0CEF11E120CA600705C26 /* AKSignalManager+ThemeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CEF01E120CA600705C26 /* AKSignalManager+ThemeModule.m */; };
 		C5E0CEF31E12129700705C26 /* AKThemes in Resources */ = {isa = PBXBuildFile; fileRef = C5E0CEF21E12129700705C26 /* AKThemes */; };
 		C5E0CEF71E1217FB00705C26 /* Aspect-ThemeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CEF61E1217FB00705C26 /* Aspect-ThemeModule.m */; };
-		C5E0CEFD1E12441A00705C26 /* UIColor+ThemeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CEFC1E12441A00705C26 /* UIColor+ThemeModule.m */; };
 		C5E0CF021E1282AE00705C26 /* AKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF011E1282AE00705C26 /* AKLabel.m */; };
 		C5E0CF051E1282ED00705C26 /* AKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF041E1282ED00705C26 /* AKTextView.m */; };
 		C5E0CF0B1E12839D00705C26 /* AKImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF0A1E12839D00705C26 /* AKImageView.m */; };
@@ -300,28 +296,29 @@
 		C5E0CF691E13B47300705C26 /* AKChannelTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF341E13B47300705C26 /* AKChannelTagView.m */; };
 		C5E0CF6A1E13B47300705C26 /* AKChooseTagPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF361E13B47300705C26 /* AKChooseTagPanelView.m */; };
 		C5E0CF6B1E13B47300705C26 /* chooseTagViewCloseBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E0CF371E13B47300705C26 /* chooseTagViewCloseBtn.png */; };
-		C5E0CF6C1E13B47300705C26 /* AKNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF3A1E13B47300705C26 /* AKNewsViewController.m */; };
-		C5E0CF6D1E13B47300705C26 /* HSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF3E1E13B47300705C26 /* HSelectionListCustomViewCell.m */; };
-		C5E0CF6E1E13B47300705C26 /* HSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF401E13B47300705C26 /* HSelectionListLabelCell.m */; };
-		C5E0CF6F1E13B47300705C26 /* HSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF421E13B47300705C26 /* HSelectionList.m */; };
-		C5E0CF701E13B47300705C26 /* AKBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF461E13B47300705C26 /* AKBaseTableView.m */; };
-		C5E0CF711E13B47300705C26 /* AKCustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF481E13B47300705C26 /* AKCustomTableView.m */; };
-		C5E0CF721E13B47300705C26 /* AKMutableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF4A1E13B47300705C26 /* AKMutableView.m */; };
-		C5E0CF731E13B47300705C26 /* BannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF4D1E13B47300705C26 /* BannerCell.m */; };
-		C5E0CF741E13B47300705C26 /* LoopInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF4F1E13B47300705C26 /* LoopInfoView.m */; };
-		C5E0CF751E13B47300705C26 /* LoopInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E0CF501E13B47300705C26 /* LoopInfoView.xib */; };
-		C5E0CF761E13B47300705C26 /* TopLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF521E13B47300705C26 /* TopLoopView.m */; };
-		C5E0CF771E13B47300705C26 /* BigImgContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF551E13B47300705C26 /* BigImgContentCell.m */; };
-		C5E0CF781E13B47300705C26 /* BigImgContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E0CF561E13B47300705C26 /* BigImgContentCell.xib */; };
-		C5E0CF791E13B47300705C26 /* MultiPictureContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF581E13B47300705C26 /* MultiPictureContentCell.m */; };
-		C5E0CF7A1E13B47300705C26 /* MultiPictureContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E0CF591E13B47300705C26 /* MultiPictureContentCell.xib */; };
-		C5E0CF7B1E13B47300705C26 /* NormalContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF5B1E13B47300705C26 /* NormalContentCell.m */; };
-		C5E0CF7C1E13B47300705C26 /* NormalContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E0CF5C1E13B47300705C26 /* NormalContentCell.xib */; };
-		C5E0CF7D1E13B47300705C26 /* SinglePicCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF5E1E13B47300705C26 /* SinglePicCollectCell.m */; };
-		C5E0CF7E1E13B47300705C26 /* SinglePicCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E0CF5F1E13B47300705C26 /* SinglePicCollectCell.xib */; };
-		C5E0CF7F1E13B47300705C26 /* CmsTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF611E13B47300705C26 /* CmsTableHandler.m */; };
-		C5E0CF801E13B47300705C26 /* XTTableViewRootHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF631E13B47300705C26 /* XTTableViewRootHandler.m */; };
 		C5E0CF811E13B47300705C26 /* AKCYLPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF661E13B47300705C26 /* AKCYLPlusButton.m */; };
+		C5E0CF841E13E55900705C26 /* AKCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF831E13E55900705C26 /* AKCollectionViewCell.m */; };
+		C5E0CF871E14D5F900705C26 /* AKView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CF861E14D5F900705C26 /* AKView.m */; };
+		C5E5D6051E1E1B16002B4823 /* AKBaseTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5DC1E1E1B16002B4823 /* AKBaseTableView.m */; };
+		C5E5D6061E1E1B16002B4823 /* AKCustomTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5DE1E1E1B16002B4823 /* AKCustomTableView.m */; };
+		C5E5D6071E1E1B16002B4823 /* AKTableViewHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5E01E1E1B16002B4823 /* AKTableViewHandler.m */; };
+		C5E5D6081E1E1B16002B4823 /* BannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5E31E1E1B16002B4823 /* BannerCell.m */; };
+		C5E5D6091E1E1B16002B4823 /* LoopInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5E51E1E1B16002B4823 /* LoopInfoView.m */; };
+		C5E5D60A1E1E1B16002B4823 /* LoopInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E5D5E61E1E1B16002B4823 /* LoopInfoView.xib */; };
+		C5E5D60B1E1E1B16002B4823 /* TopLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5E81E1E1B16002B4823 /* TopLoopView.m */; };
+		C5E5D60C1E1E1B16002B4823 /* BigImgContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5EB1E1E1B16002B4823 /* BigImgContentCell.m */; };
+		C5E5D60D1E1E1B16002B4823 /* BigImgContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E5D5EC1E1E1B16002B4823 /* BigImgContentCell.xib */; };
+		C5E5D60E1E1E1B16002B4823 /* MultiPictureContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5EE1E1E1B16002B4823 /* MultiPictureContentCell.m */; };
+		C5E5D60F1E1E1B16002B4823 /* MultiPictureContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E5D5EF1E1E1B16002B4823 /* MultiPictureContentCell.xib */; };
+		C5E5D6101E1E1B16002B4823 /* NormalContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5F11E1E1B16002B4823 /* NormalContentCell.m */; };
+		C5E5D6111E1E1B16002B4823 /* NormalContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E5D5F21E1E1B16002B4823 /* NormalContentCell.xib */; };
+		C5E5D6121E1E1B16002B4823 /* SinglePicCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5F41E1E1B16002B4823 /* SinglePicCollectCell.m */; };
+		C5E5D6131E1E1B16002B4823 /* SinglePicCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E5D5F51E1E1B16002B4823 /* SinglePicCollectCell.xib */; };
+		C5E5D6141E1E1B16002B4823 /* CmsTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5F71E1E1B16002B4823 /* CmsTableHandler.m */; };
+		C5E5D6151E1E1B16002B4823 /* AKHContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5FC1E1E1B16002B4823 /* AKHContentView.m */; };
+		C5E5D6161E1E1B16002B4823 /* AKHScrollFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5FE1E1E1B16002B4823 /* AKHScrollFlowLayout.m */; };
+		C5E5D6171E1E1B16002B4823 /* AKHScrollTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6001E1E1B16002B4823 /* AKHScrollTitleLabel.m */; };
+		C5E5D6181E1E1B16002B4823 /* AKHScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6041E1E1B16002B4823 /* AKHScrollViewController.m */; };
 		C5FC0C6F1DFAA1B200159913 /* TLConversation+AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0C6E1DFAA1B200159913 /* TLConversation+AKUser.m */; };
 		C5FC0C9F1DFAC05000159913 /* AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0C9E1DFAC05000159913 /* AKUser.m */; };
 		C5FC0CA91DFAC40F00159913 /* TLUserChatSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0CA31DFAC40F00159913 /* TLUserChatSetting.m */; };
@@ -392,8 +389,6 @@
 		C515AB5F1DF051BA00353FC4 /* AKDataObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataObjectProtocol.h; sourceTree = "<group>"; };
 		C515AB601DF051BA00353FC4 /* AKPopupViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupViewProtocol.h; sourceTree = "<group>"; };
 		C515AB611DF051BA00353FC4 /* AKTimerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTimerProtocol.h; sourceTree = "<group>"; };
-		C515AB641DF051BA00353FC4 /* AKCYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCYLPlusButton.h; sourceTree = "<group>"; };
-		C515AB651DF051BA00353FC4 /* AKCYLPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCYLPlusButton.m; sourceTree = "<group>"; };
 		C515ABA01DF0549C00353FC4 /* AKMediator+IMModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKMediator+IMModule.h"; sourceTree = "<group>"; };
 		C515ABA11DF0549C00353FC4 /* AKMediator+IMModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKMediator+IMModule.m"; sourceTree = "<group>"; };
 		C515ABA21DF0549C00353FC4 /* AKRequestManager+IMModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKRequestManager+IMModule.h"; sourceTree = "<group>"; };
@@ -848,6 +843,8 @@
 		C52E78A81DF824FD006B2183 /* AKSignalManager+IMModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKSignalManager+IMModule.h"; sourceTree = "<group>"; };
 		C52E78A91DF824FD006B2183 /* AKSignalManager+IMModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKSignalManager+IMModule.m"; sourceTree = "<group>"; };
 		C538066D1DE7327900A2322D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C538A6481E160F3C001E1FA7 /* AKThemeManager+HSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKThemeManager+HSelectionList.h"; sourceTree = "<group>"; };
+		C538A6491E160F3C001E1FA7 /* AKThemeManager+HSelectionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKThemeManager+HSelectionList.m"; sourceTree = "<group>"; };
 		C53DDCBF1DFE8E9B00D66D74 /* AKUserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserDetail.h; sourceTree = "<group>"; };
 		C53DDCC01DFE8E9B00D66D74 /* AKUserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserDetail.m; sourceTree = "<group>"; };
 		C53DDCC31DFF965300D66D74 /* TLDBUserGroupSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBUserGroupSQL.h; sourceTree = "<group>"; };
@@ -857,20 +854,12 @@
 		C53DDCC81DFFC50A00D66D74 /* AKUserGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserGroup.h; sourceTree = "<group>"; };
 		C53DDCC91DFFC50A00D66D74 /* AKUserGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserGroup.m; sourceTree = "<group>"; };
 		C53DDCCC1DFFCAD900D66D74 /* AKUserGroupProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserGroupProtocol.h; sourceTree = "<group>"; };
-		C55A77041E090847002E164A /* HSelectionListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListCell.h; sourceTree = "<group>"; };
-		C55A77091E090847002E164A /* HSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionList.h; sourceTree = "<group>"; };
-		C55A770A1E090847002E164A /* HSelectionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSelectionList.m; sourceTree = "<group>"; };
 		C55A770E1E090D3A002E164A /* AKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKNewsViewController.h; sourceTree = "<group>"; };
 		C55A770F1E090D3A002E164A /* AKNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKNewsViewController.m; sourceTree = "<group>"; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
-		C5660E321E09578A000BF5E3 /* HSelectionListCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListCustomViewCell.h; sourceTree = "<group>"; };
-		C5660E331E09578A000BF5E3 /* HSelectionListCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSelectionListCustomViewCell.m; sourceTree = "<group>"; };
-		C5660E341E09578A000BF5E3 /* HSelectionListLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListLabelCell.h; sourceTree = "<group>"; };
-		C5660E351E09578A000BF5E3 /* HSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSelectionListLabelCell.m; sourceTree = "<group>"; };
 		C5660E381E096EB8000BF5E3 /* GVUserDefaults+NewsModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GVUserDefaults+NewsModule.h"; sourceTree = "<group>"; };
 		C5660E391E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GVUserDefaults+NewsModule.m"; sourceTree = "<group>"; };
-		C5660E3B1E0972D0000BF5E3 /* HSelectionListProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListProtocol.h; sourceTree = "<group>"; };
 		C5660E471E0A7A10000BF5E3 /* NewsModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NewsModule.xcassets; sourceTree = "<group>"; };
 		C5660E681E0BBE94000BF5E3 /* AKBasePopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBasePopupView.h; sourceTree = "<group>"; };
 		C5660E691E0BBE94000BF5E3 /* AKBasePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBasePopupView.m; sourceTree = "<group>"; };
@@ -935,8 +924,6 @@
 		C5E0CEF21E12129700705C26 /* AKThemes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AKThemes; sourceTree = "<group>"; };
 		C5E0CEF51E1217FB00705C26 /* Aspect-ThemeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect-ThemeModule.h"; sourceTree = "<group>"; };
 		C5E0CEF61E1217FB00705C26 /* Aspect-ThemeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect-ThemeModule.m"; sourceTree = "<group>"; };
-		C5E0CEFB1E12441A00705C26 /* UIColor+ThemeModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ThemeModule.h"; sourceTree = "<group>"; };
-		C5E0CEFC1E12441A00705C26 /* UIColor+ThemeModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ThemeModule.m"; sourceTree = "<group>"; };
 		C5E0CEFE1E125C1D00705C26 /* ThemeModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThemeModule.h; sourceTree = "<group>"; };
 		C5E0CF001E1282AE00705C26 /* AKLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKLabel.h; sourceTree = "<group>"; };
 		C5E0CF011E1282AE00705C26 /* AKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKLabel.m; sourceTree = "<group>"; };
@@ -964,47 +951,51 @@
 		C5E0CF351E13B47300705C26 /* AKChooseTagPanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKChooseTagPanelView.h; sourceTree = "<group>"; };
 		C5E0CF361E13B47300705C26 /* AKChooseTagPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKChooseTagPanelView.m; sourceTree = "<group>"; };
 		C5E0CF371E13B47300705C26 /* chooseTagViewCloseBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chooseTagViewCloseBtn.png; sourceTree = "<group>"; };
-		C5E0CF391E13B47300705C26 /* AKNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKNewsViewController.h; sourceTree = "<group>"; };
-		C5E0CF3A1E13B47300705C26 /* AKNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKNewsViewController.m; sourceTree = "<group>"; };
-		C5E0CF3C1E13B47300705C26 /* HSelectionListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListCell.h; sourceTree = "<group>"; };
-		C5E0CF3D1E13B47300705C26 /* HSelectionListCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListCustomViewCell.h; sourceTree = "<group>"; };
-		C5E0CF3E1E13B47300705C26 /* HSelectionListCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSelectionListCustomViewCell.m; sourceTree = "<group>"; };
-		C5E0CF3F1E13B47300705C26 /* HSelectionListLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListLabelCell.h; sourceTree = "<group>"; };
-		C5E0CF401E13B47300705C26 /* HSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSelectionListLabelCell.m; sourceTree = "<group>"; };
-		C5E0CF411E13B47300705C26 /* HSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionList.h; sourceTree = "<group>"; };
-		C5E0CF421E13B47300705C26 /* HSelectionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSelectionList.m; sourceTree = "<group>"; };
-		C5E0CF431E13B47300705C26 /* HSelectionListProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSelectionListProtocol.h; sourceTree = "<group>"; };
-		C5E0CF451E13B47300705C26 /* AKBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseTableView.h; sourceTree = "<group>"; };
-		C5E0CF461E13B47300705C26 /* AKBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseTableView.m; sourceTree = "<group>"; };
-		C5E0CF471E13B47300705C26 /* AKCustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomTableView.h; sourceTree = "<group>"; };
-		C5E0CF481E13B47300705C26 /* AKCustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomTableView.m; sourceTree = "<group>"; };
-		C5E0CF491E13B47300705C26 /* AKMutableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMutableView.h; sourceTree = "<group>"; };
-		C5E0CF4A1E13B47300705C26 /* AKMutableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMutableView.m; sourceTree = "<group>"; };
-		C5E0CF4C1E13B47300705C26 /* BannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCell.h; sourceTree = "<group>"; };
-		C5E0CF4D1E13B47300705C26 /* BannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCell.m; sourceTree = "<group>"; };
-		C5E0CF4E1E13B47300705C26 /* LoopInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopInfoView.h; sourceTree = "<group>"; };
-		C5E0CF4F1E13B47300705C26 /* LoopInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopInfoView.m; sourceTree = "<group>"; };
-		C5E0CF501E13B47300705C26 /* LoopInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoopInfoView.xib; sourceTree = "<group>"; };
-		C5E0CF511E13B47300705C26 /* TopLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLoopView.h; sourceTree = "<group>"; };
-		C5E0CF521E13B47300705C26 /* TopLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLoopView.m; sourceTree = "<group>"; };
-		C5E0CF541E13B47300705C26 /* BigImgContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigImgContentCell.h; sourceTree = "<group>"; };
-		C5E0CF551E13B47300705C26 /* BigImgContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigImgContentCell.m; sourceTree = "<group>"; };
-		C5E0CF561E13B47300705C26 /* BigImgContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigImgContentCell.xib; sourceTree = "<group>"; };
-		C5E0CF571E13B47300705C26 /* MultiPictureContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPictureContentCell.h; sourceTree = "<group>"; };
-		C5E0CF581E13B47300705C26 /* MultiPictureContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiPictureContentCell.m; sourceTree = "<group>"; };
-		C5E0CF591E13B47300705C26 /* MultiPictureContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiPictureContentCell.xib; sourceTree = "<group>"; };
-		C5E0CF5A1E13B47300705C26 /* NormalContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalContentCell.h; sourceTree = "<group>"; };
-		C5E0CF5B1E13B47300705C26 /* NormalContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalContentCell.m; sourceTree = "<group>"; };
-		C5E0CF5C1E13B47300705C26 /* NormalContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalContentCell.xib; sourceTree = "<group>"; };
-		C5E0CF5D1E13B47300705C26 /* SinglePicCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePicCollectCell.h; sourceTree = "<group>"; };
-		C5E0CF5E1E13B47300705C26 /* SinglePicCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinglePicCollectCell.m; sourceTree = "<group>"; };
-		C5E0CF5F1E13B47300705C26 /* SinglePicCollectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinglePicCollectCell.xib; sourceTree = "<group>"; };
-		C5E0CF601E13B47300705C26 /* CmsTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmsTableHandler.h; sourceTree = "<group>"; };
-		C5E0CF611E13B47300705C26 /* CmsTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CmsTableHandler.m; sourceTree = "<group>"; };
-		C5E0CF621E13B47300705C26 /* XTTableViewRootHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTTableViewRootHandler.h; sourceTree = "<group>"; };
-		C5E0CF631E13B47300705C26 /* XTTableViewRootHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTTableViewRootHandler.m; sourceTree = "<group>"; };
 		C5E0CF651E13B47300705C26 /* AKCYLPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCYLPlusButton.h; sourceTree = "<group>"; };
 		C5E0CF661E13B47300705C26 /* AKCYLPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCYLPlusButton.m; sourceTree = "<group>"; };
+		C5E0CF821E13E55900705C26 /* AKCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCollectionViewCell.h; sourceTree = "<group>"; };
+		C5E0CF831E13E55900705C26 /* AKCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCollectionViewCell.m; sourceTree = "<group>"; };
+		C5E0CF851E14D5F900705C26 /* AKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKView.h; sourceTree = "<group>"; };
+		C5E0CF861E14D5F900705C26 /* AKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKView.m; sourceTree = "<group>"; };
+		C5E5D5DB1E1E1B16002B4823 /* AKBaseTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseTableView.h; sourceTree = "<group>"; };
+		C5E5D5DC1E1E1B16002B4823 /* AKBaseTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseTableView.m; sourceTree = "<group>"; };
+		C5E5D5DD1E1E1B16002B4823 /* AKCustomTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomTableView.h; sourceTree = "<group>"; };
+		C5E5D5DE1E1E1B16002B4823 /* AKCustomTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomTableView.m; sourceTree = "<group>"; };
+		C5E5D5DF1E1E1B16002B4823 /* AKTableViewHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKTableViewHandler.h; sourceTree = "<group>"; };
+		C5E5D5E01E1E1B16002B4823 /* AKTableViewHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKTableViewHandler.m; sourceTree = "<group>"; };
+		C5E5D5E21E1E1B16002B4823 /* BannerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCell.h; sourceTree = "<group>"; };
+		C5E5D5E31E1E1B16002B4823 /* BannerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCell.m; sourceTree = "<group>"; };
+		C5E5D5E41E1E1B16002B4823 /* LoopInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopInfoView.h; sourceTree = "<group>"; };
+		C5E5D5E51E1E1B16002B4823 /* LoopInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopInfoView.m; sourceTree = "<group>"; };
+		C5E5D5E61E1E1B16002B4823 /* LoopInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoopInfoView.xib; sourceTree = "<group>"; };
+		C5E5D5E71E1E1B16002B4823 /* TopLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopLoopView.h; sourceTree = "<group>"; };
+		C5E5D5E81E1E1B16002B4823 /* TopLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopLoopView.m; sourceTree = "<group>"; };
+		C5E5D5EA1E1E1B16002B4823 /* BigImgContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BigImgContentCell.h; sourceTree = "<group>"; };
+		C5E5D5EB1E1E1B16002B4823 /* BigImgContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BigImgContentCell.m; sourceTree = "<group>"; };
+		C5E5D5EC1E1E1B16002B4823 /* BigImgContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BigImgContentCell.xib; sourceTree = "<group>"; };
+		C5E5D5ED1E1E1B16002B4823 /* MultiPictureContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPictureContentCell.h; sourceTree = "<group>"; };
+		C5E5D5EE1E1E1B16002B4823 /* MultiPictureContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiPictureContentCell.m; sourceTree = "<group>"; };
+		C5E5D5EF1E1E1B16002B4823 /* MultiPictureContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultiPictureContentCell.xib; sourceTree = "<group>"; };
+		C5E5D5F01E1E1B16002B4823 /* NormalContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalContentCell.h; sourceTree = "<group>"; };
+		C5E5D5F11E1E1B16002B4823 /* NormalContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalContentCell.m; sourceTree = "<group>"; };
+		C5E5D5F21E1E1B16002B4823 /* NormalContentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalContentCell.xib; sourceTree = "<group>"; };
+		C5E5D5F31E1E1B16002B4823 /* SinglePicCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePicCollectCell.h; sourceTree = "<group>"; };
+		C5E5D5F41E1E1B16002B4823 /* SinglePicCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinglePicCollectCell.m; sourceTree = "<group>"; };
+		C5E5D5F51E1E1B16002B4823 /* SinglePicCollectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinglePicCollectCell.xib; sourceTree = "<group>"; };
+		C5E5D5F61E1E1B16002B4823 /* CmsTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmsTableHandler.h; sourceTree = "<group>"; };
+		C5E5D5F71E1E1B16002B4823 /* CmsTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CmsTableHandler.m; sourceTree = "<group>"; };
+		C5E5D5F91E1E1B16002B4823 /* AKDataHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataHandlerProtocol.h; sourceTree = "<group>"; };
+		C5E5D5FA1E1E1B16002B4823 /* AKDataViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataViewProtocol.h; sourceTree = "<group>"; };
+		C5E5D5FB1E1E1B16002B4823 /* AKHContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHContentView.h; sourceTree = "<group>"; };
+		C5E5D5FC1E1E1B16002B4823 /* AKHContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHContentView.m; sourceTree = "<group>"; };
+		C5E5D5FD1E1E1B16002B4823 /* AKHScrollFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHScrollFlowLayout.h; sourceTree = "<group>"; };
+		C5E5D5FE1E1E1B16002B4823 /* AKHScrollFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHScrollFlowLayout.m; sourceTree = "<group>"; };
+		C5E5D5FF1E1E1B16002B4823 /* AKHScrollTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHScrollTitleLabel.h; sourceTree = "<group>"; };
+		C5E5D6001E1E1B16002B4823 /* AKHScrollTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHScrollTitleLabel.m; sourceTree = "<group>"; };
+		C5E5D6011E1E1B16002B4823 /* AKHScrollToolBarHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHScrollToolBarHeader.h; sourceTree = "<group>"; };
+		C5E5D6021E1E1B16002B4823 /* AKHScrollToolBarProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHScrollToolBarProtocol.h; sourceTree = "<group>"; };
+		C5E5D6031E1E1B16002B4823 /* AKHScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHScrollViewController.h; sourceTree = "<group>"; };
+		C5E5D6041E1E1B16002B4823 /* AKHScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHScrollViewController.m; sourceTree = "<group>"; };
 		C5FC0C6D1DFAA1B200159913 /* TLConversation+AKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLConversation+AKUser.h"; sourceTree = "<group>"; };
 		C5FC0C6E1DFAA1B200159913 /* TLConversation+AKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLConversation+AKUser.m"; sourceTree = "<group>"; };
 		C5FC0C7A1DFAA99A00159913 /* TLDBUserSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBUserSQL.h; sourceTree = "<group>"; };
@@ -1086,7 +1077,6 @@
 				C515AB4A1DF051BA00353FC4 /* Helper */,
 				C515AB511DF051BA00353FC4 /* Manager */,
 				C515AB5E1DF051BA00353FC4 /* Protocol */,
-				C515AB621DF051BA00353FC4 /* View */,
 			);
 			path = BaseModule;
 			sourceTree = "<group>";
@@ -1182,24 +1172,6 @@
 				C515AB611DF051BA00353FC4 /* AKTimerProtocol.h */,
 			);
 			path = Protocol;
-			sourceTree = "<group>";
-		};
-		C515AB621DF051BA00353FC4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C55A77021E090847002E164A /* HSelectionList */,
-				C515AB631DF051BA00353FC4 /* Tabbar */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C515AB631DF051BA00353FC4 /* Tabbar */ = {
-			isa = PBXGroup;
-			children = (
-				C515AB641DF051BA00353FC4 /* AKCYLPlusButton.h */,
-				C515AB651DF051BA00353FC4 /* AKCYLPlusButton.m */,
-			);
-			path = Tabbar;
 			sourceTree = "<group>";
 		};
 		C515AB9E1DF0549C00353FC4 /* IMModule */ = {
@@ -2475,6 +2447,15 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		C538A6471E160F0D001E1FA7 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C538A6481E160F3C001E1FA7 /* AKThemeManager+HSelectionList.h */,
+				C538A6491E160F3C001E1FA7 /* AKThemeManager+HSelectionList.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		C55A76F31E090439002E164A /* Aspect */ = {
 			isa = PBXGroup;
 			children = (
@@ -2548,29 +2529,6 @@
 			children = (
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C55A77021E090847002E164A /* HSelectionList */ = {
-			isa = PBXGroup;
-			children = (
-				C55A77031E090847002E164A /* Cells */,
-				C55A77091E090847002E164A /* HSelectionList.h */,
-				C55A770A1E090847002E164A /* HSelectionList.m */,
-				C5660E3B1E0972D0000BF5E3 /* HSelectionListProtocol.h */,
-			);
-			path = HSelectionList;
-			sourceTree = "<group>";
-		};
-		C55A77031E090847002E164A /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				C5660E321E09578A000BF5E3 /* HSelectionListCustomViewCell.h */,
-				C5660E331E09578A000BF5E3 /* HSelectionListCustomViewCell.m */,
-				C5660E341E09578A000BF5E3 /* HSelectionListLabelCell.h */,
-				C5660E351E09578A000BF5E3 /* HSelectionListLabelCell.m */,
-				C55A77041E090847002E164A /* HSelectionListCell.h */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		C55CBE1E1DE436350000B1F6 /* Network */ = {
@@ -2772,6 +2730,8 @@
 		C5E0CEEE1E120BE200705C26 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C5E0CF851E14D5F900705C26 /* AKView.h */,
+				C5E0CF861E14D5F900705C26 /* AKView.m */,
 				C5E0CF001E1282AE00705C26 /* AKLabel.h */,
 				C5E0CF011E1282AE00705C26 /* AKLabel.m */,
 				C5E0CF031E1282ED00705C26 /* AKTextView.h */,
@@ -2784,6 +2744,8 @@
 				C5E0CF101E12857000705C26 /* AKTableViewCell.m */,
 				C5E0CF171E128CFD00705C26 /* AKButton.h */,
 				C5E0CF181E128CFD00705C26 /* AKButton.m */,
+				C5E0CF821E13E55900705C26 /* AKCollectionViewCell.h */,
+				C5E0CF831E13E55900705C26 /* AKCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2800,8 +2762,6 @@
 		C5E0CEFA1E1243E500705C26 /* themes */ = {
 			isa = PBXGroup;
 			children = (
-				C5E0CEFB1E12441A00705C26 /* UIColor+ThemeModule.h */,
-				C5E0CEFC1E12441A00705C26 /* UIColor+ThemeModule.m */,
 				C5E0CF121E1285F400705C26 /* UINavigationBar+ThemeModule.h */,
 				C5E0CF131E1285F400705C26 /* UINavigationBar+ThemeModule.m */,
 			);
@@ -2819,9 +2779,10 @@
 		C5E0CF2D1E13B47300705C26 /* ComponentModule */ = {
 			isa = PBXGroup;
 			children = (
+				C5E5D5DA1E1E1B16002B4823 /* AKTableView */,
+				C5E5D5F81E1E1B16002B4823 /* HorizontalScrollToolBar */,
+				C538A6471E160F0D001E1FA7 /* Category */,
 				C5E0CF2E1E13B47300705C26 /* AKChannelTagView */,
-				C5E0CF381E13B47300705C26 /* AKHSelectionList */,
-				C5E0CF441E13B47300705C26 /* AKMutableTableView */,
 				C5E0CF641E13B47300705C26 /* AKTabbar */,
 			);
 			path = ComponentModule;
@@ -2843,83 +2804,6 @@
 			path = AKChannelTagView;
 			sourceTree = "<group>";
 		};
-		C5E0CF381E13B47300705C26 /* AKHSelectionList */ = {
-			isa = PBXGroup;
-			children = (
-				C5E0CF391E13B47300705C26 /* AKNewsViewController.h */,
-				C5E0CF3A1E13B47300705C26 /* AKNewsViewController.m */,
-				C5E0CF3B1E13B47300705C26 /* Cells */,
-				C5E0CF411E13B47300705C26 /* HSelectionList.h */,
-				C5E0CF421E13B47300705C26 /* HSelectionList.m */,
-				C5E0CF431E13B47300705C26 /* HSelectionListProtocol.h */,
-			);
-			path = AKHSelectionList;
-			sourceTree = "<group>";
-		};
-		C5E0CF3B1E13B47300705C26 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				C5E0CF3C1E13B47300705C26 /* HSelectionListCell.h */,
-				C5E0CF3D1E13B47300705C26 /* HSelectionListCustomViewCell.h */,
-				C5E0CF3E1E13B47300705C26 /* HSelectionListCustomViewCell.m */,
-				C5E0CF3F1E13B47300705C26 /* HSelectionListLabelCell.h */,
-				C5E0CF401E13B47300705C26 /* HSelectionListLabelCell.m */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		C5E0CF441E13B47300705C26 /* AKMutableTableView */ = {
-			isa = PBXGroup;
-			children = (
-				C5E0CF451E13B47300705C26 /* AKBaseTableView.h */,
-				C5E0CF461E13B47300705C26 /* AKBaseTableView.m */,
-				C5E0CF471E13B47300705C26 /* AKCustomTableView.h */,
-				C5E0CF481E13B47300705C26 /* AKCustomTableView.m */,
-				C5E0CF491E13B47300705C26 /* AKMutableView.h */,
-				C5E0CF4A1E13B47300705C26 /* AKMutableView.m */,
-				C5E0CF4B1E13B47300705C26 /* Banner */,
-				C5E0CF531E13B47300705C26 /* Cell */,
-				C5E0CF601E13B47300705C26 /* CmsTableHandler.h */,
-				C5E0CF611E13B47300705C26 /* CmsTableHandler.m */,
-				C5E0CF621E13B47300705C26 /* XTTableViewRootHandler.h */,
-				C5E0CF631E13B47300705C26 /* XTTableViewRootHandler.m */,
-			);
-			path = AKMutableTableView;
-			sourceTree = "<group>";
-		};
-		C5E0CF4B1E13B47300705C26 /* Banner */ = {
-			isa = PBXGroup;
-			children = (
-				C5E0CF4C1E13B47300705C26 /* BannerCell.h */,
-				C5E0CF4D1E13B47300705C26 /* BannerCell.m */,
-				C5E0CF4E1E13B47300705C26 /* LoopInfoView.h */,
-				C5E0CF4F1E13B47300705C26 /* LoopInfoView.m */,
-				C5E0CF501E13B47300705C26 /* LoopInfoView.xib */,
-				C5E0CF511E13B47300705C26 /* TopLoopView.h */,
-				C5E0CF521E13B47300705C26 /* TopLoopView.m */,
-			);
-			path = Banner;
-			sourceTree = "<group>";
-		};
-		C5E0CF531E13B47300705C26 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				C5E0CF541E13B47300705C26 /* BigImgContentCell.h */,
-				C5E0CF551E13B47300705C26 /* BigImgContentCell.m */,
-				C5E0CF561E13B47300705C26 /* BigImgContentCell.xib */,
-				C5E0CF571E13B47300705C26 /* MultiPictureContentCell.h */,
-				C5E0CF581E13B47300705C26 /* MultiPictureContentCell.m */,
-				C5E0CF591E13B47300705C26 /* MultiPictureContentCell.xib */,
-				C5E0CF5A1E13B47300705C26 /* NormalContentCell.h */,
-				C5E0CF5B1E13B47300705C26 /* NormalContentCell.m */,
-				C5E0CF5C1E13B47300705C26 /* NormalContentCell.xib */,
-				C5E0CF5D1E13B47300705C26 /* SinglePicCollectCell.h */,
-				C5E0CF5E1E13B47300705C26 /* SinglePicCollectCell.m */,
-				C5E0CF5F1E13B47300705C26 /* SinglePicCollectCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		C5E0CF641E13B47300705C26 /* AKTabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2927,6 +2811,75 @@
 				C5E0CF661E13B47300705C26 /* AKCYLPlusButton.m */,
 			);
 			path = AKTabbar;
+			sourceTree = "<group>";
+		};
+		C5E5D5DA1E1E1B16002B4823 /* AKTableView */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D5DB1E1E1B16002B4823 /* AKBaseTableView.h */,
+				C5E5D5DC1E1E1B16002B4823 /* AKBaseTableView.m */,
+				C5E5D5DD1E1E1B16002B4823 /* AKCustomTableView.h */,
+				C5E5D5DE1E1E1B16002B4823 /* AKCustomTableView.m */,
+				C5E5D5DF1E1E1B16002B4823 /* AKTableViewHandler.h */,
+				C5E5D5E01E1E1B16002B4823 /* AKTableViewHandler.m */,
+				C5E5D5E11E1E1B16002B4823 /* Banner */,
+				C5E5D5E91E1E1B16002B4823 /* Cell */,
+				C5E5D5F61E1E1B16002B4823 /* CmsTableHandler.h */,
+				C5E5D5F71E1E1B16002B4823 /* CmsTableHandler.m */,
+			);
+			path = AKTableView;
+			sourceTree = "<group>";
+		};
+		C5E5D5E11E1E1B16002B4823 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D5E21E1E1B16002B4823 /* BannerCell.h */,
+				C5E5D5E31E1E1B16002B4823 /* BannerCell.m */,
+				C5E5D5E41E1E1B16002B4823 /* LoopInfoView.h */,
+				C5E5D5E51E1E1B16002B4823 /* LoopInfoView.m */,
+				C5E5D5E61E1E1B16002B4823 /* LoopInfoView.xib */,
+				C5E5D5E71E1E1B16002B4823 /* TopLoopView.h */,
+				C5E5D5E81E1E1B16002B4823 /* TopLoopView.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
+		C5E5D5E91E1E1B16002B4823 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D5EA1E1E1B16002B4823 /* BigImgContentCell.h */,
+				C5E5D5EB1E1E1B16002B4823 /* BigImgContentCell.m */,
+				C5E5D5EC1E1E1B16002B4823 /* BigImgContentCell.xib */,
+				C5E5D5ED1E1E1B16002B4823 /* MultiPictureContentCell.h */,
+				C5E5D5EE1E1E1B16002B4823 /* MultiPictureContentCell.m */,
+				C5E5D5EF1E1E1B16002B4823 /* MultiPictureContentCell.xib */,
+				C5E5D5F01E1E1B16002B4823 /* NormalContentCell.h */,
+				C5E5D5F11E1E1B16002B4823 /* NormalContentCell.m */,
+				C5E5D5F21E1E1B16002B4823 /* NormalContentCell.xib */,
+				C5E5D5F31E1E1B16002B4823 /* SinglePicCollectCell.h */,
+				C5E5D5F41E1E1B16002B4823 /* SinglePicCollectCell.m */,
+				C5E5D5F51E1E1B16002B4823 /* SinglePicCollectCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C5E5D5F81E1E1B16002B4823 /* HorizontalScrollToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D5F91E1E1B16002B4823 /* AKDataHandlerProtocol.h */,
+				C5E5D5FA1E1E1B16002B4823 /* AKDataViewProtocol.h */,
+				C5E5D5FB1E1E1B16002B4823 /* AKHContentView.h */,
+				C5E5D5FC1E1E1B16002B4823 /* AKHContentView.m */,
+				C5E5D5FD1E1E1B16002B4823 /* AKHScrollFlowLayout.h */,
+				C5E5D5FE1E1E1B16002B4823 /* AKHScrollFlowLayout.m */,
+				C5E5D5FF1E1E1B16002B4823 /* AKHScrollTitleLabel.h */,
+				C5E5D6001E1E1B16002B4823 /* AKHScrollTitleLabel.m */,
+				C5E5D6011E1E1B16002B4823 /* AKHScrollToolBarHeader.h */,
+				C5E5D6021E1E1B16002B4823 /* AKHScrollToolBarProtocol.h */,
+				C5E5D6031E1E1B16002B4823 /* AKHScrollViewController.h */,
+				C5E5D6041E1E1B16002B4823 /* AKHScrollViewController.m */,
+			);
+			path = HorizontalScrollToolBar;
 			sourceTree = "<group>";
 		};
 		C5FC0C791DFAA97A00159913 /* Sql */ = {
@@ -3069,25 +3022,25 @@
 				C515AB661DF051BA00353FC4 /* BaseModule.xcassets in Resources */,
 				C5E0CF6B1E13B47300705C26 /* chooseTagViewCloseBtn.png in Resources */,
 				C5E0CEF31E12129700705C26 /* AKThemes in Resources */,
-				C5E0CF751E13B47300705C26 /* LoopInfoView.xib in Resources */,
 				C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */,
-				C5E0CF7C1E13B47300705C26 /* NormalContentCell.xib in Resources */,
-				C5E0CF781E13B47300705C26 /* BigImgContentCell.xib in Resources */,
 				C5660E481E0A7A10000BF5E3 /* NewsModule.xcassets in Resources */,
 				C52E78A51DF7F1DD006B2183 /* Friends.xcassets in Resources */,
 				C5B986E31E02A14400AB548A /* res.png in Resources */,
 				C52E78A11DF7F1DD006B2183 /* Chat.xcassets in Resources */,
 				C52E78A01DF7F1DD006B2183 /* SystemEmoji.json in Resources */,
+				C5E5D60A1E1E1B16002B4823 /* LoopInfoView.xib in Resources */,
 				C515ACC81DF0552600353FC4 /* LoginModule.xcassets in Resources */,
 				C5A730251DE2BB3400DB2788 /* LaunchScreen.storyboard in Resources */,
+				C5E5D6131E1E1B16002B4823 /* SinglePicCollectCell.xib in Resources */,
 				C52E78A71DF7F1DD006B2183 /* Mine.xcassets in Resources */,
 				C52E789F1DF7F1DD006B2183 /* FaceEmoji.json in Resources */,
+				C5E5D6111E1E1B16002B4823 /* NormalContentCell.xib in Resources */,
 				C52E78A31DF7F1DD006B2183 /* Conversation.xcassets in Resources */,
+				C5E5D60F1E1E1B16002B4823 /* MultiPictureContentCell.xib in Resources */,
 				C52E78A41DF7F1DD006B2183 /* Discover.xcassets in Resources */,
 				C5A730221DE2BB3400DB2788 /* Assets.xcassets in Resources */,
-				C5E0CF7E1E13B47300705C26 /* SinglePicCollectCell.xib in Resources */,
 				C515ACF41DF0554400353FC4 /* MapModule.xcassets in Resources */,
-				C5E0CF7A1E13B47300705C26 /* MultiPictureContentCell.xib in Resources */,
+				C5E5D60D1E1E1B16002B4823 /* BigImgContentCell.xib in Resources */,
 				C5A730201DE2BB3400DB2788 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3170,6 +3123,7 @@
 				C515AC621DF0549C00353FC4 /* IMRoomLeaveMessage.m in Sources */,
 				C5660E7D1E0BD258000BF5E3 /* AKSignalManager+NewsModule.m in Sources */,
 				C52E77CA1DF7B53B006B2183 /* TLMoreKBHelper.m in Sources */,
+				C5E5D6161E1E1B16002B4823 /* AKHScrollFlowLayout.m in Sources */,
 				C515AC4D1DF0549C00353FC4 /* IMGetUnreadList.m in Sources */,
 				C53DDCC71DFFC4BB00D66D74 /* AKDBManager+UserGroup.m in Sources */,
 				C52E77DE1DF7B6D5006B2183 /* TLAudioRecorder.m in Sources */,
@@ -3183,6 +3137,7 @@
 				C52E78741DF7BA58006B2183 /* TLChatBackgroundSelectCell.m in Sources */,
 				C52E77A71DF7AFFE006B2183 /* TLEmojiImageItemCell.m in Sources */,
 				C515AB791DF051BA00353FC4 /* AKTimerManager.m in Sources */,
+				C5E5D6051E1E1B16002B4823 /* AKBaseTableView.m in Sources */,
 				C52E77A81DF7AFFE006B2183 /* TLEmojiImageTitleItemCell.m in Sources */,
 				C52E77F71DF7B831006B2183 /* TLChatDetailViewController.m in Sources */,
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
@@ -3190,7 +3145,6 @@
 				C52E77091DF6C326006B2183 /* Aspect-IMModule.m in Sources */,
 				C52E76E11DF698A2006B2183 /* TLSettingGroup.m in Sources */,
 				C52E77991DF7AFFE006B2183 /* TLImageExpressionDisplayView.m in Sources */,
-				C55A770D1E090847002E164A /* HSelectionList.m in Sources */,
 				C52E77AC1DF7AFFE006B2183 /* TLEmojiGroupCell.m in Sources */,
 				C53DDCCA1DFFC50A00D66D74 /* AKUserGroup.m in Sources */,
 				C515AD201DF0591100353FC4 /* NSObject+CategoryWithProperty.m in Sources */,
@@ -3199,7 +3153,6 @@
 				C5E0CF051E1282ED00705C26 /* AKTextView.m in Sources */,
 				C52E76E21DF698A2006B2183 /* TLSettingItem.m in Sources */,
 				C515AC6D1DF0549C00353FC4 /* PhpBroadcastedPush.m in Sources */,
-				C5E0CF6C1E13B47300705C26 /* AKNewsViewController.m in Sources */,
 				C52E77C41DF7B3A6006B2183 /* TLEmojiGroupDisplayModel.m in Sources */,
 				C52E76BE1DF66D75006B2183 /* TLExpressionMessage.m in Sources */,
 				C52E78591DF7B9F9006B2183 /* TLSettingSwitchCell.m in Sources */,
@@ -3217,7 +3170,6 @@
 				C515AC3F1DF0549C00353FC4 /* AKIMManager.m in Sources */,
 				C515AC521DF0549C00353FC4 /* IMSayMessage.m in Sources */,
 				C515AC4E1DF0549C00353FC4 /* IMRemoveMessage.m in Sources */,
-				C5E0CF7B1E13B47300705C26 /* NormalContentCell.m in Sources */,
 				C515AB691DF051BA00353FC4 /* AKBaseRequest.m in Sources */,
 				C52E76E51DF698FD006B2183 /* TLUIUtility.m in Sources */,
 				C515ACF61DF0554400353FC4 /* AKUserPinAnnotationView.m in Sources */,
@@ -3235,8 +3187,6 @@
 				C515ACA41DF054F500353FC4 /* ServiceShare.m in Sources */,
 				C515AC471DF0549C00353FC4 /* IMHeartBeatNotify.m in Sources */,
 				C52E78581DF7B9F9006B2183 /* TLSettingCell.m in Sources */,
-				C5E0CF701E13B47300705C26 /* AKBaseTableView.m in Sources */,
-				C5E0CF731E13B47300705C26 /* BannerCell.m in Sources */,
 				C52E78AA1DF824FD006B2183 /* AKSignalManager+IMModule.m in Sources */,
 				C52E788F1DF7BFBC006B2183 /* UIButton+TLChat.m in Sources */,
 				C52E77C91DF7B53B006B2183 /* TLChatDetailHelper.m in Sources */,
@@ -3245,14 +3195,12 @@
 				C515AC701DF0549C00353FC4 /* IMLoginSuccessPush.m in Sources */,
 				C515AB6B1DF051BA00353FC4 /* AKPopupViewController.m in Sources */,
 				C515AB721DF051BA00353FC4 /* DeviceHelper.m in Sources */,
-				C5E0CF6F1E13B47300705C26 /* HSelectionList.m in Sources */,
 				C52E78771DF7BA58006B2183 /* TLChatBackgroundSelectViewController.m in Sources */,
 				C5FC0CBD1DFE824000159913 /* AKDBManager+UserDetail.m in Sources */,
 				C52E77B91DF7AFFE006B2183 /* TLChatViewController+Delegate.m in Sources */,
 				C5660EC91E0D1E57000BF5E3 /* Images.m in Sources */,
 				C5E0CF811E13B47300705C26 /* AKCYLPlusButton.m in Sources */,
 				C515AC601DF0549C00353FC4 /* IMRoomJoinedPush.m in Sources */,
-				C5660E361E09578A000BF5E3 /* HSelectionListCustomViewCell.m in Sources */,
 				C52E779B1DF7AFFE006B2183 /* TLTextDisplayView.m in Sources */,
 				C52E77B71DF7AFFE006B2183 /* TLMoreKeyboard.m in Sources */,
 				C52E77931DF7AFFE006B2183 /* TLChatBaseViewController+ChatBar.m in Sources */,
@@ -3270,8 +3218,9 @@
 				C52E77F61DF7B831006B2183 /* TLUserGroupItemCell.m in Sources */,
 				C515AB701DF051BA00353FC4 /* AKTabbarControllerFactory.m in Sources */,
 				C515AC501DF0549C00353FC4 /* IMRevokeMessage.m in Sources */,
+				C5E5D6171E1E1B16002B4823 /* AKHScrollTitleLabel.m in Sources */,
 				C52E77A61DF7AFFE006B2183 /* TLEmojiFaceItemCell.m in Sources */,
-				C5E0CF7F1E13B47300705C26 /* CmsTableHandler.m in Sources */,
+				C5E5D6181E1E1B16002B4823 /* AKHScrollViewController.m in Sources */,
 				C52E77A31DF7AFFE006B2183 /* TLChatMessageDisplayView+Delegate.m in Sources */,
 				C515AC431DF0549C00353FC4 /* NumgameJackpotChangedPush.m in Sources */,
 				C515AB671DF051BA00353FC4 /* AKAppDelegate.m in Sources */,
@@ -3288,13 +3237,14 @@
 				C52E77B11DF7AFFE006B2183 /* TLEmojiKeyboard+DisplayView.m in Sources */,
 				C515AC6A1DF0549C00353FC4 /* IMRoomSetNutsPush.m in Sources */,
 				C52E76FD1DF699DC006B2183 /* NSString+PinYin.m in Sources */,
+				C5E0CF871E14D5F900705C26 /* AKView.m in Sources */,
 				C57DF5E91DFA9DF900D3D154 /* HexColor.m in Sources */,
 				C52E77A91DF7AFFE006B2183 /* TLEmojiGroupDisplayView+CollectionView.m in Sources */,
 				C52E76861DF66593006B2183 /* TLExpressionHelper.m in Sources */,
 				C52E78751DF7BA58006B2183 /* TLChatBackgroundSelectViewController+CollectionView.m in Sources */,
 				C52E78761DF7BA58006B2183 /* TLChatBackgroundSelectViewController+Proxy.m in Sources */,
 				C515AC7A1DF0549C00353FC4 /* AKConversationView.m in Sources */,
-				C5E0CF711E13B47300705C26 /* AKCustomTableView.m in Sources */,
+				C5E5D6141E1E1B16002B4823 /* CmsTableHandler.m in Sources */,
 				C515AC4A1DF0549C00353FC4 /* IMFollowUpdated.m in Sources */,
 				C5E0CF191E128CFD00705C26 /* AKButton.m in Sources */,
 				C515AB761DF051BA00353FC4 /* AKMediator.m in Sources */,
@@ -3302,6 +3252,7 @@
 				C52E77941DF7AFFE006B2183 /* TLChatBaseViewController+MessageDisplayView.m in Sources */,
 				C5660E3A1E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m in Sources */,
 				C52E77D61DF7B547006B2183 /* TLMessageManager+MessageRecord.m in Sources */,
+				C538A64A1E160F3C001E1FA7 /* AKThemeManager+HSelectionList.m in Sources */,
 				C52E783F1DF7B970006B2183 /* NSDate+TLChat.m in Sources */,
 				C52E76B81DF66D75006B2183 /* NSFileManager+TLChat.m in Sources */,
 				C52E787F1DF7BAFD006B2183 /* TLNavigationController.m in Sources */,
@@ -3312,6 +3263,7 @@
 				C515ACCC1DF0552600353FC4 /* AKLoginButtonGroup.m in Sources */,
 				C5D0BA5B1E077B4F0054DF0E /* AKResourceManager.m in Sources */,
 				C515AC541DF0549C00353FC4 /* IMMessage.m in Sources */,
+				C5E5D6061E1E1B16002B4823 /* AKCustomTableView.m in Sources */,
 				C515AC681DF0549C00353FC4 /* IMRoomSaidPush.m in Sources */,
 				C515AD161DF0568100353FC4 /* Aspect+UserModule.m in Sources */,
 				C52E77981DF7AFFE006B2183 /* TLEmojiDisplayView.m in Sources */,
@@ -3324,7 +3276,6 @@
 				C515ACCA1DF0552600353FC4 /* ServiceLogin.m in Sources */,
 				C515ACC51DF0552600353FC4 /* AKMediator+LoginModule.m in Sources */,
 				C52E77FC1DF7B831006B2183 /* TLGroupQRCodeViewController.m in Sources */,
-				C5660E371E09578A000BF5E3 /* HSelectionListLabelCell.m in Sources */,
 				C5B987031E02CB2600AB548A /* AKUserGroupMember.m in Sources */,
 				C515AC381DF0549C00353FC4 /* AKMediator+IMModule.m in Sources */,
 				C52E76BF1DF66D76006B2183 /* TLImageMessage.m in Sources */,
@@ -3337,31 +3288,29 @@
 				C52E779D1DF7AFFE006B2183 /* TLImageMessageCell.m in Sources */,
 				C52E787B1DF7BA58006B2183 /* TLCommonSettingViewController.m in Sources */,
 				C515AC401DF0549C00353FC4 /* VoteClosePush.m in Sources */,
-				C5E0CF791E13B47300705C26 /* MultiPictureContentCell.m in Sources */,
 				C52E78861DF7BD92006B2183 /* TLQRCodeViewController.m in Sources */,
-				C5E0CF7D1E13B47300705C26 /* SinglePicCollectCell.m in Sources */,
 				C52E77911DF7AFFE006B2183 /* TLTalkButton.m in Sources */,
 				C52E76B91DF66D75006B2183 /* NSString+Message.m in Sources */,
-				C5E0CF741E13B47300705C26 /* LoopInfoView.m in Sources */,
 				C515AC561DF0549C00353FC4 /* IMLivePingMessage.m in Sources */,
 				C5660F7D1E0E514F000BF5E3 /* AKNewsContentListAPI.m in Sources */,
-				C5E0CEFD1E12441A00705C26 /* UIColor+ThemeModule.m in Sources */,
 				C515AB6F1DF051BA00353FC4 /* NSString+Tools.m in Sources */,
 				C52E77FA1DF7B831006B2183 /* TLChatFileHeaderView.m in Sources */,
 				C55A77101E090D3A002E164A /* AKNewsViewController.m in Sources */,
 				C515AB6A1DF051BA00353FC4 /* AKBaseViewController.m in Sources */,
+				C5E5D6121E1E1B16002B4823 /* SinglePicCollectCell.m in Sources */,
 				C52E76C31DF66D76006B2183 /* TLVoiceMessage.m in Sources */,
 				C515ACF51DF0554400353FC4 /* ServiceMap.m in Sources */,
 				C52E77D71DF7B547006B2183 /* TLMessageManager.m in Sources */,
 				C52E77AD1DF7AFFE006B2183 /* TLEmojiGroupControl.m in Sources */,
 				C515ACF91DF0554400353FC4 /* HBLocationButton.m in Sources */,
 				C52E77A51DF7AFFE006B2183 /* TLEmojiBaseCell.m in Sources */,
-				C5E0CF801E13B47300705C26 /* XTTableViewRootHandler.m in Sources */,
 				C515AC3A1DF0549C00353FC4 /* GVUserDefaults+IMModule.m in Sources */,
 				C515AC751DF0549C00353FC4 /* AKIMServerListRequest.m in Sources */,
 				C515AC421DF0549C00353FC4 /* VoteUpdatePush.m in Sources */,
 				C515ACA31DF054F500353FC4 /* AKMediator+ShareModule.m in Sources */,
 				C5E0CF681E13B47300705C26 /* AKChannelTagHeadView.m in Sources */,
+				C5E5D6101E1E1B16002B4823 /* NormalContentCell.m in Sources */,
+				C5E5D6071E1E1B16002B4823 /* AKTableViewHandler.m in Sources */,
 				C52E76BB1DF66D75006B2183 /* UIFont+TLChat.m in Sources */,
 				C5E0CF111E12857000705C26 /* AKTableViewCell.m in Sources */,
 				C5660E6A1E0BBE94000BF5E3 /* AKBasePopupView.m in Sources */,
@@ -3371,11 +3320,9 @@
 				C515AC3C1DF0549C00353FC4 /* AKIMManager+IM.m in Sources */,
 				C515AC491DF0549C00353FC4 /* IMClearUnreadNumMessage.m in Sources */,
 				C5E0CF691E13B47300705C26 /* AKChannelTagView.m in Sources */,
-				C515AB7A1DF051BA00353FC4 /* AKCYLPlusButton.m in Sources */,
 				C52E77A41DF7AFFE006B2183 /* TLChatMessageDisplayView.m in Sources */,
 				C5E0CF671E13B47300705C26 /* AKChannelTagButton.m in Sources */,
 				C515ACF31DF0554400353FC4 /* AKMapManager.m in Sources */,
-				C5E0CF721E13B47300705C26 /* AKMutableView.m in Sources */,
 				C52E77161DF6E2B3006B2183 /* TLTableViewCell.m in Sources */,
 				C515AD231DF0597B00353FC4 /* AKSignalManager.m in Sources */,
 				C515AC3D1DF0549C00353FC4 /* AKIMManager+Message.m in Sources */,
@@ -3391,22 +3338,24 @@
 				C52E77001DF69A73006B2183 /* TLUserHelper.m in Sources */,
 				C52E77921DF7AFFE006B2183 /* TLChatBar.m in Sources */,
 				C52E77B21DF7AFFE006B2183 /* TLEmojiKeyboard+EmojiGroupControl.m in Sources */,
+				C5E5D60B1E1E1B16002B4823 /* TopLoopView.m in Sources */,
 				C53DDCC11DFE8E9B00D66D74 /* AKUserDetail.m in Sources */,
 				C5E0CEF71E1217FB00705C26 /* Aspect-ThemeModule.m in Sources */,
 				C52E77BD1DF7B0B9006B2183 /* UIView+Frame.m in Sources */,
 				C52E77C01DF7B0E2006B2183 /* UIImage+Color.m in Sources */,
-				C5E0CF771E13B47300705C26 /* BigImgContentCell.m in Sources */,
-				C5E0CF761E13B47300705C26 /* TopLoopView.m in Sources */,
 				C52E77B81DF7AFFE006B2183 /* TLBaseKeyboard.m in Sources */,
 				C515AC5A1DF0549C00353FC4 /* IMRoomGetUIDsMessage.m in Sources */,
 				C515ACCB1DF0552600353FC4 /* AKLoginButton.m in Sources */,
 				C5FC0C6F1DFAA1B200159913 /* TLConversation+AKUser.m in Sources */,
 				C515AC581DF0549C00353FC4 /* IMRoomBroadCastMessage.m in Sources */,
+				C5E0CF841E13E55900705C26 /* AKCollectionViewCell.m in Sources */,
 				C52E78571DF7B9F9006B2183 /* TLSettingButtonCell.m in Sources */,
 				C515ACFA1DF0554400353FC4 /* UserCardView.m in Sources */,
+				C5E5D6081E1E1B16002B4823 /* BannerCell.m in Sources */,
 				C515AB681DF051BA00353FC4 /* AKBaseModel.m in Sources */,
 				C52E779C1DF7AFFE006B2183 /* TLExpressionMessageCell.m in Sources */,
 				C52E77B41DF7AFFE006B2183 /* TLMoreKeyboardCell.m in Sources */,
+				C5E5D6091E1E1B16002B4823 /* LoopInfoView.m in Sources */,
 				C5FC0CB61DFE4ACC00159913 /* AKDBManager+User.m in Sources */,
 				C515AC6E1DF0549C00353FC4 /* RoomSendHotGift.m in Sources */,
 				C52E77DD1DF7B6D5006B2183 /* TLAudioPlayer.m in Sources */,
@@ -3417,11 +3366,9 @@
 				C515AC511DF0549C00353FC4 /* IMSaidPush.m in Sources */,
 				C515AC461DF0549C00353FC4 /* NumgameWinnerChangePush.m in Sources */,
 				C52E78781DF7BA58006B2183 /* TLChatBackgroundSettingViewController.m in Sources */,
-				C5E0CF6D1E13B47300705C26 /* HSelectionListCustomViewCell.m in Sources */,
 				C5E0CF0B1E12839D00705C26 /* AKImageView.m in Sources */,
 				C515ACC71DF0552600353FC4 /* AKLoginViewController.m in Sources */,
 				C515AC741DF0549C00353FC4 /* WebSocketModel.m in Sources */,
-				C5E0CF6E1E13B47300705C26 /* HSelectionListLabelCell.m in Sources */,
 				C52E76D21DF681C7006B2183 /* AKDBManager+TLChat.m in Sources */,
 				C52E77131DF6E1B2006B2183 /* TLConversation.m in Sources */,
 				C5E0CF021E1282AE00705C26 /* AKLabel.m in Sources */,
@@ -3442,13 +3389,16 @@
 				C515AC671DF0549C00353FC4 /* IMRoomRenqiChangePush.m in Sources */,
 				C515AC661DF0549C00353FC4 /* IMRoomMutedPush.m in Sources */,
 				C52E77BA1DF7AFFE006B2183 /* TLChatViewController.m in Sources */,
+				C5E5D6151E1E1B16002B4823 /* AKHContentView.m in Sources */,
 				C515AB6E1DF051BA00353FC4 /* NSObject+DBPropertyListing.m in Sources */,
+				C5E5D60C1E1E1B16002B4823 /* BigImgContentCell.m in Sources */,
 				C5660EE11E0D2160000BF5E3 /* HWWeakTimer.m in Sources */,
 				C515AC731DF0549C00353FC4 /* IMUserErrorPush.m in Sources */,
 				C5660ED81E0D1F13000BF5E3 /* Tag.m in Sources */,
 				C515AB781DF051BA00353FC4 /* AKRequestManager.m in Sources */,
 				C515AC391DF0549C00353FC4 /* AKRequestManager+IMModule.m in Sources */,
 				C515AC4C1DF0549C00353FC4 /* IMGetMessage.m in Sources */,
+				C5E5D60E1E1E1B16002B4823 /* MultiPictureContentCell.m in Sources */,
 				C515AC781DF0549C00353FC4 /* AKConversation.m in Sources */,
 				C515AC6F1DF0549C00353FC4 /* ShowRenQiUpdatePush.m in Sources */,
 				C52E78821DF7BB62006B2183 /* UIImage+Size.m in Sources */,

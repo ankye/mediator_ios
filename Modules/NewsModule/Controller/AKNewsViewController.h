@@ -6,7 +6,9 @@
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "AKBaseViewController.h"
-@interface AKNewsViewController : UIViewController
+#import "AKHScrollViewController.h"
+#import "CmsTableHandler.h"
+
+@interface AKNewsViewController : AKHScrollViewController<CmsTableHandlerDelegate>
 
 @end

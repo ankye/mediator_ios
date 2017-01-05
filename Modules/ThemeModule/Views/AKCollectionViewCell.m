@@ -1,25 +1,15 @@
 //
-//  AKTableViewCell.m
+//  AKCollectionViewCell.m
 //  Project
 //
-//  Created by ankye on 2016/12/27.
+//  Created by ankye on 2016/12/28.
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "AKTableViewCell.h"
+#import "AKCollectionViewCell.h"
 
-@implementation AKTableViewCell
+@implementation AKCollectionViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 -(id)init
 {
@@ -31,13 +21,10 @@
 }
 
 #pragma mark AKThemeProtocol
-- (void)configureViews
+-(void)configureViews
 {
     self.backgroundView.backgroundColor = [AKThemeManager theme_table_cellBackgroundColor];
-    self.textLabel.textColor = [AKThemeManager theme_table_cellTextColor];
-
 }
-
 
 - (void)registerThemeObserver
 {

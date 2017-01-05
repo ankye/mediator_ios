@@ -1,32 +1,32 @@
 //
-//  UINavigationBar+ThemeModule.m
+//  AKLabel.m
 //  Project
 //
 //  Created by ankye on 2016/12/27.
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "UINavigationBar+ThemeModule.h"
+#import "AKView.h"
 
-@implementation UINavigationBar (ThemeModule)
+@implementation AKView
 
-- (void)addThemeManager
+-(id)init
 {
-    [self configureViews];
-    [self registerThemeObserver];
+    self = [super init];
+    if(self){
+        [self registerThemeObserver];
+    }
+    return self;
 }
 
-#pragma mark
-#pragma mark - ThemeManager
-- (void)configureViews
+#pragma mark AKThemeProtocol
+-(void)configureViews
 {
-    // set the background of navigationbar
-    self.barTintColor = [AKThemeManager theme_nav_tintColor];
+    
 }
 
 - (void)registerThemeObserver
 {
-  
     [AK_SIGNAL_MANAGER.onThemeChange addObserver:self callback:^(id  _Nonnull self) {
         [self configureViews];
     }];
@@ -37,5 +37,9 @@
     [AK_SIGNAL_MANAGER.onThemeChange removeObserver:self];
 }
 
+-(void)dealloc
+{
+    [self unregisterThemeObserver];
+}
 
 @end

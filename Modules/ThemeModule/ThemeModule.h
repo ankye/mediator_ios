@@ -10,14 +10,15 @@
 #define ThemeModule_h
 
 #import "AKThemeProtocol.h"
-#import "UIColor+ThemeModule.h"
-#import "AKSignalManager+ThemeModule.h"
 
+#import "AKSignalManager+ThemeModule.h"
+#import "AKThemeManager.h"
 #import "AKLabel.h"
 #import "AKTextView.h"
 #import "AKImageView.h"
 #import "AKTextField.h"
 #import "AKTableViewCell.h"
 #import "AKButton.h"
+#import "AKCollectionViewCell.h"
 
 #endif /* ThemeModule_h */

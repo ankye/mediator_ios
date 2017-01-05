@@ -14,5 +14,4 @@
 #import "AKRequestManager+NewsModule.h"
 
 #import "AKNewsViewController.h"
-
 #endif /* NewsModule_h */

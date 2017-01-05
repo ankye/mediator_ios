@@ -30,9 +30,9 @@
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>ViewController</string>
+		<string>UIViewController</string>
 		<key>navigationController</key>
-		<string>UINavigationController</string>
+		<string></string>
 	</dict>
 	<dict>
 		<key>title</key>

@@ -27,3 +27,5 @@ return _sharedInstance; \
 #define     SCREEN_SIZE                 [UIScreen mainScreen].bounds.size
 #define     SCREEN_WIDTH                [UIScreen mainScreen].bounds.size.width
 #define     SCREEN_HEIGHT               [UIScreen mainScreen].bounds.size.height
+#define     SCREEN_TABBAR_HEIGHT        48.0f
+#define     SCREEN_NAV_HEIGHT           64.0f

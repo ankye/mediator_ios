@@ -7,8 +7,8 @@
 //
 
 #import "AKHScrollViewController.h"
-#import "CmsTableHandler.h"
+#import "AKCustomTableHandler.h"
 
-@interface AKNewsViewController : AKHScrollViewController<CmsTableHandlerDelegate>
+@interface AKNewsViewController : AKHScrollViewController<AKCustomTableHandlerDelegate>
 
 @end

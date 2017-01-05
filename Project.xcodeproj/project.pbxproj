@@ -314,7 +314,7 @@
 		C5E5D6111E1E1B16002B4823 /* NormalContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E5D5F21E1E1B16002B4823 /* NormalContentCell.xib */; };
 		C5E5D6121E1E1B16002B4823 /* SinglePicCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5F41E1E1B16002B4823 /* SinglePicCollectCell.m */; };
 		C5E5D6131E1E1B16002B4823 /* SinglePicCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E5D5F51E1E1B16002B4823 /* SinglePicCollectCell.xib */; };
-		C5E5D6141E1E1B16002B4823 /* CmsTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5F71E1E1B16002B4823 /* CmsTableHandler.m */; };
+		C5E5D6141E1E1B16002B4823 /* AKCustomTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5F71E1E1B16002B4823 /* AKCustomTableHandler.m */; };
 		C5E5D6151E1E1B16002B4823 /* AKHContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5FC1E1E1B16002B4823 /* AKHContentView.m */; };
 		C5E5D6161E1E1B16002B4823 /* AKHScrollFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5FE1E1E1B16002B4823 /* AKHScrollFlowLayout.m */; };
 		C5E5D6171E1E1B16002B4823 /* AKHScrollTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6001E1E1B16002B4823 /* AKHScrollTitleLabel.m */; };
@@ -982,8 +982,8 @@
 		C5E5D5F31E1E1B16002B4823 /* SinglePicCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePicCollectCell.h; sourceTree = "<group>"; };
 		C5E5D5F41E1E1B16002B4823 /* SinglePicCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinglePicCollectCell.m; sourceTree = "<group>"; };
 		C5E5D5F51E1E1B16002B4823 /* SinglePicCollectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SinglePicCollectCell.xib; sourceTree = "<group>"; };
-		C5E5D5F61E1E1B16002B4823 /* CmsTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CmsTableHandler.h; sourceTree = "<group>"; };
-		C5E5D5F71E1E1B16002B4823 /* CmsTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CmsTableHandler.m; sourceTree = "<group>"; };
+		C5E5D5F61E1E1B16002B4823 /* AKCustomTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomTableHandler.h; sourceTree = "<group>"; };
+		C5E5D5F71E1E1B16002B4823 /* AKCustomTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomTableHandler.m; sourceTree = "<group>"; };
 		C5E5D5F91E1E1B16002B4823 /* AKDataHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataHandlerProtocol.h; sourceTree = "<group>"; };
 		C5E5D5FA1E1E1B16002B4823 /* AKDataViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataViewProtocol.h; sourceTree = "<group>"; };
 		C5E5D5FB1E1E1B16002B4823 /* AKHContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHContentView.h; sourceTree = "<group>"; };
@@ -2824,8 +2824,8 @@
 				C5E5D5E01E1E1B16002B4823 /* AKTableViewHandler.m */,
 				C5E5D5E11E1E1B16002B4823 /* Banner */,
 				C5E5D5E91E1E1B16002B4823 /* Cell */,
-				C5E5D5F61E1E1B16002B4823 /* CmsTableHandler.h */,
-				C5E5D5F71E1E1B16002B4823 /* CmsTableHandler.m */,
+				C5E5D5F61E1E1B16002B4823 /* AKCustomTableHandler.h */,
+				C5E5D5F71E1E1B16002B4823 /* AKCustomTableHandler.m */,
 			);
 			path = AKTableView;
 			sourceTree = "<group>";
@@ -3244,7 +3244,7 @@
 				C52E78751DF7BA58006B2183 /* TLChatBackgroundSelectViewController+CollectionView.m in Sources */,
 				C52E78761DF7BA58006B2183 /* TLChatBackgroundSelectViewController+Proxy.m in Sources */,
 				C515AC7A1DF0549C00353FC4 /* AKConversationView.m in Sources */,
-				C5E5D6141E1E1B16002B4823 /* CmsTableHandler.m in Sources */,
+				C5E5D6141E1E1B16002B4823 /* AKCustomTableHandler.m in Sources */,
 				C515AC4A1DF0549C00353FC4 /* IMFollowUpdated.m in Sources */,
 				C5E0CF191E128CFD00705C26 /* AKButton.m in Sources */,
 				C515AB761DF051BA00353FC4 /* AKMediator.m in Sources */,

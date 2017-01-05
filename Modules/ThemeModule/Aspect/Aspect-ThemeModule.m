@@ -13,6 +13,7 @@
 +(void)load
 {
    NSMutableDictionary* dic = [AKThemeManager  getThemesPath];
+    NSLog(@"%@",dic);
     id value = [AKThemeManager getColor:@"news" withSubModule:AK_THEME_TABLE withKey:@"separatorColor"];
     NSLog(@"%@",value);
     

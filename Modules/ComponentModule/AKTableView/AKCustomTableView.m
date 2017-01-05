@@ -7,7 +7,7 @@
 //
 
 #import "AKCustomTableView.h"
-#import "UIImageView+WebCache.h"
+//#import "UIImageView+WebCache.h"
 
 #import <YYKit/UIImageView+YYWebImage.h>
 @interface AKCustomTableView ()

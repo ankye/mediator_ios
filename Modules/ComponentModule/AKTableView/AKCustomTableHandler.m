@@ -7,7 +7,7 @@
 //  Copyright © 2016年 teason. All rights reserved.
 //
 
-#import "CmsTableHandler.h"
+#import "AKCustomTableHandler.h"
 #import "NormalContentCell.h"
 #import "BannerCell.h"
 #import "BigImgContentCell.h"
@@ -20,7 +20,7 @@
 
 static int const kPageSize = 20 ;
 
-@interface CmsTableHandler () <RootTableViewDelegate,BannerCellDelegate>
+@interface AKCustomTableHandler () <RootTableViewDelegate,BannerCellDelegate>
 
 @property (nonatomic,strong) NSMutableArray     *dataList ;
 @property (nonatomic,strong) NSMutableArray     *topList ;
@@ -31,7 +31,7 @@ static int const kPageSize = 20 ;
 
 @end
 
-@implementation CmsTableHandler
+@implementation AKCustomTableHandler
 
 @synthesize dataList = _dataList ,
             topList = _topList ,
@@ -371,7 +371,7 @@ static int const kPageSize = 20 ;
 
 #pragma mark - func 
 
-- (void)handleDatasourceAndDelegate:(UITableView *)table
+- (void)handleDatasourceAndDelegate:(AKBaseTableView *)table
 {
     if ([table isKindOfClass:[AKBaseTableView class]])
     {

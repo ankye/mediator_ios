@@ -39,7 +39,10 @@
 {
     
 }
-
+-(BOOL)hasDataSource
+{
+    return NO;
+}
 - (NSString*)getTitle
 {
     return @"undefine";

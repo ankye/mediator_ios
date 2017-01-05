@@ -8,7 +8,7 @@
 
 #import "AKNewsViewController.h"
 #import "AKHContentView.h"
-#import "CmsTableHandler.h"
+#import "AKCustomTableHandler.h"
 #import "AKNewsManager.h"
 #import "AKCustomTableView.h"
 
@@ -85,7 +85,7 @@
     NSMutableArray* channelList = [AKNewsManager sharedInstance].selectedChannels;
     NSMutableArray *tableHandlersList = [@[] mutableCopy] ;
     for (AKNewsChannel *channel in channelList) {
-        CmsTableHandler *handler_Cms = [[CmsTableHandler alloc] initWithChannel:channel] ;
+        AKCustomTableHandler *handler_Cms = [[AKCustomTableHandler alloc] initWithChannel:channel] ;
         handler_Cms.handlerDelegate = self ;
         [tableHandlersList addObject:handler_Cms] ;
     }
@@ -97,7 +97,7 @@
 {
     NSInteger count = [handlerList count];
     for(NSInteger i=0; i<count; i++){
-        CmsTableHandler* handler = [handlerList objectAtIndex:i];
+        AKCustomTableHandler* handler = [handlerList objectAtIndex:i];
         
         if([self.contentViews count] > i){
             AKHContentView* tempView = [self.contentViews objectAtIndex:i];

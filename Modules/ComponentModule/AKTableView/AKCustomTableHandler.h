@@ -12,7 +12,7 @@
 
 // 内容 table datasouce & delegate handler 类 .
 
-@protocol CmsTableHandlerDelegate <NSObject>
+@protocol AKCustomTableHandlerDelegate <NSObject>
 
 - (void)tableDidScrollWithOffsetY:(float)offsetY ;
 - (void)tablelWillEndDragWithOffsetY:(float)offsetY WithVelocity:(CGPoint)velocity;
@@ -23,9 +23,9 @@
 @end
 
 
-@interface CmsTableHandler : AKTableViewHandler
+@interface AKCustomTableHandler : AKTableViewHandler
 
-@property (nonatomic,weak) id <CmsTableHandlerDelegate> handlerDelegate ;
+@property (nonatomic,weak) id <AKCustomTableHandlerDelegate> handlerDelegate ;
 @property (nonatomic,strong) AKNewsChannel *channel ;
 
 - (instancetype)initWithChannel:(AKNewsChannel *)channel ;

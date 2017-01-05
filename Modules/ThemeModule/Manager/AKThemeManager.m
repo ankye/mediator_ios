@@ -118,6 +118,10 @@ static NSDictionary         *_currentTheme;
     return nil;
 }
 
++(UIImage*)getImage:(NSString*)moduleName withSubModule:(NSString*)moduleKey withKey:(NSString*)key
+{
+    return nil;
+}
 #pragma mark theme general
 
 +(UIColor*)theme_color_main
@@ -272,6 +276,7 @@ static NSDictionary         *_currentTheme;
 {
     return [AKThemeManager getColor:AK_THEME_MODULE_GENERAL withSubModule:AK_THEME_TABLE withKey:@"cellTitleFontColor"];
 }
+
 
 
 @end

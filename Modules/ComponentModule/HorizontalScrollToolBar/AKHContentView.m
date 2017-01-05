@@ -17,7 +17,7 @@
 {
     self.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1];
     if(_contentView){
-        [self removeAllSubviews];
+        [((UIView*)_contentView) removeFromSuperview];
         _contentView = nil;
     }
     _contentView = view;
@@ -27,7 +27,7 @@
 }
 
 
--(void)setHandler:(CmsTableHandler *)handler
+-(void)setHandler:(id<AKDataHandlerProtocol>)handler
 {
     _handler = handler;
     if(_handler){

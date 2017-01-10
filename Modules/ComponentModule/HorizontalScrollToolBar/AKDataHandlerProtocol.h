@@ -7,14 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AKDataViewProtocol.h"
 
 
 @protocol AKDataHandlerProtocol <NSObject>
 
 @property (nonatomic)        CGFloat        offsetY ;      // cache offsetY .
 
-- (void)handleDatasourceAndDelegate:(id<AKDataViewProtocol>)view ;
+- (void)handleDatasourceAndDelegate:(UIView*)view ;
 
 - (void)refreshOffsetY ;
 - (void)refresh ;

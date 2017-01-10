@@ -15,7 +15,7 @@
 @property (nonatomic)        CGFloat        offsetY ;      // cache offsetY .
 @property (nonatomic,strong) UITableView    *table ;
 
-- (void)handleDatasourceAndDelegate:(id<AKDataViewProtocol>)view ;
+- (void)handleDatasourceAndDelegate:(UIView*)view ;
 
 - (void)refreshOffsetY ;
 - (void)refresh ;

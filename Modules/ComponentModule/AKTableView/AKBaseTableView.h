@@ -8,10 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MJRefresh.h"
-#import "AKDataViewProtocol.h"
 
-#define TABLE_HEADER_IMAGES             @"loading_"
-#define TABLE_HEADER_IMAGES_COUNT       7
+
 
 @protocol RootTableViewDelegate <NSObject>
 
@@ -21,7 +19,7 @@
 
 @end
 
-@interface AKBaseTableView : UITableView<AKDataViewProtocol>
+@interface AKBaseTableView : UITableView
 
 // SET myDelegate TO YOUR CTRLLER
 @property (nonatomic,weak) id <RootTableViewDelegate> xt_Delegate ;

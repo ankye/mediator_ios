@@ -16,7 +16,7 @@
 
 #pragma mark --
 #pragma mark - Public
-- (void)handleDatasourceAndDelegate:(id<AKDataViewProtocol>)view
+- (void)handleDatasourceAndDelegate:(UIView*)view
 {
 // set datasource and delegate .
     self.table = (UITableView*)view ;

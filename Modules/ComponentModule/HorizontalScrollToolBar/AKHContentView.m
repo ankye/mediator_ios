@@ -13,16 +13,16 @@
 @implementation AKHContentView
 
 
--(void)setContentView:(id<AKDataViewProtocol>)view
+-(void)setContentView:(UIView*)view
 {
     self.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256) / 255.0 green:arc4random_uniform(256) / 255.0 blue:arc4random_uniform(256) / 255.0 alpha:1];
     if(_contentView){
-        [((UIView*)_contentView) removeFromSuperview];
+        [_contentView removeFromSuperview];
         _contentView = nil;
     }
     _contentView = view;
-    [(UIView*)view setFrame:self.frame];
-    [self addSubview:(UIView*)_contentView];
+    [_contentView setFrame:self.frame];
+    [self addSubview:_contentView];
     
 }
 

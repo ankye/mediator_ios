@@ -7,10 +7,8 @@
 //
 
 #import "AKBaseTableView.h"
-
-@interface AKBaseTableView ()
-@property (nonatomic,strong) NSArray *gifImageList ;
-@end
+#import "AKMJRefreshHeader.h"
+#import "AKMJRefreshFooter.h"
 
 @implementation AKBaseTableView
 #pragma mark --
@@ -58,20 +56,13 @@
 
 - (void)MJRefreshConfigure
 {
-    NSArray *idleImages = @[[self.gifImageList firstObject]] ;
-    NSArray *pullingImages = self.gifImageList ;
-    NSArray *refreshingImages = self.gifImageList ;
+ 
     
-    MJRefreshGifHeader *header = [MJRefreshGifHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
-    [header setImages:idleImages forState:MJRefreshStateIdle];
-    [header setImages:pullingImages forState:MJRefreshStatePulling];
-    [header setImages:refreshingImages forState:MJRefreshStateRefreshing];
+    AKMJRefreshHeader *header = [AKMJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
     self.mj_header = header;
     
-    MJRefreshBackGifFooter *footer = [MJRefreshBackGifFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
-    [footer setImages:idleImages forState:MJRefreshStateIdle];
-    [footer setImages:pullingImages forState:MJRefreshStatePulling];
-    [footer setImages:refreshingImages forState:MJRefreshStateRefreshing];
+    AKMJRefreshFooter *footer = [AKMJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
+   
     self.mj_footer = footer;
 }
 
@@ -118,23 +109,7 @@
     }
 }
 
-#pragma mark - Private
 
-- (NSArray *)gifImageList
-{
-    if (!_gifImageList)
-    {
-        NSMutableArray *tempList = [NSMutableArray array] ;
-        for (int i = 1; i <= TABLE_HEADER_IMAGES_COUNT; i++)
-        {
-            UIImage *imgTemp = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",TABLE_HEADER_IMAGES,i]] ;
-            [tempList addObject:imgTemp] ; // DEFAULT MODE IS THIS GIF IMAGES .
-        }
-        _gifImageList = [NSArray arrayWithArray:tempList] ;
-    }
-    
-    return _gifImageList ;
-}
 
 #pragma mark --
 #pragma mark - loading methods
@@ -188,12 +163,5 @@
     }) ;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

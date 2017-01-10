@@ -9,5 +9,6 @@
 #ifndef WallpaperModule_h
 #define WallpaperModule_h
 
+#define AK_WALLPAPER_SERVER @"http://www.xiaohongshu.com/"
 
 #endif /* WallpaperModule_h */

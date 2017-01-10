@@ -278,6 +278,9 @@
 		C5B986E31E02A14400AB548A /* res.png in Resources */ = {isa = PBXBuildFile; fileRef = C5B986E21E02A14400AB548A /* res.png */; };
 		C5B987001E02CAAC00AB548A /* AKDBManager+UserGroupMember.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B986FF1E02CAAC00AB548A /* AKDBManager+UserGroupMember.m */; };
 		C5B987031E02CB2600AB548A /* AKUserGroupMember.m in Sources */ = {isa = PBXBuildFile; fileRef = C5B987021E02CB2600AB548A /* AKUserGroupMember.m */; };
+		C5BD11381E23C251001B5532 /* AKMJRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD11371E23C251001B5532 /* AKMJRefreshHeader.m */; };
+		C5BD113B1E23C545001B5532 /* AKMJRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD113A1E23C545001B5532 /* AKMJRefreshFooter.m */; };
+		C5BD11421E23D18F001B5532 /* AKCollectionWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD11411E23D18F001B5532 /* AKCollectionWaterFallLayout.m */; };
 		C5D0BA5B1E077B4F0054DF0E /* AKResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */; };
 		C5E0CEEC1E120AB000705C26 /* AKThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CEEB1E120AB000705C26 /* AKThemeManager.m */; };
 		C5E0CEF11E120CA600705C26 /* AKSignalManager+ThemeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CEF01E120CA600705C26 /* AKSignalManager+ThemeModule.m */; };
@@ -319,6 +322,17 @@
 		C5E5D6161E1E1B16002B4823 /* AKHScrollFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D5FE1E1E1B16002B4823 /* AKHScrollFlowLayout.m */; };
 		C5E5D6171E1E1B16002B4823 /* AKHScrollTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6001E1E1B16002B4823 /* AKHScrollTitleLabel.m */; };
 		C5E5D6181E1E1B16002B4823 /* AKHScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6041E1E1B16002B4823 /* AKHScrollViewController.m */; };
+		C5E5D6251E1E2B57002B4823 /* XHSHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D61C1E1E2B57002B4823 /* XHSHomeCell.m */; };
+		C5E5D6261E1E2B57002B4823 /* XHSHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E5D61D1E1E2B57002B4823 /* XHSHomeCell.xib */; };
+		C5E5D6271E1E2B57002B4823 /* XHSHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6201E1E2B57002B4823 /* XHSHomeModel.m */; };
+		C5E5D6281E1E2B57002B4823 /* AKWaterFallView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6221E1E2B57002B4823 /* AKWaterFallView.m */; };
+		C5E5D6351E1E2EA0002B4823 /* AKWallpaperContentListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6341E1E2EA0002B4823 /* AKWallpaperContentListAPI.m */; };
+		C5E5D6381E1F3C19002B4823 /* AKRequestManager+WallpaperModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6371E1F3C19002B4823 /* AKRequestManager+WallpaperModule.m */; };
+		C5E5D63B1E1F3CE2002B4823 /* AKWallpaperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D63A1E1F3CE1002B4823 /* AKWallpaperViewController.m */; };
+		C5E5D63E1E1F52A3002B4823 /* AKCollectionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D63D1E1F52A3002B4823 /* AKCollectionHandler.m */; };
+		C5E5D6411E1F68C8002B4823 /* AKCustomCollectionHandler.h.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6401E1F68C8002B4823 /* AKCustomCollectionHandler.h.m */; };
+		C5E5D6441E1F77BF002B4823 /* AKBaseCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E5D6431E1F77BF002B4823 /* AKBaseCollectionView.m */; };
+		C5E5D6461E1F8BFB002B4823 /* Wallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E5D6451E1F8BFB002B4823 /* Wallpaper.xcassets */; };
 		C5FC0C6F1DFAA1B200159913 /* TLConversation+AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0C6E1DFAA1B200159913 /* TLConversation+AKUser.m */; };
 		C5FC0C9F1DFAC05000159913 /* AKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0C9E1DFAC05000159913 /* AKUser.m */; };
 		C5FC0CA91DFAC40F00159913 /* TLUserChatSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C5FC0CA31DFAC40F00159913 /* TLUserChatSetting.m */; };
@@ -912,6 +926,12 @@
 		C5B987011E02CB2600AB548A /* AKUserGroupMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserGroupMember.h; sourceTree = "<group>"; };
 		C5B987021E02CB2600AB548A /* AKUserGroupMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserGroupMember.m; sourceTree = "<group>"; };
 		C5B987041E02CCEC00AB548A /* AKUserGroupMemberProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserGroupMemberProtocol.h; sourceTree = "<group>"; };
+		C5BD11361E23C251001B5532 /* AKMJRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMJRefreshHeader.h; sourceTree = "<group>"; };
+		C5BD11371E23C251001B5532 /* AKMJRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMJRefreshHeader.m; sourceTree = "<group>"; };
+		C5BD11391E23C545001B5532 /* AKMJRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMJRefreshFooter.h; sourceTree = "<group>"; };
+		C5BD113A1E23C545001B5532 /* AKMJRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKMJRefreshFooter.m; sourceTree = "<group>"; };
+		C5BD11401E23D18F001B5532 /* AKCollectionWaterFallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCollectionWaterFallLayout.h; sourceTree = "<group>"; };
+		C5BD11411E23D18F001B5532 /* AKCollectionWaterFallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCollectionWaterFallLayout.m; sourceTree = "<group>"; };
 		C5D0BA591E077B4F0054DF0E /* AKResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKResourceManager.h; sourceTree = "<group>"; };
 		C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKResourceManager.m; sourceTree = "<group>"; };
 		C5D0BA5F1E0788B80054DF0E /* BaseModuleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModuleDefine.h; sourceTree = "<group>"; };
@@ -985,7 +1005,6 @@
 		C5E5D5F61E1E1B16002B4823 /* AKCustomTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomTableHandler.h; sourceTree = "<group>"; };
 		C5E5D5F71E1E1B16002B4823 /* AKCustomTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomTableHandler.m; sourceTree = "<group>"; };
 		C5E5D5F91E1E1B16002B4823 /* AKDataHandlerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataHandlerProtocol.h; sourceTree = "<group>"; };
-		C5E5D5FA1E1E1B16002B4823 /* AKDataViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataViewProtocol.h; sourceTree = "<group>"; };
 		C5E5D5FB1E1E1B16002B4823 /* AKHContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHContentView.h; sourceTree = "<group>"; };
 		C5E5D5FC1E1E1B16002B4823 /* AKHContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHContentView.m; sourceTree = "<group>"; };
 		C5E5D5FD1E1E1B16002B4823 /* AKHScrollFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHScrollFlowLayout.h; sourceTree = "<group>"; };
@@ -996,6 +1015,26 @@
 		C5E5D6021E1E1B16002B4823 /* AKHScrollToolBarProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHScrollToolBarProtocol.h; sourceTree = "<group>"; };
 		C5E5D6031E1E1B16002B4823 /* AKHScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHScrollViewController.h; sourceTree = "<group>"; };
 		C5E5D6041E1E1B16002B4823 /* AKHScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHScrollViewController.m; sourceTree = "<group>"; };
+		C5E5D61B1E1E2B57002B4823 /* XHSHomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSHomeCell.h; sourceTree = "<group>"; };
+		C5E5D61C1E1E2B57002B4823 /* XHSHomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSHomeCell.m; sourceTree = "<group>"; };
+		C5E5D61D1E1E2B57002B4823 /* XHSHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHSHomeCell.xib; sourceTree = "<group>"; };
+		C5E5D61F1E1E2B57002B4823 /* XHSHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSHomeModel.h; sourceTree = "<group>"; };
+		C5E5D6201E1E2B57002B4823 /* XHSHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSHomeModel.m; sourceTree = "<group>"; };
+		C5E5D6211E1E2B57002B4823 /* AKWaterFallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKWaterFallView.h; sourceTree = "<group>"; };
+		C5E5D6221E1E2B57002B4823 /* AKWaterFallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKWaterFallView.m; sourceTree = "<group>"; };
+		C5E5D6331E1E2EA0002B4823 /* AKWallpaperContentListAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKWallpaperContentListAPI.h; sourceTree = "<group>"; };
+		C5E5D6341E1E2EA0002B4823 /* AKWallpaperContentListAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKWallpaperContentListAPI.m; sourceTree = "<group>"; };
+		C5E5D6361E1F3C19002B4823 /* AKRequestManager+WallpaperModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKRequestManager+WallpaperModule.h"; sourceTree = "<group>"; };
+		C5E5D6371E1F3C19002B4823 /* AKRequestManager+WallpaperModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKRequestManager+WallpaperModule.m"; sourceTree = "<group>"; };
+		C5E5D6391E1F3CE1002B4823 /* AKWallpaperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKWallpaperViewController.h; sourceTree = "<group>"; };
+		C5E5D63A1E1F3CE1002B4823 /* AKWallpaperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKWallpaperViewController.m; sourceTree = "<group>"; };
+		C5E5D63C1E1F52A3002B4823 /* AKCollectionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCollectionHandler.h; sourceTree = "<group>"; };
+		C5E5D63D1E1F52A3002B4823 /* AKCollectionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCollectionHandler.m; sourceTree = "<group>"; };
+		C5E5D63F1E1F68C8002B4823 /* AKCustomCollectionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKCustomCollectionHandler.h; sourceTree = "<group>"; };
+		C5E5D6401E1F68C8002B4823 /* AKCustomCollectionHandler.h.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKCustomCollectionHandler.h.m; sourceTree = "<group>"; };
+		C5E5D6421E1F77BF002B4823 /* AKBaseCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseCollectionView.h; sourceTree = "<group>"; };
+		C5E5D6431E1F77BF002B4823 /* AKBaseCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseCollectionView.m; sourceTree = "<group>"; };
+		C5E5D6451E1F8BFB002B4823 /* Wallpaper.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Wallpaper.xcassets; sourceTree = "<group>"; };
 		C5FC0C6D1DFAA1B200159913 /* TLConversation+AKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLConversation+AKUser.h"; sourceTree = "<group>"; };
 		C5FC0C6E1DFAA1B200159913 /* TLConversation+AKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLConversation+AKUser.m"; sourceTree = "<group>"; };
 		C5FC0C7A1DFAA99A00159913 /* TLDBUserSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBUserSQL.h; sourceTree = "<group>"; };
@@ -2667,6 +2706,26 @@
 			path = res;
 			sourceTree = "<group>";
 		};
+		C5BD11351E23C10E001B5532 /* AKMJRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				C5BD11361E23C251001B5532 /* AKMJRefreshHeader.h */,
+				C5BD11371E23C251001B5532 /* AKMJRefreshHeader.m */,
+				C5BD11391E23C545001B5532 /* AKMJRefreshFooter.h */,
+				C5BD113A1E23C545001B5532 /* AKMJRefreshFooter.m */,
+			);
+			path = AKMJRefresh;
+			sourceTree = "<group>";
+		};
+		C5BD113F1E23D154001B5532 /* AKCollectionLayout */ = {
+			isa = PBXGroup;
+			children = (
+				C5BD11401E23D18F001B5532 /* AKCollectionWaterFallLayout.h */,
+				C5BD11411E23D18F001B5532 /* AKCollectionWaterFallLayout.m */,
+			);
+			path = AKCollectionLayout;
+			sourceTree = "<group>";
+		};
 		C5D0BA701E07D80D0054DF0E /* NewsModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -2689,7 +2748,16 @@
 		C5D0BA721E08C4800054DF0E /* WallpaperModule */ = {
 			isa = PBXGroup;
 			children = (
+				C5E5D62A1E1E2E0A002B4823 /* Aspect */,
+				C5E5D62B1E1E2E0A002B4823 /* Category */,
+				C5E5D62C1E1E2E0A002B4823 /* Controller */,
+				C5E5D62D1E1E2E0A002B4823 /* Manager */,
+				C5E5D62E1E1E2E0A002B4823 /* Model */,
+				C5E5D62F1E1E2E0A002B4823 /* Network */,
+				C5E5D6301E1E2E0A002B4823 /* Service */,
+				C5E5D6311E1E2E0A002B4823 /* View */,
 				C5D0BA731E08C48E0054DF0E /* WallpaperModule.h */,
+				C5E5D6451E1F8BFB002B4823 /* Wallpaper.xcassets */,
 			);
 			path = WallpaperModule;
 			sourceTree = "<group>";
@@ -2779,6 +2847,9 @@
 		C5E0CF2D1E13B47300705C26 /* ComponentModule */ = {
 			isa = PBXGroup;
 			children = (
+				C5BD113F1E23D154001B5532 /* AKCollectionLayout */,
+				C5BD11351E23C10E001B5532 /* AKMJRefresh */,
+				C5E5D6191E1E25FA002B4823 /* AKWaterFallView */,
 				C5E5D5DA1E1E1B16002B4823 /* AKTableView */,
 				C5E5D5F81E1E1B16002B4823 /* HorizontalScrollToolBar */,
 				C538A6471E160F0D001E1FA7 /* Category */,
@@ -2822,10 +2893,10 @@
 				C5E5D5DE1E1E1B16002B4823 /* AKCustomTableView.m */,
 				C5E5D5DF1E1E1B16002B4823 /* AKTableViewHandler.h */,
 				C5E5D5E01E1E1B16002B4823 /* AKTableViewHandler.m */,
-				C5E5D5E11E1E1B16002B4823 /* Banner */,
-				C5E5D5E91E1E1B16002B4823 /* Cell */,
 				C5E5D5F61E1E1B16002B4823 /* AKCustomTableHandler.h */,
 				C5E5D5F71E1E1B16002B4823 /* AKCustomTableHandler.m */,
+				C5E5D5E11E1E1B16002B4823 /* Banner */,
+				C5E5D5E91E1E1B16002B4823 /* Cell */,
 			);
 			path = AKTableView;
 			sourceTree = "<group>";
@@ -2867,7 +2938,6 @@
 			isa = PBXGroup;
 			children = (
 				C5E5D5F91E1E1B16002B4823 /* AKDataHandlerProtocol.h */,
-				C5E5D5FA1E1E1B16002B4823 /* AKDataViewProtocol.h */,
 				C5E5D5FB1E1E1B16002B4823 /* AKHContentView.h */,
 				C5E5D5FC1E1E1B16002B4823 /* AKHContentView.m */,
 				C5E5D5FD1E1E1B16002B4823 /* AKHScrollFlowLayout.h */,
@@ -2880,6 +2950,112 @@
 				C5E5D6041E1E1B16002B4823 /* AKHScrollViewController.m */,
 			);
 			path = HorizontalScrollToolBar;
+			sourceTree = "<group>";
+		};
+		C5E5D6191E1E25FA002B4823 /* AKWaterFallView */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D61A1E1E2B57002B4823 /* Cell */,
+				C5E5D61E1E1E2B57002B4823 /* Model */,
+				C5E5D6211E1E2B57002B4823 /* AKWaterFallView.h */,
+				C5E5D6221E1E2B57002B4823 /* AKWaterFallView.m */,
+				C5E5D63C1E1F52A3002B4823 /* AKCollectionHandler.h */,
+				C5E5D63D1E1F52A3002B4823 /* AKCollectionHandler.m */,
+				C5E5D63F1E1F68C8002B4823 /* AKCustomCollectionHandler.h */,
+				C5E5D6401E1F68C8002B4823 /* AKCustomCollectionHandler.h.m */,
+				C5E5D6421E1F77BF002B4823 /* AKBaseCollectionView.h */,
+				C5E5D6431E1F77BF002B4823 /* AKBaseCollectionView.m */,
+			);
+			path = AKWaterFallView;
+			sourceTree = "<group>";
+		};
+		C5E5D61A1E1E2B57002B4823 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D61B1E1E2B57002B4823 /* XHSHomeCell.h */,
+				C5E5D61C1E1E2B57002B4823 /* XHSHomeCell.m */,
+				C5E5D61D1E1E2B57002B4823 /* XHSHomeCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C5E5D61E1E1E2B57002B4823 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D61F1E1E2B57002B4823 /* XHSHomeModel.h */,
+				C5E5D6201E1E2B57002B4823 /* XHSHomeModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5E5D62A1E1E2E0A002B4823 /* Aspect */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Aspect;
+			sourceTree = "<group>";
+		};
+		C5E5D62B1E1E2E0A002B4823 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D6361E1F3C19002B4823 /* AKRequestManager+WallpaperModule.h */,
+				C5E5D6371E1F3C19002B4823 /* AKRequestManager+WallpaperModule.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C5E5D62C1E1E2E0A002B4823 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D6391E1F3CE1002B4823 /* AKWallpaperViewController.h */,
+				C5E5D63A1E1F3CE1002B4823 /* AKWallpaperViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C5E5D62D1E1E2E0A002B4823 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C5E5D62E1E1E2E0A002B4823 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5E5D62F1E1E2E0A002B4823 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D6321E1E2EA0002B4823 /* Request */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		C5E5D6301E1E2E0A002B4823 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C5E5D6311E1E2E0A002B4823 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5E5D6321E1E2EA0002B4823 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5D6331E1E2EA0002B4823 /* AKWallpaperContentListAPI.h */,
+				C5E5D6341E1E2EA0002B4823 /* AKWallpaperContentListAPI.m */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		C5FC0C791DFAA97A00159913 /* Sql */ = {
@@ -3020,11 +3196,13 @@
 			files = (
 				C52E78A21DF7F1DD006B2183 /* Common.xcassets in Resources */,
 				C515AB661DF051BA00353FC4 /* BaseModule.xcassets in Resources */,
+				C5E5D6461E1F8BFB002B4823 /* Wallpaper.xcassets in Resources */,
 				C5E0CF6B1E13B47300705C26 /* chooseTagViewCloseBtn.png in Resources */,
 				C5E0CEF31E12129700705C26 /* AKThemes in Resources */,
 				C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */,
 				C5660E481E0A7A10000BF5E3 /* NewsModule.xcassets in Resources */,
 				C52E78A51DF7F1DD006B2183 /* Friends.xcassets in Resources */,
+				C5E5D6261E1E2B57002B4823 /* XHSHomeCell.xib in Resources */,
 				C5B986E31E02A14400AB548A /* res.png in Resources */,
 				C52E78A11DF7F1DD006B2183 /* Chat.xcassets in Resources */,
 				C52E78A01DF7F1DD006B2183 /* SystemEmoji.json in Resources */,
@@ -3156,6 +3334,7 @@
 				C52E77C41DF7B3A6006B2183 /* TLEmojiGroupDisplayModel.m in Sources */,
 				C52E76BE1DF66D75006B2183 /* TLExpressionMessage.m in Sources */,
 				C52E78591DF7B9F9006B2183 /* TLSettingSwitchCell.m in Sources */,
+				C5E5D6281E1E2B57002B4823 /* AKWaterFallView.m in Sources */,
 				C52E76C11DF66D76006B2183 /* TLMessageFrame.m in Sources */,
 				C5660EC81E0D1E57000BF5E3 /* Content.m in Sources */,
 				C515AC441DF0549C00353FC4 /* NumgameResultChangedPush.m in Sources */,
@@ -3173,6 +3352,7 @@
 				C515AB691DF051BA00353FC4 /* AKBaseRequest.m in Sources */,
 				C52E76E51DF698FD006B2183 /* TLUIUtility.m in Sources */,
 				C515ACF61DF0554400353FC4 /* AKUserPinAnnotationView.m in Sources */,
+				C5E5D6411E1F68C8002B4823 /* AKCustomCollectionHandler.h.m in Sources */,
 				C52E76BA1DF66D75006B2183 /* UIColor+TLChat.m in Sources */,
 				C515AC611DF0549C00353FC4 /* IMRoomJoinMessage.m in Sources */,
 				C5FC0C9F1DFAC05000159913 /* AKUser.m in Sources */,
@@ -3180,6 +3360,7 @@
 				C52E77B31DF7AFFE006B2183 /* TLEmojiKeyboard.m in Sources */,
 				C515AC571DF0549C00353FC4 /* IMRoomBroadCastedPush.m in Sources */,
 				C515AC411DF0549C00353FC4 /* VotePublishPush.m in Sources */,
+				C5E5D63E1E1F52A3002B4823 /* AKCollectionHandler.m in Sources */,
 				C52E78891DF7BDD1006B2183 /* TLCommonSettingHelper.m in Sources */,
 				C515AC5D1DF0549C00353FC4 /* IMRoomHostBroadcastedPush.m in Sources */,
 				C515AB711DF051BA00353FC4 /* AppHelper.m in Sources */,
@@ -3217,6 +3398,8 @@
 				C515AC6B1DF0549C00353FC4 /* IMRoomSetRMPush.m in Sources */,
 				C52E77F61DF7B831006B2183 /* TLUserGroupItemCell.m in Sources */,
 				C515AB701DF051BA00353FC4 /* AKTabbarControllerFactory.m in Sources */,
+				C5E5D63B1E1F3CE2002B4823 /* AKWallpaperViewController.m in Sources */,
+				C5E5D6441E1F77BF002B4823 /* AKBaseCollectionView.m in Sources */,
 				C515AC501DF0549C00353FC4 /* IMRevokeMessage.m in Sources */,
 				C5E5D6171E1E1B16002B4823 /* AKHScrollTitleLabel.m in Sources */,
 				C52E77A61DF7AFFE006B2183 /* TLEmojiFaceItemCell.m in Sources */,
@@ -3240,6 +3423,7 @@
 				C5E0CF871E14D5F900705C26 /* AKView.m in Sources */,
 				C57DF5E91DFA9DF900D3D154 /* HexColor.m in Sources */,
 				C52E77A91DF7AFFE006B2183 /* TLEmojiGroupDisplayView+CollectionView.m in Sources */,
+				C5BD11381E23C251001B5532 /* AKMJRefreshHeader.m in Sources */,
 				C52E76861DF66593006B2183 /* TLExpressionHelper.m in Sources */,
 				C52E78751DF7BA58006B2183 /* TLChatBackgroundSelectViewController+CollectionView.m in Sources */,
 				C52E78761DF7BA58006B2183 /* TLChatBackgroundSelectViewController+Proxy.m in Sources */,
@@ -3247,6 +3431,7 @@
 				C5E5D6141E1E1B16002B4823 /* AKCustomTableHandler.m in Sources */,
 				C515AC4A1DF0549C00353FC4 /* IMFollowUpdated.m in Sources */,
 				C5E0CF191E128CFD00705C26 /* AKButton.m in Sources */,
+				C5E5D6381E1F3C19002B4823 /* AKRequestManager+WallpaperModule.m in Sources */,
 				C515AB761DF051BA00353FC4 /* AKMediator.m in Sources */,
 				C52E779F1DF7AFFE006B2183 /* TLMessageImageView.m in Sources */,
 				C52E77941DF7AFFE006B2183 /* TLChatBaseViewController+MessageDisplayView.m in Sources */,
@@ -3272,6 +3457,7 @@
 				C5660F7A1E0D3A85000BF5E3 /* AKRequestManager+NewsModule.m in Sources */,
 				C5660E7A1E0BCE43000BF5E3 /* AKNewsManager.m in Sources */,
 				C515AC531DF0549C00353FC4 /* IMUserInfoUpdatedPush.m in Sources */,
+				C5BD113B1E23C545001B5532 /* AKMJRefreshFooter.m in Sources */,
 				C515AD1B1DF0568100353FC4 /* AKUserManager.m in Sources */,
 				C515ACCA1DF0552600353FC4 /* ServiceLogin.m in Sources */,
 				C515ACC51DF0552600353FC4 /* AKMediator+LoginModule.m in Sources */,
@@ -3322,6 +3508,7 @@
 				C5E0CF691E13B47300705C26 /* AKChannelTagView.m in Sources */,
 				C52E77A41DF7AFFE006B2183 /* TLChatMessageDisplayView.m in Sources */,
 				C5E0CF671E13B47300705C26 /* AKChannelTagButton.m in Sources */,
+				C5E5D6251E1E2B57002B4823 /* XHSHomeCell.m in Sources */,
 				C515ACF31DF0554400353FC4 /* AKMapManager.m in Sources */,
 				C52E77161DF6E2B3006B2183 /* TLTableViewCell.m in Sources */,
 				C515AD231DF0597B00353FC4 /* AKSignalManager.m in Sources */,
@@ -3347,6 +3534,7 @@
 				C515AC5A1DF0549C00353FC4 /* IMRoomGetUIDsMessage.m in Sources */,
 				C515ACCB1DF0552600353FC4 /* AKLoginButton.m in Sources */,
 				C5FC0C6F1DFAA1B200159913 /* TLConversation+AKUser.m in Sources */,
+				C5E5D6271E1E2B57002B4823 /* XHSHomeModel.m in Sources */,
 				C515AC581DF0549C00353FC4 /* IMRoomBroadCastMessage.m in Sources */,
 				C5E0CF841E13E55900705C26 /* AKCollectionViewCell.m in Sources */,
 				C52E78571DF7B9F9006B2183 /* TLSettingButtonCell.m in Sources */,
@@ -3395,6 +3583,7 @@
 				C5660EE11E0D2160000BF5E3 /* HWWeakTimer.m in Sources */,
 				C515AC731DF0549C00353FC4 /* IMUserErrorPush.m in Sources */,
 				C5660ED81E0D1F13000BF5E3 /* Tag.m in Sources */,
+				C5E5D6351E1E2EA0002B4823 /* AKWallpaperContentListAPI.m in Sources */,
 				C515AB781DF051BA00353FC4 /* AKRequestManager.m in Sources */,
 				C515AC391DF0549C00353FC4 /* AKRequestManager+IMModule.m in Sources */,
 				C515AC4C1DF0549C00353FC4 /* IMGetMessage.m in Sources */,
@@ -3403,6 +3592,7 @@
 				C515AC6F1DF0549C00353FC4 /* ShowRenQiUpdatePush.m in Sources */,
 				C52E78821DF7BB62006B2183 /* UIImage+Size.m in Sources */,
 				C52E76B71DF66D75006B2183 /* NSFileManager+ExpressionGroup.m in Sources */,
+				C5BD11421E23D18F001B5532 /* AKCollectionWaterFallLayout.m in Sources */,
 				C515ACF81DF0554400353FC4 /* HBBaseRoundButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

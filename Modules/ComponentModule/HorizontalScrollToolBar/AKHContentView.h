@@ -13,7 +13,7 @@
 @interface AKHContentView : UIView <AKHScrollToolBarProtocol>
 
 @property (nonatomic,strong) id<AKDataHandlerProtocol> handler ;
-@property (nonatomic,strong) id<AKDataViewProtocol> contentView;
+@property (nonatomic,strong) UIView* contentView;
 
 -(NSString*)getTitle;
 @end

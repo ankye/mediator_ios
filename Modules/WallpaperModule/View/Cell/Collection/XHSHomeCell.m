@@ -38,12 +38,11 @@
     
     _model = model;
     
-    [self.iv sd_setImageWithURL:[NSURL URLWithString:_model.url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-    }];
+    [self.iv setImageWithURL:[NSURL URLWithString:model.url] options:YYWebImageOptionSetImageWithFadeAnimation];
+    
     
     UIImage *placeholder = [UIImage imageNamed:@"tag_select~iphone"];    
-    [self.userIcon sd_setImageWithURL:[NSURL URLWithString:_model.images] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self.userIcon sd_setImageWithURL:[NSURL URLWithString:model.images] placeholderImage:placeholder completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         self.userIcon.image = (image ? image : placeholder);
     }];
     

@@ -11,7 +11,8 @@
 #import "AKCustomCollectionHandler.h"
 #import "AKNewsManager.h"
 #import "AKWaterFallView.h"
-
+#import "AKCollectionFactory.h"
+#import "XHSHomeCell.h"
 @interface AKWallpaperViewController() <AKCustomCollectionHandlerDelegate>
 
 @end
@@ -24,10 +25,14 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+ 
+    
+    
     CGFloat barHeight = self.navigationController?SCREEN_NAV_HEIGHT:0;
     CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
     CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
     
+    [[AKCollectionFactory sharedInstance] registerNib:[UINib nibWithNibName:NSStringFromClass([XHSHomeCell class]) bundle:nil] forCellWithReuseIdentifier:identifier_XHSHomeCell];
     
     [self reloadTableHandlers];
     
@@ -107,8 +112,10 @@
             tempView.contentView = [[AKWaterFallView alloc] initWithFrame:tempView.frame];
             tempView.handler = handler;
         }else{
-            AKHContentView* tempView = [[AKHContentView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SCREEN_NAV_HEIGHT-SCREEN_TABBAR_HEIGHT)];
-            tempView.contentView = [[AKWaterFallView alloc] initWithFrame:tempView.frame];
+            AKHContentView* tempView = [[AKHContentView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-SCREEN_NAV_HEIGHT-SCREEN_TABBAR_HEIGHT) ];
+            AKCollectionLayout* layout = [AKCollectionFactory createLayout:i % 4];
+            
+            tempView.contentView = [[AKWaterFallView alloc] initWithFrame:tempView.frame collectionViewLayout:layout];
             tempView.handler = handler;
             [self.contentViews addObject:tempView];
         }

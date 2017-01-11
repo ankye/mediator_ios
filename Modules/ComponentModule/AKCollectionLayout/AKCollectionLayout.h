@@ -8,6 +8,8 @@
 
 #import <CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.h>
 
-@interface AKCollectionWaterFallLayout : CHTCollectionViewWaterfallLayout
+@interface AKCollectionLayout : CHTCollectionViewWaterfallLayout
+
+-(void)configLayout;
 
 @end

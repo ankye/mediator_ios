@@ -110,7 +110,7 @@ static int const kPageSize = 20 ;
         tempArr = response[@"data"];
         
         self.dataList = [XHSHomeModel mj_objectArrayWithKeyValuesArray:tempArr];
-        
+        NSLog(@"%@",self.dataList);
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
@@ -189,21 +189,7 @@ static int const kPageSize = 20 ;
     
 }
 
-//- (CGFloat)AKWaterLayout:(AKWaterLayout *)waterLayout itemHeightForIndexPath:(NSIndexPath *)indexPath {
-//    
-//    XHSHomeModel *model = self.dataList[indexPath.item];
-//    
-//    CGFloat width = ([UIScreen mainScreen].bounds.size.width - waterLayout.sectionInset.left - waterLayout.sectionInset.right - (waterLayout.colMargin * (waterLayout.columns - 1))) / waterLayout.columns;
-//    
-//    CGFloat scale = [model.width floatValue] / width;
-//    CGFloat height = [model.height floatValue] / scale;
-//    
-//    CGSize maxSize = CGSizeMake(width, MAXFLOAT);
-//    CGFloat descHeight = [model.title boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12]} context:nil].size.height;
-//    
-//    return  height + descHeight + 64;
-//    
-//}
+
 #pragma mark - func
 
 - (void)handleDatasourceAndDelegate:(UIView *)table

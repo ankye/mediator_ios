@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "AKBaseCollectionView.h"
-#import "AKCollectionWaterFallLayout.h"
+#import "AKCollectionFactory.h"
 
 @interface AKWaterFallView : AKBaseCollectionView
 
-@property(nonatomic, strong) AKCollectionWaterFallLayout *layout;
+@property(nonatomic, strong) AKCollectionLayout *layout;
+
+-(id)initWithFrame:(CGRect)frame collectionViewLayout:( AKCollectionLayout *)layout;
+
+-(void)changeLayout:(AKCollectionLayout*)layout;
 
 @end

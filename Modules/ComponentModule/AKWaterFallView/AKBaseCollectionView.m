@@ -69,7 +69,7 @@
 - (void)defaultPublicAPIs
 {
     self.showRefreshDetail = NO ;
-    self.automaticallyLoadMore = NO ;
+    self.automaticallyLoadMore = YES ;
     self.automaticallyLoadNew = YES ;
 }
 
@@ -93,7 +93,8 @@
         self.mj_footer = nil ;
         MJRefreshAutoFooter *autofooter = [MJRefreshAutoFooter footerWithRefreshingTarget:self
                                                                          refreshingAction:@selector(loadMoreDataSelector)] ;
-        autofooter.triggerAutomaticallyRefreshPercent = 0.55 ;
+        autofooter.triggerAutomaticallyRefreshPercent = 0.5 ;
+
         self.mj_footer = autofooter;
     }
 }

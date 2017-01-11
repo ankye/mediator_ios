@@ -11,6 +11,8 @@
 #import "AKSignalManager+UserModule.h"
 #import "AKTabbarControllerFactory.h"
 #import "ViewController.h"
+#import "AKCollectionFactory.h"
+#import "XHSHomeCell.h"
 
 @implementation AppDelegate
 
@@ -22,7 +24,8 @@
         
         [AK_MEDIATOR updateAppScheme:@"banliapp"];
         
- 
+        [self appInitConfigure];
+        
        
         
 //        UIViewController *controller = [AK_MEDIATOR map_viewController];
@@ -57,7 +60,11 @@
 }
 
 
-
+-(void)appInitConfigure
+{
+   
+    
+}
 /**
  *  tabBarItem 的选中和不选中文字属性、背景图片
  */

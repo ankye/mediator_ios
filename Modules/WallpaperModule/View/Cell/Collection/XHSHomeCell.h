@@ -18,5 +18,4 @@ static NSString *identifier_XHSHomeCell = @"HomeCell" ;
 
 @property(nonatomic, strong) XHSHomeModel *model;
 
-
 @end

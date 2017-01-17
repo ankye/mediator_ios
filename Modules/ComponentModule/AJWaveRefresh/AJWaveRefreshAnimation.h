@@ -20,11 +20,11 @@
 /**
  *  初始化
  *
- *  @param frame
+ *  @param frame frame
  *  @param grayImage 底部灰色图片
  *  @param redImage 需要显示出来的图片
  *
- *  @return
+ *  @return self
  */
 - (instancetype)initWithFrame:(CGRect)frame
                     grayImage:(UIImage *)grayImage

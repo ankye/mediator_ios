@@ -37,9 +37,6 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - ChameleonFramework (2.1.0):
-    - ChameleonFramework/Default (= 2.1.0)
-  - ChameleonFramework/Default (2.1.0)
   - CHTCollectionViewWaterfallLayout (0.9.5):
     - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.5)
   - CHTCollectionViewWaterfallLayout/ObjC (0.9.5)
@@ -69,6 +66,7 @@ PODS:
     - MBProgressHUD (~> 0.9)
     - SDWebImage (!= 3.7.2, ~> 3.7)
   - ReactiveObjC (2.0.0)
+  - RTRootNavigationController (0.5.22)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -103,7 +101,6 @@ DEPENDENCIES:
   - AMapLocation
   - Aspects
   - BlocksKit
-  - ChameleonFramework
   - CHTCollectionViewWaterfallLayout
   - CocoaLumberjack
   - CYLTabBarController
@@ -116,6 +113,7 @@ DEPENDENCIES:
   - MJRefresh
   - MWPhotoBrowser
   - ReactiveObjC
+  - RTRootNavigationController
   - SIAlertView
   - SocketRocket
   - STPopup
@@ -137,7 +135,6 @@ SPEC CHECKSUMS:
   AMapLocation: 3f2005c6dec6a7a1107258d0cde43b9d7399d217
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   CHTCollectionViewWaterfallLayout: 775ff73f48cfc13859b62d8bceb96e772e4a0318
   CocoaLumberjack: c823149bccc5519a9447aeb433be7b1212a7d6a5
   CVKHierarchySearcher: 7be8d3bcbcc6f86ff07f785e6c632b5e40da2553
@@ -153,6 +150,7 @@ SPEC CHECKSUMS:
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   ReactiveObjC: d92f5be3f4336aaba9e839286b879f541ffd1cd6
+  RTRootNavigationController: cf134c044a8ce14d97fc668847ed4567efc53f91
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SIAlertView: 20c794b55eaf44d888773ea51647cf8907723919
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
@@ -164,6 +162,6 @@ SPEC CHECKSUMS:
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: d94696bf449f39eb4dc01c4c55743ff6ca9840c4
+PODFILE CHECKSUM: 0a5a7291da45ad861c8f8d923e9bd56ebd4275e6
 
 COCOAPODS: 1.1.1

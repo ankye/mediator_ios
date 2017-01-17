@@ -8,8 +8,8 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-#define TABLE_FOOTER_IMAGES             @"xy_loading_"
-#define TABLE_FOOTER_IMAGES_COUNT       32
+#define TABLE_FOOTER_IMAGES             @"loading_more_"
+#define TABLE_FOOTER_IMAGES_COUNT       4
 
 
 @interface AKMJRefreshFooter : MJRefreshBackGifFooter

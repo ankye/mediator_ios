@@ -12,7 +12,6 @@
 
 @interface XHSHomeCell()
 
-@property (weak, nonatomic) IBOutlet UIImageView *iv;
 
 @property (weak, nonatomic) IBOutlet UIImageView *userIcon;
 

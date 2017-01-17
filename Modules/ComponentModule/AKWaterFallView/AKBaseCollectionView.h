@@ -9,21 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "AKMJRefreshHeader.h"
 #import "AKMJRefreshFooter.h"
+#import "AKBaseCollectionViewProtocol.h"
 
 
-@protocol RootCollectionViewDelegate <NSObject>
 
-@optional
-- (void)loadNewData ;
-- (void)loadMoreData ;
-
-@end
 
 @interface AKBaseCollectionView : UICollectionView
 
 
 // SET myDelegate TO YOUR CTRLLER
-@property (nonatomic,weak) id <RootCollectionViewDelegate> xt_Delegate ;
+@property (nonatomic,weak) id <AKBaseCollectionViewProtocol> btDelegate ;
 // DEFAULT IS `NO`  -> ONLY GIF IMAGES , SHOW WORDS WHEN IT BECOMES `YES`
 @property (nonatomic) BOOL showRefreshDetail ;
 // DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`

@@ -126,11 +126,11 @@
 {
     
 }
-- (void)didSelectRowWithContent:(Content *)content
+- (void)didSelectRowWithContent:(NSObject *)content
 {
     
 }
-- (void)bannerSelected:(Content *)content
+- (void)bannerSelected:(NSObject *)content
 {
     
 }

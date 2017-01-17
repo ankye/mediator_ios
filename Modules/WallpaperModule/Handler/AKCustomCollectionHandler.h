@@ -7,14 +7,15 @@
 //
 
 #import "AKCollectionHandler.h"
+@class XHSHomeModel;
 
 @protocol AKCustomCollectionHandlerDelegate <NSObject>
 
 - (void)tableDidScrollWithOffsetY:(float)offsetY ;
 - (void)tablelWillEndDragWithOffsetY:(float)offsetY WithVelocity:(CGPoint)velocity;
 - (void)handlerRefreshing:(id)handler ;
-- (void)didSelectRowWithContent:(Content *)content ;
-- (void)bannerSelected:(Content *)content ;
+- (void)didSelectRow:(UICollectionViewCell*)cell withContent:(XHSHomeModel *)content ;
+- (void)bannerSelected:(XHSHomeModel *)content ;
 
 @end
 

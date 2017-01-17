@@ -29,3 +29,14 @@ return _sharedInstance; \
 #define     SCREEN_HEIGHT               [UIScreen mainScreen].bounds.size.height
 #define     SCREEN_TABBAR_HEIGHT        48.0f
 #define     SCREEN_NAV_HEIGHT           64.0f
+
+
+#define     AKURL(urlString)    [NSURL URLWithString:urlString]
+#define     AKNoNilString(str)  (str.length > 0 ? str : @"")
+#define     AKNoNilNumber(obj)  (obj == nil ? @(0): obj)
+#define     AKWeakSelf(type)    __weak typeof(type) weak##type = type;
+#define     AKStrongSelf(type)  __strong typeof(type) strong##type = type;
+#define     AKTimeStamp(date)   ([NSString stringWithFormat:@"%lf", [date timeIntervalSince1970]])
+#define     AKColor(r, g, b, a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a]
+
+#define     AK1PXLine            ([[UIScreen mainScreen] scale] > 0.0 ? 1.0 / [[UIScreen mainScreen] scale] : 1.0)

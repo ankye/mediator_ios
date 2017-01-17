@@ -116,8 +116,8 @@
 
 - (void)loadNewDataSelector
 {
-    if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(loadNewData)]) {
-        [self.xt_Delegate loadNewData] ;
+    if (self.btDelegate && [self.btDelegate respondsToSelector:@selector(loadNewData)]) {
+        [self.btDelegate loadNewData] ;
     }
     
     [self headerEnding] ;
@@ -137,8 +137,8 @@
     {
         dispatch_queue_t queue = dispatch_queue_create("refreshAutoFooter", NULL) ;
         dispatch_async(queue, ^{
-            if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(loadMoreData)]) {
-                [self.xt_Delegate loadMoreData] ;
+            if (self.btDelegate && [self.btDelegate respondsToSelector:@selector(loadMoreData)]) {
+                [self.btDelegate loadMoreData] ;
             }
             [self footerEnding] ;
         }) ;
@@ -147,8 +147,8 @@
     }
     else
     {
-        if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(loadMoreData)]) {
-            [self.xt_Delegate loadMoreData] ;
+        if (self.btDelegate && [self.btDelegate respondsToSelector:@selector(loadMoreData)]) {
+            [self.btDelegate loadMoreData] ;
         }
     }
     

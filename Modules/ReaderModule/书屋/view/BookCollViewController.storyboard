@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Book Coll View Controller-->
+        <scene sceneID="TfT-rZ-Qpy">
+            <objects>
+                <viewController storyboardIdentifier="BookCollViewController" id="ErR-fz-qcR" customClass="BookCollViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TDx-uu-iXw"/>
+                        <viewControllerLayoutGuide type="bottom" id="fNl-iI-qWB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mRi-9i-c62">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="91" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="9NV-i3-O8k" customClass="BookCollMainView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="9NV-i3-O8k" secondAttribute="bottom" constant="49" id="9Mt-0y-3qG"/>
+                            <constraint firstAttribute="trailing" secondItem="9NV-i3-O8k" secondAttribute="trailing" id="Gji-Q8-f9h"/>
+                            <constraint firstItem="9NV-i3-O8k" firstAttribute="leading" secondItem="mRi-9i-c62" secondAttribute="leading" id="X6N-BH-Nia"/>
+                            <constraint firstItem="9NV-i3-O8k" firstAttribute="top" secondItem="mRi-9i-c62" secondAttribute="top" constant="64" id="bg2-hd-LHr"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="mainView" destination="9NV-i3-O8k" id="hZd-AQ-olQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Kn-3O-SvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="407.5" y="381.5"/>
+        </scene>
+    </scenes>
+</document>

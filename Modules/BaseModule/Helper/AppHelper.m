@@ -7,7 +7,7 @@
 //
 
 #import "AppHelper.h"
-
+#import <AMap3DMap/MAMapKit/MAMapKit.h>
 
 
 

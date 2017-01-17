@@ -26,5 +26,7 @@
 
 @property(nonatomic, copy) NSString *width;
 
+-(CGSize)scaleSize;
+
 
 @end

@@ -25,11 +25,12 @@
 #import "LoggerModule.h"
 #import "UserModule.h"
 #import "LoginModule.h"
-#import "MapModule.h"
+//#import "MapModule.h"
 #import "ShareModule.h"
-#import "IMModule.h"
+//#import "IMModule.h"
 #import "NewsModule.h"
 #import "WallpaperModule.h"
+#import "ReaderModule.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.

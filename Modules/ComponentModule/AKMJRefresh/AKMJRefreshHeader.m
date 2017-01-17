@@ -38,9 +38,9 @@
     if (!_gifImageList)
     {
         NSMutableArray *tempList = [NSMutableArray array] ;
-        for (int i = 1; i <= TABLE_HEADER_IMAGES_COUNT; i++)
+        for (int i = 0; i < TABLE_HEADER_IMAGES_COUNT; i++)
         {
-            UIImage *imgTemp = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d~iphone",TABLE_HEADER_IMAGES,i]] ;
+            UIImage *imgTemp = [UIImage imageNamed:[NSString stringWithFormat:@"%@%d",TABLE_HEADER_IMAGES,i]] ;
             [tempList addObject:imgTemp] ; // DEFAULT MODE IS THIS GIF IMAGES .
         }
         _gifImageList = [NSArray arrayWithArray:tempList] ;

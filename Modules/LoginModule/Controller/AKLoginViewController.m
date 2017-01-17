@@ -108,8 +108,9 @@
                     [GVUserDefaults standardUserDefaults].token = dic[@"token"];
                     [GVUserDefaults standardUserDefaults].uid = dic[@"uid"];
                     NSNumber* time = @([dic[@"imtime"] integerValue]);
-                    [GVUserDefaults standardUserDefaults].imTime = time;
-                    [GVUserDefaults standardUserDefaults].imToken = dic[@"imtoken"];
+//                    
+//                    [GVUserDefaults standardUserDefaults].imTime = time;
+//                    [GVUserDefaults standardUserDefaults].imToken = dic[@"imtoken"];
                     
                     user.usernum = dic[@"usernum"];
                     user.detail.sex = [dic[@"sex"] integerValue];

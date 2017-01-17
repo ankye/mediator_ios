@@ -13,6 +13,7 @@
 
 #import "AKSignalManager+ThemeModule.h"
 #import "AKThemeManager.h"
+#import "AKNavigationController.h"
 #import "AKLabel.h"
 #import "AKTextView.h"
 #import "AKImageView.h"

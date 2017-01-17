@@ -7,29 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AKBaseTableViewDelegate.h"
+#import "AKBaseTableHandlerDelegate.h"
 #import "MJRefresh.h"
 
 
 
-@protocol RootTableViewDelegate <NSObject>
-
-@optional
-- (void)loadNewData ;
-- (void)loadMoreData ;
-
-@end
 
 @interface AKBaseTableView : UITableView
 
-// SET myDelegate TO YOUR CTRLLER
-@property (nonatomic,weak) id <RootTableViewDelegate> xt_Delegate ;
-// DEFAULT IS `NO`  -> ONLY GIF IMAGES , SHOW WORDS WHEN IT BECOMES `YES`
+// table协议
+@property (nonatomic,weak) id <AKBaseTableViewDelegate> btDelegate ;
+
+//默认为NO，显示刷新详情（YES)
 @property (nonatomic) BOOL showRefreshDetail ;
-// DEFAULT IS `NO`  -> MANUALLY LOADING . AUTOMATICALLY LOAD WHEN IT BECOMES `YES`
+//自动加载更多,默认NO
 @property (nonatomic) BOOL automaticallyLoadMore ;
-// DEFAULT IS `YES` -> EVERYTIME INITIAL WITH AUTO LOAD NEW . CHANGE IT TO `NO` IF NECESSARY .
+//自动加载新数据,默认YES
 @property (nonatomic) BOOL automaticallyLoadNew ;
 
+//下拉刷新头部
 - (void)pullDownRefreshHeader ;
+
+
+-(MJRefreshHeader*)customHeader;
+-(MJRefreshFooter*)customFooter;
 
 @end

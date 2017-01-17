@@ -23,4 +23,15 @@
              };
 };
 
+
+
+-(CGSize)scaleSize{
+    CGFloat width = [UIScreen mainScreen].bounds.size.width;
+    CGFloat scale = width / [self.width floatValue];
+    CGFloat height = [self.height floatValue] * scale;
+    
+    return CGSizeMake(width, height);
+}
+
+
 @end

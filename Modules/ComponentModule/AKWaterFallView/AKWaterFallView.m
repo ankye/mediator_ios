@@ -8,20 +8,9 @@
 
 #import "AKWaterFallView.h"
 
-//#import "XHSHomeCell.h"
-//#import "XHSHomeModel.h"
 #import <AFNetworking.h>
 #import <MJExtension.h>
 #import "CHTCollectionViewWaterfallLayout.h"
-
-
-@interface AKWaterFallView () < UIScrollViewDelegate>
-
-
-
-
-@end
-
 
 
 @implementation AKWaterFallView
@@ -40,8 +29,42 @@
         self.layout = layout;
         [[AKCollectionFactory sharedInstance] registerCellsToView:self];
         self.backgroundColor = [UIColor colorWithHexString:@"#f6f7f9"];
+        
+        [self addObserver:self
+               forKeyPath:@"contentOffset"
+                  options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
+                  context:nil] ;
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self
+              forKeyPath:@"contentOffset"
+                 context:nil] ;
+}
+
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqualToString:@"contentOffset"] && object == self) {
+        //        NSLog(@"change %@",change) ;
+        id old = change[NSKeyValueChangeOldKey] ;
+        id new = change[NSKeyValueChangeNewKey] ;
+        if (![old isKindOfClass:[NSNull class]] && old != new) {
+            CGFloat contentOffsetY = self.contentOffset.y ;
+            if (self.offsetYHasChangedValue) {
+                self.offsetYHasChangedValue(contentOffsetY) ;
+            }
+        }
+    }
+    else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context] ;
+    }
 }
 
 

@@ -18,8 +18,7 @@ target 'Project' do
         pod 'UberSignals'
         pod 'SIAlertView'        
         pod 'M13BadgeView'
-        pod 'ChameleonFramework'
-        
+        pod 'RTRootNavigationController'
         pod 'MJRefresh'
         #map Module
         pod 'AMapFoundation'

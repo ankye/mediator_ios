@@ -16,6 +16,9 @@ static NSString *identifier_XHSHomeCell = @"HomeCell" ;
 
 @interface XHSHomeCell : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *iv;
+
 @property(nonatomic, strong) XHSHomeModel *model;
+
 
 @end

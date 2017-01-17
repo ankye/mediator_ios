@@ -8,7 +8,8 @@
 
 #import "AKHScrollViewController.h"
 #import "AKCustomTableHandler.h"
+#import "AKBaseTableHandlerDelegate.h"
 
-@interface AKNewsViewController : AKHScrollViewController<AKCustomTableHandlerDelegate>
+@interface AKNewsViewController : AKHScrollViewController<AKBaseTableHandlerDelegate>
 
 @end

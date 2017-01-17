@@ -8,8 +8,8 @@
 
 #import <MJRefresh/MJRefresh.h>
 
-#define TABLE_HEADER_IMAGES             @"xy_loading_"
-#define TABLE_HEADER_IMAGES_COUNT       32
+#define TABLE_HEADER_IMAGES             @"loading_"
+#define TABLE_HEADER_IMAGES_COUNT       20
 
 
 @interface AKMJRefreshHeader : MJRefreshGifHeader

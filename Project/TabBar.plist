@@ -4,67 +4,83 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>新闻</string>
+		<string>追书</string>
 		<key>normal</key>
-		<string>tabbar_mainframe</string>
+		<string>tab_icon_home_nor</string>
 		<key>selected</key>
-		<string>tabbar_mainframeHL</string>
+		<string>tab_icon_home_sel</string>
 		<key>width</key>
 		<string>20</string>
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>AKNewsViewController</string>
+		<string>BookCaseViewController</string>
 		<key>navigationController</key>
-		<string></string>
+		<string>AKNavigationController</string>
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>联系人</string>
+		<string>热榜</string>
 		<key>normal</key>
-		<string>tabbar_contacts</string>
+		<string>tab_icon_car_nor</string>
 		<key>selected</key>
-		<string>tabbar_contactsHL</string>
+		<string>tab_icon_car_sel</string>
 		<key>width</key>
 		<string>20</string>
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>AKWallpaperViewController</string>
+		<string>AKHotNovelViewController</string>
 		<key>navigationController</key>
-		<string></string>
+		<string>AKNavigationController</string>
 	</dict>
 	<dict>
 		<key>title</key>
 		<string>发现</string>
 		<key>normal</key>
-		<string>tabbar_discover</string>
+		<string>tab_icon_charging_nor</string>
 		<key>selected</key>
-		<string>tabbar_discoverHL</string>
+		<string>tab_icon_charging_sel</string>
 		<key>width</key>
 		<string>20</string>
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>UIViewController</string>
+		<string>BookCategoryViewController</string>
 		<key>navigationController</key>
-		<string>UINavigationController</string>
+		<string>AKNavigationController</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>分类</string>
+		<key>normal</key>
+		<string>tab_icon_news_nor</string>
+		<key>selected</key>
+		<string>tab_icon_news_sel</string>
+		<key>width</key>
+		<string>20</string>
+		<key>height</key>
+		<string>20</string>
+		<key>controller</key>
+		<string>BookDocumentViewController</string>
+		<key>navigationController</key>
+		<string>AKNavigationController</string>
 	</dict>
 	<dict>
 		<key>title</key>
 		<string>我的</string>
 		<key>normal</key>
-		<string>tabbar_me</string>
+		<string>tab_icon_user_nor</string>
 		<key>selected</key>
-		<string>tabbar_meHL</string>
+		<string>tab_icon_user_sel</string>
 		<key>width</key>
 		<string>20</string>
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>UIViewController</string>
+		<string>BookDocumentViewController</string>
 		<key>navigationController</key>
-		<string>UINavigationController</string>
+		<string>AKNavigationController</string>
 	</dict>
 </array>
 </plist>

@@ -9,6 +9,8 @@
 #import "AKBaseTableView.h"
 #import "AKMJRefreshHeader.h"
 #import "AKMJRefreshFooter.h"
+#import "AJWaveRefreshAutoStateFooter.h"
+#import "AJWaveRefreshHeader.h"
 
 @implementation AKBaseTableView
 #pragma mark --
@@ -50,28 +52,40 @@
 
 - (void)setup
 {
+    [self addObserver:self
+           forKeyPath:@"contentOffset"
+              options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew
+              context:nil] ;
+    
     [self MJRefreshConfigure] ;
-    [self defaultPublicAPIs] ;
+    
 }
 
 - (void)MJRefreshConfigure
 {
- 
     
-    AKMJRefreshHeader *header = [AKMJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
-    self.mj_header = header;
+    self.mj_header = [self customHeader];
+    self.mj_footer = [self customFooter];
     
-    AKMJRefreshFooter *footer = [AKMJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
-   
-    self.mj_footer = footer;
-}
-
-- (void)defaultPublicAPIs
-{
-    self.showRefreshDetail = NO ;
+    self.showRefreshDetail = YES ;
     self.automaticallyLoadMore = NO ;
     self.automaticallyLoadNew = YES ;
+
 }
+
+-(MJRefreshHeader*)customHeader
+{
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
+    return header;
+}
+
+-(MJRefreshFooter*)customFooter
+{
+    MJRefreshBackStateFooter *footer = [MJRefreshBackStateFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
+    return footer;
+}
+
+
 
 #pragma mark --
 #pragma mark - Public Properties
@@ -116,9 +130,10 @@
 
 - (void)loadNewDataSelector
 {
-    if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(loadNewData)]) {
-        [self.xt_Delegate loadNewData] ;
+    if (self.btDelegate && [self.btDelegate respondsToSelector:@selector(loadNewData)]) {
+        [self.btDelegate loadNewData] ;
     }
+
     
     [self headerEnding] ;
 }
@@ -137,8 +152,8 @@
     {
         dispatch_queue_t queue = dispatch_queue_create("refreshAutoFooter", NULL) ;
         dispatch_async(queue, ^{
-            if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(loadMoreData)]) {
-                [self.xt_Delegate loadMoreData] ;
+            if (self.btDelegate && [self.btDelegate respondsToSelector:@selector(loadMoreData)]) {
+                [self.btDelegate loadMoreData] ;
             }
             [self footerEnding] ;
         }) ;
@@ -147,8 +162,8 @@
     }
     else
     {
-        if (self.xt_Delegate && [self.xt_Delegate respondsToSelector:@selector(loadMoreData)]) {
-            [self.xt_Delegate loadMoreData] ;
+        if (self.btDelegate && [self.btDelegate respondsToSelector:@selector(loadMoreData)]) {
+            [self.btDelegate loadMoreData] ;
         }
     }
     
@@ -161,6 +176,35 @@
 //        [self reloadData];
         [self.mj_footer endRefreshing];
     }) ;
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self
+              forKeyPath:@"contentOffset"
+                 context:nil] ;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary<NSString *,id> *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqualToString:@"contentOffset"] && object == self) {
+        //        NSLog(@"change %@",change) ;
+        id old = change[NSKeyValueChangeOldKey] ;
+        id new = change[NSKeyValueChangeNewKey] ;
+        if (![old isKindOfClass:[NSNull class]] && old != new) {
+            CGFloat contentOffsetY = self.contentOffset.y ;
+            if(self.btDelegate && [self.btDelegate respondsToSelector:@selector(offsetYHasChangedValue:)]){
+                [self.btDelegate offsetYHasChangedValue:contentOffsetY];
+            }
+           
+        }
+    }
+    else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context] ;
+    }
 }
 
 

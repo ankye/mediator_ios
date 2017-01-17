@@ -13,6 +13,13 @@
 #import "AKWaterFallView.h"
 #import "AKCollectionFactory.h"
 #import "XHSHomeCell.h"
+#import "XHSHomeModel.h"
+#import "DetailViewController.h"
+#import "OUNavigationController.h"
+#import "XHSHomeCell.h"
+#import "OUNavigationController.h"
+
+
 @interface AKWallpaperViewController() <AKCustomCollectionHandlerDelegate>
 
 @end
@@ -23,12 +30,13 @@
 {
     [super viewDidLoad];
     
+     self.navigationController.navigationBarHidden = YES;
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
- 
-    
-    
-    CGFloat barHeight = self.navigationController?SCREEN_NAV_HEIGHT:0;
+
+    CGFloat barHeight = self.navigationController ?SCREEN_NAV_HEIGHT:0;
+    barHeight = 0;
     CGFloat screenW = [UIScreen mainScreen].bounds.size.width;
     CGFloat screenH = [UIScreen mainScreen].bounds.size.height;
     
@@ -136,14 +144,22 @@
 {
     
 }
-- (void)didSelectRowWithContent:(Content *)content
+- (void)didSelectRow:(UICollectionViewCell*)cell withContent:(XHSHomeModel *)model
+{
+    CGRect desImageViewRect = CGRectMake(0, 0, [model scaleSize].width, [model scaleSize].height);
+    DetailViewController* vc = [[DetailViewController alloc] initWithModel:model desImageViewRect:desImageViewRect];
+    
+    [((OUNavigationController*) self.navigationController) pushViewController:vc withImageView:((XHSHomeCell*)cell).iv desRect:desImageViewRect delegate:vc];
+
+    
+}
+- (void)bannerSelected:(XHSHomeModel *)content
 {
     
 }
-- (void)bannerSelected:(Content *)content
-{
-    
-}
+
+
+
 
 
 

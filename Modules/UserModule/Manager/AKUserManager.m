@@ -152,10 +152,6 @@
 
     self.me = [AK_DATA_CENTER user_getUserInfo:user.uid];
     
-
-    
-    [AK_MEDIATOR im_requestIMToken:user.uid withUserToken:[GVUserDefaults standardUserDefaults].token];
-    
     AK_SIGNAL_MANAGER.onUserLogin.fire(self.me);
     
    

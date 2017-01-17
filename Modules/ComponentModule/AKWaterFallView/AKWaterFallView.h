@@ -10,7 +10,9 @@
 #import "AKBaseCollectionView.h"
 #import "AKCollectionFactory.h"
 
-@interface AKWaterFallView : AKBaseCollectionView
+@interface AKWaterFallView : AKBaseCollectionView <UIScrollViewDelegate>
+
+@property (nonatomic,copy) void(^offsetYHasChangedValue)(CGFloat offsetY) ;
 
 @property(nonatomic, strong) AKCollectionLayout *layout;
 

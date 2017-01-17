@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "AKSignalManager+MapModule.h"
 #import "AKSignalManager+UserModule.h"
 #import "AKTabbarControllerFactory.h"
 #import "ViewController.h"
@@ -63,8 +62,11 @@
 -(void)appInitConfigure
 {
    
-    
+    [[AKReaderManager sharedInstance] moduleInitConfigure];
+   
 }
+
+
 /**
  *  tabBarItem 的选中和不选中文字属性、背景图片
  */
@@ -76,7 +78,7 @@
     
     // 选中状态下的文字属性
     NSMutableDictionary *selectedAttrs = [NSMutableDictionary dictionary];
-    selectedAttrs[NSForegroundColorAttributeName] = [HXColor colorWithHexString:@"#09bb07"];
+    selectedAttrs[NSForegroundColorAttributeName] = [HXColor colorWithHexString:@"#3c93d6"];
     
     // 设置文字属性
     UITabBarItem *tabBar = [UITabBarItem appearance];
@@ -84,7 +86,7 @@
     [tabBar setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
     
     UITabBar *tabBarAppearance = [UITabBar appearance];
-    [tabBarAppearance setBackgroundColor:[HXColor colorWithHexString:@"#eeeeee"]];
+    [tabBarAppearance setBackgroundColor:[HXColor colorWithHexString:@"#ffffff"]];
 
 }
 

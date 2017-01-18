@@ -95,4 +95,14 @@
     
 }
 
+-(UITableViewCell*)getCell:(UITableView*)tableView withName:(NSString*)identifier
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier] ;
+    if (!cell) {
+        [tableView registerNib:[UINib nibWithNibName:identifier bundle:nil] forCellReuseIdentifier:identifier] ;
+        cell = [tableView dequeueReusableCellWithIdentifier:identifier] ;
+    }
+    return cell;
+}
+
 @end

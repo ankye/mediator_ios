@@ -41,7 +41,7 @@
 }
 
 - (void)loadNavigationBar{
-    self.navigationItem.title = @"萌猫追书";
+    self.navigationItem.title = @"追书猫";
 }
 
 #pragma mark - BookCaseMainViewDelegate
@@ -63,7 +63,7 @@
             
             content =[content stringByReplacingPercentEscapesUsingEncoding:NSUnicodeStringEncoding];
             
-            NSLog(@"-------->%@",content);
+        //    NSLog(@"-------->%@",content);
             
             return;
         }

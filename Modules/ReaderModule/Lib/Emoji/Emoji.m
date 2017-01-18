@@ -18,7 +18,7 @@
     return [[NSString alloc] initWithBytes:&sym length:sizeof(sym) encoding:NSUTF8StringEncoding];
 }
 + (NSArray *)allEmoji {
-    NSLog(@"-------->%s",[@"🍵" UTF8String]);
+   // NSLog(@"-------->%s",[@"🍵" UTF8String]);
     
     NSMutableArray *array = [NSMutableArray new];
     [array addObjectsFromArray:[EmojiEmoticons allEmoticons]];

@@ -47,9 +47,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [self loadMainView];
     [self loadNavigationBar];
     [self downloadData];
+}
+
+- (void)viewDidUnload
+{
+    
+    [super viewDidUnload];
+
 }
 
 - (void)loadMainView{
@@ -74,6 +82,7 @@
     UIBarButtonItem * rbbi = [[UIBarButtonItem alloc]initWithCustomView:rightSortBtn];
     self.navigationItem.rightBarButtonItem = rbbi;
 }
+
 
 #pragma mark - click private
 - (void)rightSortBtnClick:(UIButton *)rightBtn{

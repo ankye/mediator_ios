@@ -193,7 +193,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) return ;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if ([self.dataList count] <= indexPath.row) return ;
     Book *book = self.dataList[indexPath.row];
     if(self.handlerDelegate && [self.handlerDelegate respondsToSelector:@selector(didSelectSection:withRow:withContent:)]){
         [self.handlerDelegate didSelectSection:indexPath.section withRow:indexPath.row withContent:book];
@@ -222,23 +224,19 @@
                      withVelocity:(CGPoint)velocity
               targetContentOffset:(inout CGPoint *)targetContentOffset
 {
-//    float offsetY = scrollView.contentOffset.y ;
-//    
-//    if (self.handlerDelegate != nil && [self.handlerDelegate respondsToSelector:@selector(tablelWillEndDragWithOffsetY:WithVelocity:)]) {
-//        [self.handlerDelegate tablelWillEndDragWithOffsetY:offsetY WithVelocity:velocity] ;
-//    }
-//    
-//    //nav 吸附性
-//    //    NSLog(@"velocity : %@",NSStringFromCGPoint(velocity)) ;
-//    if (velocity.y > 0.) {
-//        if (velocity.y > 1.8) return ; // 超速 .
-//        // 上推
-//        float overLength = [BannerCell getHeight] - 40. - 20. ;
-//        float offsetY = scrollView.contentOffset.y ;
-//        if (offsetY < overLength && offsetY > 0 ) {
-//            targetContentOffset -> y = [BannerCell getHeight] - 40. - 20. ;
-//        }
-//    }
+    float offsetY = scrollView.contentOffset.y ;
+    
+    if (self.handlerDelegate != nil && [self.handlerDelegate respondsToSelector:@selector(tablelWillEndDragWithOffsetY:WithVelocity:)]) {
+        [self.handlerDelegate tablelWillEndDragWithOffsetY:offsetY WithVelocity:velocity] ;
+    }
+    
+    //nav 吸附性
+    //    NSLog(@"velocity : %@",NSStringFromCGPoint(velocity)) ;
+    if (velocity.y > 0.) {
+        if (velocity.y > 1.8) return ; // 超速 .
+        // 上推
+        
+    }
 }
 
 

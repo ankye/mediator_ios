@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BookDetailIntroduceCell" rowHeight="138" id="iFH-cZ-QLj" customClass="BookDetailIntroduceCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iFH-cZ-QLj" id="J18-2U-gTD">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="137"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作品介绍" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ld7-H1-spV">
+                        <rect key="frame" x="10" y="16" width="53.5" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="4YQ-Ne-cPf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作品介绍" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrW-Ib-V4q">
+                        <rect key="frame" x="10" y="48" width="355" height="79"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.53725490200000003" green="0.53725490200000003" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ld7-H1-spV" firstAttribute="top" secondItem="J18-2U-gTD" secondAttribute="top" constant="16" id="0jh-cX-HY1"/>
+                    <constraint firstAttribute="bottom" secondItem="IrW-Ib-V4q" secondAttribute="bottom" constant="10" id="7kh-jE-7gx"/>
+                    <constraint firstAttribute="trailing" secondItem="IrW-Ib-V4q" secondAttribute="trailing" constant="10" id="Cvg-xn-WOr"/>
+                    <constraint firstItem="ld7-H1-spV" firstAttribute="leading" secondItem="J18-2U-gTD" secondAttribute="leading" constant="10" id="dj8-qI-OG3"/>
+                    <constraint firstItem="IrW-Ib-V4q" firstAttribute="leading" secondItem="J18-2U-gTD" secondAttribute="leading" constant="10" id="dwV-dv-0IE"/>
+                    <constraint firstItem="IrW-Ib-V4q" firstAttribute="top" secondItem="ld7-H1-spV" secondAttribute="bottom" constant="16" id="gNP-xh-T3X"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bookIntroduceLabel" destination="IrW-Ib-V4q" id="fqf-ck-COx"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

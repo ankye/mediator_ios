@@ -29,5 +29,7 @@
 
 - (NSString*)getTitle;
 
+-(UITableViewCell*)getCell:(UITableView*)tableView withName:(NSString*)identifier;
+
 
 @end

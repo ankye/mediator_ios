@@ -94,7 +94,7 @@
 /**
  *  获取当前时间的字符串
  *
- *  @return
+ *  @return string
  */
 + (NSString *)getCurrentTimeStr{
     NSInteger time = [self getCurrentTimeMillisecond];
@@ -106,7 +106,7 @@
 /**
  *  获取当前时间的毫秒数
  *
- *  @return
+ *  @return int
  */
 + (NSInteger)getCurrentTimeMillisecond{
     NSDate * date=[NSDate date];

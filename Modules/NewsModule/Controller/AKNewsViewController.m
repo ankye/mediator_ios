@@ -126,17 +126,10 @@
 {
     
 }
-- (void)didSelectRowWithContent:(NSObject *)content
+
+- (void)didSelectSection:(NSInteger)section withRow:(NSInteger)row withContent:(NSObject *)content
 {
-    
 }
-- (void)bannerSelected:(NSObject *)content
-{
-    
-}
-
-
-
 -(void)dealloc
 {
     [AK_SIGNAL_MANAGER.onNewsSelectedChannelChange removeObserver:self];

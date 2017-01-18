@@ -19,6 +19,8 @@
 //选择某一行
 - (void)didSelectSection:(NSInteger)section withRow:(NSInteger)row withContent:(NSObject* )content ;
 
+//section的row的action触发
+-(void)didSectionClick:(NSInteger)section withRow:(NSInteger)row withClickChannel:(NSInteger)clickChannel withContent:(NSObject*)content;
 
 
 @end

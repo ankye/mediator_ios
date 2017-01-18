@@ -49,15 +49,8 @@
 		C50973831E28A6A900A8A2A9 /* BookDocumentMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C50973461E28A6A900A8A2A9 /* BookDocumentMainCell.xib */; };
 		C50973841E28A6A900A8A2A9 /* BookDocumentMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = C50973481E28A6A900A8A2A9 /* BookDocumentMainView.m */; };
 		C50973851E28A6A900A8A2A9 /* BookCollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C509734C1E28A6A900A8A2A9 /* BookCollViewController.m */; };
-		C50973861E28A6A900A8A2A9 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C509734E1E28A6A900A8A2A9 /* BookDetailViewController.m */; };
-		C50973871E28A6A900A8A2A9 /* BookSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C50973501E28A6A900A8A2A9 /* BookSearchViewController.m */; };
-		C50973881E28A6A900A8A2A9 /* BookCollMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C50973531E28A6A900A8A2A9 /* BookCollMainCell.m */; };
-		C50973891E28A6A900A8A2A9 /* BookCollMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C50973541E28A6A900A8A2A9 /* BookCollMainCell.xib */; };
 		C509738A1E28A6A900A8A2A9 /* BookCollMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = C50973561E28A6A900A8A2A9 /* BookCollMainView.m */; };
 		C509738B1E28A6A900A8A2A9 /* BookCollViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C50973571E28A6A900A8A2A9 /* BookCollViewController.storyboard */; };
-		C509738C1E28A6A900A8A2A9 /* BookDetailBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C50973591E28A6A900A8A2A9 /* BookDetailBasicCell.m */; };
-		C509738D1E28A6AA00A8A2A9 /* BookDetailChapterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C509735B1E28A6A900A8A2A9 /* BookDetailChapterCell.m */; };
-		C509738E1E28A6AA00A8A2A9 /* BookDetailIntroduceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C509735D1E28A6A900A8A2A9 /* BookDetailIntroduceCell.m */; };
 		C509738F1E28A6AA00A8A2A9 /* BookDetailMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = C509735F1E28A6A900A8A2A9 /* BookDetailMainView.m */; };
 		C50973901E28A6AA00A8A2A9 /* BookDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C50973601E28A6A900A8A2A9 /* BookDetailViewController.storyboard */; };
 		C50973911E28A6AA00A8A2A9 /* BookReadSelectChapterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C50973641E28A6A900A8A2A9 /* BookReadSelectChapterViewController.m */; };
@@ -265,6 +258,25 @@
 		C53A99FE1E2DD225008E7FB3 /* lightGrayLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C53A99F81E2DD225008E7FB3 /* lightGrayLogo@2x.png */; };
 		C53A99FF1E2DD225008E7FB3 /* redLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C53A99F91E2DD225008E7FB3 /* redLogo@2x.png */; };
 		C53A9A021E2DD8BA008E7FB3 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A011E2DD8BA008E7FB3 /* UIView+Frame.m */; };
+		C53A9A071E2DE343008E7FB3 /* BookCollMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A051E2DE343008E7FB3 /* BookCollMainCell.m */; };
+		C53A9A081E2DE343008E7FB3 /* BookCollMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53A9A061E2DE343008E7FB3 /* BookCollMainCell.xib */; };
+		C53A9A0F1E2DE3EF008E7FB3 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A0B1E2DE3EF008E7FB3 /* BookDetailViewController.m */; };
+		C53A9A101E2DE3EF008E7FB3 /* BookSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A0E1E2DE3EF008E7FB3 /* BookSearchViewController.m */; };
+		C53A9A181E2DF2D0008E7FB3 /* backImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C53A9A121E2DF2D0008E7FB3 /* backImage@2x.png */; };
+		C53A9A191E2DF2D0008E7FB3 /* backImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C53A9A131E2DF2D0008E7FB3 /* backImage@3x.png */; };
+		C53A9A1A1E2DF2D0008E7FB3 /* JTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A151E2DF2D0008E7FB3 /* JTNavigationController.m */; };
+		C53A9A1B1E2DF2D0008E7FB3 /* UIViewController+JTNavigationExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A171E2DF2D0008E7FB3 /* UIViewController+JTNavigationExtension.m */; };
+		C53A9A1E1E2E0109008E7FB3 /* AKBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A1D1E2E0109008E7FB3 /* AKBookDetailViewController.m */; };
+		C53A9A211E2E0184008E7FB3 /* AKBookDetailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A201E2E0184008E7FB3 /* AKBookDetailHandler.m */; };
+		C53A9A2A1E2F073E008E7FB3 /* AKBookDetailAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A291E2F073E008E7FB3 /* AKBookDetailAPI.m */; };
+		C53A9A351E2F62A9008E7FB3 /* BookDetailBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A2D1E2F62A9008E7FB3 /* BookDetailBasicCell.m */; };
+		C53A9A361E2F62A9008E7FB3 /* BookDetailBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53A9A2E1E2F62A9008E7FB3 /* BookDetailBasicCell.xib */; };
+		C53A9A371E2F62A9008E7FB3 /* BookDetailChapterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A301E2F62A9008E7FB3 /* BookDetailChapterCell.m */; };
+		C53A9A381E2F62A9008E7FB3 /* BookDetailChapterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53A9A311E2F62A9008E7FB3 /* BookDetailChapterCell.xib */; };
+		C53A9A391E2F62A9008E7FB3 /* BookDetailIntroduceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A331E2F62A9008E7FB3 /* BookDetailIntroduceCell.m */; };
+		C53A9A3A1E2F62A9008E7FB3 /* BookDetailIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53A9A341E2F62A9008E7FB3 /* BookDetailIntroduceCell.xib */; };
+		C53A9A3C1E2F6341008E7FB3 /* BookCaseMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C53A9A3B1E2F6341008E7FB3 /* BookCaseMainCell.xib */; };
+		C53A9A3F1E2F70CD008E7FB3 /* AKBookChapterAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C53A9A3E1E2F70CD008E7FB3 /* AKBookChapterAPI.m */; };
 		C53DDCC11DFE8E9B00D66D74 /* AKUserDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC01DFE8E9B00D66D74 /* AKUserDetail.m */; };
 		C53DDCC71DFFC4BB00D66D74 /* AKDBManager+UserGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC61DFFC4BB00D66D74 /* AKDBManager+UserGroup.m */; };
 		C53DDCCA1DFFC50A00D66D74 /* AKUserGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C53DDCC91DFFC50A00D66D74 /* AKUserGroup.m */; };
@@ -437,22 +449,9 @@
 		C50973481E28A6A900A8A2A9 /* BookDocumentMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDocumentMainView.m; sourceTree = "<group>"; };
 		C509734B1E28A6A900A8A2A9 /* BookCollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCollViewController.h; sourceTree = "<group>"; };
 		C509734C1E28A6A900A8A2A9 /* BookCollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCollViewController.m; sourceTree = "<group>"; };
-		C509734D1E28A6A900A8A2A9 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
-		C509734E1E28A6A900A8A2A9 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
-		C509734F1E28A6A900A8A2A9 /* BookSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSearchViewController.h; sourceTree = "<group>"; };
-		C50973501E28A6A900A8A2A9 /* BookSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSearchViewController.m; sourceTree = "<group>"; };
-		C50973521E28A6A900A8A2A9 /* BookCollMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCollMainCell.h; sourceTree = "<group>"; };
-		C50973531E28A6A900A8A2A9 /* BookCollMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCollMainCell.m; sourceTree = "<group>"; };
-		C50973541E28A6A900A8A2A9 /* BookCollMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCollMainCell.xib; sourceTree = "<group>"; };
 		C50973551E28A6A900A8A2A9 /* BookCollMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCollMainView.h; sourceTree = "<group>"; };
 		C50973561E28A6A900A8A2A9 /* BookCollMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCollMainView.m; sourceTree = "<group>"; };
 		C50973571E28A6A900A8A2A9 /* BookCollViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookCollViewController.storyboard; sourceTree = "<group>"; };
-		C50973581E28A6A900A8A2A9 /* BookDetailBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailBasicCell.h; sourceTree = "<group>"; };
-		C50973591E28A6A900A8A2A9 /* BookDetailBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailBasicCell.m; sourceTree = "<group>"; };
-		C509735A1E28A6A900A8A2A9 /* BookDetailChapterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailChapterCell.h; sourceTree = "<group>"; };
-		C509735B1E28A6A900A8A2A9 /* BookDetailChapterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailChapterCell.m; sourceTree = "<group>"; };
-		C509735C1E28A6A900A8A2A9 /* BookDetailIntroduceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailIntroduceCell.h; sourceTree = "<group>"; };
-		C509735D1E28A6A900A8A2A9 /* BookDetailIntroduceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailIntroduceCell.m; sourceTree = "<group>"; };
 		C509735E1E28A6A900A8A2A9 /* BookDetailMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailMainView.h; sourceTree = "<group>"; };
 		C509735F1E28A6A900A8A2A9 /* BookDetailMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailMainView.m; sourceTree = "<group>"; };
 		C50973601E28A6A900A8A2A9 /* BookDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BookDetailViewController.storyboard; sourceTree = "<group>"; };
@@ -825,6 +824,37 @@
 		C53A99F91E2DD225008E7FB3 /* redLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redLogo@2x.png"; sourceTree = "<group>"; };
 		C53A9A001E2DD8BA008E7FB3 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
 		C53A9A011E2DD8BA008E7FB3 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		C53A9A041E2DE343008E7FB3 /* BookCollMainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCollMainCell.h; sourceTree = "<group>"; };
+		C53A9A051E2DE343008E7FB3 /* BookCollMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCollMainCell.m; sourceTree = "<group>"; };
+		C53A9A061E2DE343008E7FB3 /* BookCollMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCollMainCell.xib; sourceTree = "<group>"; };
+		C53A9A0A1E2DE3EF008E7FB3 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
+		C53A9A0B1E2DE3EF008E7FB3 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
+		C53A9A0D1E2DE3EF008E7FB3 /* BookSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookSearchViewController.h; sourceTree = "<group>"; };
+		C53A9A0E1E2DE3EF008E7FB3 /* BookSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookSearchViewController.m; sourceTree = "<group>"; };
+		C53A9A121E2DF2D0008E7FB3 /* backImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@2x.png"; sourceTree = "<group>"; };
+		C53A9A131E2DF2D0008E7FB3 /* backImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backImage@3x.png"; sourceTree = "<group>"; };
+		C53A9A141E2DF2D0008E7FB3 /* JTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTNavigationController.h; sourceTree = "<group>"; };
+		C53A9A151E2DF2D0008E7FB3 /* JTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTNavigationController.m; sourceTree = "<group>"; };
+		C53A9A161E2DF2D0008E7FB3 /* UIViewController+JTNavigationExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JTNavigationExtension.h"; sourceTree = "<group>"; };
+		C53A9A171E2DF2D0008E7FB3 /* UIViewController+JTNavigationExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JTNavigationExtension.m"; sourceTree = "<group>"; };
+		C53A9A1C1E2E0109008E7FB3 /* AKBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookDetailViewController.h; sourceTree = "<group>"; };
+		C53A9A1D1E2E0109008E7FB3 /* AKBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookDetailViewController.m; sourceTree = "<group>"; };
+		C53A9A1F1E2E0184008E7FB3 /* AKBookDetailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookDetailHandler.h; sourceTree = "<group>"; };
+		C53A9A201E2E0184008E7FB3 /* AKBookDetailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookDetailHandler.m; sourceTree = "<group>"; };
+		C53A9A281E2F073E008E7FB3 /* AKBookDetailAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookDetailAPI.h; sourceTree = "<group>"; };
+		C53A9A291E2F073E008E7FB3 /* AKBookDetailAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookDetailAPI.m; sourceTree = "<group>"; };
+		C53A9A2C1E2F62A9008E7FB3 /* BookDetailBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailBasicCell.h; sourceTree = "<group>"; };
+		C53A9A2D1E2F62A9008E7FB3 /* BookDetailBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailBasicCell.m; sourceTree = "<group>"; };
+		C53A9A2E1E2F62A9008E7FB3 /* BookDetailBasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailBasicCell.xib; sourceTree = "<group>"; };
+		C53A9A2F1E2F62A9008E7FB3 /* BookDetailChapterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailChapterCell.h; sourceTree = "<group>"; };
+		C53A9A301E2F62A9008E7FB3 /* BookDetailChapterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailChapterCell.m; sourceTree = "<group>"; };
+		C53A9A311E2F62A9008E7FB3 /* BookDetailChapterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailChapterCell.xib; sourceTree = "<group>"; };
+		C53A9A321E2F62A9008E7FB3 /* BookDetailIntroduceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailIntroduceCell.h; sourceTree = "<group>"; };
+		C53A9A331E2F62A9008E7FB3 /* BookDetailIntroduceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailIntroduceCell.m; sourceTree = "<group>"; };
+		C53A9A341E2F62A9008E7FB3 /* BookDetailIntroduceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailIntroduceCell.xib; sourceTree = "<group>"; };
+		C53A9A3B1E2F6341008E7FB3 /* BookCaseMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCaseMainCell.xib; sourceTree = "<group>"; };
+		C53A9A3D1E2F70CD008E7FB3 /* AKBookChapterAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookChapterAPI.h; sourceTree = "<group>"; };
+		C53A9A3E1E2F70CD008E7FB3 /* AKBookChapterAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookChapterAPI.m; sourceTree = "<group>"; };
 		C53DDCBF1DFE8E9B00D66D74 /* AKUserDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKUserDetail.h; sourceTree = "<group>"; };
 		C53DDCC01DFE8E9B00D66D74 /* AKUserDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKUserDetail.m; sourceTree = "<group>"; };
 		C53DDCC31DFF965300D66D74 /* TLDBUserGroupSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLDBUserGroupSQL.h; sourceTree = "<group>"; };
@@ -1044,6 +1074,8 @@
 		C50972C81E27590F00A8A2A9 /* ReaderModule */ = {
 			isa = PBXGroup;
 			children = (
+				C53A9A091E2DE3EF008E7FB3 /* Detail */,
+				C53A9A0C1E2DE3EF008E7FB3 /* Search */,
 				C53A99A41E2CD8D1008E7FB3 /* Hot */,
 				C50974511E28AB4400A8A2A9 /* Lib */,
 				C509739D1E28A77900A8A2A9 /* Controller */,
@@ -1293,6 +1325,7 @@
 				C50973331E28A6A900A8A2A9 /* BookCaseMainView.h */,
 				C50973341E28A6A900A8A2A9 /* BookCaseMainView.m */,
 				C50973351E28A6A900A8A2A9 /* BookCaseViewController.storyboard */,
+				C53A9A3B1E2F6341008E7FB3 /* BookCaseMainCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1371,10 +1404,6 @@
 			children = (
 				C509734B1E28A6A900A8A2A9 /* BookCollViewController.h */,
 				C509734C1E28A6A900A8A2A9 /* BookCollViewController.m */,
-				C509734D1E28A6A900A8A2A9 /* BookDetailViewController.h */,
-				C509734E1E28A6A900A8A2A9 /* BookDetailViewController.m */,
-				C509734F1E28A6A900A8A2A9 /* BookSearchViewController.h */,
-				C50973501E28A6A900A8A2A9 /* BookSearchViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1382,18 +1411,9 @@
 		C50973511E28A6A900A8A2A9 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				C50973521E28A6A900A8A2A9 /* BookCollMainCell.h */,
-				C50973531E28A6A900A8A2A9 /* BookCollMainCell.m */,
-				C50973541E28A6A900A8A2A9 /* BookCollMainCell.xib */,
 				C50973551E28A6A900A8A2A9 /* BookCollMainView.h */,
 				C50973561E28A6A900A8A2A9 /* BookCollMainView.m */,
 				C50973571E28A6A900A8A2A9 /* BookCollViewController.storyboard */,
-				C50973581E28A6A900A8A2A9 /* BookDetailBasicCell.h */,
-				C50973591E28A6A900A8A2A9 /* BookDetailBasicCell.m */,
-				C509735A1E28A6A900A8A2A9 /* BookDetailChapterCell.h */,
-				C509735B1E28A6A900A8A2A9 /* BookDetailChapterCell.m */,
-				C509735C1E28A6A900A8A2A9 /* BookDetailIntroduceCell.h */,
-				C509735D1E28A6A900A8A2A9 /* BookDetailIntroduceCell.m */,
 				C509735E1E28A6A900A8A2A9 /* BookDetailMainView.h */,
 				C509735F1E28A6A900A8A2A9 /* BookDetailMainView.m */,
 				C50973601E28A6A900A8A2A9 /* BookDetailViewController.storyboard */,
@@ -1472,6 +1492,7 @@
 		C50973A41E28A77900A8A2A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C53A9A031E2DE343008E7FB3 /* Cell */,
 				C50973A51E28A77900A8A2A9 /* CustomView */,
 				C509740B1E28A77900A8A2A9 /* MainCollectionView.h */,
 				C509740C1E28A77900A8A2A9 /* MainCollectionView.m */,
@@ -2296,8 +2317,12 @@
 		C53A99D51E2DB2D8008E7FB3 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				C53A9A3D1E2F70CD008E7FB3 /* AKBookChapterAPI.h */,
+				C53A9A3E1E2F70CD008E7FB3 /* AKBookChapterAPI.m */,
 				C53A99D61E2DB2F2008E7FB3 /* AKReaderHotListAPI.h */,
 				C53A99D71E2DB2F2008E7FB3 /* AKReaderHotListAPI.m */,
+				C53A9A281E2F073E008E7FB3 /* AKBookDetailAPI.h */,
+				C53A9A291E2F073E008E7FB3 /* AKBookDetailAPI.m */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -2316,6 +2341,68 @@
 				C53A99F91E2DD225008E7FB3 /* redLogo@2x.png */,
 			);
 			path = AJWaveRefresh;
+			sourceTree = "<group>";
+		};
+		C53A9A031E2DE343008E7FB3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C53A9A041E2DE343008E7FB3 /* BookCollMainCell.h */,
+				C53A9A051E2DE343008E7FB3 /* BookCollMainCell.m */,
+				C53A9A061E2DE343008E7FB3 /* BookCollMainCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C53A9A091E2DE3EF008E7FB3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C53A9A2B1E2F62A9008E7FB3 /* Cell */,
+				C53A9A0A1E2DE3EF008E7FB3 /* BookDetailViewController.h */,
+				C53A9A0B1E2DE3EF008E7FB3 /* BookDetailViewController.m */,
+				C53A9A1C1E2E0109008E7FB3 /* AKBookDetailViewController.h */,
+				C53A9A1D1E2E0109008E7FB3 /* AKBookDetailViewController.m */,
+				C53A9A1F1E2E0184008E7FB3 /* AKBookDetailHandler.h */,
+				C53A9A201E2E0184008E7FB3 /* AKBookDetailHandler.m */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		C53A9A0C1E2DE3EF008E7FB3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C53A9A0D1E2DE3EF008E7FB3 /* BookSearchViewController.h */,
+				C53A9A0E1E2DE3EF008E7FB3 /* BookSearchViewController.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		C53A9A111E2DF2D0008E7FB3 /* JTNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				C53A9A121E2DF2D0008E7FB3 /* backImage@2x.png */,
+				C53A9A131E2DF2D0008E7FB3 /* backImage@3x.png */,
+				C53A9A141E2DF2D0008E7FB3 /* JTNavigationController.h */,
+				C53A9A151E2DF2D0008E7FB3 /* JTNavigationController.m */,
+				C53A9A161E2DF2D0008E7FB3 /* UIViewController+JTNavigationExtension.h */,
+				C53A9A171E2DF2D0008E7FB3 /* UIViewController+JTNavigationExtension.m */,
+			);
+			path = JTNavigationController;
+			sourceTree = "<group>";
+		};
+		C53A9A2B1E2F62A9008E7FB3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C53A9A2C1E2F62A9008E7FB3 /* BookDetailBasicCell.h */,
+				C53A9A2D1E2F62A9008E7FB3 /* BookDetailBasicCell.m */,
+				C53A9A2E1E2F62A9008E7FB3 /* BookDetailBasicCell.xib */,
+				C53A9A2F1E2F62A9008E7FB3 /* BookDetailChapterCell.h */,
+				C53A9A301E2F62A9008E7FB3 /* BookDetailChapterCell.m */,
+				C53A9A311E2F62A9008E7FB3 /* BookDetailChapterCell.xib */,
+				C53A9A321E2F62A9008E7FB3 /* BookDetailIntroduceCell.h */,
+				C53A9A331E2F62A9008E7FB3 /* BookDetailIntroduceCell.m */,
+				C53A9A341E2F62A9008E7FB3 /* BookDetailIntroduceCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		C55A76F31E090439002E164A /* Aspect */ = {
@@ -2687,6 +2774,7 @@
 		C5E0CF2D1E13B47300705C26 /* ComponentModule */ = {
 			isa = PBXGroup;
 			children = (
+				C53A9A111E2DF2D0008E7FB3 /* JTNavigationController */,
 				C53A99F01E2DD225008E7FB3 /* AJWaveRefresh */,
 				C5BD113F1E23D154001B5532 /* AKCollectionLayout */,
 				C5BD11351E23C10E001B5532 /* AKMJRefresh */,
@@ -2993,6 +3081,7 @@
 				C50974B31E28AB4400A8A2A9 /* 夜间背景色@2x.png in Resources */,
 				C50974A81E28AB4400A8A2A9 /* r_drag-dot@2x.png in Resources */,
 				C50974211E28A77A00A8A2A9 /* CustomBtn.xib in Resources */,
+				C53A9A3A1E2F62A9008E7FB3 /* BookDetailIntroduceCell.xib in Resources */,
 				C50974BF1E28AB4400A8A2A9 /* 笔记标志三点@2x.png in Resources */,
 				C5E0CF6B1E13B47300705C26 /* chooseTagViewCloseBtn.png in Resources */,
 				C50974B81E28AB4400A8A2A9 /* 电池.png in Resources */,
@@ -3004,6 +3093,7 @@
 				C53A99FE1E2DD225008E7FB3 /* lightGrayLogo@2x.png in Resources */,
 				C509743E1E28A77A00A8A2A9 /* CustomShareView.xib in Resources */,
 				C50974AE1E28AB4400A8A2A9 /* 删除@3x.png in Resources */,
+				C53A9A3C1E2F6341008E7FB3 /* BookCaseMainCell.xib in Resources */,
 				C50974BD1E28AB4400A8A2A9 /* 笔记@3x.png in Resources */,
 				C5660E481E0A7A10000BF5E3 /* NewsModule.xcassets in Resources */,
 				C509744E1E28A77A00A8A2A9 /* RootStandardTableCell.xib in Resources */,
@@ -3023,9 +3113,13 @@
 				C53A99CE1E2CE931008E7FB3 /* BigImgContentCell.xib in Resources */,
 				C50974B71E28AB4400A8A2A9 /* 扫描线@3x.png in Resources */,
 				C5A730251DE2BB3400DB2788 /* LaunchScreen.storyboard in Resources */,
+				C53A9A381E2F62A9008E7FB3 /* BookDetailChapterCell.xib in Resources */,
+				C53A9A181E2DF2D0008E7FB3 /* backImage@2x.png in Resources */,
+				C53A9A361E2F62A9008E7FB3 /* BookDetailBasicCell.xib in Resources */,
 				C509742F1E28A77A00A8A2A9 /* CustomNumbersRightHeaderView.xib in Resources */,
 				C50974AC1E28AB4400A8A2A9 /* 删除.png in Resources */,
 				C509744B1E28A77A00A8A2A9 /* RootMaskView.xib in Resources */,
+				C53A9A191E2DF2D0008E7FB3 /* backImage@3x.png in Resources */,
 				C50974C01E28AB4400A8A2A9 /* 笔记标志三点@3x.png in Resources */,
 				C53A99D01E2CE931008E7FB3 /* MultiPictureContentCell.xib in Resources */,
 				C50974C21E28AB4400A8A2A9 /* 阅读器-笔记框三角形.png in Resources */,
@@ -3038,7 +3132,6 @@
 				C50974AA1E28AB4400A8A2A9 /* 三角形@2x.png in Resources */,
 				C50974BC1E28AB4400A8A2A9 /* 笔记@2x.png in Resources */,
 				C53A99FD1E2DD225008E7FB3 /* grayLogo@2x.png in Resources */,
-				C50973891E28A6A900A8A2A9 /* BookCollMainCell.xib in Resources */,
 				C50974331E28A77A00A8A2A9 /* area.plist in Resources */,
 				C50974B11E28AB4400A8A2A9 /* 复制@3x.png in Resources */,
 				C50974BE1E28AB4400A8A2A9 /* 笔记标志三点.png in Resources */,
@@ -3053,6 +3146,7 @@
 				C50974BA1E28AB4400A8A2A9 /* 电池@3x.png in Resources */,
 				C50973941E28A6AA00A8A2A9 /* BookReadSelectChapterMainCell.xib in Resources */,
 				C5A730201DE2BB3400DB2788 /* Main.storyboard in Resources */,
+				C53A9A081E2DE343008E7FB3 /* BookCollMainCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3126,6 +3220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C50973121E289FEB00A8A2A9 /* NSDate+Time.m in Sources */,
+				C53A9A071E2DE343008E7FB3 /* BookCollMainCell.m in Sources */,
 				C50973961E28A6AA00A8A2A9 /* BookReadDirMaskView.m in Sources */,
 				C515ACC61DF0552600353FC4 /* AKRequestManager+LoginModule.m in Sources */,
 				C50974ED1E28ABF000A8A2A9 /* RootViewController.m in Sources */,
@@ -3150,6 +3245,7 @@
 				C5E5D6051E1E1B16002B4823 /* AKBaseTableView.m in Sources */,
 				C509743C1E28A77A00A8A2A9 /* CustomRuleView.m in Sources */,
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
+				C53A9A0F1E2DE3EF008E7FB3 /* BookDetailViewController.m in Sources */,
 				C5BD11611E25ED69001B5532 /* XHSHomeModel.m in Sources */,
 				C50973221E28A23E00A8A2A9 /* AKReaderManager.m in Sources */,
 				C509743D1E28A77A00A8A2A9 /* CustomShareView.m in Sources */,
@@ -3162,9 +3258,10 @@
 				C50974431E28A77A00A8A2A9 /* OpenShare+Weixin.m in Sources */,
 				C50974D71E28AB4400A8A2A9 /* ReaderView.m in Sources */,
 				C5E5D6281E1E2B57002B4823 /* AKWaterFallView.m in Sources */,
+				C53A9A211E2E0184008E7FB3 /* AKBookDetailHandler.m in Sources */,
 				C53A99C71E2CE931008E7FB3 /* AKCustomTableHandler.m in Sources */,
+				C53A9A101E2DE3EF008E7FB3 /* BookSearchViewController.m in Sources */,
 				C5660EC81E0D1E57000BF5E3 /* Content.m in Sources */,
-				C509738D1E28A6AA00A8A2A9 /* BookDetailChapterCell.m in Sources */,
 				C50974321E28A77A00A8A2A9 /* CustomSearchViewController.m in Sources */,
 				C50974471E28A77A00A8A2A9 /* WebViewController.m in Sources */,
 				C509743B1E28A77A00A8A2A9 /* MJChiBaoZiHeader.m in Sources */,
@@ -3173,11 +3270,11 @@
 				C50975051E2CAEBA00A8A2A9 /* AKImageView.m in Sources */,
 				C50973191E289FEB00A8A2A9 /* UIImage+Category.m in Sources */,
 				C50972E51E2886B300A8A2A9 /* BookEveryUrl.m in Sources */,
-				C50973871E28A6A900A8A2A9 /* BookSearchViewController.m in Sources */,
 				C509737B1E28A6A900A8A2A9 /* BookCaseMainCell.m in Sources */,
 				C5BD11491E24FB1D001B5532 /* AKCollection3Layout.m in Sources */,
 				C515AB691DF051BA00353FC4 /* AKBaseRequest.m in Sources */,
 				C50974E61E28AB9F00A8A2A9 /* Emoji.m in Sources */,
+				C53A9A2A1E2F073E008E7FB3 /* AKBookDetailAPI.m in Sources */,
 				C509738A1E28A6A900A8A2A9 /* BookCollMainView.m in Sources */,
 				C53A99FA1E2DD225008E7FB3 /* AJWaveRefreshAnimation.m in Sources */,
 				C50973921E28A6AA00A8A2A9 /* BookReadViewController.m in Sources */,
@@ -3188,7 +3285,6 @@
 				C515AB711DF051BA00353FC4 /* AppHelper.m in Sources */,
 				C52E76DC1DF69297006B2183 /* Aspect-LoggerModule.m in Sources */,
 				C515ACA41DF054F500353FC4 /* ServiceShare.m in Sources */,
-				C509738C1E28A6A900A8A2A9 /* BookDetailBasicCell.m in Sources */,
 				C50972E81E2886B300A8A2A9 /* BookSource.m in Sources */,
 				C50974CA1E28AB4400A8A2A9 /* InputTextView.m in Sources */,
 				C53A99CD1E2CE931008E7FB3 /* BigImgContentCell.m in Sources */,
@@ -3203,7 +3299,6 @@
 				C509738F1E28A6AA00A8A2A9 /* BookDetailMainView.m in Sources */,
 				C515AB771DF051BA00353FC4 /* AKPopupManager.m in Sources */,
 				C50974C81E28AB4400A8A2A9 /* CursorView.m in Sources */,
-				C50973881E28A6A900A8A2A9 /* BookCollMainCell.m in Sources */,
 				C515AB6C1DF051BA00353FC4 /* AKTimer.m in Sources */,
 				C50975071E2CAEBA00A8A2A9 /* AKTableViewCell.m in Sources */,
 				C5E0CF1D1E13AEBC00705C26 /* NSTimer+Addition.m in Sources */,
@@ -3219,6 +3314,7 @@
 				C515AB671DF051BA00353FC4 /* AKAppDelegate.m in Sources */,
 				C50974A61E28AB4400A8A2A9 /* CoverPatternsViewController.m in Sources */,
 				C509741B1E28A77A00A8A2A9 /* BSNumbersCollectionFooterView.m in Sources */,
+				C53A9A391E2F62A9008E7FB3 /* BookDetailIntroduceCell.m in Sources */,
 				C50973911E28A6AA00A8A2A9 /* BookReadSelectChapterViewController.m in Sources */,
 				C509732B1E28A69800A8A2A9 /* BookDocument.m in Sources */,
 				C5BD11461E24F1A6001B5532 /* AKCollection2Layout.m in Sources */,
@@ -3232,6 +3328,7 @@
 				C5E5D6381E1F3C19002B4823 /* AKRequestManager+WallpaperModule.m in Sources */,
 				C515AB761DF051BA00353FC4 /* AKMediator.m in Sources */,
 				C5660E3A1E096EB8000BF5E3 /* GVUserDefaults+NewsModule.m in Sources */,
+				C53A9A1B1E2DF2D0008E7FB3 /* UIViewController+JTNavigationExtension.m in Sources */,
 				C50974D21E28AB4400A8A2A9 /* PageAnimationViewController.m in Sources */,
 				C509741E1E28A77A00A8A2A9 /* NSObject+BSNumbersExtension.m in Sources */,
 				C50973931E28A6AA00A8A2A9 /* BookReadSelectChapterMainCell.m in Sources */,
@@ -3247,7 +3344,6 @@
 				C515AD1D1DF0568100353FC4 /* ServiceUser.m in Sources */,
 				C515ACCC1DF0552600353FC4 /* AKLoginButtonGroup.m in Sources */,
 				C5D0BA5B1E077B4F0054DF0E /* AKResourceManager.m in Sources */,
-				C509738E1E28A6AA00A8A2A9 /* BookDetailIntroduceCell.m in Sources */,
 				C515AD161DF0568100353FC4 /* Aspect+UserModule.m in Sources */,
 				C509743A1E28A77A00A8A2A9 /* MJChiBaoZiFooter.m in Sources */,
 				C50974421E28A77A00A8A2A9 /* OpenShare+Weibo.m in Sources */,
@@ -3319,7 +3415,6 @@
 				C53A99FC1E2DD225008E7FB3 /* AJWaveRefreshHeader.m in Sources */,
 				C53A99AA1E2CE1A5008E7FB3 /* AKHotNovelHandler.m in Sources */,
 				C50974261E28A77A00A8A2A9 /* DVGCropView.m in Sources */,
-				C50973861E28A6A900A8A2A9 /* BookDetailViewController.m in Sources */,
 				C50974CC1E28AB4400A8A2A9 /* NoteContentButton.m in Sources */,
 				C50973851E28A6A900A8A2A9 /* BookCollViewController.m in Sources */,
 				C50974A71E28AB4400A8A2A9 /* ScrollModeViewController.m in Sources */,
@@ -3327,13 +3422,16 @@
 				C53DDCC11DFE8E9B00D66D74 /* AKUserDetail.m in Sources */,
 				C509731A1E289FEB00A8A2A9 /* UITableView+Category.m in Sources */,
 				C53A99D31E2CE931008E7FB3 /* SinglePicCollectCell.m in Sources */,
+				C53A9A371E2F62A9008E7FB3 /* BookDetailChapterCell.m in Sources */,
 				C5E0CEF71E1217FB00705C26 /* Aspect-ThemeModule.m in Sources */,
 				C509744A1E28A77A00A8A2A9 /* RootMaskView.m in Sources */,
 				C515ACCB1DF0552600353FC4 /* AKLoginButton.m in Sources */,
 				C50974401E28A77A00A8A2A9 /* OpenShare+QQ.m in Sources */,
 				C50974351E28A77A00A8A2A9 /* CustomChooseCityView.m in Sources */,
 				C50974461E28A77A00A8A2A9 /* CustomWebProgressView.m in Sources */,
+				C53A9A3F1E2F70CD008E7FB3 /* AKBookChapterAPI.m in Sources */,
 				C53A9A021E2DD8BA008E7FB3 /* UIView+Frame.m in Sources */,
+				C53A9A1A1E2DF2D0008E7FB3 /* JTNavigationController.m in Sources */,
 				C50974391E28A77A00A8A2A9 /* CustomPopupWindow.m in Sources */,
 				C515AB681DF051BA00353FC4 /* AKBaseModel.m in Sources */,
 				C50974441E28A77A00A8A2A9 /* OpenShare.m in Sources */,
@@ -3347,6 +3445,7 @@
 				C50973841E28A6A900A8A2A9 /* BookDocumentMainView.m in Sources */,
 				C50974EA1E28AB9F00A8A2A9 /* EmojiTransport.m in Sources */,
 				C50973951E28A6AA00A8A2A9 /* BookReadSelectChapterMainView.m in Sources */,
+				C53A9A1E1E2E0109008E7FB3 /* AKBookDetailViewController.m in Sources */,
 				C515ACC71DF0552600353FC4 /* AKLoginViewController.m in Sources */,
 				C52E767F1DF663D2006B2183 /* NSFileManager+Paths.m in Sources */,
 				C5660E771E0BC8CA000BF5E3 /* AKNewsChannel.m in Sources */,
@@ -3363,6 +3462,7 @@
 				C5A730171DE2BB3400DB2788 /* main.m in Sources */,
 				C50974CE1E28AB4400A8A2A9 /* AnimationViewController.m in Sources */,
 				C53A99C81E2CE931008E7FB3 /* AKCustomTableView.m in Sources */,
+				C53A9A351E2F62A9008E7FB3 /* BookDetailBasicCell.m in Sources */,
 				C5E5D6151E1E1B16002B4823 /* AKHContentView.m in Sources */,
 				C515AB6E1DF051BA00353FC4 /* NSObject+DBPropertyListing.m in Sources */,
 				C50974201E28A77A00A8A2A9 /* CustomBtn.m in Sources */,

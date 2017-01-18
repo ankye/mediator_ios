@@ -114,4 +114,6 @@
 +(int) getDistance:(CLLocationCoordinate2D)from to:(CLLocationCoordinate2D)to;
 
 +(int) getDistance:(double)latitude longitude:(double)longitude toLatitude:(double)toLatitude toLongitude:(double)toLongitude;
+
+
 @end

@@ -10,7 +10,7 @@
 #import "AKBookDetailHandler.h"
 #import "BookDatabase.h"
 #import "BookReadViewController.h"
-
+#import "AKReaderViewController.h"
 
 @interface AKBookDetailViewController () <AKBaseTableHandlerDelegate>
 
@@ -32,8 +32,11 @@
     // Do any additional setup after loading the view.
     [self setupNav];
     [self setupViews];
+
     [self setupHandler];
     
+    [AKPopupManager showProgressHUDAtView:_tableView];
+
 }
 
 -(void) setupNav
@@ -66,6 +69,7 @@
 -(void) setupViews
 {
     _tableView = [[AKBaseTableView alloc] initWithFrame:CGRectMake(0, SCREEN_NAV_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-SCREEN_NAV_HEIGHT) style:UITableViewStyleGrouped];
+    _tableView.enableLoadMore = NO;
     [self.view addSubview:_tableView];
     
 }
@@ -103,10 +107,20 @@
 -(void)didSectionClick:(NSInteger)section withRow:(NSInteger)row withClickChannel:(NSInteger)clickChannel withContent:(NSObject*)content
 {
     if (section == 0 &&  clickChannel ==0) {
-        BookReadViewController * con = [BookReadViewController new];
-        con.book = _handler.book;
-        con.dataArray = _handler.datalist;
-        [self.navigationController pushViewController:con animated:YES];
+//        BookReadViewController * con = [BookReadViewController new];
+//        con.book = _handler.book;
+//        con.dataArray = _handler.dataList;
+//        
+        AKReaderViewController *reader = [AKReaderViewController new];
+        reader.book = _handler.book;
+        reader.chapterArray = _handler.dataList;
+
+//        [self presentViewController:reader animated:YES completion:^{
+//            
+//        }];
+        [self.navigationController pushViewController:reader animated:YES];
+        
+        
     }else if (section == 0 &&clickChannel == 1){
        
     }else if (section == 0 && clickChannel ==2 ){//共三个状态

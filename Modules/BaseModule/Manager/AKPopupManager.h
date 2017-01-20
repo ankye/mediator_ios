@@ -42,6 +42,14 @@ SINGLETON_INTR(AKPopupManager)
 
 -(void)push:(UIViewController*)controller;
 
--(void)showTips:(NSString*)text;
--(void)showErrorTips:(NSString *)text;
++(void)showTips:(NSString*)text;
++(void)showErrorTips:(NSString *)text;
+
++(void)showProgressHUD;
++(void)hideProgressHUD;
+
++(void)showProgressHUDAtView:(UIView*)view;
++(void)hideProgressHUDAtView:(UIView*)view;
+
+
 @end

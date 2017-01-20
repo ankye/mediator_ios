@@ -191,7 +191,7 @@
             [_topChooseView addButtonWith:button.channel position:[_topChooseView convertPoint:button.frame.origin fromView:_bottomChooseView]];
             [_bottomChooseView removeButton:button];
         }else {
-            [AK_POPUP_MANAGER showErrorTips:@"已经加满了"];
+            [AKPopupManager showErrorTips:@"已经加满了"];
             return;
         }
     }

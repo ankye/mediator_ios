@@ -64,7 +64,7 @@
     dispatch_barrier_async(self.myQueue, ^{
         _dataList = dataList ;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.table reloadData] ;
+            [self.table refreshData] ;
         }) ;
     }) ;
 }

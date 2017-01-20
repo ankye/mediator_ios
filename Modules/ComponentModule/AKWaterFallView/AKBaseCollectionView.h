@@ -28,4 +28,9 @@
 
 - (void)pullDownRefreshHeader ;
 
+-(MJRefreshHeader*)customHeader;
+-(MJRefreshFooter*)customFooter;
+
+-(void)refreshData;
+
 @end

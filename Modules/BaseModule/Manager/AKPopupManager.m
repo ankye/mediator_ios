@@ -9,7 +9,8 @@
 #import "AKPopupManager.h"
 #import "AKPopupViewController.h"
 #import <AFMInfoBanner/AFMInfoBanner.h>
-
+#import <SVProgressHUD/SVProgressHUD.h>
+#import "MBProgressHUD+Custom.h"
 
 @interface AKPopupManager()
 
@@ -187,7 +188,7 @@ SINGLETON_IMPL(AKPopupManager)
     }
 }
 
--(void)showTips:(NSString *)text
++(void)showTips:(NSString *)text
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [AFMInfoBanner showAndHideWithText:text style:AFMInfoBannerStyleInfo];
@@ -195,11 +196,39 @@ SINGLETON_IMPL(AKPopupManager)
     
 }
 
--(void)showErrorTips:(NSString *)text
++(void)showErrorTips:(NSString *)text
 {
     dispatch_async(dispatch_get_main_queue(), ^{
         [AFMInfoBanner showAndHideWithText:text style:AFMInfoBannerStyleError];
     });
     
+}
+
++(void)showProgressHUD
+{
+     dispatch_async(dispatch_get_main_queue(), ^{
+         [SVProgressHUD show];
+     });
+}
+
++(void)hideProgressHUD
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+    });
+}
+
++(void)showProgressHUDAtView:(UIView*)view
+{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD showCustomHUDAddedTo:view];
+    });
+}
++(void)hideProgressHUDAtView:(UIView*)view
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideCustomHUDForView:view];
+    });
 }
 @end

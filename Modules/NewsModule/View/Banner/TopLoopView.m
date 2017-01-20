@@ -31,6 +31,7 @@ static int IMAGEVIEW_COUNT = 3 ;
 @property (nonatomic)         int           currentImageIndex ;
 @property (nonatomic)         int           imageCount ;
 @property (nonatomic,strong)  UIPageControl *pageControl ;
+@property (nonatomic,strong)  NSArray       *datalist ;          //dataSource list , string .
 @property (nonatomic)         NSString*      cid ;
 
 @end

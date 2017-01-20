@@ -58,13 +58,32 @@
 {
 
     
-    AKMJRefreshHeader *header = [AKMJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
-    self.mj_header = header;
+   
+    self.mj_header = [self customHeader];
     
-    AKMJRefreshFooter *footer = [AKMJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
-    self.mj_footer = footer;
+   
+    self.mj_footer = [self customFooter];
     
 }
+
+-(MJRefreshHeader*)customHeader
+{
+     AKMJRefreshHeader *header = [AKMJRefreshHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewDataSelector)];
+    return header;
+}
+-(MJRefreshFooter*)customFooter
+{
+     AKMJRefreshFooter *footer = [AKMJRefreshFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreDataSelector)];
+    return footer;
+}
+
+-(void)refreshData
+{
+    [self headerEnding];
+    [self footerEnding];
+    [self reloadData];
+}
+
 
 - (void)defaultPublicAPIs
 {
@@ -118,15 +137,14 @@
 {
     if (self.btDelegate && [self.btDelegate respondsToSelector:@selector(loadNewData)]) {
         [self.btDelegate loadNewData] ;
+    }else{
+        [self headerEnding] ;
     }
-    
-    [self headerEnding] ;
 }
 
 - (void)headerEnding
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        //        [self reloadData];
         [self.mj_header endRefreshing];
     }) ;
 }
@@ -139,8 +157,9 @@
         dispatch_async(queue, ^{
             if (self.btDelegate && [self.btDelegate respondsToSelector:@selector(loadMoreData)]) {
                 [self.btDelegate loadMoreData] ;
+            }else{
+                [self footerEnding] ;
             }
-            [self footerEnding] ;
         }) ;
         
         return ;
@@ -149,16 +168,17 @@
     {
         if (self.btDelegate && [self.btDelegate respondsToSelector:@selector(loadMoreData)]) {
             [self.btDelegate loadMoreData] ;
+        }else{
+            [self footerEnding] ;
         }
     }
     
-    [self footerEnding] ;
+    
 }
 
 - (void)footerEnding
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        //        [self reloadData];
         [self.mj_footer endRefreshing];
     }) ;
 }

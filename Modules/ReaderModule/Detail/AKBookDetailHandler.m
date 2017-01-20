@@ -18,10 +18,10 @@
 #import "BookDatabase.h"
 #import "NSString+Category.h"
 #import "NSFileManager+FileCategory.h"
+#import "SGDownloadManager.h"
 
 @interface AKBookDetailHandler () <AKBaseTableViewDelegate>
 
-@property (nonatomic,strong) NSMutableArray     *dataList ;
 @property (nonatomic,assign) NSInteger          lastPage ;
 
 @property(nonatomic,weak) UIButton * allCacheBtn;
@@ -113,8 +113,11 @@
         for (NSDictionary * dict in dataArray) {
             [self.dataList addObject:[BookChapter bookChapterWithDict:dict]];
         }
+        
+        [self.table refreshData];
+        
+        [AKPopupManager hideProgressHUDAtView:self.table];
 
-        [self.table reloadData];
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
@@ -233,9 +236,11 @@
     }
     self.book.isCaseBook = !self.book.isCaseBook;
     
+    
     if(self.handlerDelegate && [self.handlerDelegate respondsToSelector:@selector(didSectionClick:withRow:withClickChannel:withContent:)]){
         [self.handlerDelegate didSectionClick:0 withRow:0 withClickChannel:1 withContent:nil];
     }
+    [self.table refreshData];
     
 }
 - (void)allCacheBtnClick:(UIButton *)btn{
@@ -285,23 +290,25 @@
                 if ([chapter.url hasPrefix:@"http"] && !chapter.isTmp) {
 //                    weakSelf.requestUtil.isShowProgressHud = false;
 //                    [weakSelf.requestUtil asyncThirdLibWithUrl:chapter.url andParameters:nil andMethod:RequestMethodGet andTimeoutInterval:10];
-                    [AK_REQUEST_MANAGER reader_requestBookChapterWithURL:chapter.url success:^(__kindof YTKBaseRequest * _Nonnull request) {
+                    
+                    [[SGDownloadManager shareManager] downloadWithURL:AKURL(chapter.url) complete:^(NSDictionary *respose, NSError *error) {
                         
-                        NSData* data = request.responseData;
+                         NSString * path = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[chapter.url md5]];
                         
-                        NSString * path = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[chapter.url md5]];
-                        [NSFileManager writeToFile:path withData:data];
-                        
-                        BookChapter * bookChapter = self.dataList[self.currentTmpIndex];
-                        
-                        bookChapter.isTmp = YES;
-                        
-                        [self startTmp];
+                        if([respose[@"isFinished"] boolValue]){
+                            [[NSFileManager defaultManager] moveItemAtPath:respose[@"fileUrl"] toPath:path error:nil];
+                            
+                            BookChapter * bookChapter = self.dataList[self.currentTmpIndex];
+                            
+                            bookChapter.isTmp = YES;
+                            
+                            [self startTmp];
 
-                        
-                    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+                            
+                        }
                         
                     }];
+                   
                     dispatch_async(dispatch_get_main_queue(), ^{
                         NSString * title = [NSString stringWithFormat:@"%ld / %ld",weakSelf.currentTmpIndex,weakSelf.dataList.count];
                         [weakSelf.allCacheBtn setTitle:title forState:UIControlStateNormal];

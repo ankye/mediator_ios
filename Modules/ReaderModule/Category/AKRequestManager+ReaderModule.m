@@ -9,7 +9,7 @@
 #import "AKRequestManager+ReaderModule.h"
 #import "AKReaderHotListAPI.h"
 #import "AKBookDetailAPI.h"
-#import "AKBookChapterAPI.h"
+
 @implementation AKRequestManager (ReaderModule)
 
 
@@ -39,16 +39,5 @@
     return YES;
 }
 
--(BOOL)reader_requestBookChapterWithURL:(NSString*)url success:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure
-{
-    AKBookChapterAPI *api = [[AKBookChapterAPI alloc] initWithRequestURL:url];
-    
-    [api startWithCompletionBlockWithSuccess:^(__kindof YTKBaseRequest * _Nonnull request) {
-        success(request);
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        failure(request);
-    }];
-    
-    return YES;
-}
+
 @end

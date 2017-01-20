@@ -16,5 +16,5 @@
 
 -(BOOL)reader_requestBookDetailWithNovelID:(NSString*)novelID withSiteID:(NSString*)siteID success:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure;
 
--(BOOL)reader_requestBookChapterWithURL:(NSString*)url success:(YTKRequestCompletionBlock)success failure:(YTKRequestCompletionBlock)failure;
+
 @end

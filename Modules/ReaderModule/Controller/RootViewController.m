@@ -49,16 +49,16 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if ([NSStringFromClass([self class]) isEqualToString:@"UserLoginViewController"]) {
-        
-    }else if ([self.navigationController.viewControllers objectAtIndex:0]==self) {
-        self.tabBarController.tabBar.hidden=NO;
-    }else{
-        self.tabBarController.tabBar.hidden=YES;
-    }
-    if (_requestUtil) {
-        _requestUtil.delegate=self;
-    }
+//    if ([NSStringFromClass([self class]) isEqualToString:@"UserLoginViewController"]) {
+//        
+//    }else if ([self.navigationController.viewControllers objectAtIndex:0]==self) {
+//        self.tabBarController.tabBar.hidden=NO;
+//    }else{
+//        self.tabBarController.tabBar.hidden=YES;
+//    }
+//    if (_requestUtil) {
+//        _requestUtil.delegate=self;
+//    }
 }
 
 - (void)didReceiveMemoryWarning{

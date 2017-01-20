@@ -16,6 +16,8 @@
 - (void)tablelWillEndDragWithOffsetY:(float)offsetY WithVelocity:(CGPoint)velocity;
 //刷新
 - (void)handlerRefreshing:(id)handler ;
+
+
 //选择某一行
 - (void)didSelectSection:(NSInteger)section withRow:(NSInteger)row withContent:(NSObject* )content ;
 

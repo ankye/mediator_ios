@@ -104,6 +104,7 @@
         BookReadViewController * con = [BookReadViewController new];
         con.book = self.book;
         con.dataArray = self.dirDataArray;
+          con.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:con animated:YES];
     }else if (index == 1){
         if (self.book.isCaseBook) {//取消收藏
@@ -133,6 +134,7 @@
     con.book = self.book;
     con.readIndexPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.row];
     con.dataArray = self.dirDataArray;
+    con.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:con animated:YES];
 }
 

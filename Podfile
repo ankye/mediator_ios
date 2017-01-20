@@ -23,9 +23,10 @@ target 'Project' do
         pod 'AMapFoundation'
         pod 'AMap3DMap'
         pod 'AMapLocation'
-        
+        pod 'SVProgressHUD'
+        pod 'MBProgressHUD'
         pod 'MJExtension'
-  
+        
         #share Module
         # U-Share SDK UI模块（分享面板，建议添加）
         pod 'UMengUShare/UI’
@@ -51,6 +52,7 @@ target 'Project' do
         pod 'UMengAnalytics'
         pod 'SVProgressHUD'
         pod 'BlocksKit'
+
 
 
 end

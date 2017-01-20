@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "AKBaseTableViewHandler.h"
 #import "Book.h"
+#import "BookChapter.h"
 
 @interface AKBookDetailHandler : AKBaseTableViewHandler
 
 @property(nonatomic,strong)Book * book;
-@property (nonatomic,strong)  NSArray       *datalist ;          //dataSource list , string .
+@property (nonatomic,strong) NSMutableArray<BookChapter *> *  dataList ;
 
 @end

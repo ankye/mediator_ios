@@ -26,6 +26,8 @@
 //自动加载新数据,默认YES
 @property (nonatomic) BOOL automaticallyLoadNew ;
 
+@property (nonatomic) BOOL enableLoadNew;
+
 @property (nonatomic) BOOL enableLoadMore;
 //下拉刷新头部
 - (void)pullDownRefreshHeader ;

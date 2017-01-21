@@ -49,10 +49,10 @@
     PageGenerationManager   *_pageGenerationManager;
     NSMutableArray          *_notesModelArr;
     NSMutableArray          *_bookmarksModelArr;
-    UIView                  *_bottomMenuView;
-    UIView                  *_topMenuView;
-    UIView                  *_setView;
-    UIView                  *_automaticMenuView;
+//    UIView                  *_bottomMenuView;
+//    UIView                  *_topMenuView;
+//    UIView                  *_setView;
+//    UIView                  *_automaticMenuView;
     NSInteger               speed;
 }
 

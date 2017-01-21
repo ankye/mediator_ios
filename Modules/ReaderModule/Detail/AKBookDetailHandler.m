@@ -89,12 +89,8 @@
 }
 
 
-
-- (void)loadNewData
+-(void)refresh
 {
-    
-    NSMutableArray*tmpList_data = [@[] mutableCopy] ;
-    
     [AK_REQUEST_MANAGER reader_requestBookDetailWithNovelID:self.book.novel.Id withSiteID:self.book.source.siteid success:^(__kindof YTKBaseRequest * _Nonnull request) {
         
         NSData* jsonData = request.responseData;
@@ -105,7 +101,7 @@
             [[[UIAlertView alloc]initWithTitle:FINAL_PROMPT_INFOMATION message:response[@"info"] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
             return;
         }
-
+        
         
         
         NSArray * dataArray = response[@"data"];
@@ -117,10 +113,16 @@
         [self.table refreshData];
         
         [AKPopupManager hideProgressHUDAtView:self.table];
-
+        
     } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
         
     }];
+    
+
+}
+- (void)loadNewData
+{
+    
     
     
     

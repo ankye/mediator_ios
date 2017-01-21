@@ -63,20 +63,30 @@
 
 - (void)MJRefreshConfigure
 {
-    
-    self.mj_header = [self customHeader];
-    
-    
+    self.enableLoadMore = YES;
+    self.enableLoadNew = YES;
     self.showRefreshDetail = YES ;
     self.automaticallyLoadMore = NO ;
     self.automaticallyLoadNew = YES ;
-    self.enableLoadMore = YES;
+   
+    
 }
+
+-(void)setEnableLoadNew:(BOOL)enableLoadNew
+{
+   
+    _enableLoadNew = enableLoadNew;
+    if(enableLoadNew){
+        self.mj_header = [self customHeader];
+    }else{
+        self.mj_header = nil;
+    }
+    
+}
+
 -(void)setEnableLoadMore:(BOOL)enableLoadMore
 {
-    if(_enableLoadMore == enableLoadMore){
-        return ;
-    }
+
     _enableLoadMore = enableLoadMore;
     if(enableLoadMore){
         self.mj_footer = [self customFooter];

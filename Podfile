@@ -43,7 +43,8 @@ target 'Project' do
         #Wallpaper Module
         pod 'CHTCollectionViewWaterfallLayout'
 
-        
+
+    
         pod 'MJRefresh'
    
         pod 'CocoaLumberjack'

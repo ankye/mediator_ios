@@ -366,6 +366,16 @@
 		C5BD115D1E25EC8C001B5532 /* XHSHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD115B1E25EC8C001B5532 /* XHSHomeCell.m */; };
 		C5BD115E1E25EC8C001B5532 /* XHSHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BD115C1E25EC8C001B5532 /* XHSHomeCell.xib */; };
 		C5BD11611E25ED69001B5532 /* XHSHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD11601E25ED69001B5532 /* XHSHomeModel.m */; };
+		C5CD31211E3332F700AE0A60 /* MusicDownloadList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CD310E1E3332F700AE0A60 /* MusicDownloadList.storyboard */; };
+		C5CD31221E3332F700AE0A60 /* MusicDownloadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31101E3332F700AE0A60 /* MusicDownloadListViewController.m */; };
+		C5CD31231E3332F700AE0A60 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31131E3332F700AE0A60 /* HSDownloadManager.m */; };
+		C5CD31241E3332F700AE0A60 /* HSDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31151E3332F700AE0A60 /* HSDownloadTask.m */; };
+		C5CD31251E3332F700AE0A60 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31191E3332F700AE0A60 /* MusicModel.m */; };
+		C5CD31261E3332F700AE0A60 /* MusicDownloadListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD311C1E3332F700AE0A60 /* MusicDownloadListTableCell.m */; };
+		C5CD31271E3332F700AE0A60 /* MusicDownloadListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5CD311D1E3332F700AE0A60 /* MusicDownloadListTableCell.xib */; };
+		C5CD31281E3332F700AE0A60 /* TYMProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31201E3332F700AE0A60 /* TYMProgressBarView.m */; };
+		C5CD312B1E33333A00AE0A60 /* AKDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD312A1E33333A00AE0A60 /* AKDownloadManager.m */; };
+		C5CD312E1E33339200AE0A60 /* AKDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD312D1E33339200AE0A60 /* AKDownloadViewController.m */; };
 		C5D0BA5B1E077B4F0054DF0E /* AKResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */; };
 		C5E0CEEC1E120AB000705C26 /* AKThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CEEB1E120AB000705C26 /* AKThemeManager.m */; };
 		C5E0CEF11E120CA600705C26 /* AKSignalManager+ThemeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CEF01E120CA600705C26 /* AKSignalManager+ThemeModule.m */; };
@@ -1078,6 +1088,24 @@
 		C5BD115C1E25EC8C001B5532 /* XHSHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHSHomeCell.xib; sourceTree = "<group>"; };
 		C5BD115F1E25ED69001B5532 /* XHSHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSHomeModel.h; sourceTree = "<group>"; };
 		C5BD11601E25ED69001B5532 /* XHSHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSHomeModel.m; sourceTree = "<group>"; };
+		C5CD310E1E3332F700AE0A60 /* MusicDownloadList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MusicDownloadList.storyboard; sourceTree = "<group>"; };
+		C5CD310F1E3332F700AE0A60 /* MusicDownloadListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDownloadListViewController.h; sourceTree = "<group>"; };
+		C5CD31101E3332F700AE0A60 /* MusicDownloadListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDownloadListViewController.m; sourceTree = "<group>"; };
+		C5CD31121E3332F700AE0A60 /* HSDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDownloadManager.h; sourceTree = "<group>"; };
+		C5CD31131E3332F700AE0A60 /* HSDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDownloadManager.m; sourceTree = "<group>"; };
+		C5CD31141E3332F700AE0A60 /* HSDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDownloadTask.h; sourceTree = "<group>"; };
+		C5CD31151E3332F700AE0A60 /* HSDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDownloadTask.m; sourceTree = "<group>"; };
+		C5CD31181E3332F700AE0A60 /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
+		C5CD31191E3332F700AE0A60 /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
+		C5CD311B1E3332F700AE0A60 /* MusicDownloadListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDownloadListTableCell.h; sourceTree = "<group>"; };
+		C5CD311C1E3332F700AE0A60 /* MusicDownloadListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDownloadListTableCell.m; sourceTree = "<group>"; };
+		C5CD311D1E3332F700AE0A60 /* MusicDownloadListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicDownloadListTableCell.xib; sourceTree = "<group>"; };
+		C5CD311F1E3332F700AE0A60 /* TYMProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYMProgressBarView.h; sourceTree = "<group>"; };
+		C5CD31201E3332F700AE0A60 /* TYMProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYMProgressBarView.m; sourceTree = "<group>"; };
+		C5CD31291E33333A00AE0A60 /* AKDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadManager.h; sourceTree = "<group>"; };
+		C5CD312A1E33333A00AE0A60 /* AKDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadManager.m; sourceTree = "<group>"; };
+		C5CD312C1E33339200AE0A60 /* AKDownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadViewController.h; sourceTree = "<group>"; };
+		C5CD312D1E33339200AE0A60 /* AKDownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadViewController.m; sourceTree = "<group>"; };
 		C5D0BA591E077B4F0054DF0E /* AKResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKResourceManager.h; sourceTree = "<group>"; };
 		C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKResourceManager.m; sourceTree = "<group>"; };
 		C5D0BA5F1E0788B80054DF0E /* BaseModuleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModuleDefine.h; sourceTree = "<group>"; };
@@ -2905,6 +2933,7 @@
 		C5A730481DE2BD4200DB2788 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C5CD30F51E33219400AE0A60 /* DownloadModule */,
 				C50972C81E27590F00A8A2A9 /* ReaderModule */,
 				C5E0CF2D1E13B47300705C26 /* ComponentModule */,
 				C5E0CEE01E1173B400705C26 /* ThemeModule */,
@@ -2978,6 +3007,79 @@
 				C5BD115C1E25EC8C001B5532 /* XHSHomeCell.xib */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		C5CD30F51E33219400AE0A60 /* DownloadModule */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD310D1E3332F700AE0A60 /* Controller */,
+				C5CD31111E3332F700AE0A60 /* Lib */,
+				C5CD31161E3332F700AE0A60 /* Manager */,
+				C5CD31171E3332F700AE0A60 /* Model */,
+				C5CD311A1E3332F700AE0A60 /* View */,
+			);
+			path = DownloadModule;
+			sourceTree = "<group>";
+		};
+		C5CD310D1E3332F700AE0A60 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD310E1E3332F700AE0A60 /* MusicDownloadList.storyboard */,
+				C5CD310F1E3332F700AE0A60 /* MusicDownloadListViewController.h */,
+				C5CD31101E3332F700AE0A60 /* MusicDownloadListViewController.m */,
+				C5CD312C1E33339200AE0A60 /* AKDownloadViewController.h */,
+				C5CD312D1E33339200AE0A60 /* AKDownloadViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C5CD31111E3332F700AE0A60 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD31121E3332F700AE0A60 /* HSDownloadManager.h */,
+				C5CD31131E3332F700AE0A60 /* HSDownloadManager.m */,
+				C5CD31141E3332F700AE0A60 /* HSDownloadTask.h */,
+				C5CD31151E3332F700AE0A60 /* HSDownloadTask.m */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		C5CD31161E3332F700AE0A60 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD31291E33333A00AE0A60 /* AKDownloadManager.h */,
+				C5CD312A1E33333A00AE0A60 /* AKDownloadManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C5CD31171E3332F700AE0A60 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD31181E3332F700AE0A60 /* MusicModel.h */,
+				C5CD31191E3332F700AE0A60 /* MusicModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5CD311A1E3332F700AE0A60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD311B1E3332F700AE0A60 /* MusicDownloadListTableCell.h */,
+				C5CD311C1E3332F700AE0A60 /* MusicDownloadListTableCell.m */,
+				C5CD311D1E3332F700AE0A60 /* MusicDownloadListTableCell.xib */,
+				C5CD311E1E3332F700AE0A60 /* TYMProgressBar */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5CD311E1E3332F700AE0A60 /* TYMProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD311F1E3332F700AE0A60 /* TYMProgressBarView.h */,
+				C5CD31201E3332F700AE0A60 /* TYMProgressBarView.m */,
+			);
+			path = TYMProgressBar;
 			sourceTree = "<group>";
 		};
 		C5D0BA701E07D80D0054DF0E /* NewsModule */ = {
@@ -3437,6 +3539,7 @@
 				C53A9A631E30BCE1008E7FB3 /* YMenuViewController.xib in Resources */,
 				C509739C1E28A6AA00A8A2A9 /* BookReadSettingFooterView.xib in Resources */,
 				C53A9A781E30BE45008E7FB3 /* YDirectoryViewController.xib in Resources */,
+				C5CD31271E3332F700AE0A60 /* MusicDownloadListTableCell.xib in Resources */,
 				C50974291E28A77A00A8A2A9 /* CustomNumbersCell.xib in Resources */,
 				C53A9A7C1E30BE45008E7FB3 /* YSummaryViewController.xib in Resources */,
 				C50974B01E28AB4400A8A2A9 /* 复制@2x.png in Resources */,
@@ -3446,6 +3549,7 @@
 				C53A99FD1E2DD225008E7FB3 /* grayLogo@2x.png in Resources */,
 				C50974331E28A77A00A8A2A9 /* area.plist in Resources */,
 				C53A9A921E30BE65008E7FB3 /* YThemeViewCell.xib in Resources */,
+				C5CD31211E3332F700AE0A60 /* MusicDownloadList.storyboard in Resources */,
 				C50974B11E28AB4400A8A2A9 /* 复制@3x.png in Resources */,
 				C50974BE1E28AB4400A8A2A9 /* 笔记标志三点.png in Resources */,
 				C50973251E28A5EE00A8A2A9 /* database.sqlite3 in Resources */,
@@ -3569,6 +3673,7 @@
 				C53A9AB11E30C1AD008E7FB3 /* YBookDetailModel.m in Sources */,
 				C53DDCCA1DFFC50A00D66D74 /* AKUserGroup.m in Sources */,
 				C515AD201DF0591100353FC4 /* NSObject+CategoryWithProperty.m in Sources */,
+				C5CD31221E3332F700AE0A60 /* MusicDownloadListViewController.m in Sources */,
 				C5E0CEF11E120CA600705C26 /* AKSignalManager+ThemeModule.m in Sources */,
 				C50974371E28A77A00A8A2A9 /* CustomPopupItem.m in Sources */,
 				C50974231E28A77A00A8A2A9 /* CustomTremblingView.m in Sources */,
@@ -3587,6 +3692,7 @@
 				C509743B1E28A77A00A8A2A9 /* MJChiBaoZiHeader.m in Sources */,
 				C53A99DC1E2DB465008E7FB3 /* AKRequestManager+ReaderModule.m in Sources */,
 				C515AD171DF0568100353FC4 /* AKDataCenter+UserModule.m in Sources */,
+				C5CD31241E3332F700AE0A60 /* HSDownloadTask.m in Sources */,
 				C53A9A501E2F8BED008E7FB3 /* SGDownloader.m in Sources */,
 				C50975051E2CAEBA00A8A2A9 /* AKImageView.m in Sources */,
 				C50973191E289FEB00A8A2A9 /* UIImage+Category.m in Sources */,
@@ -3667,6 +3773,7 @@
 				C538A64A1E160F3C001E1FA7 /* AKThemeManager+HSelectionList.m in Sources */,
 				C50974381E28A77A00A8A2A9 /* CustomPopupView.m in Sources */,
 				C53A9AC01E30C3BB008E7FB3 /* YBaseModel.m in Sources */,
+				C5CD31231E3332F700AE0A60 /* HSDownloadManager.m in Sources */,
 				C50974271E28A77A00A8A2A9 /* CustomNineImageView.m in Sources */,
 				C509732A1E28A69800A8A2A9 /* BookChapter.m in Sources */,
 				C50972BA1E2638E900A8A2A9 /* DetailViewController.m in Sources */,
@@ -3682,6 +3789,7 @@
 				C509743A1E28A77A00A8A2A9 /* MJChiBaoZiFooter.m in Sources */,
 				C50974421E28A77A00A8A2A9 /* OpenShare+Weibo.m in Sources */,
 				C509737F1E28A6A900A8A2A9 /* BookCategoryListView.m in Sources */,
+				C5CD31281E3332F700AE0A60 /* TYMProgressBarView.m in Sources */,
 				C53A9A5D1E30A2D8008E7FB3 /* MBProgressHUD+Custom.m in Sources */,
 				C53A99D81E2DB2F2008E7FB3 /* AKReaderHotListAPI.m in Sources */,
 				C53A9AD31E30C467008E7FB3 /* YBookUpdateModel.m in Sources */,
@@ -3726,6 +3834,7 @@
 				C50974491E28A77A00A8A2A9 /* MainTableView.m in Sources */,
 				C55A77101E090D3A002E164A /* AKNewsViewController.m in Sources */,
 				C515AB6A1DF051BA00353FC4 /* AKBaseViewController.m in Sources */,
+				C5CD31261E3332F700AE0A60 /* MusicDownloadListTableCell.m in Sources */,
 				C509742A1E28A77A00A8A2A9 /* CustomNumbersLeftHeaderView.m in Sources */,
 				C53A9A571E2F920F008E7FB3 /* AKReaderViewController.m in Sources */,
 				C50972E11E2886B300A8A2A9 /* Book.m in Sources */,
@@ -3774,7 +3883,9 @@
 				C53A99D31E2CE931008E7FB3 /* SinglePicCollectCell.m in Sources */,
 				C53A9A371E2F62A9008E7FB3 /* BookDetailChapterCell.m in Sources */,
 				C5E0CEF71E1217FB00705C26 /* Aspect-ThemeModule.m in Sources */,
+				C5CD31251E3332F700AE0A60 /* MusicModel.m in Sources */,
 				C53A9A621E30BCE1008E7FB3 /* YMenuViewController.m in Sources */,
+				C5CD312E1E33339200AE0A60 /* AKDownloadViewController.m in Sources */,
 				C509744A1E28A77A00A8A2A9 /* RootMaskView.m in Sources */,
 				C515ACCB1DF0552600353FC4 /* AKLoginButton.m in Sources */,
 				C50974401E28A77A00A8A2A9 /* OpenShare+QQ.m in Sources */,
@@ -3826,6 +3937,7 @@
 				C509744C1E28A77A00A8A2A9 /* RootNavButton.m in Sources */,
 				C515AB781DF051BA00353FC4 /* AKRequestManager.m in Sources */,
 				C53A9A9C1E30BEC1008E7FB3 /* YChaptersLinkModel.m in Sources */,
+				C5CD312B1E33333A00AE0A60 /* AKDownloadManager.m in Sources */,
 				C50974451E28A77A00A8A2A9 /* CustomSliderView.m in Sources */,
 				C509741F1E28A77A00A8A2A9 /* NSString+BSNumbersExtension.m in Sources */,
 				C509739A1E28A6AA00A8A2A9 /* BookReadMainView.m in Sources */,

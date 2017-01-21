@@ -70,6 +70,7 @@
 {
     _tableView = [[AKBaseTableView alloc] initWithFrame:CGRectMake(0, SCREEN_NAV_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-SCREEN_NAV_HEIGHT) style:UITableViewStyleGrouped];
     _tableView.enableLoadMore = NO;
+    _tableView.enableLoadNew = NO;
     [self.view addSubview:_tableView];
     
 }
@@ -80,6 +81,7 @@
     [_handler handleDatasourceAndDelegate:_tableView];
     _handler.handlerDelegate = self;
     _handler.book = self.book;
+    [_handler refresh];
 }
 
 //Y轴滚动偏移

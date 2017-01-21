@@ -1,6 +1,6 @@
 //
-//  TYMProgressBarView.h
-//  TYMProgressBarView
+//  AKProgressBarView.h
+//  AKProgressBarView
 //
 //  Created by Yiming Tang on 13-6-7.
 //  Copyright (c) 2013 - 2014 Yiming Tang. All rights reserved.
@@ -11,7 +11,7 @@
 /**
  Progress bar similar to the one in iOS's launching screen.
  */
-@interface TYMProgressBarView : UIView
+@interface AKProgressBarView : UIView
 
 
 ///---------------------------

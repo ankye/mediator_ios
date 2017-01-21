@@ -6,8 +6,8 @@
 //  Copyright © 2016年 chuanshuangzhang. All rights reserved.
 //
 
-#import "DownloadModel.h"
+#import "AKDownloadModel.h"
 
-@implementation DownloadModel
+@implementation AKDownloadModel
 
 @end

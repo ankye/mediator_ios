@@ -6,14 +6,14 @@
 //  Copyright © 2016年 dzmmac. All rights reserved.
 //
 
-#import "MusicDownloadListTableCell.h"
+#import "AKDownloadListTableCell.h"
 #import "HSDownloadManager.h"
 
-@implementation MusicDownloadListTableCell
+@implementation AKDownloadListTableCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.progressBarView = [[TYMProgressBarView alloc] initWithFrame:CGRectMake(86 , 80, [UIScreen mainScreen].bounds.size.width - 150, 8.0f)];
+    self.progressBarView = [[AKProgressBarView alloc] initWithFrame:CGRectMake(86 , 80, [UIScreen mainScreen].bounds.size.width - 150, 8.0f)];
     [self.contentBgView addSubview:self.progressBarView];
 }
 
@@ -37,7 +37,7 @@
 }
 
 
--(void)showData:(DownloadModel *)musicModel{
+-(void)showData:(AKDownloadModel *)musicModel{
     
     self.musicModel = musicModel;
     self.desc.text = musicModel.desc;

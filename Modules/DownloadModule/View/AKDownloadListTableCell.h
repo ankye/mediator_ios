@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TYMProgressBarView.h"
-#import "DownloadModel.h"
+#import "AKProgressBarView.h"
+#import "AKDownloadModel.h"
 
-@interface MusicDownloadListTableCell : UITableViewCell
+@interface AKDownloadListTableCell : UITableViewCell
 
-@property (nonatomic, strong) TYMProgressBarView *progressBarView;
-@property (nonatomic,strong) DownloadModel *musicModel;
+@property (nonatomic, strong) AKProgressBarView *progressBarView;
+@property (nonatomic,strong) AKDownloadModel *musicModel;
 
 @property (nonatomic,strong) NSString                *downloadUrl;
 @property (weak, nonatomic ) IBOutlet UILabel        *musicName;
@@ -28,6 +28,6 @@
 
 - (IBAction)stopStartAction:(UIButton *)sender;
 
-- (void)showData:(DownloadModel *)model;
+- (void)showData:(AKDownloadModel *)model;
 
 @end

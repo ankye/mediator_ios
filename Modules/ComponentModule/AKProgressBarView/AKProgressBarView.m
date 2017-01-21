@@ -1,19 +1,19 @@
 //
-//  TYMProgressBarView.m
-//  TYMProgressBarView
+//  AKProgressBarView.m
+//  AKProgressBarView
 //
 //  Created by Yiming Tang on 13-6-7.
 //  Copyright (c) 2013 - 2014 Yiming Tang. All rights reserved.
 //
 
-#import "TYMProgressBarView.h"
+#import "AKProgressBarView.h"
 
 void strokeRoundedRectInContext(CGContextRef context, CGRect rect, CGFloat lineWidth, CGFloat radius);
 void fillRoundedRectInContext(CGContextRef context, CGRect rect, CGFloat radius);
 void setRoundedRectPathInContext(CGContextRef context, CGRect rect, CGFloat radius);
 
 
-@implementation TYMProgressBarView
+@implementation AKProgressBarView
 
 #pragma mark - Accessors
 

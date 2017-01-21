@@ -7,7 +7,7 @@
 //
 
 #import "AKDownloadManager.h"
-#import "DownloadModel.h"
+#import "AKDownloadModel.h"
 #import "HSDownloadManager.h"
 
 @implementation AKDownloadManager
@@ -31,7 +31,7 @@ SINGLETON_IMPL(AKDownloadManager)
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Discover" ofType:@".plist"];
     NSArray *array = [NSArray arrayWithContentsOfFile:path];
     for (NSDictionary *dic in array) {
-        DownloadModel *model = [[DownloadModel alloc]init];
+        AKDownloadModel *model = [[AKDownloadModel alloc]init];
         model.downLoadUrl = dic[@"downLoadUrl"];
         model.desc = dic[@"desc"];
         model.imgName = dic[@"imgName"];
@@ -46,6 +46,11 @@ SINGLETON_IMPL(AKDownloadManager)
 -(BOOL)isEmptyList
 {
     return self.downloadList.count > 0;
+}
+
+-(void)createTaskGroup:(NSString*)groupName withTasks:(NSMutableArray<AKDownloadModel*>*)tasks
+{
+    
 }
 
 @end

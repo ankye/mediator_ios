@@ -11,19 +11,16 @@
 
 
 
-@interface DownloadModel : NSObject
-
-@property (nonatomic , strong) NSString *downLoadUrl;
-
-@property (nonatomic , strong) NSString *imgName;
-
-@property (nonatomic , strong) NSString *name;
-
-@property (nonatomic , strong) NSString *desc;
-
-@property (nonatomic , strong) NSString *mpDownLoadPath;
+@interface AKDownloadModel : NSObject
 
 @property (nonatomic,strong) NSString *group;
+
+@property (nonatomic , strong) NSString *imgName;
+@property (nonatomic , strong) NSString *name;
+@property (nonatomic , strong) NSString *desc;
+
+@property (nonatomic , strong) NSString *downLoadUrl;
+@property (nonatomic , strong) NSString *localPath;
 
 @property (nonatomic , assign) CGFloat progress;
 

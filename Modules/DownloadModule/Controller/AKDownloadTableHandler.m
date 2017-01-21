@@ -8,7 +8,7 @@
 
 #import "AKDownloadTableHandler.h"
 #import "AKDownloadManager.h"
-#import "MusicDownloadListTableCell.h"
+#import "AKDownloadListTableCell.h"
 
 @implementation AKDownloadTableHandler
 
@@ -34,10 +34,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    static NSString * identifier=@"MusicDownloadListTableCell";
-    MusicDownloadListTableCell * cell= (MusicDownloadListTableCell*)[self getCell:tableView withName:identifier];
+    static NSString * identifier=@"AKDownloadListTableCell";
+    AKDownloadListTableCell * cell= (AKDownloadListTableCell*)[self getCell:tableView withName:identifier];
     
-    DownloadModel *model = [AKDownloadManager sharedInstance].downloadList[indexPath.row];
+    AKDownloadModel *model = [AKDownloadManager sharedInstance].downloadList[indexPath.row];
     [cell showData:model];
     return cell;
 
@@ -54,12 +54,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 0;
+    return 0.1;
 
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 0;
+    return 0.1;
 }
 
 

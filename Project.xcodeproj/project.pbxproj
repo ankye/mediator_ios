@@ -366,16 +366,25 @@
 		C5BD115D1E25EC8C001B5532 /* XHSHomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD115B1E25EC8C001B5532 /* XHSHomeCell.m */; };
 		C5BD115E1E25EC8C001B5532 /* XHSHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5BD115C1E25EC8C001B5532 /* XHSHomeCell.xib */; };
 		C5BD11611E25ED69001B5532 /* XHSHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BD11601E25ED69001B5532 /* XHSHomeModel.m */; };
-		C5CD31211E3332F700AE0A60 /* MusicDownloadList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5CD310E1E3332F700AE0A60 /* MusicDownloadList.storyboard */; };
-		C5CD31221E3332F700AE0A60 /* MusicDownloadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31101E3332F700AE0A60 /* MusicDownloadListViewController.m */; };
 		C5CD31231E3332F700AE0A60 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31131E3332F700AE0A60 /* HSDownloadManager.m */; };
 		C5CD31241E3332F700AE0A60 /* HSDownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31151E3332F700AE0A60 /* HSDownloadTask.m */; };
-		C5CD31251E3332F700AE0A60 /* MusicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31191E3332F700AE0A60 /* MusicModel.m */; };
+		C5CD31251E3332F700AE0A60 /* DownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31191E3332F700AE0A60 /* DownloadModel.m */; };
 		C5CD31261E3332F700AE0A60 /* MusicDownloadListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD311C1E3332F700AE0A60 /* MusicDownloadListTableCell.m */; };
 		C5CD31271E3332F700AE0A60 /* MusicDownloadListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5CD311D1E3332F700AE0A60 /* MusicDownloadListTableCell.xib */; };
 		C5CD31281E3332F700AE0A60 /* TYMProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31201E3332F700AE0A60 /* TYMProgressBarView.m */; };
 		C5CD312B1E33333A00AE0A60 /* AKDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD312A1E33333A00AE0A60 /* AKDownloadManager.m */; };
 		C5CD312E1E33339200AE0A60 /* AKDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD312D1E33339200AE0A60 /* AKDownloadViewController.m */; };
+		C5CD31311E33442E00AE0A60 /* AKDownloadTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31301E33442E00AE0A60 /* AKDownloadTableHandler.m */; };
+		C5CD31331E33558400AE0A60 /* DownloadModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CD31321E33558400AE0A60 /* DownloadModule.xcassets */; };
+		C5CD31411E335B8300AE0A60 /* Discover.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5CD31371E335B8300AE0A60 /* Discover.plist */; };
+		C5CD31421E335B8300AE0A60 /* gongfuxiongmao.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD31391E335B8300AE0A60 /* gongfuxiongmao.png */; };
+		C5CD31431E335B8300AE0A60 /* lieren.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313A1E335B8300AE0A60 /* lieren.png */; };
+		C5CD31441E335B8300AE0A60 /* meirenyu.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313B1E335B8300AE0A60 /* meirenyu.png */; };
+		C5CD31451E335B8300AE0A60 /* sandabaigujing.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313C1E335B8300AE0A60 /* sandabaigujing.png */; };
+		C5CD31461E335B8300AE0A60 /* taipingyang.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313D1E335B8300AE0A60 /* taipingyang.png */; };
+		C5CD31471E335B8300AE0A60 /* xiaohuangren.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313E1E335B8300AE0A60 /* xiaohuangren.png */; };
+		C5CD31481E335B8300AE0A60 /* xiongchumo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313F1E335B8300AE0A60 /* xiongchumo.png */; };
+		C5CD31491E335B8300AE0A60 /* yuanlijuexing.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD31401E335B8300AE0A60 /* yuanlijuexing.png */; };
 		C5D0BA5B1E077B4F0054DF0E /* AKResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */; };
 		C5E0CEEC1E120AB000705C26 /* AKThemeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CEEB1E120AB000705C26 /* AKThemeManager.m */; };
 		C5E0CEF11E120CA600705C26 /* AKSignalManager+ThemeModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E0CEF01E120CA600705C26 /* AKSignalManager+ThemeModule.m */; };
@@ -1088,15 +1097,12 @@
 		C5BD115C1E25EC8C001B5532 /* XHSHomeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XHSHomeCell.xib; sourceTree = "<group>"; };
 		C5BD115F1E25ED69001B5532 /* XHSHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHSHomeModel.h; sourceTree = "<group>"; };
 		C5BD11601E25ED69001B5532 /* XHSHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHSHomeModel.m; sourceTree = "<group>"; };
-		C5CD310E1E3332F700AE0A60 /* MusicDownloadList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MusicDownloadList.storyboard; sourceTree = "<group>"; };
-		C5CD310F1E3332F700AE0A60 /* MusicDownloadListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDownloadListViewController.h; sourceTree = "<group>"; };
-		C5CD31101E3332F700AE0A60 /* MusicDownloadListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDownloadListViewController.m; sourceTree = "<group>"; };
 		C5CD31121E3332F700AE0A60 /* HSDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDownloadManager.h; sourceTree = "<group>"; };
 		C5CD31131E3332F700AE0A60 /* HSDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDownloadManager.m; sourceTree = "<group>"; };
 		C5CD31141E3332F700AE0A60 /* HSDownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDownloadTask.h; sourceTree = "<group>"; };
 		C5CD31151E3332F700AE0A60 /* HSDownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDownloadTask.m; sourceTree = "<group>"; };
-		C5CD31181E3332F700AE0A60 /* MusicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicModel.h; sourceTree = "<group>"; };
-		C5CD31191E3332F700AE0A60 /* MusicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicModel.m; sourceTree = "<group>"; };
+		C5CD31181E3332F700AE0A60 /* DownloadModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadModel.h; sourceTree = "<group>"; };
+		C5CD31191E3332F700AE0A60 /* DownloadModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadModel.m; sourceTree = "<group>"; };
 		C5CD311B1E3332F700AE0A60 /* MusicDownloadListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDownloadListTableCell.h; sourceTree = "<group>"; };
 		C5CD311C1E3332F700AE0A60 /* MusicDownloadListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDownloadListTableCell.m; sourceTree = "<group>"; };
 		C5CD311D1E3332F700AE0A60 /* MusicDownloadListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicDownloadListTableCell.xib; sourceTree = "<group>"; };
@@ -1106,6 +1112,19 @@
 		C5CD312A1E33333A00AE0A60 /* AKDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadManager.m; sourceTree = "<group>"; };
 		C5CD312C1E33339200AE0A60 /* AKDownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadViewController.h; sourceTree = "<group>"; };
 		C5CD312D1E33339200AE0A60 /* AKDownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadViewController.m; sourceTree = "<group>"; };
+		C5CD312F1E33442E00AE0A60 /* AKDownloadTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadTableHandler.h; sourceTree = "<group>"; };
+		C5CD31301E33442E00AE0A60 /* AKDownloadTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadTableHandler.m; sourceTree = "<group>"; };
+		C5CD31321E33558400AE0A60 /* DownloadModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DownloadModule.xcassets; sourceTree = "<group>"; };
+		C5CD31341E3356EF00AE0A60 /* DownloadModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadModule.h; sourceTree = "<group>"; };
+		C5CD31371E335B8300AE0A60 /* Discover.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Discover.plist; sourceTree = "<group>"; };
+		C5CD31391E335B8300AE0A60 /* gongfuxiongmao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gongfuxiongmao.png; sourceTree = "<group>"; };
+		C5CD313A1E335B8300AE0A60 /* lieren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lieren.png; sourceTree = "<group>"; };
+		C5CD313B1E335B8300AE0A60 /* meirenyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meirenyu.png; sourceTree = "<group>"; };
+		C5CD313C1E335B8300AE0A60 /* sandabaigujing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sandabaigujing.png; sourceTree = "<group>"; };
+		C5CD313D1E335B8300AE0A60 /* taipingyang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taipingyang.png; sourceTree = "<group>"; };
+		C5CD313E1E335B8300AE0A60 /* xiaohuangren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaohuangren.png; sourceTree = "<group>"; };
+		C5CD313F1E335B8300AE0A60 /* xiongchumo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiongchumo.png; sourceTree = "<group>"; };
+		C5CD31401E335B8300AE0A60 /* yuanlijuexing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuanlijuexing.png; sourceTree = "<group>"; };
 		C5D0BA591E077B4F0054DF0E /* AKResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKResourceManager.h; sourceTree = "<group>"; };
 		C5D0BA5A1E077B4F0054DF0E /* AKResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKResourceManager.m; sourceTree = "<group>"; };
 		C5D0BA5F1E0788B80054DF0E /* BaseModuleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModuleDefine.h; sourceTree = "<group>"; };
@@ -3012,11 +3031,14 @@
 		C5CD30F51E33219400AE0A60 /* DownloadModule */ = {
 			isa = PBXGroup;
 			children = (
+				C5CD31351E335B8300AE0A60 /* Data */,
 				C5CD310D1E3332F700AE0A60 /* Controller */,
 				C5CD31111E3332F700AE0A60 /* Lib */,
 				C5CD31161E3332F700AE0A60 /* Manager */,
 				C5CD31171E3332F700AE0A60 /* Model */,
 				C5CD311A1E3332F700AE0A60 /* View */,
+				C5CD31321E33558400AE0A60 /* DownloadModule.xcassets */,
+				C5CD31341E3356EF00AE0A60 /* DownloadModule.h */,
 			);
 			path = DownloadModule;
 			sourceTree = "<group>";
@@ -3024,11 +3046,10 @@
 		C5CD310D1E3332F700AE0A60 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C5CD310E1E3332F700AE0A60 /* MusicDownloadList.storyboard */,
-				C5CD310F1E3332F700AE0A60 /* MusicDownloadListViewController.h */,
-				C5CD31101E3332F700AE0A60 /* MusicDownloadListViewController.m */,
 				C5CD312C1E33339200AE0A60 /* AKDownloadViewController.h */,
 				C5CD312D1E33339200AE0A60 /* AKDownloadViewController.m */,
+				C5CD312F1E33442E00AE0A60 /* AKDownloadTableHandler.h */,
+				C5CD31301E33442E00AE0A60 /* AKDownloadTableHandler.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -3056,8 +3077,8 @@
 		C5CD31171E3332F700AE0A60 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C5CD31181E3332F700AE0A60 /* MusicModel.h */,
-				C5CD31191E3332F700AE0A60 /* MusicModel.m */,
+				C5CD31181E3332F700AE0A60 /* DownloadModel.h */,
+				C5CD31191E3332F700AE0A60 /* DownloadModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3080,6 +3101,38 @@
 				C5CD31201E3332F700AE0A60 /* TYMProgressBarView.m */,
 			);
 			path = TYMProgressBar;
+			sourceTree = "<group>";
+		};
+		C5CD31351E335B8300AE0A60 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD31361E335B8300AE0A60 /* Discover */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C5CD31361E335B8300AE0A60 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD31371E335B8300AE0A60 /* Discover.plist */,
+				C5CD31381E335B8300AE0A60 /* images */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		C5CD31381E335B8300AE0A60 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C5CD31391E335B8300AE0A60 /* gongfuxiongmao.png */,
+				C5CD313A1E335B8300AE0A60 /* lieren.png */,
+				C5CD313B1E335B8300AE0A60 /* meirenyu.png */,
+				C5CD313C1E335B8300AE0A60 /* sandabaigujing.png */,
+				C5CD313D1E335B8300AE0A60 /* taipingyang.png */,
+				C5CD313E1E335B8300AE0A60 /* xiaohuangren.png */,
+				C5CD313F1E335B8300AE0A60 /* xiongchumo.png */,
+				C5CD31401E335B8300AE0A60 /* yuanlijuexing.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		C5D0BA701E07D80D0054DF0E /* NewsModule */ = {
@@ -3478,7 +3531,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CD31471E335B8300AE0A60 /* xiaohuangren.png in Resources */,
 				C50974BB1E28AB4400A8A2A9 /* 笔记.png in Resources */,
+				C5CD31481E335B8300AE0A60 /* xiongchumo.png in Resources */,
+				C5CD31491E335B8300AE0A60 /* yuanlijuexing.png in Resources */,
 				C50974B21E28AB4400A8A2A9 /* 夜间背景色.png in Resources */,
 				C515AB661DF051BA00353FC4 /* BaseModule.xcassets in Resources */,
 				C50974B51E28AB4400A8A2A9 /* 扫描线.png in Resources */,
@@ -3490,6 +3546,7 @@
 				C50974A81E28AB4400A8A2A9 /* r_drag-dot@2x.png in Resources */,
 				C50974211E28A77A00A8A2A9 /* CustomBtn.xib in Resources */,
 				C53A9A3A1E2F62A9008E7FB3 /* BookDetailIntroduceCell.xib in Resources */,
+				C5CD31451E335B8300AE0A60 /* sandabaigujing.png in Resources */,
 				C50974BF1E28AB4400A8A2A9 /* 笔记标志三点@2x.png in Resources */,
 				C5E0CF6B1E13B47300705C26 /* chooseTagViewCloseBtn.png in Resources */,
 				C53A9A7A1E30BE45008E7FB3 /* YSummaryViewCell.xib in Resources */,
@@ -3505,6 +3562,7 @@
 				C53A9A3C1E2F6341008E7FB3 /* BookCaseMainCell.xib in Resources */,
 				C50974BD1E28AB4400A8A2A9 /* 笔记@3x.png in Resources */,
 				C5660E481E0A7A10000BF5E3 /* NewsModule.xcassets in Resources */,
+				C5CD31421E335B8300AE0A60 /* gongfuxiongmao.png in Resources */,
 				C509744E1E28A77A00A8A2A9 /* RootStandardTableCell.xib in Resources */,
 				C5B986E31E02A14400AB548A /* res.png in Resources */,
 				C50974C51E28AB4400A8A2A9 /* 阅读器-笔记框夜间三角形.png in Resources */,
@@ -3517,6 +3575,7 @@
 				C509742B1E28A77A00A8A2A9 /* CustomNumbersLeftHeaderView.xib in Resources */,
 				C53A9A761E30BE45008E7FB3 /* YDirectoryViewCell.xib in Resources */,
 				C50973901E28A6AA00A8A2A9 /* BookDetailViewController.storyboard in Resources */,
+				C5CD31461E335B8300AE0A60 /* taipingyang.png in Resources */,
 				C515ACC81DF0552600353FC4 /* LoginModule.xcassets in Resources */,
 				C50974AD1E28AB4400A8A2A9 /* 删除@2x.png in Resources */,
 				C50974AF1E28AB4400A8A2A9 /* 复制.png in Resources */,
@@ -3527,6 +3586,7 @@
 				C53A9A381E2F62A9008E7FB3 /* BookDetailChapterCell.xib in Resources */,
 				C53A9A181E2DF2D0008E7FB3 /* backImage@2x.png in Resources */,
 				C53A9A361E2F62A9008E7FB3 /* BookDetailBasicCell.xib in Resources */,
+				C5CD31331E33558400AE0A60 /* DownloadModule.xcassets in Resources */,
 				C509742F1E28A77A00A8A2A9 /* CustomNumbersRightHeaderView.xib in Resources */,
 				C50974AC1E28AB4400A8A2A9 /* 删除.png in Resources */,
 				C509744B1E28A77A00A8A2A9 /* RootMaskView.xib in Resources */,
@@ -3542,14 +3602,15 @@
 				C5CD31271E3332F700AE0A60 /* MusicDownloadListTableCell.xib in Resources */,
 				C50974291E28A77A00A8A2A9 /* CustomNumbersCell.xib in Resources */,
 				C53A9A7C1E30BE45008E7FB3 /* YSummaryViewController.xib in Resources */,
+				C5CD31431E335B8300AE0A60 /* lieren.png in Resources */,
 				C50974B01E28AB4400A8A2A9 /* 复制@2x.png in Resources */,
 				C50974C11E28AB4400A8A2A9 /* 羊皮纸.png in Resources */,
 				C50974AA1E28AB4400A8A2A9 /* 三角形@2x.png in Resources */,
 				C50974BC1E28AB4400A8A2A9 /* 笔记@2x.png in Resources */,
+				C5CD31411E335B8300AE0A60 /* Discover.plist in Resources */,
 				C53A99FD1E2DD225008E7FB3 /* grayLogo@2x.png in Resources */,
 				C50974331E28A77A00A8A2A9 /* area.plist in Resources */,
 				C53A9A921E30BE65008E7FB3 /* YThemeViewCell.xib in Resources */,
-				C5CD31211E3332F700AE0A60 /* MusicDownloadList.storyboard in Resources */,
 				C50974B11E28AB4400A8A2A9 /* 复制@3x.png in Resources */,
 				C50974BE1E28AB4400A8A2A9 /* 笔记标志三点.png in Resources */,
 				C50973251E28A5EE00A8A2A9 /* database.sqlite3 in Resources */,
@@ -3563,6 +3624,7 @@
 				C50974BA1E28AB4400A8A2A9 /* 电池@3x.png in Resources */,
 				C50973941E28A6AA00A8A2A9 /* BookReadSelectChapterMainCell.xib in Resources */,
 				C5A730201DE2BB3400DB2788 /* Main.storyboard in Resources */,
+				C5CD31441E335B8300AE0A60 /* meirenyu.png in Resources */,
 				C53A9A081E2DE343008E7FB3 /* BookCollMainCell.xib in Resources */,
 				C53A9A7E1E30BE45008E7FB3 /* YMoreSettingsViewController.xib in Resources */,
 			);
@@ -3673,7 +3735,6 @@
 				C53A9AB11E30C1AD008E7FB3 /* YBookDetailModel.m in Sources */,
 				C53DDCCA1DFFC50A00D66D74 /* AKUserGroup.m in Sources */,
 				C515AD201DF0591100353FC4 /* NSObject+CategoryWithProperty.m in Sources */,
-				C5CD31221E3332F700AE0A60 /* MusicDownloadListViewController.m in Sources */,
 				C5E0CEF11E120CA600705C26 /* AKSignalManager+ThemeModule.m in Sources */,
 				C50974371E28A77A00A8A2A9 /* CustomPopupItem.m in Sources */,
 				C50974231E28A77A00A8A2A9 /* CustomTremblingView.m in Sources */,
@@ -3883,13 +3944,14 @@
 				C53A99D31E2CE931008E7FB3 /* SinglePicCollectCell.m in Sources */,
 				C53A9A371E2F62A9008E7FB3 /* BookDetailChapterCell.m in Sources */,
 				C5E0CEF71E1217FB00705C26 /* Aspect-ThemeModule.m in Sources */,
-				C5CD31251E3332F700AE0A60 /* MusicModel.m in Sources */,
+				C5CD31251E3332F700AE0A60 /* DownloadModel.m in Sources */,
 				C53A9A621E30BCE1008E7FB3 /* YMenuViewController.m in Sources */,
 				C5CD312E1E33339200AE0A60 /* AKDownloadViewController.m in Sources */,
 				C509744A1E28A77A00A8A2A9 /* RootMaskView.m in Sources */,
 				C515ACCB1DF0552600353FC4 /* AKLoginButton.m in Sources */,
 				C50974401E28A77A00A8A2A9 /* OpenShare+QQ.m in Sources */,
 				C50974351E28A77A00A8A2A9 /* CustomChooseCityView.m in Sources */,
+				C5CD31311E33442E00AE0A60 /* AKDownloadTableHandler.m in Sources */,
 				C50974461E28A77A00A8A2A9 /* CustomWebProgressView.m in Sources */,
 				C53A9A511E2F8BED008E7FB3 /* SGDownloadManager.m in Sources */,
 				C53A9A021E2DD8BA008E7FB3 /* UIView+Frame.m in Sources */,

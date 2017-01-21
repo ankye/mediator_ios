@@ -32,11 +32,19 @@
 -(void)setupNav
 {
     self.navigationItem.title = @"热门小说";
-    UIBarButtonItem * rbbi = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"nav_search_btn"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(searchNovelBtnClick)];
+    UIBarButtonItem * rbbi = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"download"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(downloadManagerBtnClick)];
     self.navigationItem.rightBarButtonItem = rbbi;
     
+    UIBarButtonItem * leftBi = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"nav_search_btn"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(searchNovelBtnClick)];
+    self.navigationItem.leftBarButtonItem = leftBi;
+    
 }
-
+-(void)downloadManagerBtnClick
+{
+    AKDownloadViewController *controller = [AKDownloadViewController new];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+}
 -(void)searchNovelBtnClick
 {
     CustomSearchViewController * con = [CustomSearchViewController new];
@@ -104,6 +112,10 @@
     [self.navigationController pushViewController:con animated:YES];
 }
 
+-(void)didSectionClick:(NSInteger)section withRow:(NSInteger)row withClickChannel:(NSInteger)clickChannel withContent:(NSObject *)content
+{
+    
+}
 
 
 

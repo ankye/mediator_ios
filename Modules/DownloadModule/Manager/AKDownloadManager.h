@@ -10,6 +10,10 @@
 
 @interface AKDownloadManager : NSObject
 
+@property (nonatomic,strong) YYThreadSafeArray* downloadList;
+
 SINGLETON_INTR(AKDownloadManager)
+
+-(BOOL)isEmptyList;
 
 @end

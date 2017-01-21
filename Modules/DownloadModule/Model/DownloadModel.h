@@ -11,7 +11,7 @@
 
 
 
-@interface MusicModel : NSObject
+@interface DownloadModel : NSObject
 
 @property (nonatomic , strong) NSString *downLoadUrl;
 

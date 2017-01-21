@@ -6,8 +6,8 @@
 //  Copyright © 2016年 chuanshuangzhang. All rights reserved.
 //
 
-#import "MusicModel.h"
+#import "DownloadModel.h"
 
-@implementation MusicModel
+@implementation DownloadModel
 
 @end

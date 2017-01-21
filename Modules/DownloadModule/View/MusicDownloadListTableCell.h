@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "TYMProgressBarView.h"
-#import "MusicModel.h"
+#import "DownloadModel.h"
 
 @interface MusicDownloadListTableCell : UITableViewCell
 
 @property (nonatomic, strong) TYMProgressBarView *progressBarView;
-@property (nonatomic,strong) MusicModel *musicModel;
+@property (nonatomic,strong) DownloadModel *musicModel;
 
 @property (nonatomic,strong) NSString                *downloadUrl;
 @property (weak, nonatomic ) IBOutlet UILabel        *musicName;
@@ -28,6 +28,6 @@
 
 - (IBAction)stopStartAction:(UIButton *)sender;
 
-- (void)showData:(MusicModel *)model;
+- (void)showData:(DownloadModel *)model;
 
 @end

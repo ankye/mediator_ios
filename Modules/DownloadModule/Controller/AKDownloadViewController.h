@@ -8,8 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AKDownloadViewController : NSObject
+@interface AKDownloadViewController : UIViewController
 
-SINGLETON_INTR(AKDownloadViewController)
 
 @end

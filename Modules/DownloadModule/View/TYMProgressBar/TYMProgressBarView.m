@@ -168,9 +168,9 @@ void setRoundedRectPathInContext(CGContextRef context, CGRect rect, CGFloat radi
     self.backgroundColor = [UIColor clearColor];
     
     _progress = 0.0f;
-    _barBorderWidth = 1.0f;
-    _barBorderColor = [UIColor colorWithRed:244.0/255.0 green:220.0/255.0 blue:133.0/255.0 alpha:1];
-    _barFillColor = [UIColor colorWithRed:238.0/255.0 green:152.0/255.0 blue:10.0/255.0 alpha:1];
+    _barBorderWidth = AK1PXLine*2;
+    _barBorderColor = AKColorString(@"#9acff8"); // [UIColor colorWithRed:244.0/255.0 green:220.0/255.0 blue:133.0/255.0 alpha:1];
+    _barFillColor = AKColorString(@"#3d93d6");
     _barInnerBorderWidth = 0.0f;
     _barInnerBorderColor = nil;
     _barInnerPadding = 1.0f;

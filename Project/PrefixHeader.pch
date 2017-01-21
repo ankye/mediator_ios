@@ -22,12 +22,16 @@
 
 #import "BaseModule.h"
 #import "ThemeModule.h"
+
+
 #import "LoggerModule.h"
 #import "UserModule.h"
 #import "LoginModule.h"
+
 //#import "MapModule.h"
 #import "ShareModule.h"
 //#import "IMModule.h"
+#import "DownloadModule.h"
 #import "NewsModule.h"
 #import "WallpaperModule.h"
 #import "ReaderModule.h"

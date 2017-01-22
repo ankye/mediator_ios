@@ -13,17 +13,20 @@
 
 @interface AKDownloadModel : NSObject
 
-@property (nonatomic,strong) NSString *group;
-
-@property (nonatomic , strong) NSString *imgName;
-@property (nonatomic , strong) NSString *name;
+//@property (nonatomic , strong) NSString *groupName;
+//任务名称
+@property (nonatomic , strong) NSString *taskName;
+//图标
+@property (nonatomic , strong) NSString *icon;
+//描述
 @property (nonatomic , strong) NSString *desc;
-
+//下载路径
 @property (nonatomic , strong) NSString *downLoadUrl;
-@property (nonatomic , strong) NSString *localPath;
-
+//存放文件名
+@property (nonatomic , strong) NSString *filename;
+//下载进度
 @property (nonatomic , assign) CGFloat progress;
-
+//下载任务
 @property (nonatomic,weak) HSDownloadTask *task;
 
 @end

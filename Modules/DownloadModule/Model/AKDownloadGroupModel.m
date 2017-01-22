@@ -10,4 +10,10 @@
 
 @implementation AKDownloadGroupModel
 
+
+-(AKDownloadModel*)currentModel
+{
+    return self.tasks ? self.tasks[self.currentTaskIndex] : nil;
+}
+
 @end

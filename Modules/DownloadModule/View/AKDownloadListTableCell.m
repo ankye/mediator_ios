@@ -24,42 +24,42 @@
 
 - (IBAction)stopStartAction:(UIButton *)sender {
 
-    if (self.musicModel.task.state == HSDownloadStateRunning) {
-        [[HSDownloadManager sharedInstance] pause:self.musicModel.downLoadUrl group:self.musicModel.group];
+    if ( self.downloadGroup.currentModel.task.state == HSDownloadStateRunning) {
+        [[HSDownloadManager sharedInstance] pause: self.downloadGroup.currentModel.downLoadUrl group: self.downloadGroup.groupName];
         [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_pause"] forState:UIControlStateNormal];
-    }else if (self.musicModel.task.state == HSDownloadStateSuspended){
-        [[HSDownloadManager sharedInstance] start:self.musicModel.downLoadUrl group:self.musicModel.group];
+    }else if ( self.downloadGroup.currentModel.task.state == HSDownloadStateSuspended){
+        [[HSDownloadManager sharedInstance] start: self.downloadGroup.currentModel.downLoadUrl group: self.downloadGroup.groupName];
         [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
     }else{
-        [[HSDownloadManager sharedInstance] start:self.musicModel.downLoadUrl group:self.musicModel.group];
+        [[HSDownloadManager sharedInstance] start: self.downloadGroup.currentModel.downLoadUrl group: self.downloadGroup.groupName];
         [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
     }
 }
 
 
--(void)showData:(AKDownloadModel *)musicModel{
+-(void)showData:(AKDownloadGroupModel *)group{
     
-    self.musicModel = musicModel;
-    self.desc.text = musicModel.desc;
-    self.img.image = [UIImage imageNamed:musicModel.imgName];
-    self.downloadUrl = musicModel.downLoadUrl;
-    self.musicName.text = musicModel.name;
-    self.progressBarView.progress = musicModel.progress;
-    self.musicDownloadPercent.text =  [NSString stringWithFormat:@"%.1f%%",musicModel.progress*100];
+    self.downloadGroup = group;
+    self.desc.text = group.currentModel.desc;
+    self.img.image = [UIImage imageNamed:group.currentModel.icon];
+    self.downloadUrl = group.currentModel.downLoadUrl;
+    self.musicName.text = group.currentModel.taskName;
+    self.progressBarView.progress = group.currentModel.progress;
+    self.musicDownloadPercent.text =  [NSString stringWithFormat:@"%.1f%%", group.currentModel.progress*100];
     
-    if (musicModel.task.state == HSDownloadStateSuspended) {
+    if ( group.currentModel.task.state == HSDownloadStateSuspended) {
         [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
-    }else if (musicModel.task.state == HSDownloadStateRunning){
+    }else if ( group.currentModel.task.state == HSDownloadStateRunning){
         [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_pause"] forState:UIControlStateNormal];
     }else{
          [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
     }
      __weak typeof(self) weakSelf = self;
-    self.musicModel.task.downloadProgressBlock = ^(CGFloat progress, CGFloat totalRead, CGFloat totalExpectedToRead){
+    self.downloadGroup.currentModel.task.downloadProgressBlock = ^(CGFloat progress, CGFloat totalRead, CGFloat totalExpectedToRead){
         weakSelf.progressBarView.progress = progress;
         weakSelf.musicDownloadPercent.text = [NSString stringWithFormat:@"%.1f%%",progress*100];
     };
-    self.musicModel.task.downloadCompleteBlock = ^(HSDownloadState downloadState,NSString *downLoadUrlString) {
+     self.downloadGroup.currentModel.task.downloadCompleteBlock = ^(HSDownloadState downloadState,NSString *downLoadUrlString) {
         if (downloadState == HSDownloadStateRunning){
             [weakSelf.stopStartBtn setImage:[UIImage imageNamed:@"menu_pause"] forState:UIControlStateNormal];
         }else {

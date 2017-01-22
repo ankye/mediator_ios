@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "AKProgressBarView.h"
-#import "AKDownloadModel.h"
+#import "AKDownloadGroupModel.h"
 
 @interface AKDownloadListTableCell : UITableViewCell
 
 @property (nonatomic, strong) AKProgressBarView *progressBarView;
-@property (nonatomic,strong) AKDownloadModel *musicModel;
+@property (nonatomic,strong) AKDownloadGroupModel *downloadGroup;
 
 @property (nonatomic,strong) NSString                *downloadUrl;
 @property (weak, nonatomic ) IBOutlet UILabel        *musicName;
@@ -28,6 +28,6 @@
 
 - (IBAction)stopStartAction:(UIButton *)sender;
 
-- (void)showData:(AKDownloadModel *)model;
+- (void)showData:(AKDownloadGroupModel *)group;
 
 @end

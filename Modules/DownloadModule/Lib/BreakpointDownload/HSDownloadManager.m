@@ -216,7 +216,7 @@
 }
 #pragma mark task delegate
 
-- (void)downloadComplete:(HSDownloadState)downloadState downLoadUrlString:(NSString *)downLoadUrlString
+- (void)downloadComplete:(HSDownloadState)downloadState withGroupName:(NSString*)groupName downLoadUrlString:(NSString *)downLoadUrlString
 {
     // 修改本地状态
     [self saveDownLoadTask];
@@ -224,5 +224,10 @@
         //　删除本地任务
         [self.downloadTasks removeObjectForKey:downLoadUrlString];
     }
+}
+
+-(void)downloadProgress:(NSString*)groupName withUrl:(NSString*)url withProgress:(CGFloat)progress withTotalRead:(CGFloat)totalRead withTotalExpected:(CGFloat)expected
+{
+    
 }
 @end

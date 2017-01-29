@@ -82,6 +82,8 @@
  */
 + (BOOL)isCompletion:(NSString *)url group:(NSString *)group
 {
+    
+    
     if ([HSDownloadTask fileTotalLength:url] && MPDownloadLength(url,group) == [HSDownloadTask fileTotalLength:url]) {
         return YES;
     }
@@ -147,6 +149,7 @@
     // 获得服务器这次请求 返回数据的总长度
     NSInteger totalLength = [response.allHeaderFields[@"Content-Length"] integerValue] + MPDownloadLength(self.sessionModel.urlString,self.sessionModel.fileGroup);
     self.sessionModel.totalLength = totalLength;
+    NSLog(@"total receive %ld",[response.allHeaderFields[@"Content-Length"] integerValue] );
     // 存储总长度
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:MPTotalLengthFullpath];
     if (dict == nil) dict = [NSMutableDictionary dictionary];
@@ -166,11 +169,17 @@
     NSUInteger receivedSize = MPDownloadLength(self.sessionModel.urlString,self.sessionModel.fileGroup);
     NSUInteger expectedSize = self.sessionModel.totalLength;
     CGFloat progress = 1.0 * receivedSize / expectedSize;
-    if (self.downloadProgressBlock) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.downloadProgressBlock(progress,receivedSize,expectedSize);
-        });
+//    if (self.downloadProgressBlock) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            self.downloadProgressBlock(progress,receivedSize,expectedSize);
+//        });
+//    }
+    
+    if(self.delegate && [self.delegate respondsToSelector:@selector(downloadProgress:withUrl:withProgress:withTotalRead:withTotalExpected:)]){
+    
+        [self.delegate downloadProgress:self.sessionModel.fileGroup withUrl:self.sessionModel.urlString withProgress:progress withTotalRead:receivedSize withTotalExpected:expectedSize];
     }
+    
 }
 
 /**
@@ -182,23 +191,28 @@
     if ([HSDownloadTask isCompletion:self.sessionModel.urlString group:self.sessionModel.fileGroup]) {
         // 下载完成
         self.state = HSDownloadStateCompleted;
-        if (self.downloadCompleteBlock) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.downloadCompleteBlock(HSDownloadStateCompleted,self.sessionModel.urlString);
-            });
-        }
-        if ([self.delegate respondsToSelector:@selector(downloadComplete:downLoadUrlString:)]) {
-            [self.delegate downloadComplete:HSDownloadStateCompleted downLoadUrlString:self.sessionModel.urlString];
+//        if (self.downloadCompleteBlock) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.downloadCompleteBlock(HSDownloadStateCompleted,self.sessionModel.urlString);
+//            });
+//        }
+        if ([self.delegate respondsToSelector:@selector(downloadComplete:withGroupName:downLoadUrlString:)]) {
+            [self.delegate downloadComplete:HSDownloadStateCompleted withGroupName:self.sessionModel.fileGroup downLoadUrlString:self.sessionModel.urlString];
         }
         
     } else if (error){
         // 下载失败
         self.state = HSDownloadStateFailed;
-        if (self.downloadCompleteBlock) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.downloadCompleteBlock(HSDownloadStateFailed,self.sessionModel.urlString);
-            });
+//        if (self.downloadCompleteBlock) {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                self.downloadCompleteBlock(HSDownloadStateFailed,self.sessionModel.urlString);
+//            });
+//        }
+        
+        if ([self.delegate respondsToSelector:@selector(downloadComplete:withGroupName:downLoadUrlString:)]) {
+            [self.delegate downloadComplete:HSDownloadStateFailed withGroupName:self.sessionModel.fileGroup downLoadUrlString:self.sessionModel.urlString];
         }
+        
     }
     // 关闭流
     [self.sessionModel.stream close];

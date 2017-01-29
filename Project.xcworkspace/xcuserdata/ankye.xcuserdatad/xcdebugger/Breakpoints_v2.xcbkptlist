@@ -9,45 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Modules/IMModule/Chat/Controller/ChatViewController/Keyborads/TLBaseKeyboard.m"
-            timestampString = "502790170.738696"
+            filePath = "Modules/DownloadModule/Manager/AKDownloadManager.m"
+            timestampString = "506866381.751156"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "-keyboardHeight"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/FMDB/src/fmdb/FMDatabase.m"
-            timestampString = "503236601.635018"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1056"
-            endingLineNumber = "1056"
-            landmarkName = "-executeUpdate:error:withArgumentsInArray:orDictionary:orVAList:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Modules/NewsModule/View/ChannelChooseWidget/ChannelChooseWidgetView.m"
-            timestampString = "504003920.609852"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "-refreshView"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
+            landmarkName = "-downloadComplete:withGroupName:downLoadUrlString:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

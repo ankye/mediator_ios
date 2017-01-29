@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "AKDownloadGroupModel.h"
+#import "HSDownloadTask.h"
 
-@interface AKDownloadManager : NSObject
+@interface AKDownloadManager : NSObject <HSDownloadTaskDelegate>
+
 
 @property (nonatomic,strong) YYThreadSafeArray* downloadList;
 
@@ -20,6 +22,21 @@ SINGLETON_INTR(AKDownloadManager)
 
 -(AKDownloadModel*)createTask:(NSString*)groupName withTaskName:(NSString*)taskName withIcon:(NSString*)icon withDesc:(NSString*)desc withDownloadUrl:(NSString*)downloadUrl withFilename:(NSString*)filename;
 
--(AKDownloadGroupModel*)createTaskGroup:(NSString*)groupName downloadDir:(NSString*)dir withTasks:(NSMutableArray<AKDownloadModel*>*)tasks start:(NSInteger)start end:(NSInteger)end current:(NSInteger)current;
+-(AKDownloadGroupModel*)createTaskGroup:(NSString*)groupName withBreakpointResume:(BOOL)breakpointResume;
+
+-(AKDownloadGroupModel*)createSingleFileGroup:(NSString*)groupName withTaskName:(NSString*)taskName withIcon:(NSString*)icon withDesc:(NSString*)desc withDownloadUrl:(NSString*)downloadUrl withFilename:(NSString*)filename;
+
+-(void)startGroup:(AKDownloadGroupModel*)group;
+-(void)pauseGroup:(AKDownloadGroupModel*)group;
+-(void)deleteGroup:(AKDownloadGroupModel*)group;
+
+-(void)startGroup:(AKDownloadGroupModel*)group atIndex:(NSInteger)index;
+
+
+-(AKDownloadGroupModel*)getDownloadGroup:(NSString*)groupName;
+-(AKDownloadModel*)getDownloadModel:(NSString*)groupName withUrl:(NSString*)url;
+
+-(BOOL) isDownloadCompleted:(NSString*)group withUrl:(NSString*)url;
+
 
 @end

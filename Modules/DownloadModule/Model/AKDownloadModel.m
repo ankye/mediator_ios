@@ -10,4 +10,12 @@
 
 @implementation AKDownloadModel
 
+-(BOOL)isCompleted
+{
+    if(self.progress >= 1.0f){
+        return YES;
+    }else{
+        return NO;
+    }
+}
 @end

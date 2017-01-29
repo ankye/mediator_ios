@@ -31,13 +31,15 @@ typedef enum {
 
 @protocol HSDownloadTaskDelegate <NSObject>
 
--(void)downloadComplete:(HSDownloadState)downloadState downLoadUrlString:(NSString *)downLoadUrlString;
+-(void)downloadProgress:(NSString*)groupName withUrl:(NSString*)url withProgress:(CGFloat)progress withTotalRead:(CGFloat)totalRead withTotalExpected:(CGFloat)expected;
+
+-(void)downloadComplete:(HSDownloadState)downloadState withGroupName:(NSString*)groupName downLoadUrlString:(NSString *)downLoadUrlString;
 
 @end
 
-typedef void(^HSDownloadProgressBlock)(CGFloat progress, CGFloat totalRead, CGFloat totalExpectedToRead);
-
-typedef void(^HSDownloadCompleteBlock)(HSDownloadState downloadState,NSString *downLoadUrlString);
+//typedef void(^HSDownloadProgressBlock)(CGFloat progress, CGFloat totalRead, CGFloat totalExpectedToRead);
+//
+//typedef void(^HSDownloadCompleteBlock)(HSDownloadState downloadState,NSString *downLoadUrlString);
 
 @interface HSSessionModel : NSObject
 /*数据流*/
@@ -61,9 +63,9 @@ typedef void(^HSDownloadCompleteBlock)(HSDownloadState downloadState,NSString *d
 /*下载相关信息*/
 @property (nonatomic,strong) HSSessionModel *sessionModel;
 /*接收到数据的回调*/
-@property (nonatomic,copy) HSDownloadProgressBlock downloadProgressBlock;
+//@property (nonatomic,copy) HSDownloadProgressBlock downloadProgressBlock;
 /*下载完成的回调*/
-@property (nonatomic,copy) HSDownloadCompleteBlock downloadCompleteBlock;
+//@property (nonatomic,copy) HSDownloadCompleteBlock downloadCompleteBlock;
 /*代理*/
 @property (nonatomic,weak) id<HSDownloadTaskDelegate> delegate;
 

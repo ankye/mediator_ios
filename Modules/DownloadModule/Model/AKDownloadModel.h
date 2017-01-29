@@ -27,6 +27,6 @@
 //下载进度
 @property (nonatomic , assign) CGFloat progress;
 //下载任务
-@property (nonatomic,weak) HSDownloadTask *task;
 
+-(BOOL)isCompleted;
 @end

@@ -3,6 +3,8 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>group</key>
+		<string>Movie1</string>
 		<key>downLoadUrl</key>
 		<string>http://120.25.226.186:32812/resources/videos/minion_01.mp4</string>
 		<key>desc</key>
@@ -13,6 +15,8 @@
 		<string>小黄人大眼萌</string>
 	</dict>
 	<dict>
+		<key>group</key>
+		<string>Movie2</string>
 		<key>downLoadUrl</key>
 		<string>http://v.meituan.net/movie/videos/4cfaab2ed5fa48819ef0e2dea6fb16ec.mp4</string>
 		<key>desc</key>
@@ -23,6 +27,8 @@
 		<string>功夫熊猫3</string>
 	</dict>
 	<dict>
+		<key>group</key>
+		<string>Movie3</string>
 		<key>downLoadUrl</key>
 		<string>http://v.meituan.net/movie/videos/ac8a1828ae5347f98bcc77f2e4b608aa.mp4</string>
 		<key>desc</key>
@@ -33,6 +39,8 @@
 		<string>蒸发太平洋</string>
 	</dict>
 	<dict>
+		<key>group</key>
+		<string>Movie4</string>
 		<key>downLoadUrl</key>
 		<string>http://v.meituan.net/movie/videos/df8324f83eb3472291036487d8a76a8c.mp4</string>
 		<key>desc</key>
@@ -43,6 +51,8 @@
 		<string>星球大战：原力觉醒</string>
 	</dict>
 	<dict>
+		<key>group</key>
+		<string>Movie5</string>
 		<key>downLoadUrl</key>
 		<string>http://v.meituan.net/movie/videos/80fcdfa6524b4477a2b72f581671cb0d.mp4</string>
 		<key>desc</key>
@@ -53,6 +63,8 @@
 		<string>西游记之孙悟空三打白骨精</string>
 	</dict>
 	<dict>
+		<key>group</key>
+		<string>Movie6</string>
 		<key>downLoadUrl</key>
 		<string>http://v.meituan.net/movie/videos/a97c97ab32c64211b2febb4a62262163.mp4</string>
 		<key>desc</key>
@@ -63,6 +75,8 @@
 		<string>熊出没之熊心归来</string>
 	</dict>
 	<dict>
+		<key>group</key>
+		<string>Movie7</string>
 		<key>downLoadUrl</key>
 		<string>http://v.meituan.net/movie/videos/330c91e92dc040f5ad7122cd3d56aa0c.mp4</string>
 		<key>desc</key>

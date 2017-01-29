@@ -19,6 +19,7 @@
 #import "NSString+Category.h"
 #import "NSFileManager+FileCategory.h"
 #import "SGDownloadManager.h"
+#import "AKDownloadManager.h"
 
 @interface AKBookDetailHandler () <AKBaseTableViewDelegate>
 
@@ -259,6 +260,7 @@
         
         self.isContinueCache = true;
         [self startTmp];
+     //   [self startDownload];
     }
 
     
@@ -272,7 +274,27 @@
     _book = book;
   //  [self reloadData];
 }
-
+-(void) startDownload
+{
+    if(self.dataList.count>0){
+        AKDownloadGroupModel* group = [[AKDownloadManager sharedInstance] getDownloadGroup:_book.novel.name];
+        if(group == nil){
+            group = [[AKDownloadManager sharedInstance] createTaskGroup:_book.novel.name withBreakpointResume:NO];
+        }
+        NSInteger count = self.dataList.count;
+        for(NSInteger i=0; i<count; i++){
+            BookChapter* chapter = [self.dataList objectAtIndex:i];
+            
+            AKDownloadModel* model = [[AKDownloadManager sharedInstance] createTask:_book.novel.name withTaskName:chapter.name withIcon:_book.novel.cover withDesc:chapter.name withDownloadUrl:chapter.url withFilename:@""];
+            [group addTaskModel:model];
+        }
+        group.startIndex = 0;
+        group.endIndex = count;
+        group.currentTaskIndex = 0;
+        [[AKDownloadManager sharedInstance] startGroup:group];
+        
+    }
+}
 #pragma mark - private
 - (void)startTmp{
     if (!self.isContinueCache) {
@@ -293,24 +315,45 @@
 //                    weakSelf.requestUtil.isShowProgressHud = false;
 //                    [weakSelf.requestUtil asyncThirdLibWithUrl:chapter.url andParameters:nil andMethod:RequestMethodGet andTimeoutInterval:10];
                     
-                    [[SGDownloadManager shareManager] downloadWithURL:AKURL(chapter.url) complete:^(NSDictionary *respose, NSError *error) {
-                        
-                         NSString * path = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[chapter.url md5]];
-                        
-                        if([respose[@"isFinished"] boolValue]){
-                            [[NSFileManager defaultManager] moveItemAtPath:respose[@"fileUrl"] toPath:path error:nil];
-                            
-                            BookChapter * bookChapter = self.dataList[self.currentTmpIndex];
-                            
-                            bookChapter.isTmp = YES;
-                            
-                            [self startTmp];
+                    /** 开启下载任务 监听下载进度、完成下载 */
+                   [[SGDownloadManager shareManager] downloadWithURL:AKURL(chapter.url) progress:^(NSInteger completeSize, NSInteger expectSize) {
+                       NSLog(@"%ld-%ld",(long)completeSize,(long)expectSize);
+                   } complete:^(NSDictionary *respose, NSError *error) {
+                       NSString * path = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[chapter.url md5]];
+                       
+                       if([respose[@"isFinished"] boolValue]){
+                           [[NSFileManager defaultManager] moveItemAtPath:respose[@"fileUrl"] toPath:path error:nil];
+                           
+                           BookChapter * bookChapter = self.dataList[self.currentTmpIndex];
+                           
+                           bookChapter.isTmp = YES;
+                           
+                           [self startTmp];
+                           
+                           
+                       }
 
-                            
-                        }
-                        
-                    }];
-                   
+                   }];
+                    
+//                    
+//                    [[SGDownloadManager shareManager] downloadWithURL:AKURL(chapter.url) complete:^(NSDictionary *respose, NSError *error) {
+//                        
+//                         NSString * path = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[chapter.url md5]];
+//                        
+//                        if([respose[@"isFinished"] boolValue]){
+//                            [[NSFileManager defaultManager] moveItemAtPath:respose[@"fileUrl"] toPath:path error:nil];
+//                            
+//                            BookChapter * bookChapter = self.dataList[self.currentTmpIndex];
+//                            
+//                            bookChapter.isTmp = YES;
+//                            
+//                            [self startTmp];
+//
+//                            
+//                        }
+//                        
+//                    }];
+//                   
                     dispatch_async(dispatch_get_main_queue(), ^{
                         NSString * title = [NSString stringWithFormat:@"%ld / %ld",weakSelf.currentTmpIndex,weakSelf.dataList.count];
                         [weakSelf.allCacheBtn setTitle:title forState:UIControlStateNormal];

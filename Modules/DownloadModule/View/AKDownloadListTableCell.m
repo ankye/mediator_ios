@@ -7,8 +7,11 @@
 //
 
 #import "AKDownloadListTableCell.h"
-#import "HSDownloadManager.h"
+#import "AKDownloadManager.h"
 
+@interface AKDownloadListTableCell ()<HSDownloadTaskDelegate>
+
+@end
 @implementation AKDownloadListTableCell
 
 - (void)awakeFromNib {
@@ -24,18 +27,33 @@
 
 - (IBAction)stopStartAction:(UIButton *)sender {
 
-    if ( self.downloadGroup.currentModel.task.state == HSDownloadStateRunning) {
-        [[HSDownloadManager sharedInstance] pause: self.downloadGroup.currentModel.downLoadUrl group: self.downloadGroup.groupName];
-        [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_pause"] forState:UIControlStateNormal];
-    }else if ( self.downloadGroup.currentModel.task.state == HSDownloadStateSuspended){
-        [[HSDownloadManager sharedInstance] start: self.downloadGroup.currentModel.downLoadUrl group: self.downloadGroup.groupName];
-        [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
+    HSDownloadState state = self.downloadGroup.state;
+    
+    if(state == HSDownloadStateCompleted){
+        
+    }else if(state == HSDownloadStateRunning){
+        [[AKDownloadManager sharedInstance] pauseGroup:self.downloadGroup];
     }else{
-        [[HSDownloadManager sharedInstance] start: self.downloadGroup.currentModel.downLoadUrl group: self.downloadGroup.groupName];
-        [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
+        [[AKDownloadManager sharedInstance] startGroup:self.downloadGroup];
     }
+   
+    [self setButtonState:self.downloadGroup.state];
+    
 }
 
+-(void)setButtonState:( HSDownloadState)state
+{
+    if(state == HSDownloadStateCompleted){
+        [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_complete"] forState:UIControlStateNormal];
+    }else if ( state == HSDownloadStateSuspended) {
+        [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
+    }else if (state == HSDownloadStateRunning){
+        [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_pause"] forState:UIControlStateNormal];
+    }else{
+        [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
+    }
+
+}
 
 -(void)showData:(AKDownloadGroupModel *)group{
     
@@ -47,25 +65,37 @@
     self.progressBarView.progress = group.currentModel.progress;
     self.musicDownloadPercent.text =  [NSString stringWithFormat:@"%.1f%%", group.currentModel.progress*100];
     
-    if ( group.currentModel.task.state == HSDownloadStateSuspended) {
-        [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
-    }else if ( group.currentModel.task.state == HSDownloadStateRunning){
-        [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_pause"] forState:UIControlStateNormal];
-    }else{
-         [self.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
-    }
+    [self setButtonState:group.state];
+
      __weak typeof(self) weakSelf = self;
-    self.downloadGroup.currentModel.task.downloadProgressBlock = ^(CGFloat progress, CGFloat totalRead, CGFloat totalExpectedToRead){
-        weakSelf.progressBarView.progress = progress;
-        weakSelf.musicDownloadPercent.text = [NSString stringWithFormat:@"%.1f%%",progress*100];
-    };
-     self.downloadGroup.currentModel.task.downloadCompleteBlock = ^(HSDownloadState downloadState,NSString *downLoadUrlString) {
-        if (downloadState == HSDownloadStateRunning){
-            [weakSelf.stopStartBtn setImage:[UIImage imageNamed:@"menu_pause"] forState:UIControlStateNormal];
-        }else {
-            [weakSelf.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
-        }
-    };
+    self.downloadGroup.delegate = weakSelf;
+    
+//    self.downloadGroup.task.downloadProgressBlock = ^(CGFloat progress, CGFloat totalRead, CGFloat totalExpectedToRead){
+//        weakSelf.progressBarView.progress = progress;
+//        weakSelf.musicDownloadPercent.text = [NSString stringWithFormat:@"%.1f%%",progress*100];
+//    };
+//     self.downloadGroup.task.downloadCompleteBlock = ^(HSDownloadState downloadState,NSString *downLoadUrlString) {
+//        if (downloadState == HSDownloadStateRunning){
+//            [weakSelf.stopStartBtn setImage:[UIImage imageNamed:@"menu_pause"] forState:UIControlStateNormal];
+//        }else {
+//            [weakSelf.stopStartBtn setImage:[UIImage imageNamed:@"menu_play"] forState:UIControlStateNormal];
+//        }
+//    };
+}
+
+-(void)downloadProgress:(NSString*)groupName withUrl:(NSString*)url withProgress:(CGFloat)progress withTotalRead:(CGFloat)totalRead withTotalExpected:(CGFloat)expected
+{
+     dispatch_async(dispatch_get_main_queue(), ^{
+         self.progressBarView.progress = progress;
+         self.musicDownloadPercent.text = [NSString stringWithFormat:@"%.1f%%",progress*100];
+     });
+}
+
+-(void)downloadComplete:(HSDownloadState)downloadState withGroupName:(NSString*)groupName downLoadUrlString:(NSString *)downLoadUrlString
+{
+     dispatch_async(dispatch_get_main_queue(), ^{
+         [self setButtonState:downloadState];
+     });
 }
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AKDownloadModel.h"
 
 @interface BookChapter : NSObject
 /**

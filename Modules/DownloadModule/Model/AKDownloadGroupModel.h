@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AKDownloadModel.h"
+#import "HSDownloadTask.h"
 
 @interface AKDownloadGroupModel : NSObject
 
@@ -15,7 +16,7 @@
 @property (nonatomic,strong) NSString* groupName;
 
 //组下载文件夹路径
-@property (nonatomic,strong) NSString* groupDir;
+
 //下载任务列表
 @property (nonatomic,strong) NSMutableArray<AKDownloadModel*>* tasks;
 //当前任务索引
@@ -25,11 +26,25 @@
 //结束任务索引
 @property (nonatomic,assign) NSInteger endIndex;
 
+//支持单点续传
+@property (nonatomic,assign) BOOL enableBreakpointResume;
+
+@property (nonatomic,weak) HSDownloadTask *task;
 
 //任务组进度
-@property (nonatomic , assign) CGFloat groupProgress;
+@property (nonatomic , assign,readonly) CGFloat groupProgress;
 
+@property (nonatomic,weak) id<HSDownloadTaskDelegate> delegate;
 
 -(AKDownloadModel*)currentModel;
+-(AKDownloadModel*)goToNextModel;
+
+-(BOOL)isCompleted;
+
+
+-(HSDownloadState)state;
+
+-(void)addTaskModel:(AKDownloadModel*)model;
+
 
 @end

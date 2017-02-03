@@ -26,6 +26,7 @@
 @property (nonatomic,assign) NSInteger          lastPage ;
 
 @property(nonatomic,weak) UIButton * allCacheBtn;
+@property (nonatomic,weak) AKDownloadGroupModel* downloadGroup;
 
 /**
  *  是否继续缓存
@@ -47,7 +48,11 @@
 - (void)dealloc
 {
     _dataList = nil ;
-    
+    if(_downloadGroup){
+        [_downloadGroup.onDownloadProgress removeObserver:self];
+        [_downloadGroup.onDownloadCompleted removeObserver:self];
+        _downloadGroup = nil;
+    }
 }
 
 
@@ -168,6 +173,7 @@
         [cell.joinShelfBtn addTarget:self action:@selector(joinShelfBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         cell.book = self.book;
         self.allCacheBtn = cell.allCacheBtn;
+    
         return cell;
     }else if(indexPath.section==1){
         static NSString * identifier=@"BookDetailIntroduceCell";
@@ -253,14 +259,18 @@
         self.isContinueCache = false;
         self.book.bookCacheStatus = BOOK_CACHE_STATUS_NONE;
         [self.table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+        AKDownloadGroupModel* group = [[AKDownloadManager sharedInstance] getDownloadGroup:_book.novel.name];
+        if(group){
+            [[AKDownloadManager sharedInstance] pauseGroup:group];
+        }
     }else{//开始缓存
         
         self.book.bookCacheStatus = BOOK_CACHE_STATUS_ING;
         [self.table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
         
         self.isContinueCache = true;
-        [self startTmp];
-     //   [self startDownload];
+     //   [self startTmp];
+        [self startDownload];
     }
 
     
@@ -272,136 +282,175 @@
 #pragma mark - setter
 - (void)setBook:(Book *)book{
     _book = book;
-  //  [self reloadData];
+    _downloadGroup = [[AKDownloadManager sharedInstance] getDownloadGroup:_book.novel.name];
+    [self updateDownloadState];
+    [self.table refreshData];
 }
+
+-(void)updateDownloadState
+{
+    if(_downloadGroup){
+        if(_downloadGroup.isCompleted){
+            _book.bookCacheStatus = BOOK_CACHE_STATUS_ALL_END;
+        }else if(_downloadGroup.state == HSDownloadStateRunning ){
+            _book.bookCacheStatus = BOOK_CACHE_STATUS_ING;
+        }else{
+            _book.bookCacheStatus = BOOK_CACHE_STATUS_NONE;
+        }
+        [_downloadGroup.onDownloadProgress addObserver:self callback:^(id  _Nonnull self, NSDictionary * _Nonnull dictionary) {
+            [self downloadProgress:dictionary[@"groupName"] withUrl:dictionary[@"url"] withProgress:[dictionary[@"progress"] floatValue] withTotalRead:[dictionary[@"total"] floatValue ] withTotalExpected:[dictionary[@"expected"] floatValue]];
+        }];
+        [_downloadGroup.onDownloadCompleted addObserver:self callback:^(id  _Nonnull self, NSDictionary * _Nonnull dictionary) {
+            [self downloadComplete:(HSDownloadState)[dictionary[@"state"] integerValue] withGroupName:dictionary[@"groupName"] downLoadUrlString:dictionary[@"url"]];
+        }];
+    }
+}
+
+-(void)downloadProgress:(NSString*)groupName withUrl:(NSString*)url withProgress:(CGFloat)progress withTotalRead:(CGFloat)totalRead withTotalExpected:(CGFloat)expected
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString* cacheTitle = [NSString stringWithFormat:@"%ld/%ld",(long)_downloadGroup.currentTaskIndex,(long)_downloadGroup.endIndex];
+        [self.allCacheBtn setTitle:cacheTitle forState:UIControlStateNormal];
+
+    });
+}
+
+-(void)downloadComplete:(HSDownloadState)downloadState withGroupName:(NSString*)groupName downLoadUrlString:(NSString *)downLoadUrlString
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.allCacheBtn setTitle:@"下载完成" forState:UIControlStateNormal];
+
+    });
+}
+
 -(void) startDownload
 {
     if(self.dataList.count>0){
-        AKDownloadGroupModel* group = [[AKDownloadManager sharedInstance] getDownloadGroup:_book.novel.name];
-        if(group == nil){
-            group = [[AKDownloadManager sharedInstance] createTaskGroup:_book.novel.name withBreakpointResume:NO];
+        if(_downloadGroup == nil){
+            _downloadGroup = [[AKDownloadManager sharedInstance] createTaskGroup:_book.novel.name withBreakpointResume:NO];
         }
         NSInteger count = self.dataList.count;
         for(NSInteger i=0; i<count; i++){
             BookChapter* chapter = [self.dataList objectAtIndex:i];
             
             AKDownloadModel* model = [[AKDownloadManager sharedInstance] createTask:_book.novel.name withTaskName:chapter.name withIcon:_book.novel.cover withDesc:chapter.name withDownloadUrl:chapter.url withFilename:@""];
-            [group addTaskModel:model];
+            [_downloadGroup addTaskModel:model];
         }
-        group.startIndex = 0;
-        group.endIndex = count;
-        group.currentTaskIndex = 0;
-        [[AKDownloadManager sharedInstance] startGroup:group];
+        _downloadGroup.startIndex = 0;
+        _downloadGroup.endIndex = count-1;
+        _downloadGroup.currentTaskIndex = 0;
+        [[AKDownloadManager sharedInstance] startGroup:_downloadGroup];
         
+        [self updateDownloadState];
     }
 }
-#pragma mark - private
-- (void)startTmp{
-    if (!self.isContinueCache) {
-        return;
-    }
-    
-    if (self.dataList.count==self.currentTmpIndex+1) {
-        
-        [self.table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-    }else{
-        
-        __block typeof(self) weakSelf = self;
-        dispatch_async(dispatch_get_global_queue(0, 0), ^{
-            for (; weakSelf.currentTmpIndex<weakSelf.dataList.count; weakSelf.currentTmpIndex++) {
-                
-                BookChapter * chapter = weakSelf.dataList[weakSelf.currentTmpIndex];
-                if ([chapter.url hasPrefix:@"http"] && !chapter.isTmp) {
-//                    weakSelf.requestUtil.isShowProgressHud = false;
-//                    [weakSelf.requestUtil asyncThirdLibWithUrl:chapter.url andParameters:nil andMethod:RequestMethodGet andTimeoutInterval:10];
-                    
-                    /** 开启下载任务 监听下载进度、完成下载 */
-                   [[SGDownloadManager shareManager] downloadWithURL:AKURL(chapter.url) progress:^(NSInteger completeSize, NSInteger expectSize) {
-                       NSLog(@"%ld-%ld",(long)completeSize,(long)expectSize);
-                   } complete:^(NSDictionary *respose, NSError *error) {
-                       NSString * path = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[chapter.url md5]];
-                       
-                       if([respose[@"isFinished"] boolValue]){
-                           [[NSFileManager defaultManager] moveItemAtPath:respose[@"fileUrl"] toPath:path error:nil];
-                           
-                           BookChapter * bookChapter = self.dataList[self.currentTmpIndex];
-                           
-                           bookChapter.isTmp = YES;
-                           
-                           [self startTmp];
-                           
-                           
-                       }
-
-                   }];
-                    
+//#pragma mark - private
+//- (void)startTmp{
+//    if (!self.isContinueCache) {
+//        return;
+//    }
+//    
+//    if (self.dataList.count==self.currentTmpIndex+1) {
+//        
+//        [self.table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+//    }else{
+//        
+//        __block typeof(self) weakSelf = self;
+//        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//            for (; weakSelf.currentTmpIndex<weakSelf.dataList.count; weakSelf.currentTmpIndex++) {
+//                
+//                BookChapter * chapter = weakSelf.dataList[weakSelf.currentTmpIndex];
+//                if ([chapter.url hasPrefix:@"http"] && !chapter.isTmp) {
+////                    weakSelf.requestUtil.isShowProgressHud = false;
+////                    [weakSelf.requestUtil asyncThirdLibWithUrl:chapter.url andParameters:nil andMethod:RequestMethodGet andTimeoutInterval:10];
 //                    
-//                    [[SGDownloadManager shareManager] downloadWithURL:AKURL(chapter.url) complete:^(NSDictionary *respose, NSError *error) {
-//                        
-//                         NSString * path = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[chapter.url md5]];
-//                        
-//                        if([respose[@"isFinished"] boolValue]){
-//                            [[NSFileManager defaultManager] moveItemAtPath:respose[@"fileUrl"] toPath:path error:nil];
-//                            
-//                            BookChapter * bookChapter = self.dataList[self.currentTmpIndex];
-//                            
-//                            bookChapter.isTmp = YES;
-//                            
-//                            [self startTmp];
+//                    /** 开启下载任务 监听下载进度、完成下载 */
+//                   [[SGDownloadManager shareManager] downloadWithURL:AKURL(chapter.url) progress:^(NSInteger completeSize, NSInteger expectSize) {
+//                       NSLog(@"%ld-%ld",(long)completeSize,(long)expectSize);
+//                   } complete:^(NSDictionary *respose, NSError *error) {
+//                       NSString * path = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[chapter.url md5]];
+//                       
+//                       if([respose[@"isFinished"] boolValue]){
+//                           [[NSFileManager defaultManager] moveItemAtPath:respose[@"fileUrl"] toPath:path error:nil];
+//                           
+//                           BookChapter * bookChapter = self.dataList[self.currentTmpIndex];
+//                           
+//                           bookChapter.isTmp = YES;
+//                           
+//                           [self startTmp];
+//                           
+//                           
+//                       }
 //
-//                            
-//                        }
-//                        
-//                    }];
-//                   
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        NSString * title = [NSString stringWithFormat:@"%ld / %ld",weakSelf.currentTmpIndex,weakSelf.dataList.count];
-                        [weakSelf.allCacheBtn setTitle:title forState:UIControlStateNormal];
-                    });
-                    return;
-                }
-            }
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-            });
-        });
-    }
-}
+//                   }];
+//                    
+////                    
+////                    [[SGDownloadManager shareManager] downloadWithURL:AKURL(chapter.url) complete:^(NSDictionary *respose, NSError *error) {
+////                        
+////                         NSString * path = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[chapter.url md5]];
+////                        
+////                        if([respose[@"isFinished"] boolValue]){
+////                            [[NSFileManager defaultManager] moveItemAtPath:respose[@"fileUrl"] toPath:path error:nil];
+////                            
+////                            BookChapter * bookChapter = self.dataList[self.currentTmpIndex];
+////                            
+////                            bookChapter.isTmp = YES;
+////                            
+////                            [self startTmp];
+////
+////                            
+////                        }
+////                        
+////                    }];
+////                   
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        NSString * title = [NSString stringWithFormat:@"%ld / %ld",weakSelf.currentTmpIndex,weakSelf.dataList.count];
+//                        [weakSelf.allCacheBtn setTitle:title forState:UIControlStateNormal];
+//                    });
+//                    return;
+//                }
+//            }
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [weakSelf.table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+//            });
+//        });
+//    }
+//}
 
-
-#pragma mark - private
-- (void)asyncGetCurrentDirIsTmp{
-    
-    __block typeof(self) weakSelf = self;
-    //    NSLog(@"-------->%@",[NSDate date]);
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        
-        BOOL cacheStatus = YES;
-        
-        for (BookChapter * bookChapter in weakSelf.dataList) {
-            
-            NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,weakSelf.book.novel.Id,[bookChapter.url md5]];
-            
-            bookChapter.isTmp = [NSFileManager isExistsFileWithFilePath:filePath];
-            
-            if (bookChapter.isTmp==false) {
-                cacheStatus = false;
-            }
-        }
-        
-        if (cacheStatus) {
-            weakSelf.book.bookCacheStatus = BOOK_CACHE_STATUS_ALL_END;
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
-            });
-        }
-        
-        //        NSLog(@"-------->%@",[NSDate date]);
-    });
-}
-
+//
+//#pragma mark - private
+//- (void)asyncGetCurrentDirIsTmp{
+//    
+//    __block typeof(self) weakSelf = self;
+//    //    NSLog(@"-------->%@",[NSDate date]);
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        
+//        BOOL cacheStatus = YES;
+//        
+//        for (BookChapter * bookChapter in weakSelf.dataList) {
+//            
+//            NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,weakSelf.book.novel.Id,[bookChapter.url md5]];
+//            
+//            bookChapter.isTmp = [NSFileManager isExistsFileWithFilePath:filePath];
+//            
+//            if (bookChapter.isTmp==false) {
+//                cacheStatus = false;
+//            }
+//        }
+//        
+//        if (cacheStatus) {
+//            weakSelf.book.bookCacheStatus = BOOK_CACHE_STATUS_ALL_END;
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [weakSelf.table reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:0 inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+//            });
+//        }
+//        
+//        //        NSLog(@"-------->%@",[NSDate date]);
+//    });
+//}
+//
 
 #pragma mark - scrollView delegate
 

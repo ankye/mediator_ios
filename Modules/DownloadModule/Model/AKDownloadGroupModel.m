@@ -20,7 +20,9 @@
 -(CGFloat)groupProgress
 {
     AKDownloadModel* model = [self.tasks objectAtIndex:self.currentTaskIndex];
-    
+    if(self.state == HSDownloadStateCompleted){
+        return 1.0f;
+    }
     CGFloat singleFileProgress = 1.0f/(_endIndex - _startIndex + 1.0f);
     CGFloat progress = (_currentTaskIndex - _startIndex+1.0f) /(_endIndex - _startIndex+1.0f) - singleFileProgress * (1.0f -  model.progress);
     return progress;
@@ -63,10 +65,24 @@
 }
 
 
+-(BOOL)isExistTask:(AKDownloadModel*)model
+{
+    NSInteger count = [self.tasks count];
+    AKDownloadModel* tempModel = nil;
+    for(NSInteger i=0; i< count; i++){
+        tempModel = [self.tasks objectAtIndex:i];
+        if(tempModel && [tempModel.downLoadUrl isEqualToString:model.downLoadUrl]){
+            return YES;
+        }
+    }
+    return NO;
+}
 
 -(void)addTaskModel:(AKDownloadModel*)model
 {
-    [self.tasks addObject:model];
+    if(![self isExistTask:model]){
+        [self.tasks addObject:model];
+    }
 }
 
 
@@ -78,7 +94,7 @@
         if(self.enableBreakpointResume && self.task != nil){
                 return self.task.state;
         }else{
-            return HSDownloadStateSuspended;
+            return self.groupState;
         }
     }
 }

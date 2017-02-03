@@ -8,6 +8,7 @@
 
 #import "AKDownloadListTableCell.h"
 #import "AKDownloadManager.h"
+#import "UIImageView+WebCache.h"
 
 @interface AKDownloadListTableCell ()<HSDownloadTaskDelegate>
 
@@ -55,20 +56,46 @@
 
 }
 
+-(void)cleanCurrentDownloadGroup
+{
+    if(self.downloadGroup){
+        [self.downloadGroup.onDownloadCompleted removeObserver:self];
+        [self.downloadGroup.onDownloadProgress removeObserver:self];
+    }
+}
+
+-(void)dealloc
+{
+    [self cleanCurrentDownloadGroup];
+
+}
+
 -(void)showData:(AKDownloadGroupModel *)group{
+    
+    [self cleanCurrentDownloadGroup];
     
     self.downloadGroup = group;
     self.desc.text = group.currentModel.desc;
-    self.img.image = [UIImage imageNamed:group.currentModel.icon];
+    
+       [self.img sd_setImageWithURL:[NSURL URLWithString:group.currentModel.icon] placeholderImage:[UIImage imageNamed:@"default_book"]];
+    
+    //self.img.image = [YYImage ] //[AKResourceManager imageNamed:group.currentModel.icon];//[UIImage imageNamed:group.currentModel.icon];
     self.downloadUrl = group.currentModel.downLoadUrl;
-    self.musicName.text = group.currentModel.taskName;
-    self.progressBarView.progress = group.currentModel.progress;
-    self.musicDownloadPercent.text =  [NSString stringWithFormat:@"%.1f%%", group.currentModel.progress*100];
+    self.musicName.text = group.groupName;
+    self.progressBarView.progress = group.groupProgress;
+    self.musicDownloadPercent.text =  [NSString stringWithFormat:@"%.1f%%", group.groupProgress*100];
     
     [self setButtonState:group.state];
 
-     __weak typeof(self) weakSelf = self;
-    self.downloadGroup.delegate = weakSelf;
+//     __weak typeof(self) weakSelf = self;
+//    self.downloadGroup.delegate = weakSelf;
+    
+    [self.downloadGroup.onDownloadProgress addObserver:self callback:^(id  _Nonnull self, NSDictionary * _Nonnull dictionary) {
+       [self downloadProgress:dictionary[@"groupName"] withUrl:dictionary[@"url"] withProgress:[dictionary[@"progress"] floatValue] withTotalRead:[dictionary[@"total"] floatValue] withTotalExpected:[dictionary[@"expected"] floatValue]];
+    }];
+    [self.downloadGroup.onDownloadCompleted addObserver:self callback:^(id  _Nonnull self, NSDictionary * _Nonnull dictionary) {
+        [self downloadComplete:(HSDownloadState)[dictionary[@"state"] integerValue] withGroupName:dictionary[@"groupName"] downLoadUrlString:dictionary[@"url"]];
+    }];
     
 //    self.downloadGroup.task.downloadProgressBlock = ^(CGFloat progress, CGFloat totalRead, CGFloat totalExpectedToRead){
 //        weakSelf.progressBarView.progress = progress;
@@ -88,6 +115,7 @@
      dispatch_async(dispatch_get_main_queue(), ^{
          self.progressBarView.progress = progress;
          self.musicDownloadPercent.text = [NSString stringWithFormat:@"%.1f%%",progress*100];
+         self.desc.text = self.downloadGroup.currentModel.taskName;
      });
 }
 

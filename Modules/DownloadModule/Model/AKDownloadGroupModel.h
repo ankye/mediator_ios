@@ -10,6 +10,10 @@
 #import "AKDownloadModel.h"
 #import "HSDownloadTask.h"
 
+@class AKDownloadGroupModel;
+
+
+
 @interface AKDownloadGroupModel : NSObject
 
 //组名
@@ -26,22 +30,28 @@
 //结束任务索引
 @property (nonatomic,assign) NSInteger endIndex;
 
-//支持单点续传
+//支持断点续传
 @property (nonatomic,assign) BOOL enableBreakpointResume;
-
+//续传专用
 @property (nonatomic,weak) HSDownloadTask *task;
+//当前状态,非断点续传使用
+@property (nonatomic,assign) HSDownloadState groupState;
 
 //任务组进度
 @property (nonatomic , assign,readonly) CGFloat groupProgress;
 
-@property (nonatomic,weak) id<HSDownloadTaskDelegate> delegate;
+//@property (nonatomic,weak) id<HSDownloadTaskDelegate> delegate;
+
+@property (nonatomic, readwrite) UBSignal<DictionarySignal> *onDownloadProgress;
+@property (nonatomic, readwrite) UBSignal<DictionarySignal> *onDownloadCompleted;
+
 
 -(AKDownloadModel*)currentModel;
 -(AKDownloadModel*)goToNextModel;
 
 -(BOOL)isCompleted;
 
-
+//状态确认
 -(HSDownloadState)state;
 
 -(void)addTaskModel:(AKDownloadModel*)model;

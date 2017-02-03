@@ -11,6 +11,7 @@
 #import "HSDownloadManager.h"
 #import "SGDownloadManager.h"
 #import "NSString+Category.h"
+#import <UberSignals/UBSignal.h>
 
 @implementation AKDownloadManager 
 
@@ -71,6 +72,10 @@ SINGLETON_IMPL(AKDownloadManager)
     group.startIndex = 0;
     group.endIndex = 0;
     group.enableBreakpointResume = breakpointResume;
+    group.onDownloadProgress = (UBSignal<DictionarySignal> *)
+    [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
+    group.onDownloadCompleted = (UBSignal<DictionarySignal> *)
+    [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
     
     [self.downloadList addObject:group];
     
@@ -161,6 +166,8 @@ SINGLETON_IMPL(AKDownloadManager)
             }
             return ;
         }
+        group.groupState = HSDownloadStateRunning;
+        
         @weakify(self);
         [[SGDownloadManager shareManager] downloadWithURL:AKURL(model.downLoadUrl) progress:^(NSInteger completeSize, NSInteger expectSize) {
             @strongify(self);
@@ -251,7 +258,12 @@ SINGLETON_IMPL(AKDownloadManager)
         return;
     }
     AKDownloadModel* model = [group currentModel];
-    [[HSDownloadManager sharedInstance] pause:model.downLoadUrl group:group.groupName];
+    if(group.enableBreakpointResume){
+        [[HSDownloadManager sharedInstance] pause:model.downLoadUrl group:group.groupName];
+    }else{
+        group.groupState = HSDownloadStateSuspended;
+        [[SGDownloadManager shareManager] supendDownloadWithUrl:model.downLoadUrl];
+    }
     
 }
 
@@ -266,10 +278,12 @@ SINGLETON_IMPL(AKDownloadManager)
 {
     AKDownloadGroupModel* group = [self getDownloadGroup:groupName];
     [group currentModel].progress = progress;
+
+  group.onDownloadProgress.fire(@{@"groupName":groupName,@"url":url,@"progress":@(progress),@"totalRead":@(totalRead),@"expected":@(expected)});
     
-    if(group.delegate && [group.delegate respondsToSelector:@selector(downloadProgress:withUrl:withProgress:withTotalRead:withTotalExpected:)]){
-        [group.delegate downloadProgress:groupName withUrl:url withProgress:group.groupProgress withTotalRead:totalRead withTotalExpected:expected];
-    }
+//    if(group.delegate && [group.delegate respondsToSelector:@selector(downloadProgress:withUrl:withProgress:withTotalRead:withTotalExpected:)]){
+//        [group.delegate downloadProgress:groupName withUrl:url withProgress:group.groupProgress withTotalRead:totalRead withTotalExpected:expected];
+//    }
 }
 
 -(void)downloadComplete:(HSDownloadState)downloadState withGroupName:(NSString*)groupName downLoadUrlString:(NSString *)downLoadUrlString
@@ -292,9 +306,12 @@ SINGLETON_IMPL(AKDownloadManager)
     }else{
         
     }
-    if(group.delegate && [group.delegate respondsToSelector:@selector(downloadComplete:withGroupName:downLoadUrlString:)]){
-        [group.delegate downloadComplete:groupState withGroupName:groupName downLoadUrlString:downLoadUrlString];
-    }
+    
+    group.onDownloadCompleted.fire(@{@"state":@(downloadState),@"groupName":groupName,@"url":downLoadUrlString});
+    
+//    if(group.delegate && [group.delegate respondsToSelector:@selector(downloadComplete:withGroupName:downLoadUrlString:)]){
+//        [group.delegate downloadComplete:groupState withGroupName:groupName downLoadUrlString:downLoadUrlString];
+//    }
     
 }
 

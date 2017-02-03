@@ -17,14 +17,28 @@
 
 @implementation AKDownloadGroupModel
 
+-(id)init
+{
+    if(self = [super init]){
+        
+        _currentTaskIndex = 0;
+
+    }
+    return self;
+}
+
 -(CGFloat)groupProgress
 {
     AKDownloadModel* model = [self.tasks objectAtIndex:self.currentTaskIndex];
     if(self.state == HSDownloadStateCompleted){
         return 1.0f;
     }
-    CGFloat singleFileProgress = 1.0f/(_endIndex - _startIndex + 1.0f);
-    CGFloat progress = (_currentTaskIndex - _startIndex+1.0f) /(_endIndex - _startIndex+1.0f) - singleFileProgress * (1.0f -  model.progress);
+    NSInteger total = [self.tasks count];
+    if(total <= 0){
+        return 0.0f;
+    }
+    CGFloat singleFileProgress = 1.0f/total;
+    CGFloat progress = (_currentTaskIndex +1.0f) /total - singleFileProgress * (1.0f -  model.progress);
     return progress;
     
 }
@@ -55,7 +69,7 @@
         }
         return NO;
     }else{
-        if(self.currentTaskIndex >= [self.tasks count] -1){
+        if(self.currentTaskIndex >= [self.tasks count]-1){
            
             return  [[AKDownloadManager sharedInstance] isDownloadCompleted:self.groupName withUrl:[self currentModel].downLoadUrl];
         }else{

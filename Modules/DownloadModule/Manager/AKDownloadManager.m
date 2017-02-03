@@ -69,8 +69,7 @@ SINGLETON_IMPL(AKDownloadManager)
     group.groupName = groupName;
     group.tasks = [[NSMutableArray alloc] init];
     group.currentTaskIndex = 0;
-    group.startIndex = 0;
-    group.endIndex = 0;
+
     group.enableBreakpointResume = breakpointResume;
     group.onDownloadProgress = (UBSignal<DictionarySignal> *)
     [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
@@ -142,6 +141,9 @@ SINGLETON_IMPL(AKDownloadManager)
     AKDownloadModel* model = [group currentModel];
     NSLog(@"%@ 开始",model.taskName );
    
+
+
+    
     if(group.enableBreakpointResume){
         if(model && [model isCompleted]){
             NSLog(@"%@ 断点续传下载已完成",model.taskName );
@@ -241,7 +243,7 @@ SINGLETON_IMPL(AKDownloadManager)
 
 -(void)startGroup:(AKDownloadGroupModel*)group atIndex:(NSInteger)index;
 {
-    if(index > group.endIndex || index < group.startIndex){
+    if(index > [group.tasks count] || index < 0){
         return;
     }
     [self pauseGroup:group];
@@ -288,7 +290,6 @@ SINGLETON_IMPL(AKDownloadManager)
 
 -(void)downloadComplete:(HSDownloadState)downloadState withGroupName:(NSString*)groupName downLoadUrlString:(NSString *)downLoadUrlString
 {
-    HSDownloadState groupState = downloadState;
     NSLog(@"%d 完成状态",downloadState);
     AKDownloadGroupModel* group = [self getDownloadGroup:groupName];
     

@@ -25,10 +25,6 @@
 @property (nonatomic,strong) NSMutableArray<AKDownloadModel*>* tasks;
 //当前任务索引
 @property (nonatomic,assign) NSInteger currentTaskIndex;
-//起始任务索引
-@property (nonatomic,assign) NSInteger startIndex;
-//结束任务索引
-@property (nonatomic,assign) NSInteger endIndex;
 
 //支持断点续传
 @property (nonatomic,assign) BOOL enableBreakpointResume;

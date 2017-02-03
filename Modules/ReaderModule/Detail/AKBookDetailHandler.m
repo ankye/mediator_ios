@@ -309,7 +309,7 @@
 -(void)downloadProgress:(NSString*)groupName withUrl:(NSString*)url withProgress:(CGFloat)progress withTotalRead:(CGFloat)totalRead withTotalExpected:(CGFloat)expected
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString* cacheTitle = [NSString stringWithFormat:@"%ld/%ld",(long)_downloadGroup.currentTaskIndex,(long)_downloadGroup.endIndex];
+        NSString* cacheTitle = [NSString stringWithFormat:@"%ld/%ld",(long)_downloadGroup.currentTaskIndex,(long)[_downloadGroup.tasks count]];
         [self.allCacheBtn setTitle:cacheTitle forState:UIControlStateNormal];
 
     });
@@ -336,12 +336,12 @@
             AKDownloadModel* model = [[AKDownloadManager sharedInstance] createTask:_book.novel.name withTaskName:chapter.name withIcon:_book.novel.cover withDesc:chapter.name withDownloadUrl:chapter.url withFilename:@""];
             [_downloadGroup addTaskModel:model];
         }
-        _downloadGroup.startIndex = 0;
-        _downloadGroup.endIndex = count-1;
-        _downloadGroup.currentTaskIndex = 0;
-        [[AKDownloadManager sharedInstance] startGroup:_downloadGroup];
+     
+
+        [[AKDownloadManager sharedInstance] startGroup:_downloadGroup atIndex:0];
         
         [self updateDownloadState];
+        [self.table refreshData];
     }
 }
 //#pragma mark - private

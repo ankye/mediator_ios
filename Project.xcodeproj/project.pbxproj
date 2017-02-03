@@ -367,15 +367,6 @@
 		C5CD31251E3332F700AE0A60 /* AKDownloadModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31191E3332F700AE0A60 /* AKDownloadModel.m */; };
 		C5CD312B1E33333A00AE0A60 /* AKDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD312A1E33333A00AE0A60 /* AKDownloadManager.m */; };
 		C5CD31331E33558400AE0A60 /* DownloadModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5CD31321E33558400AE0A60 /* DownloadModule.xcassets */; };
-		C5CD31411E335B8300AE0A60 /* Discover.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5CD31371E335B8300AE0A60 /* Discover.plist */; };
-		C5CD31421E335B8300AE0A60 /* gongfuxiongmao.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD31391E335B8300AE0A60 /* gongfuxiongmao.png */; };
-		C5CD31431E335B8300AE0A60 /* lieren.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313A1E335B8300AE0A60 /* lieren.png */; };
-		C5CD31441E335B8300AE0A60 /* meirenyu.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313B1E335B8300AE0A60 /* meirenyu.png */; };
-		C5CD31451E335B8300AE0A60 /* sandabaigujing.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313C1E335B8300AE0A60 /* sandabaigujing.png */; };
-		C5CD31461E335B8300AE0A60 /* taipingyang.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313D1E335B8300AE0A60 /* taipingyang.png */; };
-		C5CD31471E335B8300AE0A60 /* xiaohuangren.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313E1E335B8300AE0A60 /* xiaohuangren.png */; };
-		C5CD31481E335B8300AE0A60 /* xiongchumo.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD313F1E335B8300AE0A60 /* xiongchumo.png */; };
-		C5CD31491E335B8300AE0A60 /* yuanlijuexing.png in Resources */ = {isa = PBXBuildFile; fileRef = C5CD31401E335B8300AE0A60 /* yuanlijuexing.png */; };
 		C5CD314D1E33852400AE0A60 /* AKProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD314C1E33852400AE0A60 /* AKProgressBarView.m */; };
 		C5CD31501E3386C200AE0A60 /* AKDownloadGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD314F1E3386C200AE0A60 /* AKDownloadGroupModel.m */; };
 		C5CD31631E3616B200AE0A60 /* HSDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CD31531E3616B200AE0A60 /* HSDownloadManager.m */; };
@@ -1099,15 +1090,6 @@
 		C5CD312A1E33333A00AE0A60 /* AKDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadManager.m; sourceTree = "<group>"; };
 		C5CD31321E33558400AE0A60 /* DownloadModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = DownloadModule.xcassets; sourceTree = "<group>"; };
 		C5CD31341E3356EF00AE0A60 /* DownloadModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DownloadModule.h; sourceTree = "<group>"; };
-		C5CD31371E335B8300AE0A60 /* Discover.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Discover.plist; sourceTree = "<group>"; };
-		C5CD31391E335B8300AE0A60 /* gongfuxiongmao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gongfuxiongmao.png; sourceTree = "<group>"; };
-		C5CD313A1E335B8300AE0A60 /* lieren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lieren.png; sourceTree = "<group>"; };
-		C5CD313B1E335B8300AE0A60 /* meirenyu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meirenyu.png; sourceTree = "<group>"; };
-		C5CD313C1E335B8300AE0A60 /* sandabaigujing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sandabaigujing.png; sourceTree = "<group>"; };
-		C5CD313D1E335B8300AE0A60 /* taipingyang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taipingyang.png; sourceTree = "<group>"; };
-		C5CD313E1E335B8300AE0A60 /* xiaohuangren.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaohuangren.png; sourceTree = "<group>"; };
-		C5CD313F1E335B8300AE0A60 /* xiongchumo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiongchumo.png; sourceTree = "<group>"; };
-		C5CD31401E335B8300AE0A60 /* yuanlijuexing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yuanlijuexing.png; sourceTree = "<group>"; };
 		C5CD314B1E33852400AE0A60 /* AKProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKProgressBarView.h; sourceTree = "<group>"; };
 		C5CD314C1E33852400AE0A60 /* AKProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKProgressBarView.m; sourceTree = "<group>"; };
 		C5CD314E1E3386C200AE0A60 /* AKDownloadGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadGroupModel.h; sourceTree = "<group>"; };
@@ -3045,7 +3027,6 @@
 		C5CD30F51E33219400AE0A60 /* DownloadModule */ = {
 			isa = PBXGroup;
 			children = (
-				C5CD31351E335B8300AE0A60 /* Data */,
 				C5CD31111E3332F700AE0A60 /* Lib */,
 				C5CD31161E3332F700AE0A60 /* Manager */,
 				C5CD31171E3332F700AE0A60 /* Model */,
@@ -3082,38 +3063,6 @@
 				C5CD314F1E3386C200AE0A60 /* AKDownloadGroupModel.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		C5CD31351E335B8300AE0A60 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				C5CD31361E335B8300AE0A60 /* Discover */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		C5CD31361E335B8300AE0A60 /* Discover */ = {
-			isa = PBXGroup;
-			children = (
-				C5CD31371E335B8300AE0A60 /* Discover.plist */,
-				C5CD31381E335B8300AE0A60 /* images */,
-			);
-			path = Discover;
-			sourceTree = "<group>";
-		};
-		C5CD31381E335B8300AE0A60 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				C5CD31391E335B8300AE0A60 /* gongfuxiongmao.png */,
-				C5CD313A1E335B8300AE0A60 /* lieren.png */,
-				C5CD313B1E335B8300AE0A60 /* meirenyu.png */,
-				C5CD313C1E335B8300AE0A60 /* sandabaigujing.png */,
-				C5CD313D1E335B8300AE0A60 /* taipingyang.png */,
-				C5CD313E1E335B8300AE0A60 /* xiaohuangren.png */,
-				C5CD313F1E335B8300AE0A60 /* xiongchumo.png */,
-				C5CD31401E335B8300AE0A60 /* yuanlijuexing.png */,
-			);
-			path = images;
 			sourceTree = "<group>";
 		};
 		C5CD314A1E33852400AE0A60 /* AKProgressBarView */ = {
@@ -3552,10 +3501,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5CD31471E335B8300AE0A60 /* xiaohuangren.png in Resources */,
 				C50974BB1E28AB4400A8A2A9 /* 笔记.png in Resources */,
-				C5CD31481E335B8300AE0A60 /* xiongchumo.png in Resources */,
-				C5CD31491E335B8300AE0A60 /* yuanlijuexing.png in Resources */,
 				C50974B21E28AB4400A8A2A9 /* 夜间背景色.png in Resources */,
 				C515AB661DF051BA00353FC4 /* BaseModule.xcassets in Resources */,
 				C50974B51E28AB4400A8A2A9 /* 扫描线.png in Resources */,
@@ -3567,7 +3513,6 @@
 				C50974A81E28AB4400A8A2A9 /* r_drag-dot@2x.png in Resources */,
 				C50974211E28A77A00A8A2A9 /* CustomBtn.xib in Resources */,
 				C53A9A3A1E2F62A9008E7FB3 /* BookDetailIntroduceCell.xib in Resources */,
-				C5CD31451E335B8300AE0A60 /* sandabaigujing.png in Resources */,
 				C50974BF1E28AB4400A8A2A9 /* 笔记标志三点@2x.png in Resources */,
 				C5E0CF6B1E13B47300705C26 /* chooseTagViewCloseBtn.png in Resources */,
 				C53A9A7A1E30BE45008E7FB3 /* YSummaryViewCell.xib in Resources */,
@@ -3583,7 +3528,6 @@
 				C53A9A3C1E2F6341008E7FB3 /* BookCaseMainCell.xib in Resources */,
 				C50974BD1E28AB4400A8A2A9 /* 笔记@3x.png in Resources */,
 				C5660E481E0A7A10000BF5E3 /* NewsModule.xcassets in Resources */,
-				C5CD31421E335B8300AE0A60 /* gongfuxiongmao.png in Resources */,
 				C509744E1E28A77A00A8A2A9 /* RootStandardTableCell.xib in Resources */,
 				C5B986E31E02A14400AB548A /* res.png in Resources */,
 				C50974C51E28AB4400A8A2A9 /* 阅读器-笔记框夜间三角形.png in Resources */,
@@ -3596,7 +3540,6 @@
 				C509742B1E28A77A00A8A2A9 /* CustomNumbersLeftHeaderView.xib in Resources */,
 				C53A9A761E30BE45008E7FB3 /* YDirectoryViewCell.xib in Resources */,
 				C50973901E28A6AA00A8A2A9 /* BookDetailViewController.storyboard in Resources */,
-				C5CD31461E335B8300AE0A60 /* taipingyang.png in Resources */,
 				C515ACC81DF0552600353FC4 /* LoginModule.xcassets in Resources */,
 				C50974AD1E28AB4400A8A2A9 /* 删除@2x.png in Resources */,
 				C50974AF1E28AB4400A8A2A9 /* 复制.png in Resources */,
@@ -3623,12 +3566,10 @@
 				C53A9A781E30BE45008E7FB3 /* YDirectoryViewController.xib in Resources */,
 				C50974291E28A77A00A8A2A9 /* CustomNumbersCell.xib in Resources */,
 				C53A9A7C1E30BE45008E7FB3 /* YSummaryViewController.xib in Resources */,
-				C5CD31431E335B8300AE0A60 /* lieren.png in Resources */,
 				C50974B01E28AB4400A8A2A9 /* 复制@2x.png in Resources */,
 				C50974C11E28AB4400A8A2A9 /* 羊皮纸.png in Resources */,
 				C50974AA1E28AB4400A8A2A9 /* 三角形@2x.png in Resources */,
 				C50974BC1E28AB4400A8A2A9 /* 笔记@2x.png in Resources */,
-				C5CD31411E335B8300AE0A60 /* Discover.plist in Resources */,
 				C53A99FD1E2DD225008E7FB3 /* grayLogo@2x.png in Resources */,
 				C50974331E28A77A00A8A2A9 /* area.plist in Resources */,
 				C53A9A921E30BE65008E7FB3 /* YThemeViewCell.xib in Resources */,
@@ -3645,7 +3586,6 @@
 				C50974BA1E28AB4400A8A2A9 /* 电池@3x.png in Resources */,
 				C50973941E28A6AA00A8A2A9 /* BookReadSelectChapterMainCell.xib in Resources */,
 				C5A730201DE2BB3400DB2788 /* Main.storyboard in Resources */,
-				C5CD31441E335B8300AE0A60 /* meirenyu.png in Resources */,
 				C53A9A081E2DE343008E7FB3 /* BookCollMainCell.xib in Resources */,
 				C53A9A7E1E30BE45008E7FB3 /* YMoreSettingsViewController.xib in Resources */,
 			);

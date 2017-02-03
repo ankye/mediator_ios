@@ -39,11 +39,11 @@
     NSString * joinShelfStr = book.isCaseBook?@"取消藏书":@"加入藏书";
     [self.joinShelfBtn setTitle:joinShelfStr forState:UIControlStateNormal];
     
-    NSString * cacheTitle = @"全本缓存";
+    NSString * cacheTitle = @"全书缓存";
     self.allCacheBtn.userInteractionEnabled = YES;
     
     if (book.bookCacheStatus == BOOK_CACHE_STATUS_ING) {
-        cacheTitle = @"暂停缓存";
+        cacheTitle = @"下载中";
     }else if(book.bookCacheStatus == BOOK_CACHE_STATUS_ALL_END){
         cacheTitle = @"缓存成功";
         self.allCacheBtn.userInteractionEnabled = false;

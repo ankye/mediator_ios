@@ -121,7 +121,6 @@
 		C567BE4F1E48175800C7C79A /* SinglePicCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BA8C1E48175700C7C79A /* SinglePicCollectCell.xib */; };
 		C567BE501E48175800C7C79A /* AKPopupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA8F1E48175700C7C79A /* AKPopupManager.m */; };
 		C567BE511E48175800C7C79A /* AKPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA911E48175700C7C79A /* AKPopupViewController.m */; };
-		C567BE521E48175800C7C79A /* AKBasePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA951E48175700C7C79A /* AKBasePopupView.m */; };
 		C567BE531E48175800C7C79A /* AKBookShelfHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA991E48175700C7C79A /* AKBookShelfHandler.m */; };
 		C567BE541E48175800C7C79A /* AKBookShelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA9B1E48175700C7C79A /* AKBookShelfViewController.m */; };
 		C567BE551E48175800C7C79A /* YBookViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA9E1E48175700C7C79A /* YBookViewCell.m */; };
@@ -370,6 +369,14 @@
 		C567BF5A1E48175900C7C79A /* OUNavAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BCFC1E48175800C7C79A /* OUNavAnimation.m */; };
 		C567BF5B1E48175900C7C79A /* OUNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BCFE1E48175800C7C79A /* OUNavigationController.m */; };
 		C567BF5C1E48175900C7C79A /* Wallpaper.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C567BCFF1E48175800C7C79A /* Wallpaper.xcassets */; };
+		C567BF6D1E481A6B00C7C79A /* AKBasePopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF6C1E481A6B00C7C79A /* AKBasePopupView.m */; };
+		C567BF8A1E481D9000C7C79A /* MMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF7C1E481D9000C7C79A /* MMAlertView.m */; };
+		C567BF8B1E481D9000C7C79A /* MMDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF7E1E481D9000C7C79A /* MMDateView.m */; };
+		C567BF8C1E481D9000C7C79A /* MMPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF801E481D9000C7C79A /* MMPinView.m */; };
+		C567BF8D1E481D9000C7C79A /* MMPopupCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF821E481D9000C7C79A /* MMPopupCategory.m */; };
+		C567BF8E1E481D9000C7C79A /* MMPopupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF851E481D9000C7C79A /* MMPopupItem.m */; };
+		C567BF8F1E481D9000C7C79A /* MMPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF871E481D9000C7C79A /* MMPopupView.m */; };
+		C567BF901E481D9000C7C79A /* MMSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF891E481D9000C7C79A /* MMSheetView.m */; };
 		C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57DF5E21DFA84EE00D3D154 /* TabBar.plist */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
 		C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730191DE2BB3400DB2788 /* AppDelegate.m */; };
@@ -630,8 +637,6 @@
 		C567BA901E48175700C7C79A /* AKPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupViewController.h; sourceTree = "<group>"; };
 		C567BA911E48175700C7C79A /* AKPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupViewController.m; sourceTree = "<group>"; };
 		C567BA921E48175700C7C79A /* AKPopupViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupViewProtocol.h; sourceTree = "<group>"; };
-		C567BA941E48175700C7C79A /* AKBasePopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBasePopupView.h; sourceTree = "<group>"; };
-		C567BA951E48175700C7C79A /* AKBasePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBasePopupView.m; sourceTree = "<group>"; };
 		C567BA981E48175700C7C79A /* AKBookShelfHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookShelfHandler.h; sourceTree = "<group>"; };
 		C567BA991E48175700C7C79A /* AKBookShelfHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookShelfHandler.m; sourceTree = "<group>"; };
 		C567BA9A1E48175700C7C79A /* AKBookShelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookShelfViewController.h; sourceTree = "<group>"; };
@@ -1092,6 +1097,23 @@
 		C567BCFF1E48175800C7C79A /* Wallpaper.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Wallpaper.xcassets; sourceTree = "<group>"; };
 		C567BD001E48175800C7C79A /* WallpaperModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallpaperModule.h; sourceTree = "<group>"; };
 		C567BF5D1E48184700C7C79A /* PopupModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupModule.h; sourceTree = "<group>"; };
+		C567BF6B1E481A6B00C7C79A /* AKBasePopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBasePopupView.h; sourceTree = "<group>"; };
+		C567BF6C1E481A6B00C7C79A /* AKBasePopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBasePopupView.m; sourceTree = "<group>"; };
+		C567BF7B1E481D9000C7C79A /* MMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAlertView.h; sourceTree = "<group>"; };
+		C567BF7C1E481D9000C7C79A /* MMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAlertView.m; sourceTree = "<group>"; };
+		C567BF7D1E481D9000C7C79A /* MMDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDateView.h; sourceTree = "<group>"; };
+		C567BF7E1E481D9000C7C79A /* MMDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDateView.m; sourceTree = "<group>"; };
+		C567BF7F1E481D9000C7C79A /* MMPinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPinView.h; sourceTree = "<group>"; };
+		C567BF801E481D9000C7C79A /* MMPinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPinView.m; sourceTree = "<group>"; };
+		C567BF811E481D9000C7C79A /* MMPopupCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupCategory.h; sourceTree = "<group>"; };
+		C567BF821E481D9000C7C79A /* MMPopupCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupCategory.m; sourceTree = "<group>"; };
+		C567BF831E481D9000C7C79A /* MMPopupDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupDefine.h; sourceTree = "<group>"; };
+		C567BF841E481D9000C7C79A /* MMPopupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupItem.h; sourceTree = "<group>"; };
+		C567BF851E481D9000C7C79A /* MMPopupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupItem.m; sourceTree = "<group>"; };
+		C567BF861E481D9000C7C79A /* MMPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupView.h; sourceTree = "<group>"; };
+		C567BF871E481D9000C7C79A /* MMPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupView.m; sourceTree = "<group>"; };
+		C567BF881E481D9000C7C79A /* MMSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSheetView.h; sourceTree = "<group>"; };
+		C567BF891E481D9000C7C79A /* MMSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSheetView.m; sourceTree = "<group>"; };
 		C57DF5DF1DF927F900D3D154 /* BanLiTV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BanLiTV.entitlements; sourceTree = "<group>"; };
 		C57DF5E21DFA84EE00D3D154 /* TabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TabBar.plist; sourceTree = "<group>"; };
 		C5A730121DE2BB3400DB2788 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1822,24 +1844,17 @@
 		C567BA8D1E48175700C7C79A /* PopupModule */ = {
 			isa = PBXGroup;
 			children = (
+				C567BF7A1E481D9000C7C79A /* View */,
+				C567BF6B1E481A6B00C7C79A /* AKBasePopupView.h */,
+				C567BF6C1E481A6B00C7C79A /* AKBasePopupView.m */,
 				C567BA8E1E48175700C7C79A /* AKPopupManager.h */,
 				C567BA8F1E48175700C7C79A /* AKPopupManager.m */,
 				C567BA901E48175700C7C79A /* AKPopupViewController.h */,
 				C567BA911E48175700C7C79A /* AKPopupViewController.m */,
 				C567BA921E48175700C7C79A /* AKPopupViewProtocol.h */,
-				C567BA931E48175700C7C79A /* View */,
 				C567BF5D1E48184700C7C79A /* PopupModule.h */,
 			);
 			path = PopupModule;
-			sourceTree = "<group>";
-		};
-		C567BA931E48175700C7C79A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C567BA941E48175700C7C79A /* AKBasePopupView.h */,
-				C567BA951E48175700C7C79A /* AKBasePopupView.m */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C567BA961E48175700C7C79A /* ReaderModule */ = {
@@ -3199,6 +3214,28 @@
 			path = OUAnimationNavigation;
 			sourceTree = "<group>";
 		};
+		C567BF7A1E481D9000C7C79A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C567BF7B1E481D9000C7C79A /* MMAlertView.h */,
+				C567BF7C1E481D9000C7C79A /* MMAlertView.m */,
+				C567BF7D1E481D9000C7C79A /* MMDateView.h */,
+				C567BF7E1E481D9000C7C79A /* MMDateView.m */,
+				C567BF7F1E481D9000C7C79A /* MMPinView.h */,
+				C567BF801E481D9000C7C79A /* MMPinView.m */,
+				C567BF811E481D9000C7C79A /* MMPopupCategory.h */,
+				C567BF821E481D9000C7C79A /* MMPopupCategory.m */,
+				C567BF831E481D9000C7C79A /* MMPopupDefine.h */,
+				C567BF841E481D9000C7C79A /* MMPopupItem.h */,
+				C567BF851E481D9000C7C79A /* MMPopupItem.m */,
+				C567BF861E481D9000C7C79A /* MMPopupView.h */,
+				C567BF871E481D9000C7C79A /* MMPopupView.m */,
+				C567BF881E481D9000C7C79A /* MMSheetView.h */,
+				C567BF891E481D9000C7C79A /* MMSheetView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C5A730091DE2BB3400DB2788 = {
 			isa = PBXGroup;
 			children = (
@@ -3545,9 +3582,11 @@
 				C567BEF91E48175800C7C79A /* CustomNumbersCell.m in Sources */,
 				C567BE611E48175800C7C79A /* UIButton+RefreshLocation.m in Sources */,
 				C567BF0A1E48175900C7C79A /* CustomPopupWindow.m in Sources */,
+				C567BF901E481D9000C7C79A /* MMSheetView.m in Sources */,
 				C567BECC1E48175800C7C79A /* YBookUpdateModel.m in Sources */,
 				C567BF411E48175900C7C79A /* AKView.m in Sources */,
 				C567BF401E48175900C7C79A /* AKTextView.m in Sources */,
+				C567BF8C1E481D9000C7C79A /* MMPinView.m in Sources */,
 				C567BD181E48175800C7C79A /* AKSignalManager.m in Sources */,
 				C567BE721E48175800C7C79A /* AKDownloadListTableCell.m in Sources */,
 				C567BD331E48175800C7C79A /* AKHContentView.m in Sources */,
@@ -3611,7 +3650,6 @@
 				C567BF431E48175900C7C79A /* AKDataCenter+UserModule.m in Sources */,
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
 				C567BEEF1E48175800C7C79A /* NSObject+BSNumbersExtension.m in Sources */,
-				C567BE521E48175800C7C79A /* AKBasePopupView.m in Sources */,
 				C567BF061E48175900C7C79A /* CustomChooseCityView.m in Sources */,
 				C567BE251E48175800C7C79A /* ServiceLogin.m in Sources */,
 				C567BEA71E48175800C7C79A /* KeepOutViewController.m in Sources */,
@@ -3663,6 +3701,7 @@
 				C567BF541E48175900C7C79A /* DetailViewController.m in Sources */,
 				C567BE5E1E48175800C7C79A /* NSObject+Category.m in Sources */,
 				C567BF581E48175900C7C79A /* XHSHomeCell.m in Sources */,
+				C567BF8A1E481D9000C7C79A /* MMAlertView.m in Sources */,
 				C567BF421E48175900C7C79A /* Aspect+UserModule.m in Sources */,
 				C567BF4E1E48175900C7C79A /* AKUserGroup.m in Sources */,
 				C567BE3B1E48175800C7C79A /* AKNewsChannel.m in Sources */,
@@ -3696,6 +3735,7 @@
 				C567BD271E48175800C7C79A /* AKCollectionFactory.m in Sources */,
 				C567BD211E48175800C7C79A /* AKChannelTagHeadView.m in Sources */,
 				C567BD151E48175800C7C79A /* AKMediator.m in Sources */,
+				C567BF8B1E481D9000C7C79A /* MMDateView.m in Sources */,
 				C567BE651E48175800C7C79A /* UIView+Category.m in Sources */,
 				C567BF4A1E48175900C7C79A /* GVUserDefaults+UserModule.m in Sources */,
 				C567BE6A1E48175800C7C79A /* BookDetailBasicCell.m in Sources */,
@@ -3714,6 +3754,7 @@
 				C567BEAE1E48175800C7C79A /* ReaderView.m in Sources */,
 				C567BEA21E48175800C7C79A /* MagnifyingGlassView.m in Sources */,
 				C567BD0B1E48175800C7C79A /* NSObject+DBPropertyListing.m in Sources */,
+				C567BF8D1E481D9000C7C79A /* MMPopupCategory.m in Sources */,
 				C567BE6E1E48175800C7C79A /* BookDetailIntroduceCell.m in Sources */,
 				C567BE4C1E48175800C7C79A /* NormalContentCell.m in Sources */,
 				C567BF4F1E48175900C7C79A /* AKUserGroupMember.m in Sources */,
@@ -3792,6 +3833,7 @@
 				C567BE781E48175800C7C79A /* EmojiEmoticons.m in Sources */,
 				C567BD051E48175800C7C79A /* AKBaseViewController.m in Sources */,
 				C567BD0E1E48175800C7C79A /* UIView+Frame.m in Sources */,
+				C567BF8E1E481D9000C7C79A /* MMPopupItem.m in Sources */,
 				C567BEB71E48175800C7C79A /* BookDatabase.m in Sources */,
 				C567BD0A1E48175800C7C79A /* NSObject+CategoryWithProperty.m in Sources */,
 				C567BE791E48175800C7C79A /* EmojiMapSymbols.m in Sources */,
@@ -3807,6 +3849,7 @@
 				C567BD2F1E48175800C7C79A /* AKBaseCollectionView.m in Sources */,
 				C567BEA41E48175800C7C79A /* NotesMenuView.m in Sources */,
 				C567BD3D1E48175800C7C79A /* HSDownloadTask.m in Sources */,
+				C567BF8F1E481D9000C7C79A /* MMPopupView.m in Sources */,
 				C567BEB01E48175800C7C79A /* FormatString.m in Sources */,
 				C567BE7B1E48175800C7C79A /* EmojiTransport.m in Sources */,
 				C567BEFE1E48175800C7C79A /* CustomNumbersPlainFlowLayout.m in Sources */,
@@ -3823,6 +3866,7 @@
 				C567BF551E48175900C7C79A /* AKCustomCollectionHandler.m in Sources */,
 				C567BE3E1E48175800C7C79A /* Tag.m in Sources */,
 				C567BE271E48175800C7C79A /* AKLoginButtonGroup.m in Sources */,
+				C567BF6D1E481A6B00C7C79A /* AKBasePopupView.m in Sources */,
 				C567BF131E48175900C7C79A /* OpenShare+Weibo.m in Sources */,
 				C567BED71E48175800C7C79A /* YSummaryViewController.m in Sources */,
 				C567BE541E48175800C7C79A /* AKBookShelfViewController.m in Sources */,

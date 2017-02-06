@@ -33,10 +33,10 @@
 //当前状态,非断点续传使用
 @property (nonatomic,assign) HSDownloadState groupState;
 
+@property (nonatomic,assign) BOOL needStore;
 //任务组进度
 @property (nonatomic , assign,readonly) CGFloat groupProgress;
 
-//@property (nonatomic,weak) id<HSDownloadTaskDelegate> delegate;
 
 @property (nonatomic, readwrite) UBSignal<DictionarySignal> *onDownloadProgress;
 @property (nonatomic, readwrite) UBSignal<DictionarySignal> *onDownloadCompleted;
@@ -45,12 +45,14 @@
 -(AKDownloadModel*)currentModel;
 -(AKDownloadModel*)goToNextModel;
 
--(BOOL)isCompleted;
+//-(BOOL)isCompleted;
 
-//状态确认
--(HSDownloadState)state;
+-(CGFloat)calcProgress;
+
+
 
 -(void)addTaskModel:(AKDownloadModel*)model;
-
+//数据加载完成重置
+-(void)resetSignals;
 
 @end

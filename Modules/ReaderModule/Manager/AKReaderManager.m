@@ -19,6 +19,17 @@
 
 SINGLETON_IMPL(AKReaderManager)
 
+-(id)init
+{
+    self = [super init];
+    if(self){
+        self.books = [[NSMutableDictionary alloc] init];
+    }
+    return self;
+}
+
+
+
 -(void)moduleInitConfigure
 {
     //检查数据库版本

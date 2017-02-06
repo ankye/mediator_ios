@@ -9,7 +9,6 @@
 #import "AKBookDetailViewController.h"
 #import "AKBookDetailHandler.h"
 #import "BookDatabase.h"
-#import "BookReadViewController.h"
 #import "AKReaderViewController.h"
 
 @interface AKBookDetailViewController () <AKBaseTableHandlerDelegate>

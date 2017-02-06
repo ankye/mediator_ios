@@ -13,7 +13,6 @@
 
 @interface AKDownloadModel : NSObject
 
-//@property (nonatomic , strong) NSString *groupName;
 //任务名称
 @property (nonatomic , strong) NSString *taskName;
 //图标
@@ -26,7 +25,9 @@
 @property (nonatomic , strong) NSString *filename;
 //下载进度
 @property (nonatomic , assign) CGFloat progress;
-//下载任务
+//下载任务是否完成
 
--(BOOL)isCompleted;
+@property (nonatomic , assign) BOOL isCached;
+
+
 @end

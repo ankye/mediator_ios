@@ -14,7 +14,7 @@
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>BookCaseViewController</string>
+		<string>AKBookShelfViewController</string>
 		<key>navigationController</key>
 		<string>AKNavigationController</string>
 	</dict>
@@ -46,7 +46,7 @@
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>BookCategoryViewController</string>
+		<string>AKHotNovelViewController</string>
 		<key>navigationController</key>
 		<string>AKNavigationController</string>
 	</dict>
@@ -62,7 +62,7 @@
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>BookDocumentViewController</string>
+		<string>AKHotNovelViewController</string>
 		<key>navigationController</key>
 		<string>AKNavigationController</string>
 	</dict>
@@ -78,7 +78,7 @@
 		<key>height</key>
 		<string>20</string>
 		<key>controller</key>
-		<string>BookDocumentViewController</string>
+		<string>AKHotNovelViewController</string>
 		<key>navigationController</key>
 		<string>AKNavigationController</string>
 	</dict>

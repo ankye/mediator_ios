@@ -13,7 +13,7 @@
 @interface AKDownloadManager : NSObject <HSDownloadTaskDelegate>
 
 
-@property (nonatomic,strong) YYThreadSafeArray* downloadList;
+@property (nonatomic,strong) NSMutableArray* downloadList;
 
 SINGLETON_INTR(AKDownloadManager)
 

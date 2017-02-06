@@ -1,25 +1,24 @@
 //
-//  AKHotNovelViewController.m
+//  AKBookShelfViewController.m
 //  Project
 //
-//  Created by ankye on 2017/1/16.
+//  Created by ankye on 2017/2/4.
 //  Copyright © 2017年 ankye. All rights reserved.
 //
 
-#import "AKHotNovelViewController.h"
-#import "AKBaseTableView.h"
-#import "AKHotNovelHandler.h"
-#import "AKBookDetailViewController.h"
+#import "AKBookShelfViewController.h"
+#import "AKBookShelfHandler.h"
 #import "CustomSearchViewController.h"
 #import "AKDownloadViewController.h"
 
-@interface AKHotNovelViewController () <AKBaseTableHandlerDelegate,CustomSearchViewControllerDelegate>
+@interface AKBookShelfViewController () <AKBaseTableHandlerDelegate,CustomSearchViewControllerDelegate>
 
 @property (nonatomic,strong) AKBaseTableView* tableView;
-@property (nonatomic,strong) AKHotNovelHandler* handler;
+@property (nonatomic,strong) AKBookShelfHandler* handler;
+
 @end
 
-@implementation AKHotNovelViewController
+@implementation AKBookShelfViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,7 +30,7 @@
 
 -(void)setupNav
 {
-    self.navigationItem.title = @"热门小说";
+    self.navigationItem.title = @"追书猫";
     UIBarButtonItem * rbbi = [[UIBarButtonItem alloc]initWithImage:[[UIImage imageNamed:@"download"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] style:UIBarButtonItemStylePlain target:self action:@selector(downloadManagerBtnClick)];
     self.navigationItem.rightBarButtonItem = rbbi;
     
@@ -54,12 +53,12 @@
 
 #pragma mark - CustomSearchViewController
 - (void)searchViewControllerSearchButtonClicked:(CustomSearchViewController *)controller andSearchValue:(NSString *)searchValue{
-//    [controller.navigationController popViewControllerAnimated:NO];
-//    
-//    BookSearchViewController * con = [BookSearchViewController new];
-//    
-//    con.searchKey = searchValue;
-//    [self.navigationController pushViewController:con animated:YES];
+    //    [controller.navigationController popViewControllerAnimated:NO];
+    //
+    //    BookSearchViewController * con = [BookSearchViewController new];
+    //
+    //    con.searchKey = searchValue;
+    //    [self.navigationController pushViewController:con animated:YES];
 }
 
 - (void)searchViewControllerCancleButtonClicked:(CustomSearchViewController *)controller{
@@ -71,12 +70,12 @@
 {
     _tableView = [[AKBaseTableView alloc] initWithFrame:CGRectMake(0, SCREEN_NAV_HEIGHT, SCREEN_WIDTH, SCREEN_HEIGHT-SCREEN_NAV_HEIGHT-SCREEN_TABBAR_HEIGHT) style:UITableViewStyleGrouped];
     [self.view addSubview:_tableView];
-
+    
 }
 
 -(void)setupHandler
 {
-    _handler = [[AKHotNovelHandler alloc] init];
+    _handler = [[AKBookShelfHandler alloc] init];
     [_handler handleDatasourceAndDelegate:_tableView];
     _handler.handlerDelegate = self;
 }
@@ -105,28 +104,16 @@
 //选择某一行
 - (void)didSelectSection:(NSInteger)section withRow:(NSInteger)row withContent:(NSObject* )content
 {
-    AKBookDetailViewController * con = [AKBookDetailViewController new];
-    con.book =(Book*)content;
-    con.hidesBottomBarWhenPushed = YES;
+//    AKBookDetailViewController * con = [AKBookDetailViewController new];
+//    con.book =(Book*)content;
+   // con.hidesBottomBarWhenPushed = YES;
     
-    [self.navigationController pushViewController:con animated:YES];
+    //[self.navigationController pushViewController:con animated:YES];
 }
 
 -(void)didSectionClick:(NSInteger)section withRow:(NSInteger)row withClickChannel:(NSInteger)clickChannel withContent:(NSObject *)content
 {
     
 }
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

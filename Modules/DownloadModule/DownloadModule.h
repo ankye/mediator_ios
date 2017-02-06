@@ -9,6 +9,6 @@
 #ifndef DownloadModule_h
 #define DownloadModule_h
 
-#import "AKDownloadViewController.h"
+#import "AKDownloadManager.h"
 
 #endif /* DownloadModule_h */

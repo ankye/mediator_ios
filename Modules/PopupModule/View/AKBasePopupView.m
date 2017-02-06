@@ -10,20 +10,20 @@
 
 @implementation AKBasePopupView
 
-//横屏大小
+//竖屏大小
 -(CGSize)portraitSize
 {
-    return CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
+    return CGSizeMake(SCREEN_WIDTH*0.7f, SCREEN_HEIGHT*0.4f);
 }
-//竖屏大小
+//横屏大小
 -(CGSize)landscapeSize
 {
-    return CGSizeMake(SCREEN_HEIGHT, SCREEN_WIDTH);
+    return CGSizeMake(SCREEN_HEIGHT*0.7f, SCREEN_WIDTH*0.4f);
 }
 
 -(BOOL) isFullScreen
 {
-    return YES;
+    return NO;
 }
 
 /**

@@ -12,6 +12,9 @@
 
 #define AK_POPUP_MANAGER [AKPopupManager sharedInstance]
 
+typedef void(^CompleteFunc)() ;
+
+
 
 @interface AKPopupManager : NSObject <UIGestureRecognizerDelegate,STPopupControllerTransitioning>
 

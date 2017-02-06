@@ -65,6 +65,7 @@ PODS:
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
     - SDWebImage (!= 3.7.2, ~> 3.7)
+  - pop (1.0.9)
   - ReactiveObjC (2.1.2)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -112,6 +113,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - MWPhotoBrowser
+  - pop
   - ReactiveObjC
   - SIAlertView
   - SocketRocket
@@ -148,6 +150,7 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
   SDWebImage: '098e97e6176540799c27e804c96653ee0833d13c'
   SIAlertView: 20c794b55eaf44d888773ea51647cf8907723919
@@ -160,6 +163,6 @@ SPEC CHECKSUMS:
   YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 9e0822d36ca3f584160c27e85f9caea3898b8450
+PODFILE CHECKSUM: 63ce2ae39f0e424d0e3461c82ab3e77367ae4b44
 
 COCOAPODS: 1.1.1

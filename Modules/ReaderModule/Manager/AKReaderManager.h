@@ -10,6 +10,9 @@
 
 @interface AKReaderManager : NSObject
 
+@property (nonatomic,strong) NSMutableDictionary* books;
+
+
 @property(nonatomic,assign)NSInteger networkStatus;
 
 @property (nonatomic, assign) double systemBattery;

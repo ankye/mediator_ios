@@ -290,9 +290,9 @@
 -(void)updateDownloadState
 {
     if(_downloadGroup){
-        if(_downloadGroup.isCompleted){
+        if(_downloadGroup.groupState == HSDownloadStateCompleted){
             _book.bookCacheStatus = BOOK_CACHE_STATUS_ALL_END;
-        }else if(_downloadGroup.state == HSDownloadStateRunning ){
+        }else if(_downloadGroup.groupState == HSDownloadStateRunning ){
             _book.bookCacheStatus = BOOK_CACHE_STATUS_ING;
         }else{
             _book.bookCacheStatus = BOOK_CACHE_STATUS_NONE;

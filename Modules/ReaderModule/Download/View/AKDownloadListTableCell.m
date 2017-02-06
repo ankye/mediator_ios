@@ -28,7 +28,7 @@
 
 - (IBAction)stopStartAction:(UIButton *)sender {
 
-    HSDownloadState state = self.downloadGroup.state;
+    HSDownloadState state = self.downloadGroup.groupState;
     
     if(state == HSDownloadStateCompleted){
         
@@ -38,7 +38,7 @@
         [[AKDownloadManager sharedInstance] startGroup:self.downloadGroup];
     }
    
-    [self setButtonState:self.downloadGroup.state];
+    [self setButtonState:self.downloadGroup.groupState];
     
 }
 
@@ -85,7 +85,7 @@
     self.progressBarView.progress = group.groupProgress;
     self.musicDownloadPercent.text =  [NSString stringWithFormat:@"%.1f%%", group.groupProgress*100];
     
-    [self setButtonState:group.state];
+    [self setButtonState:group.groupState];
 
 //     __weak typeof(self) weakSelf = self;
 //    self.downloadGroup.delegate = weakSelf;

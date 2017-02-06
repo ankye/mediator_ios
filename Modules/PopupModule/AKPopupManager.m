@@ -11,6 +11,7 @@
 #import <AFMInfoBanner/AFMInfoBanner.h>
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "MBProgressHUD+Custom.h"
+#import <POP/POP.h>
 
 @interface AKPopupManager()
 
@@ -157,11 +158,42 @@ SINGLETON_IMPL(AKPopupManager)
     return context.action == STPopupControllerTransitioningActionPresent ? 0.5 : 0.35;
 }
 
-- (void)popupControllerAnimateTransition:(STPopupControllerTransitioningContext *)context completion:(void (^)())completion
+
+-(void)customAction1:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
 {
     UIView *containerView = context.containerView;
     if (context.action == STPopupControllerTransitioningActionPresent) {
         containerView.transform = CGAffineTransformMakeTranslation(0, containerView.superview.bounds.size.height - containerView.frame.origin.y);
+
+        [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            context.containerView.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished) {
+            completion();
+        }];
+    }
+    else {
+        
+        CGAffineTransform lastTransform = containerView.transform;
+        containerView.transform = CGAffineTransformIdentity;
+        CGFloat originY = containerView.frame.origin.y;
+        containerView.transform = lastTransform;
+
+        [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+            containerView.transform = CGAffineTransformMakeTranslation(0, containerView.superview.bounds.size.height - originY + containerView.frame.size.height);
+        } completion:^(BOOL finished) {
+            containerView.transform = CGAffineTransformIdentity;
+            completion();
+            
+        }];
+    }
+
+}
+
+-(void)customAction2:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
+{
+    UIView *containerView = context.containerView;
+    if (context.action == STPopupControllerTransitioningActionPresent) {
+        containerView.transform = CGAffineTransformMakeTranslation(0,  -(containerView.superview.bounds.size.height - containerView.frame.origin.y));
         
         [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             context.containerView.transform = CGAffineTransformIdentity;
@@ -170,22 +202,120 @@ SINGLETON_IMPL(AKPopupManager)
         }];
     }
     else {
+        
         CGAffineTransform lastTransform = containerView.transform;
         containerView.transform = CGAffineTransformIdentity;
-        CGFloat originY = containerView.frame.origin.y;
         containerView.transform = lastTransform;
-        
+        CGFloat originY = containerView.frame.origin.y;
+
         [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            containerView.transform = CGAffineTransformMakeTranslation(0, containerView.superview.bounds.size.height - originY + containerView.frame.size.height);
+            containerView.transform = CGAffineTransformMakeTranslation(0,  -( containerView.superview.bounds.size.height - originY + containerView.frame.size.height));
         } completion:^(BOOL finished) {
             containerView.transform = CGAffineTransformIdentity;
             completion();
-            self.popupController = nil;
-            self.currentAttributes = nil;
-            [self show];
             
         }];
     }
+    
+}
+
+-(void)customAction3:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
+{
+    UIView *containerView = context.containerView;
+    if (context.action == STPopupControllerTransitioningActionPresent) {
+        
+        containerView.center = CGPointMake(containerView.center.x, (containerView.superview.bounds.size.height + containerView.frame.origin.y));
+        
+        POPSpringAnimation *positionAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+        positionAnimation.toValue = @(containerView.superview.center.y);
+        positionAnimation.springBounciness = 10;
+        [positionAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+            completion();
+        }];
+        
+        POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+        scaleAnimation.springBounciness = 20;
+        scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
+        
+        
+        [containerView.layer pop_addAnimation:positionAnimation forKey:@"positionAnimation"];
+        [containerView.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
+        
+    }
+    else {
+        
+        CGFloat originY = containerView.frame.origin.y;
+        
+        POPBasicAnimation *offscreenAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+        offscreenAnimation.toValue = @(( containerView.superview.bounds.size.height + originY + containerView.frame.size.height));
+        [offscreenAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+            completion();
+        }];
+        [containerView.layer pop_addAnimation:offscreenAnimation forKey:@"offscreenAnimation"];
+        
+        
+    }
+    
+}
+
+
+-(void)customAction4:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
+{
+    UIView *containerView = context.containerView;
+    if (context.action == STPopupControllerTransitioningActionPresent) {
+        
+        containerView.center = CGPointMake(containerView.center.x, -(containerView.superview.bounds.size.height - containerView.frame.origin.y));
+        
+        POPSpringAnimation *positionAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+        positionAnimation.toValue = @(containerView.superview.center.y);
+        positionAnimation.springBounciness = 10;
+        [positionAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+            completion();
+        }];
+        
+        POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
+        scaleAnimation.springBounciness = 20;
+        scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
+        
+        
+        [containerView.layer pop_addAnimation:positionAnimation forKey:@"positionAnimation"];
+        [containerView.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
+        
+    }
+    else {
+        
+        CGFloat originY = containerView.frame.origin.y;
+
+        POPBasicAnimation *offscreenAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+        offscreenAnimation.toValue = @(-( containerView.superview.bounds.size.height - originY + containerView.frame.size.height));
+        [offscreenAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
+            completion();
+        }];
+        [containerView.layer pop_addAnimation:offscreenAnimation forKey:@"offscreenAnimation"];
+        
+        
+    }
+    
+}
+
+- (void)popupControllerAnimateTransition:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
+{
+    CompleteFunc func = completion;
+    
+    if (context.action == STPopupControllerTransitioningActionPresent){
+        
+    }else{
+        func = ^(){
+            if(completion){
+                completion();
+            }
+            self.popupController = nil;
+            self.currentAttributes = nil;
+            [self show];
+        };
+
+    }
+    [self customAction4:context completion:func];
 }
 
 +(void)showTips:(NSString *)text

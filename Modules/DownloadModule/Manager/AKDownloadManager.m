@@ -17,12 +17,15 @@
 
 SINGLETON_IMPL(AKDownloadManager)
 
-- (YYThreadSafeArray *)downloadList
+- (NSMutableArray *)downloadList
 {
-    if (!_downloadList) {
-        _downloadList = [[YYThreadSafeArray alloc] init] ;
+    if (_downloadList == nil) {
         
         [self loadCacheList];
+        if(_downloadList == nil){
+            _downloadList = [[NSMutableArray alloc] init];
+  
+        }
         
     }
     return _downloadList ;
@@ -30,17 +33,63 @@ SINGLETON_IMPL(AKDownloadManager)
   
 }
 
--(void)loadCacheList
+-(NSString*)downloadListPlistPath
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Discover" ofType:@".plist"];
-    NSArray *array = [NSArray arrayWithContentsOfFile:path];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    //获取完整路径
+    
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"AKDownloadList.plist"];
+
+  
+    return  plistPath;
+    
+}
+
+-(NSMutableArray*)loadCacheList
+{
    
-//    
-//    for (NSDictionary *dic in array) {
-//     
-//        AKDownloadGroupModel* group = [self createSingleFileGroup:dic[@"group"] withTaskName:dic[@"name"] withIcon: dic[@"imgName"] withDesc:dic[@"desc"] withDownloadUrl:dic[@"downLoadUrl"] withFilename:@""];
-//        
-//    }
+    NSString *plistPath = [self downloadListPlistPath];
+    
+    NSData* data = [[NSData alloc] initWithContentsOfFile:plistPath];
+    if(data){
+        _downloadList = (NSMutableArray*)[NSKeyedUnarchiver unarchiveObjectWithData:data];
+        NSInteger count = [_downloadList count];
+        for(NSInteger i=0; i<count; i++){
+            AKDownloadGroupModel* group = [_downloadList objectAtIndex:i];
+            if(group){
+                [group resetSignals];
+            }
+        }
+    }else{
+        _downloadList = nil;
+    }
+    return _downloadList;
+    
+}
+
+-(void)storeDownloadList
+{
+    NSString *plistPath = [self downloadListPlistPath];
+
+    
+    NSLog(@"%@",plistPath);
+    
+    if(![[NSFileManager defaultManager] fileExistsAtPath:plistPath]) {
+        NSMutableArray *dictplist = [[NSMutableArray alloc] init];
+        
+       NSData* data = [NSKeyedArchiver archivedDataWithRootObject:dictplist];
+        
+        [data writeToFile:plistPath atomically:YES];
+    
+    }
+    
+    NSData* data = [NSKeyedArchiver archivedDataWithRootObject:self.downloadList];
+    
+    [data writeToFile:plistPath atomically:YES];
+   
 }
 
 -(BOOL)isEmptyList
@@ -57,8 +106,13 @@ SINGLETON_IMPL(AKDownloadManager)
     model.desc = desc;
     model.downLoadUrl = downloadUrl;
     model.filename = filename;
+
     model.progress = [[HSDownloadManager sharedInstance] getProgress:model.downLoadUrl group:groupName];
-   
+    if(model.progress >= 1.0){
+        model.isCached = YES;
+    }else{
+        model.isCached = NO;
+    }
     return model;
 }
 
@@ -71,10 +125,8 @@ SINGLETON_IMPL(AKDownloadManager)
     group.currentTaskIndex = 0;
 
     group.enableBreakpointResume = breakpointResume;
-    group.onDownloadProgress = (UBSignal<DictionarySignal> *)
-    [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
-    group.onDownloadCompleted = (UBSignal<DictionarySignal> *)
-    [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
+  
+    [group resetSignals];
     
     [self.downloadList addObject:group];
     
@@ -142,10 +194,17 @@ SINGLETON_IMPL(AKDownloadManager)
     NSLog(@"%@ 开始",model.taskName );
    
 
+    [group calcProgress];
+    
+    if(group.needStore){
+        group.needStore = NO;
+        [self storeDownloadList];
+        
+    }
 
     
     if(group.enableBreakpointResume){
-        if(model && [model isCompleted]){
+        if(model && model.isCached ){
             NSLog(@"%@ 断点续传下载已完成",model.taskName );
             
             model = [group goToNextModel];
@@ -201,9 +260,9 @@ SINGLETON_IMPL(AKDownloadManager)
     return path;
 }
 
--(void)checkGroupDir:(NSString*)group
+-(void)checkGroupDir:(NSString*)groupName
 {
-    NSString* path = [self getDownloadGroupDir:group];
+    NSString* path = [self getDownloadGroupDir:groupName];
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
 
@@ -213,7 +272,16 @@ SINGLETON_IMPL(AKDownloadManager)
     
 }
 
-
+-(void)removeGroupDir:(NSString*)groupName
+{
+    NSString* path = [self getDownloadGroupDir:groupName];
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    if ([fileManager fileExistsAtPath:path]) {
+        [fileManager removeItemAtPath:path error:nil];
+    }
+}
 -(void)removeDownloadFile:(NSString*)group withUrl:(NSString*)url
 {
     NSString* path = [self getDownloadFilePath:group withUrl:url];
@@ -251,14 +319,16 @@ SINGLETON_IMPL(AKDownloadManager)
     group.currentTaskIndex = index;
     
     [self startGroup:group];
+    
 }
 
 
 -(void)pauseGroup:(AKDownloadGroupModel*)group
 {
-    if([group isCompleted]){
+    if(group.groupState == HSDownloadStateCompleted || group.groupState == HSDownloadStateSuspended){
         return;
     }
+    [group calcProgress];
     AKDownloadModel* model = [group currentModel];
     if(group.enableBreakpointResume){
         [[HSDownloadManager sharedInstance] pause:model.downLoadUrl group:group.groupName];
@@ -266,12 +336,21 @@ SINGLETON_IMPL(AKDownloadManager)
         group.groupState = HSDownloadStateSuspended;
         [[SGDownloadManager shareManager] supendDownloadWithUrl:model.downLoadUrl];
     }
+    group.groupState = HSDownloadStateSuspended;
     
+    [self storeDownloadList];
+
 }
 
 -(void)deleteGroup:(AKDownloadGroupModel*)group
 {
+    [self pauseGroup:group];
+    [self removeGroupDir:group.groupName];
     
+    [self.downloadList removeObject:group];
+    
+    [self storeDownloadList];
+
 }
 
 
@@ -281,6 +360,7 @@ SINGLETON_IMPL(AKDownloadManager)
     AKDownloadGroupModel* group = [self getDownloadGroup:groupName];
     [group currentModel].progress = progress;
 
+    [group calcProgress];
   group.onDownloadProgress.fire(@{@"groupName":groupName,@"url":url,@"progress":@(progress),@"totalRead":@(totalRead),@"expected":@(expected)});
     
 //    if(group.delegate && [group.delegate respondsToSelector:@selector(downloadProgress:withUrl:withProgress:withTotalRead:withTotalExpected:)]){
@@ -292,12 +372,15 @@ SINGLETON_IMPL(AKDownloadManager)
 {
     NSLog(@"%d 完成状态",downloadState);
     AKDownloadGroupModel* group = [self getDownloadGroup:groupName];
+    [group calcProgress];
     
     if(downloadState == HSDownloadStateCompleted){
         AKDownloadModel* model = [group currentModel];
         NSLog(@"%@ 完成",model.taskName );
         
-        if([group isCompleted] == NO){
+        model.isCached = YES;
+        
+        if(group.groupState != HSDownloadStateCompleted){
             [group goToNextModel];
             [self startGroup:group];
             return;

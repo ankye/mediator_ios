@@ -26,6 +26,7 @@ target 'Project' do
         pod 'SVProgressHUD'
         pod 'MBProgressHUD'
         pod 'MJExtension'
+        pod 'pop'
         
         #share Module
         # U-Share SDK UI模块（分享面板，建议添加）

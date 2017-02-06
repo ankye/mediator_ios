@@ -22,24 +22,51 @@
     if(self = [super init]){
         
         _currentTaskIndex = 0;
-
+        _needStore = YES;
+        _groupProgress = 0.0f;
+        _groupState = HSDownloadStateNone;
+        
     }
     return self;
 }
 
--(CGFloat)groupProgress
+
+-(void)resetSignals
 {
+    self.onDownloadProgress = (UBSignal<DictionarySignal> *)
+    [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
+    self.onDownloadCompleted = (UBSignal<DictionarySignal> *)
+    [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
+    self.task = nil;
+    
+}
+
+-(CGFloat)calcProgress
+{
+    
     AKDownloadModel* model = [self.tasks objectAtIndex:self.currentTaskIndex];
-    if(self.state == HSDownloadStateCompleted){
-        return 1.0f;
-    }
+  
     NSInteger total = [self.tasks count];
     if(total <= 0){
-        return 0.0f;
+        _groupProgress = 0.0f;
+    }else{
+        
+        if(self.enableBreakpointResume == NO &&
+           self.currentTaskIndex >= [self.tasks count]-1 &&
+            [[AKDownloadManager sharedInstance] isDownloadCompleted:self.groupName withUrl:[self currentModel].downLoadUrl]){
+                    _groupProgress = 1.0f;
+            
+            
+        }else{
+            CGFloat singleFileProgress = 1.0f/total;
+            CGFloat progress = (_currentTaskIndex +1.0f) /total - singleFileProgress * (1.0f -  model.progress);
+            _groupProgress = progress;
+        }
     }
-    CGFloat singleFileProgress = 1.0f/total;
-    CGFloat progress = (_currentTaskIndex +1.0f) /total - singleFileProgress * (1.0f -  model.progress);
-    return progress;
+    if(_groupProgress >= 1.0){
+        _groupState = HSDownloadStateCompleted;
+    }
+    return _groupProgress;
     
 }
 
@@ -61,22 +88,23 @@
     }
     return nil;
 }
--(BOOL)isCompleted
-{
-    if(self.enableBreakpointResume){
-        if(self.groupProgress >= 1.0){
-            return YES;
-        }
-        return NO;
-    }else{
-        if(self.currentTaskIndex >= [self.tasks count]-1){
-           
-            return  [[AKDownloadManager sharedInstance] isDownloadCompleted:self.groupName withUrl:[self currentModel].downLoadUrl];
-        }else{
-            return NO;
-        }
-    }
-}
+
+//-(BOOL)isCompleted
+//{
+//    if(self.enableBreakpointResume){
+//        if(self.groupProgress >= 1.0){
+//            return YES;
+//        }
+//        return NO;
+//    }else{
+//        if(self.currentTaskIndex >= [self.tasks count]-1){
+//           
+//            return  [[AKDownloadManager sharedInstance] isDownloadCompleted:self.groupName withUrl:[self currentModel].downLoadUrl];
+//        }else{
+//            return NO;
+//        }
+//    }
+//}
 
 
 -(BOOL)isExistTask:(AKDownloadModel*)model
@@ -96,21 +124,21 @@
 {
     if(![self isExistTask:model]){
         [self.tasks addObject:model];
+        _needStore = YES;
     }
 }
 
 
--(HSDownloadState)state
-{
-    if([self isCompleted]){
-        return HSDownloadStateCompleted;
-    }else {
-        if(self.enableBreakpointResume && self.task != nil){
-                return self.task.state;
-        }else{
-            return self.groupState;
-        }
-    }
-}
+//-(HSDownloadState)calcState
+//{
+//    if([self isCompleted]){
+//        _groupState = HSDownloadStateCompleted;
+//    }else {
+//        if(self.enableBreakpointResume && self.task != nil){
+//                _groupState =  self.task.state;
+//        }
+//    }
+//    return _groupState;
+//}
 
 @end

@@ -21,6 +21,8 @@
 #define APP_CHANNEL  @"app_store"
 
 #import "BaseModule.h"
+#import "PopupModule.h"
+
 #import "ThemeModule.h"
 
 

@@ -29,7 +29,7 @@
     
     if ( self )
     {
-        self.type = MMPopupTypeSheet;
+     
         
         self.backgroundColor = [UIColor whiteColor];
         
@@ -63,13 +63,38 @@
             make.edges.equalTo(self).insets(UIEdgeInsetsMake(50, 0, 0, 0));
         }];
     }
-    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
     return self;
 }
+
+//竖屏大小
+-(CGSize)portraitSize
+{
+    return self.frame.size;
+}
+//横屏大小
+-(CGSize)landscapeSize
+{
+    return self.frame.size;
+}
+
+-(BOOL) isFullScreen
+{
+    return NO;
+}
+
 
 - (void)actionHide
 {
     [self hide];
+}
+
+-(void)hide
+{
+    if(self.onClose){
+        self.onClose(nil);
+    }
 }
 
 @end

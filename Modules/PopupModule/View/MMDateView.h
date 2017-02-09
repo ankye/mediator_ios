@@ -6,8 +6,8 @@
 //  Copyright © 2015 LJC. All rights reserved.
 //
 
-#import "MMPopupView.h"
+#import "AKBasePopupView.h"
 
-@interface MMDateView : MMPopupView
+@interface MMDateView : AKBasePopupView
 
 @end

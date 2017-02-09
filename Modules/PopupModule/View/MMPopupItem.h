@@ -19,7 +19,7 @@ typedef void(^MMPopupItemHandler)(NSInteger index);
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) UIColor  *color;
 
-@property (nonatomic, copy)   MMPopupItemHandler handler;
+@property (nonatomic, assign)   NSInteger channel;
 
 @end
 
@@ -29,12 +29,12 @@ typedef NS_ENUM(NSUInteger, MMItemType) {
     MMItemTypeDisabled
 };
 
-NS_INLINE MMPopupItem* MMItemMake(NSString* title, MMItemType type, MMPopupItemHandler handler)
+NS_INLINE MMPopupItem* MMItemMake(NSString* title, MMItemType type, NSInteger channel)
 {
     MMPopupItem *item = [MMPopupItem new];
     
     item.title = title;
-    item.handler = handler;
+    item.channel = channel;
     
     switch (type)
     {

@@ -6,8 +6,12 @@
 //  Copyright © 2015 LJC. All rights reserved.
 //
 
-#import "MMPopupView.h"
 
-@interface MMPinView : MMPopupView
+#import "AKBasePopupView.h"
+
+@interface MMPinView : AKBasePopupView
+
+@property (nonatomic, assign          ) BOOL           withKeyboard;
+
 
 @end

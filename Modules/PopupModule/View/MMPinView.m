@@ -10,7 +10,6 @@
 #import "MMPopupItem.h"
 #import "MMPopupCategory.h"
 #import "MMPopupDefine.h"
-//#import "MMPopupWindow.h"
 #import <Masonry/Masonry.h>
 
 @interface MMPinView()
@@ -45,7 +44,6 @@
     
     if ( self )
     {
-        self.type = MMPopupTypeCustom;
         
         [self mas_makeConstraints:^(MASConstraintMaker *make) {
             make.size.mas_equalTo(CGSizeMake(240, 200));
@@ -147,12 +145,19 @@
         [self.numberView mm_distributeSpacingHorizontallyWith:self.numberArray];
         
         self.tfPin = [UITextField new];
+        [self.tfPin setBackgroundColor:[UIColor grayColor]];
         [self addSubview:self.tfPin];
         self.tfPin.keyboardType = UIKeyboardTypeNumberPad;
         [self sendSubviewToBack:self.tfPin];
         
+          [self showKeyboard];
+        
         [self startCountDown];
     }
+    
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+  
     
     return self;
 }
@@ -197,6 +202,13 @@
     [self hide];
 }
 
+-(void)hide
+{
+    if(self.onClose)
+    {
+        self.onClose(nil);
+    }
+}
 - (void)actionResend
 {
     [self startCountDown];

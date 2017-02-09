@@ -9,21 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "AKPopupViewProtocol.h"
 #import "BaseModuleDefine.h"
+#import "MMAlertView.h"
+#import "MMPopupItem.h"
+#import "MMSheetView.h"
+#import "MMPinView.h"
+#import "MMDateView.h"
 
 #define AK_POPUP_MANAGER [AKPopupManager sharedInstance]
 
-typedef void(^CompleteFunc)() ;
 
 
 
-@interface AKPopupManager : NSObject <UIGestureRecognizerDelegate,STPopupControllerTransitioning>
+@interface AKPopupManager : NSObject <UIGestureRecognizerDelegate>
 
 
 SINGLETON_INTR(AKPopupManager)
 
 
-
-+(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose;
+//STPopupStyleBottomSheet 类型只支持 AKPopupActionTypeBottom
++(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose;
 
 /**
  弹出窗，注入视图View
@@ -54,5 +58,14 @@ SINGLETON_INTR(AKPopupManager)
 +(void)showProgressHUDAtView:(UIView*)view;
 +(void)hideProgressHUDAtView:(UIView*)view;
 
+-(void)showConfirmAlert:(NSString*)title withDetail:(NSString*)detail withAttributes:(NSMutableDictionary*)attributes;
+
+-(void)showChooseAlert:(NSString*)title withDetail:(NSString*)detail withItems:(NSArray*)items withAttributes:(NSMutableDictionary*)attributes;
+
+-(void)showInputAlert:(NSString*)title withDetail:(NSString*)detail withPlaceholder:(NSString*)placeholder withHandler:(MMPopupInputHandler)handler withAttributes:(NSMutableDictionary*)attributes;
+
+-(void)showSheetAlert:(NSString*)title withItems:(NSArray*)items withAttributes:(NSMutableDictionary*)attributes;
+
+-(void)showDateAlert:(NSMutableDictionary*)attributes;
 
 @end

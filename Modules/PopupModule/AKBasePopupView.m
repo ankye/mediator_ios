@@ -10,6 +10,7 @@
 
 @implementation AKBasePopupView
 
+
 //竖屏大小
 -(CGSize)portraitSize
 {

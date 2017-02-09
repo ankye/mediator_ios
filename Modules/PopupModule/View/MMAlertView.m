@@ -74,7 +74,6 @@
         
         MMAlertViewConfig *config = [MMAlertViewConfig globalConfig];
         
-        self.type = MMPopupTypeAlert;
         self.withKeyboard = (inputHandler!=nil);
         
         self.inputHandler = inputHandler;
@@ -231,6 +230,8 @@
         }];
     }
     
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notifyTextChange:) name:UITextFieldTextDidChangeNotification object:nil];
     
@@ -261,6 +262,7 @@
     else
     {
         [self hide];
+        
     }
     
     if ( self.inputHandler && (btn.tag>0) )
@@ -269,10 +271,17 @@
     }
     else
     {
-        if ( item.handler )
+        if ( self.onClick )
         {
-            item.handler(btn.tag);
+            self.onClick(item.channel,nil);
         }
+    }
+}
+
+-(void)hide
+{
+    if(self.onClose){
+        self.onClose(nil);
     }
 }
 
@@ -301,6 +310,22 @@
             textField.text = [toBeString mm_truncateByCharLength:self.maxInputLength];
         }
     }
+}
+
+//竖屏大小
+-(CGSize)portraitSize
+{
+    return self.frame.size;
+}
+//横屏大小
+-(CGSize)landscapeSize
+{
+    return self.frame.size;
+}
+
+-(BOOL) isFullScreen
+{
+    return NO;
 }
 
 - (void)showKeyboard
@@ -367,5 +392,7 @@
     
     return self;
 }
+
+
 
 @end

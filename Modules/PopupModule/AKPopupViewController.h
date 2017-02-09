@@ -13,4 +13,6 @@
 
 -(id)initWithView:(AKBasePopupView*)customView;
 
+@property (nonatomic,strong) AKPopupBaseAction* popupAction;
+
 @end

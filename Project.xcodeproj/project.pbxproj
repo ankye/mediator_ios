@@ -375,8 +375,10 @@
 		C567BF8C1E481D9000C7C79A /* MMPinView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF801E481D9000C7C79A /* MMPinView.m */; };
 		C567BF8D1E481D9000C7C79A /* MMPopupCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF821E481D9000C7C79A /* MMPopupCategory.m */; };
 		C567BF8E1E481D9000C7C79A /* MMPopupItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF851E481D9000C7C79A /* MMPopupItem.m */; };
-		C567BF8F1E481D9000C7C79A /* MMPopupView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF871E481D9000C7C79A /* MMPopupView.m */; };
 		C567BF901E481D9000C7C79A /* MMSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF891E481D9000C7C79A /* MMSheetView.m */; };
+		C567BF971E4826C400C7C79A /* AKPopupFromSideAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF961E4826C400C7C79A /* AKPopupFromSideAction.m */; };
+		C567BF9D1E4827B900C7C79A /* AKPopupFromSideSpringAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF9C1E4827B900C7C79A /* AKPopupFromSideSpringAction.m */; };
+		C567BFA41E482E1300C7C79A /* AKPopupBaseAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BFA31E482E1300C7C79A /* AKPopupBaseAction.m */; };
 		C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57DF5E21DFA84EE00D3D154 /* TabBar.plist */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
 		C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730191DE2BB3400DB2788 /* AppDelegate.m */; };
@@ -1110,10 +1112,15 @@
 		C567BF831E481D9000C7C79A /* MMPopupDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupDefine.h; sourceTree = "<group>"; };
 		C567BF841E481D9000C7C79A /* MMPopupItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupItem.h; sourceTree = "<group>"; };
 		C567BF851E481D9000C7C79A /* MMPopupItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupItem.m; sourceTree = "<group>"; };
-		C567BF861E481D9000C7C79A /* MMPopupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPopupView.h; sourceTree = "<group>"; };
-		C567BF871E481D9000C7C79A /* MMPopupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPopupView.m; sourceTree = "<group>"; };
 		C567BF881E481D9000C7C79A /* MMSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSheetView.h; sourceTree = "<group>"; };
 		C567BF891E481D9000C7C79A /* MMSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSheetView.m; sourceTree = "<group>"; };
+		C567BF951E4826C400C7C79A /* AKPopupFromSideAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupFromSideAction.h; sourceTree = "<group>"; };
+		C567BF961E4826C400C7C79A /* AKPopupFromSideAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupFromSideAction.m; sourceTree = "<group>"; };
+		C567BF9B1E4827B900C7C79A /* AKPopupFromSideSpringAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupFromSideSpringAction.h; sourceTree = "<group>"; };
+		C567BF9C1E4827B900C7C79A /* AKPopupFromSideSpringAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupFromSideSpringAction.m; sourceTree = "<group>"; };
+		C567BFA11E48292D00C7C79A /* PopupModuleDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupModuleDefine.h; sourceTree = "<group>"; };
+		C567BFA21E482E1300C7C79A /* AKPopupBaseAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupBaseAction.h; sourceTree = "<group>"; };
+		C567BFA31E482E1300C7C79A /* AKPopupBaseAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupBaseAction.m; sourceTree = "<group>"; };
 		C57DF5DF1DF927F900D3D154 /* BanLiTV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BanLiTV.entitlements; sourceTree = "<group>"; };
 		C57DF5E21DFA84EE00D3D154 /* TabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TabBar.plist; sourceTree = "<group>"; };
 		C5A730121DE2BB3400DB2788 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1844,6 +1851,7 @@
 		C567BA8D1E48175700C7C79A /* PopupModule */ = {
 			isa = PBXGroup;
 			children = (
+				C567BF941E48263D00C7C79A /* Action */,
 				C567BF7A1E481D9000C7C79A /* View */,
 				C567BF6B1E481A6B00C7C79A /* AKBasePopupView.h */,
 				C567BF6C1E481A6B00C7C79A /* AKBasePopupView.m */,
@@ -1853,6 +1861,7 @@
 				C567BA911E48175700C7C79A /* AKPopupViewController.m */,
 				C567BA921E48175700C7C79A /* AKPopupViewProtocol.h */,
 				C567BF5D1E48184700C7C79A /* PopupModule.h */,
+				C567BFA11E48292D00C7C79A /* PopupModuleDefine.h */,
 			);
 			path = PopupModule;
 			sourceTree = "<group>";
@@ -3228,12 +3237,23 @@
 				C567BF831E481D9000C7C79A /* MMPopupDefine.h */,
 				C567BF841E481D9000C7C79A /* MMPopupItem.h */,
 				C567BF851E481D9000C7C79A /* MMPopupItem.m */,
-				C567BF861E481D9000C7C79A /* MMPopupView.h */,
-				C567BF871E481D9000C7C79A /* MMPopupView.m */,
 				C567BF881E481D9000C7C79A /* MMSheetView.h */,
 				C567BF891E481D9000C7C79A /* MMSheetView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C567BF941E48263D00C7C79A /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				C567BF951E4826C400C7C79A /* AKPopupFromSideAction.h */,
+				C567BF961E4826C400C7C79A /* AKPopupFromSideAction.m */,
+				C567BF9B1E4827B900C7C79A /* AKPopupFromSideSpringAction.h */,
+				C567BF9C1E4827B900C7C79A /* AKPopupFromSideSpringAction.m */,
+				C567BFA21E482E1300C7C79A /* AKPopupBaseAction.h */,
+				C567BFA31E482E1300C7C79A /* AKPopupBaseAction.m */,
+			);
+			path = Action;
 			sourceTree = "<group>";
 		};
 		C5A730091DE2BB3400DB2788 = {
@@ -3642,6 +3662,7 @@
 				C567BF0B1E48175900C7C79A /* MJChiBaoZiFooter.m in Sources */,
 				C567BD031E48175800C7C79A /* AKBaseModel.m in Sources */,
 				C567BE5C1E48175800C7C79A /* NSDate+Time.m in Sources */,
+				C567BFA41E482E1300C7C79A /* AKPopupBaseAction.m in Sources */,
 				C567BF5B1E48175900C7C79A /* OUNavigationController.m in Sources */,
 				C567BF4C1E48175900C7C79A /* AKUser.m in Sources */,
 				C567BEFD1E48175800C7C79A /* CustomNumbersModel.m in Sources */,
@@ -3706,6 +3727,7 @@
 				C567BF4E1E48175900C7C79A /* AKUserGroup.m in Sources */,
 				C567BE3B1E48175800C7C79A /* AKNewsChannel.m in Sources */,
 				C567BEA01E48175800C7C79A /* EnterNotesView.m in Sources */,
+				C567BF971E4826C400C7C79A /* AKPopupFromSideAction.m in Sources */,
 				C567BD231E48175800C7C79A /* AKChooseTagPanelView.m in Sources */,
 				C567BEED1E48175800C7C79A /* BSNumbersDataManager.m in Sources */,
 				C567BD201E48175800C7C79A /* AKChannelTagButton.m in Sources */,
@@ -3729,6 +3751,7 @@
 				C567BEDB1E48175800C7C79A /* YReaderRecord.m in Sources */,
 				C567BE3A1E48175800C7C79A /* AKNewsManager.m in Sources */,
 				C567BF071E48175900C7C79A /* CustomPickView.m in Sources */,
+				C567BF9D1E4827B900C7C79A /* AKPopupFromSideSpringAction.m in Sources */,
 				C567BD251E48175800C7C79A /* AKCollection2Layout.m in Sources */,
 				C567BF4B1E48175900C7C79A /* AKUserManager.m in Sources */,
 				C567BF4D1E48175900C7C79A /* AKUserDetail.m in Sources */,
@@ -3849,7 +3872,6 @@
 				C567BD2F1E48175800C7C79A /* AKBaseCollectionView.m in Sources */,
 				C567BEA41E48175800C7C79A /* NotesMenuView.m in Sources */,
 				C567BD3D1E48175800C7C79A /* HSDownloadTask.m in Sources */,
-				C567BF8F1E481D9000C7C79A /* MMPopupView.m in Sources */,
 				C567BEB01E48175800C7C79A /* FormatString.m in Sources */,
 				C567BE7B1E48175800C7C79A /* EmojiTransport.m in Sources */,
 				C567BEFE1E48175800C7C79A /* CustomNumbersPlainFlowLayout.m in Sources */,

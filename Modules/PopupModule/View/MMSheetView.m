@@ -35,7 +35,6 @@
         
         MMSheetViewConfig *config = [MMSheetViewConfig globalConfig];
         
-        self.type = MMPopupTypeSheet;
         self.actionItems = items;
         
         self.backgroundColor = config.splitColor;
@@ -138,6 +137,9 @@
         
     }
     
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    
     return self;
 }
 
@@ -147,9 +149,10 @@
     
     [self hide];
     
-    if ( item.handler )
+    if ( self.onClick )
     {
-        item.handler(btn.tag);
+        self.onClick(item.channel,nil);
+
     }
 }
 
@@ -157,6 +160,30 @@
 {
     [self hide];
 }
+
+-(void)hide
+{
+    if(self.onClose){
+        self.onClose(nil);
+    }
+}
+
+//竖屏大小
+-(CGSize)portraitSize
+{
+    return self.frame.size;
+}
+//横屏大小
+-(CGSize)landscapeSize
+{
+    return self.frame.size;
+}
+
+-(BOOL) isFullScreen
+{
+    return NO;
+}
+
 
 @end
 

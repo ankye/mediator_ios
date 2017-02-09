@@ -37,7 +37,7 @@
     static NSString * identifier=@"AKDownloadListTableCell";
     AKDownloadListTableCell * cell= (AKDownloadListTableCell*)[self getCell:tableView withName:identifier];
     
-    AKDownloadModel *model = [AKDownloadManager sharedInstance].downloadList[indexPath.row];
+    AKDownloadGroupModel *model = [AKDownloadManager sharedInstance].downloadList[indexPath.row];
     [cell showData:model];
     return cell;
 

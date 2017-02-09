@@ -6,10 +6,10 @@
 //  Copyright © 2015 LJC. All rights reserved.
 //
 
-#import "MMPopupView.h"
+#import "AKBasePopupView.h"
 #import "MMPopupDefine.h"
 
-@interface MMSheetView : MMPopupView
+@interface MMSheetView : AKBasePopupView
 
 - (instancetype) initWithTitle:(NSString*)title
                          items:(NSArray*)items;

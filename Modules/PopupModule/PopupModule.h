@@ -9,5 +9,6 @@
 #ifndef PopupModule_h
 #define PopupModule_h
 
+#import "STPopup.h"
 
 #endif /* PopupModule_h */

@@ -262,12 +262,14 @@
         NSLog(@"点击了删除");
         [tableView setEditing:NO animated:YES];
         
-       NSMutableDictionary* attribute = [AKPopupManager buildPopupAttributes:YES showNav:YES style:STPopupStyleFormSheet onClick:^(NSInteger channel, NSDictionary *attributes) {
-           
-       } onClose:^(NSDictionary *attributes) {
-           
-       }];
-        [AK_POPUP_MANAGER showView:[[AKBasePopupView alloc] init] withAttributes:attribute];
+//        NSMutableDictionary* attribute = [AKPopupManager buildPopupAttributes:NO showNav:YES style:STPopupStyleBottomSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSDictionary *attributes) {
+//           
+//       } onClose:^(NSDictionary *attributes) {
+//           
+//       }];
+//        [AK_POPUP_MANAGER showView:[[AKBasePopupView alloc] init] withAttributes:attribute];
+//
+   //     [AK_POPUP_MANAGER showAlert];
         
     //    [self showAlcrtViewWithDeleteBook:editBookM];
     }];

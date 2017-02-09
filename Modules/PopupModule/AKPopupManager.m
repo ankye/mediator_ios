@@ -12,13 +12,16 @@
 #import <SVProgressHUD/SVProgressHUD.h>
 #import "MBProgressHUD+Custom.h"
 #import <POP/POP.h>
+#import "AKPopupFromSideAction.h"
+#import "AKPopupFromSideSpringAction.h"
+#import "AKPopupViewController.h"
+
 
 @interface AKPopupManager()
 
 @property (nonatomic,strong) STPopupController*     popupController;
 @property (nonatomic,strong) NSMutableArray*        popupQueue;
 @property (nonatomic,copy) NSMutableDictionary*   currentAttributes;
-
 
 @end
 
@@ -37,18 +40,25 @@ SINGLETON_IMPL(AKPopupManager)
     return self;
 }
 
-+(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose
++(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose
 {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
     dic[AK_Popup_ShowBG] =  @(showBG);
     dic[AK_Popup_ShowNav] = @(showNav);
     dic[AK_Popup_OnClick] = onClick;
     dic[AK_Popup_OnClose] = onClose;
+   
     if(style){
         dic[AK_Popup_Style] = @(style);
     }else{
         dic[AK_Popup_Style] = @(STPopupStyleFormSheet);
     }
+    //目前只支持 AKPopupActionTypeBottom
+    if(STPopupStyleBottomSheet == style){
+        actionType = AKPopupActionTypeBottom;
+    }
+     dic[AK_Popup_ActionType] = @(actionType);
+    
     return dic;
 }
 
@@ -65,15 +75,30 @@ SINGLETON_IMPL(AKPopupManager)
     [self.popupQueue removeObjectAtIndex:0];
     NSMutableDictionary* attributes = self.currentAttributes;
     
-    UIViewController* controller = attributes[AK_Popup_Controller];
+    AKPopupViewController* controller = attributes[AK_Popup_Controller];
     
     self.popupController = [[STPopupController alloc] initWithRootViewController:controller];
     self.popupController.containerView.layer.cornerRadius = 4;
     self.popupController.transitionStyle = STPopupTransitionStyleCustom;
     
-    self.popupController.transitioning = self;
+ 
+    
+    AKPopupActionType actionType = [attributes[AK_Popup_ActionType] integerValue];
+    
+    AKPopupBaseAction* action = [self createAction:actionType];
+    
+    action.onCompleted = ^(){
+        self.popupController = nil;
+        self.currentAttributes = nil;
+        [self show];
+    };
+    controller.popupAction = action;
+    
+    self.popupController.transitioning = controller.popupAction;
     
     self.popupController.style = [attributes[AK_Popup_Style] integerValue];
+    
+    
     
     if([attributes[AK_Popup_ShowBG] boolValue]){
         if (NSClassFromString(@"UIBlurEffect")) {
@@ -107,6 +132,46 @@ SINGLETON_IMPL(AKPopupManager)
     }];
 
 }
+-(AKPopupBaseAction*)createAction:(AKPopupActionType)type
+{
+    switch (type) {
+        case AKPopupActionTypeTop:
+            return [[AKPopupFromSideAction alloc] initWithDirection:AKPopupActionDirectionTop];
+            break;
+        case AKPopupActionTypeBottom:
+            return [[AKPopupFromSideAction alloc] initWithDirection:AKPopupActionDirectionBottom];
+
+            break;
+        case AKPopupActionTypeLeft:
+            return [[AKPopupFromSideAction alloc] initWithDirection:AKPopupActionDirectionLeft];
+
+            break;
+        case AKPopupActionTypeRight:
+            return [[AKPopupFromSideAction alloc] initWithDirection:AKPopupActionDirectionRight];
+
+            break;
+        case AKPopupActionTypeSpringTop:
+            return [[AKPopupFromSideSpringAction alloc] initWithDirection:AKPopupActionDirectionTop];
+
+            break;
+        case AKPopupActionTypeSpringBottom:
+            return [[AKPopupFromSideSpringAction alloc] initWithDirection:AKPopupActionDirectionBottom];
+
+            break;
+        case AKPopupActionTypeSpringLeft:
+            return [[AKPopupFromSideSpringAction alloc] initWithDirection:AKPopupActionDirectionLeft];
+
+            break;
+        case AKPopupActionTypeSpringRight:
+            return [[AKPopupFromSideSpringAction alloc] initWithDirection:AKPopupActionDirectionRight];
+            break;
+            
+        default:
+            return [[AKPopupFromSideAction alloc] initWithDirection:AKPopupActionDirectionTop];
+
+            break;
+    }
+}
 
 -(void)push:(UIViewController*)controller
 {
@@ -139,6 +204,7 @@ SINGLETON_IMPL(AKPopupManager)
     customView.onClick = [attributes objectForKey:AK_Popup_OnClick];
     customView.onClose = [attributes objectForKey:AK_Popup_OnClose];
     
+   
     [self showController:vc withAttributes:attributes];
     
 }
@@ -152,171 +218,6 @@ SINGLETON_IMPL(AKPopupManager)
 }
 
 
-
-- (NSTimeInterval)popupControllerTransitionDuration:(STPopupControllerTransitioningContext *)context
-{
-    return context.action == STPopupControllerTransitioningActionPresent ? 0.5 : 0.35;
-}
-
-
--(void)customAction1:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
-{
-    UIView *containerView = context.containerView;
-    if (context.action == STPopupControllerTransitioningActionPresent) {
-        containerView.transform = CGAffineTransformMakeTranslation(0, containerView.superview.bounds.size.height - containerView.frame.origin.y);
-
-        [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            context.containerView.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            completion();
-        }];
-    }
-    else {
-        
-        CGAffineTransform lastTransform = containerView.transform;
-        containerView.transform = CGAffineTransformIdentity;
-        CGFloat originY = containerView.frame.origin.y;
-        containerView.transform = lastTransform;
-
-        [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            containerView.transform = CGAffineTransformMakeTranslation(0, containerView.superview.bounds.size.height - originY + containerView.frame.size.height);
-        } completion:^(BOOL finished) {
-            containerView.transform = CGAffineTransformIdentity;
-            completion();
-            
-        }];
-    }
-
-}
-
--(void)customAction2:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
-{
-    UIView *containerView = context.containerView;
-    if (context.action == STPopupControllerTransitioningActionPresent) {
-        containerView.transform = CGAffineTransformMakeTranslation(0,  -(containerView.superview.bounds.size.height - containerView.frame.origin.y));
-        
-        [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 usingSpringWithDamping:1 initialSpringVelocity:1 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            context.containerView.transform = CGAffineTransformIdentity;
-        } completion:^(BOOL finished) {
-            completion();
-        }];
-    }
-    else {
-        
-        CGAffineTransform lastTransform = containerView.transform;
-        containerView.transform = CGAffineTransformIdentity;
-        containerView.transform = lastTransform;
-        CGFloat originY = containerView.frame.origin.y;
-
-        [UIView animateWithDuration:[self popupControllerTransitionDuration:context] delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
-            containerView.transform = CGAffineTransformMakeTranslation(0,  -( containerView.superview.bounds.size.height - originY + containerView.frame.size.height));
-        } completion:^(BOOL finished) {
-            containerView.transform = CGAffineTransformIdentity;
-            completion();
-            
-        }];
-    }
-    
-}
-
--(void)customAction3:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
-{
-    UIView *containerView = context.containerView;
-    if (context.action == STPopupControllerTransitioningActionPresent) {
-        
-        containerView.center = CGPointMake(containerView.center.x, (containerView.superview.bounds.size.height + containerView.frame.origin.y));
-        
-        POPSpringAnimation *positionAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-        positionAnimation.toValue = @(containerView.superview.center.y);
-        positionAnimation.springBounciness = 10;
-        [positionAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
-            completion();
-        }];
-        
-        POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-        scaleAnimation.springBounciness = 20;
-        scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
-        
-        
-        [containerView.layer pop_addAnimation:positionAnimation forKey:@"positionAnimation"];
-        [containerView.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
-        
-    }
-    else {
-        
-        CGFloat originY = containerView.frame.origin.y;
-        
-        POPBasicAnimation *offscreenAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-        offscreenAnimation.toValue = @(( containerView.superview.bounds.size.height + originY + containerView.frame.size.height));
-        [offscreenAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
-            completion();
-        }];
-        [containerView.layer pop_addAnimation:offscreenAnimation forKey:@"offscreenAnimation"];
-        
-        
-    }
-    
-}
-
-
--(void)customAction4:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
-{
-    UIView *containerView = context.containerView;
-    if (context.action == STPopupControllerTransitioningActionPresent) {
-        
-        containerView.center = CGPointMake(containerView.center.x, -(containerView.superview.bounds.size.height - containerView.frame.origin.y));
-        
-        POPSpringAnimation *positionAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-        positionAnimation.toValue = @(containerView.superview.center.y);
-        positionAnimation.springBounciness = 10;
-        [positionAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
-            completion();
-        }];
-        
-        POPSpringAnimation *scaleAnimation = [POPSpringAnimation animationWithPropertyNamed:kPOPLayerScaleXY];
-        scaleAnimation.springBounciness = 20;
-        scaleAnimation.fromValue = [NSValue valueWithCGPoint:CGPointMake(1.2, 1.4)];
-        
-        
-        [containerView.layer pop_addAnimation:positionAnimation forKey:@"positionAnimation"];
-        [containerView.layer pop_addAnimation:scaleAnimation forKey:@"scaleAnimation"];
-        
-    }
-    else {
-        
-        CGFloat originY = containerView.frame.origin.y;
-
-        POPBasicAnimation *offscreenAnimation = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
-        offscreenAnimation.toValue = @(-( containerView.superview.bounds.size.height - originY + containerView.frame.size.height));
-        [offscreenAnimation setCompletionBlock:^(POPAnimation *anim, BOOL finished) {
-            completion();
-        }];
-        [containerView.layer pop_addAnimation:offscreenAnimation forKey:@"offscreenAnimation"];
-        
-        
-    }
-    
-}
-
-- (void)popupControllerAnimateTransition:(STPopupControllerTransitioningContext *)context completion:(CompleteFunc)completion
-{
-    CompleteFunc func = completion;
-    
-    if (context.action == STPopupControllerTransitioningActionPresent){
-        
-    }else{
-        func = ^(){
-            if(completion){
-                completion();
-            }
-            self.popupController = nil;
-            self.currentAttributes = nil;
-            [self show];
-        };
-
-    }
-    [self customAction4:context completion:func];
-}
 
 +(void)showTips:(NSString *)text
 {
@@ -361,4 +262,42 @@ SINGLETON_IMPL(AKPopupManager)
         [MBProgressHUD hideCustomHUDForView:view];
     });
 }
+
+-(void)showConfirmAlert:(NSString*)title withDetail:(NSString*)detail withAttributes:(NSMutableDictionary*)attributes
+{
+    MMAlertView *alertView = [[MMAlertView alloc] initWithConfirmTitle:title detail:detail];
+    [self showView:alertView withAttributes:attributes];
+    
+}
+
+-(void)showChooseAlert:(NSString*)title withDetail:(NSString*)detail withItems:(NSArray*)items withAttributes:(NSMutableDictionary*)attributes
+{
+    MMAlertView *alertView = [[MMAlertView alloc] initWithTitle:title detail:detail items:items];
+     [self showView:alertView withAttributes:attributes];
+}
+
+-(void)showInputAlert:(NSString*)title withDetail:(NSString*)detail withPlaceholder:(NSString*)placeholder withHandler:(MMPopupInputHandler)handler withAttributes:(NSMutableDictionary*)attributes
+{
+    MMAlertView *alertView = [[MMAlertView alloc] initWithInputTitle:title detail:detail placeholder:placeholder handler:handler];
+    [self showView:alertView withAttributes:attributes];
+
+}
+
+-(void)showSheetAlert:(NSString*)title withItems:(NSArray*)items withAttributes:(NSMutableDictionary*)attributes
+{
+    
+    MMSheetView *sheetView = [[MMSheetView alloc] initWithTitle:title items:items];
+    attributes[AK_Popup_Style] = @(STPopupStyleBottomSheet);
+    [self showView:sheetView withAttributes:attributes];
+}
+
+
+-(void)showDateAlert:(NSMutableDictionary*)attributes
+{
+    MMDateView *view = [[MMDateView alloc] init];
+    attributes[AK_Popup_Style] = @(STPopupStyleBottomSheet);
+    
+    [self showView:view withAttributes:attributes];
+}
+
 @end

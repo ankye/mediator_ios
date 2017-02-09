@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AKPopupBaseAction.h"
 
 @interface AKBasePopupView : UIView<AKPopupViewProtocol>
 
 @property (nonatomic,strong) AKPopupOnClick onClick;
 @property (nonatomic,strong) AKPopupOnClose onClose;
+
 
 @end

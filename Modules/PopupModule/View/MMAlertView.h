@@ -6,12 +6,14 @@
 //  Copyright © 2015 LJC. All rights reserved.
 //
 
-#import "MMPopupView.h"
+#import "AKBasePopupView.h"
 #import "MMPopupDefine.h"
 
 typedef void(^MMPopupInputHandler)(NSString *text);
 
-@interface MMAlertView : MMPopupView
+@interface MMAlertView : AKBasePopupView
+
+@property (nonatomic, assign          ) BOOL           withKeyboard;
 
 @property (nonatomic, assign) NSUInteger maxInputLength;    // default is 0. Means no length limit.
 

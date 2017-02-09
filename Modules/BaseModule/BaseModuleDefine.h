@@ -10,7 +10,7 @@
 #define BaseModuleDefine_h
 
 #import <Masonry/Masonry.h>
-#import <STPopup/STPopup.h>
+
 #import "AKPopupViewProtocol.h"
 #import <CYLTabBarController/CYLTabBarController.h>
 #import "AKMacro.h"

@@ -12,7 +12,7 @@
 
 - (NSTimeInterval)popupControllerTransitionDuration:(STPopupControllerTransitioningContext *)context
 {
-    return context.action == STPopupControllerTransitioningActionPresent ? 0.5 : 0.35;
+    return context.action == STPopupControllerTransitioningActionPresent ? 0.35 : 0.3;
 
 }
 

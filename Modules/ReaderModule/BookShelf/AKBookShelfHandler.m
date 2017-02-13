@@ -262,15 +262,18 @@
         NSLog(@"点击了删除");
         [tableView setEditing:NO animated:YES];
         
-//        NSMutableDictionary* attribute = [AKPopupManager buildPopupAttributes:NO showNav:YES style:STPopupStyleBottomSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSDictionary *attributes) {
-//           
-//       } onClose:^(NSDictionary *attributes) {
-//           
-//       }];
-//        [AK_POPUP_MANAGER showView:[[AKBasePopupView alloc] init] withAttributes:attribute];
-//
-   //     [AK_POPUP_MANAGER showAlert];
         
+        NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSDictionary *attributes) {
+            NSLog(@"确定点击");
+            if(channel == 2){
+                
+            }
+       } onClose:^(NSDictionary *attributes) {
+           NSLog(@"确定关闭");
+       }];
+        
+        
+        [[AKPopupManager sharedInstance] showChooseAlert:@"确认删除吗?" withDetail:@"删除后需要重新下载！" withItems:nil withAttributes:attributes];
     //    [self showAlcrtViewWithDeleteBook:editBookM];
     }];
     deleteAction.backgroundColor = AKRGBColor(255, 59, 48);

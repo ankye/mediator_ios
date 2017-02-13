@@ -272,6 +272,12 @@ SINGLETON_IMPL(AKPopupManager)
 
 -(void)showChooseAlert:(NSString*)title withDetail:(NSString*)detail withItems:(NSArray*)items withAttributes:(NSMutableDictionary*)attributes
 {
+    if(items == nil){
+        items =
+        @[MMItemMake(@"取消", MMItemTypeNormal, 1),
+          MMItemMake(@"确认", MMItemTypeHighlight, 2)
+          ];
+    }
     MMAlertView *alertView = [[MMAlertView alloc] initWithTitle:title detail:detail items:items];
      [self showView:alertView withAttributes:attributes];
 }

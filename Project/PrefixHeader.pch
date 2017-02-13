@@ -22,6 +22,7 @@
 
 #import "BaseModule.h"
 #import "PopupModule.h"
+#import "DBModule.h"
 
 #import "ThemeModule.h"
 

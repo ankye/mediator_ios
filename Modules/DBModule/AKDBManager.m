@@ -9,7 +9,6 @@
 #import "AKDBManager.h"
 
 #import <objc/runtime.h>
-#import "NSString+Tools.h"
 
 
 @interface AKDBManager()
@@ -23,7 +22,7 @@
 SINGLETON_IMPL(AKDBManager)
 
 
-
+#pragma mark private method
 /**
  获取DB操作队列，一个DB一个操作队列
 
@@ -48,7 +47,7 @@ SINGLETON_IMPL(AKDBManager)
 
 
 /**
- 清理单个队列
+ 关闭单个队列
 
  @param dbname 数据库名
  */
@@ -65,7 +64,7 @@ SINGLETON_IMPL(AKDBManager)
 
 
 /**
- 清理所有队列
+ 关闭所有队列
  */
 -(void)closeQueues
 {
@@ -83,8 +82,21 @@ SINGLETON_IMPL(AKDBManager)
 }
 
 
+- (BOOL)createTableWithQueue:(FMDatabaseQueue*)queue withTableName:(NSString *)tableName withSQL:(NSString *)sqlString
+{
+    __block BOOL ok = YES;
+    [queue inDatabase:^(FMDatabase *db) {
+        if(![db tableExists:tableName]){
+            ok = [db executeUpdate:sqlString withArgumentsInArray:nil];
+        }
+    }];
+    return ok;
+}
 
 
+
+
+#pragma mark public method
 
 
 - (BOOL)isExistTable:(FMDatabaseQueue*)queue withTableName:(NSString *)tableName
@@ -108,19 +120,6 @@ SINGLETON_IMPL(AKDBManager)
     return [self createTableWithQueue:queue withTableName:tableName withSQL:sqlString];
 
 }
-
-
-- (BOOL)createTableWithQueue:(FMDatabaseQueue*)queue withTableName:(NSString *)tableName withSQL:(NSString *)sqlString
-{
-    __block BOOL ok = YES;
-    [queue inDatabase:^(FMDatabase *db) {
-        if(![db tableExists:tableName]){
-            ok = [db executeUpdate:sqlString withArgumentsInArray:nil];
-        }
-    }];
-    return ok;
-}
-
 
 
 
@@ -291,21 +290,8 @@ SINGLETON_IMPL(AKDBManager)
 }
 
 
-+ (NSArray *)propertyArrayWithClass:(Class)clazz{
-    NSMutableArray * array=[[NSMutableArray alloc]init];
-    unsigned int count;
-    
-    objc_property_t * pros=class_copyPropertyList(clazz, &count);
-    
-    for(int i=0;i<count;i++){
-        objc_property_t property= pros[i];
-        const char * nameChar=property_getName(property);
-        NSString * name=[NSString stringWithFormat:@"%s",nameChar];
-        [array addObject:name];
-    }
-    free(pros);
-    return array;
-}
+
+
 @end
 
 

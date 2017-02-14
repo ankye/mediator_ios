@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AKDataObjectProtocol.h"
 
-@interface AKBaseModel : NSObject<AKDataObjectProtocol,NSCoding, NSCopying>
+@interface AKBaseModel : NSObject<AKDataObjectProtocol>
 
 
 @end

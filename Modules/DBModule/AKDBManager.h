@@ -41,32 +41,6 @@
 SINGLETON_INTR(AKDBManager)
 
 
-
-/**
- 获取DB操作队列，一个DB一个操作队列
- 
- @param dbname db名称
- @return 返回队列
- */
--(FMDatabaseQueue*)getQueue:(NSString*)dbname;
-
-
-
-/**
- 清理单个队列
- 
- @param dbname 数据库名
- */
--(void)closeQueue:(NSString*)dbname;
-
-/**
- 清理所有队列
- */
--(void)closeQueues;
-
-
-
-
 /**
  是否存在表
 
@@ -87,11 +61,18 @@ SINGLETON_INTR(AKDBManager)
  @return YES OR NO
  */
 -(BOOL)createTableWithDBName:(NSString*)dbname withTableName:(NSString*)tableName withSql:(NSString*)sql;
-/**
- *  表创建
- */
-- (BOOL)createTableWithQueue:(FMDatabaseQueue*)queue withTableName:(NSString*)tableName withSQL:(NSString*)sqlString;
 
+
+/**
+ 插入或者更新整条数据
+ 
+ @param model 数据Model
+ @param dbname 库名
+ @param tableName 表名
+ @param sqlFormat sql格式化语句
+ @return YES OR NO
+ */
+- (BOOL)insertOrUpdate:(id<AKDataObjectProtocol>)model withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat;
 
 
 
@@ -101,16 +82,6 @@ SINGLETON_INTR(AKDBManager)
 -(AKBaseModel*)queryRowByParams:(NSDictionary*)params withModel:(Class)aClass withDBName:(NSString*)dbname withTableName:(NSString*)tableName;
 
 
-/**
- 插入或者更新整条数据
-
- @param model 数据Model
- @param dbname 库名
- @param tableName 表名
- @param sqlFormat sql格式化语句
- @return YES OR NO
- */
-- (BOOL)insertOrUpdate:(id<AKDataObjectProtocol>)model withDBName:(NSString*)dbname withTableName:(NSString*)tableName withSqlFormat:(NSString*)sqlFormat;
 
 
 

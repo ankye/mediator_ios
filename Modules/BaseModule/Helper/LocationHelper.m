@@ -1,15 +1,17 @@
 //
-//  InitialData.m
-//  powerlife
+//  LocationHelper.m
+//  Project
 //
-//  Created by 陈行 on 16/6/16.
-//  Copyright © 2016年 陈行. All rights reserved.
+//  Created by ankye on 2017/2/16.
+//  Copyright © 2017年 ankye. All rights reserved.
 //
 
-#import "InitialData.h"
-#import "RequestUtil.h"
+#import "LocationHelper.h"
+#import <AMap3DMap/MAMapKit/MAMapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface InitialData()<CLLocationManagerDelegate>
+
+@interface LocationHelper()<CLLocationManagerDelegate>
 
 @property(nonatomic,retain)CLLocationManager *locationManager;
 /**
@@ -19,25 +21,21 @@
 
 @end
 
-@implementation InitialData
 
-static InitialData * sharedInitialData;
+@implementation LocationHelper
 
-+ (instancetype)sharedInitialData{
-    @synchronized (self) {
-        if (sharedInitialData==nil) {
-            sharedInitialData=[InitialData new];
-            sharedInitialData.userLocalProvince=@"北京市";
-            sharedInitialData.userLocalCity=@"北京市";
-            sharedInitialData.userLocalSubLocality=@"东城区";
-            sharedInitialData.userCoordinate =CLLocationCoordinate2DMake(39.9040300000, 116.4075260000);
-            //开启定位
-            [sharedInitialData locate];
-            //获取version
-            [sharedInitialData loadVersion];
-        }
+SINGLETON_IMPL(LocationHelper)
+
+-(id)init
+{
+    self = [super init];
+    if(self){
+        self.userLocalProvince=@"北京市";
+        self.userLocalCity=@"北京市";
+        self.userLocalSubLocality=@"东城区";
+        self.userCoordinate =CLLocationCoordinate2DMake(39.9040300000, 116.4075260000);
     }
-    return sharedInitialData;
+    return self;
 }
 
 #pragma mark - 定位相关
@@ -65,7 +63,7 @@ static InitialData * sharedInitialData;
     [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *array, NSError *error){
         if (array.count > 0 && self.isReverseGeocodeLocation==false){
             self.isReverseGeocodeLocation=true;
-
+            
             CLPlacemark *placemark = [array objectAtIndex:0];
             //省市县
             self.userLocalProvince=placemark.administrativeArea;
@@ -138,34 +136,27 @@ static InitialData * sharedInitialData;
     }
 }
 
-#pragma mark - version
-- (void)loadVersion{
-    //获取ipa中的版本信息，
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    self.appVersion = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    self.appName = [infoDictionary objectForKey:@"CFBundleName"];
+
+/**
+ 获得2个点直接的距离,单位米
+ 
+ @param from 起始点
+ @param to 结束点
+ @return 返回距离
+ */
++(int) getDistance:(CLLocationCoordinate2D)from to:(CLLocationCoordinate2D)to
+{
+    //1.将两个经纬度点转成投影点
+    MAMapPoint point1 = MAMapPointForCoordinate(from);
+    MAMapPoint point2 = MAMapPointForCoordinate(to);
+    //2.计算距离
+    CLLocationDistance distance = MAMetersBetweenMapPoints(point1,point2);
+    return (int)distance;
 }
 
-#pragma mark - getter
-- (UIColor *)readBackgroundColor{
-    if (!_readBackgroundColor) {
-        _readBackgroundColor = [UIColor colorWithRed:0.780 green:0.929 blue:0.800 alpha:1.000];
-    }
-    return _readBackgroundColor;
-}
-
-- (NSInteger)readFontNum{
-    if (!_readFontNum) {
-        _readFontNum = 24;
-    }
-    return _readFontNum;
-}
-
-- (NSInteger)readTextSpace{
-    if (!_readTextSpace) {
-        _readTextSpace = 8;
-    }
-    return _readTextSpace;
++(int) getDistance:(double)latitude longitude:(double)longitude toLatitude:(double)toLatitude toLongitude:(double)toLongitude
+{
+    return [LocationHelper getDistance:CLLocationCoordinate2DMake(latitude, longitude) to:CLLocationCoordinate2DMake(toLatitude, toLongitude)];
 }
 
 

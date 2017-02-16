@@ -24,7 +24,7 @@
                                             ext5 TEXT,\
                                             PRIMARY KEY(uid, gid))"
 
-#define     SQL_INSERT_OR_UPDATE_GROUP                @"REPLACE INTO %@ ( uid, gid, name, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )"
+#define     SQL_INSERT_OR_REPLACE_GROUP                @"REPLACE INTO %@ ( uid, gid, name, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )"
 
 
 

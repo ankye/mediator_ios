@@ -7,7 +7,6 @@
 //
 
 #import "CustomRuleView.h"
-#import "UIView+Category.h"
 
 #define SCREENWIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.width.height

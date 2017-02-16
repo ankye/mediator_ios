@@ -26,6 +26,13 @@
 
 
 /**
+ 获取APP名称
+
+ @return 名称
+ */
++(NSString*)appName;
+
+/**
  判断空字符串
 
  @param string 待检验string
@@ -104,16 +111,6 @@
 +(NSString *)getNetWorkStates;
 
 
-/**
- 获得2个点直接的距离,单位米
- 
- @param from 起始点
- @param to 结束点
- @return 返回距离
- */
-+(int) getDistance:(CLLocationCoordinate2D)from to:(CLLocationCoordinate2D)to;
-
-+(int) getDistance:(double)latitude longitude:(double)longitude toLatitude:(double)toLatitude toLongitude:(double)toLongitude;
 
 
 @end

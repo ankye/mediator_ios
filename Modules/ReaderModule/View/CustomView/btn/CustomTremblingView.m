@@ -7,8 +7,8 @@
 //
 
 #import "CustomTremblingView.h"
-#import "UIButton+RefreshLocation.h"
-#import "UIView+Category.h"
+
+
 #import "CustomBtn.h"
 
 @interface CustomTremblingView()

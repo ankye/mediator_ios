@@ -9,6 +9,11 @@
 #ifndef ReaderModuleDefine_h
 #define ReaderModuleDefine_h
 
+#define KAK_READER_DBNAME @"Reader"
+#define KAK_TABLE_NAME_BOOK @"Book"
+
+
+
 #define READER_SERVER @"http://privateapi.biqugeapp.cc"
 
 

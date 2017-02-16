@@ -21,9 +21,9 @@
 {
     [AK_DATA_CENTER updatePool:KAKD_USERModel withKey:user.uid andObject:(AKBaseModel*)user];
 
-    [AK_DB_MANAGER user_insertOrUpdate:user];
+    [AK_DB_MANAGER user_insertOrReplace:user];
     if(user.detail){
-        [AK_DB_MANAGER user_detail_insertOrUpdate:(AKUserDetail*)user.detail];
+        [AK_DB_MANAGER user_detail_insertOrReplace:(AKUserDetail*)user.detail];
     }
     
 

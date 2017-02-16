@@ -10,5 +10,6 @@
 #define PopupModule_h
 
 #import "STPopup.h"
+#import "AKPopupManager.h"
 
 #endif /* PopupModule_h */

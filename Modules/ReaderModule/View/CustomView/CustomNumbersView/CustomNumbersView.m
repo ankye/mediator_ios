@@ -7,12 +7,11 @@
 //
 
 #import "CustomNumbersView.h"
-#import "UICollectionView+Category.h"
 #import "CustomNumbersPlainFlowLayout.h"
 #import "CustomNumbersLeftHeaderView.h"
 #import "CustomNumbersRightHeaderView.h"
 #import "CustomNumbersCell.h"
-#import "UIView+Category.h"
+
 
 @interface CustomNumbersView () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate,UITableViewDelegate,UITableViewDataSource>
 /**
@@ -104,7 +103,7 @@
         }
         
         static NSString * identifier = @"CustomNumbersCell";
-        CustomNumbersCell * numbersCell = [collectionView collectionViewCellByNibWithIdentifier:identifier andIndexPath:indexPath];
+        CustomNumbersCell * numbersCell = nil;// [collectionView collectionViewCellByNibWithIdentifier:identifier andIndexPath:indexPath];
         NSString * text = @"";
         if (self.topKey) {
             text=[self.topDataArray[indexPath.item] valueForKey:self.topKey];
@@ -123,7 +122,7 @@
         }
         
         static NSString * identifier = @"CustomNumbersCell";
-        CustomNumbersCell * numbersCell = [collectionView collectionViewCellByNibWithIdentifier:identifier andIndexPath:indexPath];
+        CustomNumbersCell * numbersCell = nil;// [collectionView collectionViewCellByNibWithIdentifier:identifier andIndexPath:indexPath];
         
         CustomNumbersModel * con = self.leftDataArray[indexPath.section];
         NSInteger row = indexPath.item/self.topDataArray.count;

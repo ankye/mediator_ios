@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "MJRefresh.h"
-#import "UICollectionView+Category.h"
 
 @interface MainCollectionView : UICollectionView
 

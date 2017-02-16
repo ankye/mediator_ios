@@ -23,6 +23,8 @@
 
 -(NSArray*)modelToDBRecord;
 
+-(NSArray*)modelDBProperties;
+
 @end
 
 

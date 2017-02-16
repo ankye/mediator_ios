@@ -14,7 +14,7 @@
 
 AKDB_CREATE_TABLE_INTR(user_group)
 
-AKDB_INSERT_OR_UPDATE_INTR(user_group,AKUserGroup)
+AKDB_INSERT_OR_REPLACE_INTR(user_group,AKUserGroup)
 
 -(BOOL)user_group_updateByID:(NSString*)uid withGid:(NSString*)gid withAttirbutes:(NSDictionary*)attributes;
 

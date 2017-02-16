@@ -62,7 +62,7 @@
 -(void)appInitConfigure
 {
    
-    [[AKReaderManager sharedInstance] moduleInitConfigure];
+  //  [[AKReaderManager sharedInstance] moduleInitConfigure];
    
 }
 

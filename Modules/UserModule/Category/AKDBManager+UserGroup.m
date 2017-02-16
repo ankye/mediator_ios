@@ -13,21 +13,24 @@
 
 AKDB_CREATE_TABLE_IMPL(user_group,KAK_TLUSER_DBNAME,TABLE_NAME_GROUP,SQL_CREATE_TABLE_GROUP)
 
-AKDB_INSERT_OR_UPDATE_IMPL(user_group,AKUserGroup,KAK_TLUSER_DBNAME,TABLE_NAME_GROUP,SQL_INSERT_OR_UPDATE_GROUP)
+AKDB_INSERT_OR_REPLACE_IMPL(user_group,AKUserGroup,KAK_TLUSER_DBNAME,TABLE_NAME_GROUP,SQL_INSERT_OR_REPLACE_GROUP)
 
 -(BOOL)user_group_updateByID:(NSString*)uid withGid:(NSString*)gid withAttirbutes:(NSDictionary*)attributes
 {
-    return [self updateByParams:@{@"uid":uid,@"gid":gid} withDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_GROUP withAttributes:attributes];
+
+    return [self updateByParamsWithDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_GROUP andWhereParams:@{@"uid":uid,@"gid":gid} withAttributes:attributes];
 }
 
 
 -(AKUserGroup*)user_group_queryByID:(NSString*)uid withGid:(NSString*)gid
 {
-    return (AKUserGroup*)[self queryRowByParams:@{@"uid":uid,@"gid":gid} withModel:[AKUserGroup class] withDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_GROUP];
+    return (AKUserGroup*)[self queryRowByParamsWithDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_GROUP andWhereParams:@{@"uid":uid,@"gid":gid} withModel:[AKUserGroup class]];
+ 
 }
 
 -(BOOL)user_group_deleteByUid:(NSString*)uid andGid:(NSString*)gid
 {
-    return [self deleteByParams:@{@"uid":uid,@"gid":gid} withDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_GROUP];
+    return [self deleteByParamsWithDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_GROUP andWhereParams:@{@"uid":uid,@"gid":gid}];
+    
 }
 @end

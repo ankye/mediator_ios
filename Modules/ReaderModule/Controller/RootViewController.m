@@ -27,23 +27,11 @@
     [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleLightContent;
 }
 
-#pragma mark - 懒加载
-- (RequestUtil *)requestUtil{
-    if(_requestUtil==nil){
-        _requestUtil=[[RequestUtil alloc]init];
-        _requestUtil.delegate=self;
-        _requestUtil.view=self.view;
-        _requestUtil.isShowProgressHud=YES;
-    }
-    return _requestUtil;
-}
 
 #pragma mark - 系统协议
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    if (_requestUtil) {
-//        _requestUtil.delegate=nil;
-    }
+
 }
 
 

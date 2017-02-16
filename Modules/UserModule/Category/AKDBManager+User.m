@@ -16,18 +16,19 @@
 
 AKDB_CREATE_TABLE_IMPL(user,KAK_TLUSER_DBNAME,TABLE_NAME_USER,SQL_CREATE_TABLE_USER)
 
-AKDB_INSERT_OR_UPDATE_IMPL(user,AKUser,KAK_TLUSER_DBNAME,TABLE_NAME_USER,SQL_INSERT_OR_UPDATE_USER)
+AKDB_INSERT_OR_REPLACE_IMPL(user,AKUser,KAK_TLUSER_DBNAME,TABLE_NAME_USER,SQL_INSERT_OR_REPLACE_USER)
 
 
 -(BOOL)user_updateByID:(NSString*)uid withAttirbutes:(NSDictionary*)attributes
 {
-    return [self updateByParams:@{@"uid":uid} withDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_USER withAttributes:attributes];
+    return [self updateByParamsWithDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_USER andWhereParams:@{@"uid":uid} withAttributes:attributes];
     
 }
 
 -(AKUser*)user_queryByID:(NSString*)uid
 {
-    return (AKUser*)[self queryRowByParams:@{@"uid":uid} withModel:[AKUser class] withDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_USER];
+    return (AKUser*)[self queryRowByParamsWithDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_USER andWhereParams:@{@"uid":uid} withModel:[AKUser class]];
+
     
 }
 
@@ -35,8 +36,9 @@ AKDB_INSERT_OR_UPDATE_IMPL(user,AKUser,KAK_TLUSER_DBNAME,TABLE_NAME_USER,SQL_INS
 
 -(BOOL)user_deleteByID:(NSString*)uid
 {
-    return [ self deleteByParams:@{@"uid":uid} withDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_USER];
+    return [self deleteByParamsWithDBName:KAK_TLUSER_DBNAME withTableName:TABLE_NAME_USER andWhereParams:@{@"uid":uid}];
     
+
 }
 
 

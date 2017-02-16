@@ -9,7 +9,7 @@
 #ifndef ReaderModule_h
 #define ReaderModule_h
 
-
+#import "AKDBManager+Book.h"
 #import "AKRequestManager+ReaderModule.h"
 
 
@@ -21,7 +21,6 @@
 //  Copyright (c) 2015年 陈行. All rights reserved.
 //
 
-#import "InitialData.h"
 #import "AKReaderManager.h"
 
 /**
@@ -108,9 +107,9 @@
 
 #pragma mark - InitialData
 
-#define READ_BACKGROUND_COLOR [InitialData sharedInitialData].readBackgroundColor
-#define READ_FONT_NUM [InitialData sharedInitialData].readFontNum
-#define READ_TEXT_SPACE [InitialData sharedInitialData].readTextSpace
+#define READ_BACKGROUND_COLOR  [UIColor colorWithRed:0.780 green:0.929 blue:0.800 alpha:1.000] //[InitialData sharedInitialData].readBackgroundColor
+#define READ_FONT_NUM 24  // [InitialData sharedInitialData].readFontNum
+#define READ_TEXT_SPACE  8 // [InitialData sharedInitialData].readTextSpace
 
 #pragma mark - 常用变量
 

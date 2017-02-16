@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>追书</string>
+		<string>追书架</string>
 		<key>normal</key>
 		<string>tab_icon_home_nor</string>
 		<key>selected</key>

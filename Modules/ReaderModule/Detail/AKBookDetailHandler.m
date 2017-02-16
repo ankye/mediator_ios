@@ -15,9 +15,8 @@
 #import "BookDetailChapterCell.h"
 #import "BookDetailIntroduceCell.h"
 #import "BookChapter.h"
-#import "BookDatabase.h"
+
 #import "NSString+Category.h"
-#import "NSFileManager+FileCategory.h"
 #import "SGDownloadManager.h"
 #import "AKDownloadManager.h"
 
@@ -239,10 +238,14 @@
  //   [self reloadData];
     
     if (self.book.isCaseBook) {//取消收藏
-        [BookDatabase removeBookDataFromDatabaseWithNovelId:self.book.novel.Id];
+       // [BookDatabase removeBookDataFromDatabaseWithNovelId:self.book.novel.Id];
+        [[AKDBManager sharedInstance] book_deleteByID:self.book.novel.Id];
     }else{//加入收藏
-        [BookDatabase saveBookToDataBaseWithIndexPath:self.book.currIndexPath andBook:self.book];
+//        [BookDatabase saveBookToDataBaseWithIndexPath:self.book.currIndexPath andBook:self.book];
+        
+        [[AKDBManager sharedInstance] book_insertOrReplace:self.book];
     }
+    
     self.book.isCaseBook = !self.book.isCaseBook;
     
     

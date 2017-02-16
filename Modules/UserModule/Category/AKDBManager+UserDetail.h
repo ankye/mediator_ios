@@ -15,7 +15,7 @@
 
 AKDB_CREATE_TABLE_INTR(user_detail)
 
-AKDB_INSERT_OR_UPDATE_INTR(user_detail,AKUserDetail)
+AKDB_INSERT_OR_REPLACE_INTR(user_detail,AKUserDetail)
 
 -(BOOL)user_detail_updateByID:(NSString*)uid withAttirbutes:(NSDictionary*)attributes;
 

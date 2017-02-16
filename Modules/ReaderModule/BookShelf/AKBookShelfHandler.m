@@ -75,31 +75,37 @@
 - (void)loadNewData
 {
     
-    NSMutableArray*tmpList_data = [@[] mutableCopy] ;
-    _lastPage = 0;
-    [AK_REQUEST_MANAGER reader_requestHotListWithPage:1 success:^(__kindof YTKBaseRequest * _Nonnull request) {
-        NSData* jsonData = request.responseData;
-        NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
-        
-        NSInteger errorCode =[response[@"status"] integerValue];
-        if(errorCode!=1){
-            [[[UIAlertView alloc]initWithTitle:FINAL_PROMPT_INFOMATION message:response[@"info"] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
-            return;
-        }
-        
-        _lastPage = 1;
-        NSArray *retlist = response[@"data"] ;
-        
-        
-        for (NSDictionary *dic in retlist) {
-            Book *aContent = [Book bookWithDict:dic] ;
-            [tmpList_data addObject:aContent] ;
-        }
-        
-        self.dataList = tmpList_data ;
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
-    }];
+ //   NSMutableArray*tmpList_data = [@[] mutableCopy] ;
+    
+    NSArray* data = [AK_DB_MANAGER book_queryAll];
+    if(data){
+        self.dataList = [data mutableCopy];
+    }
+    
+//    _lastPage = 0;
+//    [AK_REQUEST_MANAGER reader_requestHotListWithPage:1 success:^(__kindof YTKBaseRequest * _Nonnull request) {
+//        NSData* jsonData = request.responseData;
+//        NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
+//        
+//        NSInteger errorCode =[response[@"status"] integerValue];
+//        if(errorCode!=1){
+//            [[[UIAlertView alloc]initWithTitle:FINAL_PROMPT_INFOMATION message:response[@"info"] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
+//            return;
+//        }
+//        
+//        _lastPage = 1;
+//        NSArray *retlist = response[@"data"] ;
+//        
+//        
+//        for (NSDictionary *dic in retlist) {
+//            Book *aContent = [Book bookWithDict:dic] ;
+//            [tmpList_data addObject:aContent] ;
+//        }
+//        
+//        self.dataList = tmpList_data ;
+//    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//        
+//    }];
     
     
     
@@ -114,37 +120,37 @@
     
     // Content *lastContent = [self.dataList lastObject] ;
     
-    NSMutableArray*tmpList_data = self.dataList ;
-    [AK_REQUEST_MANAGER reader_requestHotListWithPage:(_lastPage+1) success:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
-        NSData* jsonData = request.responseData;
-        
-        
-        NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
-        
-        NSInteger errorCode =[response[@"status"] integerValue];
-        if(errorCode!=1){
-            [[[UIAlertView alloc]initWithTitle:FINAL_PROMPT_INFOMATION message:response[@"info"] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
-            return;
-        }
-        
-        
-        NSArray *retlist = response[@"data"] ;
-        if([retlist count ] > 0){
-            _lastPage += 1;
-        }else{
-            return ;
-        }
-        for (NSDictionary *dic in retlist) {
-            Book *aContent = [Book bookWithDict:dic] ;
-            [tmpList_data addObject:aContent] ;
-        }
-        self.dataList = tmpList_data ;
-        
-        
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
-    }];
+//    NSMutableArray*tmpList_data = self.dataList ;
+//    [AK_REQUEST_MANAGER reader_requestHotListWithPage:(_lastPage+1) success:^(__kindof YTKBaseRequest * _Nonnull request) {
+//        
+//        NSData* jsonData = request.responseData;
+//        
+//        
+//        NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
+//        
+//        NSInteger errorCode =[response[@"status"] integerValue];
+//        if(errorCode!=1){
+//            [[[UIAlertView alloc]initWithTitle:FINAL_PROMPT_INFOMATION message:response[@"info"] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
+//            return;
+//        }
+//        
+//        
+//        NSArray *retlist = response[@"data"] ;
+//        if([retlist count ] > 0){
+//            _lastPage += 1;
+//        }else{
+//            return ;
+//        }
+//        for (NSDictionary *dic in retlist) {
+//            Book *aContent = [Book bookWithDict:dic] ;
+//            [tmpList_data addObject:aContent] ;
+//        }
+//        self.dataList = tmpList_data ;
+//        
+//        
+//    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
+//        
+//    }];
     
     
 }

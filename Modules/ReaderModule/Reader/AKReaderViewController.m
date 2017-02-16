@@ -11,8 +11,6 @@
 #import "PageGenerationHeader.h"
 #import "PageGenerationFooter.h"
 #import "PageGenerationManager.h"
-#import "BookDatabase.h"
-#import "NSFileManager+FileCategory.h"
 
 #import "YDirectoryViewController.h"
 #import "YMenuViewController.h"
@@ -274,10 +272,10 @@
     _pageGenerationManager.chapterName = self.currBookChapter.name;
 //    NSString * path                    = [[NSBundle mainBundle] pathForResource:@"411054" ofType:@""];
 //    NSString *str                      = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[self.currBookChapter.url md5]];
-    NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
+//    NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[self.currBookChapter.url md5]];
+//    NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
     
-    return text;
+    return nil;
 }
 
 #pragma mark - PageGenerationManager 代理
@@ -345,9 +343,12 @@
         
         [av show];
     }else{
-    //    NSIndexPath * indexPath = [[self.mainView indexPathsForVisibleItems] firstObject];
+      //  NSIndexPath * indexPath = [[self. indexPathsForVisibleItems] firstObject];
         
      //   [BookDatabase saveBookToDataBaseWithIndexPath:indexPath andBook:self.book];
+       // self.book.currIndexPath = indexPath;
+      //  [[AKDBManager sharedInstance] book_insertOrReplace:self.book];
+
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -356,7 +357,7 @@
 {
     if (!self.readIndexPath) {
         
-        Book * book = [[BookDatabase bookDataListFromDatabaseWithNovelId:self.book.novel.Id] firstObject];
+        Book * book = [[AKDBManager sharedInstance] book_queryByID:self.book.novel.Id]; // [[BookDatabase bookDataListFromDatabaseWithNovelId:self.book.novel.Id] firstObject];
         
         self.book.isCaseBook = book!=nil;
         
@@ -393,8 +394,8 @@
 - (void)getDataByNovelTextUrl:(NSString *)novelTextUrl{
     if([self isExitNovelByNovelTextUrl:novelTextUrl]){
         
-        NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
-        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
+//        NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
+//        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
         
         
     }else{
@@ -404,19 +405,19 @@
 
 //判断本地是否缓存
 - (BOOL)isExitNovelByNovelTextUrl:(NSString *)novelTextUrl{
-    NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
+//    NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
     
-    if ([NSFileManager isExistsFileWithFilePath:filePath]) {
-        
-        
-        NSError * error = nil;
-        
-        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:&error];
-        
-        if (![text isEqualToEmptyStr]) {
-            return YES;
-        }
-    }
+//    if ([NSFileManager isExistsFileWithFilePath:filePath]) {
+//        
+//        
+//        NSError * error = nil;
+//        
+//        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:&error];
+//        
+//        if (![text isEqualToEmptyStr]) {
+//            return YES;
+//        }
+//    }
     
     return NO;
 }

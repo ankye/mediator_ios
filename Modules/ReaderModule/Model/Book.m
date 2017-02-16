@@ -11,7 +11,6 @@
 #import "NSString+Category.h"
 #import "NSDate+Time.h"
 
-#import "SQLiteManager.h"
 
 @implementation Book
 
@@ -47,6 +46,78 @@
              @"last":NSStringFromClass([BookLastUpdate class]),
              };
 }
+
+
+
+-(void)fillData:(id<AKDataObjectProtocol>)object
+{
+    
+}
+
+-(void)resultSetToModel:(FMResultSet *)retSet
+{
+    BookNovel * bookNovel = [BookNovel new];
+    bookNovel.Id = [retSet stringForColumn:@"novel_id"];
+    bookNovel.name =[retSet stringForColumn:@"novel_name"];
+    bookNovel.cover =[retSet stringForColumn:@"novel_cover"];
+    bookNovel.intro = [retSet stringForColumn:@"novel_intro"];
+    self.read_chapter_section = [retSet intForColumn:@"read_chapter_section"];
+    self.read_chapter_row = [retSet intForColumn:@"read_chapter_row"];
+    
+    BookAuthor * bookAuthor = [BookAuthor new];
+    bookAuthor.name =[retSet stringForColumn:@"author_name"];
+    
+    BookCategory * bookCategory = [BookCategory new];
+    bookCategory.Id = [retSet stringForColumn:@"category_id"];
+    bookCategory.name = [retSet stringForColumn:@"category_name"];
+    
+    BookLastUpdate * bookLastUpdate= [BookLastUpdate new];
+    bookLastUpdate.time =[retSet stringForColumn:@"lastupdate_chapter_time"];
+    bookLastUpdate.name = [retSet stringForColumn:@"lastupdate_chapter_name"];
+    
+    BookSource * bookSource = [BookSource new];
+    bookSource.siteid = [retSet stringForColumn:@"source_siteid"];
+    
+    self.currIndexPath = [NSIndexPath indexPathForRow:[retSet intForColumn:@"read_chapter_row"] inSection:[retSet intForColumn:@"read_chapter_section"]];
+    self.novel = bookNovel;
+    self.author = bookAuthor;
+    self.category = bookCategory;
+    self.last = bookLastUpdate;
+    self.source = bookSource;
+    
+    [self refreshBasicData];
+
+}
+
+-(NSArray*)modelDBProperties
+{
+    return @[@"novel_id",@"novel_cover",@"novel_name",@"novel_intro",@"author_name",@"lastupdate_chapter_time",@"lastupdate_chapter_name",@"category_id",@"category_name",@"read_chapter_section",@"source_siteid",@"has_sticky",@"ext_type",@"ext1",@"ext2",@"ext3",@"ext4",@"ext5"];
+    
+}
+-(NSArray*)modelToDBRecord
+{
+    return @[ AKNoNilString(self.novel.Id),
+             AKNoNilString(self.novel.cover),
+             AKNoNilString(self.novel.name),
+             AKNoNilString(self.novel.intro),
+             AKNoNilString(self.author.name),
+             AKNoNilString(self.last.time),
+             AKNoNilString(self.last.name),
+             AKNoNilString(self.category.Id),
+             AKNoNilString(self.category.name),
+             AKNoNilNumber(@(self.currIndexPath.section)),
+             AKNoNilNumber(@(self.currIndexPath.row)),
+             AKNoNilString(self.source.siteid),
+             AKNoNilNumber(@(self.hasSticky)),
+             AKNoNilNumber(@(self.extType)),
+              @"",
+              @"",
+              @"",
+              @"",
+              @"",
+             ];
+}
+
 
 @end
 

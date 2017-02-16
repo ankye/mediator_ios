@@ -8,7 +8,6 @@
 
 #import "BookChapter.h"
 #import "MJExtension.h"
-#import "NSString+Category.h"
 
 
 @implementation BookChapter
@@ -54,27 +53,27 @@
         //开始
         NSString * currStr = nil;
         
-        if (prevParaLastStr) {
-            currStr = prevParaLastStr;
-            if (isNeedNewStr) {
-                if ([paragraphsArray[i] isEqualToEmptyStr]) {
-                    currStr = nil;
-                    continue;
-                }
-                
-                currStr = [currStr stringByAppendingFormat:@"%@\n",paragraphsArray[i]];
-            }
-            
-        }else{
-            currStr = [paragraphsArray objectAtIndex:i];
-            
-            if ([currStr isEqualToEmptyStr]) {
-                currStr = nil;
-                continue;
-            }
-            
-            currStr = [currStr stringByAppendingString:@"\n"];
-        }
+//        if (prevParaLastStr) {
+//            currStr = prevParaLastStr;
+//            if (isNeedNewStr) {
+//                if ([paragraphsArray[i] isEqualToEmptyStr]) {
+//                    currStr = nil;
+//                    continue;
+//                }
+//                
+//                currStr = [currStr stringByAppendingFormat:@"%@\n",paragraphsArray[i]];
+//            }
+//            
+//        }else{
+//            currStr = [paragraphsArray objectAtIndex:i];
+//            
+//            if ([currStr isEqualToEmptyStr]) {
+//                currStr = nil;
+//                continue;
+//            }
+//            
+//            currStr = [currStr stringByAppendingString:@"\n"];
+//        }
         
         CGSize currSize = [currStr boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size;
         

@@ -8,9 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-#import "UIView+Category.h"
-#import "NSString+Category.h"
-#import "NSObject+Category.h"
+
 #import "UIImageView+WebCache.h"
 
 #import "WebViewController.h"
@@ -20,14 +18,11 @@
 #import "MBProgressHUD.h"
 #import "AppDelegate.h"
 
-#import "SQLiteManager.h"
-#import "RequestUtil.h"
-
-#import "InitialData.h"
 
 
-@interface RootViewController : UIViewController<RequestUtilDelegate>
 
-@property(nonatomic,strong)RequestUtil * requestUtil;
+@interface RootViewController : UIViewController
+
+
 
 @end

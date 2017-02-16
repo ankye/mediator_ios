@@ -7,8 +7,7 @@
 //
 
 #import "CustomShareView.h"
-#import "UIView+Category.h"
-#import "NSObject+Category.h"
+
 #import "AppDelegate.h"
 
 #define SELFWIDTH [UIScreen mainScreen].bounds.size.width

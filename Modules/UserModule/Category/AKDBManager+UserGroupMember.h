@@ -14,7 +14,7 @@
 
 AKDB_CREATE_TABLE_INTR(user_group_member)
 
-AKDB_INSERT_OR_UPDATE_INTR(user_group_member,AKUserGroupMember)
+AKDB_INSERT_OR_REPLACE_INTR(user_group_member,AKUserGroupMember)
 
 
 

@@ -59,7 +59,7 @@
 
 }
 
--(NSArray*)modelToDBRecord
+-(NSArray*)fetchDBRecord
 {
     NSArray *arrPara = [NSArray arrayWithObjects:
                         AKNoNilString(self.uid),

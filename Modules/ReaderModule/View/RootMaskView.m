@@ -7,8 +7,7 @@
 //
 
 #import "RootMaskView.h"
-#import "UIView+Category.h"
-#import "UITableView+Category.h"
+
 
 @interface RootMaskView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -65,7 +64,7 @@
     }
     
     static NSString * identifier=@"RootStandardTableCell";
-    RootStandardTableCell * cell=[tableView tableViewCellByNibWithIdentifier:identifier];
+    RootStandardTableCell * cell= nil;//[tableView tableViewCellByNibWithIdentifier:identifier];
     NSString * obj = self.dataArray[indexPath.row];;
     if (self.key) {
         obj = [obj valueForKey:self.key];

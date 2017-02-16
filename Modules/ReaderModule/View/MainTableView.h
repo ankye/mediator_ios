@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "MJRefresh.h"
-#import "UITableView+Category.h"
 
 @interface MainTableView : UITableView
 

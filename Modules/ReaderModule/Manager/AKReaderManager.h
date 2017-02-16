@@ -13,17 +13,14 @@
 @property (nonatomic,strong) NSMutableDictionary* books;
 
 
-@property(nonatomic,assign)NSInteger networkStatus;
+//@property (nonatomic, assign) double systemBattery;
 
-@property (nonatomic, assign) double systemBattery;
-
-+ (NSInteger)networkStatus;
 
 
 SINGLETON_INTR(AKReaderManager)
 
 
--(void)moduleInitConfigure;
+//-(void)moduleInitConfigure;
 
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "CustomBtn.h"
-#import "UIView+Category.h"
 #import "UIImageView+WebCache.h"
 
 @implementation CustomBtn

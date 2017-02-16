@@ -31,7 +31,7 @@
                                             ext5 TEXT,\
                                             PRIMARY KEY(uid))"
 
-#define     SQL_INSERT_OR_UPDATE_USERDETAIL               @"REPLACE INTO %@ ( uid, sex,location,phoneNumber, qqNumber,email,albumArray,motto,momentsWallURL,address,birthday,hometown,latitude,longitude,remarkInfo,remarkImagePath,remarkImageURL, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)"
+#define     SQL_INSERT_OR_REPLACE_USERDETAIL               @"REPLACE INTO %@ ( uid, sex,location,phoneNumber, qqNumber,email,albumArray,motto,momentsWallURL,address,birthday,hometown,latitude,longitude,remarkInfo,remarkImagePath,remarkImageURL, ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)"
 
 
 

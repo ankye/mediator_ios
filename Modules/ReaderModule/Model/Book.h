@@ -20,7 +20,7 @@ typedef enum : NSUInteger {
     BOOK_CACHE_STATUS_ALL_END,
 } BOOK_CACHE_STATUS;
 
-@interface Book : NSObject
+@interface Book : AKBaseModel
 
 @property (nonatomic, strong) BookAuthor *author;
 
@@ -33,6 +33,13 @@ typedef enum : NSUInteger {
 @property (nonatomic, strong) BookLastUpdate *last;
 
 @property (nonatomic, strong) BookEveryUrl *url;
+
+@property (nonatomic, assign) NSInteger read_chapter_section;
+@property (nonatomic, assign) NSInteger read_chapter_row;
+
+@property (assign, nonatomic) BOOL hasSticky;       //置顶
+@property (assign, nonatomic) BOOL hasUpdated;      //有更新
+@property (assign, nonatomic) NSInteger extType;    //扩展类型
 
 @property(nonatomic,strong) NSDictionary * data;
 /**

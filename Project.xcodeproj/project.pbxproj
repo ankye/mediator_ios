@@ -123,22 +123,8 @@
 		C567BE551E48175800C7C79A /* YBookViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA9E1E48175700C7C79A /* YBookViewCell.m */; };
 		C567BE561E48175800C7C79A /* YBookViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BA9F1E48175700C7C79A /* YBookViewCell.xib */; };
 		C567BE571E48175800C7C79A /* YProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAA11E48175700C7C79A /* YProgressView.m */; };
-		C567BE581E48175800C7C79A /* RequestUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAA51E48175700C7C79A /* RequestUtil.m */; };
 		C567BE591E48175800C7C79A /* AKRequestManager+ReaderModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAA71E48175700C7C79A /* AKRequestManager+ReaderModule.m */; };
-		C567BE5A1E48175800C7C79A /* SQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAAA1E48175700C7C79A /* SQLiteManager.m */; };
-		C567BE5B1E48175800C7C79A /* VersionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAAC1E48175700C7C79A /* VersionConst.m */; };
-		C567BE5C1E48175800C7C79A /* NSDate+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAAF1E48175700C7C79A /* NSDate+Time.m */; };
-		C567BE5D1E48175800C7C79A /* NSFileManager+FileCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAB21E48175700C7C79A /* NSFileManager+FileCategory.m */; };
-		C567BE5E1E48175800C7C79A /* NSObject+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAB51E48175700C7C79A /* NSObject+Category.m */; };
-		C567BE5F1E48175800C7C79A /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAB81E48175700C7C79A /* NSString+Category.m */; };
-		C567BE601E48175800C7C79A /* NSUserDefaults+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BABB1E48175700C7C79A /* NSUserDefaults+Category.m */; };
-		C567BE611E48175800C7C79A /* UIButton+RefreshLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BABE1E48175700C7C79A /* UIButton+RefreshLocation.m */; };
-		C567BE621E48175800C7C79A /* UICollectionView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAC11E48175700C7C79A /* UICollectionView+Category.m */; };
-		C567BE631E48175800C7C79A /* UIImage+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAC41E48175700C7C79A /* UIImage+Category.m */; };
-		C567BE641E48175800C7C79A /* UITableView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAC71E48175700C7C79A /* UITableView+Category.m */; };
-		C567BE651E48175800C7C79A /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BACA1E48175700C7C79A /* UIView+Category.m */; };
 		C567BE661E48175800C7C79A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BACD1E48175700C7C79A /* RootViewController.m */; };
-		C567BE671E48175800C7C79A /* database.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = C567BACF1E48175700C7C79A /* database.sqlite3 */; };
 		C567BE681E48175800C7C79A /* AKBookDetailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAD21E48175700C7C79A /* AKBookDetailHandler.m */; };
 		C567BE691E48175800C7C79A /* AKBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAD41E48175700C7C79A /* AKBookDetailViewController.m */; };
 		C567BE6A1E48175800C7C79A /* BookDetailBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAD71E48175700C7C79A /* BookDetailBasicCell.m */; };
@@ -151,7 +137,6 @@
 		C567BE711E48175800C7C79A /* AKDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAE41E48175700C7C79A /* AKDownloadViewController.m */; };
 		C567BE721E48175800C7C79A /* AKDownloadListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAE71E48175700C7C79A /* AKDownloadListTableCell.m */; };
 		C567BE731E48175800C7C79A /* AKDownloadListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BAE81E48175700C7C79A /* AKDownloadListTableCell.xib */; };
-		C567BE741E48175800C7C79A /* InitialData.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAEB1E48175700C7C79A /* InitialData.m */; };
 		C567BE751E48175800C7C79A /* AKHotNovelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAEE1E48175700C7C79A /* AKHotNovelHandler.m */; };
 		C567BE761E48175800C7C79A /* AKHotNovelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAF01E48175700C7C79A /* AKHotNovelViewController.m */; };
 		C567BE771E48175800C7C79A /* Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAF41E48175700C7C79A /* Emoji.m */; };
@@ -218,7 +203,6 @@
 		C567BEB41E48175800C7C79A /* BookAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB571E48175700C7C79A /* BookAuthor.m */; };
 		C567BEB51E48175800C7C79A /* BookCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB591E48175700C7C79A /* BookCategory.m */; };
 		C567BEB61E48175800C7C79A /* BookChapter.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB5B1E48175700C7C79A /* BookChapter.m */; };
-		C567BEB71E48175800C7C79A /* BookDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB5D1E48175700C7C79A /* BookDatabase.m */; };
 		C567BEB81E48175800C7C79A /* BookDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB5F1E48175700C7C79A /* BookDocument.m */; };
 		C567BEB91E48175800C7C79A /* BookEveryUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB611E48175700C7C79A /* BookEveryUrl.m */; };
 		C567BEBA1E48175800C7C79A /* BookLastUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB631E48175700C7C79A /* BookLastUpdate.m */; };
@@ -376,6 +360,9 @@
 		C567BF971E4826C400C7C79A /* AKPopupFromSideAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF961E4826C400C7C79A /* AKPopupFromSideAction.m */; };
 		C567BF9D1E4827B900C7C79A /* AKPopupFromSideSpringAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BF9C1E4827B900C7C79A /* AKPopupFromSideSpringAction.m */; };
 		C567BFA41E482E1300C7C79A /* AKPopupBaseAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BFA31E482E1300C7C79A /* AKPopupBaseAction.m */; };
+		C573156C1E5432070099D9F7 /* AKDBManager+Book.m in Sources */ = {isa = PBXBuildFile; fileRef = C573156B1E5432070099D9F7 /* AKDBManager+Book.m */; };
+		C57315701E5452CC0099D9F7 /* Aspect+ReaderModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C573156F1E5452CC0099D9F7 /* Aspect+ReaderModule.m */; };
+		C57315741E556F8B0099D9F7 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C57315731E556F8B0099D9F7 /* LocationHelper.m */; };
 		C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57DF5E21DFA84EE00D3D154 /* TabBar.plist */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
 		C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730191DE2BB3400DB2788 /* AppDelegate.m */; };
@@ -389,6 +376,8 @@
 		C5BFDEE71E51B54B003CFEC4 /* AKDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BFDEE61E51B54B003CFEC4 /* AKDBManager.m */; };
 		C5BFDEEC1E51B615003CFEC4 /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BFDEEB1E51B615003CFEC4 /* NSString+Tools.m */; };
 		C5BFDEEF1E51C752003CFEC4 /* AKBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BFDEEE1E51C752003CFEC4 /* AKBaseModel.m */; };
+		C5EA4DBD1E55777C0047A519 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EA4DBC1E55777C0047A519 /* NSString+Category.m */; };
+		C5EA4DC01E557BA30047A519 /* NSDate+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EA4DBF1E557BA30047A519 /* NSDate+Time.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -641,37 +630,10 @@
 		C567BA9F1E48175700C7C79A /* YBookViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBookViewCell.xib; sourceTree = "<group>"; };
 		C567BAA01E48175700C7C79A /* YProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YProgressView.h; sourceTree = "<group>"; };
 		C567BAA11E48175700C7C79A /* YProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YProgressView.m; sourceTree = "<group>"; };
-		C567BAA41E48175700C7C79A /* RequestUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestUtil.h; sourceTree = "<group>"; };
-		C567BAA51E48175700C7C79A /* RequestUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestUtil.m; sourceTree = "<group>"; };
 		C567BAA61E48175700C7C79A /* AKRequestManager+ReaderModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKRequestManager+ReaderModule.h"; sourceTree = "<group>"; };
 		C567BAA71E48175700C7C79A /* AKRequestManager+ReaderModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKRequestManager+ReaderModule.m"; sourceTree = "<group>"; };
-		C567BAA91E48175700C7C79A /* SQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLiteManager.h; sourceTree = "<group>"; };
-		C567BAAA1E48175700C7C79A /* SQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLiteManager.m; sourceTree = "<group>"; };
-		C567BAAB1E48175700C7C79A /* VersionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionConst.h; sourceTree = "<group>"; };
-		C567BAAC1E48175700C7C79A /* VersionConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionConst.m; sourceTree = "<group>"; };
-		C567BAAE1E48175700C7C79A /* NSDate+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Time.h"; sourceTree = "<group>"; };
-		C567BAAF1E48175700C7C79A /* NSDate+Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Time.m"; sourceTree = "<group>"; };
-		C567BAB11E48175700C7C79A /* NSFileManager+FileCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+FileCategory.h"; sourceTree = "<group>"; };
-		C567BAB21E48175700C7C79A /* NSFileManager+FileCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+FileCategory.m"; sourceTree = "<group>"; };
-		C567BAB41E48175700C7C79A /* NSObject+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Category.h"; sourceTree = "<group>"; };
-		C567BAB51E48175700C7C79A /* NSObject+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Category.m"; sourceTree = "<group>"; };
-		C567BAB71E48175700C7C79A /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
-		C567BAB81E48175700C7C79A /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
-		C567BABA1E48175700C7C79A /* NSUserDefaults+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+Category.h"; sourceTree = "<group>"; };
-		C567BABB1E48175700C7C79A /* NSUserDefaults+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Category.m"; sourceTree = "<group>"; };
-		C567BABD1E48175700C7C79A /* UIButton+RefreshLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+RefreshLocation.h"; sourceTree = "<group>"; };
-		C567BABE1E48175700C7C79A /* UIButton+RefreshLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+RefreshLocation.m"; sourceTree = "<group>"; };
-		C567BAC01E48175700C7C79A /* UICollectionView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+Category.h"; sourceTree = "<group>"; };
-		C567BAC11E48175700C7C79A /* UICollectionView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+Category.m"; sourceTree = "<group>"; };
-		C567BAC31E48175700C7C79A /* UIImage+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Category.h"; sourceTree = "<group>"; };
-		C567BAC41E48175700C7C79A /* UIImage+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Category.m"; sourceTree = "<group>"; };
-		C567BAC61E48175700C7C79A /* UITableView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Category.h"; sourceTree = "<group>"; };
-		C567BAC71E48175700C7C79A /* UITableView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Category.m"; sourceTree = "<group>"; };
-		C567BAC91E48175700C7C79A /* UIView+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
-		C567BACA1E48175700C7C79A /* UIView+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
 		C567BACC1E48175700C7C79A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C567BACD1E48175700C7C79A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		C567BACF1E48175700C7C79A /* database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = database.sqlite3; sourceTree = "<group>"; };
 		C567BAD11E48175700C7C79A /* AKBookDetailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookDetailHandler.h; sourceTree = "<group>"; };
 		C567BAD21E48175700C7C79A /* AKBookDetailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookDetailHandler.m; sourceTree = "<group>"; };
 		C567BAD31E48175700C7C79A /* AKBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookDetailViewController.h; sourceTree = "<group>"; };
@@ -692,8 +654,6 @@
 		C567BAE61E48175700C7C79A /* AKDownloadListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadListTableCell.h; sourceTree = "<group>"; };
 		C567BAE71E48175700C7C79A /* AKDownloadListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadListTableCell.m; sourceTree = "<group>"; };
 		C567BAE81E48175700C7C79A /* AKDownloadListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKDownloadListTableCell.xib; sourceTree = "<group>"; };
-		C567BAEA1E48175700C7C79A /* InitialData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialData.h; sourceTree = "<group>"; };
-		C567BAEB1E48175700C7C79A /* InitialData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialData.m; sourceTree = "<group>"; };
 		C567BAED1E48175700C7C79A /* AKHotNovelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHotNovelHandler.h; sourceTree = "<group>"; };
 		C567BAEE1E48175700C7C79A /* AKHotNovelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHotNovelHandler.m; sourceTree = "<group>"; };
 		C567BAEF1E48175700C7C79A /* AKHotNovelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHotNovelViewController.h; sourceTree = "<group>"; };
@@ -794,8 +754,6 @@
 		C567BB591E48175700C7C79A /* BookCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCategory.m; sourceTree = "<group>"; };
 		C567BB5A1E48175700C7C79A /* BookChapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookChapter.h; sourceTree = "<group>"; };
 		C567BB5B1E48175700C7C79A /* BookChapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookChapter.m; sourceTree = "<group>"; };
-		C567BB5C1E48175700C7C79A /* BookDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDatabase.h; sourceTree = "<group>"; };
-		C567BB5D1E48175700C7C79A /* BookDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDatabase.m; sourceTree = "<group>"; };
 		C567BB5E1E48175700C7C79A /* BookDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDocument.h; sourceTree = "<group>"; };
 		C567BB5F1E48175700C7C79A /* BookDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDocument.m; sourceTree = "<group>"; };
 		C567BB601E48175700C7C79A /* BookEveryUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookEveryUrl.h; sourceTree = "<group>"; };
@@ -1114,6 +1072,13 @@
 		C567BFA11E48292D00C7C79A /* PopupModuleDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupModuleDefine.h; sourceTree = "<group>"; };
 		C567BFA21E482E1300C7C79A /* AKPopupBaseAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupBaseAction.h; sourceTree = "<group>"; };
 		C567BFA31E482E1300C7C79A /* AKPopupBaseAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupBaseAction.m; sourceTree = "<group>"; };
+		C57315691E541FF30099D9F7 /* AKDBBookSQL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDBBookSQL.h; sourceTree = "<group>"; };
+		C573156A1E5432070099D9F7 /* AKDBManager+Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKDBManager+Book.h"; sourceTree = "<group>"; };
+		C573156B1E5432070099D9F7 /* AKDBManager+Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKDBManager+Book.m"; sourceTree = "<group>"; };
+		C573156E1E5452CC0099D9F7 /* Aspect+ReaderModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect+ReaderModule.h"; sourceTree = "<group>"; };
+		C573156F1E5452CC0099D9F7 /* Aspect+ReaderModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect+ReaderModule.m"; sourceTree = "<group>"; };
+		C57315721E556F8A0099D9F7 /* LocationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHelper.h; sourceTree = "<group>"; };
+		C57315731E556F8B0099D9F7 /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
 		C57DF5DF1DF927F900D3D154 /* BanLiTV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BanLiTV.entitlements; sourceTree = "<group>"; };
 		C57DF5E21DFA84EE00D3D154 /* TabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TabBar.plist; sourceTree = "<group>"; };
 		C5A730121DE2BB3400DB2788 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1143,6 +1108,10 @@
 		C5BFDEED1E51C752003CFEC4 /* AKBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseModel.h; sourceTree = "<group>"; };
 		C5BFDEEE1E51C752003CFEC4 /* AKBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseModel.m; sourceTree = "<group>"; };
 		C5BFDEF01E51C7F3003CFEC4 /* AKDataObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataObjectProtocol.h; sourceTree = "<group>"; };
+		C5EA4DBB1E55777C0047A519 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
+		C5EA4DBC1E55777C0047A519 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		C5EA4DBE1E557BA30047A519 /* NSDate+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Time.h"; sourceTree = "<group>"; };
+		C5EA4DBF1E557BA30047A519 /* NSDate+Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Time.m"; sourceTree = "<group>"; };
 		D149EDE515283AE8903E9AF5 /* libPods-Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1293,6 +1262,8 @@
 				C567B7721E48175600C7C79A /* DeviceHelper.m */,
 				C567B7731E48175600C7C79A /* FileHelper.h */,
 				C567B7741E48175600C7C79A /* FileHelper.m */,
+				C57315721E556F8A0099D9F7 /* LocationHelper.h */,
+				C57315731E556F8B0099D9F7 /* LocationHelper.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1503,7 +1474,7 @@
 		C567B7D71E48175600C7C79A /* DownloadModule */ = {
 			isa = PBXGroup;
 			children = (
-				C567B7D81E48175600C7C79A /* Data */,
+				C5EA4DBA1E55777C0047A519 /* Category */,
 				C567B7D91E48175600C7C79A /* DownloadModule.h */,
 				C567B7DA1E48175600C7C79A /* DownloadModule.xcassets */,
 				C567B7DB1E48175600C7C79A /* Lib */,
@@ -1511,13 +1482,6 @@
 				C567B7F11E48175600C7C79A /* Model */,
 			);
 			path = DownloadModule;
-			sourceTree = "<group>";
-		};
-		C567B7D81E48175600C7C79A /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		C567B7DB1E48175600C7C79A /* Lib */ = {
@@ -1865,13 +1829,13 @@
 		C567BA961E48175700C7C79A /* ReaderModule */ = {
 			isa = PBXGroup;
 			children = (
+				C573156D1E5452A40099D9F7 /* Aspect */,
+				C57315681E53F73D0099D9F7 /* Sql */,
 				C567BA971E48175700C7C79A /* BookShelf */,
 				C567BAA21E48175700C7C79A /* Category */,
 				C567BACB1E48175700C7C79A /* Controller */,
-				C567BACE1E48175700C7C79A /* Data */,
 				C567BAD01E48175700C7C79A /* Detail */,
 				C567BADF1E48175700C7C79A /* Download */,
-				C567BAE91E48175700C7C79A /* Helper */,
 				C567BAEC1E48175700C7C79A /* Hot */,
 				C567BAF11E48175700C7C79A /* Lib */,
 				C567BB501E48175700C7C79A /* Manager */,
@@ -1915,132 +1879,14 @@
 		C567BAA21E48175700C7C79A /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				C567BAA31E48175700C7C79A /* AFNetworking+Category */,
+				C5EA4DBE1E557BA30047A519 /* NSDate+Time.h */,
+				C5EA4DBF1E557BA30047A519 /* NSDate+Time.m */,
 				C567BAA61E48175700C7C79A /* AKRequestManager+ReaderModule.h */,
 				C567BAA71E48175700C7C79A /* AKRequestManager+ReaderModule.m */,
-				C567BAA81E48175700C7C79A /* FMDB+Category */,
-				C567BAAD1E48175700C7C79A /* NSDate+Category */,
-				C567BAB01E48175700C7C79A /* NSFileManager+Category */,
-				C567BAB31E48175700C7C79A /* NSObject+Category */,
-				C567BAB61E48175700C7C79A /* NSString+Category */,
-				C567BAB91E48175700C7C79A /* NSUserDefaults+Category */,
-				C567BABC1E48175700C7C79A /* UIButton+Category */,
-				C567BABF1E48175700C7C79A /* UICollectionView+Category */,
-				C567BAC21E48175700C7C79A /* UIImage+Category */,
-				C567BAC51E48175700C7C79A /* UITableView+Category */,
-				C567BAC81E48175700C7C79A /* UIView+Category */,
+				C573156A1E5432070099D9F7 /* AKDBManager+Book.h */,
+				C573156B1E5432070099D9F7 /* AKDBManager+Book.m */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		C567BAA31E48175700C7C79A /* AFNetworking+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAA41E48175700C7C79A /* RequestUtil.h */,
-				C567BAA51E48175700C7C79A /* RequestUtil.m */,
-			);
-			path = "AFNetworking+Category";
-			sourceTree = "<group>";
-		};
-		C567BAA81E48175700C7C79A /* FMDB+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAA91E48175700C7C79A /* SQLiteManager.h */,
-				C567BAAA1E48175700C7C79A /* SQLiteManager.m */,
-				C567BAAB1E48175700C7C79A /* VersionConst.h */,
-				C567BAAC1E48175700C7C79A /* VersionConst.m */,
-			);
-			path = "FMDB+Category";
-			sourceTree = "<group>";
-		};
-		C567BAAD1E48175700C7C79A /* NSDate+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAAE1E48175700C7C79A /* NSDate+Time.h */,
-				C567BAAF1E48175700C7C79A /* NSDate+Time.m */,
-			);
-			path = "NSDate+Category";
-			sourceTree = "<group>";
-		};
-		C567BAB01E48175700C7C79A /* NSFileManager+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAB11E48175700C7C79A /* NSFileManager+FileCategory.h */,
-				C567BAB21E48175700C7C79A /* NSFileManager+FileCategory.m */,
-			);
-			path = "NSFileManager+Category";
-			sourceTree = "<group>";
-		};
-		C567BAB31E48175700C7C79A /* NSObject+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAB41E48175700C7C79A /* NSObject+Category.h */,
-				C567BAB51E48175700C7C79A /* NSObject+Category.m */,
-			);
-			path = "NSObject+Category";
-			sourceTree = "<group>";
-		};
-		C567BAB61E48175700C7C79A /* NSString+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAB71E48175700C7C79A /* NSString+Category.h */,
-				C567BAB81E48175700C7C79A /* NSString+Category.m */,
-			);
-			path = "NSString+Category";
-			sourceTree = "<group>";
-		};
-		C567BAB91E48175700C7C79A /* NSUserDefaults+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BABA1E48175700C7C79A /* NSUserDefaults+Category.h */,
-				C567BABB1E48175700C7C79A /* NSUserDefaults+Category.m */,
-			);
-			path = "NSUserDefaults+Category";
-			sourceTree = "<group>";
-		};
-		C567BABC1E48175700C7C79A /* UIButton+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BABD1E48175700C7C79A /* UIButton+RefreshLocation.h */,
-				C567BABE1E48175700C7C79A /* UIButton+RefreshLocation.m */,
-			);
-			path = "UIButton+Category";
-			sourceTree = "<group>";
-		};
-		C567BABF1E48175700C7C79A /* UICollectionView+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAC01E48175700C7C79A /* UICollectionView+Category.h */,
-				C567BAC11E48175700C7C79A /* UICollectionView+Category.m */,
-			);
-			path = "UICollectionView+Category";
-			sourceTree = "<group>";
-		};
-		C567BAC21E48175700C7C79A /* UIImage+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAC31E48175700C7C79A /* UIImage+Category.h */,
-				C567BAC41E48175700C7C79A /* UIImage+Category.m */,
-			);
-			path = "UIImage+Category";
-			sourceTree = "<group>";
-		};
-		C567BAC51E48175700C7C79A /* UITableView+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAC61E48175700C7C79A /* UITableView+Category.h */,
-				C567BAC71E48175700C7C79A /* UITableView+Category.m */,
-			);
-			path = "UITableView+Category";
-			sourceTree = "<group>";
-		};
-		C567BAC81E48175700C7C79A /* UIView+Category */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAC91E48175700C7C79A /* UIView+Category.h */,
-				C567BACA1E48175700C7C79A /* UIView+Category.m */,
-			);
-			path = "UIView+Category";
 			sourceTree = "<group>";
 		};
 		C567BACB1E48175700C7C79A /* Controller */ = {
@@ -2050,14 +1896,6 @@
 				C567BACD1E48175700C7C79A /* RootViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		C567BACE1E48175700C7C79A /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				C567BACF1E48175700C7C79A /* database.sqlite3 */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		C567BAD01E48175700C7C79A /* Detail */ = {
@@ -2116,15 +1954,6 @@
 				C567BAE81E48175700C7C79A /* AKDownloadListTableCell.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		C567BAE91E48175700C7C79A /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAEA1E48175700C7C79A /* InitialData.h */,
-				C567BAEB1E48175700C7C79A /* InitialData.m */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		C567BAEC1E48175700C7C79A /* Hot */ = {
@@ -2315,8 +2144,6 @@
 				C567BB591E48175700C7C79A /* BookCategory.m */,
 				C567BB5A1E48175700C7C79A /* BookChapter.h */,
 				C567BB5B1E48175700C7C79A /* BookChapter.m */,
-				C567BB5C1E48175700C7C79A /* BookDatabase.h */,
-				C567BB5D1E48175700C7C79A /* BookDatabase.m */,
 				C567BB5E1E48175700C7C79A /* BookDocument.h */,
 				C567BB5F1E48175700C7C79A /* BookDocument.m */,
 				C567BB601E48175700C7C79A /* BookEveryUrl.h */,
@@ -3252,6 +3079,23 @@
 			path = Action;
 			sourceTree = "<group>";
 		};
+		C57315681E53F73D0099D9F7 /* Sql */ = {
+			isa = PBXGroup;
+			children = (
+				C57315691E541FF30099D9F7 /* AKDBBookSQL.h */,
+			);
+			path = Sql;
+			sourceTree = "<group>";
+		};
+		C573156D1E5452A40099D9F7 /* Aspect */ = {
+			isa = PBXGroup;
+			children = (
+				C573156E1E5452CC0099D9F7 /* Aspect+ReaderModule.h */,
+				C573156F1E5452CC0099D9F7 /* Aspect+ReaderModule.m */,
+			);
+			path = Aspect;
+			sourceTree = "<group>";
+		};
 		C5A730091DE2BB3400DB2788 = {
 			isa = PBXGroup;
 			children = (
@@ -3350,6 +3194,15 @@
 			children = (
 				C5BFDEEA1E51B615003CFEC4 /* NSString+Tools.h */,
 				C5BFDEEB1E51B615003CFEC4 /* NSString+Tools.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C5EA4DBA1E55777C0047A519 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C5EA4DBB1E55777C0047A519 /* NSString+Category.h */,
+				C5EA4DBC1E55777C0047A519 /* NSString+Category.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3495,7 +3348,6 @@
 				C567BEE81E48175800C7C79A /* ReaderModule.xcassets in Resources */,
 				C567BF041E48175900C7C79A /* area.plist in Resources */,
 				C567BE891E48175800C7C79A /* 夜间背景色.png in Resources */,
-				C567BE671E48175800C7C79A /* database.sqlite3 in Resources */,
 				C567BD241E48175800C7C79A /* chooseTagViewCloseBtn.png in Resources */,
 				C567BEE51E48175800C7C79A /* YMenuViewController.xib in Resources */,
 				C567BD1F1E48175800C7C79A /* redLogo@2x.png in Resources */,
@@ -3620,7 +3472,6 @@
 				C567BE701E48175800C7C79A /* AKDownloadTableHandler.m in Sources */,
 				C567BEC51E48175800C7C79A /* YBaseModel.m in Sources */,
 				C567BEF91E48175800C7C79A /* CustomNumbersCell.m in Sources */,
-				C567BE611E48175800C7C79A /* UIButton+RefreshLocation.m in Sources */,
 				C567BF0A1E48175900C7C79A /* CustomPopupWindow.m in Sources */,
 				C567BF901E481D9000C7C79A /* MMSheetView.m in Sources */,
 				C567BECC1E48175800C7C79A /* YBookUpdateModel.m in Sources */,
@@ -3644,6 +3495,7 @@
 				C567BF3E1E48175900C7C79A /* AKTableViewCell.m in Sources */,
 				C567BF1A1E48175900C7C79A /* MainTableView.m in Sources */,
 				C567BF471E48175900C7C79A /* AKDBManager+UserGroupMember.m in Sources */,
+				C5EA4DC01E557BA30047A519 /* NSDate+Time.m in Sources */,
 				C567BE341E48175800C7C79A /* AKRequestManager+NewsModule.m in Sources */,
 				C567BD431E48175800C7C79A /* SGDownloadQueue.m in Sources */,
 				C567BE441E48175800C7C79A /* BannerCell.m in Sources */,
@@ -3653,7 +3505,6 @@
 				C567BF081E48175900C7C79A /* CustomPopupItem.m in Sources */,
 				C567BEE11E48175800C7C79A /* YReaderView.m in Sources */,
 				C567BF161E48175900C7C79A /* CustomSliderView.m in Sources */,
-				C567BE741E48175800C7C79A /* InitialData.m in Sources */,
 				C567BD2E1E48175800C7C79A /* AKBaseTableViewHandler.m in Sources */,
 				C567BEBA1E48175800C7C79A /* BookLastUpdate.m in Sources */,
 				C567BF391E48175900C7C79A /* AKThemeManager.m in Sources */,
@@ -3662,7 +3513,6 @@
 				C567BF1D1E48175900C7C79A /* RootNavButton.m in Sources */,
 				C567BF0C1E48175900C7C79A /* MJChiBaoZiHeader.m in Sources */,
 				C567BF311E48175900C7C79A /* Aspect-ShareModule.m in Sources */,
-				C567BE5A1E48175800C7C79A /* SQLiteManager.m in Sources */,
 				C567BD1A1E48175800C7C79A /* AJWaveRefreshAnimation.m in Sources */,
 				C567BD191E48175800C7C79A /* AKTimerManager.m in Sources */,
 				C567BEE91E48175800C7C79A /* BookCollMainCell.m in Sources */,
@@ -3670,23 +3520,22 @@
 				C567BED31E48175800C7C79A /* YNetworkManager.m in Sources */,
 				C567BF3B1E48175900C7C79A /* AKCollectionViewCell.m in Sources */,
 				C567BEAA1E48175800C7C79A /* SlidingViewController.m in Sources */,
-				C567BE641E48175800C7C79A /* UITableView+Category.m in Sources */,
 				C567BE3D1E48175800C7C79A /* Images.m in Sources */,
 				C567BF331E48175900C7C79A /* ServiceShare.m in Sources */,
 				C567BEDA1E48175800C7C79A /* YReaderManager.m in Sources */,
+				C573156C1E5432070099D9F7 /* AKDBManager+Book.m in Sources */,
 				C567BD3E1E48175800C7C79A /* NSString+SGHashString.m in Sources */,
 				C567BEB81E48175800C7C79A /* BookDocument.m in Sources */,
 				C567BD0D1E48175800C7C79A /* UIView+Animation.m in Sources */,
 				C567BF5A1E48175900C7C79A /* OUNavAnimation.m in Sources */,
 				C567BF091E48175900C7C79A /* CustomPopupView.m in Sources */,
+				C5EA4DBD1E55777C0047A519 /* NSString+Category.m in Sources */,
 				C567BF521E48175900C7C79A /* AKRequestManager+WallpaperModule.m in Sources */,
 				C567BF0B1E48175900C7C79A /* MJChiBaoZiFooter.m in Sources */,
-				C567BE5C1E48175800C7C79A /* NSDate+Time.m in Sources */,
 				C567BFA41E482E1300C7C79A /* AKPopupBaseAction.m in Sources */,
 				C567BF5B1E48175900C7C79A /* OUNavigationController.m in Sources */,
 				C567BF4C1E48175900C7C79A /* AKUser.m in Sources */,
 				C567BEFD1E48175800C7C79A /* CustomNumbersModel.m in Sources */,
-				C567BE5D1E48175800C7C79A /* NSFileManager+FileCategory.m in Sources */,
 				C567BEFF1E48175900C7C79A /* CustomNumbersRightHeaderView.m in Sources */,
 				C567BF431E48175900C7C79A /* AKDataCenter+UserModule.m in Sources */,
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
@@ -3740,7 +3589,6 @@
 				C567BE711E48175800C7C79A /* AKDownloadViewController.m in Sources */,
 				C567BE591E48175800C7C79A /* AKRequestManager+ReaderModule.m in Sources */,
 				C567BF541E48175900C7C79A /* DetailViewController.m in Sources */,
-				C567BE5E1E48175800C7C79A /* NSObject+Category.m in Sources */,
 				C567BF581E48175900C7C79A /* XHSHomeCell.m in Sources */,
 				C567BF8A1E481D9000C7C79A /* MMAlertView.m in Sources */,
 				C567BF421E48175900C7C79A /* Aspect+UserModule.m in Sources */,
@@ -3779,17 +3627,16 @@
 				C567BD211E48175800C7C79A /* AKChannelTagHeadView.m in Sources */,
 				C567BD151E48175800C7C79A /* AKMediator.m in Sources */,
 				C567BF8B1E481D9000C7C79A /* MMDateView.m in Sources */,
-				C567BE651E48175800C7C79A /* UIView+Category.m in Sources */,
 				C567BF4A1E48175900C7C79A /* GVUserDefaults+UserModule.m in Sources */,
 				C567BE6A1E48175800C7C79A /* BookDetailBasicCell.m in Sources */,
 				C567BF191E48175900C7C79A /* MainCollectionView.m in Sources */,
 				C567BEF01E48175800C7C79A /* NSString+BSNumbersExtension.m in Sources */,
 				C567BE241E48175800C7C79A /* ThirdLoginAPI.m in Sources */,
+				C57315701E5452CC0099D9F7 /* Aspect+ReaderModule.m in Sources */,
 				C567BEFB1E48175800C7C79A /* CustomNumbersLeftHeaderView.m in Sources */,
 				C567BE9F1E48175800C7C79A /* CursorView.m in Sources */,
 				C567BE201E48175800C7C79A /* AKMediator+LoginModule.m in Sources */,
 				C567BF3C1E48175900C7C79A /* AKImageView.m in Sources */,
-				C567BE581E48175800C7C79A /* RequestUtil.m in Sources */,
 				C567BF0E1E48175900C7C79A /* CustomShareView.m in Sources */,
 				C567BEF31E48175800C7C79A /* CustomTremblingItem.m in Sources */,
 				C567BE4E1E48175800C7C79A /* SinglePicCollectCell.m in Sources */,
@@ -3819,8 +3666,6 @@
 				C567BF101E48175900C7C79A /* OpenShare+Alipay.m in Sources */,
 				C567BEC11E48175800C7C79A /* YDirectoryViewCell.m in Sources */,
 				C567BEC91E48175800C7C79A /* YBookModel.m in Sources */,
-				C567BE5B1E48175800C7C79A /* VersionConst.m in Sources */,
-				C567BE631E48175800C7C79A /* UIImage+Category.m in Sources */,
 				C567BED91E48175800C7C79A /* YDownloadManager.m in Sources */,
 				C567BF121E48175900C7C79A /* OpenShare+Renren.m in Sources */,
 				C567BE481E48175800C7C79A /* BigImgContentCell.m in Sources */,
@@ -3857,7 +3702,6 @@
 				C567BE471E48175800C7C79A /* TopLoopView.m in Sources */,
 				C567BD081E48175800C7C79A /* MBProgressHUD+Custom.m in Sources */,
 				C5A730171DE2BB3400DB2788 /* main.m in Sources */,
-				C567BE621E48175800C7C79A /* UICollectionView+Category.m in Sources */,
 				C567BECD1E48175800C7C79A /* YChapterContentModel.m in Sources */,
 				C567BF481E48175900C7C79A /* AKMediator+UserModule.m in Sources */,
 				C567BD351E48175800C7C79A /* AKHScrollTitleLabel.m in Sources */,
@@ -3867,17 +3711,15 @@
 				C567BE681E48175800C7C79A /* AKBookDetailHandler.m in Sources */,
 				C567BD3C1E48175800C7C79A /* HSDownloadManager.m in Sources */,
 				C567BE3F1E48175800C7C79A /* AKNewsContentListAPI.m in Sources */,
-				C567BE5F1E48175800C7C79A /* NSString+Category.m in Sources */,
 				C567BD221E48175800C7C79A /* AKChannelTagView.m in Sources */,
-				C567BE601E48175800C7C79A /* NSUserDefaults+Category.m in Sources */,
 				C567BE381E48175800C7C79A /* HWWeakTimer.m in Sources */,
 				C567BD061E48175800C7C79A /* AKTimer.m in Sources */,
+				C57315741E556F8B0099D9F7 /* LocationHelper.m in Sources */,
 				C567BE531E48175800C7C79A /* AKBookShelfHandler.m in Sources */,
 				C567BE781E48175800C7C79A /* EmojiEmoticons.m in Sources */,
 				C567BD051E48175800C7C79A /* AKBaseViewController.m in Sources */,
 				C567BD0E1E48175800C7C79A /* UIView+Frame.m in Sources */,
 				C567BF8E1E481D9000C7C79A /* MMPopupItem.m in Sources */,
-				C567BEB71E48175800C7C79A /* BookDatabase.m in Sources */,
 				C567BD0A1E48175800C7C79A /* NSObject+CategoryWithProperty.m in Sources */,
 				C567BE791E48175800C7C79A /* EmojiMapSymbols.m in Sources */,
 				C567BD281E48175800C7C79A /* AKCollectionLayout.m in Sources */,

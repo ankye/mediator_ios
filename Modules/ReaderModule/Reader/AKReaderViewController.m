@@ -338,7 +338,7 @@
 
 - (void)backToPreViewController{
     
-    if (!self.book.isCaseBook) {
+    if (!self.book.isBookmark) {
         UIAlertView * av = [[UIAlertView alloc]initWithTitle:@"提示信息" message:@"是否加入我的藏书阁？" delegate:self cancelButtonTitle:nil otherButtonTitles:@"好的",@"不了", nil];
         
         [av show];
@@ -355,28 +355,31 @@
 
 -(void)setupViews
 {
-    if (!self.readIndexPath) {
-        
-        Book * book = [[AKDBManager sharedInstance] book_queryByID:self.book.novel.Id]; // [[BookDatabase bookDataListFromDatabaseWithNovelId:self.book.novel.Id] firstObject];
-        
-        self.book.isCaseBook = book!=nil;
-        
-        self.readIndexPath = book.currIndexPath;
-    }
     
-
-    BookChapter * bookChapter = self.chapterArray[self.readIndexPath.section];
+   
+//    if (!self.readIndexPath) {
+//        
+//        Book * book = [[AKDBManager sharedInstance] book_queryByID:self.book.novel.Id]; // [[BookDatabase bookDataListFromDatabaseWithNovelId:self.book.novel.Id] firstObject];
+//        
+//        self.book.isBookmark = book!=nil;
+//        
+//        self.readIndexPath =  [NSIndexPath indexPathForRow:book.read_chapter_row inSection: book.read_chapter_section];  //book.currIndexPath;
+//    }
+//    
+//
+//    BookChapter * bookChapter = self.book.bookChapters[self.readIndexPath.section];
+    //self.chapterArray[self.readIndexPath.section];
     
-    if (bookChapter) {
-        
-        if ([self isExitNovelByNovelTextUrl:bookChapter.url]) {
-            [self getDataByNovelTextUrl:bookChapter.url];
-        }
-    }
-    self.currBookChapter = bookChapter;
-    
-    self.readIndexPath = [NSIndexPath indexPathForRow:0 inSection:self.readIndexPath.section];
-    
+//    if (bookChapter) {
+//        
+//        if ([self isExitNovelByNovelTextUrl:bookChapter.url]) {
+//            [self getDataByNovelTextUrl:bookChapter.url];
+//        }
+//    }
+//    self.currBookChapter = bookChapter;
+//    
+//    self.readIndexPath = [NSIndexPath indexPathForRow:0 inSection:self.readIndexPath.section];
+//    
     [self setupMenuView];
   //  AKWeakSelf(self);
 //    
@@ -386,9 +389,24 @@
 ////        [weakself.readerManager updateReadingChapter:weakself.currBookChapter page:weakself.page];
 //    }]];
 
-    
+    if(_book && _book.bookChapters.count == 0){
+        [AKPopupManager showProgressHUDAtView:self.view];
+        
+        [_book.onChaptersChange addObserver:self callback:^(typeof(self) self, NSMutableArray * _Nonnull mutableArray) {
+            [AKPopupManager hideProgressHUDAtView:self.view];
+            [self startReadChapter];
+        }];
+        [[AKReaderManager sharedInstance] requestBookChapters:_book];
+    }else{
+        [self startReadChapter];
+    }
 }
 
+-(void)startReadChapter
+{
+    BookChapter * bookChapter = self.book.bookChapters[self.book.read_chapter_section];
+    self.currBookChapter = bookChapter;
+}
 
 //获取数据，有则加载，无则请求
 - (void)getDataByNovelTextUrl:(NSString *)novelTextUrl{
@@ -491,13 +509,6 @@
 }
 
 
-#pragma mark - getter
-- (NSMutableArray<BookChapter *> *)chapterArray{
-    if (!_chapterArray) {
-        _chapterArray = [NSMutableArray new];
-    }
-    return _chapterArray;
-}
 
 
 @end

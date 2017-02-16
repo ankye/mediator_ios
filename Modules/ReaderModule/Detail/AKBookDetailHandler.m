@@ -40,13 +40,16 @@
 
 @implementation AKBookDetailHandler
 
-@synthesize dataList = _dataList;
+//@synthesize dataList = _dataList;
 
 
 #pragma mark - life
 - (void)dealloc
 {
-    _dataList = nil ;
+    if(_book){
+        [_book.onChaptersChange removeObserver:self];
+    }
+   // _dataList = nil ;
     if(_downloadGroup){
         [_downloadGroup.onDownloadProgress removeObserver:self];
         [_downloadGroup.onDownloadCompleted removeObserver:self];
@@ -59,8 +62,13 @@
 #pragma mark - public func
 - (BOOL)hasDataSource
 {
-    BOOL dataNotNull = _dataList != nil  ;
-    BOOL dataHasCount = _dataList.count ;
+    if(_book == nil){
+        return NO;
+    }
+    NSMutableArray* datalist = _book.bookChapters;
+    
+    BOOL dataNotNull = datalist != nil  ;
+    BOOL dataHasCount = datalist.count ;
     return dataNotNull && dataHasCount ;
 }
 
@@ -69,59 +77,25 @@
     return @"";
 }
 
-- (NSMutableArray *)dataList
-{
-    if (!_dataList) {
-        _dataList = [@[] mutableCopy] ;
-    }
-    return _dataList ;
-    
-    __block NSMutableArray *list ;
-    dispatch_sync(self.myQueue, ^{
-        list = _dataList ;
-    }) ;
-    return list ;
-}
-
-- (void)setDataList:(NSMutableArray *)dataList
-{
-    dispatch_barrier_async(self.myQueue, ^{
-        _dataList = dataList ;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.table reloadData] ;
-        }) ;
-    }) ;
-}
 
 
 -(void)refresh
 {
-    [AK_REQUEST_MANAGER reader_requestBookDetailWithNovelID:self.book.novel.Id withSiteID:self.book.source.siteid success:^(__kindof YTKBaseRequest * _Nonnull request) {
+    
+    if(_book && _book.bookChapters.count > 0){
         
-        NSData* jsonData = request.responseData;
-        NSDictionary* response = [AppHelper dictionaryWithData:jsonData];
+    }else{
         
-        NSInteger errorCode =[response[@"status"] integerValue];
-        if(errorCode!=1){
-            [[[UIAlertView alloc]initWithTitle:FINAL_PROMPT_INFOMATION message:response[@"info"] delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show];
-            return;
-        }
-        
-        
-        
-        NSArray * dataArray = response[@"data"];
-        
-        for (NSDictionary * dict in dataArray) {
-            [self.dataList addObject:[BookChapter bookChapterWithDict:dict]];
-        }
-        
+        [AKPopupManager showProgressHUDAtView:self.table];
+    }
+    
+    [_book.onChaptersChange addObserver:self callback:^(typeof(self) self, NSMutableArray * _Nonnull mutableArray) {
         [self.table refreshData];
         
         [AKPopupManager hideProgressHUDAtView:self.table];
-        
-    } failure:^(__kindof YTKBaseRequest * _Nonnull request) {
-        
     }];
+    
+    [[AKReaderManager sharedInstance] requestBookChapters:_book];
     
 
 }
@@ -138,9 +112,7 @@
 - (void)loadMoreData
 {
     
-    if (!self.dataList.count) {
-        return ;
-    }
+   
     
     // Content *lastContent = [self.dataList lastObject] ;
     
@@ -160,7 +132,7 @@
     if (section<2) {
         return 1;
     }
-    return self.dataList.count;
+    return _book.bookChapters.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -183,7 +155,7 @@
         static NSString * identifier = @"BookDetailChapterCell";
         BookDetailChapterCell * cell = (BookDetailChapterCell*)[self getCell:tableView withName:identifier];
         
-        BookChapter * bookChapter = self.dataList[indexPath.row];
+        BookChapter * bookChapter = _book.bookChapters[indexPath.row];
         
         cell.indexLabel.text = [NSString stringWithFormat:@"%ld.",indexPath.row+1];
         
@@ -237,16 +209,18 @@
  //   [self.mainViewDelegate basicFuncBtnClickWithMainView:self andIndex:1];
  //   [self reloadData];
     
-    if (self.book.isCaseBook) {//取消收藏
+    if (self.book.isBookmark) {//取消收藏
        // [BookDatabase removeBookDataFromDatabaseWithNovelId:self.book.novel.Id];
-        [[AKDBManager sharedInstance] book_deleteByID:self.book.novel.Id];
+    //    [[AKDBManager sharedInstance] book_deleteByID:self.book.novel.Id];
+        [[AKReaderManager sharedInstance] unBookmark:self.book];
     }else{//加入收藏
 //        [BookDatabase saveBookToDataBaseWithIndexPath:self.book.currIndexPath andBook:self.book];
         
-        [[AKDBManager sharedInstance] book_insertOrReplace:self.book];
+    //    [[AKDBManager sharedInstance] book_insertOrReplace:self.book];
+        [[AKReaderManager sharedInstance] bookmark:self.book];
     }
     
-    self.book.isCaseBook = !self.book.isCaseBook;
+   
     
     
     if(self.handlerDelegate && [self.handlerDelegate respondsToSelector:@selector(didSectionClick:withRow:withClickChannel:withContent:)]){
@@ -328,13 +302,13 @@
 
 -(void) startDownload
 {
-    if(self.dataList.count>0){
+    if(_book.bookChapters.count>0){
         if(_downloadGroup == nil){
             _downloadGroup = [[AKDownloadManager sharedInstance] createTaskGroup:_book.novel.name withBreakpointResume:NO];
         }
-        NSInteger count = self.dataList.count;
+        NSInteger count = _book.bookChapters.count;
         for(NSInteger i=0; i<count; i++){
-            BookChapter* chapter = [self.dataList objectAtIndex:i];
+            BookChapter* chapter = [_book.bookChapters objectAtIndex:i];
             
             AKDownloadModel* model = [[AKDownloadManager sharedInstance] createTask:_book.novel.name withTaskName:chapter.name withIcon:_book.novel.cover withDesc:chapter.name withDownloadUrl:chapter.url withFilename:@""];
             [_downloadGroup addTaskModel:model];

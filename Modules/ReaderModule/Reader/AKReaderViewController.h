@@ -16,11 +16,10 @@
 
 @property(nonatomic,strong)Book * book;
 
-@property(nonatomic,strong)NSMutableArray<BookChapter *> * chapterArray;
 /**
  *  section代表章节，row代表章节的第几行
  */
-@property(nonatomic,strong)NSIndexPath * readIndexPath;
+
 
 @property (strong, nonatomic) YMenuViewController *menuView;
 

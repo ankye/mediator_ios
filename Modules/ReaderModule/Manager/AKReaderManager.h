@@ -10,6 +10,8 @@
 
 @interface AKReaderManager : NSObject
 
+
+@property (nonatomic,strong) NSMutableArray*    bookShelf;
 @property (nonatomic,strong) NSMutableDictionary* books;
 
 
@@ -19,8 +21,17 @@
 
 SINGLETON_INTR(AKReaderManager)
 
+-(Book*)addBook:(Book*)book;
 
 //-(void)moduleInitConfigure;
 
+-(void)loadBookShelf;
+
+//收藏书
+-(void)bookmark:(Book*)book;
+//取消收藏
+-(void)unBookmark:(Book*)book;
+
+-(void)requestBookChapters:(Book*)book;
 
 @end

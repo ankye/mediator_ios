@@ -36,7 +36,7 @@
     
     self.bookAuthorLabel.text = [NSString stringWithFormat:@"作者：%@ | 更新：%@",book.author.name,book.last.timeName];
     
-    NSString * joinShelfStr = book.isCaseBook?@"取消藏书":@"加入藏书";
+    NSString * joinShelfStr = book.isBookmark?@"取消藏书":@"加入藏书";
     [self.joinShelfBtn setTitle:joinShelfStr forState:UIControlStateNormal];
     
     NSString * cacheTitle = @"全书缓存";

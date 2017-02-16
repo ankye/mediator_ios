@@ -10,4 +10,11 @@
 
 @implementation BookAuthor
 
+-(void)fillData:(id<AKDataObjectProtocol>)object
+{
+    BookAuthor* temp = (BookAuthor*)object;
+    
+    self.name = temp.name;
+    self.url = temp.url;
+}
 @end

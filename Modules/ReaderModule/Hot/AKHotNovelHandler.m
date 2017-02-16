@@ -91,8 +91,9 @@
     
   
         for (NSDictionary *dic in retlist) {
-            Book *aContent = [Book bookWithDict:dic] ;
-            [tmpList_data addObject:aContent] ;
+            Book *book = [Book bookWithDict:dic] ;
+            book = [[AKReaderManager sharedInstance] addBook:book];
+            [tmpList_data addObject:book] ;
         }
         
         self.dataList = tmpList_data ;
@@ -135,8 +136,9 @@
             return ;
         }
         for (NSDictionary *dic in retlist) {
-            Book *aContent = [Book bookWithDict:dic] ;
-            [tmpList_data addObject:aContent] ;
+            Book *book = [Book bookWithDict:dic] ;
+            book = [[AKReaderManager sharedInstance] addBook:book];
+            [tmpList_data addObject:book] ;
         }
         self.dataList = tmpList_data ;
 

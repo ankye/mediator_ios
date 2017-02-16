@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookLastUpdate : NSObject
+@interface BookLastUpdate : AKBaseModel
 
 @property (nonatomic, copy) NSString *siteid;
 /**
@@ -31,5 +31,7 @@
 @property (nonatomic, copy) NSString *url;
 
 @property(nonatomic,assign)BOOL isNewChapter;
+
+
 
 @end

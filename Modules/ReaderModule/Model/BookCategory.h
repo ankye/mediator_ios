@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookCategory : NSObject
+@interface BookCategory : AKBaseModel
 /**
  *  Id值
  */

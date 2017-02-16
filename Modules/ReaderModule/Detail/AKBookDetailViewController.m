@@ -33,7 +33,7 @@
 
     [self setupHandler];
     
-    [AKPopupManager showProgressHUDAtView:_tableView];
+ 
 
 }
 
@@ -113,7 +113,6 @@
 //        
         AKReaderViewController *reader = [AKReaderViewController new];
         reader.book = _handler.book;
-        reader.chapterArray = _handler.dataList;
 
 //        [self presentViewController:reader animated:YES completion:^{
 //            

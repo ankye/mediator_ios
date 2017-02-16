@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookNovel : NSObject
+@interface BookNovel : AKBaseModel
 
 @property (nonatomic, copy) NSString *pinyin;
 

@@ -10,6 +10,7 @@
 #import "AKBookShelfHandler.h"
 #import "CustomSearchViewController.h"
 #import "AKDownloadViewController.h"
+#import "AKReaderViewController.h"
 
 @interface AKBookShelfViewController () <AKBaseTableHandlerDelegate,CustomSearchViewControllerDelegate>
 
@@ -104,11 +105,17 @@
 //选择某一行
 - (void)didSelectSection:(NSInteger)section withRow:(NSInteger)row withContent:(NSObject* )content
 {
+    Book* book = (Book*)content;
+    
+    AKReaderViewController *readerVC = [AKReaderViewController new];
+    readerVC.book = book;
+   
+   
 //    AKBookDetailViewController * con = [AKBookDetailViewController new];
 //    con.book =(Book*)content;
-   // con.hidesBottomBarWhenPushed = YES;
+    readerVC.hidesBottomBarWhenPushed = YES;
     
-    //[self.navigationController pushViewController:con animated:YES];
+    [self.navigationController pushViewController:readerVC animated:YES];
 }
 
 -(void)didSectionClick:(NSInteger)section withRow:(NSInteger)row withClickChannel:(NSInteger)clickChannel withContent:(NSObject *)content

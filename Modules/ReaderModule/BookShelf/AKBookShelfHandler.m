@@ -9,10 +9,12 @@
 #import "AKBookShelfHandler.h"
 #import "Book.h"
 #import "YBookViewCell.h"
+#import "AKReaderManager.h"
+#import "AKSignalManager+ReaderModule.h"
 
 @interface AKBookShelfHandler () <AKBaseTableViewDelegate>
 
-@property (nonatomic,strong) NSMutableArray     *dataList ;
+//@property (nonatomic,strong) NSMutableArray     *dataList ;
 @property (nonatomic,assign) NSInteger          lastPage ;
 @end
 
@@ -21,14 +23,23 @@
 
 
 
-@synthesize dataList = _dataList;
+//@synthesize dataList = _dataList;
+
+
+- (void)handleDatasourceAndDelegate:(AKBaseTableView*)view
+{
+    [super handleDatasourceAndDelegate:view];
+    [AK_SIGNAL_MANAGER.onBookShelfChange addObserver:self callback:^(id  _Nonnull self, NSMutableArray * _Nonnull mutableArray) {
+        [view refreshData];
+    }];
+}
 
 
 #pragma mark - life
 - (void)dealloc
 {
-    _dataList = nil ;
-    
+  //  _dataList = nil ;
+    [AK_SIGNAL_MANAGER.onBookShelfChange removeObserver:self];
 }
 
 
@@ -36,8 +47,9 @@
 #pragma mark - public func
 - (BOOL)hasDataSource
 {
-    BOOL dataNotNull = _dataList != nil  ;
-    BOOL dataHasCount = _dataList.count ;
+    NSMutableArray* dataList = [[AKReaderManager sharedInstance] bookShelf];
+    BOOL dataNotNull = dataList != nil  ;
+    BOOL dataHasCount = dataList.count ;
     return dataNotNull && dataHasCount ;
 }
 
@@ -46,29 +58,6 @@
     return @"";
 }
 
-- (NSMutableArray *)dataList
-{
-    if (!_dataList) {
-        _dataList = [@[] mutableCopy] ;
-    }
-    return _dataList ;
-    
-    __block NSMutableArray *list ;
-    dispatch_sync(self.myQueue, ^{
-        list = _dataList ;
-    }) ;
-    return list ;
-}
-
-- (void)setDataList:(NSMutableArray *)dataList
-{
-    dispatch_barrier_async(self.myQueue, ^{
-        _dataList = dataList ;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.table refreshData] ;
-        }) ;
-    }) ;
-}
 
 
 
@@ -77,11 +66,8 @@
     
  //   NSMutableArray*tmpList_data = [@[] mutableCopy] ;
     
-    NSArray* data = [AK_DB_MANAGER book_queryAll];
-    if(data){
-        self.dataList = [data mutableCopy];
-    }
-    
+    [[AKReaderManager sharedInstance] loadBookShelf];
+   
 //    _lastPage = 0;
 //    [AK_REQUEST_MANAGER reader_requestHotListWithPage:1 success:^(__kindof YTKBaseRequest * _Nonnull request) {
 //        NSData* jsonData = request.responseData;
@@ -114,7 +100,7 @@
 - (void)loadMoreData
 {
     
-    if (!self.dataList.count) {
+    if (![AKReaderManager sharedInstance].bookShelf.count) {
         return ;
     }
     
@@ -168,7 +154,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return (!self.dataList.count) ? 0 : self.dataList.count ;
+    return (![AKReaderManager sharedInstance].bookShelf.count) ? 0 : [AKReaderManager sharedInstance].bookShelf.count ;
     
 }
 
@@ -183,7 +169,7 @@
     
     YBookViewCell *cell = (YBookViewCell*)[self getCell:tableView withName:identifier];
     
-    cell.book = self.dataList[indexPath.row];
+    cell.book = [AKReaderManager sharedInstance].bookShelf[indexPath.row];
     
     return cell ;
 }
@@ -199,8 +185,9 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if ([self.dataList count] <= indexPath.row) return ;
-    Book *book = self.dataList[indexPath.row];
+    if ([[AKReaderManager sharedInstance].bookShelf count] <= indexPath.row) return ;
+    
+    Book *book = [AKReaderManager sharedInstance].bookShelf[indexPath.row];
     if(self.handlerDelegate && [self.handlerDelegate respondsToSelector:@selector(didSelectSection:withRow:withContent:)]){
         [self.handlerDelegate didSelectSection:indexPath.section withRow:indexPath.row withContent:book];
     }
@@ -263,7 +250,7 @@
 
 
 -(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Book *editBook = self.dataList[indexPath.row];
+    Book *editBook = [AKReaderManager sharedInstance].bookShelf[indexPath.row];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         NSLog(@"点击了删除");
         [tableView setEditing:NO animated:YES];

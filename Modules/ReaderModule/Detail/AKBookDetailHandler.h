@@ -14,6 +14,6 @@
 @interface AKBookDetailHandler : AKBaseTableViewHandler
 
 @property(nonatomic,strong)Book * book;
-@property (nonatomic,strong) NSMutableArray<BookChapter *> *  dataList ;
+//@property (nonatomic,strong) NSMutableArray<BookChapter *> *  dataList ;
 
 @end

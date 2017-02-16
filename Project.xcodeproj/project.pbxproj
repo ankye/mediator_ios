@@ -378,6 +378,7 @@
 		C5BFDEEF1E51C752003CFEC4 /* AKBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BFDEEE1E51C752003CFEC4 /* AKBaseModel.m */; };
 		C5EA4DBD1E55777C0047A519 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EA4DBC1E55777C0047A519 /* NSString+Category.m */; };
 		C5EA4DC01E557BA30047A519 /* NSDate+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EA4DBF1E557BA30047A519 /* NSDate+Time.m */; };
+		C5EA4DC31E5580C30047A519 /* AKSignalManager+ReaderModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EA4DC21E5580C30047A519 /* AKSignalManager+ReaderModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1112,6 +1113,8 @@
 		C5EA4DBC1E55777C0047A519 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
 		C5EA4DBE1E557BA30047A519 /* NSDate+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Time.h"; sourceTree = "<group>"; };
 		C5EA4DBF1E557BA30047A519 /* NSDate+Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Time.m"; sourceTree = "<group>"; };
+		C5EA4DC11E5580C30047A519 /* AKSignalManager+ReaderModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKSignalManager+ReaderModule.h"; sourceTree = "<group>"; };
+		C5EA4DC21E5580C30047A519 /* AKSignalManager+ReaderModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKSignalManager+ReaderModule.m"; sourceTree = "<group>"; };
 		D149EDE515283AE8903E9AF5 /* libPods-Project.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Project.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1885,6 +1888,8 @@
 				C567BAA71E48175700C7C79A /* AKRequestManager+ReaderModule.m */,
 				C573156A1E5432070099D9F7 /* AKDBManager+Book.h */,
 				C573156B1E5432070099D9F7 /* AKDBManager+Book.m */,
+				C5EA4DC11E5580C30047A519 /* AKSignalManager+ReaderModule.h */,
+				C5EA4DC21E5580C30047A519 /* AKSignalManager+ReaderModule.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3691,6 +3696,7 @@
 				C567BEAD1E48175800C7C79A /* PageGenerationHeader.m in Sources */,
 				C567BE691E48175800C7C79A /* AKBookDetailViewController.m in Sources */,
 				C5BFDEEC1E51B615003CFEC4 /* NSString+Tools.m in Sources */,
+				C5EA4DC31E5580C30047A519 /* AKSignalManager+ReaderModule.m in Sources */,
 				C567BEB91E48175800C7C79A /* BookEveryUrl.m in Sources */,
 				C567BEA31E48175800C7C79A /* NoteContentButton.m in Sources */,
 				C567BED11E48175800C7C79A /* YRecommendBookListModel.m in Sources */,

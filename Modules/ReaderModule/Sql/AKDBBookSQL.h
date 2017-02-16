@@ -17,7 +17,10 @@
                                             category_name	TEXT, \
                                             read_chapter_section	TEXT, \
                                             read_chapter_row	TEXT, \
+                                            download_chapter_section	TEXT, \
+                                            download_chapter_row	TEXT, \
                                             source_siteid	TEXT, \
+                                            bookmark    TEXT, \
                                             has_sticky  TEXT, \
                                             ext_type    TEXT, \
                                             ext1    TEXT, \
@@ -30,7 +33,7 @@
 
 
 
-#define     SQL_INSERT_OR_REPLACE_BOOK               @"REPLACE INTO %@ ( novel_id, novel_cover, novel_name, novel_intro, author_name, lastupdate_chapter_time,lastupdate_chapter_name,category_id,category_name,read_chapter_section,read_chapter_row,source_siteid, has_sticky, ext_type,ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+#define     SQL_INSERT_OR_REPLACE_BOOK               @"REPLACE INTO %@ ( novel_id, novel_cover, novel_name, novel_intro, author_name, lastupdate_chapter_time,lastupdate_chapter_name,category_id,category_name,read_chapter_section,read_chapter_row,download_chapter_section,download_chapter_row,source_siteid,bookmark, has_sticky, ext_type,ext1, ext2, ext3, ext4, ext5) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?, ?, ?, ?, ?, ?, ?, ?, ?)"
 
 
 

@@ -13,6 +13,7 @@
 #import "BookSource.h"
 #import "BookAuthor.h"
 #import "BookNovel.h"
+#import "BookChapter.h"
 
 typedef enum : NSUInteger {
     BOOK_CACHE_STATUS_NONE,
@@ -34,26 +35,25 @@ typedef enum : NSUInteger {
 
 @property (nonatomic, strong) BookEveryUrl *url;
 
+//本地数据
+@property (nonatomic, assign) BOOL isLoadLocal;
+
+//section代表章节，row代表章节的第几行
 @property (nonatomic, assign) NSInteger read_chapter_section;
 @property (nonatomic, assign) NSInteger read_chapter_row;
 
-@property (assign, nonatomic) BOOL hasSticky;       //置顶
-@property (assign, nonatomic) BOOL hasUpdated;      //有更新
-@property (assign, nonatomic) NSInteger extType;    //扩展类型
+@property (nonatomic, assign) NSInteger download_chapter_section;
+@property (nonatomic, assign) NSInteger download_chapter_row;
 
-@property(nonatomic,strong) NSDictionary * data;
-/**
- *  缓存的下标，
- */
-@property(nonatomic,strong)NSIndexPath * currIndexPath;
-/**
- *  是否收藏
- */
-@property(nonatomic,assign)BOOL isCaseBook;
-/**
- *  缓存状态
- */
-@property (nonatomic, assign) BOOK_CACHE_STATUS bookCacheStatus;
+@property (nonatomic, assign) BOOL hasSticky;       //置顶
+@property (nonatomic, assign) NSInteger extType;    //扩展类型
+@property (nonatomic, assign) BOOL isBookmark;         //是否收藏
+@property (nonatomic, assign) BOOK_CACHE_STATUS  bookCacheStatus; //缓存状态
+
+//章节列表变更
+@property (nonatomic, readwrite) UBSignal<MutableArraySignal> *onChaptersChange;
+@property (nonatomic, strong) NSMutableArray<BookChapter *> * bookChapters; //章节列表
+
 
 + (instancetype)bookWithDict:(NSDictionary *)dict;
 

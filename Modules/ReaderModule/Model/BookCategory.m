@@ -19,4 +19,13 @@
     return @{@"Id":@"id"};
 }
 
+-(void)fillData:(id<AKDataObjectProtocol>)object
+{
+    BookCategory* temp = (BookCategory*)object;
+    self.Id = temp.Id;
+    self.key = temp.key;
+    self.num = temp.num;
+    self.name = temp.name;
+    self.url = temp.url;
+}
 @end

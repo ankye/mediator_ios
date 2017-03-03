@@ -69,7 +69,9 @@
     
     __weak typeof(self) wself = self;
     [self.bgView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
-        [wself hideMenuView];
+        if( wself.menuTapAction){
+            wself.menuTapAction(400);
+        }
     }]];
     
 }
@@ -357,26 +359,30 @@
 
 - (void)setupBottomViewUI {
     NSArray *imgArr = @[@"night_mode",@"feedback",@"directory",@"preview_btn",@"reading_setting"];
-    NSArray *titleArr = @[@"夜间",@"反馈",@"目录",@"缓存",@"设置"];
+    NSArray *titleArr = @[@"夜间",@"翻页",@"目录",@"缓存",@"设置"];
     __weak typeof(self) wself = self;
     void (^tapAction)(NSInteger) = ^(NSInteger tag){
         NSLog(@"tapAction %zi",tag);
         switch (tag) {
             case 200:           //日/夜间模式切换
-                
+                if (wself.menuTapAction) {
+                    wself.menuTapAction(tag);
+                }
                 break;
-            case 201:           //反馈
-                
+            case 201:           //翻页
+                if (wself.menuTapAction) {
+                    wself.menuTapAction(tag);
+                }
                 break;
             case 202: {          //目录
-                [wself hideMenuView];
+            
                 if (wself.menuTapAction) {
                     wself.menuTapAction(tag);
                 }
             }
                 break;
             case 203: {          //下载
-                [wself hideSettingView];
+         
                 if (wself.downloadBook.loadStatus != YDownloadStatusNone) {
                     return ;
                 }

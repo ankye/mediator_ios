@@ -13,6 +13,6 @@
 
 @property (nonatomic,strong) AKPopupOnClick onClick;
 @property (nonatomic,strong) AKPopupOnClose onClose;
-
+@property (nonatomic,strong) AKPopupOnCompleted onCompleted;
 
 @end

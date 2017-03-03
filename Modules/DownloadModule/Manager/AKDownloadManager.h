@@ -12,7 +12,7 @@
 
 @interface AKDownloadManager : NSObject <HSDownloadTaskDelegate>
 
-
+@property (nonatomic,strong) dispatch_queue_t   myQueue ;
 @property (nonatomic,strong) NSMutableArray* downloadList;
 
 SINGLETON_INTR(AKDownloadManager)
@@ -38,5 +38,6 @@ SINGLETON_INTR(AKDownloadManager)
 
 -(BOOL) isDownloadCompleted:(NSString*)group withUrl:(NSString*)url;
 
+-(NSString*)getDownloadFilePath:(NSString*)group withUrl:(NSString*)url;
 
 @end

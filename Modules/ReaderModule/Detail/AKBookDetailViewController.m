@@ -107,17 +107,15 @@
 -(void)didSectionClick:(NSInteger)section withRow:(NSInteger)row withClickChannel:(NSInteger)clickChannel withContent:(NSObject*)content
 {
     if (section == 0 &&  clickChannel ==0) {
-//        BookReadViewController * con = [BookReadViewController new];
-//        con.book = _handler.book;
-//        con.dataArray = _handler.dataList;
-//        
-        AKReaderViewController *reader = [AKReaderViewController new];
-        reader.book = _handler.book;
 
-//        [self presentViewController:reader animated:YES completion:^{
-//            
-//        }];
-        [self.navigationController pushViewController:reader animated:YES];
+
+        Book* book =  _handler.book;
+        
+        AKReaderViewController *readerVC = [AKReaderViewController new];
+        readerVC.book = book;
+        readerVC.hidesBottomBarWhenPushed = YES;
+        
+        [self.rt_navigationController pushViewController:readerVC animated:YES];
         
         
     }else if (section == 0 &&clickChannel == 1){

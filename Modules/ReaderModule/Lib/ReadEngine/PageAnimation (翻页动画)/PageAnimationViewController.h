@@ -54,7 +54,8 @@ typedef NS_ENUM(NSInteger, AnimationTypes) {
     TheSimulationEffectOfPage  = 0,// 仿真翻页
     TheKeepOutEffectOfPage     = 1,// 覆盖翻页
     TheSlidingEffectOfPage     = 2,// 滑动页面
-    TheNoAnimationEffectOfPage = 3 // 没有动画
+    TheNoAnimationEffectOfPage = 3, // 没有动画
+    TheTBSlidingEffectOfPage = 4   //上下翻页
 };
 
 @property (nonatomic, weak) id<PageAnimationViewControllerDelegate>delegate;

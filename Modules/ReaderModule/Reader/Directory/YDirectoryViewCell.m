@@ -16,11 +16,11 @@
 
 @implementation YDirectoryViewCell
 
-- (void)setChapterM:(YChapterContentModel *)chapterM {
+- (void)setChapterM:( BookChapter*)chapterM {
     _chapterM = chapterM;
     if (_isReadingChapter) {
         self.imageV.image = [UIImage imageNamed:@"bookDirectory_selected"];
-    } else if (chapterM.isLoadCache) {
+    } else if (chapterM.isTmp) {
         self.imageV.image = [UIImage imageNamed:@"directory_previewed"];
     } else {
         self.imageV.image = [UIImage imageNamed:@"directory_not_previewed"];
@@ -28,7 +28,7 @@
     self.numberLabel.text = [NSString stringWithFormat:@"%zi.",_count];
     CGSize size = [self.numberLabel.text boundingRectWithSize:CGSizeMake(100, 100) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.numberLabel.font} context:NULL].size;
     self.numberLabelWidth.constant = size.width+2;
-    self.titleLabel.text = chapterM.title;
+    self.titleLabel.text = chapterM.name;
 }
 
 - (void)awakeFromNib {

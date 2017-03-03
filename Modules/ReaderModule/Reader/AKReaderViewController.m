@@ -13,7 +13,9 @@
 #import "PageGenerationManager.h"
 
 #import "YDirectoryViewController.h"
-#import "YMenuViewController.h"
+#import "AKReaderMenuView.h"
+
+//#import "YMenuViewController.h"
 #import "YReaderManager.h"
 #import "YNetworkManager.h"
 #import "YReaderSettings.h"
@@ -39,12 +41,12 @@
 @property (strong, nonatomic) YSummaryViewController *summaryVC;
 @property (strong, nonatomic) YReaderSettings *settings;
 
-
+@property (strong, nonatomic) PageGenerationManager   *pageGenerationManager;
 @end
 
 @implementation AKReaderViewController {
     
-    PageGenerationManager   *_pageGenerationManager;
+    
     NSMutableArray          *_notesModelArr;
     NSMutableArray          *_bookmarksModelArr;
 //    UIView                  *_bottomMenuView;
@@ -133,12 +135,43 @@
 }
 - (void)goBackClick {
 
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    if (!self.book.isBookmark) {
+       
+        NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSDictionary *attributes) {
+            switch (channel) {
+                case 1:{
+                    //do clean book
+                }
+                    break;
+                case 2:
+                {
+                    [[AKReaderManager sharedInstance] bookmark:self.book];
+                   
+                }
+                    break;
+                default:
+                    break;
+            }
+        } onClose:^(NSDictionary *attributes) {
+            
+        } onCompleted:^(NSDictionary *attributes) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[UIApplication sharedApplication] setStatusBarHidden:NO];
+                [self.navigationController popViewControllerAnimated:YES];
+            });
 
-//    [self dismissViewControllerAnimated:YES completion:^{
-//        
-//    }];
-    [self.navigationController popViewControllerAnimated:YES];
+        }];
+        NSArray* items =
+        @[MMItemMake(@"不了", MMItemTypeNormal, 1),
+          MMItemMake(@"加入", MMItemTypeHighlight, 2)
+          ];
+        [[AKPopupManager sharedInstance] showChooseAlert:@"提示信息" withDetail:@"是否加入我的追书架？" withItems:items withAttributes:attributes];
+        
+    }else{
+
+        [[UIApplication sharedApplication] setStatusBarHidden:NO];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
     
 }
 //- (void)addMenuView {
@@ -269,29 +302,56 @@
 #pragma mark - PageGenerationManager 数据源
 #pragma mark 获取展示内容
 - (NSString *)PageGenerationManagerDataSourceTagString:(DataSourceTag)dataSourceTag {
+    
+    if(self.book == nil ) return nil;
+    
+    if(dataSourceTag == PreviousContent){
+        self.book.read_chapter_section = self.book.read_chapter_section -1 ;
+    }else if(dataSourceTag == NextContent){
+        self.book.read_chapter_section = self.book.read_chapter_section +1;
+    }
+    if(self.book.read_chapter_section < 0 ){
+        self.book.read_chapter_section = 0;
+    }
+    
+    if( self.book.read_chapter_section >= [self.book.bookChapters count]){
+        return nil;
+    }
+    
+    BookChapter * bookChapter = self.book.bookChapters[self.book.read_chapter_section];
+    self.currBookChapter = bookChapter;
     _pageGenerationManager.chapterName = self.currBookChapter.name;
+    
+    NSString* filePath = [[AKDownloadManager sharedInstance] getDownloadFilePath:_downloadGroup.groupName withUrl:bookChapter.url];
+  
+    if(! [[NSFileManager defaultManager] fileExistsAtPath:filePath]){
+        [self setupDownloadEvent];
+        return nil;
+    }
+    
+    NSString * text =[NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
+    return text;
+    
+    
 //    NSString * path                    = [[NSBundle mainBundle] pathForResource:@"411054" ofType:@""];
 //    NSString *str                      = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 //    NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[self.currBookChapter.url md5]];
 //    NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
     
-    return nil;
+   
 }
 
 #pragma mark - PageGenerationManager 代理
 #pragma mark 是否显示菜单
 - (void)PageGenerationManagerIsShowMenu:(BOOL)isShowMenu {
-//    if (isShowMenu) {
-//        // 添加顶部和底部菜单
-//      //  [self addMenuView];
-//   //     self.menuView.view.hidden = NO;
-//
-//        [self.menuView showMenuView];
-//    } else {
-//       // [self removeMenuView];
-//        self.menuView.view.hidden = YES;
-//    }
-    [self.menuView showMenuView];
+    if (isShowMenu) {
+        // 添加顶部和底部菜单
+        [self.menuVC showMenuView];
+    } else {
+
+        [self.menuVC hideMenuView];
+    }
+
 }
 
 #pragma mark 是否显示自动阅读菜单
@@ -305,14 +365,14 @@
 #pragma mark 获得页眉
 - (UIView *)PageGenerationManagerHeader:(PageGenerationManager *)pageGenerationManager {
     PageGenerationHeader *pageGenerationHeader = [PageGenerationHeader sharePageGenerationHeader];
-    pageGenerationHeader.bookName = @"橙红年代";
+    pageGenerationHeader.bookName = _book.novel.name;
     pageGenerationHeader.textColor = [UIColor colorWithWhite:0.000 alpha:0.4f];
     return pageGenerationHeader;
 }
 #pragma mark 获得页脚
 - (UIView *)PageGenerationManagerFooter:(PageGenerationManager *)pageGenerationManager {
     PageGenerationFooter *pageGenerationFooter = [PageGenerationFooter sharePageGenerationFooter];
-    pageGenerationFooter.chapterName           = @"章节名称";
+    pageGenerationFooter.chapterName           = self.currBookChapter.name; // @"章节名称";
     CGFloat progress                           = (_pageGenerationManager.currentPage * 1.0 + 1) /_pageGenerationManager.pageCount;
     pageGenerationFooter.readerProgress        = progress;
     pageGenerationFooter.batteryImageName      = @"电池";
@@ -326,119 +386,113 @@
     NSLog(@"笔记内容 ： %@",notesContentDic[@"noteContentStr"]);
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+
+}
 - (void)setupNav{
     
-    [[UIApplication sharedApplication] setStatusBarHidden:YES];
 
     self.navigationItem.title = self.book.novel.name;
     self.navigationController.navigationBarHidden = YES;
+   [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    
+ //   self.rt_navigationController.navigationBarHidden = YES;
+    
 //    UIBarButtonItem * lbbi = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_back_white"] style:UIBarButtonItemStylePlain target:self action:@selector(backToPreViewController)];
 //    self.navigationItem.leftBarButtonItem = lbbi;
 }
 
-- (void)backToPreViewController{
-    
-    if (!self.book.isBookmark) {
-        UIAlertView * av = [[UIAlertView alloc]initWithTitle:@"提示信息" message:@"是否加入我的藏书阁？" delegate:self cancelButtonTitle:nil otherButtonTitles:@"好的",@"不了", nil];
-        
-        [av show];
-    }else{
-      //  NSIndexPath * indexPath = [[self. indexPathsForVisibleItems] firstObject];
-        
-     //   [BookDatabase saveBookToDataBaseWithIndexPath:indexPath andBook:self.book];
-       // self.book.currIndexPath = indexPath;
-      //  [[AKDBManager sharedInstance] book_insertOrReplace:self.book];
 
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-}
 
 -(void)setupViews
 {
-    
-   
-//    if (!self.readIndexPath) {
-//        
-//        Book * book = [[AKDBManager sharedInstance] book_queryByID:self.book.novel.Id]; // [[BookDatabase bookDataListFromDatabaseWithNovelId:self.book.novel.Id] firstObject];
-//        
-//        self.book.isBookmark = book!=nil;
-//        
-//        self.readIndexPath =  [NSIndexPath indexPathForRow:book.read_chapter_row inSection: book.read_chapter_section];  //book.currIndexPath;
-//    }
-//    
-//
-//    BookChapter * bookChapter = self.book.bookChapters[self.readIndexPath.section];
-    //self.chapterArray[self.readIndexPath.section];
-    
-//    if (bookChapter) {
-//        
-//        if ([self isExitNovelByNovelTextUrl:bookChapter.url]) {
-//            [self getDataByNovelTextUrl:bookChapter.url];
-//        }
-//    }
-//    self.currBookChapter = bookChapter;
-//    
-//    self.readIndexPath = [NSIndexPath indexPathForRow:0 inSection:self.readIndexPath.section];
-//    
+ 
     [self setupMenuView];
-  //  AKWeakSelf(self);
-//    
-//    [self.view addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
-//        
-//        [weakself.menuView showMenuView];
-////        [weakself.readerManager updateReadingChapter:weakself.currBookChapter page:weakself.page];
-//    }]];
 
     if(_book && _book.bookChapters.count == 0){
         [AKPopupManager showProgressHUDAtView:self.view];
         
         [_book.onChaptersChange addObserver:self callback:^(typeof(self) self, NSMutableArray * _Nonnull mutableArray) {
             [AKPopupManager hideProgressHUDAtView:self.view];
-            [self startReadChapter];
+            [self setupDownloadEvent];
         }];
         [[AKReaderManager sharedInstance] requestBookChapters:_book];
+
     }else{
-        [self startReadChapter];
+        
+        [self setupDownloadEvent];
+    }
+
+}
+
+-(void)setupDownloadEvent
+{
+    if( self.downloadGroup == nil )
+    {
+        self.downloadGroup =  [[AKReaderManager sharedInstance] startDownloadBook:self.book atIndex:self.book.read_chapter_section];
+        [self.downloadGroup.onDownloadItemCompleted addObserver:self callback:^(typeof(self) self, NSDictionary * _Nonnull dictionary) {
+            NSString* url = dictionary[@"url"];
+            if([self.currBookChapter.url isEqualToString:url]){
+                [self.pageGenerationManager refreshViewController];
+            }
+        }];
+        
+        [self.pageGenerationManager refreshViewController];
+
     }
 }
 
--(void)startReadChapter
-{
-    BookChapter * bookChapter = self.book.bookChapters[self.book.read_chapter_section];
-    self.currBookChapter = bookChapter;
-}
+//-(void)startReadChapter
+//{
+//    BookChapter * bookChapter = self.book.bookChapters[self.book.read_chapter_section];
+//    self.currBookChapter = bookChapter;
+//    
+//   AKDownloadGroupModel* group = [[AKReaderManager sharedInstance] startDownloadBook:_book atIndex:self.book.read_chapter_section];
+//
+//    NSString* filePath = [[AKDownloadManager sharedInstance] getDownloadFilePath:group.groupName withUrl:bookChapter.url];
+//    NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
+//    NSLog(@"%@",text);
+//}
 
 //获取数据，有则加载，无则请求
-- (void)getDataByNovelTextUrl:(NSString *)novelTextUrl{
-    if([self isExitNovelByNovelTextUrl:novelTextUrl]){
-        
-//        NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
-//        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
-        
-        
-    }else{
-      
-    }
-}
+//- (void)getDataByNovelTextUrl:(NSString *)novelTextUrl{
+//    if([self isExitNovelByNovelTextUrl:novelTextUrl]){
+//        
+////        NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
+////        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
+//        
+//        
+//    }else{
+//      
+//    }
+//}
 
 //判断本地是否缓存
-- (BOOL)isExitNovelByNovelTextUrl:(NSString *)novelTextUrl{
-//    NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
-    
-//    if ([NSFileManager isExistsFileWithFilePath:filePath]) {
-//        
-//        
-//        NSError * error = nil;
-//        
-//        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:&error];
-//        
-//        if (![text isEqualToEmptyStr]) {
-//            return YES;
-//        }
-//    }
-    
-    return NO;
-}
+//- (BOOL)isExitNovelByNovelTextUrl:(NSString *)novelTextUrl{
+////    NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
+//    
+////    if ([NSFileManager isExistsFileWithFilePath:filePath]) {
+////        
+////        
+////        NSError * error = nil;
+////        
+////        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:&error];
+////        
+////        if (![text isEqualToEmptyStr]) {
+////            return YES;
+////        }
+////    }
+//    
+//    return NO;
+//}
 
 #pragma mark - 系统协议
 - (BOOL)prefersStatusBarHidden{
@@ -448,12 +502,15 @@
 #pragma mark - menu view
 - (void)setupMenuView {
     __weak typeof(self) wself = self;
-    self.menuView = [[YMenuViewController alloc] init];
-    self.menuView.view.frame = self.view.bounds;
-    [self.view addSubview:self.menuView.view];
-    self.menuView.view.backgroundColor = [UIColor clearColor];
-    self.menuView.view.hidden = YES;
-    self.menuView.menuTapAction = ^(NSInteger tag) {
+    self.menuVC = [[YMenuViewController alloc] init];
+    self.menuVC.view.frame = self.view.bounds;
+    [self.view addSubview:self.menuVC.view];
+    self.menuVC.view.backgroundColor = [UIColor clearColor];
+    self.menuVC.view.hidden = YES;
+
+
+    
+    self.menuVC.menuTapAction = ^(NSInteger tag) {
         switch (tag) {
             case 100: {          //换源
                 [wself presentViewController:wself.summaryVC animated:YES completion:nil];
@@ -463,14 +520,29 @@
                 
                 break;
             case 102: {          //关闭
-                [wself dismissViewControllerAnimated:YES completion:^{
-               //     [wself.readerManager updateReadingChapter:wself.chapter page:wself.page];
-                    [wself.readerManager closeReadingBook];
-                }];
+                [wself goBackClick];
+               
+            }
+                break;
+            case 200:           //日/夜间模式切换
+            {
+                [wself.pageGenerationManager nightModel:NO];
+                [wself.pageGenerationManager refreshViewController];
+            }
+                break;
+            case 201:{      //翻页方式
+                [wself choosePageEffect];
             }
                 break;
             case 202: {          //目录
+                [wself.pageGenerationManager showOrHideMenu];
+                
                 [wself presentViewController:wself.directoryVC animated:YES completion:nil];
+            }
+                break;
+            case 400:{ //隐藏menuview
+                [wself.pageGenerationManager showOrHideMenu];
+                
             }
                 break;
             default:
@@ -479,18 +551,44 @@
     };
 }
 
+-(void)choosePageEffect
+{
+    NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleBottomSheet actionType:AKPopupActionTypeBottom onClick:^(NSInteger channel, NSDictionary *attributes) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.pageGenerationManager setAnimationTypes: channel];
+            [self.pageGenerationManager refreshViewController];
+        });
+        
+        
+    } onClose:^(NSDictionary *attributes) {
+        
+    } onCompleted:^(NSDictionary *attributes) {
+        
+    }];
+    
+    AnimationTypes type = self.pageGenerationManager.animationTypes;
+    
+    NSArray* items = @[MMItemMake(@"仿真", type == TheSimulationEffectOfPage ? MMItemTypeHighlight :MMItemTypeNormal, TheSimulationEffectOfPage),
+                       MMItemMake(@"覆盖", type == TheKeepOutEffectOfPage ? MMItemTypeHighlight :MMItemTypeNormal, TheKeepOutEffectOfPage),
+                       MMItemMake(@"左右滑动", type == TheSlidingEffectOfPage ? MMItemTypeHighlight :MMItemTypeNormal, TheSlidingEffectOfPage)
+                              ];
+    
+    [[AKPopupManager sharedInstance] showSheetAlert:@"翻页方式选择" withItems:items withAttributes:attributes];
+}
+
 #pragma mark - 选择章节页面
 - (YDirectoryViewController *)directoryVC {
     if (!_directoryVC) {
         _directoryVC = [[YDirectoryViewController alloc] init];
-       // __weak typeof(self) wself = self;
-        //_directoryVC.selectChapter = ^(NSUInteger chapter) {
-         //   wself.isPageBefore = NO;
-         //   [wself updateReaderChapter:chapter page:0];
-        //};
+        __weak typeof(self) wself = self;
+        _directoryVC.selectChapter = ^(NSUInteger chapter) {
+            wself.book.read_chapter_section = chapter;
+            [wself.pageGenerationManager refreshViewController];
+        };
     }
-    _directoryVC.chaptersArr = self.readerManager.chaptersArr;
-   // _directoryVC.readingChapter = self.chapter;
+    _directoryVC.chaptersArr = self.book.bookChapters;
+    _directoryVC.readingChapter = self.book.read_chapter_section;
     return _directoryVC;
 }
 
@@ -498,7 +596,7 @@
 - (YSummaryViewController *)summaryVC {
     if (!_summaryVC) {
         _summaryVC = [[YSummaryViewController alloc] init];
-        __weak typeof(self) wself = self;
+       // __weak typeof(self) wself = self;
         _summaryVC.updateSelectSummary = ^(YBookSummaryModel *summary){
           //  [wself updateReaderBookSummary:summary];
         };

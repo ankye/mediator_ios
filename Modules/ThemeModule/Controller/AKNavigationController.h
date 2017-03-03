@@ -6,9 +6,9 @@
 //  Copyright © 2017年 ankye. All rights reserved.
 //
 
-#import "JTNavigationController.h"
-#import "UIViewController+JTNavigationExtension.h"
+#import <RTRootNavigationController/RTRootNavigationController.h>
+#import <RTRootNavigationController/UIViewController+RTRootNavigationController.h>
 
-@interface AKNavigationController : JTNavigationController
+@interface AKNavigationController : RTRootNavigationController
 
 @end

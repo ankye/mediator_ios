@@ -34,4 +34,6 @@ SINGLETON_INTR(AKReaderManager)
 
 -(void)requestBookChapters:(Book*)book;
 
+-(AKDownloadGroupModel*)startDownloadBook:(Book*)book atIndex:(NSInteger)index;
+
 @end

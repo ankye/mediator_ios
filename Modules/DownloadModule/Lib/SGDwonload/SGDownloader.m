@@ -100,7 +100,7 @@ didCompleteWithError:(nullable NSError *)error {
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         // 设置请求超时
         config.timeoutIntervalForRequest = -1;
-        config.networkServiceType = NSURLNetworkServiceTypeVideo;
+        config.networkServiceType = NSURLNetworkServiceTypeDefault;
         config.timeoutIntervalForResource = -1;
         config.TLSMaximumSupportedProtocol = kSSLProtocolAll;
         

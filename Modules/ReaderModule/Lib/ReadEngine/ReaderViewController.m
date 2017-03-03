@@ -77,18 +77,9 @@
 }
 #pragma mark 手势响应事件
 - (void)tapGestureRecognizerClick:(UITapGestureRecognizer *)tapGesture {
-    if (self.isShowMenu) {
-        // 菜单是显示的
-        self.isShowMenu = NO;
-        if ([self.delegate respondsToSelector:@selector(ReaderViewControllerHiddenMenu:)]) {
-            [self.delegate ReaderViewControllerHiddenMenu:self];
-        }
-    } else {
-        // 菜单是隐藏的
-        self.isShowMenu = YES;
-        if ([self.delegate respondsToSelector:@selector(ReaderViewControllerShowMenu:)]) {
-            [self.delegate ReaderViewControllerShowMenu:self];
-        }
+    
+    if ([self.delegate respondsToSelector:@selector(ReaderViewControllerOnClick:)]) {
+        [self.delegate ReaderViewControllerOnClick:self];
     }
 }
 #pragma mark - 设置手势响应区域
@@ -98,9 +89,9 @@
     //            3、 翻页手势
 
     // 1、收起菜单
-    if (self.isShowMenu) {
-        return YES;
-    }
+//    if (self.isShowMenu) {
+//        return YES;
+//    }
     // 2、显示菜单
     CGPoint point = [touch locationInView:self.view];
     CGRect rect   = CGRectMake(80, 0, self.view.frame.size.width - 160, self.view.frame.size.height);

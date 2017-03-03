@@ -12,4 +12,5 @@
 
 @property (copy, nonatomic) void(^menuTapAction)(NSInteger);
 - (void)showMenuView;
+- (void)hideMenuView;
 @end

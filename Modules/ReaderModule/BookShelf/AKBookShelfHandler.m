@@ -263,6 +263,8 @@
             }
        } onClose:^(NSDictionary *attributes) {
            NSLog(@"确定关闭");
+       } onCompleted:^(NSDictionary *attributes) {
+           NSLog(@"关闭完成");
        }];
         
         

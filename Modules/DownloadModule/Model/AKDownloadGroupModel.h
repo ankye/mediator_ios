@@ -40,7 +40,7 @@
 
 @property (nonatomic, readwrite) UBSignal<DictionarySignal> *onDownloadProgress;
 @property (nonatomic, readwrite) UBSignal<DictionarySignal> *onDownloadCompleted;
-
+@property (nonatomic, readwrite) UBSignal<DictionarySignal> *onDownloadItemCompleted;
 
 -(AKDownloadModel*)currentModel;
 -(AKDownloadModel*)goToNextModel;

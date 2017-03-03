@@ -144,7 +144,26 @@ SINGLETON_IMPL(AKReaderManager)
 //
 
 
-
+-(AKDownloadGroupModel*)startDownloadBook:(Book *)book atIndex:(NSInteger)index
+{
+    AKDownloadGroupModel* downloadGroup = [[AKDownloadManager sharedInstance] getDownloadGroup:book.novel.name];
+    if(downloadGroup == nil){
+        downloadGroup = [[AKDownloadManager sharedInstance] createTaskGroup:book.novel.name withBreakpointResume:NO];
+    }
+    NSInteger count = book.bookChapters.count;
+    for(NSInteger i=0; i<count; i++){
+        BookChapter* chapter = [book.bookChapters objectAtIndex:i];
+        
+        AKDownloadModel* model = [[AKDownloadManager sharedInstance] createTask:book.novel.name withTaskName:chapter.name withIcon:book.novel.cover withDesc:chapter.name withDownloadUrl:chapter.url withFilename:@""];
+        [downloadGroup addTaskModel:model];
+    }
+    
+    
+    [[AKDownloadManager sharedInstance] startGroup:downloadGroup atIndex:index];
+    
+    return downloadGroup;
+    
+}
 
 
 

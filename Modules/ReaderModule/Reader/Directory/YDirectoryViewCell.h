@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YChapterContentModel.h"
+#import "BookChapter.h"
+
 
 @interface YDirectoryViewCell : UITableViewCell
 
@@ -18,6 +19,6 @@
 
 @property (assign, nonatomic) BOOL isReadingChapter;
 @property (assign, nonatomic) NSUInteger count;
-@property (strong, nonatomic) YChapterContentModel *chapterM;
+@property (strong, nonatomic) BookChapter *chapterM;
 
 @end

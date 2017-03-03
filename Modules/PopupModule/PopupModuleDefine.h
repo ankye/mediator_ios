@@ -19,6 +19,8 @@ typedef void(^AKPopupOnClick)(NSInteger channel,NSDictionary* attributes);
 
 //onClose关闭事件回调
 typedef void(^AKPopupOnClose)( NSDictionary* attributes);
+//onCompleted弹窗完成回调
+typedef void(^AKPopupOnCompleted)( NSDictionary* attributes);
 
 //弹窗key定义
 #define AK_Popup_Controller     @"controller"       //controller
@@ -26,8 +28,9 @@ typedef void(^AKPopupOnClose)( NSDictionary* attributes);
 #define AK_Popup_ShowNav        @"showNav"          //显示导航条
 #define AK_Popup_OnClick        @"onClick"          //点击事件 非必须
 #define AK_Popup_OnClose        @"onClose"          //关闭事件 非必须
+#define AK_Popup_OnCompleted    @"onCompleted"      //完成事件 非必须
 #define AK_Popup_Style          @"style"            //弹窗样式
-#define AK_Popup_ActionType         @"actionType"           //弹窗动画和方向
+#define AK_Popup_ActionType     @"actionType"           //弹窗动画和方向
 
 typedef NS_ENUM(NSUInteger, AKPopupActionType) {
     AKPopupActionTypeTop,

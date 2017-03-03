@@ -54,7 +54,14 @@
     [super didReceiveMemoryWarning];
 }
 
+- (UIBarButtonItem *)customBackItemWithTarget:(id)target
+                                       action:(SEL)action
+{
+    
+    return [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"backImage"] style:UIBarButtonItemStylePlain target:target action:action];
+    
 
+}
 //- (void)dealloc{
 //    NSLog(@"%@",NSStringFromClass([self class]));
 //}

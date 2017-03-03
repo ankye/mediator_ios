@@ -48,6 +48,7 @@
 @synthesize fontSize = _fontSize, pageRect = _pageRect, currentPage = _currentPage, currentPageStr = _currentPageStr, backgroundImage = _backgroundImage, fontColor = _fontColor, bookName = _bookName, chapterName = _chapterName, animationTypes = _animationTypes,  pageCount = _pageCount, notesArr = _notesArr, bookmarksArr = _bookmarksArr,notesFunctionState = _notesFunctionState;
 
 
+
 + (PageGenerationManager *)sharePageGenerationManager {
     PageGenerationManager *pageGenerationManager = [[PageGenerationManager alloc] init];
     return pageGenerationManager;
@@ -237,22 +238,41 @@
 
 #pragma mark - ReaderViewController代理
 #pragma mark 显示菜单
-- (void)ReaderViewControllerShowMenu:(ReaderViewController *)readerViewController {
+- (void)ReaderViewControllerOnClick:(ReaderViewController *)readerViewController {
     
-    if([self.delegate respondsToSelector:@selector(PageGenerationManagerIsShowMenu:)]) {
-        // 屏蔽翻页
-       [self.pageAnimationViewController setGestureRecognizerState:NO];
-        [self.delegate PageGenerationManagerIsShowMenu:YES];
+    [self showOrHideMenu];
+    
+}
+
+
+-(void)showOrHideMenu
+{
+    
+    if(_isShowMenu){
+        _isShowMenu = NO;
+        if([self.delegate respondsToSelector:@selector(PageGenerationManagerIsShowMenu:)]) {
+            // 开启翻页
+            [self.pageAnimationViewController setGestureRecognizerState:YES];
+            [self.delegate PageGenerationManagerIsShowMenu:NO];
+        }
+    }else{
+        _isShowMenu = YES;
+        if([self.delegate respondsToSelector:@selector(PageGenerationManagerIsShowMenu:)]) {
+            // 屏蔽翻页
+            [self.pageAnimationViewController setGestureRecognizerState:NO];
+            [self.delegate PageGenerationManagerIsShowMenu:YES];
+        }
     }
 }
-#pragma mark 隐藏菜单
-- (void)ReaderViewControllerHiddenMenu:(ReaderViewController *)readerViewController {
-    if([self.delegate respondsToSelector:@selector(PageGenerationManagerIsShowMenu:)]) {
-        // 开启翻页
-        [self.pageAnimationViewController setGestureRecognizerState:YES];
-        [self.delegate PageGenerationManagerIsShowMenu:NO];
-    }
-}
+
+//#pragma mark 隐藏菜单
+//- (void)ReaderViewControllerHiddenMenu:(ReaderViewController *)readerViewController {
+//    if([self.delegate respondsToSelector:@selector(PageGenerationManagerIsShowMenu:)]) {
+//        // 开启翻页
+//        [self.pageAnimationViewController setGestureRecognizerState:YES];
+//        [self.delegate PageGenerationManagerIsShowMenu:NO];
+//    }
+//}
 #pragma mark 设置翻页手势状态
 - (void)ReaderViewControllerPageState:(BOOL)pageState {
    [self.pageAnimationViewController setGestureRecognizerState:pageState];
@@ -485,13 +505,13 @@
     return _notesFunctionState;
 }
 #pragma mark 设置菜单显示状态
-- (void)setIsShowMenu:(BOOL)isShowMenu {
-    if (isShowMenu) {
-        // 屏蔽笔记功能
-        self.notesFunctionState = NO;
-        // 屏蔽翻页手势
-        [self.pageAnimationViewController setGestureRecognizerState:NO];
-    }
-    self.readerViewController.isShowMenu = isShowMenu;
-}
+//- (void)setIsShowMenu:(BOOL)isShowMenu {
+//    if (isShowMenu) {
+//        // 屏蔽笔记功能
+//        self.notesFunctionState = NO;
+//        // 屏蔽翻页手势
+//        [self.pageAnimationViewController setGestureRecognizerState:NO];
+//    }
+//    self.isShowMenu = isShowMenu;
+//}
 @end

@@ -109,13 +109,9 @@
     
     AKReaderViewController *readerVC = [AKReaderViewController new];
     readerVC.book = book;
-   
-   
-//    AKBookDetailViewController * con = [AKBookDetailViewController new];
-//    con.book =(Book*)content;
     readerVC.hidesBottomBarWhenPushed = YES;
     
-    [self.navigationController pushViewController:readerVC animated:YES];
+    [self.rt_navigationController pushViewController:readerVC animated:YES];
 }
 
 -(void)didSectionClick:(NSInteger)section withRow:(NSInteger)row withClickChannel:(NSInteger)clickChannel withContent:(NSObject *)content

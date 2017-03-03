@@ -40,14 +40,15 @@ SINGLETON_IMPL(AKPopupManager)
     return self;
 }
 
-+(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose
++(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose  onCompleted:(AKPopupOnCompleted)onCompleted
 {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
     dic[AK_Popup_ShowBG] =  @(showBG);
     dic[AK_Popup_ShowNav] = @(showNav);
     dic[AK_Popup_OnClick] = onClick;
     dic[AK_Popup_OnClose] = onClose;
-   
+    dic[AK_Popup_OnCompleted] = onCompleted;
+    
     if(style){
         dic[AK_Popup_Style] = @(style);
     }else{
@@ -89,6 +90,10 @@ SINGLETON_IMPL(AKPopupManager)
     
     action.onCompleted = ^(){
         self.popupController = nil;
+        AKPopupOnCompleted onCompleted = [self.currentAttributes objectForKey:AK_Popup_OnCompleted];
+        if(onCompleted){
+            onCompleted(self.currentAttributes);
+        }
         self.currentAttributes = nil;
         [self show];
     };

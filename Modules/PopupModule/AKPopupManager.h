@@ -27,7 +27,7 @@ SINGLETON_INTR(AKPopupManager)
 
 
 //STPopupStyleBottomSheet 类型只支持 AKPopupActionTypeBottom
-+(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose;
++(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose onCompleted:(AKPopupOnCompleted)onCompleted;
 
 /**
  弹出窗，注入视图View

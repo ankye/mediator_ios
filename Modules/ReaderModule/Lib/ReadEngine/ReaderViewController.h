@@ -13,17 +13,12 @@
 @protocol ReaderViewControllerDelegate <NSObject>
 
 /**
- *  显示菜单
+ *  点击手势
  *
  *  @param readerViewController 当前控制器
  */
-- (void)ReaderViewControllerShowMenu:(ReaderViewController *)readerViewController;
-/**
- *  隐藏菜单
- *
- *  @param readerViewController 当前控制器
- */
-- (void)ReaderViewControllerHiddenMenu:(ReaderViewController *)readerViewController;
+- (void)ReaderViewControllerOnClick:(ReaderViewController *)readerViewController;
+
 /**
  *  添加笔记
  *
@@ -49,7 +44,7 @@
 @property (nonatomic, weak) id<ReaderViewControllerDelegate> delegate;
 @property (nonatomic, strong) NSMutableArray *notesArr;
 @property (nonatomic, strong) NSString       *titleStr;
-@property (nonatomic, assign) BOOL           isShowMenu;// 是否为显示菜单
+
 @property (nonatomic, assign) CGFloat        lastLinePosition;// 最后一行的位置
 
 /**

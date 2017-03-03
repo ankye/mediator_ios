@@ -199,10 +199,11 @@
 #pragma mark - private
 - (void)goReadBtnClick:(UIButton *)btn{
    // [self.mainViewDelegate basicFuncBtnClickWithMainView:self andIndex:0];
-    
+
     if(self.handlerDelegate && [self.handlerDelegate respondsToSelector:@selector(didSectionClick:withRow:withClickChannel:withContent:)]){
         [self.handlerDelegate didSectionClick:0 withRow:0 withClickChannel:0 withContent:nil];
     }
+    
     
 }
 - (void)joinShelfBtnClick:(UIButton *)btn{
@@ -280,6 +281,8 @@
         [_downloadGroup.onDownloadCompleted addObserver:self callback:^(id  _Nonnull self, NSDictionary * _Nonnull dictionary) {
             [self downloadComplete:(HSDownloadState)[dictionary[@"state"] integerValue] withGroupName:dictionary[@"groupName"] downLoadUrlString:dictionary[@"url"]];
         }];
+        
+       
     }
 }
 
@@ -303,19 +306,8 @@
 -(void) startDownload
 {
     if(_book.bookChapters.count>0){
-        if(_downloadGroup == nil){
-            _downloadGroup = [[AKDownloadManager sharedInstance] createTaskGroup:_book.novel.name withBreakpointResume:NO];
-        }
-        NSInteger count = _book.bookChapters.count;
-        for(NSInteger i=0; i<count; i++){
-            BookChapter* chapter = [_book.bookChapters objectAtIndex:i];
-            
-            AKDownloadModel* model = [[AKDownloadManager sharedInstance] createTask:_book.novel.name withTaskName:chapter.name withIcon:_book.novel.cover withDesc:chapter.name withDownloadUrl:chapter.url withFilename:@""];
-            [_downloadGroup addTaskModel:model];
-        }
-     
-
-        [[AKDownloadManager sharedInstance] startGroup:_downloadGroup atIndex:0];
+        
+        _downloadGroup = [[AKReaderManager sharedInstance] startDownloadBook:_book atIndex:0];
         
         [self updateDownloadState];
         [self.table refreshData];

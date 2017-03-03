@@ -37,6 +37,8 @@
     [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
     self.onDownloadCompleted = (UBSignal<DictionarySignal> *)
     [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
+    self.onDownloadItemCompleted = (UBSignal<DictionarySignal> *)
+    [[UBSignal alloc] initWithProtocol:@protocol(DictionarySignal)];
     self.task = nil;
     
 }

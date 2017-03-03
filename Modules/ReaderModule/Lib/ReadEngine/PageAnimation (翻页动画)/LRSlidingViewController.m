@@ -6,13 +6,13 @@
 //  Copyright © 2016年 中文万维. All rights reserved.
 //
 
-#import "SlidingViewController.h"
+#import "LRSlidingViewController.h"
 
-@interface SlidingViewController ()
+@interface LRSlidingViewController ()
 
 @end
 
-@implementation SlidingViewController
+@implementation LRSlidingViewController
 
 /**
  *  重写实现父类的几个方法

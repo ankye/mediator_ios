@@ -33,6 +33,16 @@ SINGLETON_IMPL(AKDownloadManager)
   
 }
 
+#pragma mark - prop
+- (dispatch_queue_t)myQueue
+{
+    if (!_myQueue) {
+        _myQueue = dispatch_queue_create("myDownloadSyncQueue", DISPATCH_QUEUE_CONCURRENT) ;
+    }
+    return _myQueue ;
+}
+
+
 -(NSString*)downloadListPlistPath
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -190,63 +200,68 @@ SINGLETON_IMPL(AKDownloadManager)
 
 -(void)startGroup:(AKDownloadGroupModel*)group
 {
-    AKDownloadModel* model = [group currentModel];
-    NSLog(@"%@ 开始",model.taskName );
-   
+    dispatch_sync(self.myQueue, ^{
+         
+        AKDownloadModel* model = [group currentModel];
+        NSLog(@"%@ 开始",model.taskName );
+       
 
-    [group calcProgress];
-    
-    if(group.needStore){
-        group.needStore = NO;
-        [self storeDownloadList];
+        [group calcProgress];
         
-    }
+        if(group.needStore){
+            group.needStore = NO;
+            [self storeDownloadList];
+            
+        }
 
-    
-    if(group.enableBreakpointResume){
-        if(model && model.isCached ){
-            NSLog(@"%@ 断点续传下载已完成",model.taskName );
-            
-            model = [group goToNextModel];
-            if(model){
-                [self startGroup:group];
-            }
-            return;
-        }
         
-        [self checkTask:group withUrl:model.downLoadUrl];
-    
-        [[HSDownloadManager sharedInstance] start: model.downLoadUrl group: group.groupName];
-    }else{
-        if(model && [self isDownloadCompleted:group.groupName withUrl:model.downLoadUrl]){
-            NSLog(@"%@ 普通下载已完成",model.taskName );
-            
-            model = [group goToNextModel];
-            if(model){
-                [self startGroup:group];
+        if(group.enableBreakpointResume){
+            if(model && model.isCached ){
+                NSLog(@"%@ 断点续传下载已完成",model.taskName );
+                
+                model = [group goToNextModel];
+                if(model){
+                    [self startGroup:group];
+                }
+                return;
             }
-            return ;
-        }
-        group.groupState = HSDownloadStateRunning;
+            
+            [self checkTask:group withUrl:model.downLoadUrl];
         
-        @weakify(self);
-        [[SGDownloadManager shareManager] downloadWithURL:AKURL(model.downLoadUrl) progress:^(NSInteger completeSize, NSInteger expectSize) {
-            @strongify(self);
-            [self downloadProgress:group.groupName withUrl:model.downLoadUrl withProgress:group.groupProgress withTotalRead:completeSize withTotalExpected:expectSize];
-            
-        } complete:^(NSDictionary *respose, NSError *error) {
-            @strongify(self);
-            
-            NSString* path = [self getDownloadFilePath:group.groupName withUrl:model.downLoadUrl];
-            if([respose[@"isFinished"] boolValue]){
-                [[NSFileManager defaultManager] moveItemAtPath:respose[@"filePath"] toPath:path error:nil];
-            }else{
-                [self removeDownloadFile:group.groupName withUrl:model.downLoadUrl];
+            [[HSDownloadManager sharedInstance] start: model.downLoadUrl group: group.groupName];
+        }else{
+            if(model && [self isDownloadCompleted:group.groupName withUrl:model.downLoadUrl]){
+                NSLog(@"%@ 普通下载已完成",model.taskName );
+                
+                model = [group goToNextModel];
+                if(model){
+                    [self startGroup:group];
+                }
+                return ;
             }
-            [self downloadComplete:HSDownloadStateCompleted withGroupName:group.groupName downLoadUrlString:model.downLoadUrl];
+            group.groupState = HSDownloadStateRunning;
+            NSLog(@"开始下载 %@",model.downLoadUrl);
             
-        }];
-    }
+            @weakify(self);
+            [[SGDownloadManager shareManager] downloadWithURL:AKURL(model.downLoadUrl) progress:^(NSInteger completeSize, NSInteger expectSize) {
+                @strongify(self);
+                [self downloadProgress:group.groupName withUrl:model.downLoadUrl withProgress:group.groupProgress withTotalRead:completeSize withTotalExpected:expectSize];
+                
+            } complete:^(NSDictionary *respose, NSError *error) {
+                @strongify(self);
+                
+                NSString* path = [self getDownloadFilePath:group.groupName withUrl:model.downLoadUrl];
+                if([respose[@"isFinished"] boolValue]){
+                    [[NSFileManager defaultManager] moveItemAtPath:respose[@"filePath"] toPath:path error:nil];
+                }else{
+                    [self removeDownloadFile:group.groupName withUrl:model.downLoadUrl];
+                }
+                [self downloadComplete:HSDownloadStateCompleted withGroupName:group.groupName downLoadUrlString:model.downLoadUrl];
+                
+            }];
+        }
+            
+    });
     
 }
 
@@ -311,46 +326,54 @@ SINGLETON_IMPL(AKDownloadManager)
 
 -(void)startGroup:(AKDownloadGroupModel*)group atIndex:(NSInteger)index;
 {
-    if(index > [group.tasks count] || index < 0){
-        return;
-    }
-    [self pauseGroup:group];
-    
-    group.currentTaskIndex = index;
-    
-    [self startGroup:group];
-    
+     dispatch_sync(self.myQueue, ^{
+         
+        if(index > [group.tasks count] || index < 0){
+            return;
+        }
+        if(group.groupState == HSDownloadStateRunning && index <= group.currentTaskIndex){
+            return;
+        }
+       // [self pauseGroup:group];
+        
+        group.currentTaskIndex = index;
+        
+        [self startGroup:group];
+     });
 }
 
 
 -(void)pauseGroup:(AKDownloadGroupModel*)group
 {
-    if(group.groupState == HSDownloadStateCompleted || group.groupState == HSDownloadStateSuspended){
-        return;
-    }
-    [group calcProgress];
-    AKDownloadModel* model = [group currentModel];
-    if(group.enableBreakpointResume){
-        [[HSDownloadManager sharedInstance] pause:model.downLoadUrl group:group.groupName];
-    }else{
+     dispatch_sync(self.myQueue, ^{
+         
+        if(group.groupState == HSDownloadStateCompleted || group.groupState == HSDownloadStateSuspended){
+            return;
+        }
+        [group calcProgress];
+        AKDownloadModel* model = [group currentModel];
+        if(group.enableBreakpointResume){
+            [[HSDownloadManager sharedInstance] pause:model.downLoadUrl group:group.groupName];
+        }else{
+            group.groupState = HSDownloadStateSuspended;
+            [[SGDownloadManager shareManager] supendDownloadWithUrl:model.downLoadUrl];
+        }
         group.groupState = HSDownloadStateSuspended;
-        [[SGDownloadManager shareManager] supendDownloadWithUrl:model.downLoadUrl];
-    }
-    group.groupState = HSDownloadStateSuspended;
-    
-    [self storeDownloadList];
-
+        
+        [self storeDownloadList];
+     });
 }
 
 -(void)deleteGroup:(AKDownloadGroupModel*)group
 {
-    [self pauseGroup:group];
-    [self removeGroupDir:group.groupName];
-    
-    [self.downloadList removeObject:group];
-    
-    [self storeDownloadList];
-
+     dispatch_sync(self.myQueue, ^{
+        [self pauseGroup:group];
+        [self removeGroupDir:group.groupName];
+        
+        [self.downloadList removeObject:group];
+        
+        [self storeDownloadList];
+     });
 }
 
 
@@ -377,10 +400,12 @@ SINGLETON_IMPL(AKDownloadManager)
     if(downloadState == HSDownloadStateCompleted){
         AKDownloadModel* model = [group currentModel];
         NSLog(@"%@ 完成",model.taskName );
-        
+        group.onDownloadItemCompleted.fire(@{@"state":@(downloadState),@"groupName":groupName,@"url":downLoadUrlString});
         model.isCached = YES;
         
         if(group.groupState != HSDownloadStateCompleted){
+            
+            
             [group goToNextModel];
             [self startGroup:group];
             return;

@@ -124,6 +124,7 @@ typedef enum {
  */
 + (PageGenerationManager *)sharePageGenerationManager;
 
+
 /**
  *  刷新阅读引擎
  */
@@ -165,4 +166,7 @@ typedef enum {
  *  @param speed 速度值
  */
 - (void)automaticReadingSpeed:(NSInteger)speed;
+
+
+-(void)showOrHideMenu;
 @end

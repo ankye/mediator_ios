@@ -8,6 +8,6 @@
 
 #import "AnimationViewController.h"
 
-@interface SlidingViewController : AnimationViewController
+@interface TBSlidingViewController : AnimationViewController
 
 @end

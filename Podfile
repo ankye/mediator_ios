@@ -27,7 +27,7 @@ target 'Project' do
         pod 'MBProgressHUD'
         pod 'MJExtension'
         pod 'pop'
-        
+        pod 'RTRootNavigationController'
         #share Module
         # U-Share SDK UI模块（分享面板，建议添加）
         pod 'UMengUShare/UI’

@@ -8,7 +8,8 @@
 
 #import "PageAnimationViewController.h"
 #import "BackViewController.h"
-#import "SlidingViewController.h"
+#import "LRSlidingViewController.h"
+#import "TBSlidingViewController.h"
 #import "KeepOutViewController.h"
 #import "NoAnimationViewController.h"
 
@@ -21,8 +22,11 @@
     UIPageViewController               *_pageViewController;
     // 覆盖翻页控制器
     KeepOutViewController              *_keepOutViewController;
-    // 滑动翻页控制器
-    SlidingViewController              *_slidingViewController;
+    // 左右滑动翻页控制器
+    LRSlidingViewController              *_lrSlidingViewController;
+    //上下滑动翻页控制权
+    TBSlidingViewController              *_tbSlidingViewController;
+    
     // 没有动画控制器
     NoAnimationViewController          *_noAnimationViewController;
     // 透明度   默认为0.2
@@ -70,10 +74,15 @@
         [_keepOutViewController removeFromParentViewController];
         _keepOutViewController = nil;
     }
-    if (_slidingViewController) {
-        [_slidingViewController.view removeFromSuperview];
-        [_slidingViewController removeFromParentViewController];
-        _slidingViewController = nil;
+    if (_lrSlidingViewController) {
+        [_lrSlidingViewController.view removeFromSuperview];
+        [_lrSlidingViewController removeFromParentViewController];
+        _lrSlidingViewController = nil;
+    }
+    if (_tbSlidingViewController){
+        [_tbSlidingViewController.view removeFromSuperview];
+        [_tbSlidingViewController removeFromParentViewController];
+        _tbSlidingViewController = nil;
     }
     if (_noAnimationViewController) {
         [_noAnimationViewController.view removeFromSuperview];
@@ -116,9 +125,15 @@
         }
         case TheSlidingEffectOfPage:{
 
-            _slidingViewController          = [[SlidingViewController alloc] initWithView:_currentViewController];
-            _slidingViewController.delegate = self;
-            [self.view addSubview:_slidingViewController.view];
+            _lrSlidingViewController          = [[LRSlidingViewController alloc] initWithView:_currentViewController];
+            _lrSlidingViewController.delegate = self;
+            [self.view addSubview:_lrSlidingViewController.view];
+            return YES;
+        }
+        case TheTBSlidingEffectOfPage:{
+            _tbSlidingViewController = [[TBSlidingViewController alloc ] initWithView:_currentViewController];
+            _tbSlidingViewController.delegate = self;
+            [self.view addSubview:_tbSlidingViewController.view];
             return YES;
         }
         case TheNoAnimationEffectOfPage:{
@@ -148,8 +163,10 @@
 - (BOOL)setGestureRecognizerState:(BOOL)gestureRecognizerState {
     _isResponseGestures = gestureRecognizerState;
     [_keepOutViewController setGestureRecognizerState:_isResponseGestures];
-    [_slidingViewController setGestureRecognizerState:_isResponseGestures];
+    [_lrSlidingViewController setGestureRecognizerState:_isResponseGestures];
     [_noAnimationViewController setGestureRecognizerState:_isResponseGestures];
+    [_tbSlidingViewController setGestureRecognizerState:_isResponseGestures];
+    
     return YES;
 }
 #pragma mark - 从新设置页面控制器
@@ -170,7 +187,11 @@
             break;
         }
         case TheSlidingEffectOfPage: {
-            _slidingViewController.currentViewController = _currentViewController;
+            _lrSlidingViewController.currentViewController = _currentViewController;
+            break;
+        }
+        case TheTBSlidingEffectOfPage:{
+            _tbSlidingViewController.currentViewController = _currentViewController;
             break;
         }
         case TheNoAnimationEffectOfPage: {

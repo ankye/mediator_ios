@@ -14,14 +14,14 @@
 
 @interface AKReaderViewController : RootViewController
 
-@property(nonatomic,strong)Book * book;
-
+@property (nonatomic,strong)Book * book;
+@property (nonatomic,strong)AKDownloadGroupModel* downloadGroup;
 /**
  *  section代表章节，row代表章节的第几行
  */
 
 
-@property (strong, nonatomic) YMenuViewController *menuView;
+@property (strong, nonatomic) YMenuViewController *menuVC;
 
 @end
 

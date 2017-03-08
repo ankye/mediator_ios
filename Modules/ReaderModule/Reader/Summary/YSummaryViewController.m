@@ -9,12 +9,12 @@
 #import "YSummaryViewController.h"
 #import "YBookSummaryModel.h"
 #import "YSummaryViewCell.h"
-#import "YNetworkManager.h"
+
 #import "YBookDetailModel.h"
 @interface YSummaryViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) YNetworkManager *netManager;
+
 @property (strong, nonatomic) NSArray *summaryArr;
 @property (strong, nonatomic) NSURLSessionTask *urlTask;
 @property (assign, nonatomic) NSInteger selectSummaryCount;
@@ -26,7 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.netManager = [YNetworkManager shareManager];
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([YSummaryViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([YSummaryViewCell class])];
     

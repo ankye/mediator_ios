@@ -111,6 +111,7 @@
 +(NSString *)getNetWorkStates;
 
 
+//简体转化为繁体 
 
 
 @end

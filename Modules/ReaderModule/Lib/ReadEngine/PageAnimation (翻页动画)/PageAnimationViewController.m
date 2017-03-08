@@ -3,7 +3,7 @@
 //  zwsc
 //
 //  Created by XuPeng on 16/3/2.
-//  Copyright © 2016年 中文万维. All rights reserved.
+//  Copyright © 2016年 追书猫. All rights reserved.
 //
 
 #import "PageAnimationViewController.h"
@@ -17,7 +17,7 @@
     // 是否响应手势
     BOOL                               _isResponseGestures;
     // 翻页方式,默认是仿真
-    AnimationTypes                     _animationType;
+    AKTurnPageAnimationStyle                     _animationType;
     // 仿真翻页控制器
     UIPageViewController               *_pageViewController;
     // 覆盖翻页控制器
@@ -154,7 +154,7 @@
     return YES;
 }
 #pragma mark - 设置翻页方式
-- (BOOL)setAnimationTypes:(AnimationTypes)animationTypes {
+- (BOOL)setAnimationTypes:(AKTurnPageAnimationStyle)animationTypes {
     _animationType = animationTypes;
     // 刷新
     return [self updata];

@@ -14,6 +14,9 @@
 #import "CursorView.h"
 #import "NoteContentButton.h"
 #import "EnterNotesView.h"
+#import "Paging.h"
+#import "AKLanguageHelper.h"
+#import "AKReaderSetting.h"
 
 #define kOrangeColor    [UIColor colorWithRed:252 / 255.0 green:136 / 255.0 blue:68 / 255.0 alpha:1]
 #define kBlueColor      [UIColor colorWithRed:0 / 255.0 green:122 / 255.0 blue:255 / 255.0  alpha:1]
@@ -39,6 +42,7 @@
     CTFrameRef                   _ctFrame;
     NSMutableString              *_totalString;
     CGFloat                      _fontSize;
+    AKPagingLineSpaceType          _lineSpace;
     UIColor                      *_fontColor;
     NSRange                      selectedRange;//高亮选择区
     NSRange                      _bottomLineRange;// 底部线条选择区
@@ -60,14 +64,19 @@
     }
 }
 #pragma mark 初始化
-- (instancetype)initWithFontSize:(CGFloat)fontSize pageRect:(CGRect)pageRect fontColor:(UIColor *)fontColor txtContent:(NSString *)txtContent backgroundColorImage:(UIImage *)backgroundColorImage isNight:(BOOL)isNight {
+- (instancetype)initWithFontSize:(CGFloat)fontSize lineSpaceType:(int)type pageRect:(CGRect)pageRect fontColor:(UIColor *)fontColor txtContent:(NSString *)txtContent backgroundColorImage:(UIImage *)backgroundColorImage isNight:(BOOL)isNight {
     self = [super initWithFrame:pageRect];
     if (self) {
         if (!txtContent) {
             txtContent = @"";
         }
+        if([AKReaderSetting sharedInstance].isTraditional){
+            txtContent = [[AKLanguageHelper sharedInstance] transformToTraditionalWith:txtContent];
+        }
+        
         _totalString                = [NSMutableString stringWithString:txtContent];
         _fontSize                   = fontSize;
+        _lineSpace                  = type;
         _fontColor                  = fontColor;
         _isNight                    = isNight;
         self.magnifiterImage        = backgroundColorImage;
@@ -233,7 +242,7 @@
 #pragma mark 设置文本属性
 - (NSDictionary *)coreTextAttributes
 {
-    UIFont *font_                           = [UIFont fontWithName:@"HelveticaNeue" size:_fontSize];
+    UIFont *font_                           = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:_fontSize];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     
     /**
@@ -253,8 +262,8 @@
      */
     
     // 设置行间距
-    paragraphStyle.lineSpacing      = font_.pointSize / 3;
-    paragraphStyle.paragraphSpacing = font_.pointSize * 0.5;
+    paragraphStyle.lineSpacing      = _lineSpace *0.5 * font_.pointSize / 3;
+    paragraphStyle.paragraphSpacing =  _lineSpace * 0.5 * font_.pointSize * 0.5;
     
     paragraphStyle.alignment        = NSTextAlignmentJustified;
     NSDictionary *dic               = @{NSParagraphStyleAttributeName: paragraphStyle, NSFontAttributeName:font_,NSForegroundColorAttributeName:_fontColor};
@@ -297,9 +306,11 @@
     if (!titleStr || [titleStr isEqualToString:@""]) {
         return;
     }
-    
+    if([AKReaderSetting sharedInstance].isTraditional){
+        titleStr = [[AKLanguageHelper sharedInstance] transformToTraditionalWith:titleStr];
+    }
     // 计算行高度
-    CGFloat lineHeight = [self getHeightByWidth:self.frame.size.width title:@"中文万维" font:[UIFont systemFontOfSize:_fontSize + 2]];
+    CGFloat lineHeight = [self getHeightByWidth:self.frame.size.width title:@"追书猫" font:[UIFont systemFontOfSize:_fontSize + 2]];
     // 计算实际高度
     CGFloat actualHeight = [self getHeightByWidth:self.frame.size.width title:titleStr font:[UIFont systemFontOfSize:_fontSize + 2]];
     UILabel *titleLabel;
@@ -311,7 +322,7 @@
         titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, lineHeight)];
     }
 
-    titleLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:_fontSize + 2];
+    titleLabel.font = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:_fontSize + 2];
     titleLabel.text = titleStr;
     titleLabel.textColor = _fontColor;
     [self addSubview:titleLabel];

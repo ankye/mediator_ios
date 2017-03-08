@@ -3,7 +3,7 @@
 //  zwsc
 //
 //  Created by XuPeng on 16/2/29.
-//  Copyright © 2016年 中文万维. All rights reserved.
+//  Copyright © 2016年 追书猫. All rights reserved.
 //  控制仿真翻页的背面   为正面的翻转，并加透明
 
 #import <UIKit/UIKit.h>

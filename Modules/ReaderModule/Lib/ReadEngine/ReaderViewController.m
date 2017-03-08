@@ -22,17 +22,18 @@
 
 @implementation ReaderViewController
 
-- (instancetype)initWithPageRect:(CGRect)pageRect fontSize:(CGFloat)fontSize fontColor:(UIColor *)fontColor contentString:(NSString *)contentString backgroundColorImage:(UIImage *)backgroundColorImage isNight:(BOOL)isNight {
+- (instancetype)initWithPageRect:(CGRect)pageRect fontSize:(CGFloat)fontSize lineSpaceType:(int)type fontColor:(UIColor *)fontColor contentString:(NSString *)contentString backgroundColorImage:(UIImage *)backgroundColorImage isNight:(BOOL)isNight {
     self = [super init];
     if (self) {
         self.view.frame           = CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height);
         self.view.backgroundColor = [UIColor colorWithPatternImage:backgroundColorImage];
         self.fontColor            = fontColor;
         // 1.绘制页面
-        self.readerView           = [[ReaderView alloc] initWithFontSize:fontSize pageRect:pageRect fontColor:fontColor txtContent:contentString backgroundColorImage:backgroundColorImage isNight:isNight];
+        self.readerView           = [[ReaderView alloc] initWithFontSize:fontSize lineSpaceType:type pageRect:pageRect fontColor:fontColor txtContent:contentString backgroundColorImage:backgroundColorImage isNight:isNight];
         self.readerView.delegate  = self;
         [self.view addSubview:self.readerView];
 
+       
         // 2、添加书签
         UIImage *image            = [UIImage imageNamed:@"阅读页－书签"];
         self.bookmarkView         = [[UIImageView alloc] initWithImage:image];

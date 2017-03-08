@@ -7,7 +7,7 @@
 //
 
 #import "NotesMenuView.h"
-
+#import "AKReaderSetting.h"
 // 138
 
 #define kNotesMenuViewX        -15.0f
@@ -190,7 +190,7 @@
     [button addSubview:buttonImageView];
     
     UILabel *buttonTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 42, kItemButtonWidth, 10)];
-    buttonTitleLabel.font = [UIFont systemFontOfSize:12.0f];
+    buttonTitleLabel.font = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:12.0f];;
     buttonTitleLabel.textColor = [UIColor colorWithRed:178 / 255.0 green:178 / 255.0 blue:178 / 255.0 alpha:1];
     buttonTitleLabel.textAlignment = NSTextAlignmentCenter;
     [button addSubview:buttonTitleLabel];

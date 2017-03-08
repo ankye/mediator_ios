@@ -10,23 +10,25 @@
 
 #import "PageGenerationHeader.h"
 #import "PageGenerationFooter.h"
-#import "PageGenerationManager.h"
+#import "ReaderEngineManager.h"
 
 #import "YDirectoryViewController.h"
 #import "AKReaderMenuView.h"
 
 //#import "YMenuViewController.h"
-#import "YReaderManager.h"
-#import "YNetworkManager.h"
-#import "YReaderSettings.h"
-#import "YSummaryViewController.h"
 
+#import "AKReaderSetting.h"
+
+#import "YSummaryViewController.h"
+#import "AKAutoReadSettingView.h"
+#import "AKReaderSetting.h"
+#import "AKLanguageHelper.h"
 
 #define EquipmentWidth     [[UIScreen mainScreen] bounds].size.width
 #define EquipmentHeight    [[UIScreen mainScreen] bounds].size.height
 
 
-@interface AKReaderViewController ()<PageGenerationManagerDataSource,PageGenerationManagerDelegate>
+@interface AKReaderViewController ()<ReaderEngineManagerDataSource,ReaderEngineManagerDelegate>
 
 //现在需要获取小说数据下标
 @property (nonatomic, assign) NSInteger currDataIndex;
@@ -34,14 +36,19 @@
 @property(nonatomic,strong)BookChapter * currBookChapter;
 
 
-@property (strong, nonatomic) YReaderManager *readerManager;
-@property (strong, nonatomic) YNetworkManager *netManager;
+
+
 
 @property (strong, nonatomic) YDirectoryViewController *directoryVC;
 @property (strong, nonatomic) YSummaryViewController *summaryVC;
-@property (strong, nonatomic) YReaderSettings *settings;
 
-@property (strong, nonatomic) PageGenerationManager   *pageGenerationManager;
+
+@property (strong, nonatomic) ReaderEngineManager   *pageGenerationManager;
+@property (strong ,nonatomic) AKAutoReadSettingView                  *automaticMenuView;
+
+@property (nonatomic, assign) NSInteger               automaticReadingSpeed;
+@property (nonatomic, assign) AutomaticReadingTypes automaticReadingTypes;
+
 @end
 
 @implementation AKReaderViewController {
@@ -49,11 +56,9 @@
     
     NSMutableArray          *_notesModelArr;
     NSMutableArray          *_bookmarksModelArr;
-//    UIView                  *_bottomMenuView;
-//    UIView                  *_topMenuView;
-//    UIView                  *_setView;
-//    UIView                  *_automaticMenuView;
-    NSInteger               speed;
+
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -61,9 +66,11 @@
     [self setupNav];
     
     _notesModelArr                            = [NSMutableArray array];
-    speed                                     = 1;
+    self.automaticReadingSpeed                                     = 1;
+    self.automaticReadingTypes                                      = CoverPatterns;
+    
     // 创建阅读引擎
-    _pageGenerationManager                    = [PageGenerationManager sharePageGenerationManager];
+    _pageGenerationManager                    = [ReaderEngineManager shareReaderEngineManager];
     _pageGenerationManager.dataSource         = self;
     _pageGenerationManager.delegate = self;
 //    // 设置字体大小
@@ -87,49 +94,14 @@
     // 刷新阅读器
     [_pageGenerationManager refreshViewController];
     [self.view addSubview:_pageGenerationManager.view];
-    
+    [_pageGenerationManager.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     [self setupViews];
 
 }
-- (void)automaticReadButtonClick {
-  //  [self removeMenuView];
-    [_pageGenerationManager automaticReading:1 speed:speed];
-}
-//- (UIButton *)createSetButton {
-//    UIButton *button                = [UIButton buttonWithType:0];
-//    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
-//    button.titleLabel.textAlignment = NSTextAlignmentCenter;
-//    [_setView addSubview:button];
-//    return button;
-//}
-//- (void)setButtonClick {
-//    if (!_setView) {
-//        _setView                 = [[UIView alloc] initWithFrame:CGRectMake(0, EquipmentHeight - 44 - 44, EquipmentWidth, 44)];
-//        _setView.backgroundColor = [UIColor colorWithRed:0.828 green:0.580 blue:0.542 alpha:1.000];
-//
-//        UIButton *button1        = [self createSetButton];
-//        button1.frame            = CGRectMake(0, 0, EquipmentWidth / 4, 44);
-//        button1.tag              = 1;
-//        [button1 setTitle:@"仿真" forState:UIControlStateNormal];
-//
-//        UIButton *button2        = [self createSetButton];
-//        button2.frame            = CGRectMake(EquipmentWidth / 4, 0, EquipmentWidth / 4, 44);
-//        button2.tag              = 2;
-//        [button2 setTitle:@"覆盖" forState:UIControlStateNormal];
-//
-//        UIButton *button3        = [self createSetButton];
-//        button3.frame            = CGRectMake(EquipmentWidth / 4 * 2, 0, EquipmentWidth / 4, 44);
-//        button3.tag              = 3;
-//        [button3 setTitle:@"滑动" forState:UIControlStateNormal];
-//
-//        UIButton *button4        = [self createSetButton];
-//        button4.frame            = CGRectMake(EquipmentWidth / 4 * 3, 0, EquipmentWidth / 4, 44);
-//        button4.tag              = 4;
-//        [button4 setTitle:@"无" forState:UIControlStateNormal];
-//    }
-//    [self.view addSubview:_setView];
-//}
+
+
 - (void)buttonClick:(UIButton *)button {
     _pageGenerationManager.animationTypes = button.tag - 1;
 }
@@ -174,134 +146,86 @@
     }
     
 }
-//- (void)addMenuView {
-//    if (!_topMenuView) {
-//        _topMenuView                 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, EquipmentWidth, 64)];
-//        _topMenuView.backgroundColor = [UIColor colorWithRed:0.828 green:0.580 blue:0.542 alpha:1.000];
-//        UIButton *goBack             = [UIButton buttonWithType:0];
-//        goBack.frame                 = CGRectMake(10, 20, 40, 44);
-//        [goBack setTitle:@"返回" forState:UIControlStateNormal];
-//        [goBack setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [goBack addTarget:self action:@selector(goBackClick) forControlEvents:UIControlEventTouchUpInside];
-//        [_topMenuView addSubview:goBack];
-//    }
-//    if (!_bottomMenuView) {
-//        _bottomMenuView                 = [[UIView alloc] initWithFrame:CGRectMake(0, EquipmentHeight - 44, EquipmentWidth, 44)];
-//        _bottomMenuView.backgroundColor = [UIColor colorWithRed:0.828 green:0.580 blue:0.542 alpha:1.000];
-//        UIButton *automaticReadButton   = [UIButton buttonWithType:0];
-//        automaticReadButton.frame       = CGRectMake(50, 0, 100, 44);
-//        [automaticReadButton setTitle:@"自动阅读" forState:UIControlStateNormal];
-//        [automaticReadButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [automaticReadButton addTarget:self action:@selector(automaticReadButtonClick) forControlEvents:UIControlEventTouchUpInside];
-//        [_bottomMenuView addSubview:automaticReadButton];
-//
-//        UIButton *setButton             = [UIButton buttonWithType:0];
-//        setButton.frame                 = CGRectMake(EquipmentWidth - 150, 0, 100, 44);
-//        [setButton setTitle:@"设置" forState:UIControlStateNormal];
-//        [setButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        [setButton addTarget:self action:@selector(setButtonClick) forControlEvents:UIControlEventTouchUpInside];
-//        [_bottomMenuView addSubview:setButton];
-//        
-//    }
-//    [self.view addSubview:_topMenuView];
-//    [self.view addSubview:_bottomMenuView];
-//}
-//- (void)removeMenuView {
-//    [_pageGenerationManager refreshViewController];
-//    [_topMenuView removeFromSuperview];
-//    [_bottomMenuView removeFromSuperview];
-//    [_setView removeFromSuperview];
-//}
-//
-//- (void)addAutomaticMenuView {
-//    if (!_automaticMenuView) {
-//        _automaticMenuView                     = [[UIView alloc] initWithFrame:CGRectMake(0, EquipmentHeight - 120, EquipmentWidth, 120)];
-//        _automaticMenuView.backgroundColor     = [UIColor colorWithRed:0.828 green:0.580 blue:0.542 alpha:1.000];
-//
-//
-//        UIButton *speedAdd                     = [UIButton buttonWithType:0];
-//        speedAdd.frame                         = CGRectMake(10, 0, 50, 40);
-//        [speedAdd setTitle:@"速度+" forState:UIControlStateNormal];
-//        [speedAdd setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        speedAdd.tag                           = 1;
-//        speedAdd.titleLabel.textAlignment      = NSTextAlignmentLeft;
-//        [speedAdd addTarget:self action:@selector(speedButton:) forControlEvents:UIControlEventTouchUpInside];
-//        [_automaticMenuView addSubview:speedAdd];
-//
-//        UIButton *speedSubtract                = [UIButton buttonWithType:0];
-//        speedSubtract.frame                    = CGRectMake(EquipmentWidth - 60, 0, 50, 40);
-//        [speedSubtract setTitle:@"速度-" forState:UIControlStateNormal];
-//        [speedSubtract setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        speedSubtract.tag                      = 2;
-//        speedSubtract.titleLabel.textAlignment = NSTextAlignmentRight;
-//        [speedSubtract addTarget:self action:@selector(speedButton:) forControlEvents:UIControlEventTouchUpInside];
-//        [_automaticMenuView addSubview:speedSubtract];
-//
-//        UIButton *coverPatterns                = [UIButton buttonWithType:0];
-//        coverPatterns.frame                    = CGRectMake(0, 40, 100, 40);
-//        [coverPatterns setTitle:@"覆盖模式" forState:UIControlStateNormal];
-//        [coverPatterns setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        coverPatterns.tag                      = 1;
-//        coverPatterns.titleLabel.textAlignment = NSTextAlignmentLeft;
-//        [coverPatterns addTarget:self action:@selector(patternsButton:) forControlEvents:UIControlEventTouchUpInside];
-//        [_automaticMenuView addSubview:coverPatterns];
-//
-//        UIButton *scrollMode                   = [UIButton buttonWithType:0];
-//        scrollMode.frame                       = CGRectMake(EquipmentWidth - 100, 40, 100, 40);
-//        [scrollMode setTitle:@"滚动模式" forState:UIControlStateNormal];
-//        [scrollMode setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        scrollMode.tag                         = 2;
-//        scrollMode.titleLabel.textAlignment    = NSTextAlignmentRight;
-//        [scrollMode addTarget:self action:@selector(patternsButton:) forControlEvents:UIControlEventTouchUpInside];
-//        [_automaticMenuView addSubview:scrollMode];
-//
-//        UIButton *stopButton                   = [UIButton buttonWithType:0];
-//        stopButton.frame                       = CGRectMake(0, 80, EquipmentWidth, 40);
-//        [stopButton setTitle:@"退出自动阅读" forState:UIControlStateNormal];
-//        [stopButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-//        stopButton.titleLabel.textAlignment    = NSTextAlignmentCenter;
-//        [stopButton addTarget:self action:@selector(stopButtonClick) forControlEvents:UIControlEventTouchUpInside];
-//        [_automaticMenuView addSubview:stopButton];
-//    }
-//    [self.view addSubview:_automaticMenuView];
-//}
 
-//- (void)stopButtonClick {
-//    _pageGenerationManager.currentPage--;
-//    if (_pageGenerationManager.automaticReadingTypes == 2) {
-//        _pageGenerationManager.currentPage--;
-//    }
-//    // 退出自动阅读
-//    [_pageGenerationManager automaticReading:0 speed:0];
-//    // 收起自动阅读菜单
-//    [self PageGenerationManagerAutomaticReadingIsShowMenu:NO];
-//}
+- (void)addAutomaticMenuView {
+    if (!_automaticMenuView) {
+        _automaticMenuView                     = [[AKAutoReadSettingView alloc] initWithFrame:CGRectMake(0, EquipmentHeight - 180, EquipmentWidth, 180)];
+        _automaticMenuView.backgroundColor     = [UIColor grayColor];
+        [_automaticMenuView selectedButton:self.automaticReadingTypes];
+        __weak typeof(self) wself = self;
+        
+        _automaticMenuView.settingTapAction = ^(NSInteger tag) {
+            switch (tag) {
+                case 800: //减速
+                {
+                    [wself speedButton:tag];
+                }
+                    break;
+                case 801: //加速
+                {
+                    [wself speedButton:tag];
+                }
+                    break;
+                case 802: //覆盖模式
+                {
+                    [wself.pageGenerationManager automaticReadingModel:CoverPatterns];
+                    [wself.automaticMenuView selectedButton:CoverPatterns];
+                    wself.automaticReadingTypes = CoverPatterns;
+                }
+                    break;
+                case 803://滚动模式
+                {
+                    [wself.pageGenerationManager automaticReadingModel:ScrollMode];
+                    [wself.automaticMenuView selectedButton:ScrollMode];
+                    wself.automaticReadingTypes = ScrollMode;
+                }
+                    break;
+                case 804: //退出自动阅读
+                {
+                    wself.pageGenerationManager.currentPage--;
+                    if (wself.pageGenerationManager.automaticReadingTypes == ScrollMode) {
+                        wself.pageGenerationManager.currentPage--;
+                    }
+                    // 退出自动阅读
+                    [wself.pageGenerationManager automaticReading:0 speed:0];
+                    // 收起自动阅读菜单
+                    [wself ReaderEngineManagerAutomaticReadingIsShowMenu:NO];
+                }
+                    break;
+                default:
+                    break;
+            }
+        };
+        
 
-//- (void)patternsButton:(UIButton *)button {
-//    [_pageGenerationManager automaticReadingModel:button.tag];
-//}
+    }
+    [self.view addSubview:_automaticMenuView];
+}
 
-//- (void)speedButton:(UIButton *)button {
-//    if (button.tag == 1) {
-//        speed ++;
-//    } else {
-//        speed --;
-//    }
-//    if (speed <= 0) {
-//        speed = 1;
-//    }
-//    if (speed >= 5) {
-//        speed = 5;
-//    }
-//    [_pageGenerationManager automaticReadingSpeed:speed];
-//}
-//- (void)removeAutomaticMenuView {
-//    [_automaticMenuView removeFromSuperview];
-//}
 
-#pragma mark - PageGenerationManager 数据源
+
+
+- (void)speedButton:(NSInteger)tag {
+    if (tag == 801) {
+        self.automaticReadingSpeed ++;
+    } else {
+        self.automaticReadingSpeed --;
+    }
+    if (self.automaticReadingSpeed <= 0) {
+        self.automaticReadingSpeed = 1;
+    }
+    if (self.automaticReadingSpeed >= 5) {
+        self.automaticReadingSpeed = 5;
+    }
+    [_pageGenerationManager automaticReadingSpeed:self.automaticReadingSpeed];
+}
+- (void)removeAutomaticMenuView {
+    [_automaticMenuView removeFromSuperview];
+}
+
+#pragma mark - ReaderEngineManager 数据源
 #pragma mark 获取展示内容
-- (NSString *)PageGenerationManagerDataSourceTagString:(DataSourceTag)dataSourceTag {
+- (NSString *)ReaderEngineManagerDataSourceTagString:(DataSourceTag)dataSourceTag {
     
     if(self.book == nil ) return nil;
     
@@ -331,19 +255,12 @@
     
     NSString * text =[NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
     return text;
-    
-    
-//    NSString * path                    = [[NSBundle mainBundle] pathForResource:@"411054" ofType:@""];
-//    NSString *str                      = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-//    NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[self.currBookChapter.url md5]];
-//    NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
-    
-   
+       
 }
 
-#pragma mark - PageGenerationManager 代理
+#pragma mark - ReaderEngineManager 代理
 #pragma mark 是否显示菜单
-- (void)PageGenerationManagerIsShowMenu:(BOOL)isShowMenu {
+- (void)ReaderEngineManagerIsShowMenu:(BOOL)isShowMenu {
     if (isShowMenu) {
         // 添加顶部和底部菜单
         [self.menuVC showMenuView];
@@ -355,32 +272,33 @@
 }
 
 #pragma mark 是否显示自动阅读菜单
-- (void)PageGenerationManagerAutomaticReadingIsShowMenu:(BOOL)isShowMenu {
-//    if (isShowMenu) {
-//        [self addAutomaticMenuView];
-//    } else {
-//        [self removeAutomaticMenuView];
-//    }
+- (void)ReaderEngineManagerAutomaticReadingIsShowMenu:(BOOL)isShowMenu {
+    if (isShowMenu) {
+        [self addAutomaticMenuView];
+    } else {
+        [self removeAutomaticMenuView];
+    }
 }
 #pragma mark 获得页眉
-- (UIView *)PageGenerationManagerHeader:(PageGenerationManager *)pageGenerationManager {
+- (UIView *)ReaderEngineManagerHeader:(ReaderEngineManager *)pageGenerationManager {
     PageGenerationHeader *pageGenerationHeader = [PageGenerationHeader sharePageGenerationHeader];
+
     pageGenerationHeader.bookName = _book.novel.name;
-    pageGenerationHeader.textColor = [UIColor colorWithWhite:0.000 alpha:0.4f];
+    pageGenerationHeader.textColor = [AKReaderSetting sharedInstance].otherTextColor;
     return pageGenerationHeader;
 }
 #pragma mark 获得页脚
-- (UIView *)PageGenerationManagerFooter:(PageGenerationManager *)pageGenerationManager {
+- (UIView *)ReaderEngineManagerFooter:(ReaderEngineManager *)pageGenerationManager {
     PageGenerationFooter *pageGenerationFooter = [PageGenerationFooter sharePageGenerationFooter];
     pageGenerationFooter.chapterName           = self.currBookChapter.name; // @"章节名称";
     CGFloat progress                           = (_pageGenerationManager.currentPage * 1.0 + 1) /_pageGenerationManager.pageCount;
     pageGenerationFooter.readerProgress        = progress;
     pageGenerationFooter.batteryImageName      = @"电池";
-    pageGenerationFooter.textColor             = [UIColor colorWithWhite:0.000 alpha:0.4f];
+    pageGenerationFooter.textColor             = [AKReaderSetting sharedInstance].otherTextColor;
     return pageGenerationFooter;
 }
 #pragma mark 添加笔记
-- (void)PageGenerationManagerAddNotes:(NSMutableDictionary *)notesContentDic {
+- (void)ReaderEngineManagerAddNotes:(NSMutableDictionary *)notesContentDic {
     // 笔记保存在 _notesModelArr 数组内
     NSLog(@"选中内容 ： %@",notesContentDic[@"selectedContentStr"]);
     NSLog(@"笔记内容 ： %@",notesContentDic[@"noteContentStr"]);
@@ -397,6 +315,21 @@
     [super viewDidDisappear:animated];
 
 }
+
+////Interface的方向是否会跟随设备方向自动旋转，如果返回NO,后两个方法不会再调用
+//- (BOOL)shouldAutorotate {
+//    return YES;
+//}
+////返回直接支持的方向
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscape ;
+//}
+////返回最优先显示的屏幕方向
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+//    return UIInterfaceOrientationPortrait |UIInterfaceOrientationLandscapeLeft;
+//}
+
+
 - (void)setupNav{
     
 
@@ -404,10 +337,6 @@
     self.navigationController.navigationBarHidden = YES;
    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
- //   self.rt_navigationController.navigationBarHidden = YES;
-    
-//    UIBarButtonItem * lbbi = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"nav_back_white"] style:UIBarButtonItemStylePlain target:self action:@selector(backToPreViewController)];
-//    self.navigationItem.leftBarButtonItem = lbbi;
 }
 
 
@@ -450,49 +379,6 @@
     }
 }
 
-//-(void)startReadChapter
-//{
-//    BookChapter * bookChapter = self.book.bookChapters[self.book.read_chapter_section];
-//    self.currBookChapter = bookChapter;
-//    
-//   AKDownloadGroupModel* group = [[AKReaderManager sharedInstance] startDownloadBook:_book atIndex:self.book.read_chapter_section];
-//
-//    NSString* filePath = [[AKDownloadManager sharedInstance] getDownloadFilePath:group.groupName withUrl:bookChapter.url];
-//    NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
-//    NSLog(@"%@",text);
-//}
-
-//获取数据，有则加载，无则请求
-//- (void)getDataByNovelTextUrl:(NSString *)novelTextUrl{
-//    if([self isExitNovelByNovelTextUrl:novelTextUrl]){
-//        
-////        NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
-////        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:nil];
-//        
-//        
-//    }else{
-//      
-//    }
-//}
-
-//判断本地是否缓存
-//- (BOOL)isExitNovelByNovelTextUrl:(NSString *)novelTextUrl{
-////    NSString * filePath = [NSString stringWithFormat:@"%@/%@/%@",FILEPATH_BOOK_NOVEL_PATH,self.book.novel.Id,[novelTextUrl md5]];
-//    
-////    if ([NSFileManager isExistsFileWithFilePath:filePath]) {
-////        
-////        
-////        NSError * error = nil;
-////        
-////        NSString * text = [NSString stringWithContentsOfURL:[NSURL fileURLWithPath:filePath] encoding:NSUnicodeStringEncoding error:&error];
-////        
-////        if (![text isEqualToEmptyStr]) {
-////            return YES;
-////        }
-////    }
-//    
-//    return NO;
-//}
 
 #pragma mark - 系统协议
 - (BOOL)prefersStatusBarHidden{
@@ -540,16 +426,103 @@
                 [wself presentViewController:wself.directoryVC animated:YES completion:nil];
             }
                 break;
+            case 203: {          //下载
+                [wself chooseDownloadChapter];
+                
+            }
+                break;
             case 400:{ //隐藏menuview
                 [wself.pageGenerationManager showOrHideMenu];
                 
             }
                 break;
+            case 300:{ //字体缩小
+                [AKReaderSetting sharedInstance].fontSize = [AKReaderSetting sharedInstance].fontSize -1;
+                [wself.pageGenerationManager refreshViewController];
+            }
+                break;
+            case 301:{ //字体放大
+                [AKReaderSetting sharedInstance].fontSize = [AKReaderSetting sharedInstance].fontSize + 1;
+                [wself.pageGenerationManager refreshViewController];
+            }
+                break;
+            case 302: {             //繁简体
+                [wself.pageGenerationManager refreshViewController];
+            }
+                break;
+            case 303:{              //字体设置
+                [wself chooseFont];
+            }
+                break;
+            case 304:{ //行距紧密
+                [AKReaderSetting sharedInstance].lineSpaceType = AKPagingLineSpaceTypeSmall;
+                [wself.pageGenerationManager refreshViewController];
+            }
+                break;
+            case 305:{ //行距正常
+                [AKReaderSetting sharedInstance].lineSpaceType = AKPagingLineSpaceTypeNormal;
+                [wself.pageGenerationManager refreshViewController];
+            }
+                break;
+            case 306:{ //行距稀疏
+                
+                [AKReaderSetting sharedInstance].lineSpaceType = AKPagingLineSpaceTypeLarge;
+                [wself.pageGenerationManager refreshViewController];
+            }
+                break;
+             case 307: {             //自动翻页
+                 [wself.pageGenerationManager showOrHideMenu];
+                  [wself.pageGenerationManager automaticReading:wself.automaticReadingTypes speed:wself.automaticReadingSpeed];
+                 
+             }
+                break;
+            case 308: {             //横竖屏
+                
+//                UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
+//                if (orientation == UIDeviceOrientationLandscapeLeft) // home键靠右
+//                {
+//                    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationPortrait] forKey:@"orientation"];
+//                }else{
+//                    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIDeviceOrientationLandscapeLeft] forKey:@"orientation"];
+//                }
+               
+                
+            }
+                break;
+            case 700:{  //刷新主题
+                wself.pageGenerationManager.backgroundImage = [AKReaderSetting sharedInstance].themeImage;
+                [wself.pageGenerationManager refreshViewController];
+            }
             default:
                 break;
         }
     };
 }
+
+-(void)chooseDownloadChapter
+{
+    NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleBottomSheet actionType:AKPopupActionTypeBottom onClick:^(NSInteger channel, NSDictionary *attributes) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            [self.pageGenerationManager refreshViewController];
+        });
+        
+        
+    } onClose:^(NSDictionary *attributes) {
+        
+    } onCompleted:^(NSDictionary *attributes) {
+        
+    }];
+    
+    NSArray* items = @[MMItemMake(@"后面50章", MMItemTypeNormal, 1),
+                       MMItemMake(@"后面全部", MMItemTypeNormal, 2),
+                       MMItemMake(@"全部章节", MMItemTypeNormal, 3)
+                       ];
+    
+    [[AKPopupManager sharedInstance] showSheetAlert:@"选择缓存章节方式" withItems:items withAttributes:attributes];
+}
+
 
 -(void)choosePageEffect
 {
@@ -567,7 +540,7 @@
         
     }];
     
-    AnimationTypes type = self.pageGenerationManager.animationTypes;
+    AKTurnPageAnimationStyle type = self.pageGenerationManager.animationTypes;
     
     NSArray* items = @[MMItemMake(@"仿真", type == TheSimulationEffectOfPage ? MMItemTypeHighlight :MMItemTypeNormal, TheSimulationEffectOfPage),
                        MMItemMake(@"覆盖", type == TheKeepOutEffectOfPage ? MMItemTypeHighlight :MMItemTypeNormal, TheKeepOutEffectOfPage),
@@ -575,6 +548,39 @@
                               ];
     
     [[AKPopupManager sharedInstance] showSheetAlert:@"翻页方式选择" withItems:items withAttributes:attributes];
+}
+
+-(void)chooseFont
+{
+    NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleBottomSheet actionType:AKPopupActionTypeBottom onClick:^(NSInteger channel, NSDictionary *attributes) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString* fontName = [UIFont systemFontOfSize:12].fontName;
+            if(channel == 2){
+                fontName = @"Yuppy SC";
+            }else if(channel == 3){
+                fontName = @"STXINWEI";
+            }
+            [AKReaderSetting sharedInstance].fontName = fontName;
+            [self.pageGenerationManager refreshViewController];
+        });
+        
+        
+    } onClose:^(NSDictionary *attributes) {
+        
+    } onCompleted:^(NSDictionary *attributes) {
+        
+    }];
+    
+    NSString* font = [AKReaderSetting sharedInstance].fontName;
+    NSString* systemFont = [UIFont systemFontOfSize:12].fontName;
+    
+    NSArray* items = @[MMItemMake(@"默认", [font isEqualToString:systemFont]  ? MMItemTypeHighlight :MMItemTypeNormal, 1),
+                       MMItemMake(@"雅痞", [font isEqualToString:@"Yuppy SC"] ? MMItemTypeHighlight :MMItemTypeNormal, 2),
+                       MMItemMake(@"新魏", [font isEqualToString:@"STXINWEI"] ? MMItemTypeHighlight :MMItemTypeNormal, 3)
+                       ];
+    
+    [[AKPopupManager sharedInstance] showSheetAlert:@"字体选择" withItems:items withAttributes:attributes];
 }
 
 #pragma mark - 选择章节页面
@@ -602,7 +608,7 @@
         };
     }
    // _summaryVC.bookM = self.readingBook;
-    _summaryVC.summaryM = self.readerManager.selectSummary;
+   
     return _summaryVC;
 }
 

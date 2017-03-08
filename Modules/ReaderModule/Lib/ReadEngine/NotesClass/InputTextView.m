@@ -7,6 +7,7 @@
 //
 
 #import "InputTextView.h"
+#import "AKReaderSetting.h"
 
 @implementation InputTextView {
     UITextView             *_inputTextView;
@@ -42,14 +43,14 @@
     
     if (_textStr && _textStr.length > 0) {
         NSDictionary *inputAttributes                = @{
-                                                         NSFontAttributeName:[UIFont systemFontOfSize:14],
+                                                         NSFontAttributeName:[UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:14.0f],
                                                          NSForegroundColorAttributeName:[UIColor blackColor],
                                                          NSParagraphStyleAttributeName:inputParagraphStyle
                                                          };
        _inputTextView.attributedText                 = [[NSAttributedString alloc] initWithString:_textStr attributes:inputAttributes];
     } else {
         NSDictionary *inputAttributes                = @{
-                                                         NSFontAttributeName:[UIFont systemFontOfSize:14],
+                                                         NSFontAttributeName:[UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:14.0f],
                                                          NSForegroundColorAttributeName:[UIColor colorWithRed:217 / 255.0 green:217 / 255.0 blue:217 / 255.0 alpha:1],
                                                          NSParagraphStyleAttributeName:inputParagraphStyle
                                                          };

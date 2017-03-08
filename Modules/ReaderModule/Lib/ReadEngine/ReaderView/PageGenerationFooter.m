@@ -7,6 +7,8 @@
 //
 
 #import "PageGenerationFooter.h"
+#import "AKReaderSetting.h"
+#import "AKLanguageHelper.h"
 
 #define kChapterNameLabelX            0.0f
 #define kChapterNameLabelY            0.0f
@@ -55,14 +57,14 @@
     // 绘制章节名称
     _chapterNameLabel               = [[UILabel alloc] init];
     _chapterNameLabel.textAlignment = NSTextAlignmentLeft;
-    _chapterNameLabel.font          = [UIFont systemFontOfSize:12.0f];
+    _chapterNameLabel.font          = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:12.0f];
     _chapterNameLabel.textColor     = kFontColor;
     [self addSubview:_chapterNameLabel];
 
     // 绘制进度
     _progressLabel                  = [[UILabel alloc] init];
     _progressLabel.textAlignment    = NSTextAlignmentRight;
-    _progressLabel.font             = [UIFont systemFontOfSize:12.0f];
+    _progressLabel.font             = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:12.0f];
     _progressLabel.textColor        = kFontColor;
     [self addSubview:_progressLabel];
 
@@ -81,6 +83,11 @@
 
 #pragma mark - get/set
 - (void)setChapterName:(NSString *)chapterName {
+    if([AKReaderSetting sharedInstance].isTraditional){
+        chapterName = [[AKLanguageHelper sharedInstance] transformToTraditionalWith:chapterName];
+    }
+
+    
     _chapterName           = chapterName;
     _chapterNameLabel.text = _chapterName;
 }

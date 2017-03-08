@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *themeImage;
 @property (weak, nonatomic) IBOutlet UIImageView *selectImage;
+@property (weak, nonatomic) IBOutlet UILabel *themeName;
 
 @end

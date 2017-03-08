@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ReadEngineDefine.h"
+
 
 @interface Paging : NSObject
 
-- (instancetype)initWithFont:(CGFloat)font pageRect:(CGRect)pageRect;
+- (instancetype)initWithFont:(CGFloat)font withLineSpace:(AKPagingLineSpaceType)lineSpace pageRect:(CGRect)pageRect;
 
 /**
  *  分页

@@ -7,6 +7,8 @@
 //
 
 #import "PageGenerationHeader.h"
+#import "AKReaderSetting.h"
+#import "AKLanguageHelper.h"
 
 #define kTimeLabelX            (self.frame.size.width - 70.0f)
 #define kTimeLabelY            0.0f
@@ -44,7 +46,7 @@
     // 绘制时间信息
     _timeLabel                   = [[UILabel alloc] init];
     _timeLabel.textAlignment     = NSTextAlignmentRight;
-    _timeLabel.font              = [UIFont systemFontOfSize:12.0f];
+    _timeLabel.font              = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:12.0f];
     _timeLabel.text              = [self get_time];
     _timeLabel.textColor         = kFontColor;
     [self addSubview:_timeLabel];
@@ -52,7 +54,7 @@
     // 绘制书籍名称
     _bookNameLabel               = [[UILabel alloc] init];
     _bookNameLabel.textAlignment = NSTextAlignmentLeft;
-    _bookNameLabel.font          = [UIFont systemFontOfSize:12.0f];
+    _bookNameLabel.font          = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:12.0f];
     _bookNameLabel.textColor     = kFontColor;
     [self addSubview:_bookNameLabel];
 }
@@ -70,6 +72,11 @@
 
 #pragma mark - get/set
 - (void)setBookName:(NSString *)bookName {
+   
+    if([AKReaderSetting sharedInstance].isTraditional){
+        bookName = [[AKLanguageHelper sharedInstance] transformToTraditionalWith:bookName];
+    }
+
     _bookName           = bookName;
     _bookNameLabel.text = _bookName;
 }

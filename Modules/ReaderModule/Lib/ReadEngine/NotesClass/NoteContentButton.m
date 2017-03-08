@@ -7,7 +7,7 @@
 //
 
 #import "NoteContentButton.h"
-
+#import "AKReaderSetting.h"
 #define kMainViewWidth      [[UIScreen mainScreen] bounds].size.width
 #define kMainViewHeight     [[UIScreen mainScreen] bounds].size.height
 
@@ -90,7 +90,7 @@
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineSpacing              = 10;// 字体的行间距
     NSDictionary *attributes                = @{
-                                                     NSFontAttributeName:[UIFont systemFontOfSize:14],
+                                                     NSFontAttributeName:[UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:14.0f],
                                                      NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName :textColor
                                                      };
     showTextView.attributedText             = [[NSAttributedString alloc] initWithString:_noteContent attributes:attributes];

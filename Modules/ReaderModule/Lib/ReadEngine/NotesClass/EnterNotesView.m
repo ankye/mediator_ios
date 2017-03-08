@@ -8,6 +8,7 @@
 
 #import "EnterNotesView.h"
 #import "InputTextView.h"
+#import "AKReaderSetting.h"
 
 #define kMainViewWidth       [[UIScreen mainScreen] bounds].size.width
 #define kMainViewHeight      [[UIScreen mainScreen] bounds].size.height
@@ -40,7 +41,7 @@
     titleLabel.backgroundColor     = [UIColor colorWithRed:252 /255.0 green:136 / 255.0 blue:68 / 255.0 alpha:1];
     titleLabel.textColor           = [UIColor whiteColor];
     titleLabel.textAlignment       = NSTextAlignmentCenter;
-    titleLabel.font                = [UIFont systemFontOfSize:18.0f];
+    titleLabel.font                = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:18.0f];
     titleLabel.text                = @"笔记";
     [navigationView addSubview:titleLabel];
 
@@ -50,7 +51,7 @@
     leftButton.tag                 = 1;
     UILabel *leftButtonTitle       = [[UILabel alloc] initWithFrame:CGRectMake(12.0f, 0, 44, 44)];
     leftButtonTitle.text           = @"放弃";
-    leftButtonTitle.font           = [UIFont systemFontOfSize:15.0f];
+    leftButtonTitle.font           = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:15.0f];
     leftButtonTitle.textColor      = [UIColor whiteColor];
     leftButtonTitle.textAlignment  = NSTextAlignmentLeft;
     [leftButton addSubview:leftButtonTitle];
@@ -63,7 +64,7 @@
     rightButton.tag                = 2;
     UILabel *rightButtonTitle      = [[UILabel alloc] initWithFrame:CGRectMake(100 - 12 - 44, 0, 44, 44)];
     rightButtonTitle.text          = @"完成";
-    rightButtonTitle.font          = [UIFont systemFontOfSize:15.0f];
+    rightButtonTitle.font          = [UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:15.0f];
     rightButtonTitle.textColor     = [UIColor whiteColor];
     rightButtonTitle.textAlignment = NSTextAlignmentRight;
     [rightButton addSubview:rightButtonTitle];
@@ -103,7 +104,7 @@
     paragraphStyle.lineSpacing                   = 10;// 字体的行间距
     
     NSDictionary *attributes                     = @{
-                                                     NSFontAttributeName:[UIFont systemFontOfSize:14],
+                                                     NSFontAttributeName:[UIFont fontWithName:[AKReaderSetting sharedInstance].fontName size:14.0f],
                                                      NSParagraphStyleAttributeName:paragraphStyle
                                                      };
     showTextView.attributedText                  = [[NSAttributedString alloc] initWithString:selectedContentStr attributes:attributes];

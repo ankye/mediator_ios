@@ -58,7 +58,7 @@
  *
  *  @return 展示视图控制器
  */
-- (instancetype)initWithPageRect:(CGRect)pageRect fontSize:(CGFloat)fontSize fontColor:(UIColor *)fontColor contentString:(NSString *)contentString backgroundColorImage:(UIImage *)backgroundColorImage isNight:(BOOL)isNight;
+- (instancetype)initWithPageRect:(CGRect)pageRect fontSize:(CGFloat)fontSize lineSpaceType:(int)type  fontColor:(UIColor *)fontColor contentString:(NSString *)contentString backgroundColorImage:(UIImage *)backgroundColorImage isNight:(BOOL)isNight;
 
 // 开启/关闭笔记功能
 - (void)openOrClosedNotesFunction:(BOOL)notesState;

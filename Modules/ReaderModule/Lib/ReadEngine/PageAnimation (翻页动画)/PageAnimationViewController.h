@@ -3,10 +3,12 @@
 //  zwsc
 //
 //  Created by XuPeng on 16/3/2.
-//  Copyright © 2016年 中文万维. All rights reserved.
+//  Copyright © 2016年 追书猫. All rights reserved.
 //  覆盖翻页
 
 #import <UIKit/UIKit.h>
+#import "ReadEngineDefine.h"
+
 #import "AnimationViewController.h"
 
 @class PageAnimationViewController;
@@ -49,14 +51,7 @@
 
 @interface PageAnimationViewController : UIViewController<UIPageViewControllerDelegate,UIPageViewControllerDataSource,AnimationViewControllerDelegate>
 
-// 动画样式
-typedef NS_ENUM(NSInteger, AnimationTypes) {
-    TheSimulationEffectOfPage  = 0,// 仿真翻页
-    TheKeepOutEffectOfPage     = 1,// 覆盖翻页
-    TheSlidingEffectOfPage     = 2,// 滑动页面
-    TheNoAnimationEffectOfPage = 3, // 没有动画
-    TheTBSlidingEffectOfPage = 4   //上下翻页
-};
+
 
 @property (nonatomic, weak) id<PageAnimationViewControllerDelegate>delegate;
 
@@ -78,7 +73,7 @@ typedef NS_ENUM(NSInteger, AnimationTypes) {
  *
  *  @return 设置状态
  */
-- (BOOL)setAnimationTypes:(AnimationTypes)animationTypes;
+- (BOOL)setAnimationTypes:(AKTurnPageAnimationStyle)animationTypes;
 
 /**
 *  设置是否响应用户手势

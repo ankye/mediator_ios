@@ -19,6 +19,7 @@ target 'Project' do
         pod 'SIAlertView'        
         pod 'M13BadgeView'
         pod 'MJRefresh'
+        pod 'BButton'
         #map Module
         pod 'AMapFoundation'
         pod 'AMap3DMap'
@@ -53,7 +54,7 @@ target 'Project' do
         pod 'MWPhotoBrowser'
         pod 'UMengAnalytics'
         pod 'SVProgressHUD'
-        pod 'BlocksKit'
+ 
 
 
 

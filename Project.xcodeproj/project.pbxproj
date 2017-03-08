@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1A727F39637901C9E71DDB02 /* libPods-Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D149EDE515283AE8903E9AF5 /* libPods-Project.a */; };
+		C52355C71E6E619500736E95 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52355C61E6E619500736E95 /* FontAwesome.ttf */; };
+		C52355CD1E6E773700736E95 /* AKAutoReadSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C52355CC1E6E773700736E95 /* AKAutoReadSettingView.m */; };
+		C523B01B1E6FB8A500E530ED /* STXINWEI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C523B0191E6FB8A500E530ED /* STXINWEI.ttf */; };
+		C523B01C1E6FB8A500E530ED /* YuppySC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C523B01A1E6FB8A500E530ED /* YuppySC-Regular.otf */; };
 		C538066E1DE7327900A2322D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C538066D1DE7327900A2322D /* libsqlite3.tbd */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C567BD011E48175800C7C79A /* BaseModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C567B74D1E48175600C7C79A /* BaseModule.xcassets */; };
@@ -153,9 +157,6 @@
 		C567BE861E48175800C7C79A /* 复制.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB0D1E48175700C7C79A /* 复制.png */; };
 		C567BE871E48175800C7C79A /* 复制@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB0E1E48175700C7C79A /* 复制@2x.png */; };
 		C567BE881E48175800C7C79A /* 复制@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB0F1E48175700C7C79A /* 复制@3x.png */; };
-		C567BE891E48175800C7C79A /* 夜间背景色.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB101E48175700C7C79A /* 夜间背景色.png */; };
-		C567BE8A1E48175800C7C79A /* 夜间背景色@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB111E48175700C7C79A /* 夜间背景色@2x.png */; };
-		C567BE8B1E48175800C7C79A /* 夜间背景色@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB121E48175700C7C79A /* 夜间背景色@3x.png */; };
 		C567BE8C1E48175800C7C79A /* 扫描线.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB131E48175700C7C79A /* 扫描线.png */; };
 		C567BE8D1E48175800C7C79A /* 扫描线@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB141E48175700C7C79A /* 扫描线@2x.png */; };
 		C567BE8E1E48175800C7C79A /* 扫描线@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB151E48175700C7C79A /* 扫描线@3x.png */; };
@@ -168,7 +169,6 @@
 		C567BE951E48175800C7C79A /* 笔记标志三点.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB1C1E48175700C7C79A /* 笔记标志三点.png */; };
 		C567BE961E48175800C7C79A /* 笔记标志三点@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB1D1E48175700C7C79A /* 笔记标志三点@2x.png */; };
 		C567BE971E48175800C7C79A /* 笔记标志三点@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB1E1E48175700C7C79A /* 笔记标志三点@3x.png */; };
-		C567BE981E48175800C7C79A /* 羊皮纸.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB1F1E48175700C7C79A /* 羊皮纸.png */; };
 		C567BE991E48175800C7C79A /* 阅读器-笔记框三角形.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB201E48175700C7C79A /* 阅读器-笔记框三角形.png */; };
 		C567BE9A1E48175800C7C79A /* 阅读器-笔记框三角形@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB211E48175700C7C79A /* 阅读器-笔记框三角形@2x.png */; };
 		C567BE9B1E48175800C7C79A /* 阅读器-笔记框三角形@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C567BB221E48175700C7C79A /* 阅读器-笔记框三角形@3x.png */; };
@@ -187,13 +187,13 @@
 		C567BEA81E48175800C7C79A /* NoAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB3B1E48175700C7C79A /* NoAnimationViewController.m */; };
 		C567BEA91E48175800C7C79A /* PageAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB3D1E48175700C7C79A /* PageAnimationViewController.m */; };
 		C567BEAA1E48175800C7C79A /* LRSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB3F1E48175700C7C79A /* LRSlidingViewController.m */; };
-		C567BEAB1E48175800C7C79A /* PageGenerationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB411E48175700C7C79A /* PageGenerationManager.m */; };
+		C567BEAB1E48175800C7C79A /* ReaderEngineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB411E48175700C7C79A /* ReaderEngineManager.m */; };
 		C567BEAC1E48175800C7C79A /* PageGenerationFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB441E48175700C7C79A /* PageGenerationFooter.m */; };
 		C567BEAD1E48175800C7C79A /* PageGenerationHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB461E48175700C7C79A /* PageGenerationHeader.m */; };
 		C567BEAE1E48175800C7C79A /* ReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB481E48175700C7C79A /* ReaderView.m */; };
 		C567BEAF1E48175800C7C79A /* ReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB4A1E48175700C7C79A /* ReaderViewController.m */; };
 		C567BEB01E48175800C7C79A /* FormatString.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB4D1E48175700C7C79A /* FormatString.m */; };
-		C567BEB11E48175800C7C79A /* Paging.mm in Sources */ = {isa = PBXBuildFile; fileRef = C567BB4F1E48175700C7C79A /* Paging.mm */; };
+		C567BEB11E48175800C7C79A /* Paging.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB4F1E48175700C7C79A /* Paging.m */; };
 		C567BEB21E48175800C7C79A /* AKReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB521E48175700C7C79A /* AKReaderManager.m */; };
 		C567BEB31E48175800C7C79A /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB551E48175700C7C79A /* Book.m */; };
 		C567BEB41E48175800C7C79A /* BookAuthor.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB571E48175700C7C79A /* BookAuthor.m */; };
@@ -220,33 +220,22 @@
 		C567BECA1E48175800C7C79A /* YBookReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB871E48175700C7C79A /* YBookReviewModel.m */; };
 		C567BECB1E48175800C7C79A /* YBookSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB891E48175700C7C79A /* YBookSummaryModel.m */; };
 		C567BECC1E48175800C7C79A /* YBookUpdateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB8B1E48175700C7C79A /* YBookUpdateModel.m */; };
-		C567BECD1E48175800C7C79A /* YChapterContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB8D1E48175700C7C79A /* YChapterContentModel.m */; };
 		C567BECE1E48175800C7C79A /* YChaptersLinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB8F1E48175700C7C79A /* YChaptersLinkModel.m */; };
 		C567BECF1E48175800C7C79A /* YDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB911E48175700C7C79A /* YDateModel.m */; };
 		C567BED01E48175800C7C79A /* YRankingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB931E48175700C7C79A /* YRankingModel.m */; };
 		C567BED11E48175800C7C79A /* YRecommendBookListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB951E48175700C7C79A /* YRecommendBookListModel.m */; };
 		C567BED21E48175800C7C79A /* YRecommendBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB971E48175700C7C79A /* YRecommendBookModel.m */; };
-		C567BED31E48175800C7C79A /* YNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB9A1E48175700C7C79A /* YNetworkManager.m */; };
 		C567BED41E48175800C7C79A /* YURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB9C1E48175700C7C79A /* YURLManager.m */; };
 		C567BED51E48175800C7C79A /* YSummaryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB9F1E48175700C7C79A /* YSummaryViewCell.m */; };
 		C567BED61E48175800C7C79A /* YSummaryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBA01E48175700C7C79A /* YSummaryViewCell.xib */; };
 		C567BED71E48175800C7C79A /* YSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBA21E48175700C7C79A /* YSummaryViewController.m */; };
 		C567BED81E48175800C7C79A /* YSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBA31E48175700C7C79A /* YSummaryViewController.xib */; };
-		C567BED91E48175800C7C79A /* YDownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBA61E48175700C7C79A /* YDownloadManager.m */; };
-		C567BEDA1E48175800C7C79A /* YReaderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBA81E48175700C7C79A /* YReaderManager.m */; };
-		C567BEDB1E48175800C7C79A /* YReaderRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBAA1E48175700C7C79A /* YReaderRecord.m */; };
-		C567BEDC1E48175800C7C79A /* YReaderSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBAC1E48175700C7C79A /* YReaderSettings.m */; };
 		C567BEDD1E48175800C7C79A /* YBatteryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBB01E48175700C7C79A /* YBatteryView.m */; };
 		C567BEDE1E48175800C7C79A /* YBottomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBB21E48175700C7C79A /* YBottomButton.m */; };
-		C567BEDF1E48175800C7C79A /* YMoreSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBB41E48175700C7C79A /* YMoreSettingsCell.m */; };
-		C567BEE01E48175800C7C79A /* YMoreSettingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBB51E48175700C7C79A /* YMoreSettingsCell.xib */; };
-		C567BEE11E48175800C7C79A /* YReaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBB71E48175700C7C79A /* YReaderView.m */; };
 		C567BEE21E48175800C7C79A /* YThemeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBB91E48175700C7C79A /* YThemeViewCell.m */; };
 		C567BEE31E48175800C7C79A /* YThemeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBBA1E48175700C7C79A /* YThemeViewCell.xib */; };
 		C567BEE41E48175800C7C79A /* YMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBBC1E48175700C7C79A /* YMenuViewController.m */; };
 		C567BEE51E48175800C7C79A /* YMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBBD1E48175700C7C79A /* YMenuViewController.xib */; };
-		C567BEE61E48175800C7C79A /* YMoreSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBBF1E48175700C7C79A /* YMoreSettingsViewController.m */; };
-		C567BEE71E48175800C7C79A /* YMoreSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBC01E48175700C7C79A /* YMoreSettingsViewController.xib */; };
 		C567BEE81E48175800C7C79A /* ReaderModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C567BBC21E48175700C7C79A /* ReaderModule.xcassets */; };
 		C567BEE91E48175800C7C79A /* BookCollMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBC91E48175700C7C79A /* BookCollMainCell.m */; };
 		C567BEEA1E48175800C7C79A /* BookCollMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBCA1E48175700C7C79A /* BookCollMainCell.xib */; };
@@ -375,6 +364,12 @@
 		C5BFDEE71E51B54B003CFEC4 /* AKDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BFDEE61E51B54B003CFEC4 /* AKDBManager.m */; };
 		C5BFDEEC1E51B615003CFEC4 /* NSString+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BFDEEB1E51B615003CFEC4 /* NSString+Tools.m */; };
 		C5BFDEEF1E51C752003CFEC4 /* AKBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C5BFDEEE1E51C752003CFEC4 /* AKBaseModel.m */; };
+		C5E40D6C1E6EA83C00FA8F71 /* simplified.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5E40D6A1E6EA83C00FA8F71 /* simplified.txt */; };
+		C5E40D6D1E6EA83C00FA8F71 /* traditional.txt in Resources */ = {isa = PBXBuildFile; fileRef = C5E40D6B1E6EA83C00FA8F71 /* traditional.txt */; };
+		C5E40D701E6EA92900FA8F71 /* AKLanguageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E40D6F1E6EA92900FA8F71 /* AKLanguageHelper.m */; };
+		C5E40D771E6EB03500FA8F71 /* AKReaderSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E40D761E6EB03500FA8F71 /* AKReaderSetting.m */; };
+		C5E40D791E6EB1E100FA8F71 /* ReadEngine.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E40D781E6EB1E100FA8F71 /* ReadEngine.xcassets */; };
+		C5E40D7C1E6EB67100FA8F71 /* ReaderEngineThemeFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C5E40D7B1E6EB67100FA8F71 /* ReaderEngineThemeFactory.m */; };
 		C5E89F5C1E5C2F5E004F0C2E /* ComponentModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5E89F5B1E5C2F5E004F0C2E /* ComponentModule.xcassets */; };
 		C5EA4DBD1E55777C0047A519 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EA4DBC1E55777C0047A519 /* NSString+Category.m */; };
 		C5EA4DC01E557BA30047A519 /* NSDate+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = C5EA4DBF1E557BA30047A519 /* NSDate+Time.m */; };
@@ -401,6 +396,11 @@
 /* Begin PBXFileReference section */
 		3EF56A8A82919CDF6E89C8BF /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		B69DE62C8EB3C23ADC38EDB6 /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
+		C52355C61E6E619500736E95 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		C52355CB1E6E773700736E95 /* AKAutoReadSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAutoReadSettingView.h; sourceTree = "<group>"; };
+		C52355CC1E6E773700736E95 /* AKAutoReadSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAutoReadSettingView.m; sourceTree = "<group>"; };
+		C523B0191E6FB8A500E530ED /* STXINWEI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINWEI.ttf; sourceTree = "<group>"; };
+		C523B01A1E6FB8A500E530ED /* YuppySC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuppySC-Regular.otf"; sourceTree = "<group>"; };
 		C538066D1DE7327900A2322D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
@@ -679,9 +679,6 @@
 		C567BB0D1E48175700C7C79A /* 复制.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "复制.png"; sourceTree = "<group>"; };
 		C567BB0E1E48175700C7C79A /* 复制@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "复制@2x.png"; sourceTree = "<group>"; };
 		C567BB0F1E48175700C7C79A /* 复制@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "复制@3x.png"; sourceTree = "<group>"; };
-		C567BB101E48175700C7C79A /* 夜间背景色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "夜间背景色.png"; sourceTree = "<group>"; };
-		C567BB111E48175700C7C79A /* 夜间背景色@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "夜间背景色@2x.png"; sourceTree = "<group>"; };
-		C567BB121E48175700C7C79A /* 夜间背景色@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "夜间背景色@3x.png"; sourceTree = "<group>"; };
 		C567BB131E48175700C7C79A /* 扫描线.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫描线.png"; sourceTree = "<group>"; };
 		C567BB141E48175700C7C79A /* 扫描线@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫描线@2x.png"; sourceTree = "<group>"; };
 		C567BB151E48175700C7C79A /* 扫描线@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫描线@3x.png"; sourceTree = "<group>"; };
@@ -694,7 +691,6 @@
 		C567BB1C1E48175700C7C79A /* 笔记标志三点.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "笔记标志三点.png"; sourceTree = "<group>"; };
 		C567BB1D1E48175700C7C79A /* 笔记标志三点@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "笔记标志三点@2x.png"; sourceTree = "<group>"; };
 		C567BB1E1E48175700C7C79A /* 笔记标志三点@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "笔记标志三点@3x.png"; sourceTree = "<group>"; };
-		C567BB1F1E48175700C7C79A /* 羊皮纸.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "羊皮纸.png"; sourceTree = "<group>"; };
 		C567BB201E48175700C7C79A /* 阅读器-笔记框三角形.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "阅读器-笔记框三角形.png"; sourceTree = "<group>"; };
 		C567BB211E48175700C7C79A /* 阅读器-笔记框三角形@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "阅读器-笔记框三角形@2x.png"; sourceTree = "<group>"; };
 		C567BB221E48175700C7C79A /* 阅读器-笔记框三角形@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "阅读器-笔记框三角形@3x.png"; sourceTree = "<group>"; };
@@ -725,8 +721,8 @@
 		C567BB3D1E48175700C7C79A /* PageAnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageAnimationViewController.m; sourceTree = "<group>"; };
 		C567BB3E1E48175700C7C79A /* LRSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LRSlidingViewController.h; sourceTree = "<group>"; };
 		C567BB3F1E48175700C7C79A /* LRSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LRSlidingViewController.m; sourceTree = "<group>"; };
-		C567BB401E48175700C7C79A /* PageGenerationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageGenerationManager.h; sourceTree = "<group>"; };
-		C567BB411E48175700C7C79A /* PageGenerationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageGenerationManager.m; sourceTree = "<group>"; };
+		C567BB401E48175700C7C79A /* ReaderEngineManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderEngineManager.h; sourceTree = "<group>"; };
+		C567BB411E48175700C7C79A /* ReaderEngineManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderEngineManager.m; sourceTree = "<group>"; };
 		C567BB431E48175700C7C79A /* PageGenerationFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageGenerationFooter.h; sourceTree = "<group>"; };
 		C567BB441E48175700C7C79A /* PageGenerationFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageGenerationFooter.m; sourceTree = "<group>"; };
 		C567BB451E48175700C7C79A /* PageGenerationHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageGenerationHeader.h; sourceTree = "<group>"; };
@@ -738,7 +734,7 @@
 		C567BB4C1E48175700C7C79A /* FormatString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormatString.h; sourceTree = "<group>"; };
 		C567BB4D1E48175700C7C79A /* FormatString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormatString.m; sourceTree = "<group>"; };
 		C567BB4E1E48175700C7C79A /* Paging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Paging.h; sourceTree = "<group>"; };
-		C567BB4F1E48175700C7C79A /* Paging.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Paging.mm; sourceTree = "<group>"; };
+		C567BB4F1E48175700C7C79A /* Paging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Paging.m; sourceTree = "<group>"; };
 		C567BB511E48175700C7C79A /* AKReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKReaderManager.h; sourceTree = "<group>"; };
 		C567BB521E48175700C7C79A /* AKReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKReaderManager.m; sourceTree = "<group>"; };
 		C567BB541E48175700C7C79A /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
@@ -789,8 +785,6 @@
 		C567BB891E48175700C7C79A /* YBookSummaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookSummaryModel.m; sourceTree = "<group>"; };
 		C567BB8A1E48175700C7C79A /* YBookUpdateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookUpdateModel.h; sourceTree = "<group>"; };
 		C567BB8B1E48175700C7C79A /* YBookUpdateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookUpdateModel.m; sourceTree = "<group>"; };
-		C567BB8C1E48175700C7C79A /* YChapterContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YChapterContentModel.h; sourceTree = "<group>"; };
-		C567BB8D1E48175700C7C79A /* YChapterContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YChapterContentModel.m; sourceTree = "<group>"; };
 		C567BB8E1E48175700C7C79A /* YChaptersLinkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YChaptersLinkModel.h; sourceTree = "<group>"; };
 		C567BB8F1E48175700C7C79A /* YChaptersLinkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YChaptersLinkModel.m; sourceTree = "<group>"; };
 		C567BB901E48175700C7C79A /* YDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDateModel.h; sourceTree = "<group>"; };
@@ -801,8 +795,6 @@
 		C567BB951E48175700C7C79A /* YRecommendBookListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRecommendBookListModel.m; sourceTree = "<group>"; };
 		C567BB961E48175700C7C79A /* YRecommendBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRecommendBookModel.h; sourceTree = "<group>"; };
 		C567BB971E48175700C7C79A /* YRecommendBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRecommendBookModel.m; sourceTree = "<group>"; };
-		C567BB991E48175700C7C79A /* YNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNetworkManager.h; sourceTree = "<group>"; };
-		C567BB9A1E48175700C7C79A /* YNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YNetworkManager.m; sourceTree = "<group>"; };
 		C567BB9B1E48175700C7C79A /* YURLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YURLManager.h; sourceTree = "<group>"; };
 		C567BB9C1E48175700C7C79A /* YURLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YURLManager.m; sourceTree = "<group>"; };
 		C567BB9E1E48175700C7C79A /* YSummaryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSummaryViewCell.h; sourceTree = "<group>"; };
@@ -811,33 +803,17 @@
 		C567BBA11E48175700C7C79A /* YSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSummaryViewController.h; sourceTree = "<group>"; };
 		C567BBA21E48175700C7C79A /* YSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSummaryViewController.m; sourceTree = "<group>"; };
 		C567BBA31E48175700C7C79A /* YSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSummaryViewController.xib; sourceTree = "<group>"; };
-		C567BBA51E48175700C7C79A /* YDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDownloadManager.h; sourceTree = "<group>"; };
-		C567BBA61E48175700C7C79A /* YDownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDownloadManager.m; sourceTree = "<group>"; };
-		C567BBA71E48175700C7C79A /* YReaderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YReaderManager.h; sourceTree = "<group>"; };
-		C567BBA81E48175700C7C79A /* YReaderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YReaderManager.m; sourceTree = "<group>"; };
-		C567BBA91E48175700C7C79A /* YReaderRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YReaderRecord.h; sourceTree = "<group>"; };
-		C567BBAA1E48175700C7C79A /* YReaderRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YReaderRecord.m; sourceTree = "<group>"; };
-		C567BBAB1E48175700C7C79A /* YReaderSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YReaderSettings.h; sourceTree = "<group>"; };
-		C567BBAC1E48175700C7C79A /* YReaderSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YReaderSettings.m; sourceTree = "<group>"; };
 		C567BBAD1E48175700C7C79A /* YReaderUniversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YReaderUniversal.h; sourceTree = "<group>"; };
 		C567BBAF1E48175700C7C79A /* YBatteryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBatteryView.h; sourceTree = "<group>"; };
 		C567BBB01E48175700C7C79A /* YBatteryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBatteryView.m; sourceTree = "<group>"; };
 		C567BBB11E48175700C7C79A /* YBottomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBottomButton.h; sourceTree = "<group>"; };
 		C567BBB21E48175700C7C79A /* YBottomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBottomButton.m; sourceTree = "<group>"; };
-		C567BBB31E48175700C7C79A /* YMoreSettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMoreSettingsCell.h; sourceTree = "<group>"; };
-		C567BBB41E48175700C7C79A /* YMoreSettingsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMoreSettingsCell.m; sourceTree = "<group>"; };
-		C567BBB51E48175700C7C79A /* YMoreSettingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMoreSettingsCell.xib; sourceTree = "<group>"; };
-		C567BBB61E48175700C7C79A /* YReaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YReaderView.h; sourceTree = "<group>"; };
-		C567BBB71E48175700C7C79A /* YReaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YReaderView.m; sourceTree = "<group>"; };
 		C567BBB81E48175700C7C79A /* YThemeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YThemeViewCell.h; sourceTree = "<group>"; };
 		C567BBB91E48175700C7C79A /* YThemeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YThemeViewCell.m; sourceTree = "<group>"; };
 		C567BBBA1E48175700C7C79A /* YThemeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YThemeViewCell.xib; sourceTree = "<group>"; };
 		C567BBBB1E48175700C7C79A /* YMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMenuViewController.h; sourceTree = "<group>"; };
 		C567BBBC1E48175700C7C79A /* YMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMenuViewController.m; sourceTree = "<group>"; };
 		C567BBBD1E48175700C7C79A /* YMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMenuViewController.xib; sourceTree = "<group>"; };
-		C567BBBE1E48175700C7C79A /* YMoreSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMoreSettingsViewController.h; sourceTree = "<group>"; };
-		C567BBBF1E48175700C7C79A /* YMoreSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMoreSettingsViewController.m; sourceTree = "<group>"; };
-		C567BBC01E48175700C7C79A /* YMoreSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMoreSettingsViewController.xib; sourceTree = "<group>"; };
 		C567BBC11E48175700C7C79A /* ReaderModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderModule.h; sourceTree = "<group>"; };
 		C567BBC21E48175700C7C79A /* ReaderModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ReaderModule.xcassets; sourceTree = "<group>"; };
 		C567BBC31E48175700C7C79A /* ReaderModuleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderModuleDefine.h; sourceTree = "<group>"; };
@@ -1109,6 +1085,16 @@
 		C5BFDEED1E51C752003CFEC4 /* AKBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBaseModel.h; sourceTree = "<group>"; };
 		C5BFDEEE1E51C752003CFEC4 /* AKBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBaseModel.m; sourceTree = "<group>"; };
 		C5BFDEF01E51C7F3003CFEC4 /* AKDataObjectProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDataObjectProtocol.h; sourceTree = "<group>"; };
+		C5E40D6A1E6EA83C00FA8F71 /* simplified.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = simplified.txt; sourceTree = "<group>"; };
+		C5E40D6B1E6EA83C00FA8F71 /* traditional.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = traditional.txt; sourceTree = "<group>"; };
+		C5E40D6E1E6EA92900FA8F71 /* AKLanguageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKLanguageHelper.h; sourceTree = "<group>"; };
+		C5E40D6F1E6EA92900FA8F71 /* AKLanguageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKLanguageHelper.m; sourceTree = "<group>"; };
+		C5E40D711E6EAEF300FA8F71 /* ReadEngineDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadEngineDefine.h; sourceTree = "<group>"; };
+		C5E40D751E6EB03500FA8F71 /* AKReaderSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKReaderSetting.h; sourceTree = "<group>"; };
+		C5E40D761E6EB03500FA8F71 /* AKReaderSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKReaderSetting.m; sourceTree = "<group>"; };
+		C5E40D781E6EB1E100FA8F71 /* ReadEngine.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ReadEngine.xcassets; sourceTree = "<group>"; };
+		C5E40D7A1E6EB67100FA8F71 /* ReaderEngineThemeFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderEngineThemeFactory.h; sourceTree = "<group>"; };
+		C5E40D7B1E6EB67100FA8F71 /* ReaderEngineThemeFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReaderEngineThemeFactory.m; sourceTree = "<group>"; };
 		C5E89F5B1E5C2F5E004F0C2E /* ComponentModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ComponentModule.xcassets; sourceTree = "<group>"; };
 		C5EA4DBB1E55777C0047A519 /* NSString+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
 		C5EA4DBC1E55777C0047A519 /* NSString+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
@@ -1268,6 +1254,8 @@
 				C567B7741E48175600C7C79A /* FileHelper.m */,
 				C57315721E556F8A0099D9F7 /* LocationHelper.h */,
 				C57315731E556F8B0099D9F7 /* LocationHelper.m */,
+				C5E40D6E1E6EA92900FA8F71 /* AKLanguageHelper.h */,
+				C5E40D6F1E6EA92900FA8F71 /* AKLanguageHelper.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1990,16 +1978,21 @@
 		C567BAFD1E48175700C7C79A /* ReadEngine */ = {
 			isa = PBXGroup;
 			children = (
+				C5E40D741E6EB03500FA8F71 /* Setting */,
 				C567BAFE1E48175700C7C79A /* AutomaticReading */,
 				C567BB051E48175700C7C79A /* image */,
 				C567BB261E48175700C7C79A /* NotesClass */,
 				C567BB331E48175700C7C79A /* PageAnimation (翻页动画) */,
-				C567BB401E48175700C7C79A /* PageGenerationManager.h */,
-				C567BB411E48175700C7C79A /* PageGenerationManager.m */,
+				C567BB401E48175700C7C79A /* ReaderEngineManager.h */,
+				C567BB411E48175700C7C79A /* ReaderEngineManager.m */,
 				C567BB421E48175700C7C79A /* ReaderView */,
 				C567BB491E48175700C7C79A /* ReaderViewController.h */,
 				C567BB4A1E48175700C7C79A /* ReaderViewController.m */,
 				C567BB4B1E48175700C7C79A /* TXTParsing */,
+				C5E40D711E6EAEF300FA8F71 /* ReadEngineDefine.h */,
+				C5E40D781E6EB1E100FA8F71 /* ReadEngine.xcassets */,
+				C5E40D7A1E6EB67100FA8F71 /* ReaderEngineThemeFactory.h */,
+				C5E40D7B1E6EB67100FA8F71 /* ReaderEngineThemeFactory.m */,
 			);
 			path = ReadEngine;
 			sourceTree = "<group>";
@@ -2030,9 +2023,6 @@
 				C567BB0D1E48175700C7C79A /* 复制.png */,
 				C567BB0E1E48175700C7C79A /* 复制@2x.png */,
 				C567BB0F1E48175700C7C79A /* 复制@3x.png */,
-				C567BB101E48175700C7C79A /* 夜间背景色.png */,
-				C567BB111E48175700C7C79A /* 夜间背景色@2x.png */,
-				C567BB121E48175700C7C79A /* 夜间背景色@3x.png */,
 				C567BB131E48175700C7C79A /* 扫描线.png */,
 				C567BB141E48175700C7C79A /* 扫描线@2x.png */,
 				C567BB151E48175700C7C79A /* 扫描线@3x.png */,
@@ -2045,7 +2035,6 @@
 				C567BB1C1E48175700C7C79A /* 笔记标志三点.png */,
 				C567BB1D1E48175700C7C79A /* 笔记标志三点@2x.png */,
 				C567BB1E1E48175700C7C79A /* 笔记标志三点@3x.png */,
-				C567BB1F1E48175700C7C79A /* 羊皮纸.png */,
 				C567BB201E48175700C7C79A /* 阅读器-笔记框三角形.png */,
 				C567BB211E48175700C7C79A /* 阅读器-笔记框三角形@2x.png */,
 				C567BB221E48175700C7C79A /* 阅读器-笔记框三角形@3x.png */,
@@ -2115,7 +2104,7 @@
 				C567BB4C1E48175700C7C79A /* FormatString.h */,
 				C567BB4D1E48175700C7C79A /* FormatString.m */,
 				C567BB4E1E48175700C7C79A /* Paging.h */,
-				C567BB4F1E48175700C7C79A /* Paging.mm */,
+				C567BB4F1E48175700C7C79A /* Paging.m */,
 			);
 			path = TXTParsing;
 			sourceTree = "<group>";
@@ -2188,9 +2177,8 @@
 				C567BBBB1E48175700C7C79A /* YMenuViewController.h */,
 				C567BBBC1E48175700C7C79A /* YMenuViewController.m */,
 				C567BBBD1E48175700C7C79A /* YMenuViewController.xib */,
-				C567BBBE1E48175700C7C79A /* YMoreSettingsViewController.h */,
-				C567BBBF1E48175700C7C79A /* YMoreSettingsViewController.m */,
-				C567BBC01E48175700C7C79A /* YMoreSettingsViewController.xib */,
+				C52355CB1E6E773700736E95 /* AKAutoReadSettingView.h */,
+				C52355CC1E6E773700736E95 /* AKAutoReadSettingView.m */,
 			);
 			path = Reader;
 			sourceTree = "<group>";
@@ -2236,8 +2224,6 @@
 				C567BB891E48175700C7C79A /* YBookSummaryModel.m */,
 				C567BB8A1E48175700C7C79A /* YBookUpdateModel.h */,
 				C567BB8B1E48175700C7C79A /* YBookUpdateModel.m */,
-				C567BB8C1E48175700C7C79A /* YChapterContentModel.h */,
-				C567BB8D1E48175700C7C79A /* YChapterContentModel.m */,
 				C567BB8E1E48175700C7C79A /* YChaptersLinkModel.h */,
 				C567BB8F1E48175700C7C79A /* YChaptersLinkModel.m */,
 				C567BB901E48175700C7C79A /* YDateModel.h */,
@@ -2255,8 +2241,6 @@
 		C567BB981E48175700C7C79A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				C567BB991E48175700C7C79A /* YNetworkManager.h */,
-				C567BB9A1E48175700C7C79A /* YNetworkManager.m */,
 				C567BB9B1E48175700C7C79A /* YURLManager.h */,
 				C567BB9C1E48175700C7C79A /* YURLManager.m */,
 			);
@@ -2279,14 +2263,6 @@
 		C567BBA41E48175700C7C79A /* Universal */ = {
 			isa = PBXGroup;
 			children = (
-				C567BBA51E48175700C7C79A /* YDownloadManager.h */,
-				C567BBA61E48175700C7C79A /* YDownloadManager.m */,
-				C567BBA71E48175700C7C79A /* YReaderManager.h */,
-				C567BBA81E48175700C7C79A /* YReaderManager.m */,
-				C567BBA91E48175700C7C79A /* YReaderRecord.h */,
-				C567BBAA1E48175700C7C79A /* YReaderRecord.m */,
-				C567BBAB1E48175700C7C79A /* YReaderSettings.h */,
-				C567BBAC1E48175700C7C79A /* YReaderSettings.m */,
 				C567BBAD1E48175700C7C79A /* YReaderUniversal.h */,
 			);
 			path = Universal;
@@ -2299,11 +2275,6 @@
 				C567BBB01E48175700C7C79A /* YBatteryView.m */,
 				C567BBB11E48175700C7C79A /* YBottomButton.h */,
 				C567BBB21E48175700C7C79A /* YBottomButton.m */,
-				C567BBB31E48175700C7C79A /* YMoreSettingsCell.h */,
-				C567BBB41E48175700C7C79A /* YMoreSettingsCell.m */,
-				C567BBB51E48175700C7C79A /* YMoreSettingsCell.xib */,
-				C567BBB61E48175700C7C79A /* YReaderView.h */,
-				C567BBB71E48175700C7C79A /* YReaderView.m */,
 				C567BBB81E48175700C7C79A /* YThemeViewCell.h */,
 				C567BBB91E48175700C7C79A /* YThemeViewCell.m */,
 				C567BBBA1E48175700C7C79A /* YThemeViewCell.xib */,
@@ -3184,6 +3155,11 @@
 		C5B986E11E02A14400AB548A /* res */ = {
 			isa = PBXGroup;
 			children = (
+				C523B0191E6FB8A500E530ED /* STXINWEI.ttf */,
+				C523B01A1E6FB8A500E530ED /* YuppySC-Regular.otf */,
+				C5E40D6A1E6EA83C00FA8F71 /* simplified.txt */,
+				C5E40D6B1E6EA83C00FA8F71 /* traditional.txt */,
+				C52355C61E6E619500736E95 /* FontAwesome.ttf */,
 				C5B986E21E02A14400AB548A /* res.png */,
 			);
 			path = res;
@@ -3211,6 +3187,15 @@
 				C5BFDEEB1E51B615003CFEC4 /* NSString+Tools.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		C5E40D741E6EB03500FA8F71 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				C5E40D751E6EB03500FA8F71 /* AKReaderSetting.h */,
+				C5E40D761E6EB03500FA8F71 /* AKReaderSetting.m */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		C5EA4DBA1E55777C0047A519 /* Category */ = {
@@ -3348,20 +3333,19 @@
 				C567BE9B1E48175800C7C79A /* 阅读器-笔记框三角形@3x.png in Resources */,
 				C567BD1D1E48175800C7C79A /* grayLogo@2x.png in Resources */,
 				C567BE851E48175800C7C79A /* 删除@3x.png in Resources */,
+				C5E40D6C1E6EA83C00FA8F71 /* simplified.txt in Resources */,
 				C567BE991E48175800C7C79A /* 阅读器-笔记框三角形.png in Resources */,
-				C567BEE01E48175800C7C79A /* YMoreSettingsCell.xib in Resources */,
 				C567BE6B1E48175800C7C79A /* BookDetailBasicCell.xib in Resources */,
 				C567BEC21E48175800C7C79A /* YDirectoryViewCell.xib in Resources */,
 				C567BE811E48175800C7C79A /* 三角形@2x.png in Resources */,
-				C567BEE71E48175800C7C79A /* YMoreSettingsViewController.xib in Resources */,
 				C567BEE31E48175800C7C79A /* YThemeViewCell.xib in Resources */,
 				C567BF1C1E48175900C7C79A /* RootMaskView.xib in Resources */,
 				C567BED61E48175800C7C79A /* YSummaryViewCell.xib in Resources */,
 				C567BE9D1E48175800C7C79A /* 阅读器-笔记框夜间三角形@2x.png in Resources */,
 				C567BE9C1E48175800C7C79A /* 阅读器-笔记框夜间三角形.png in Resources */,
 				C567BEE81E48175800C7C79A /* ReaderModule.xcassets in Resources */,
+				C5E40D791E6EB1E100FA8F71 /* ReadEngine.xcassets in Resources */,
 				C567BF041E48175900C7C79A /* area.plist in Resources */,
-				C567BE891E48175800C7C79A /* 夜间背景色.png in Resources */,
 				C567BD241E48175800C7C79A /* chooseTagViewCloseBtn.png in Resources */,
 				C567BEE51E48175800C7C79A /* YMenuViewController.xib in Resources */,
 				C567BD1F1E48175800C7C79A /* redLogo@2x.png in Resources */,
@@ -3378,13 +3362,13 @@
 				C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */,
 				C567BF1F1E48175900C7C79A /* RootStandardTableCell.xib in Resources */,
 				C5B986E31E02A14400AB548A /* res.png in Resources */,
-				C567BE981E48175800C7C79A /* 羊皮纸.png in Resources */,
 				C567BE911E48175800C7C79A /* 电池@3x.png in Resources */,
-				C567BE8A1E48175800C7C79A /* 夜间背景色@2x.png in Resources */,
 				C567BE491E48175800C7C79A /* BigImgContentCell.xib in Resources */,
+				C523B01B1E6FB8A500E530ED /* STXINWEI.ttf in Resources */,
 				C567BE8D1E48175800C7C79A /* 扫描线@2x.png in Resources */,
 				C567BE961E48175800C7C79A /* 笔记标志三点@2x.png in Resources */,
 				C567BE921E48175800C7C79A /* 笔记.png in Resources */,
+				C52355C71E6E619500736E95 /* FontAwesome.ttf in Resources */,
 				C567BE821E48175800C7C79A /* 三角形@3x.png in Resources */,
 				C567BE871E48175800C7C79A /* 复制@2x.png in Resources */,
 				C567BE881E48175800C7C79A /* 复制@3x.png in Resources */,
@@ -3396,10 +3380,10 @@
 				C567BE6D1E48175800C7C79A /* BookDetailChapterCell.xib in Resources */,
 				C5A730221DE2BB3400DB2788 /* Assets.xcassets in Resources */,
 				C567BF0F1E48175900C7C79A /* CustomShareView.xib in Resources */,
-				C567BE8B1E48175800C7C79A /* 夜间背景色@3x.png in Resources */,
 				C567BE8C1E48175800C7C79A /* 扫描线.png in Resources */,
 				C567BE9A1E48175800C7C79A /* 阅读器-笔记框三角形@2x.png in Resources */,
 				C567BE461E48175800C7C79A /* LoopInfoView.xib in Resources */,
+				C5E40D6D1E6EA83C00FA8F71 /* traditional.txt in Resources */,
 				C567BE841E48175800C7C79A /* 删除@2x.png in Resources */,
 				C567BF001E48175900C7C79A /* CustomNumbersRightHeaderView.xib in Resources */,
 				C567BD3B1E48175800C7C79A /* DownloadModule.xcassets in Resources */,
@@ -3407,6 +3391,7 @@
 				C567BE801E48175800C7C79A /* 三角形.png in Resources */,
 				C567BE7F1E48175800C7C79A /* r_drag-dot@2x.png in Resources */,
 				C567BF341E48175900C7C79A /* theme.plist in Resources */,
+				C523B01C1E6FB8A500E530ED /* YuppySC-Regular.otf in Resources */,
 				C567BED81E48175800C7C79A /* YSummaryViewController.xib in Resources */,
 				C567BF591E48175900C7C79A /* XHSHomeCell.xib in Resources */,
 			);
@@ -3517,7 +3502,6 @@
 				C567BD451E48175800C7C79A /* AKDownloadGroupModel.m in Sources */,
 				C567BD101E48175800C7C79A /* AppHelper.m in Sources */,
 				C567BF081E48175900C7C79A /* CustomPopupItem.m in Sources */,
-				C567BEE11E48175800C7C79A /* YReaderView.m in Sources */,
 				C567BF161E48175900C7C79A /* CustomSliderView.m in Sources */,
 				C567BD2E1E48175800C7C79A /* AKBaseTableViewHandler.m in Sources */,
 				C567BEBA1E48175800C7C79A /* BookLastUpdate.m in Sources */,
@@ -3531,12 +3515,10 @@
 				C567BD191E48175800C7C79A /* AKTimerManager.m in Sources */,
 				C567BEE91E48175800C7C79A /* BookCollMainCell.m in Sources */,
 				C567BF1E1E48175900C7C79A /* RootStandardTableCell.m in Sources */,
-				C567BED31E48175800C7C79A /* YNetworkManager.m in Sources */,
 				C567BF3B1E48175900C7C79A /* AKCollectionViewCell.m in Sources */,
 				C567BEAA1E48175800C7C79A /* LRSlidingViewController.m in Sources */,
 				C567BE3D1E48175800C7C79A /* Images.m in Sources */,
 				C567BF331E48175900C7C79A /* ServiceShare.m in Sources */,
-				C567BEDA1E48175800C7C79A /* YReaderManager.m in Sources */,
 				C573156C1E5432070099D9F7 /* AKDBManager+Book.m in Sources */,
 				C567BD3E1E48175800C7C79A /* NSString+SGHashString.m in Sources */,
 				C567BEB81E48175800C7C79A /* BookDocument.m in Sources */,
@@ -3571,7 +3553,6 @@
 				C567BEDE1E48175800C7C79A /* YBottomButton.m in Sources */,
 				C567BF361E48175900C7C79A /* AKSignalManager+ThemeModule.m in Sources */,
 				C567BD341E48175800C7C79A /* AKHScrollFlowLayout.m in Sources */,
-				C567BEE61E48175800C7C79A /* YMoreSettingsViewController.m in Sources */,
 				C567BEA61E48175800C7C79A /* BackViewController.m in Sources */,
 				C567BD2D1E48175800C7C79A /* AKBaseTableView.m in Sources */,
 				C567BF531E48175900C7C79A /* AKWallpaperViewController.m in Sources */,
@@ -3589,6 +3570,7 @@
 				C567BEF51E48175800C7C79A /* BVCropPhotoView.m in Sources */,
 				C567BD161E48175800C7C79A /* AKRequestManager.m in Sources */,
 				C567BECF1E48175800C7C79A /* YDateModel.m in Sources */,
+				C5E40D771E6EB03500FA8F71 /* AKReaderSetting.m in Sources */,
 				C567BE7D1E48175800C7C79A /* CoverPatternsViewController.m in Sources */,
 				C567BEBF1E48175800C7C79A /* AKReaderViewController.m in Sources */,
 				C567BE371E48175800C7C79A /* AKNewsViewController.m in Sources */,
@@ -3618,7 +3600,7 @@
 				C567BE351E48175800C7C79A /* AKSignalManager+NewsModule.m in Sources */,
 				C567BF181E48175900C7C79A /* WebViewController.m in Sources */,
 				C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */,
-				C567BEB11E48175800C7C79A /* Paging.mm in Sources */,
+				C567BEB11E48175800C7C79A /* Paging.m in Sources */,
 				C567BE1D1E48175800C7C79A /* AKFileLogger.m in Sources */,
 				C567BEEB1E48175800C7C79A /* BSNumbersCollectionCell.m in Sources */,
 				C567BD461E48175800C7C79A /* AKDownloadModel.m in Sources */,
@@ -3631,7 +3613,6 @@
 				C567BEBC1E48175800C7C79A /* BookSource.m in Sources */,
 				C567BF0D1E48175900C7C79A /* CustomRuleView.m in Sources */,
 				C567BECB1E48175800C7C79A /* YBookSummaryModel.m in Sources */,
-				C567BEDB1E48175800C7C79A /* YReaderRecord.m in Sources */,
 				C567BE3A1E48175800C7C79A /* AKNewsManager.m in Sources */,
 				C567BF071E48175900C7C79A /* CustomPickView.m in Sources */,
 				C567BF9D1E4827B900C7C79A /* AKPopupFromSideSpringAction.m in Sources */,
@@ -3673,6 +3654,7 @@
 				C567BEBE1E48175800C7C79A /* AKReaderHotListAPI.m in Sources */,
 				C567BF451E48175900C7C79A /* AKDBManager+UserDetail.m in Sources */,
 				C567BF011E48175900C7C79A /* CustomNumbersView.m in Sources */,
+				C5E40D701E6EA92900FA8F71 /* AKLanguageHelper.m in Sources */,
 				C567BEC61E48175800C7C79A /* YBookAuthorModel.m in Sources */,
 				C567BECE1E48175800C7C79A /* YChaptersLinkModel.m in Sources */,
 				C567BEB21E48175800C7C79A /* AKReaderManager.m in Sources */,
@@ -3681,10 +3663,10 @@
 				C567BF101E48175900C7C79A /* OpenShare+Alipay.m in Sources */,
 				C567BEC11E48175800C7C79A /* YDirectoryViewCell.m in Sources */,
 				C567BEC91E48175800C7C79A /* YBookModel.m in Sources */,
-				C567BED91E48175800C7C79A /* YDownloadManager.m in Sources */,
 				C567BF121E48175900C7C79A /* OpenShare+Renren.m in Sources */,
 				C567BE481E48175800C7C79A /* BigImgContentCell.m in Sources */,
 				C567BD421E48175800C7C79A /* SGDownloadOperation.m in Sources */,
+				C52355CD1E6E773700736E95 /* AKAutoReadSettingView.m in Sources */,
 				C567BF141E48175900C7C79A /* OpenShare+Weixin.m in Sources */,
 				C567BEE41E48175800C7C79A /* YMenuViewController.m in Sources */,
 				C567BEF81E48175800C7C79A /* CustomNineImageView.m in Sources */,
@@ -3714,12 +3696,10 @@
 				C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */,
 				C567BF381E48175900C7C79A /* AKNavigationController.m in Sources */,
 				C5813C091E60610400AD2F41 /* TBSlidingViewController.m in Sources */,
-				C567BEDF1E48175800C7C79A /* YMoreSettingsCell.m in Sources */,
 				C567BD2A1E48175800C7C79A /* AKMJRefreshHeader.m in Sources */,
 				C567BE471E48175800C7C79A /* TopLoopView.m in Sources */,
 				C567BD081E48175800C7C79A /* MBProgressHUD+Custom.m in Sources */,
 				C5A730171DE2BB3400DB2788 /* main.m in Sources */,
-				C567BECD1E48175800C7C79A /* YChapterContentModel.m in Sources */,
 				C567BF481E48175900C7C79A /* AKMediator+UserModule.m in Sources */,
 				C567BD351E48175800C7C79A /* AKHScrollTitleLabel.m in Sources */,
 				C567BEBD1E48175800C7C79A /* AKBookDetailAPI.m in Sources */,
@@ -3759,7 +3739,8 @@
 				C567BE761E48175800C7C79A /* AKHotNovelViewController.m in Sources */,
 				C567BEC31E48175800C7C79A /* YDirectoryViewController.m in Sources */,
 				C567BD091E48175800C7C79A /* NSFileManager+Paths.m in Sources */,
-				C567BEAB1E48175800C7C79A /* PageGenerationManager.m in Sources */,
+				C5E40D7C1E6EB67100FA8F71 /* ReaderEngineThemeFactory.m in Sources */,
+				C567BEAB1E48175800C7C79A /* ReaderEngineManager.m in Sources */,
 				C567BF491E48175900C7C79A /* AKSignalManager+UserModule.m in Sources */,
 				C567BEB41E48175800C7C79A /* BookAuthor.m in Sources */,
 				C567BD291E48175800C7C79A /* AKMJRefreshFooter.m in Sources */,
@@ -3770,7 +3751,6 @@
 				C567BF131E48175900C7C79A /* OpenShare+Weibo.m in Sources */,
 				C567BED71E48175800C7C79A /* YSummaryViewController.m in Sources */,
 				C567BE541E48175800C7C79A /* AKBookShelfViewController.m in Sources */,
-				C567BEDC1E48175800C7C79A /* YReaderSettings.m in Sources */,
 				C567BED41E48175800C7C79A /* YURLManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3931,7 +3911,7 @@
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Project/PrefixHeader.pch";
 				INFOPLIST_FILE = Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.765wan.test1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.765wan.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3949,7 +3929,7 @@
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Project/PrefixHeader.pch";
 				INFOPLIST_FILE = Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.765wan.test1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.765wan.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

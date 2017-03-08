@@ -52,7 +52,7 @@
 - (float) heightForFontSize:(float)fontSize
 {
 
-    CGSize sizeToFit = [@"中文书城" sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:CGSizeMake(100.0f, CGFLOAT_MAX) lineBreakMode:UILineBreakModeWordWrap];//此处的换行类型（lineBreakMode）可根据自己的实际情况进行设置
+    CGSize sizeToFit = [@"追书猫" sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:CGSizeMake(100.0f, CGFLOAT_MAX) lineBreakMode:UILineBreakModeWordWrap];//此处的换行类型（lineBreakMode）可根据自己的实际情况进行设置
     return sizeToFit.height;
 }
 

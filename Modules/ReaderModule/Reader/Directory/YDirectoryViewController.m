@@ -8,7 +8,7 @@
 
 #import "YDirectoryViewController.h"
 #import "YDirectoryViewCell.h"
-#import "YChapterContentModel.h"
+
 
 @interface YDirectoryViewController ()<UITableViewDelegate,UITableViewDataSource>
 

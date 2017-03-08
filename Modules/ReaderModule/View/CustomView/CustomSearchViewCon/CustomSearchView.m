@@ -78,7 +78,7 @@
     imageView.frame=frame;
     [backgroundView addSubview:imageView];
     
-    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame)+18, WIDTH, 20)];
+    UILabel * label = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(imageView.frame)+18, SCREEN_WIDTH, 20)];
     label.textAlignment=NSTextAlignmentCenter;
     label.text=@"没有搜索历史记录";
     label.font=[UIFont systemFontOfSize:14];

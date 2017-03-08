@@ -374,7 +374,7 @@
 
 - (void)addBorderColor:(UIView *)view{
     view.layer.borderColor=[UIColor colorWithWhite:0.847 alpha:1.000].CGColor;
-    view.layer.borderWidth=SINGLE_LINE_WIDTH;
+    view.layer.borderWidth=AK1PXLine;
 }
 
 - (NSIndexPath *)indexPathWithTopCell:(UICollectionViewCell *)collViewCell{

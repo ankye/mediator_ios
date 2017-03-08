@@ -41,7 +41,7 @@
 - (void)refreshBasicData{
     
     if (self.novel.intro.length) {
-        self.novel.introHeight = [self.novel.intro heightWithFontSize:13 andWidth:(WIDTH-20)];
+        self.novel.introHeight = [self.novel.intro heightWithFontSize:13 andWidth:(SCREEN_WIDTH-20)];
     }
     
     if (self.last.time.length) {
@@ -49,7 +49,7 @@
     }
     
     if (self.novel.cover.length && ![self.novel.cover hasPrefix:@"http"]) {
-        self.novel.cover = [NSString stringWithFormat:@"%@%@",SERVER_URL,self.novel.cover];
+        self.novel.cover = [NSString stringWithFormat:@"%@%@",READER_SERVER,self.novel.cover];
     }
     
 }

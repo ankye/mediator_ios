@@ -16,6 +16,8 @@
 
 #define READER_SERVER @"http://privateapi.biqugeapp.cc"
 
-
+#define READ_FONT_NUM 24  // [InitialData sharedInitialData].readFontNum
+#define READ_TEXT_SPACE  8 // [InitialData sharedInitialData].readTextSpace
+#define FINAL_PROMPT_INFOMATION @"提示信息"
 
 #endif /* ReaderModuleDefine_h */

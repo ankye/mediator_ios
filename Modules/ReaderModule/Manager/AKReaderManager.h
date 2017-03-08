@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ReaderModuleDefine.h"
 
 @interface AKReaderManager : NSObject
 

@@ -34,7 +34,7 @@ SINGLETON_IMPL(AKReaderSetting)
         _pageStyle = TheSimulationEffectOfPage; //翻页动画
         _isNightMode = NO;     //是否夜间模式
 
-        [self selectdTheme:AKReaderThemeCoffee];
+        [self selectdTheme:AKReaderThemeDay];
         
     }
     return self;

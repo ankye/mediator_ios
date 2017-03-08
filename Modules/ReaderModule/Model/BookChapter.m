@@ -8,7 +8,7 @@
 
 #import "BookChapter.h"
 #import "MJExtension.h"
-
+#import "ReaderModuleDefine.h"
 
 @implementation BookChapter
 
@@ -16,7 +16,7 @@
     BookChapter * bookChapter = [self mj_objectWithKeyValues:dict];
     
     if (bookChapter.url.length && ![bookChapter.url hasPrefix:@"http"]) {
-        bookChapter.url = [bookChapter.url stringByAppendingString:SERVER_URL];
+        bookChapter.url = [bookChapter.url stringByAppendingString:READER_SERVER];
     }
     
     return bookChapter;
@@ -32,10 +32,10 @@
     UIFont * font = [UIFont systemFontOfSize:READ_FONT_NUM];
     CGFloat lineHeight = font.lineHeight;
     
-    CGSize size = CGSizeMake(WIDTH-32, MAXFLOAT);
+    CGSize size = CGSizeMake(SCREEN_WIDTH-32, MAXFLOAT);
     
     //当前能显示的行
-    NSInteger maxRow = ((HEIGHT-60)+READ_TEXT_SPACE)/(lineHeight+READ_TEXT_SPACE);
+    NSInteger maxRow = ((SCREEN_HEIGHT-60)+READ_TEXT_SPACE)/(lineHeight+READ_TEXT_SPACE);
     
     //开始拆解
     //把字符串按段落分开, 提高解析效率

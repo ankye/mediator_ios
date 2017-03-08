@@ -54,7 +54,7 @@
         return;
     }
     CGFloat width = 80;
-    CGFloat space=(WIDTH-width*3)/4;
+    CGFloat space=(SCREEN_WIDTH-width*3)/4;
     CGFloat initialY=200;
     
     
@@ -67,12 +67,12 @@
         
         CGFloat x=0;
         if (self.dataArray.count==1) {
-            x=(WIDTH-width)/2;
+            x=(SCREEN_WIDTH-width)/2;
         }else{
             x=i%3*(width+space)+space;
         }
         
-        CGFloat y=initialY+i/3*(width+50)+10+HEIGHT-200;
+        CGFloat y=initialY+i/3*(width+50)+10+SCREEN_HEIGHT-200;
         
         CustomBtn * button = [CustomBtn viewFromNib];
         button.backgroundColor=[UIColor clearColor];
@@ -106,7 +106,7 @@
     for (NSInteger index = 0; index < self.btnArray.count; index ++) {
         __block UIButton *btn = self.btnArray[index];
         [UIView animateWithDuration:0.7 delay:index * 0.1 usingSpringWithDamping:0.7 initialSpringVelocity:0 options:UIViewAnimationOptionCurveLinear animations:^{
-            btn.transform = CGAffineTransformMakeTranslation(0, 200-HEIGHT);
+            btn.transform = CGAffineTransformMakeTranslation(0, 200-SCREEN_HEIGHT);
         } completion:nil];
     }
     [UIView animateWithDuration:0.25 animations:^{

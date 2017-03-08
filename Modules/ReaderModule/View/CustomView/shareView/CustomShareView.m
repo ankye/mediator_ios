@@ -48,7 +48,7 @@
     self.cancleBtn.layer.masksToBounds=YES;
     self.cancleBtn.layer.cornerRadius=10;
     
-    self.shareViewWidthCon.constant = WIDTH/320*288;
+    self.shareViewWidthCon.constant = SCREEN_WIDTH/320*288;
     
     //隐藏没有安装的应用
 //    int count = 3;

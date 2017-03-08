@@ -38,7 +38,7 @@ SINGLETON_IMPL(ReaderEngineThemeFactory)
   @{@"bg":@"sheepskin_mode_bg",@"color":@"#000000",@"otherColor":@"#91846A",@"name":@"古装"},//AKReaderThemeSheepskin羊皮纸2
   @{@"bg":@"violet_mode_bg",@"color":@"#000000",@"otherColor":@"#91846A",@"name":@"紫色"},//AKReaderThemeViolet,        //紫色
   @{@"bg":@"pink_mode_bg",@"color":@"#000000",@"otherColor":@"#8A8592",@"name":@"粉色"},//AKReaderThemePink,          //粉色
-  @{@"bg":@"lightGreen_mode_bg",@"color":@"#000000",@"otherColor":@"#928B98",@"name":@"护眼色"},//AKReaderThemeLightGreen 护眼色
+  @{@"bg":@"lightGreen_mode_bg",@"color":@"#000000",@"otherColor":@"#928B98",@"name":@"浅绿色"},//AKReaderThemeLightGreen 护眼色
   @{@"bg":@"lightPink_mode_bg",@"color":@"#000000",@"otherColor":@"#80876B",@"name":@"浅粉色"},//AKReaderThemeLightPink //浅粉色
   @{@"bg":@"coffee_mode_bg",@"color":@"#95938F",@"otherColor":@"#6F6C68",@"name":@"咖啡色"},//AKReaderThemeCoffee,//咖啡色
   @{@"bg":@"blackGreen_mode_bg",@"color":@"#627079",@"otherColor":@"#3B4E57",@"name":@"黑色"}//AKReaderThemeBlackGreen黑色

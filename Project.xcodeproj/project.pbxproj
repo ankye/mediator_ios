@@ -9,9 +9,43 @@
 /* Begin PBXBuildFile section */
 		1A727F39637901C9E71DDB02 /* libPods-Project.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D149EDE515283AE8903E9AF5 /* libPods-Project.a */; };
 		C52355C71E6E619500736E95 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C52355C61E6E619500736E95 /* FontAwesome.ttf */; };
-		C52355CD1E6E773700736E95 /* AKAutoReadSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C52355CC1E6E773700736E95 /* AKAutoReadSettingView.m */; };
 		C523B01B1E6FB8A500E530ED /* STXINWEI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C523B0191E6FB8A500E530ED /* STXINWEI.ttf */; };
 		C523B01C1E6FB8A500E530ED /* YuppySC-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = C523B01A1E6FB8A500E530ED /* YuppySC-Regular.otf */; };
+		C529A7B21E6FE89300B94FCE /* AKBookShelfHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A76C1E6FE89300B94FCE /* AKBookShelfHandler.m */; };
+		C529A7B31E6FE89300B94FCE /* AKBookShelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A76E1E6FE89300B94FCE /* AKBookShelfViewController.m */; };
+		C529A7B41E6FE89300B94FCE /* YBookViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7711E6FE89300B94FCE /* YBookViewCell.m */; };
+		C529A7B51E6FE89300B94FCE /* YBookViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A7721E6FE89300B94FCE /* YBookViewCell.xib */; };
+		C529A7B61E6FE89300B94FCE /* YProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7741E6FE89300B94FCE /* YProgressView.m */; };
+		C529A7B71E6FE89300B94FCE /* AKBookDetailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7771E6FE89300B94FCE /* AKBookDetailHandler.m */; };
+		C529A7B81E6FE89300B94FCE /* AKBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7791E6FE89300B94FCE /* AKBookDetailViewController.m */; };
+		C529A7B91E6FE89300B94FCE /* BookDetailBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A77C1E6FE89300B94FCE /* BookDetailBasicCell.m */; };
+		C529A7BA1E6FE89300B94FCE /* BookDetailBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A77D1E6FE89300B94FCE /* BookDetailBasicCell.xib */; };
+		C529A7BB1E6FE89300B94FCE /* BookDetailChapterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A77F1E6FE89300B94FCE /* BookDetailChapterCell.m */; };
+		C529A7BC1E6FE89300B94FCE /* BookDetailChapterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A7801E6FE89300B94FCE /* BookDetailChapterCell.xib */; };
+		C529A7BD1E6FE89300B94FCE /* BookDetailIntroduceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7821E6FE89300B94FCE /* BookDetailIntroduceCell.m */; };
+		C529A7BE1E6FE89300B94FCE /* BookDetailIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A7831E6FE89300B94FCE /* BookDetailIntroduceCell.xib */; };
+		C529A7BF1E6FE89300B94FCE /* AKDownloadTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7871E6FE89300B94FCE /* AKDownloadTableHandler.m */; };
+		C529A7C01E6FE89300B94FCE /* AKDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7891E6FE89300B94FCE /* AKDownloadViewController.m */; };
+		C529A7C11E6FE89300B94FCE /* AKDownloadListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A78C1E6FE89300B94FCE /* AKDownloadListTableCell.m */; };
+		C529A7C21E6FE89300B94FCE /* AKDownloadListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A78D1E6FE89300B94FCE /* AKDownloadListTableCell.xib */; };
+		C529A7C31E6FE89300B94FCE /* AKHotNovelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7901E6FE89300B94FCE /* AKHotNovelHandler.m */; };
+		C529A7C41E6FE89300B94FCE /* AKHotNovelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7921E6FE89300B94FCE /* AKHotNovelViewController.m */; };
+		C529A7C51E6FE89300B94FCE /* AKReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7951E6FE89300B94FCE /* AKReaderViewController.m */; };
+		C529A7C61E6FE89300B94FCE /* YDirectoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7981E6FE89300B94FCE /* YDirectoryViewCell.m */; };
+		C529A7C71E6FE89300B94FCE /* YDirectoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A7991E6FE89300B94FCE /* YDirectoryViewCell.xib */; };
+		C529A7C81E6FE89300B94FCE /* YDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A79B1E6FE89300B94FCE /* YDirectoryViewController.m */; };
+		C529A7C91E6FE89300B94FCE /* YDirectoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A79C1E6FE89300B94FCE /* YDirectoryViewController.xib */; };
+		C529A7CA1E6FE89300B94FCE /* YSummaryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A79F1E6FE89300B94FCE /* YSummaryViewCell.m */; };
+		C529A7CB1E6FE89300B94FCE /* YSummaryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A7A01E6FE89300B94FCE /* YSummaryViewCell.xib */; };
+		C529A7CC1E6FE89300B94FCE /* YSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7A21E6FE89300B94FCE /* YSummaryViewController.m */; };
+		C529A7CD1E6FE89300B94FCE /* YSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A7A31E6FE89300B94FCE /* YSummaryViewController.xib */; };
+		C529A7CE1E6FE89300B94FCE /* AKAutoReadSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7A61E6FE89300B94FCE /* AKAutoReadSettingView.m */; };
+		C529A7CF1E6FE89300B94FCE /* AKReaderMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7A81E6FE89300B94FCE /* AKReaderMenuView.m */; };
+		C529A7D01E6FE89300B94FCE /* YBottomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7AA1E6FE89300B94FCE /* YBottomButton.m */; };
+		C529A7D11E6FE89300B94FCE /* YThemeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7AC1E6FE89300B94FCE /* YThemeViewCell.m */; };
+		C529A7D21E6FE89300B94FCE /* YThemeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A7AD1E6FE89300B94FCE /* YThemeViewCell.xib */; };
+		C529A7D31E6FE89300B94FCE /* YMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7AF1E6FE89300B94FCE /* YMenuViewController.m */; };
+		C529A7D41E6FE89300B94FCE /* YMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A7B01E6FE89300B94FCE /* YMenuViewController.xib */; };
 		C538066E1DE7327900A2322D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C538066D1DE7327900A2322D /* libsqlite3.tbd */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C567BD011E48175800C7C79A /* BaseModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C567B74D1E48175600C7C79A /* BaseModule.xcassets */; };
@@ -118,27 +152,8 @@
 		C567BE4F1E48175800C7C79A /* SinglePicCollectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BA8C1E48175700C7C79A /* SinglePicCollectCell.xib */; };
 		C567BE501E48175800C7C79A /* AKPopupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA8F1E48175700C7C79A /* AKPopupManager.m */; };
 		C567BE511E48175800C7C79A /* AKPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA911E48175700C7C79A /* AKPopupViewController.m */; };
-		C567BE531E48175800C7C79A /* AKBookShelfHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA991E48175700C7C79A /* AKBookShelfHandler.m */; };
-		C567BE541E48175800C7C79A /* AKBookShelfViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA9B1E48175700C7C79A /* AKBookShelfViewController.m */; };
-		C567BE551E48175800C7C79A /* YBookViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BA9E1E48175700C7C79A /* YBookViewCell.m */; };
-		C567BE561E48175800C7C79A /* YBookViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BA9F1E48175700C7C79A /* YBookViewCell.xib */; };
-		C567BE571E48175800C7C79A /* YProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAA11E48175700C7C79A /* YProgressView.m */; };
 		C567BE591E48175800C7C79A /* AKRequestManager+ReaderModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAA71E48175700C7C79A /* AKRequestManager+ReaderModule.m */; };
 		C567BE661E48175800C7C79A /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BACD1E48175700C7C79A /* RootViewController.m */; };
-		C567BE681E48175800C7C79A /* AKBookDetailHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAD21E48175700C7C79A /* AKBookDetailHandler.m */; };
-		C567BE691E48175800C7C79A /* AKBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAD41E48175700C7C79A /* AKBookDetailViewController.m */; };
-		C567BE6A1E48175800C7C79A /* BookDetailBasicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAD71E48175700C7C79A /* BookDetailBasicCell.m */; };
-		C567BE6B1E48175800C7C79A /* BookDetailBasicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BAD81E48175700C7C79A /* BookDetailBasicCell.xib */; };
-		C567BE6C1E48175800C7C79A /* BookDetailChapterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BADA1E48175700C7C79A /* BookDetailChapterCell.m */; };
-		C567BE6D1E48175800C7C79A /* BookDetailChapterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BADB1E48175700C7C79A /* BookDetailChapterCell.xib */; };
-		C567BE6E1E48175800C7C79A /* BookDetailIntroduceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BADD1E48175700C7C79A /* BookDetailIntroduceCell.m */; };
-		C567BE6F1E48175800C7C79A /* BookDetailIntroduceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BADE1E48175700C7C79A /* BookDetailIntroduceCell.xib */; };
-		C567BE701E48175800C7C79A /* AKDownloadTableHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAE21E48175700C7C79A /* AKDownloadTableHandler.m */; };
-		C567BE711E48175800C7C79A /* AKDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAE41E48175700C7C79A /* AKDownloadViewController.m */; };
-		C567BE721E48175800C7C79A /* AKDownloadListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAE71E48175700C7C79A /* AKDownloadListTableCell.m */; };
-		C567BE731E48175800C7C79A /* AKDownloadListTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BAE81E48175700C7C79A /* AKDownloadListTableCell.xib */; };
-		C567BE751E48175800C7C79A /* AKHotNovelHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAEE1E48175700C7C79A /* AKHotNovelHandler.m */; };
-		C567BE761E48175800C7C79A /* AKHotNovelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAF01E48175700C7C79A /* AKHotNovelViewController.m */; };
 		C567BE771E48175800C7C79A /* Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAF41E48175700C7C79A /* Emoji.m */; };
 		C567BE781E48175800C7C79A /* EmojiEmoticons.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAF61E48175700C7C79A /* EmojiEmoticons.m */; };
 		C567BE791E48175800C7C79A /* EmojiMapSymbols.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BAF81E48175700C7C79A /* EmojiMapSymbols.m */; };
@@ -206,36 +221,6 @@
 		C567BEBC1E48175800C7C79A /* BookSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB671E48175700C7C79A /* BookSource.m */; };
 		C567BEBD1E48175800C7C79A /* AKBookDetailAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB6B1E48175700C7C79A /* AKBookDetailAPI.m */; };
 		C567BEBE1E48175800C7C79A /* AKReaderHotListAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB6D1E48175700C7C79A /* AKReaderHotListAPI.m */; };
-		C567BEBF1E48175800C7C79A /* AKReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB701E48175700C7C79A /* AKReaderViewController.m */; };
-		C567BEC01E48175800C7C79A /* YSQLiteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB731E48175700C7C79A /* YSQLiteManager.m */; };
-		C567BEC11E48175800C7C79A /* YDirectoryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB761E48175700C7C79A /* YDirectoryViewCell.m */; };
-		C567BEC21E48175800C7C79A /* YDirectoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BB771E48175700C7C79A /* YDirectoryViewCell.xib */; };
-		C567BEC31E48175800C7C79A /* YDirectoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB791E48175700C7C79A /* YDirectoryViewController.m */; };
-		C567BEC41E48175800C7C79A /* YDirectoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BB7A1E48175700C7C79A /* YDirectoryViewController.xib */; };
-		C567BEC51E48175800C7C79A /* YBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB7D1E48175700C7C79A /* YBaseModel.m */; };
-		C567BEC61E48175800C7C79A /* YBookAuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB7F1E48175700C7C79A /* YBookAuthorModel.m */; };
-		C567BEC71E48175800C7C79A /* YBookDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB811E48175700C7C79A /* YBookDetailModel.m */; };
-		C567BEC81E48175800C7C79A /* YBookHelpfulModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB831E48175700C7C79A /* YBookHelpfulModel.m */; };
-		C567BEC91E48175800C7C79A /* YBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB851E48175700C7C79A /* YBookModel.m */; };
-		C567BECA1E48175800C7C79A /* YBookReviewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB871E48175700C7C79A /* YBookReviewModel.m */; };
-		C567BECB1E48175800C7C79A /* YBookSummaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB891E48175700C7C79A /* YBookSummaryModel.m */; };
-		C567BECC1E48175800C7C79A /* YBookUpdateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB8B1E48175700C7C79A /* YBookUpdateModel.m */; };
-		C567BECE1E48175800C7C79A /* YChaptersLinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB8F1E48175700C7C79A /* YChaptersLinkModel.m */; };
-		C567BECF1E48175800C7C79A /* YDateModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB911E48175700C7C79A /* YDateModel.m */; };
-		C567BED01E48175800C7C79A /* YRankingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB931E48175700C7C79A /* YRankingModel.m */; };
-		C567BED11E48175800C7C79A /* YRecommendBookListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB951E48175700C7C79A /* YRecommendBookListModel.m */; };
-		C567BED21E48175800C7C79A /* YRecommendBookModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB971E48175700C7C79A /* YRecommendBookModel.m */; };
-		C567BED41E48175800C7C79A /* YURLManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB9C1E48175700C7C79A /* YURLManager.m */; };
-		C567BED51E48175800C7C79A /* YSummaryViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BB9F1E48175700C7C79A /* YSummaryViewCell.m */; };
-		C567BED61E48175800C7C79A /* YSummaryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBA01E48175700C7C79A /* YSummaryViewCell.xib */; };
-		C567BED71E48175800C7C79A /* YSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBA21E48175700C7C79A /* YSummaryViewController.m */; };
-		C567BED81E48175800C7C79A /* YSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBA31E48175700C7C79A /* YSummaryViewController.xib */; };
-		C567BEDD1E48175800C7C79A /* YBatteryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBB01E48175700C7C79A /* YBatteryView.m */; };
-		C567BEDE1E48175800C7C79A /* YBottomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBB21E48175700C7C79A /* YBottomButton.m */; };
-		C567BEE21E48175800C7C79A /* YThemeViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBB91E48175700C7C79A /* YThemeViewCell.m */; };
-		C567BEE31E48175800C7C79A /* YThemeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBBA1E48175700C7C79A /* YThemeViewCell.xib */; };
-		C567BEE41E48175800C7C79A /* YMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBBC1E48175700C7C79A /* YMenuViewController.m */; };
-		C567BEE51E48175800C7C79A /* YMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBBD1E48175700C7C79A /* YMenuViewController.xib */; };
 		C567BEE81E48175800C7C79A /* ReaderModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C567BBC21E48175700C7C79A /* ReaderModule.xcassets */; };
 		C567BEE91E48175800C7C79A /* BookCollMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BBC91E48175700C7C79A /* BookCollMainCell.m */; };
 		C567BEEA1E48175800C7C79A /* BookCollMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BBCA1E48175700C7C79A /* BookCollMainCell.xib */; };
@@ -283,15 +268,9 @@
 		C567BF141E48175900C7C79A /* OpenShare+Weixin.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC251E48175700C7C79A /* OpenShare+Weixin.m */; };
 		C567BF151E48175900C7C79A /* OpenShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC271E48175700C7C79A /* OpenShare.m */; };
 		C567BF161E48175900C7C79A /* CustomSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC2B1E48175700C7C79A /* CustomSliderView.m */; };
-		C567BF171E48175900C7C79A /* CustomWebProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC2E1E48175700C7C79A /* CustomWebProgressView.m */; };
-		C567BF181E48175900C7C79A /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC301E48175700C7C79A /* WebViewController.m */; };
 		C567BF191E48175900C7C79A /* MainCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC321E48175700C7C79A /* MainCollectionView.m */; };
 		C567BF1A1E48175900C7C79A /* MainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC341E48175700C7C79A /* MainTableView.m */; };
-		C567BF1B1E48175900C7C79A /* RootMaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC361E48175700C7C79A /* RootMaskView.m */; };
-		C567BF1C1E48175900C7C79A /* RootMaskView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BC371E48175700C7C79A /* RootMaskView.xib */; };
 		C567BF1D1E48175900C7C79A /* RootNavButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC391E48175700C7C79A /* RootNavButton.m */; };
-		C567BF1E1E48175900C7C79A /* RootStandardTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC3B1E48175700C7C79A /* RootStandardTableCell.m */; };
-		C567BF1F1E48175900C7C79A /* RootStandardTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C567BC3C1E48175700C7C79A /* RootStandardTableCell.xib */; };
 		C567BF311E48175900C7C79A /* Aspect-ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC6D1E48175700C7C79A /* Aspect-ShareModule.m */; };
 		C567BF321E48175900C7C79A /* AKMediator+ShareModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC701E48175700C7C79A /* AKMediator+ShareModule.m */; };
 		C567BF331E48175900C7C79A /* ServiceShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C567BC731E48175700C7C79A /* ServiceShare.m */; };
@@ -349,7 +328,6 @@
 		C57315701E5452CC0099D9F7 /* Aspect+ReaderModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C573156F1E5452CC0099D9F7 /* Aspect+ReaderModule.m */; };
 		C57315741E556F8B0099D9F7 /* LocationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C57315731E556F8B0099D9F7 /* LocationHelper.m */; };
 		C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57DF5E21DFA84EE00D3D154 /* TabBar.plist */; };
-		C5813BF71E60134300AD2F41 /* AKReaderMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = C5813BF61E60134300AD2F41 /* AKReaderMenuView.m */; };
 		C5813C001E6034D500AD2F41 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5813BFF1E6034D500AD2F41 /* DLRadioButton.m */; };
 		C5813C091E60610400AD2F41 /* TBSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5813C081E60610400AD2F41 /* TBSlidingViewController.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
@@ -397,10 +375,67 @@
 		3EF56A8A82919CDF6E89C8BF /* Pods-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.release.xcconfig"; sourceTree = "<group>"; };
 		B69DE62C8EB3C23ADC38EDB6 /* Pods-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project/Pods-Project.debug.xcconfig"; sourceTree = "<group>"; };
 		C52355C61E6E619500736E95 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		C52355CB1E6E773700736E95 /* AKAutoReadSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAutoReadSettingView.h; sourceTree = "<group>"; };
-		C52355CC1E6E773700736E95 /* AKAutoReadSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAutoReadSettingView.m; sourceTree = "<group>"; };
 		C523B0191E6FB8A500E530ED /* STXINWEI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = STXINWEI.ttf; sourceTree = "<group>"; };
 		C523B01A1E6FB8A500E530ED /* YuppySC-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "YuppySC-Regular.otf"; sourceTree = "<group>"; };
+		C529A76B1E6FE89300B94FCE /* AKBookShelfHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookShelfHandler.h; sourceTree = "<group>"; };
+		C529A76C1E6FE89300B94FCE /* AKBookShelfHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookShelfHandler.m; sourceTree = "<group>"; };
+		C529A76D1E6FE89300B94FCE /* AKBookShelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookShelfViewController.h; sourceTree = "<group>"; };
+		C529A76E1E6FE89300B94FCE /* AKBookShelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookShelfViewController.m; sourceTree = "<group>"; };
+		C529A7701E6FE89300B94FCE /* YBookViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookViewCell.h; sourceTree = "<group>"; };
+		C529A7711E6FE89300B94FCE /* YBookViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookViewCell.m; sourceTree = "<group>"; };
+		C529A7721E6FE89300B94FCE /* YBookViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBookViewCell.xib; sourceTree = "<group>"; };
+		C529A7731E6FE89300B94FCE /* YProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YProgressView.h; sourceTree = "<group>"; };
+		C529A7741E6FE89300B94FCE /* YProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YProgressView.m; sourceTree = "<group>"; };
+		C529A7761E6FE89300B94FCE /* AKBookDetailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookDetailHandler.h; sourceTree = "<group>"; };
+		C529A7771E6FE89300B94FCE /* AKBookDetailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookDetailHandler.m; sourceTree = "<group>"; };
+		C529A7781E6FE89300B94FCE /* AKBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookDetailViewController.h; sourceTree = "<group>"; };
+		C529A7791E6FE89300B94FCE /* AKBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookDetailViewController.m; sourceTree = "<group>"; };
+		C529A77B1E6FE89300B94FCE /* BookDetailBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailBasicCell.h; sourceTree = "<group>"; };
+		C529A77C1E6FE89300B94FCE /* BookDetailBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailBasicCell.m; sourceTree = "<group>"; };
+		C529A77D1E6FE89300B94FCE /* BookDetailBasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailBasicCell.xib; sourceTree = "<group>"; };
+		C529A77E1E6FE89300B94FCE /* BookDetailChapterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailChapterCell.h; sourceTree = "<group>"; };
+		C529A77F1E6FE89300B94FCE /* BookDetailChapterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailChapterCell.m; sourceTree = "<group>"; };
+		C529A7801E6FE89300B94FCE /* BookDetailChapterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailChapterCell.xib; sourceTree = "<group>"; };
+		C529A7811E6FE89300B94FCE /* BookDetailIntroduceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailIntroduceCell.h; sourceTree = "<group>"; };
+		C529A7821E6FE89300B94FCE /* BookDetailIntroduceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailIntroduceCell.m; sourceTree = "<group>"; };
+		C529A7831E6FE89300B94FCE /* BookDetailIntroduceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailIntroduceCell.xib; sourceTree = "<group>"; };
+		C529A7861E6FE89300B94FCE /* AKDownloadTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadTableHandler.h; sourceTree = "<group>"; };
+		C529A7871E6FE89300B94FCE /* AKDownloadTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadTableHandler.m; sourceTree = "<group>"; };
+		C529A7881E6FE89300B94FCE /* AKDownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadViewController.h; sourceTree = "<group>"; };
+		C529A7891E6FE89300B94FCE /* AKDownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadViewController.m; sourceTree = "<group>"; };
+		C529A78B1E6FE89300B94FCE /* AKDownloadListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadListTableCell.h; sourceTree = "<group>"; };
+		C529A78C1E6FE89300B94FCE /* AKDownloadListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadListTableCell.m; sourceTree = "<group>"; };
+		C529A78D1E6FE89300B94FCE /* AKDownloadListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKDownloadListTableCell.xib; sourceTree = "<group>"; };
+		C529A78F1E6FE89300B94FCE /* AKHotNovelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHotNovelHandler.h; sourceTree = "<group>"; };
+		C529A7901E6FE89300B94FCE /* AKHotNovelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHotNovelHandler.m; sourceTree = "<group>"; };
+		C529A7911E6FE89300B94FCE /* AKHotNovelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHotNovelViewController.h; sourceTree = "<group>"; };
+		C529A7921E6FE89300B94FCE /* AKHotNovelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHotNovelViewController.m; sourceTree = "<group>"; };
+		C529A7941E6FE89300B94FCE /* AKReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKReaderViewController.h; sourceTree = "<group>"; };
+		C529A7951E6FE89300B94FCE /* AKReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKReaderViewController.m; sourceTree = "<group>"; };
+		C529A7971E6FE89300B94FCE /* YDirectoryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDirectoryViewCell.h; sourceTree = "<group>"; };
+		C529A7981E6FE89300B94FCE /* YDirectoryViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDirectoryViewCell.m; sourceTree = "<group>"; };
+		C529A7991E6FE89300B94FCE /* YDirectoryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDirectoryViewCell.xib; sourceTree = "<group>"; };
+		C529A79A1E6FE89300B94FCE /* YDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDirectoryViewController.h; sourceTree = "<group>"; };
+		C529A79B1E6FE89300B94FCE /* YDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDirectoryViewController.m; sourceTree = "<group>"; };
+		C529A79C1E6FE89300B94FCE /* YDirectoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDirectoryViewController.xib; sourceTree = "<group>"; };
+		C529A79E1E6FE89300B94FCE /* YSummaryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSummaryViewCell.h; sourceTree = "<group>"; };
+		C529A79F1E6FE89300B94FCE /* YSummaryViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSummaryViewCell.m; sourceTree = "<group>"; };
+		C529A7A01E6FE89300B94FCE /* YSummaryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSummaryViewCell.xib; sourceTree = "<group>"; };
+		C529A7A11E6FE89300B94FCE /* YSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSummaryViewController.h; sourceTree = "<group>"; };
+		C529A7A21E6FE89300B94FCE /* YSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSummaryViewController.m; sourceTree = "<group>"; };
+		C529A7A31E6FE89300B94FCE /* YSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSummaryViewController.xib; sourceTree = "<group>"; };
+		C529A7A51E6FE89300B94FCE /* AKAutoReadSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKAutoReadSettingView.h; sourceTree = "<group>"; };
+		C529A7A61E6FE89300B94FCE /* AKAutoReadSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKAutoReadSettingView.m; sourceTree = "<group>"; };
+		C529A7A71E6FE89300B94FCE /* AKReaderMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKReaderMenuView.h; sourceTree = "<group>"; };
+		C529A7A81E6FE89300B94FCE /* AKReaderMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKReaderMenuView.m; sourceTree = "<group>"; };
+		C529A7A91E6FE89300B94FCE /* YBottomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBottomButton.h; sourceTree = "<group>"; };
+		C529A7AA1E6FE89300B94FCE /* YBottomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBottomButton.m; sourceTree = "<group>"; };
+		C529A7AB1E6FE89300B94FCE /* YThemeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YThemeViewCell.h; sourceTree = "<group>"; };
+		C529A7AC1E6FE89300B94FCE /* YThemeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YThemeViewCell.m; sourceTree = "<group>"; };
+		C529A7AD1E6FE89300B94FCE /* YThemeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YThemeViewCell.xib; sourceTree = "<group>"; };
+		C529A7AE1E6FE89300B94FCE /* YMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMenuViewController.h; sourceTree = "<group>"; };
+		C529A7AF1E6FE89300B94FCE /* YMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMenuViewController.m; sourceTree = "<group>"; };
+		C529A7B01E6FE89300B94FCE /* YMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMenuViewController.xib; sourceTree = "<group>"; };
 		C538066D1DE7327900A2322D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
@@ -616,43 +651,10 @@
 		C567BA901E48175700C7C79A /* AKPopupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupViewController.h; sourceTree = "<group>"; };
 		C567BA911E48175700C7C79A /* AKPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupViewController.m; sourceTree = "<group>"; };
 		C567BA921E48175700C7C79A /* AKPopupViewProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupViewProtocol.h; sourceTree = "<group>"; };
-		C567BA981E48175700C7C79A /* AKBookShelfHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookShelfHandler.h; sourceTree = "<group>"; };
-		C567BA991E48175700C7C79A /* AKBookShelfHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookShelfHandler.m; sourceTree = "<group>"; };
-		C567BA9A1E48175700C7C79A /* AKBookShelfViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookShelfViewController.h; sourceTree = "<group>"; };
-		C567BA9B1E48175700C7C79A /* AKBookShelfViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookShelfViewController.m; sourceTree = "<group>"; };
-		C567BA9D1E48175700C7C79A /* YBookViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookViewCell.h; sourceTree = "<group>"; };
-		C567BA9E1E48175700C7C79A /* YBookViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookViewCell.m; sourceTree = "<group>"; };
-		C567BA9F1E48175700C7C79A /* YBookViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YBookViewCell.xib; sourceTree = "<group>"; };
-		C567BAA01E48175700C7C79A /* YProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YProgressView.h; sourceTree = "<group>"; };
-		C567BAA11E48175700C7C79A /* YProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YProgressView.m; sourceTree = "<group>"; };
 		C567BAA61E48175700C7C79A /* AKRequestManager+ReaderModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKRequestManager+ReaderModule.h"; sourceTree = "<group>"; };
 		C567BAA71E48175700C7C79A /* AKRequestManager+ReaderModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AKRequestManager+ReaderModule.m"; sourceTree = "<group>"; };
 		C567BACC1E48175700C7C79A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		C567BACD1E48175700C7C79A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		C567BAD11E48175700C7C79A /* AKBookDetailHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookDetailHandler.h; sourceTree = "<group>"; };
-		C567BAD21E48175700C7C79A /* AKBookDetailHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookDetailHandler.m; sourceTree = "<group>"; };
-		C567BAD31E48175700C7C79A /* AKBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKBookDetailViewController.h; sourceTree = "<group>"; };
-		C567BAD41E48175700C7C79A /* AKBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookDetailViewController.m; sourceTree = "<group>"; };
-		C567BAD61E48175700C7C79A /* BookDetailBasicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailBasicCell.h; sourceTree = "<group>"; };
-		C567BAD71E48175700C7C79A /* BookDetailBasicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailBasicCell.m; sourceTree = "<group>"; };
-		C567BAD81E48175700C7C79A /* BookDetailBasicCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailBasicCell.xib; sourceTree = "<group>"; };
-		C567BAD91E48175700C7C79A /* BookDetailChapterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailChapterCell.h; sourceTree = "<group>"; };
-		C567BADA1E48175700C7C79A /* BookDetailChapterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailChapterCell.m; sourceTree = "<group>"; };
-		C567BADB1E48175700C7C79A /* BookDetailChapterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailChapterCell.xib; sourceTree = "<group>"; };
-		C567BADC1E48175700C7C79A /* BookDetailIntroduceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailIntroduceCell.h; sourceTree = "<group>"; };
-		C567BADD1E48175700C7C79A /* BookDetailIntroduceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailIntroduceCell.m; sourceTree = "<group>"; };
-		C567BADE1E48175700C7C79A /* BookDetailIntroduceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailIntroduceCell.xib; sourceTree = "<group>"; };
-		C567BAE11E48175700C7C79A /* AKDownloadTableHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadTableHandler.h; sourceTree = "<group>"; };
-		C567BAE21E48175700C7C79A /* AKDownloadTableHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadTableHandler.m; sourceTree = "<group>"; };
-		C567BAE31E48175700C7C79A /* AKDownloadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadViewController.h; sourceTree = "<group>"; };
-		C567BAE41E48175700C7C79A /* AKDownloadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadViewController.m; sourceTree = "<group>"; };
-		C567BAE61E48175700C7C79A /* AKDownloadListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKDownloadListTableCell.h; sourceTree = "<group>"; };
-		C567BAE71E48175700C7C79A /* AKDownloadListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDownloadListTableCell.m; sourceTree = "<group>"; };
-		C567BAE81E48175700C7C79A /* AKDownloadListTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AKDownloadListTableCell.xib; sourceTree = "<group>"; };
-		C567BAED1E48175700C7C79A /* AKHotNovelHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHotNovelHandler.h; sourceTree = "<group>"; };
-		C567BAEE1E48175700C7C79A /* AKHotNovelHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHotNovelHandler.m; sourceTree = "<group>"; };
-		C567BAEF1E48175700C7C79A /* AKHotNovelViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKHotNovelViewController.h; sourceTree = "<group>"; };
-		C567BAF01E48175700C7C79A /* AKHotNovelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKHotNovelViewController.m; sourceTree = "<group>"; };
 		C567BAF31E48175700C7C79A /* Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emoji.h; sourceTree = "<group>"; };
 		C567BAF41E48175700C7C79A /* Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emoji.m; sourceTree = "<group>"; };
 		C567BAF51E48175700C7C79A /* EmojiEmoticons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiEmoticons.h; sourceTree = "<group>"; };
@@ -759,61 +761,6 @@
 		C567BB6B1E48175700C7C79A /* AKBookDetailAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKBookDetailAPI.m; sourceTree = "<group>"; };
 		C567BB6C1E48175700C7C79A /* AKReaderHotListAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKReaderHotListAPI.h; sourceTree = "<group>"; };
 		C567BB6D1E48175700C7C79A /* AKReaderHotListAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKReaderHotListAPI.m; sourceTree = "<group>"; };
-		C567BB6F1E48175700C7C79A /* AKReaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKReaderViewController.h; sourceTree = "<group>"; };
-		C567BB701E48175700C7C79A /* AKReaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKReaderViewController.m; sourceTree = "<group>"; };
-		C567BB721E48175700C7C79A /* YSQLiteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSQLiteManager.h; sourceTree = "<group>"; };
-		C567BB731E48175700C7C79A /* YSQLiteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSQLiteManager.m; sourceTree = "<group>"; };
-		C567BB751E48175700C7C79A /* YDirectoryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDirectoryViewCell.h; sourceTree = "<group>"; };
-		C567BB761E48175700C7C79A /* YDirectoryViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDirectoryViewCell.m; sourceTree = "<group>"; };
-		C567BB771E48175700C7C79A /* YDirectoryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDirectoryViewCell.xib; sourceTree = "<group>"; };
-		C567BB781E48175700C7C79A /* YDirectoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDirectoryViewController.h; sourceTree = "<group>"; };
-		C567BB791E48175700C7C79A /* YDirectoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDirectoryViewController.m; sourceTree = "<group>"; };
-		C567BB7A1E48175700C7C79A /* YDirectoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDirectoryViewController.xib; sourceTree = "<group>"; };
-		C567BB7C1E48175700C7C79A /* YBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBaseModel.h; sourceTree = "<group>"; };
-		C567BB7D1E48175700C7C79A /* YBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBaseModel.m; sourceTree = "<group>"; };
-		C567BB7E1E48175700C7C79A /* YBookAuthorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookAuthorModel.h; sourceTree = "<group>"; };
-		C567BB7F1E48175700C7C79A /* YBookAuthorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookAuthorModel.m; sourceTree = "<group>"; };
-		C567BB801E48175700C7C79A /* YBookDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookDetailModel.h; sourceTree = "<group>"; };
-		C567BB811E48175700C7C79A /* YBookDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookDetailModel.m; sourceTree = "<group>"; };
-		C567BB821E48175700C7C79A /* YBookHelpfulModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookHelpfulModel.h; sourceTree = "<group>"; };
-		C567BB831E48175700C7C79A /* YBookHelpfulModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookHelpfulModel.m; sourceTree = "<group>"; };
-		C567BB841E48175700C7C79A /* YBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookModel.h; sourceTree = "<group>"; };
-		C567BB851E48175700C7C79A /* YBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookModel.m; sourceTree = "<group>"; };
-		C567BB861E48175700C7C79A /* YBookReviewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookReviewModel.h; sourceTree = "<group>"; };
-		C567BB871E48175700C7C79A /* YBookReviewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookReviewModel.m; sourceTree = "<group>"; };
-		C567BB881E48175700C7C79A /* YBookSummaryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookSummaryModel.h; sourceTree = "<group>"; };
-		C567BB891E48175700C7C79A /* YBookSummaryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookSummaryModel.m; sourceTree = "<group>"; };
-		C567BB8A1E48175700C7C79A /* YBookUpdateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBookUpdateModel.h; sourceTree = "<group>"; };
-		C567BB8B1E48175700C7C79A /* YBookUpdateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBookUpdateModel.m; sourceTree = "<group>"; };
-		C567BB8E1E48175700C7C79A /* YChaptersLinkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YChaptersLinkModel.h; sourceTree = "<group>"; };
-		C567BB8F1E48175700C7C79A /* YChaptersLinkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YChaptersLinkModel.m; sourceTree = "<group>"; };
-		C567BB901E48175700C7C79A /* YDateModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YDateModel.h; sourceTree = "<group>"; };
-		C567BB911E48175700C7C79A /* YDateModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YDateModel.m; sourceTree = "<group>"; };
-		C567BB921E48175700C7C79A /* YRankingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRankingModel.h; sourceTree = "<group>"; };
-		C567BB931E48175700C7C79A /* YRankingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRankingModel.m; sourceTree = "<group>"; };
-		C567BB941E48175700C7C79A /* YRecommendBookListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRecommendBookListModel.h; sourceTree = "<group>"; };
-		C567BB951E48175700C7C79A /* YRecommendBookListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRecommendBookListModel.m; sourceTree = "<group>"; };
-		C567BB961E48175700C7C79A /* YRecommendBookModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRecommendBookModel.h; sourceTree = "<group>"; };
-		C567BB971E48175700C7C79A /* YRecommendBookModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRecommendBookModel.m; sourceTree = "<group>"; };
-		C567BB9B1E48175700C7C79A /* YURLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YURLManager.h; sourceTree = "<group>"; };
-		C567BB9C1E48175700C7C79A /* YURLManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YURLManager.m; sourceTree = "<group>"; };
-		C567BB9E1E48175700C7C79A /* YSummaryViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSummaryViewCell.h; sourceTree = "<group>"; };
-		C567BB9F1E48175700C7C79A /* YSummaryViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSummaryViewCell.m; sourceTree = "<group>"; };
-		C567BBA01E48175700C7C79A /* YSummaryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSummaryViewCell.xib; sourceTree = "<group>"; };
-		C567BBA11E48175700C7C79A /* YSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSummaryViewController.h; sourceTree = "<group>"; };
-		C567BBA21E48175700C7C79A /* YSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSummaryViewController.m; sourceTree = "<group>"; };
-		C567BBA31E48175700C7C79A /* YSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSummaryViewController.xib; sourceTree = "<group>"; };
-		C567BBAD1E48175700C7C79A /* YReaderUniversal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YReaderUniversal.h; sourceTree = "<group>"; };
-		C567BBAF1E48175700C7C79A /* YBatteryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBatteryView.h; sourceTree = "<group>"; };
-		C567BBB01E48175700C7C79A /* YBatteryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBatteryView.m; sourceTree = "<group>"; };
-		C567BBB11E48175700C7C79A /* YBottomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YBottomButton.h; sourceTree = "<group>"; };
-		C567BBB21E48175700C7C79A /* YBottomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YBottomButton.m; sourceTree = "<group>"; };
-		C567BBB81E48175700C7C79A /* YThemeViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YThemeViewCell.h; sourceTree = "<group>"; };
-		C567BBB91E48175700C7C79A /* YThemeViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YThemeViewCell.m; sourceTree = "<group>"; };
-		C567BBBA1E48175700C7C79A /* YThemeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YThemeViewCell.xib; sourceTree = "<group>"; };
-		C567BBBB1E48175700C7C79A /* YMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMenuViewController.h; sourceTree = "<group>"; };
-		C567BBBC1E48175700C7C79A /* YMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMenuViewController.m; sourceTree = "<group>"; };
-		C567BBBD1E48175700C7C79A /* YMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YMenuViewController.xib; sourceTree = "<group>"; };
 		C567BBC11E48175700C7C79A /* ReaderModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderModule.h; sourceTree = "<group>"; };
 		C567BBC21E48175700C7C79A /* ReaderModule.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ReaderModule.xcassets; sourceTree = "<group>"; };
 		C567BBC31E48175700C7C79A /* ReaderModuleDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReaderModuleDefine.h; sourceTree = "<group>"; };
@@ -903,22 +850,12 @@
 		C567BC281E48175700C7C79A /* OpenShareHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenShareHeader.h; sourceTree = "<group>"; };
 		C567BC2A1E48175700C7C79A /* CustomSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSliderView.h; sourceTree = "<group>"; };
 		C567BC2B1E48175700C7C79A /* CustomSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSliderView.m; sourceTree = "<group>"; };
-		C567BC2D1E48175700C7C79A /* CustomWebProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomWebProgressView.h; sourceTree = "<group>"; };
-		C567BC2E1E48175700C7C79A /* CustomWebProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomWebProgressView.m; sourceTree = "<group>"; };
-		C567BC2F1E48175700C7C79A /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
-		C567BC301E48175700C7C79A /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		C567BC311E48175700C7C79A /* MainCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCollectionView.h; sourceTree = "<group>"; };
 		C567BC321E48175700C7C79A /* MainCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCollectionView.m; sourceTree = "<group>"; };
 		C567BC331E48175700C7C79A /* MainTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableView.h; sourceTree = "<group>"; };
 		C567BC341E48175700C7C79A /* MainTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableView.m; sourceTree = "<group>"; };
-		C567BC351E48175700C7C79A /* RootMaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootMaskView.h; sourceTree = "<group>"; };
-		C567BC361E48175700C7C79A /* RootMaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootMaskView.m; sourceTree = "<group>"; };
-		C567BC371E48175700C7C79A /* RootMaskView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootMaskView.xib; sourceTree = "<group>"; };
 		C567BC381E48175700C7C79A /* RootNavButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavButton.h; sourceTree = "<group>"; };
 		C567BC391E48175700C7C79A /* RootNavButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavButton.m; sourceTree = "<group>"; };
-		C567BC3A1E48175700C7C79A /* RootStandardTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootStandardTableCell.h; sourceTree = "<group>"; };
-		C567BC3B1E48175700C7C79A /* RootStandardTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootStandardTableCell.m; sourceTree = "<group>"; };
-		C567BC3C1E48175700C7C79A /* RootStandardTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootStandardTableCell.xib; sourceTree = "<group>"; };
 		C567BC6C1E48175700C7C79A /* Aspect-ShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Aspect-ShareModule.h"; sourceTree = "<group>"; };
 		C567BC6D1E48175700C7C79A /* Aspect-ShareModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Aspect-ShareModule.m"; sourceTree = "<group>"; };
 		C567BC6F1E48175700C7C79A /* AKMediator+ShareModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AKMediator+ShareModule.h"; sourceTree = "<group>"; };
@@ -1052,8 +989,6 @@
 		C57315731E556F8B0099D9F7 /* LocationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHelper.m; sourceTree = "<group>"; };
 		C57DF5DF1DF927F900D3D154 /* BanLiTV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = BanLiTV.entitlements; sourceTree = "<group>"; };
 		C57DF5E21DFA84EE00D3D154 /* TabBar.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TabBar.plist; sourceTree = "<group>"; };
-		C5813BF51E60134300AD2F41 /* AKReaderMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKReaderMenuView.h; sourceTree = "<group>"; };
-		C5813BF61E60134300AD2F41 /* AKReaderMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKReaderMenuView.m; sourceTree = "<group>"; };
 		C5813BFE1E6034D500AD2F41 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		C5813BFF1E6034D500AD2F41 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
 		C5813C071E60610400AD2F41 /* TBSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBSlidingViewController.h; sourceTree = "<group>"; };
@@ -1148,6 +1083,163 @@
 				3EF56A8A82919CDF6E89C8BF /* Pods-Project.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C529A76A1E6FE89300B94FCE /* BookShelf */ = {
+			isa = PBXGroup;
+			children = (
+				C529A76B1E6FE89300B94FCE /* AKBookShelfHandler.h */,
+				C529A76C1E6FE89300B94FCE /* AKBookShelfHandler.m */,
+				C529A76D1E6FE89300B94FCE /* AKBookShelfViewController.h */,
+				C529A76E1E6FE89300B94FCE /* AKBookShelfViewController.m */,
+				C529A76F1E6FE89300B94FCE /* Cell */,
+			);
+			path = BookShelf;
+			sourceTree = "<group>";
+		};
+		C529A76F1E6FE89300B94FCE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C529A7701E6FE89300B94FCE /* YBookViewCell.h */,
+				C529A7711E6FE89300B94FCE /* YBookViewCell.m */,
+				C529A7721E6FE89300B94FCE /* YBookViewCell.xib */,
+				C529A7731E6FE89300B94FCE /* YProgressView.h */,
+				C529A7741E6FE89300B94FCE /* YProgressView.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C529A7751E6FE89300B94FCE /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				C529A7761E6FE89300B94FCE /* AKBookDetailHandler.h */,
+				C529A7771E6FE89300B94FCE /* AKBookDetailHandler.m */,
+				C529A7781E6FE89300B94FCE /* AKBookDetailViewController.h */,
+				C529A7791E6FE89300B94FCE /* AKBookDetailViewController.m */,
+				C529A77A1E6FE89300B94FCE /* Cell */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		C529A77A1E6FE89300B94FCE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C529A77B1E6FE89300B94FCE /* BookDetailBasicCell.h */,
+				C529A77C1E6FE89300B94FCE /* BookDetailBasicCell.m */,
+				C529A77D1E6FE89300B94FCE /* BookDetailBasicCell.xib */,
+				C529A77E1E6FE89300B94FCE /* BookDetailChapterCell.h */,
+				C529A77F1E6FE89300B94FCE /* BookDetailChapterCell.m */,
+				C529A7801E6FE89300B94FCE /* BookDetailChapterCell.xib */,
+				C529A7811E6FE89300B94FCE /* BookDetailIntroduceCell.h */,
+				C529A7821E6FE89300B94FCE /* BookDetailIntroduceCell.m */,
+				C529A7831E6FE89300B94FCE /* BookDetailIntroduceCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		C529A7841E6FE89300B94FCE /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				C529A7851E6FE89300B94FCE /* Controller */,
+				C529A78A1E6FE89300B94FCE /* View */,
+			);
+			path = Download;
+			sourceTree = "<group>";
+		};
+		C529A7851E6FE89300B94FCE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C529A7861E6FE89300B94FCE /* AKDownloadTableHandler.h */,
+				C529A7871E6FE89300B94FCE /* AKDownloadTableHandler.m */,
+				C529A7881E6FE89300B94FCE /* AKDownloadViewController.h */,
+				C529A7891E6FE89300B94FCE /* AKDownloadViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C529A78A1E6FE89300B94FCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C529A78B1E6FE89300B94FCE /* AKDownloadListTableCell.h */,
+				C529A78C1E6FE89300B94FCE /* AKDownloadListTableCell.m */,
+				C529A78D1E6FE89300B94FCE /* AKDownloadListTableCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C529A78E1E6FE89300B94FCE /* Hot */ = {
+			isa = PBXGroup;
+			children = (
+				C529A78F1E6FE89300B94FCE /* AKHotNovelHandler.h */,
+				C529A7901E6FE89300B94FCE /* AKHotNovelHandler.m */,
+				C529A7911E6FE89300B94FCE /* AKHotNovelViewController.h */,
+				C529A7921E6FE89300B94FCE /* AKHotNovelViewController.m */,
+			);
+			path = Hot;
+			sourceTree = "<group>";
+		};
+		C529A7931E6FE89300B94FCE /* Reader */ = {
+			isa = PBXGroup;
+			children = (
+				C529A7941E6FE89300B94FCE /* AKReaderViewController.h */,
+				C529A7951E6FE89300B94FCE /* AKReaderViewController.m */,
+				C529A7961E6FE89300B94FCE /* Directory */,
+				C529A79D1E6FE89300B94FCE /* Summary */,
+				C529A7A41E6FE89300B94FCE /* View */,
+				C529A7AE1E6FE89300B94FCE /* YMenuViewController.h */,
+				C529A7AF1E6FE89300B94FCE /* YMenuViewController.m */,
+				C529A7B01E6FE89300B94FCE /* YMenuViewController.xib */,
+			);
+			path = Reader;
+			sourceTree = "<group>";
+		};
+		C529A7961E6FE89300B94FCE /* Directory */ = {
+			isa = PBXGroup;
+			children = (
+				C529A7971E6FE89300B94FCE /* YDirectoryViewCell.h */,
+				C529A7981E6FE89300B94FCE /* YDirectoryViewCell.m */,
+				C529A7991E6FE89300B94FCE /* YDirectoryViewCell.xib */,
+				C529A79A1E6FE89300B94FCE /* YDirectoryViewController.h */,
+				C529A79B1E6FE89300B94FCE /* YDirectoryViewController.m */,
+				C529A79C1E6FE89300B94FCE /* YDirectoryViewController.xib */,
+			);
+			path = Directory;
+			sourceTree = "<group>";
+		};
+		C529A79D1E6FE89300B94FCE /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				C529A79E1E6FE89300B94FCE /* YSummaryViewCell.h */,
+				C529A79F1E6FE89300B94FCE /* YSummaryViewCell.m */,
+				C529A7A01E6FE89300B94FCE /* YSummaryViewCell.xib */,
+				C529A7A11E6FE89300B94FCE /* YSummaryViewController.h */,
+				C529A7A21E6FE89300B94FCE /* YSummaryViewController.m */,
+				C529A7A31E6FE89300B94FCE /* YSummaryViewController.xib */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		C529A7A41E6FE89300B94FCE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C529A7A51E6FE89300B94FCE /* AKAutoReadSettingView.h */,
+				C529A7A61E6FE89300B94FCE /* AKAutoReadSettingView.m */,
+				C529A7A71E6FE89300B94FCE /* AKReaderMenuView.h */,
+				C529A7A81E6FE89300B94FCE /* AKReaderMenuView.m */,
+				C529A7A91E6FE89300B94FCE /* YBottomButton.h */,
+				C529A7AA1E6FE89300B94FCE /* YBottomButton.m */,
+				C529A7AB1E6FE89300B94FCE /* YThemeViewCell.h */,
+				C529A7AC1E6FE89300B94FCE /* YThemeViewCell.m */,
+				C529A7AD1E6FE89300B94FCE /* YThemeViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C529A7B11E6FE89300B94FCE /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		C55CBE1E1DE436350000B1F6 /* Network */ = {
@@ -1811,17 +1903,12 @@
 			children = (
 				C573156D1E5452A40099D9F7 /* Aspect */,
 				C57315681E53F73D0099D9F7 /* Sql */,
-				C567BA971E48175700C7C79A /* BookShelf */,
 				C567BAA21E48175700C7C79A /* Category */,
 				C567BACB1E48175700C7C79A /* Controller */,
-				C567BAD01E48175700C7C79A /* Detail */,
-				C567BADF1E48175700C7C79A /* Download */,
-				C567BAEC1E48175700C7C79A /* Hot */,
 				C567BAF11E48175700C7C79A /* Lib */,
 				C567BB501E48175700C7C79A /* Manager */,
 				C567BB531E48175700C7C79A /* Model */,
 				C567BB681E48175700C7C79A /* Network */,
-				C567BB6E1E48175700C7C79A /* Reader */,
 				C567BBC11E48175700C7C79A /* ReaderModule.h */,
 				C567BBC21E48175700C7C79A /* ReaderModule.xcassets */,
 				C567BBC31E48175700C7C79A /* ReaderModuleDefine.h */,
@@ -1830,30 +1917,6 @@
 				C567BBC61E48175700C7C79A /* View */,
 			);
 			path = ReaderModule;
-			sourceTree = "<group>";
-		};
-		C567BA971E48175700C7C79A /* BookShelf */ = {
-			isa = PBXGroup;
-			children = (
-				C567BA981E48175700C7C79A /* AKBookShelfHandler.h */,
-				C567BA991E48175700C7C79A /* AKBookShelfHandler.m */,
-				C567BA9A1E48175700C7C79A /* AKBookShelfViewController.h */,
-				C567BA9B1E48175700C7C79A /* AKBookShelfViewController.m */,
-				C567BA9C1E48175700C7C79A /* Cell */,
-			);
-			path = BookShelf;
-			sourceTree = "<group>";
-		};
-		C567BA9C1E48175700C7C79A /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				C567BA9D1E48175700C7C79A /* YBookViewCell.h */,
-				C567BA9E1E48175700C7C79A /* YBookViewCell.m */,
-				C567BA9F1E48175700C7C79A /* YBookViewCell.xib */,
-				C567BAA01E48175700C7C79A /* YProgressView.h */,
-				C567BAA11E48175700C7C79A /* YProgressView.m */,
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		C567BAA21E48175700C7C79A /* Category */ = {
@@ -1874,79 +1937,16 @@
 		C567BACB1E48175700C7C79A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C529A76A1E6FE89300B94FCE /* BookShelf */,
+				C529A7751E6FE89300B94FCE /* Detail */,
+				C529A7841E6FE89300B94FCE /* Download */,
+				C529A78E1E6FE89300B94FCE /* Hot */,
+				C529A7931E6FE89300B94FCE /* Reader */,
+				C529A7B11E6FE89300B94FCE /* Search */,
 				C567BACC1E48175700C7C79A /* RootViewController.h */,
 				C567BACD1E48175700C7C79A /* RootViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		C567BAD01E48175700C7C79A /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAD11E48175700C7C79A /* AKBookDetailHandler.h */,
-				C567BAD21E48175700C7C79A /* AKBookDetailHandler.m */,
-				C567BAD31E48175700C7C79A /* AKBookDetailViewController.h */,
-				C567BAD41E48175700C7C79A /* AKBookDetailViewController.m */,
-				C567BAD51E48175700C7C79A /* Cell */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		C567BAD51E48175700C7C79A /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAD61E48175700C7C79A /* BookDetailBasicCell.h */,
-				C567BAD71E48175700C7C79A /* BookDetailBasicCell.m */,
-				C567BAD81E48175700C7C79A /* BookDetailBasicCell.xib */,
-				C567BAD91E48175700C7C79A /* BookDetailChapterCell.h */,
-				C567BADA1E48175700C7C79A /* BookDetailChapterCell.m */,
-				C567BADB1E48175700C7C79A /* BookDetailChapterCell.xib */,
-				C567BADC1E48175700C7C79A /* BookDetailIntroduceCell.h */,
-				C567BADD1E48175700C7C79A /* BookDetailIntroduceCell.m */,
-				C567BADE1E48175700C7C79A /* BookDetailIntroduceCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		C567BADF1E48175700C7C79A /* Download */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAE01E48175700C7C79A /* Controller */,
-				C567BAE51E48175700C7C79A /* View */,
-			);
-			path = Download;
-			sourceTree = "<group>";
-		};
-		C567BAE01E48175700C7C79A /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAE11E48175700C7C79A /* AKDownloadTableHandler.h */,
-				C567BAE21E48175700C7C79A /* AKDownloadTableHandler.m */,
-				C567BAE31E48175700C7C79A /* AKDownloadViewController.h */,
-				C567BAE41E48175700C7C79A /* AKDownloadViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		C567BAE51E48175700C7C79A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAE61E48175700C7C79A /* AKDownloadListTableCell.h */,
-				C567BAE71E48175700C7C79A /* AKDownloadListTableCell.m */,
-				C567BAE81E48175700C7C79A /* AKDownloadListTableCell.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C567BAEC1E48175700C7C79A /* Hot */ = {
-			isa = PBXGroup;
-			children = (
-				C567BAED1E48175700C7C79A /* AKHotNovelHandler.h */,
-				C567BAEE1E48175700C7C79A /* AKHotNovelHandler.m */,
-				C567BAEF1E48175700C7C79A /* AKHotNovelViewController.h */,
-				C567BAF01E48175700C7C79A /* AKHotNovelViewController.m */,
-			);
-			path = Hot;
 			sourceTree = "<group>";
 		};
 		C567BAF11E48175700C7C79A /* Lib */ = {
@@ -2162,128 +2162,6 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		C567BB6E1E48175700C7C79A /* Reader */ = {
-			isa = PBXGroup;
-			children = (
-				C567BB6F1E48175700C7C79A /* AKReaderViewController.h */,
-				C567BB701E48175700C7C79A /* AKReaderViewController.m */,
-				C567BB711E48175700C7C79A /* Database */,
-				C567BB741E48175700C7C79A /* Directory */,
-				C567BB7B1E48175700C7C79A /* Model */,
-				C567BB981E48175700C7C79A /* Network */,
-				C567BB9D1E48175700C7C79A /* Summary */,
-				C567BBA41E48175700C7C79A /* Universal */,
-				C567BBAE1E48175700C7C79A /* View */,
-				C567BBBB1E48175700C7C79A /* YMenuViewController.h */,
-				C567BBBC1E48175700C7C79A /* YMenuViewController.m */,
-				C567BBBD1E48175700C7C79A /* YMenuViewController.xib */,
-				C52355CB1E6E773700736E95 /* AKAutoReadSettingView.h */,
-				C52355CC1E6E773700736E95 /* AKAutoReadSettingView.m */,
-			);
-			path = Reader;
-			sourceTree = "<group>";
-		};
-		C567BB711E48175700C7C79A /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				C567BB721E48175700C7C79A /* YSQLiteManager.h */,
-				C567BB731E48175700C7C79A /* YSQLiteManager.m */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		C567BB741E48175700C7C79A /* Directory */ = {
-			isa = PBXGroup;
-			children = (
-				C567BB751E48175700C7C79A /* YDirectoryViewCell.h */,
-				C567BB761E48175700C7C79A /* YDirectoryViewCell.m */,
-				C567BB771E48175700C7C79A /* YDirectoryViewCell.xib */,
-				C567BB781E48175700C7C79A /* YDirectoryViewController.h */,
-				C567BB791E48175700C7C79A /* YDirectoryViewController.m */,
-				C567BB7A1E48175700C7C79A /* YDirectoryViewController.xib */,
-			);
-			path = Directory;
-			sourceTree = "<group>";
-		};
-		C567BB7B1E48175700C7C79A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C567BB7C1E48175700C7C79A /* YBaseModel.h */,
-				C567BB7D1E48175700C7C79A /* YBaseModel.m */,
-				C567BB7E1E48175700C7C79A /* YBookAuthorModel.h */,
-				C567BB7F1E48175700C7C79A /* YBookAuthorModel.m */,
-				C567BB801E48175700C7C79A /* YBookDetailModel.h */,
-				C567BB811E48175700C7C79A /* YBookDetailModel.m */,
-				C567BB821E48175700C7C79A /* YBookHelpfulModel.h */,
-				C567BB831E48175700C7C79A /* YBookHelpfulModel.m */,
-				C567BB841E48175700C7C79A /* YBookModel.h */,
-				C567BB851E48175700C7C79A /* YBookModel.m */,
-				C567BB861E48175700C7C79A /* YBookReviewModel.h */,
-				C567BB871E48175700C7C79A /* YBookReviewModel.m */,
-				C567BB881E48175700C7C79A /* YBookSummaryModel.h */,
-				C567BB891E48175700C7C79A /* YBookSummaryModel.m */,
-				C567BB8A1E48175700C7C79A /* YBookUpdateModel.h */,
-				C567BB8B1E48175700C7C79A /* YBookUpdateModel.m */,
-				C567BB8E1E48175700C7C79A /* YChaptersLinkModel.h */,
-				C567BB8F1E48175700C7C79A /* YChaptersLinkModel.m */,
-				C567BB901E48175700C7C79A /* YDateModel.h */,
-				C567BB911E48175700C7C79A /* YDateModel.m */,
-				C567BB921E48175700C7C79A /* YRankingModel.h */,
-				C567BB931E48175700C7C79A /* YRankingModel.m */,
-				C567BB941E48175700C7C79A /* YRecommendBookListModel.h */,
-				C567BB951E48175700C7C79A /* YRecommendBookListModel.m */,
-				C567BB961E48175700C7C79A /* YRecommendBookModel.h */,
-				C567BB971E48175700C7C79A /* YRecommendBookModel.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C567BB981E48175700C7C79A /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				C567BB9B1E48175700C7C79A /* YURLManager.h */,
-				C567BB9C1E48175700C7C79A /* YURLManager.m */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		C567BB9D1E48175700C7C79A /* Summary */ = {
-			isa = PBXGroup;
-			children = (
-				C567BB9E1E48175700C7C79A /* YSummaryViewCell.h */,
-				C567BB9F1E48175700C7C79A /* YSummaryViewCell.m */,
-				C567BBA01E48175700C7C79A /* YSummaryViewCell.xib */,
-				C567BBA11E48175700C7C79A /* YSummaryViewController.h */,
-				C567BBA21E48175700C7C79A /* YSummaryViewController.m */,
-				C567BBA31E48175700C7C79A /* YSummaryViewController.xib */,
-			);
-			path = Summary;
-			sourceTree = "<group>";
-		};
-		C567BBA41E48175700C7C79A /* Universal */ = {
-			isa = PBXGroup;
-			children = (
-				C567BBAD1E48175700C7C79A /* YReaderUniversal.h */,
-			);
-			path = Universal;
-			sourceTree = "<group>";
-		};
-		C567BBAE1E48175700C7C79A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C567BBAF1E48175700C7C79A /* YBatteryView.h */,
-				C567BBB01E48175700C7C79A /* YBatteryView.m */,
-				C567BBB11E48175700C7C79A /* YBottomButton.h */,
-				C567BBB21E48175700C7C79A /* YBottomButton.m */,
-				C567BBB81E48175700C7C79A /* YThemeViewCell.h */,
-				C567BBB91E48175700C7C79A /* YThemeViewCell.m */,
-				C567BBBA1E48175700C7C79A /* YThemeViewCell.xib */,
-				C5813BF51E60134300AD2F41 /* AKReaderMenuView.h */,
-				C5813BF61E60134300AD2F41 /* AKReaderMenuView.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		C567BBC41E48175700C7C79A /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -2307,14 +2185,8 @@
 				C567BC321E48175700C7C79A /* MainCollectionView.m */,
 				C567BC331E48175700C7C79A /* MainTableView.h */,
 				C567BC341E48175700C7C79A /* MainTableView.m */,
-				C567BC351E48175700C7C79A /* RootMaskView.h */,
-				C567BC361E48175700C7C79A /* RootMaskView.m */,
-				C567BC371E48175700C7C79A /* RootMaskView.xib */,
 				C567BC381E48175700C7C79A /* RootNavButton.h */,
 				C567BC391E48175700C7C79A /* RootNavButton.m */,
-				C567BC3A1E48175700C7C79A /* RootStandardTableCell.h */,
-				C567BC3B1E48175700C7C79A /* RootStandardTableCell.m */,
-				C567BC3C1E48175700C7C79A /* RootStandardTableCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2344,7 +2216,6 @@
 				C567BC141E48175700C7C79A /* ruleView */,
 				C567BC171E48175700C7C79A /* shareView */,
 				C567BC291E48175700C7C79A /* sliderView */,
-				C567BC2C1E48175700C7C79A /* web+progressView */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -2522,17 +2393,6 @@
 				C567BC2B1E48175700C7C79A /* CustomSliderView.m */,
 			);
 			path = sliderView;
-			sourceTree = "<group>";
-		};
-		C567BC2C1E48175700C7C79A /* web+progressView */ = {
-			isa = PBXGroup;
-			children = (
-				C567BC2D1E48175700C7C79A /* CustomWebProgressView.h */,
-				C567BC2E1E48175700C7C79A /* CustomWebProgressView.m */,
-				C567BC2F1E48175700C7C79A /* WebViewController.h */,
-				C567BC301E48175700C7C79A /* WebViewController.m */,
-			);
-			path = "web+progressView";
 			sourceTree = "<group>";
 		};
 		C567BC6A1E48175700C7C79A /* ShareModule */ = {
@@ -3319,48 +3179,47 @@
 			files = (
 				C567BD011E48175800C7C79A /* BaseModule.xcassets in Resources */,
 				C567BEFA1E48175800C7C79A /* CustomNumbersCell.xib in Resources */,
+				C529A7BA1E6FE89300B94FCE /* BookDetailBasicCell.xib in Resources */,
+				C529A7BE1E6FE89300B94FCE /* BookDetailIntroduceCell.xib in Resources */,
 				C567BE411E48175800C7C79A /* NewsModule.xcassets in Resources */,
 				C567BE971E48175800C7C79A /* 笔记标志三点@3x.png in Resources */,
 				C567BE8E1E48175800C7C79A /* 扫描线@3x.png in Resources */,
+				C529A7D41E6FE89300B94FCE /* YMenuViewController.xib in Resources */,
 				C567BEFC1E48175800C7C79A /* CustomNumbersLeftHeaderView.xib in Resources */,
-				C567BE731E48175800C7C79A /* AKDownloadListTableCell.xib in Resources */,
 				C567BE901E48175800C7C79A /* 电池@2x.png in Resources */,
-				C567BE6F1E48175800C7C79A /* BookDetailIntroduceCell.xib in Resources */,
 				C567BE831E48175800C7C79A /* 删除.png in Resources */,
+				C529A7C71E6FE89300B94FCE /* YDirectoryViewCell.xib in Resources */,
 				C567BE9E1E48175800C7C79A /* 阅读器-笔记框夜间三角形@3x.png in Resources */,
-				C567BEC41E48175800C7C79A /* YDirectoryViewController.xib in Resources */,
 				C567BE231E48175800C7C79A /* LoginModule.xcassets in Resources */,
+				C529A7B51E6FE89300B94FCE /* YBookViewCell.xib in Resources */,
+				C529A7C21E6FE89300B94FCE /* AKDownloadListTableCell.xib in Resources */,
 				C567BE9B1E48175800C7C79A /* 阅读器-笔记框三角形@3x.png in Resources */,
 				C567BD1D1E48175800C7C79A /* grayLogo@2x.png in Resources */,
 				C567BE851E48175800C7C79A /* 删除@3x.png in Resources */,
 				C5E40D6C1E6EA83C00FA8F71 /* simplified.txt in Resources */,
 				C567BE991E48175800C7C79A /* 阅读器-笔记框三角形.png in Resources */,
-				C567BE6B1E48175800C7C79A /* BookDetailBasicCell.xib in Resources */,
-				C567BEC21E48175800C7C79A /* YDirectoryViewCell.xib in Resources */,
 				C567BE811E48175800C7C79A /* 三角形@2x.png in Resources */,
-				C567BEE31E48175800C7C79A /* YThemeViewCell.xib in Resources */,
-				C567BF1C1E48175900C7C79A /* RootMaskView.xib in Resources */,
-				C567BED61E48175800C7C79A /* YSummaryViewCell.xib in Resources */,
 				C567BE9D1E48175800C7C79A /* 阅读器-笔记框夜间三角形@2x.png in Resources */,
 				C567BE9C1E48175800C7C79A /* 阅读器-笔记框夜间三角形.png in Resources */,
+				C529A7CB1E6FE89300B94FCE /* YSummaryViewCell.xib in Resources */,
 				C567BEE81E48175800C7C79A /* ReaderModule.xcassets in Resources */,
 				C5E40D791E6EB1E100FA8F71 /* ReadEngine.xcassets in Resources */,
+				C529A7CD1E6FE89300B94FCE /* YSummaryViewController.xib in Resources */,
 				C567BF041E48175900C7C79A /* area.plist in Resources */,
 				C567BD241E48175800C7C79A /* chooseTagViewCloseBtn.png in Resources */,
-				C567BEE51E48175800C7C79A /* YMenuViewController.xib in Resources */,
 				C567BD1F1E48175800C7C79A /* redLogo@2x.png in Resources */,
+				C529A7BC1E6FE89300B94FCE /* BookDetailChapterCell.xib in Resources */,
 				C567BEEA1E48175800C7C79A /* BookCollMainCell.xib in Resources */,
 				C567BE4B1E48175800C7C79A /* MultiPictureContentCell.xib in Resources */,
 				C567BE4D1E48175800C7C79A /* NormalContentCell.xib in Resources */,
-				C567BE561E48175800C7C79A /* YBookViewCell.xib in Resources */,
 				C567BEF21E48175800C7C79A /* CustomBtn.xib in Resources */,
 				C567BE861E48175800C7C79A /* 复制.png in Resources */,
+				C529A7D21E6FE89300B94FCE /* YThemeViewCell.xib in Resources */,
 				C567BE8F1E48175800C7C79A /* 电池.png in Resources */,
 				C567BF5C1E48175900C7C79A /* Wallpaper.xcassets in Resources */,
 				C5E89F5C1E5C2F5E004F0C2E /* ComponentModule.xcassets in Resources */,
 				C567BE941E48175800C7C79A /* 笔记@3x.png in Resources */,
 				C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */,
-				C567BF1F1E48175900C7C79A /* RootStandardTableCell.xib in Resources */,
 				C5B986E31E02A14400AB548A /* res.png in Resources */,
 				C567BE911E48175800C7C79A /* 电池@3x.png in Resources */,
 				C567BE491E48175800C7C79A /* BigImgContentCell.xib in Resources */,
@@ -3377,12 +3236,12 @@
 				C5A730251DE2BB3400DB2788 /* LaunchScreen.storyboard in Resources */,
 				C567BE931E48175800C7C79A /* 笔记@2x.png in Resources */,
 				C567BD1E1E48175800C7C79A /* lightGrayLogo@2x.png in Resources */,
-				C567BE6D1E48175800C7C79A /* BookDetailChapterCell.xib in Resources */,
 				C5A730221DE2BB3400DB2788 /* Assets.xcassets in Resources */,
 				C567BF0F1E48175900C7C79A /* CustomShareView.xib in Resources */,
 				C567BE8C1E48175800C7C79A /* 扫描线.png in Resources */,
 				C567BE9A1E48175800C7C79A /* 阅读器-笔记框三角形@2x.png in Resources */,
 				C567BE461E48175800C7C79A /* LoopInfoView.xib in Resources */,
+				C529A7C91E6FE89300B94FCE /* YDirectoryViewController.xib in Resources */,
 				C5E40D6D1E6EA83C00FA8F71 /* traditional.txt in Resources */,
 				C567BE841E48175800C7C79A /* 删除@2x.png in Resources */,
 				C567BF001E48175900C7C79A /* CustomNumbersRightHeaderView.xib in Resources */,
@@ -3392,7 +3251,6 @@
 				C567BE7F1E48175800C7C79A /* r_drag-dot@2x.png in Resources */,
 				C567BF341E48175900C7C79A /* theme.plist in Resources */,
 				C523B01C1E6FB8A500E530ED /* YuppySC-Regular.otf in Resources */,
-				C567BED81E48175800C7C79A /* YSummaryViewController.xib in Resources */,
 				C567BF591E48175900C7C79A /* XHSHomeCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3468,27 +3326,21 @@
 			files = (
 				C567BF3F1E48175900C7C79A /* AKTextField.m in Sources */,
 				C567BEEC1E48175800C7C79A /* BSNumbersCollectionFooterView.m in Sources */,
-				C567BE701E48175800C7C79A /* AKDownloadTableHandler.m in Sources */,
-				C567BEC51E48175800C7C79A /* YBaseModel.m in Sources */,
 				C567BEF91E48175800C7C79A /* CustomNumbersCell.m in Sources */,
+				C529A7B21E6FE89300B94FCE /* AKBookShelfHandler.m in Sources */,
 				C567BF0A1E48175900C7C79A /* CustomPopupWindow.m in Sources */,
 				C567BF901E481D9000C7C79A /* MMSheetView.m in Sources */,
-				C567BECC1E48175800C7C79A /* YBookUpdateModel.m in Sources */,
 				C567BF411E48175900C7C79A /* AKView.m in Sources */,
 				C567BF401E48175900C7C79A /* AKTextView.m in Sources */,
 				C567BF8C1E481D9000C7C79A /* MMPinView.m in Sources */,
 				C567BD181E48175800C7C79A /* AKSignalManager.m in Sources */,
-				C567BE721E48175800C7C79A /* AKDownloadListTableCell.m in Sources */,
 				C567BD331E48175800C7C79A /* AKHContentView.m in Sources */,
 				C567BD361E48175800C7C79A /* AKHScrollViewController.m in Sources */,
 				C567BD041E48175800C7C79A /* AKBaseRequest.m in Sources */,
-				C567BF1B1E48175900C7C79A /* RootMaskView.m in Sources */,
 				C567BF321E48175900C7C79A /* AKMediator+ShareModule.m in Sources */,
 				C567BF441E48175900C7C79A /* AKDBManager+User.m in Sources */,
 				C567BF561E48175900C7C79A /* XHSHomeModel.m in Sources */,
 				C567BEBB1E48175800C7C79A /* BookNovel.m in Sources */,
-				C567BE571E48175800C7C79A /* YProgressView.m in Sources */,
-				C567BEC71E48175800C7C79A /* YBookDetailModel.m in Sources */,
 				C5BFDEEF1E51C752003CFEC4 /* AKBaseModel.m in Sources */,
 				C567BE211E48175800C7C79A /* AKRequestManager+LoginModule.m in Sources */,
 				C567BF3E1E48175900C7C79A /* AKTableViewCell.m in Sources */,
@@ -3501,6 +3353,7 @@
 				C567BEB61E48175800C7C79A /* BookChapter.m in Sources */,
 				C567BD451E48175800C7C79A /* AKDownloadGroupModel.m in Sources */,
 				C567BD101E48175800C7C79A /* AppHelper.m in Sources */,
+				C529A7BF1E6FE89300B94FCE /* AKDownloadTableHandler.m in Sources */,
 				C567BF081E48175900C7C79A /* CustomPopupItem.m in Sources */,
 				C567BF161E48175900C7C79A /* CustomSliderView.m in Sources */,
 				C567BD2E1E48175800C7C79A /* AKBaseTableViewHandler.m in Sources */,
@@ -3511,17 +3364,20 @@
 				C567BF1D1E48175900C7C79A /* RootNavButton.m in Sources */,
 				C567BF0C1E48175900C7C79A /* MJChiBaoZiHeader.m in Sources */,
 				C567BF311E48175900C7C79A /* Aspect-ShareModule.m in Sources */,
+				C529A7C51E6FE89300B94FCE /* AKReaderViewController.m in Sources */,
 				C567BD1A1E48175800C7C79A /* AJWaveRefreshAnimation.m in Sources */,
 				C567BD191E48175800C7C79A /* AKTimerManager.m in Sources */,
 				C567BEE91E48175800C7C79A /* BookCollMainCell.m in Sources */,
-				C567BF1E1E48175900C7C79A /* RootStandardTableCell.m in Sources */,
 				C567BF3B1E48175900C7C79A /* AKCollectionViewCell.m in Sources */,
 				C567BEAA1E48175800C7C79A /* LRSlidingViewController.m in Sources */,
 				C567BE3D1E48175800C7C79A /* Images.m in Sources */,
 				C567BF331E48175900C7C79A /* ServiceShare.m in Sources */,
+				C529A7C61E6FE89300B94FCE /* YDirectoryViewCell.m in Sources */,
+				C529A7C41E6FE89300B94FCE /* AKHotNovelViewController.m in Sources */,
 				C573156C1E5432070099D9F7 /* AKDBManager+Book.m in Sources */,
 				C567BD3E1E48175800C7C79A /* NSString+SGHashString.m in Sources */,
 				C567BEB81E48175800C7C79A /* BookDocument.m in Sources */,
+				C529A7CC1E6FE89300B94FCE /* YSummaryViewController.m in Sources */,
 				C567BD0D1E48175800C7C79A /* UIView+Animation.m in Sources */,
 				C567BF5A1E48175900C7C79A /* OUNavAnimation.m in Sources */,
 				C567BF091E48175900C7C79A /* CustomPopupView.m in Sources */,
@@ -3550,7 +3406,6 @@
 				C567BF3A1E48175900C7C79A /* AKButton.m in Sources */,
 				C567BEEE1E48175800C7C79A /* BSNumbersView.m in Sources */,
 				C567BF461E48175900C7C79A /* AKDBManager+UserGroup.m in Sources */,
-				C567BEDE1E48175800C7C79A /* YBottomButton.m in Sources */,
 				C567BF361E48175900C7C79A /* AKSignalManager+ThemeModule.m in Sources */,
 				C567BD341E48175800C7C79A /* AKHScrollFlowLayout.m in Sources */,
 				C567BEA61E48175800C7C79A /* BackViewController.m in Sources */,
@@ -3559,30 +3414,26 @@
 				C5BFDEE71E51B54B003CFEC4 /* AKDBManager.m in Sources */,
 				C567BE501E48175800C7C79A /* AKPopupManager.m in Sources */,
 				C567BE261E48175800C7C79A /* AKLoginButton.m in Sources */,
+				C529A7BD1E6FE89300B94FCE /* BookDetailIntroduceCell.m in Sources */,
+				C529A7C81E6FE89300B94FCE /* YDirectoryViewController.m in Sources */,
 				C567BD3F1E48175800C7C79A /* SGCacheManager.m in Sources */,
+				C529A7D31E6FE89300B94FCE /* YMenuViewController.m in Sources */,
 				C567BE421E48175800C7C79A /* AKCustomTableHandler.m in Sources */,
-				C567BE6C1E48175800C7C79A /* BookDetailChapterCell.m in Sources */,
-				C567BEC81E48175800C7C79A /* YBookHelpfulModel.m in Sources */,
 				C5813C001E6034D500AD2F41 /* DLRadioButton.m in Sources */,
 				C567BD321E48175800C7C79A /* AKThemeManager+HSelectionList.m in Sources */,
 				C567BF111E48175900C7C79A /* OpenShare+QQ.m in Sources */,
 				C567BF3D1E48175900C7C79A /* AKLabel.m in Sources */,
 				C567BEF51E48175800C7C79A /* BVCropPhotoView.m in Sources */,
 				C567BD161E48175800C7C79A /* AKRequestManager.m in Sources */,
-				C567BECF1E48175800C7C79A /* YDateModel.m in Sources */,
 				C5E40D771E6EB03500FA8F71 /* AKReaderSetting.m in Sources */,
 				C567BE7D1E48175800C7C79A /* CoverPatternsViewController.m in Sources */,
-				C567BEBF1E48175800C7C79A /* AKReaderViewController.m in Sources */,
 				C567BE371E48175800C7C79A /* AKNewsViewController.m in Sources */,
 				C567BE771E48175800C7C79A /* Emoji.m in Sources */,
 				C567BD1B1E48175800C7C79A /* AJWaveRefreshAutoStateFooter.m in Sources */,
-				C567BE751E48175800C7C79A /* AKHotNovelHandler.m in Sources */,
-				C567BF171E48175900C7C79A /* CustomWebProgressView.m in Sources */,
 				C567BF571E48175900C7C79A /* AKWallpaperContentListAPI.m in Sources */,
 				C567BF051E48175900C7C79A /* CustomChooseCityModel.m in Sources */,
 				C567BD261E48175800C7C79A /* AKCollection3Layout.m in Sources */,
 				C567BE1F1E48175800C7C79A /* Aspect-LoggerModule.m in Sources */,
-				C567BE711E48175800C7C79A /* AKDownloadViewController.m in Sources */,
 				C567BE591E48175800C7C79A /* AKRequestManager+ReaderModule.m in Sources */,
 				C567BF541E48175900C7C79A /* DetailViewController.m in Sources */,
 				C567BF581E48175900C7C79A /* XHSHomeCell.m in Sources */,
@@ -3593,28 +3444,28 @@
 				C567BEA01E48175800C7C79A /* EnterNotesView.m in Sources */,
 				C567BF971E4826C400C7C79A /* AKPopupFromSideAction.m in Sources */,
 				C567BD231E48175800C7C79A /* AKChooseTagPanelView.m in Sources */,
+				C529A7B81E6FE89300B94FCE /* AKBookDetailViewController.m in Sources */,
 				C567BEED1E48175800C7C79A /* BSNumbersDataManager.m in Sources */,
 				C567BD201E48175800C7C79A /* AKChannelTagButton.m in Sources */,
 				C567BD2B1E48175800C7C79A /* AKProgressBarView.m in Sources */,
 				C567BD021E48175800C7C79A /* AKAppDelegate.m in Sources */,
 				C567BE351E48175800C7C79A /* AKSignalManager+NewsModule.m in Sources */,
-				C567BF181E48175900C7C79A /* WebViewController.m in Sources */,
 				C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */,
 				C567BEB11E48175800C7C79A /* Paging.m in Sources */,
+				C529A7B61E6FE89300B94FCE /* YProgressView.m in Sources */,
 				C567BE1D1E48175800C7C79A /* AKFileLogger.m in Sources */,
 				C567BEEB1E48175800C7C79A /* BSNumbersCollectionCell.m in Sources */,
 				C567BD461E48175800C7C79A /* AKDownloadModel.m in Sources */,
 				C567BE1E1E48175800C7C79A /* AKLoggerFormatter.m in Sources */,
 				C567BD311E48175800C7C79A /* AKWaterFallView.m in Sources */,
-				C5813BF71E60134300AD2F41 /* AKReaderMenuView.m in Sources */,
 				C567BE391E48175800C7C79A /* NSTimer+Addition.m in Sources */,
 				C567BE451E48175800C7C79A /* LoopInfoView.m in Sources */,
 				C567BEA51E48175800C7C79A /* AnimationViewController.m in Sources */,
 				C567BEBC1E48175800C7C79A /* BookSource.m in Sources */,
 				C567BF0D1E48175900C7C79A /* CustomRuleView.m in Sources */,
-				C567BECB1E48175800C7C79A /* YBookSummaryModel.m in Sources */,
 				C567BE3A1E48175800C7C79A /* AKNewsManager.m in Sources */,
 				C567BF071E48175900C7C79A /* CustomPickView.m in Sources */,
+				C529A7CA1E6FE89300B94FCE /* YSummaryViewCell.m in Sources */,
 				C567BF9D1E4827B900C7C79A /* AKPopupFromSideSpringAction.m in Sources */,
 				C567BD251E48175800C7C79A /* AKCollection2Layout.m in Sources */,
 				C567BF4B1E48175900C7C79A /* AKUserManager.m in Sources */,
@@ -3622,59 +3473,52 @@
 				C567BD271E48175800C7C79A /* AKCollectionFactory.m in Sources */,
 				C567BD211E48175800C7C79A /* AKChannelTagHeadView.m in Sources */,
 				C567BD151E48175800C7C79A /* AKMediator.m in Sources */,
+				C529A7D01E6FE89300B94FCE /* YBottomButton.m in Sources */,
 				C567BF8B1E481D9000C7C79A /* MMDateView.m in Sources */,
 				C567BF4A1E48175900C7C79A /* GVUserDefaults+UserModule.m in Sources */,
-				C567BE6A1E48175800C7C79A /* BookDetailBasicCell.m in Sources */,
 				C567BF191E48175900C7C79A /* MainCollectionView.m in Sources */,
 				C567BEF01E48175800C7C79A /* NSString+BSNumbersExtension.m in Sources */,
+				C529A7C11E6FE89300B94FCE /* AKDownloadListTableCell.m in Sources */,
 				C567BE241E48175800C7C79A /* ThirdLoginAPI.m in Sources */,
 				C57315701E5452CC0099D9F7 /* Aspect+ReaderModule.m in Sources */,
 				C567BEFB1E48175800C7C79A /* CustomNumbersLeftHeaderView.m in Sources */,
 				C567BE9F1E48175800C7C79A /* CursorView.m in Sources */,
+				C529A7B31E6FE89300B94FCE /* AKBookShelfViewController.m in Sources */,
 				C567BE201E48175800C7C79A /* AKMediator+LoginModule.m in Sources */,
 				C567BF3C1E48175900C7C79A /* AKImageView.m in Sources */,
 				C567BF0E1E48175900C7C79A /* CustomShareView.m in Sources */,
 				C567BEF31E48175800C7C79A /* CustomTremblingItem.m in Sources */,
 				C567BE4E1E48175800C7C79A /* SinglePicCollectCell.m in Sources */,
-				C567BECA1E48175800C7C79A /* YBookReviewModel.m in Sources */,
 				C567BEAE1E48175800C7C79A /* ReaderView.m in Sources */,
 				C567BEA21E48175800C7C79A /* MagnifyingGlassView.m in Sources */,
 				C567BD0B1E48175800C7C79A /* NSObject+DBPropertyListing.m in Sources */,
 				C567BF8D1E481D9000C7C79A /* MMPopupCategory.m in Sources */,
-				C567BE6E1E48175800C7C79A /* BookDetailIntroduceCell.m in Sources */,
 				C567BE4C1E48175800C7C79A /* NormalContentCell.m in Sources */,
 				C567BF4F1E48175900C7C79A /* AKUserGroupMember.m in Sources */,
-				C567BEDD1E48175800C7C79A /* YBatteryView.m in Sources */,
 				C567BE361E48175800C7C79A /* GVUserDefaults+NewsModule.m in Sources */,
 				C567BF511E48175900C7C79A /* ServiceUser.m in Sources */,
+				C529A7C31E6FE89300B94FCE /* AKHotNovelHandler.m in Sources */,
 				C567BD071E48175800C7C79A /* HexColor.m in Sources */,
-				C567BED21E48175800C7C79A /* YRecommendBookModel.m in Sources */,
 				C567BEF41E48175800C7C79A /* CustomTremblingView.m in Sources */,
-				C567BED01E48175800C7C79A /* YRankingModel.m in Sources */,
 				C567BEBE1E48175800C7C79A /* AKReaderHotListAPI.m in Sources */,
 				C567BF451E48175900C7C79A /* AKDBManager+UserDetail.m in Sources */,
 				C567BF011E48175900C7C79A /* CustomNumbersView.m in Sources */,
 				C5E40D701E6EA92900FA8F71 /* AKLanguageHelper.m in Sources */,
-				C567BEC61E48175800C7C79A /* YBookAuthorModel.m in Sources */,
-				C567BECE1E48175800C7C79A /* YChaptersLinkModel.m in Sources */,
 				C567BEB21E48175800C7C79A /* AKReaderManager.m in Sources */,
 				C567BD111E48175800C7C79A /* DeviceHelper.m in Sources */,
 				C567BD171E48175800C7C79A /* AKResourceManager.m in Sources */,
 				C567BF101E48175900C7C79A /* OpenShare+Alipay.m in Sources */,
-				C567BEC11E48175800C7C79A /* YDirectoryViewCell.m in Sources */,
-				C567BEC91E48175800C7C79A /* YBookModel.m in Sources */,
 				C567BF121E48175900C7C79A /* OpenShare+Renren.m in Sources */,
 				C567BE481E48175800C7C79A /* BigImgContentCell.m in Sources */,
 				C567BD421E48175800C7C79A /* SGDownloadOperation.m in Sources */,
-				C52355CD1E6E773700736E95 /* AKAutoReadSettingView.m in Sources */,
 				C567BF141E48175900C7C79A /* OpenShare+Weixin.m in Sources */,
-				C567BEE41E48175800C7C79A /* YMenuViewController.m in Sources */,
 				C567BEF81E48175800C7C79A /* CustomNineImageView.m in Sources */,
 				C567BD301E48175800C7C79A /* AKCollectionHandler.m in Sources */,
 				C567BD121E48175800C7C79A /* FileHelper.m in Sources */,
-				C567BED51E48175800C7C79A /* YSummaryViewCell.m in Sources */,
+				C529A7B91E6FE89300B94FCE /* BookDetailBasicCell.m in Sources */,
 				C567BF021E48175900C7C79A /* CustomSearchView.m in Sources */,
 				C567BD411E48175800C7C79A /* SGDownloadManager.m in Sources */,
+				C529A7CF1E6FE89300B94FCE /* AKReaderMenuView.m in Sources */,
 				C567BD131E48175800C7C79A /* AKDataCenter.m in Sources */,
 				C567BEAC1E48175800C7C79A /* PageGenerationFooter.m in Sources */,
 				C567BE221E48175800C7C79A /* AKLoginViewController.m in Sources */,
@@ -3682,19 +3526,19 @@
 				C567BF031E48175900C7C79A /* CustomSearchViewController.m in Sources */,
 				C567BEB31E48175800C7C79A /* Book.m in Sources */,
 				C567BE661E48175800C7C79A /* RootViewController.m in Sources */,
+				C529A7BB1E6FE89300B94FCE /* BookDetailChapterCell.m in Sources */,
 				C567BE7C1E48175800C7C79A /* AutomaticReadingViewController.m in Sources */,
 				C567BE3C1E48175800C7C79A /* Content.m in Sources */,
 				C567BD441E48175800C7C79A /* AKDownloadManager.m in Sources */,
 				C567BEAD1E48175800C7C79A /* PageGenerationHeader.m in Sources */,
-				C567BE691E48175800C7C79A /* AKBookDetailViewController.m in Sources */,
 				C5BFDEEC1E51B615003CFEC4 /* NSString+Tools.m in Sources */,
 				C5EA4DC31E5580C30047A519 /* AKSignalManager+ReaderModule.m in Sources */,
 				C567BEB91E48175800C7C79A /* BookEveryUrl.m in Sources */,
 				C567BEA31E48175800C7C79A /* NoteContentButton.m in Sources */,
-				C567BED11E48175800C7C79A /* YRecommendBookListModel.m in Sources */,
 				C567BEF61E48175800C7C79A /* DVCropViewController.m in Sources */,
 				C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */,
 				C567BF381E48175900C7C79A /* AKNavigationController.m in Sources */,
+				C529A7D11E6FE89300B94FCE /* YThemeViewCell.m in Sources */,
 				C5813C091E60610400AD2F41 /* TBSlidingViewController.m in Sources */,
 				C567BD2A1E48175800C7C79A /* AKMJRefreshHeader.m in Sources */,
 				C567BE471E48175800C7C79A /* TopLoopView.m in Sources */,
@@ -3704,28 +3548,28 @@
 				C567BD351E48175800C7C79A /* AKHScrollTitleLabel.m in Sources */,
 				C567BEBD1E48175800C7C79A /* AKBookDetailAPI.m in Sources */,
 				C567BE4A1E48175800C7C79A /* MultiPictureContentCell.m in Sources */,
-				C567BE551E48175800C7C79A /* YBookViewCell.m in Sources */,
-				C567BE681E48175800C7C79A /* AKBookDetailHandler.m in Sources */,
 				C567BD3C1E48175800C7C79A /* HSDownloadManager.m in Sources */,
 				C567BE3F1E48175800C7C79A /* AKNewsContentListAPI.m in Sources */,
 				C567BD221E48175800C7C79A /* AKChannelTagView.m in Sources */,
 				C567BE381E48175800C7C79A /* HWWeakTimer.m in Sources */,
 				C567BD061E48175800C7C79A /* AKTimer.m in Sources */,
 				C57315741E556F8B0099D9F7 /* LocationHelper.m in Sources */,
-				C567BE531E48175800C7C79A /* AKBookShelfHandler.m in Sources */,
+				C529A7B41E6FE89300B94FCE /* YBookViewCell.m in Sources */,
 				C567BE781E48175800C7C79A /* EmojiEmoticons.m in Sources */,
 				C567BD051E48175800C7C79A /* AKBaseViewController.m in Sources */,
 				C567BD0E1E48175800C7C79A /* UIView+Frame.m in Sources */,
+				C529A7C01E6FE89300B94FCE /* AKDownloadViewController.m in Sources */,
 				C567BF8E1E481D9000C7C79A /* MMPopupItem.m in Sources */,
 				C567BD0A1E48175800C7C79A /* NSObject+CategoryWithProperty.m in Sources */,
 				C567BE791E48175800C7C79A /* EmojiMapSymbols.m in Sources */,
 				C567BD281E48175800C7C79A /* AKCollectionLayout.m in Sources */,
+				C529A7B71E6FE89300B94FCE /* AKBookDetailHandler.m in Sources */,
 				C567BF351E48175900C7C79A /* Aspect-ThemeModule.m in Sources */,
 				C567BF371E48175900C7C79A /* UINavigationBar+ThemeModule.m in Sources */,
+				C529A7CE1E6FE89300B94FCE /* AKAutoReadSettingView.m in Sources */,
 				C567BE401E48175800C7C79A /* ChannelListAPI.m in Sources */,
 				C567BEAF1E48175800C7C79A /* ReaderViewController.m in Sources */,
 				C567BD0F1E48175800C7C79A /* AKTabbarControllerFactory.m in Sources */,
-				C567BEE21E48175800C7C79A /* YThemeViewCell.m in Sources */,
 				C567BEA81E48175800C7C79A /* NoAnimationViewController.m in Sources */,
 				C567BD2F1E48175800C7C79A /* AKBaseCollectionView.m in Sources */,
 				C567BEA41E48175800C7C79A /* NotesMenuView.m in Sources */,
@@ -3734,10 +3578,7 @@
 				C567BE7B1E48175800C7C79A /* EmojiTransport.m in Sources */,
 				C567BEFE1E48175800C7C79A /* CustomNumbersPlainFlowLayout.m in Sources */,
 				C567BE7E1E48175800C7C79A /* ScrollModeViewController.m in Sources */,
-				C567BEC01E48175800C7C79A /* YSQLiteManager.m in Sources */,
 				C567BE431E48175800C7C79A /* AKCustomTableView.m in Sources */,
-				C567BE761E48175800C7C79A /* AKHotNovelViewController.m in Sources */,
-				C567BEC31E48175800C7C79A /* YDirectoryViewController.m in Sources */,
 				C567BD091E48175800C7C79A /* NSFileManager+Paths.m in Sources */,
 				C5E40D7C1E6EB67100FA8F71 /* ReaderEngineThemeFactory.m in Sources */,
 				C567BEAB1E48175800C7C79A /* ReaderEngineManager.m in Sources */,
@@ -3749,9 +3590,6 @@
 				C567BE271E48175800C7C79A /* AKLoginButtonGroup.m in Sources */,
 				C567BF6D1E481A6B00C7C79A /* AKBasePopupView.m in Sources */,
 				C567BF131E48175900C7C79A /* OpenShare+Weibo.m in Sources */,
-				C567BED71E48175800C7C79A /* YSummaryViewController.m in Sources */,
-				C567BE541E48175800C7C79A /* AKBookShelfViewController.m in Sources */,
-				C567BED41E48175800C7C79A /* YURLManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -65,6 +65,7 @@
     self.bookmarkView.hidden = !bookmarkState;
 }
 
+
 #pragma mark - 添加点击手势
 - (void)add_TapGestureRecognizer {
     // 如果手势存在，就移除

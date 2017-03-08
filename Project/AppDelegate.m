@@ -88,6 +88,7 @@
     UITabBar *tabBarAppearance = [UITabBar appearance];
     [tabBarAppearance setBackgroundColor:[HXColor colorWithHexString:@"#ffffff"]];
 
+    [AppHelper setStatusBarFontColor:[HXColor colorWithHexString:@"#ffffff"]];
 }
 
 

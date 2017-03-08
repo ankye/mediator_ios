@@ -215,7 +215,42 @@
     return state;
 }
 
+/**
+ 设置状态栏背景颜色
+ 
+ @param color 颜色
+ */
++ (void)setStatusBarBackgroundColor:(UIColor *)color
+{
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)])
+    {
+        statusBar.backgroundColor = color;
+    }
+}
 
+/**
+ 设置状态栏字体颜色
+ 
+ @param color 颜色
+ */
++ (BOOL)setStatusBarFontColor:(UIColor *)color
+{
+    id statusBarWindow = [[UIApplication sharedApplication] valueForKey:@"statusBarWindow"];
+    id statusBar = [statusBarWindow valueForKey:@"statusBar"];
+    
+    SEL setForegroundColor_sel = NSSelectorFromString(@"setForegroundColor:");
+    if([statusBar respondsToSelector:setForegroundColor_sel]) {
+        // iOS 7+
+    //    [statusBar performSelector:setForegroundColor_sel withObject:color];这个会有警告，为了消除警告使用了下方替代方法
+        IMP imp = [statusBar methodForSelector:setForegroundColor_sel];
+        void (*func)(id, SEL,id) = (void *)imp;
+        func(statusBar, setForegroundColor_sel,color);
+        return YES;
+    }
+    return NO;
 
+}
 
 @end

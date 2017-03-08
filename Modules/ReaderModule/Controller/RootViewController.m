@@ -34,6 +34,24 @@
 
 }
 
+- (BOOL)prefersStatusBarHidden
+{
+    return NO;
+}
+
+//Interface的方向是否会跟随设备方向自动旋转，如果返回NO,后两个方法不会再调用
+- (BOOL)shouldAutorotate {
+    return YES;
+}
+//返回直接支持的方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskAll ;
+}
+//返回最优先显示的屏幕方向
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeLeft;
+}
+
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -48,6 +66,7 @@
 //        _requestUtil.delegate=self;
 //    }
 }
+
 
 - (void)didReceiveMemoryWarning{
     NSLog(@"%@-------->内存溢出",NSStringFromClass([self class]));

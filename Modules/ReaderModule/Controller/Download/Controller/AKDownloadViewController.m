@@ -48,6 +48,13 @@
     _tableView.enableLoadNew = NO;
     [self.view addSubview:_tableView];
     
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self.view);
+        make.top.mas_offset(SCREEN_NAV_HEIGHT);
+    }];
+
+    
+    
 }
 
 -(void)setupHandler

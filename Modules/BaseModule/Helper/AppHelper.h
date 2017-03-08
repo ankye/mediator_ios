@@ -111,7 +111,18 @@
 +(NSString *)getNetWorkStates;
 
 
-//简体转化为繁体 
+/**
+ 设置状态栏背景颜色
 
+ @param color 颜色
+ */
++ (void)setStatusBarBackgroundColor:(UIColor *)color;
+
+/**
+ 设置状态栏字体颜色
+ 
+ @param color 颜色
+ */
++ (BOOL)setStatusBarFontColor:(UIColor *)color;
 
 @end

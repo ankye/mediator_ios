@@ -39,6 +39,10 @@
     self.navigationItem.leftBarButtonItem = leftBi;
     
 }
+
+
+
+
 -(void)downloadManagerBtnClick
 {
     AKDownloadViewController *controller = [AKDownloadViewController new];

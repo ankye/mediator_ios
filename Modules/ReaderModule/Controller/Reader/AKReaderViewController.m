@@ -63,7 +63,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+    
     [self setupNav];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientChange:) name:UIDeviceOrientationDidChangeNotification object:nil];
     
     _notesModelArr                            = [NSMutableArray array];
     self.automaticReadingSpeed                                     = 1;
@@ -98,6 +101,18 @@
         make.edges.equalTo(self.view);
     }];
     [self setupViews];
+
+}
+-(void)dealloc
+{
+     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+- (void)orientChange:(NSNotification *)notification
+{
+    
+    [self changeRectView];
+    [_pageGenerationManager refreshViewController];
 
 }
 
@@ -203,6 +218,11 @@
 }
 
 
+-(void)changeRectView
+{
+    
+    self.pageGenerationManager.pageRect = CGRectMake(15, 53, [[UIScreen mainScreen] bounds].size.width - 30, [[UIScreen mainScreen] bounds].size.height - 106);
+}
 
 
 - (void)speedButton:(NSInteger)tag {
@@ -344,6 +364,8 @@
 -(void)setupViews
 {
  
+     self.view.backgroundColor = [UIColor colorWithPatternImage:[AKReaderSetting sharedInstance].themeImage];
+    
     [self setupMenuView];
 
     if(_book && _book.bookChapters.count == 0){
@@ -491,6 +513,8 @@
                 break;
             case 700:{  //刷新主题
                 wself.pageGenerationManager.backgroundImage = [AKReaderSetting sharedInstance].themeImage;
+                wself.view.backgroundColor = [UIColor colorWithPatternImage:[AKReaderSetting sharedInstance].themeImage];
+
                 [wself.pageGenerationManager refreshViewController];
             }
             default:

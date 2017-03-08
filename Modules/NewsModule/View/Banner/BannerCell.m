@@ -47,7 +47,7 @@
 - (void)tapingCurrentIndex:(NSInteger)currentIndex
 {
     NSLog(@"TopLoopViewDelegate tapingCurrentIndex : %@", @(currentIndex)) ;
-    Content *content = (Content *)[self.loopScroll getCenterImageInfo] ;
+   // Content *content = (Content *)[self.loopScroll getCenterImageInfo] ;
   //  [self.delegate selectContentInBanner:content] ;
 }
 

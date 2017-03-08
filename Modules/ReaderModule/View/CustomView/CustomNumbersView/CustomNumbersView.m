@@ -102,7 +102,7 @@
             }
         }
         
-        static NSString * identifier = @"CustomNumbersCell";
+      //  static NSString * identifier = @"CustomNumbersCell";
         CustomNumbersCell * numbersCell = nil;// [collectionView collectionViewCellByNibWithIdentifier:identifier andIndexPath:indexPath];
         NSString * text = @"";
         if (self.topKey) {
@@ -121,7 +121,7 @@
             }
         }
         
-        static NSString * identifier = @"CustomNumbersCell";
+      //  static NSString * identifier = @"CustomNumbersCell";
         CustomNumbersCell * numbersCell = nil;// [collectionView collectionViewCellByNibWithIdentifier:identifier andIndexPath:indexPath];
         
         CustomNumbersModel * con = self.leftDataArray[indexPath.section];

@@ -11,8 +11,7 @@
 @class AnimationViewController;
 
 // 全局变量
-#define kScreenWidth                     ([[UIScreen mainScreen] bounds].size.width)
-#define kScreenHeight                    ([[UIScreen mainScreen] bounds].size.height)
+
 #define AnimationViewControllerTime      0.35f
 
 @protocol AnimationViewControllerDelegate <NSObject>

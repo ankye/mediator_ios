@@ -15,7 +15,7 @@
 /**
  *  绘制底线
  *
- *  @param color 底线颜色
+ *  @param colorIndex 底线颜色
  */
 - (void)drawBottomLineColor:(NSInteger)colorIndex;
 

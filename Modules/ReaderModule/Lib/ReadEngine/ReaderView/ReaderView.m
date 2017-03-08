@@ -8,7 +8,7 @@
 
 #import "ReaderView.h"
 #import <CoreText/CoreText.h>
-#import <AVFoundation/AVSpeechSynthesis.h>
+
 #import "MagnifyingGlassView.h"
 #import "NotesMenuView.h"
 #import "CursorView.h"

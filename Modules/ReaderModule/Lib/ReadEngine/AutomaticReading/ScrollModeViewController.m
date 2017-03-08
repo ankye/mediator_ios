@@ -197,9 +197,9 @@
     _currentImageView = _nextImageView;
     
     // 4、第二页指向第三页
-    if (!_thirdPageImageView) {
-        int i = 0;
-    }
+//    if (!_thirdPageImageView) {
+//        int i = 0;
+//    }
     _nextImageView = _thirdPageImageView;
     _thirdPageImageView = nil;
     

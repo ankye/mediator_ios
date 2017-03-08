@@ -29,7 +29,6 @@ typedef enum {
 /**
  *  获取章内容 返回的是内容
  *
- *  @param pageGenerationManager 当前控制器
  *  @param dataSourceTag         数据源标记，上一章，当前章，下一章
  *
  *  @return 章节内容字符串
@@ -39,7 +38,6 @@ typedef enum {
 /**
  *  获取章内容 返回的是文件地址
  *
- *  @param pageGenerationManager 当前控制器
  *  @param dataSourceTag         数据源标记，上一章，当前章，下一章
  *
  *  @return 章节地址

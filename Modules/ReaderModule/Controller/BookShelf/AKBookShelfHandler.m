@@ -250,7 +250,7 @@
 
 
 -(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Book *editBook = [AKReaderManager sharedInstance].bookShelf[indexPath.row];
+   // Book *editBook = [AKReaderManager sharedInstance].bookShelf[indexPath.row];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"删除" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         NSLog(@"点击了删除");
         [tableView setEditing:NO animated:YES];

@@ -41,9 +41,6 @@
 /**
  *  是否能处理这个openUrl，如果能就返回YES，并且按照callback处理，否则返回NO，交给下一个处理。
  *
- *  @param url     openURL
- *  @param success success callback
- *  @param fail    fail callback
  *
  *  @return 是否能处理给定的url
  */

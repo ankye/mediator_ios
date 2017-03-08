@@ -51,15 +51,17 @@ typedef NS_ENUM(NSInteger, AutomaticReadingTypes) {
 @property (nonatomic, assign) NSInteger             speed; // 自动阅读速度
 @property (nonatomic, assign) AutomaticReadingTypes automaticReadingTypes; // 自动阅读模式
 
+
+
 /**
- *  创建自动阅读控制器
- *
- *  @param currentViewController 当前展示视图控制器
- *  @param nextViewController    下一个展示视图控制器
- *  @param topHeight             距离顶部高度
- *  @param bottomHeight          距离底部高度
- *
- *  @return 自动阅读控制器
+ 创建自动阅读控制器
+
+ @param currentViewController 当前展示视图控制器
+ @param topHeight 距离顶部高度
+ @param bottomHeight 距离底部高度
+ @param automaticReadingTypes 阅读动画类型
+ @param speed 滑动速度
+ @return 自动阅读控制器
  */
 + (AutomaticReadingViewController *)shareAutomaticReadingViewController:(UIViewController *)currentViewController topHeight:(CGFloat)topHeight bottomHeight:(CGFloat)bottomHeight automaticReadingTypes:(AutomaticReadingTypes)automaticReadingTypes speed:(NSInteger)speed;
 

@@ -42,6 +42,8 @@
 @implementation CustomShareView
 
 - (void)awakeFromNib{
+    [super awakeFromNib];
+    
     self.shareContainerView.layer.masksToBounds=YES;
     self.shareContainerView.layer.cornerRadius=10;
     

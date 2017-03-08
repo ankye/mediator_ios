@@ -22,6 +22,7 @@
 #pragma mark - Override
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     [self setup];
 }
 

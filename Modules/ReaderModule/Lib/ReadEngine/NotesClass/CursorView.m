@@ -44,15 +44,16 @@
 }
 /**
  @method 获取指定宽度情况ixa，字符串value的高度
- @param value 待计算的字符串
  @param fontSize 字体的大小
- @param andWidth 限制字符串显示区域的宽度
  @result float 返回的高度
  */
 - (float) heightForFontSize:(float)fontSize
 {
 
-    CGSize sizeToFit = [@"追书猫" sizeWithFont:[UIFont systemFontOfSize:fontSize] constrainedToSize:CGSizeMake(100.0f, CGFLOAT_MAX) lineBreakMode:UILineBreakModeWordWrap];//此处的换行类型（lineBreakMode）可根据自己的实际情况进行设置
+    NSString* title = [NSString stringWithFormat:@"%@",@"追书猫"];
+    
+    CGSize sizeToFit = [title boundingRectWithSize:CGSizeMake(100.0f, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:fontSize]} context:nil].size;
+    
     return sizeToFit.height;
 }
 

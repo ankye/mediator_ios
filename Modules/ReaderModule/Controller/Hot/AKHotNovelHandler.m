@@ -204,7 +204,7 @@
     if(self.handlerDelegate && [self.handlerDelegate respondsToSelector:@selector(didSelectSection:withRow:withContent:)]){
         [self.handlerDelegate didSelectSection:indexPath.section withRow:indexPath.row withContent:book];
     }
-    NSLog(@"click row : %ld",indexPath.row) ;
+    NSLog(@"click row : %ld",(long)indexPath.row) ;
 
 }
 

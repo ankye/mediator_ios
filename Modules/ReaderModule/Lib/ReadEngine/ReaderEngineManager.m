@@ -363,7 +363,7 @@
                 _currentPage --;
             }
         } else {
-            NSLog(@"%ld",_currentPage);
+            NSLog(@"%ld",(long)_currentPage);
             // 如果向前翻页，则向后恢复数据
             if (self.isNewDataSource) {
                 // 回滚到下一章，当前指针指向第一页
@@ -372,7 +372,7 @@
             } else {
                 _currentPage ++;
             }
-            NSLog(@"%ld",_currentPage);
+            NSLog(@"%ld",(long)_currentPage);
         }
     }
     self.isNewDataSource = NO;

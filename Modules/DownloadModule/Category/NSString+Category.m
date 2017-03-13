@@ -15,7 +15,7 @@
 @implementation NSString (Category)
 
 + (NSString *)stringWithCountNumFormatByInteger:(NSInteger)num{
-    return [self stringWithCountNumFormatByString:[NSString stringWithFormat:@"%ld",num]];
+    return [self stringWithCountNumFormatByString:[NSString stringWithFormat:@"%ld",(long)num]];
 }
 
 + (NSString *)stringWithCountNumFormatByString:(NSString *)num{
@@ -56,9 +56,9 @@
     double i2=(b?[tmpArray[1] doubleValue]:0)/num;
     
     if (decimalDigits==0) {
-        [retStr appendFormat:@"%ld",(NSInteger)i1];
+        [retStr appendFormat:@"%ld",(long)i1];
         if (b) {
-            [retStr appendFormat:@"-%ld",(NSInteger)i2];
+            [retStr appendFormat:@"-%ld",(long)i2];
         }
     }else if (decimalDigits==1){
         [retStr appendFormat:@"%.1f",i1];

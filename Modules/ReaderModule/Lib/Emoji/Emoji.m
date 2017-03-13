@@ -25,8 +25,8 @@
     [array addObjectsFromArray:[EmojiMapSymbols allMapSymbols]];
     [array addObjectsFromArray:[EmojiPictographs allPictographs]];
     [array addObjectsFromArray:[EmojiTransport allTransport]];
-    NSLog(@"-------->%ld",array.count);
-    NSLog(@"-------->%ld",[array description].length);
+    NSLog(@"-------->%ld",(unsigned long)array.count);
+    NSLog(@"-------->%ld",(unsigned long)[array description].length);
     
     NSString * value;
     NSDate * date=[NSDate date];//起始时间

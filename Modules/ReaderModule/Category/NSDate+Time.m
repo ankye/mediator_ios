@@ -38,25 +38,25 @@
                         if(millSecond==currentmillSecond){
                             time = @"刚刚发布";
                         }else{
-                            time = [NSString stringWithFormat:@"%ld秒前",currentmillSecond-millSecond];
+                            time = [NSString stringWithFormat:@"%ld秒前",(long)(currentmillSecond-millSecond)];
                         }
                     }else if(currentminute-minute==1){
                         if(currentmillSecond-millSecond>0){
                             time = @"1分钟前";
                         }else{
-                            time = [NSString stringWithFormat:@"%ld秒前",currentmillSecond+(60-millSecond)];
+                            time = [NSString stringWithFormat:@"%ld秒前",(long)(currentmillSecond+(60-millSecond))];
                         }
                     }else{
-                        time = [NSString stringWithFormat:@"%ld分钟前",currentminute-minute-1];
+                        time = [NSString stringWithFormat:@"%ld分钟前",(long)(currentminute-minute-1)];
                     }
                 }else if(currenthour-hour==1){
                     if(currentminute-minute>0){
                         time = @"1小时前";
                     }else{
-                        time = [NSString stringWithFormat:@"%ld分钟前",currentminute+(60-minute)];
+                        time = [NSString stringWithFormat:@"%ld分钟前",(long)(currentminute+(60-minute))];
                     }
                 }else{
-                    time = [NSString stringWithFormat:@"%ld小时前",currenthour-hour-1];
+                    time = [NSString stringWithFormat:@"%ld小时前",(long)(currenthour-hour-1)];
                 }
             }else if(currentday-day==1){
                 if (currenthour-hour>0) {

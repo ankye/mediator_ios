@@ -48,7 +48,7 @@ NSString * const SGDownloadCompleteNoti = @"SGDownloadCompleteNoti";
 #pragma mark - operations
 // 接收到相应时
 - (void)sg_didReceiveResponse:(NSURLResponse *)response {
-    self.totalSize = self.currentSize + response.expectedContentLength;
+    self.totalSize = (long)(self.currentSize + response.expectedContentLength);
     
     // 创建空的文件夹
     if (self.currentSize == 0) {

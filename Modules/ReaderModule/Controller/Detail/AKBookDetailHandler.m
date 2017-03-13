@@ -157,7 +157,7 @@
         
         BookChapter * bookChapter = _book.bookChapters[indexPath.row];
         
-        cell.indexLabel.text = [NSString stringWithFormat:@"%ld.",indexPath.row+1];
+        cell.indexLabel.text = [NSString stringWithFormat:@"%ld.",(long)(indexPath.row+1)];
         
         cell.chapterNameLabel.text = bookChapter.name;
         

@@ -896,13 +896,13 @@
     for (NSMutableDictionary *dic in _bottomLineArr) {
         NSString *selectedContentStr = dic[@"selectedContentStr"];
         if ([selectedContentStr isEqualToString:enterSelectedContentStr]) {
-            dic[@"color"] = [NSString stringWithFormat:@"%ld",colorIndex];
+            dic[@"color"] = [NSString stringWithFormat:@"%ld",(long)colorIndex];
             [self resetting];
             [self.delegate readerViewAddNotes:self notesContentDic:dic];
             return;
         }
     }
-    self.notesMenuView.notesContentDic[@"color"] = [NSString stringWithFormat:@"%ld",colorIndex];
+    self.notesMenuView.notesContentDic[@"color"] = [NSString stringWithFormat:@"%ld",(long)colorIndex];
     // 不存在，就创建，并且调起笔记编辑框
     [self notesMenuViewNotes:_notesMenuView];
 }

@@ -149,7 +149,7 @@
     // 获得服务器这次请求 返回数据的总长度
     NSInteger totalLength = [response.allHeaderFields[@"Content-Length"] integerValue] + MPDownloadLength(self.sessionModel.urlString,self.sessionModel.fileGroup);
     self.sessionModel.totalLength = totalLength;
-    NSLog(@"total receive %ld",[response.allHeaderFields[@"Content-Length"] integerValue] );
+    NSLog(@"total receive %ld",(long)([response.allHeaderFields[@"Content-Length"] integerValue]) );
     // 存储总长度
     NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:MPTotalLengthFullpath];
     if (dict == nil) dict = [NSMutableDictionary dictionary];
@@ -167,7 +167,7 @@
     [self.sessionModel.stream write:data.bytes maxLength:data.length];
     // 下载进度
     NSUInteger receivedSize = MPDownloadLength(self.sessionModel.urlString,self.sessionModel.fileGroup);
-    NSUInteger expectedSize = self.sessionModel.totalLength;
+    NSUInteger expectedSize = (long) self.sessionModel.totalLength;
     CGFloat progress = 1.0 * receivedSize / expectedSize;
 //    if (self.downloadProgressBlock) {
 //        dispatch_async(dispatch_get_main_queue(), ^{

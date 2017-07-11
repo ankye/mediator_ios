@@ -49,6 +49,53 @@
 		C529A7D91E6FE91D00B94FCE /* BookCollMainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C529A7D71E6FE91D00B94FCE /* BookCollMainCell.m */; };
 		C529A7DA1E6FE91D00B94FCE /* BookCollMainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C529A7D81E6FE91D00B94FCE /* BookCollMainCell.xib */; };
 		C538066E1DE7327900A2322D /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C538066D1DE7327900A2322D /* libsqlite3.tbd */; };
+		C558F0851F135BA5005ACBD1 /* AKPopupAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0841F135BA5005ACBD1 /* AKPopupAttributes.m */; };
+		C558F0881F1485AA005ACBD1 /* AKPopupFadeAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0871F1485AA005ACBD1 /* AKPopupFadeAction.m */; };
+		C558F0F81F14AFC4005ACBD1 /* ALDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F08F1F14AFC4005ACBD1 /* ALDatabase.m */; };
+		C558F0F91F14AFC4005ACBD1 /* ALDBMigrationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0921F14AFC4005ACBD1 /* ALDBMigrationHelper.m */; };
+		C558F0FA1F14AFC4005ACBD1 /* ALFMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0951F14AFC4005ACBD1 /* ALFMDatabaseQueue.m */; };
+		C558F0FB1F14AFC4005ACBD1 /* ALSQLClause+SQLFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0991F14AFC4005ACBD1 /* ALSQLClause+SQLFunctions.m */; };
+		C558F0FC1F14AFC4005ACBD1 /* ALSQLClause+SQLOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F09B1F14AFC4005ACBD1 /* ALSQLClause+SQLOperation.m */; };
+		C558F0FD1F14AFC4005ACBD1 /* ALSQLClause.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F09D1F14AFC4005ACBD1 /* ALSQLClause.m */; };
+		C558F0FE1F14AFC4005ACBD1 /* ALSQLDeleteStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0A11F14AFC4005ACBD1 /* ALSQLDeleteStatement.m */; };
+		C558F0FF1F14AFC4005ACBD1 /* ALSQLInsertStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0A31F14AFC4005ACBD1 /* ALSQLInsertStatement.m */; };
+		C558F1001F14AFC4005ACBD1 /* ALSQLSelectStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0A51F14AFC4005ACBD1 /* ALSQLSelectStatement.m */; };
+		C558F1011F14AFC4005ACBD1 /* ALSQLStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0A71F14AFC4005ACBD1 /* ALSQLStatement.m */; };
+		C558F1021F14AFC4005ACBD1 /* ALSQLUpdateStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0A91F14AFC4005ACBD1 /* ALSQLUpdateStatement.m */; };
+		C558F1031F14AFC4005ACBD1 /* AL_URLHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0AC1F14AFC4005ACBD1 /* AL_URLHelper.m */; };
+		C558F1041F14AFC4005ACBD1 /* BlocksKitExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0AE1F14AFC4005ACBD1 /* BlocksKitExtension.m */; };
+		C558F1051F14AFC4005ACBD1 /* NSArray+ArrayExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0B01F14AFC4005ACBD1 /* NSArray+ArrayExtensions.m */; };
+		C558F1061F14AFC4005ACBD1 /* NSBundle+ALBundleInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0B21F14AFC4005ACBD1 /* NSBundle+ALBundleInfo.m */; };
+		C558F1071F14AFC4005ACBD1 /* NSCache+ALExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0B41F14AFC4005ACBD1 /* NSCache+ALExtensions.m */; };
+		C558F1081F14AFC4005ACBD1 /* NSDate+ALExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0B61F14AFC4005ACBD1 /* NSDate+ALExtensions.m */; };
+		C558F1091F14AFC4005ACBD1 /* NSString+ALHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0B81F14AFC4005ACBD1 /* NSString+ALHelper.m */; };
+		C558F10A1F14AFC4005ACBD1 /* AL_Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0BB1F14AFC4005ACBD1 /* AL_Base64.m */; };
+		C558F10B1F14AFC5005ACBD1 /* AL_CRC.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0BD1F14AFC4005ACBD1 /* AL_CRC.m */; };
+		C558F10C1F14AFC5005ACBD1 /* AL_DES.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0BF1F14AFC4005ACBD1 /* AL_DES.m */; };
+		C558F10D1F14AFC5005ACBD1 /* AL_JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0C11F14AFC4005ACBD1 /* AL_JSON.m */; };
+		C558F10E1F14AFC5005ACBD1 /* AL_MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0C31F14AFC4005ACBD1 /* AL_MD5.m */; };
+		C558F10F1F14AFC5005ACBD1 /* AL_RC4.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0C51F14AFC4005ACBD1 /* AL_RC4.m */; };
+		C558F1101F14AFC5005ACBD1 /* AL_SHA1.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0C71F14AFC4005ACBD1 /* AL_SHA1.m */; };
+		C558F1111F14AFC5005ACBD1 /* ALAssociatedWeakObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0C91F14AFC4005ACBD1 /* ALAssociatedWeakObject.m */; };
+		C558F1121F14AFC5005ACBD1 /* ALDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0CB1F14AFC4005ACBD1 /* ALDevice.m */; };
+		C558F1131F14AFC5005ACBD1 /* ALLock.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0CD1F14AFC4005ACBD1 /* ALLock.m */; };
+		C558F1141F14AFC5005ACBD1 /* ALLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0CF1F14AFC4005ACBD1 /* ALLogger.m */; };
+		C558F1151F14AFC5005ACBD1 /* ALOCRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0D11F14AFC4005ACBD1 /* ALOCRuntime.m */; };
+		C558F1161F14AFC5005ACBD1 /* ALOrderedMap.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0D31F14AFC4005ACBD1 /* ALOrderedMap.m */; };
+		C558F1171F14AFC5005ACBD1 /* ALStringInflector.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0D51F14AFC4005ACBD1 /* ALStringInflector.m */; };
+		C558F1181F14AFC5005ACBD1 /* HHTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0D81F14AFC4005ACBD1 /* HHTimer.m */; };
+		C558F1191F14AFC5005ACBD1 /* SafeBlocksChain.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0DA1F14AFC4005ACBD1 /* SafeBlocksChain.m */; };
+		C558F11A1F14AFC5005ACBD1 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C558F0DC1F14AFC4005ACBD1 /* Info.plist */; };
+		C558F11B1F14AFC5005ACBD1 /* __ALModel+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0DF1F14AFC4005ACBD1 /* __ALModel+ActiveRecord.m */; };
+		C558F11C1F14AFC5005ACBD1 /* ALDBColumnInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0E21F14AFC4005ACBD1 /* ALDBColumnInfo.m */; };
+		C558F11D1F14AFC5005ACBD1 /* ALModel+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0E41F14AFC4005ACBD1 /* ALModel+ActiveRecord.m */; };
+		C558F11E1F14AFC5005ACBD1 /* ALModel+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0E61F14AFC4005ACBD1 /* ALModel+JSON.m */; };
+		C558F11F1F14AFC5005ACBD1 /* ALModel_Define.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0E91F14AFC4005ACBD1 /* ALModel_Define.m */; };
+		C558F1201F14AFC5005ACBD1 /* ALHTTPRequest+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0EC1F14AFC4005ACBD1 /* ALHTTPRequest+Helper.m */; };
+		C558F1211F14AFC5005ACBD1 /* ALHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0EE1F14AFC4005ACBD1 /* ALHTTPRequest.m */; };
+		C558F1221F14AFC5005ACBD1 /* ALHTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0F01F14AFC4005ACBD1 /* ALHTTPResponse.m */; };
+		C558F1231F14AFC5005ACBD1 /* ASIHTTPRequestQueueAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0F41F14AFC4005ACBD1 /* ASIHTTPRequestQueueAdaptor.m */; };
+		C558F1241F14AFC5005ACBD1 /* NSURLSessionAdaptor.m in Sources */ = {isa = PBXBuildFile; fileRef = C558F0F61F14AFC4005ACBD1 /* NSURLSessionAdaptor.m */; };
 		C55CBE211DE436570000B1F6 /* AKRequestHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = C55CBE201DE436570000B1F6 /* AKRequestHeader.m */; };
 		C567BD011E48175800C7C79A /* BaseModule.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C567B74D1E48175600C7C79A /* BaseModule.xcassets */; };
 		C567BD021E48175800C7C79A /* AKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C567B7511E48175600C7C79A /* AKAppDelegate.m */; };
@@ -330,6 +377,7 @@
 		C57DF5E31DFA84EE00D3D154 /* TabBar.plist in Resources */ = {isa = PBXBuildFile; fileRef = C57DF5E21DFA84EE00D3D154 /* TabBar.plist */; };
 		C5813C001E6034D500AD2F41 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5813BFF1E6034D500AD2F41 /* DLRadioButton.m */; };
 		C5813C091E60610400AD2F41 /* TBSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5813C081E60610400AD2F41 /* TBSlidingViewController.m */; };
+		C582013F1E7FA667005D0C23 /* AKDataCenterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = C582013E1E7FA667005D0C23 /* AKDataCenterTest.m */; };
 		C5A730171DE2BB3400DB2788 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730161DE2BB3400DB2788 /* main.m */; };
 		C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A730191DE2BB3400DB2788 /* AppDelegate.m */; };
 		C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5A7301C1DE2BB3400DB2788 /* ViewController.m */; };
@@ -440,6 +488,111 @@
 		C529A7D71E6FE91D00B94FCE /* BookCollMainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCollMainCell.m; sourceTree = "<group>"; };
 		C529A7D81E6FE91D00B94FCE /* BookCollMainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCollMainCell.xib; sourceTree = "<group>"; };
 		C538066D1DE7327900A2322D /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C558F0831F135BA5005ACBD1 /* AKPopupAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupAttributes.h; sourceTree = "<group>"; };
+		C558F0841F135BA5005ACBD1 /* AKPopupAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupAttributes.m; sourceTree = "<group>"; };
+		C558F0861F1485AA005ACBD1 /* AKPopupFadeAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKPopupFadeAction.h; sourceTree = "<group>"; };
+		C558F0871F1485AA005ACBD1 /* AKPopupFadeAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKPopupFadeAction.m; sourceTree = "<group>"; };
+		C558F08C1F14AFC4005ACBD1 /* __patchwork_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __patchwork_config.h; sourceTree = "<group>"; };
+		C558F08E1F14AFC4005ACBD1 /* ALDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabase.h; sourceTree = "<group>"; };
+		C558F08F1F14AFC4005ACBD1 /* ALDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabase.m; sourceTree = "<group>"; };
+		C558F0901F14AFC4005ACBD1 /* ALDBConnectionProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDBConnectionProtocol.h; sourceTree = "<group>"; };
+		C558F0911F14AFC4005ACBD1 /* ALDBMigrationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDBMigrationHelper.h; sourceTree = "<group>"; };
+		C558F0921F14AFC4005ACBD1 /* ALDBMigrationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDBMigrationHelper.m; sourceTree = "<group>"; };
+		C558F0931F14AFC4005ACBD1 /* ALDBMigrationProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDBMigrationProtocol.h; sourceTree = "<group>"; };
+		C558F0941F14AFC4005ACBD1 /* ALFMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALFMDatabaseQueue.h; sourceTree = "<group>"; };
+		C558F0951F14AFC4005ACBD1 /* ALFMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALFMDatabaseQueue.m; sourceTree = "<group>"; };
+		C558F0971F14AFC4005ACBD1 /* ALDatabaseValueTransformProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabaseValueTransformProtocol.h; sourceTree = "<group>"; };
+		C558F0981F14AFC4005ACBD1 /* ALSQLClause+SQLFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALSQLClause+SQLFunctions.h"; sourceTree = "<group>"; };
+		C558F0991F14AFC4005ACBD1 /* ALSQLClause+SQLFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALSQLClause+SQLFunctions.m"; sourceTree = "<group>"; };
+		C558F09A1F14AFC4005ACBD1 /* ALSQLClause+SQLOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALSQLClause+SQLOperation.h"; sourceTree = "<group>"; };
+		C558F09B1F14AFC4005ACBD1 /* ALSQLClause+SQLOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALSQLClause+SQLOperation.m"; sourceTree = "<group>"; };
+		C558F09C1F14AFC4005ACBD1 /* ALSQLClause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSQLClause.h; sourceTree = "<group>"; };
+		C558F09D1F14AFC4005ACBD1 /* ALSQLClause.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALSQLClause.m; sourceTree = "<group>"; };
+		C558F09F1F14AFC4005ACBD1 /* __ALSQLStatementHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = __ALSQLStatementHelpers.h; sourceTree = "<group>"; };
+		C558F0A01F14AFC4005ACBD1 /* ALSQLDeleteStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSQLDeleteStatement.h; sourceTree = "<group>"; };
+		C558F0A11F14AFC4005ACBD1 /* ALSQLDeleteStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALSQLDeleteStatement.m; sourceTree = "<group>"; };
+		C558F0A21F14AFC4005ACBD1 /* ALSQLInsertStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSQLInsertStatement.h; sourceTree = "<group>"; };
+		C558F0A31F14AFC4005ACBD1 /* ALSQLInsertStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALSQLInsertStatement.m; sourceTree = "<group>"; };
+		C558F0A41F14AFC4005ACBD1 /* ALSQLSelectStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSQLSelectStatement.h; sourceTree = "<group>"; };
+		C558F0A51F14AFC4005ACBD1 /* ALSQLSelectStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALSQLSelectStatement.m; sourceTree = "<group>"; };
+		C558F0A61F14AFC4005ACBD1 /* ALSQLStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSQLStatement.h; sourceTree = "<group>"; };
+		C558F0A71F14AFC4005ACBD1 /* ALSQLStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALSQLStatement.m; sourceTree = "<group>"; };
+		C558F0A81F14AFC4005ACBD1 /* ALSQLUpdateStatement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALSQLUpdateStatement.h; sourceTree = "<group>"; };
+		C558F0A91F14AFC4005ACBD1 /* ALSQLUpdateStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALSQLUpdateStatement.m; sourceTree = "<group>"; };
+		C558F0AB1F14AFC4005ACBD1 /* AL_URLHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AL_URLHelper.h; sourceTree = "<group>"; };
+		C558F0AC1F14AFC4005ACBD1 /* AL_URLHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AL_URLHelper.m; sourceTree = "<group>"; };
+		C558F0AD1F14AFC4005ACBD1 /* BlocksKitExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlocksKitExtension.h; sourceTree = "<group>"; };
+		C558F0AE1F14AFC4005ACBD1 /* BlocksKitExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlocksKitExtension.m; sourceTree = "<group>"; };
+		C558F0AF1F14AFC4005ACBD1 /* NSArray+ArrayExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ArrayExtensions.h"; sourceTree = "<group>"; };
+		C558F0B01F14AFC4005ACBD1 /* NSArray+ArrayExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ArrayExtensions.m"; sourceTree = "<group>"; };
+		C558F0B11F14AFC4005ACBD1 /* NSBundle+ALBundleInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+ALBundleInfo.h"; sourceTree = "<group>"; };
+		C558F0B21F14AFC4005ACBD1 /* NSBundle+ALBundleInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+ALBundleInfo.m"; sourceTree = "<group>"; };
+		C558F0B31F14AFC4005ACBD1 /* NSCache+ALExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCache+ALExtensions.h"; sourceTree = "<group>"; };
+		C558F0B41F14AFC4005ACBD1 /* NSCache+ALExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCache+ALExtensions.m"; sourceTree = "<group>"; };
+		C558F0B51F14AFC4005ACBD1 /* NSDate+ALExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ALExtensions.h"; sourceTree = "<group>"; };
+		C558F0B61F14AFC4005ACBD1 /* NSDate+ALExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ALExtensions.m"; sourceTree = "<group>"; };
+		C558F0B71F14AFC4005ACBD1 /* NSString+ALHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ALHelper.h"; sourceTree = "<group>"; };
+		C558F0B81F14AFC4005ACBD1 /* NSString+ALHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ALHelper.m"; sourceTree = "<group>"; };
+		C558F0BA1F14AFC4005ACBD1 /* AL_Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AL_Base64.h; sourceTree = "<group>"; };
+		C558F0BB1F14AFC4005ACBD1 /* AL_Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AL_Base64.m; sourceTree = "<group>"; };
+		C558F0BC1F14AFC4005ACBD1 /* AL_CRC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AL_CRC.h; sourceTree = "<group>"; };
+		C558F0BD1F14AFC4005ACBD1 /* AL_CRC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AL_CRC.m; sourceTree = "<group>"; };
+		C558F0BE1F14AFC4005ACBD1 /* AL_DES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AL_DES.h; sourceTree = "<group>"; };
+		C558F0BF1F14AFC4005ACBD1 /* AL_DES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AL_DES.m; sourceTree = "<group>"; };
+		C558F0C01F14AFC4005ACBD1 /* AL_JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AL_JSON.h; sourceTree = "<group>"; };
+		C558F0C11F14AFC4005ACBD1 /* AL_JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AL_JSON.m; sourceTree = "<group>"; };
+		C558F0C21F14AFC4005ACBD1 /* AL_MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AL_MD5.h; sourceTree = "<group>"; };
+		C558F0C31F14AFC4005ACBD1 /* AL_MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AL_MD5.m; sourceTree = "<group>"; };
+		C558F0C41F14AFC4005ACBD1 /* AL_RC4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AL_RC4.h; sourceTree = "<group>"; };
+		C558F0C51F14AFC4005ACBD1 /* AL_RC4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AL_RC4.m; sourceTree = "<group>"; };
+		C558F0C61F14AFC4005ACBD1 /* AL_SHA1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AL_SHA1.h; sourceTree = "<group>"; };
+		C558F0C71F14AFC4005ACBD1 /* AL_SHA1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AL_SHA1.m; sourceTree = "<group>"; };
+		C558F0C81F14AFC4005ACBD1 /* ALAssociatedWeakObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALAssociatedWeakObject.h; sourceTree = "<group>"; };
+		C558F0C91F14AFC4005ACBD1 /* ALAssociatedWeakObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALAssociatedWeakObject.m; sourceTree = "<group>"; };
+		C558F0CA1F14AFC4005ACBD1 /* ALDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDevice.h; sourceTree = "<group>"; };
+		C558F0CB1F14AFC4005ACBD1 /* ALDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDevice.m; sourceTree = "<group>"; };
+		C558F0CC1F14AFC4005ACBD1 /* ALLock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALLock.h; sourceTree = "<group>"; };
+		C558F0CD1F14AFC4005ACBD1 /* ALLock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALLock.m; sourceTree = "<group>"; };
+		C558F0CE1F14AFC4005ACBD1 /* ALLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALLogger.h; sourceTree = "<group>"; };
+		C558F0CF1F14AFC4005ACBD1 /* ALLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALLogger.m; sourceTree = "<group>"; };
+		C558F0D01F14AFC4005ACBD1 /* ALOCRuntime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALOCRuntime.h; sourceTree = "<group>"; };
+		C558F0D11F14AFC4005ACBD1 /* ALOCRuntime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALOCRuntime.m; sourceTree = "<group>"; };
+		C558F0D21F14AFC4005ACBD1 /* ALOrderedMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALOrderedMap.h; sourceTree = "<group>"; };
+		C558F0D31F14AFC4005ACBD1 /* ALOrderedMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALOrderedMap.m; sourceTree = "<group>"; };
+		C558F0D41F14AFC4005ACBD1 /* ALStringInflector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALStringInflector.h; sourceTree = "<group>"; };
+		C558F0D51F14AFC4005ACBD1 /* ALStringInflector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALStringInflector.m; sourceTree = "<group>"; };
+		C558F0D61F14AFC4005ACBD1 /* ALUtilitiesHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALUtilitiesHeader.h; sourceTree = "<group>"; };
+		C558F0D71F14AFC4005ACBD1 /* HHTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTimer.h; sourceTree = "<group>"; };
+		C558F0D81F14AFC4005ACBD1 /* HHTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHTimer.m; sourceTree = "<group>"; };
+		C558F0D91F14AFC4005ACBD1 /* SafeBlocksChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafeBlocksChain.h; sourceTree = "<group>"; };
+		C558F0DA1F14AFC4005ACBD1 /* SafeBlocksChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeBlocksChain.m; sourceTree = "<group>"; };
+		C558F0DB1F14AFC4005ACBD1 /* Singleton_Template.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton_Template.h; sourceTree = "<group>"; };
+		C558F0DC1F14AFC4005ACBD1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C558F0DE1F14AFC4005ACBD1 /* __ALModel+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "__ALModel+ActiveRecord.h"; sourceTree = "<group>"; };
+		C558F0DF1F14AFC4005ACBD1 /* __ALModel+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "__ALModel+ActiveRecord.m"; sourceTree = "<group>"; };
+		C558F0E01F14AFC4005ACBD1 /* ActiveRecordAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActiveRecordAdditions.h; sourceTree = "<group>"; };
+		C558F0E11F14AFC4005ACBD1 /* ALDBColumnInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDBColumnInfo.h; sourceTree = "<group>"; };
+		C558F0E21F14AFC4005ACBD1 /* ALDBColumnInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDBColumnInfo.m; sourceTree = "<group>"; };
+		C558F0E31F14AFC4005ACBD1 /* ALModel+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALModel+ActiveRecord.h"; sourceTree = "<group>"; };
+		C558F0E41F14AFC4005ACBD1 /* ALModel+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALModel+ActiveRecord.m"; sourceTree = "<group>"; };
+		C558F0E51F14AFC4005ACBD1 /* ALModel+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALModel+JSON.h"; sourceTree = "<group>"; };
+		C558F0E61F14AFC4005ACBD1 /* ALModel+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALModel+JSON.m"; sourceTree = "<group>"; };
+		C558F0E71F14AFC4005ACBD1 /* ALModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALModel.h; sourceTree = "<group>"; };
+		C558F0E81F14AFC4005ACBD1 /* ALModel_Define.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALModel_Define.h; sourceTree = "<group>"; };
+		C558F0E91F14AFC4005ACBD1 /* ALModel_Define.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALModel_Define.m; sourceTree = "<group>"; };
+		C558F0EB1F14AFC4005ACBD1 /* ALHTTPRequest+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALHTTPRequest+Helper.h"; sourceTree = "<group>"; };
+		C558F0EC1F14AFC4005ACBD1 /* ALHTTPRequest+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALHTTPRequest+Helper.m"; sourceTree = "<group>"; };
+		C558F0ED1F14AFC4005ACBD1 /* ALHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALHTTPRequest.h; sourceTree = "<group>"; };
+		C558F0EE1F14AFC4005ACBD1 /* ALHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALHTTPRequest.m; sourceTree = "<group>"; };
+		C558F0EF1F14AFC4005ACBD1 /* ALHTTPResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALHTTPResponse.h; sourceTree = "<group>"; };
+		C558F0F01F14AFC4005ACBD1 /* ALHTTPResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALHTTPResponse.m; sourceTree = "<group>"; };
+		C558F0F11F14AFC4005ACBD1 /* ALNetwork_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALNetwork_config.h; sourceTree = "<group>"; };
+		C558F0F21F14AFC4005ACBD1 /* ALURLRequestQueueAdaptorProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALURLRequestQueueAdaptorProtocol.h; sourceTree = "<group>"; };
+		C558F0F31F14AFC4005ACBD1 /* ASIHTTPRequestQueueAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIHTTPRequestQueueAdaptor.h; sourceTree = "<group>"; };
+		C558F0F41F14AFC4005ACBD1 /* ASIHTTPRequestQueueAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIHTTPRequestQueueAdaptor.m; sourceTree = "<group>"; };
+		C558F0F51F14AFC4005ACBD1 /* NSURLSessionAdaptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLSessionAdaptor.h; sourceTree = "<group>"; };
+		C558F0F61F14AFC4005ACBD1 /* NSURLSessionAdaptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLSessionAdaptor.m; sourceTree = "<group>"; };
+		C558F0F71F14AFC4005ACBD1 /* patchwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = patchwork.h; sourceTree = "<group>"; };
 		C55CBE1F1DE436570000B1F6 /* AKRequestHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKRequestHeader.h; sourceTree = "<group>"; };
 		C55CBE201DE436570000B1F6 /* AKRequestHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKRequestHeader.m; sourceTree = "<group>"; };
 		C567B74B1E48175600C7C79A /* AKMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AKMacro.h; sourceTree = "<group>"; };
@@ -993,6 +1146,7 @@
 		C5813BFF1E6034D500AD2F41 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
 		C5813C071E60610400AD2F41 /* TBSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBSlidingViewController.h; sourceTree = "<group>"; };
 		C5813C081E60610400AD2F41 /* TBSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBSlidingViewController.m; sourceTree = "<group>"; };
+		C582013E1E7FA667005D0C23 /* AKDataCenterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AKDataCenterTest.m; sourceTree = "<group>"; };
 		C5A730121DE2BB3400DB2788 /* Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5A730161DE2BB3400DB2788 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5A730181DE2BB3400DB2788 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1253,6 +1407,170 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C558F08B1F14AFC4005ACBD1 /* patchwork */ = {
+			isa = PBXGroup;
+			children = (
+				C558F08C1F14AFC4005ACBD1 /* __patchwork_config.h */,
+				C558F08D1F14AFC4005ACBD1 /* Database */,
+				C558F0AA1F14AFC4005ACBD1 /* Extensions */,
+				C558F0B91F14AFC4005ACBD1 /* Foundations */,
+				C558F0DC1F14AFC4005ACBD1 /* Info.plist */,
+				C558F0DD1F14AFC4005ACBD1 /* Model */,
+				C558F0EA1F14AFC4005ACBD1 /* NetworkAdaptor */,
+				C558F0F71F14AFC4005ACBD1 /* patchwork.h */,
+			);
+			path = patchwork;
+			sourceTree = "<group>";
+		};
+		C558F08D1F14AFC4005ACBD1 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				C558F08E1F14AFC4005ACBD1 /* ALDatabase.h */,
+				C558F08F1F14AFC4005ACBD1 /* ALDatabase.m */,
+				C558F0901F14AFC4005ACBD1 /* ALDBConnectionProtocol.h */,
+				C558F0911F14AFC4005ACBD1 /* ALDBMigrationHelper.h */,
+				C558F0921F14AFC4005ACBD1 /* ALDBMigrationHelper.m */,
+				C558F0931F14AFC4005ACBD1 /* ALDBMigrationProtocol.h */,
+				C558F0941F14AFC4005ACBD1 /* ALFMDatabaseQueue.h */,
+				C558F0951F14AFC4005ACBD1 /* ALFMDatabaseQueue.m */,
+				C558F0961F14AFC4005ACBD1 /* ALSQL */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		C558F0961F14AFC4005ACBD1 /* ALSQL */ = {
+			isa = PBXGroup;
+			children = (
+				C558F0971F14AFC4005ACBD1 /* ALDatabaseValueTransformProtocol.h */,
+				C558F0981F14AFC4005ACBD1 /* ALSQLClause+SQLFunctions.h */,
+				C558F0991F14AFC4005ACBD1 /* ALSQLClause+SQLFunctions.m */,
+				C558F09A1F14AFC4005ACBD1 /* ALSQLClause+SQLOperation.h */,
+				C558F09B1F14AFC4005ACBD1 /* ALSQLClause+SQLOperation.m */,
+				C558F09C1F14AFC4005ACBD1 /* ALSQLClause.h */,
+				C558F09D1F14AFC4005ACBD1 /* ALSQLClause.m */,
+				C558F09E1F14AFC4005ACBD1 /* SqlStatements */,
+			);
+			path = ALSQL;
+			sourceTree = "<group>";
+		};
+		C558F09E1F14AFC4005ACBD1 /* SqlStatements */ = {
+			isa = PBXGroup;
+			children = (
+				C558F09F1F14AFC4005ACBD1 /* __ALSQLStatementHelpers.h */,
+				C558F0A01F14AFC4005ACBD1 /* ALSQLDeleteStatement.h */,
+				C558F0A11F14AFC4005ACBD1 /* ALSQLDeleteStatement.m */,
+				C558F0A21F14AFC4005ACBD1 /* ALSQLInsertStatement.h */,
+				C558F0A31F14AFC4005ACBD1 /* ALSQLInsertStatement.m */,
+				C558F0A41F14AFC4005ACBD1 /* ALSQLSelectStatement.h */,
+				C558F0A51F14AFC4005ACBD1 /* ALSQLSelectStatement.m */,
+				C558F0A61F14AFC4005ACBD1 /* ALSQLStatement.h */,
+				C558F0A71F14AFC4005ACBD1 /* ALSQLStatement.m */,
+				C558F0A81F14AFC4005ACBD1 /* ALSQLUpdateStatement.h */,
+				C558F0A91F14AFC4005ACBD1 /* ALSQLUpdateStatement.m */,
+			);
+			path = SqlStatements;
+			sourceTree = "<group>";
+		};
+		C558F0AA1F14AFC4005ACBD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C558F0AB1F14AFC4005ACBD1 /* AL_URLHelper.h */,
+				C558F0AC1F14AFC4005ACBD1 /* AL_URLHelper.m */,
+				C558F0AD1F14AFC4005ACBD1 /* BlocksKitExtension.h */,
+				C558F0AE1F14AFC4005ACBD1 /* BlocksKitExtension.m */,
+				C558F0AF1F14AFC4005ACBD1 /* NSArray+ArrayExtensions.h */,
+				C558F0B01F14AFC4005ACBD1 /* NSArray+ArrayExtensions.m */,
+				C558F0B11F14AFC4005ACBD1 /* NSBundle+ALBundleInfo.h */,
+				C558F0B21F14AFC4005ACBD1 /* NSBundle+ALBundleInfo.m */,
+				C558F0B31F14AFC4005ACBD1 /* NSCache+ALExtensions.h */,
+				C558F0B41F14AFC4005ACBD1 /* NSCache+ALExtensions.m */,
+				C558F0B51F14AFC4005ACBD1 /* NSDate+ALExtensions.h */,
+				C558F0B61F14AFC4005ACBD1 /* NSDate+ALExtensions.m */,
+				C558F0B71F14AFC4005ACBD1 /* NSString+ALHelper.h */,
+				C558F0B81F14AFC4005ACBD1 /* NSString+ALHelper.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C558F0B91F14AFC4005ACBD1 /* Foundations */ = {
+			isa = PBXGroup;
+			children = (
+				C558F0BA1F14AFC4005ACBD1 /* AL_Base64.h */,
+				C558F0BB1F14AFC4005ACBD1 /* AL_Base64.m */,
+				C558F0BC1F14AFC4005ACBD1 /* AL_CRC.h */,
+				C558F0BD1F14AFC4005ACBD1 /* AL_CRC.m */,
+				C558F0BE1F14AFC4005ACBD1 /* AL_DES.h */,
+				C558F0BF1F14AFC4005ACBD1 /* AL_DES.m */,
+				C558F0C01F14AFC4005ACBD1 /* AL_JSON.h */,
+				C558F0C11F14AFC4005ACBD1 /* AL_JSON.m */,
+				C558F0C21F14AFC4005ACBD1 /* AL_MD5.h */,
+				C558F0C31F14AFC4005ACBD1 /* AL_MD5.m */,
+				C558F0C41F14AFC4005ACBD1 /* AL_RC4.h */,
+				C558F0C51F14AFC4005ACBD1 /* AL_RC4.m */,
+				C558F0C61F14AFC4005ACBD1 /* AL_SHA1.h */,
+				C558F0C71F14AFC4005ACBD1 /* AL_SHA1.m */,
+				C558F0C81F14AFC4005ACBD1 /* ALAssociatedWeakObject.h */,
+				C558F0C91F14AFC4005ACBD1 /* ALAssociatedWeakObject.m */,
+				C558F0CA1F14AFC4005ACBD1 /* ALDevice.h */,
+				C558F0CB1F14AFC4005ACBD1 /* ALDevice.m */,
+				C558F0CC1F14AFC4005ACBD1 /* ALLock.h */,
+				C558F0CD1F14AFC4005ACBD1 /* ALLock.m */,
+				C558F0CE1F14AFC4005ACBD1 /* ALLogger.h */,
+				C558F0CF1F14AFC4005ACBD1 /* ALLogger.m */,
+				C558F0D01F14AFC4005ACBD1 /* ALOCRuntime.h */,
+				C558F0D11F14AFC4005ACBD1 /* ALOCRuntime.m */,
+				C558F0D21F14AFC4005ACBD1 /* ALOrderedMap.h */,
+				C558F0D31F14AFC4005ACBD1 /* ALOrderedMap.m */,
+				C558F0D41F14AFC4005ACBD1 /* ALStringInflector.h */,
+				C558F0D51F14AFC4005ACBD1 /* ALStringInflector.m */,
+				C558F0D61F14AFC4005ACBD1 /* ALUtilitiesHeader.h */,
+				C558F0D71F14AFC4005ACBD1 /* HHTimer.h */,
+				C558F0D81F14AFC4005ACBD1 /* HHTimer.m */,
+				C558F0D91F14AFC4005ACBD1 /* SafeBlocksChain.h */,
+				C558F0DA1F14AFC4005ACBD1 /* SafeBlocksChain.m */,
+				C558F0DB1F14AFC4005ACBD1 /* Singleton_Template.h */,
+			);
+			path = Foundations;
+			sourceTree = "<group>";
+		};
+		C558F0DD1F14AFC4005ACBD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C558F0DE1F14AFC4005ACBD1 /* __ALModel+ActiveRecord.h */,
+				C558F0DF1F14AFC4005ACBD1 /* __ALModel+ActiveRecord.m */,
+				C558F0E01F14AFC4005ACBD1 /* ActiveRecordAdditions.h */,
+				C558F0E11F14AFC4005ACBD1 /* ALDBColumnInfo.h */,
+				C558F0E21F14AFC4005ACBD1 /* ALDBColumnInfo.m */,
+				C558F0E31F14AFC4005ACBD1 /* ALModel+ActiveRecord.h */,
+				C558F0E41F14AFC4005ACBD1 /* ALModel+ActiveRecord.m */,
+				C558F0E51F14AFC4005ACBD1 /* ALModel+JSON.h */,
+				C558F0E61F14AFC4005ACBD1 /* ALModel+JSON.m */,
+				C558F0E71F14AFC4005ACBD1 /* ALModel.h */,
+				C558F0E81F14AFC4005ACBD1 /* ALModel_Define.h */,
+				C558F0E91F14AFC4005ACBD1 /* ALModel_Define.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C558F0EA1F14AFC4005ACBD1 /* NetworkAdaptor */ = {
+			isa = PBXGroup;
+			children = (
+				C558F0EB1F14AFC4005ACBD1 /* ALHTTPRequest+Helper.h */,
+				C558F0EC1F14AFC4005ACBD1 /* ALHTTPRequest+Helper.m */,
+				C558F0ED1F14AFC4005ACBD1 /* ALHTTPRequest.h */,
+				C558F0EE1F14AFC4005ACBD1 /* ALHTTPRequest.m */,
+				C558F0EF1F14AFC4005ACBD1 /* ALHTTPResponse.h */,
+				C558F0F01F14AFC4005ACBD1 /* ALHTTPResponse.m */,
+				C558F0F11F14AFC4005ACBD1 /* ALNetwork_config.h */,
+				C558F0F21F14AFC4005ACBD1 /* ALURLRequestQueueAdaptorProtocol.h */,
+				C558F0F31F14AFC4005ACBD1 /* ASIHTTPRequestQueueAdaptor.h */,
+				C558F0F41F14AFC4005ACBD1 /* ASIHTTPRequestQueueAdaptor.m */,
+				C558F0F51F14AFC4005ACBD1 /* NSURLSessionAdaptor.h */,
+				C558F0F61F14AFC4005ACBD1 /* NSURLSessionAdaptor.m */,
+			);
+			path = NetworkAdaptor;
+			sourceTree = "<group>";
+		};
 		C55CBE1E1DE436350000B1F6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -1286,6 +1604,7 @@
 		C567B74A1E48175600C7C79A /* BaseModule */ = {
 			isa = PBXGroup;
 			children = (
+				C582013D1E7FA614005D0C23 /* TestCase */,
 				C567B74B1E48175600C7C79A /* AKMacro.h */,
 				C567B74C1E48175600C7C79A /* BaseModule.h */,
 				C567B74D1E48175600C7C79A /* BaseModule.xcassets */,
@@ -1905,6 +2224,8 @@
 				C567BA921E48175700C7C79A /* AKPopupViewProtocol.h */,
 				C567BF5D1E48184700C7C79A /* PopupModule.h */,
 				C567BFA11E48292D00C7C79A /* PopupModuleDefine.h */,
+				C558F0831F135BA5005ACBD1 /* AKPopupAttributes.h */,
+				C558F0841F135BA5005ACBD1 /* AKPopupAttributes.m */,
 			);
 			path = PopupModule;
 			sourceTree = "<group>";
@@ -2898,6 +3219,8 @@
 		C567BF941E48263D00C7C79A /* Action */ = {
 			isa = PBXGroup;
 			children = (
+				C558F0861F1485AA005ACBD1 /* AKPopupFadeAction.h */,
+				C558F0871F1485AA005ACBD1 /* AKPopupFadeAction.m */,
 				C567BF951E4826C400C7C79A /* AKPopupFromSideAction.h */,
 				C567BF961E4826C400C7C79A /* AKPopupFromSideAction.m */,
 				C567BF9B1E4827B900C7C79A /* AKPopupFromSideSpringAction.h */,
@@ -2940,6 +3263,14 @@
 				C5813BFF1E6034D500AD2F41 /* DLRadioButton.m */,
 			);
 			path = DLRadioButton;
+			sourceTree = "<group>";
+		};
+		C582013D1E7FA614005D0C23 /* TestCase */ = {
+			isa = PBXGroup;
+			children = (
+				C582013E1E7FA667005D0C23 /* AKDataCenterTest.m */,
+			);
+			path = TestCase;
 			sourceTree = "<group>";
 		};
 		C5A730091DE2BB3400DB2788 = {
@@ -3028,6 +3359,7 @@
 		C5BFDEE31E5192EC003CFEC4 /* DBModule */ = {
 			isa = PBXGroup;
 			children = (
+				C558F08B1F14AFC4005ACBD1 /* patchwork */,
 				C5BFDEF01E51C7F3003CFEC4 /* AKDataObjectProtocol.h */,
 				C5BFDEED1E51C752003CFEC4 /* AKBaseModel.h */,
 				C5BFDEEE1E51C752003CFEC4 /* AKBaseModel.m */,
@@ -3205,6 +3537,7 @@
 				C529A7CB1E6FE89300B94FCE /* YSummaryViewCell.xib in Resources */,
 				C567BEE81E48175800C7C79A /* ReaderModule.xcassets in Resources */,
 				C5E40D791E6EB1E100FA8F71 /* ReadEngine.xcassets in Resources */,
+				C558F11A1F14AFC5005ACBD1 /* Info.plist in Resources */,
 				C529A7CD1E6FE89300B94FCE /* YSummaryViewController.xib in Resources */,
 				C567BF041E48175900C7C79A /* area.plist in Resources */,
 				C567BD241E48175800C7C79A /* chooseTagViewCloseBtn.png in Resources */,
@@ -3324,6 +3657,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C558F0881F1485AA005ACBD1 /* AKPopupFadeAction.m in Sources */,
 				C567BF3F1E48175900C7C79A /* AKTextField.m in Sources */,
 				C567BEEC1E48175800C7C79A /* BSNumbersCollectionFooterView.m in Sources */,
 				C567BEF91E48175800C7C79A /* CustomNumbersCell.m in Sources */,
@@ -3334,8 +3668,11 @@
 				C567BF401E48175900C7C79A /* AKTextView.m in Sources */,
 				C567BF8C1E481D9000C7C79A /* MMPinView.m in Sources */,
 				C567BD181E48175800C7C79A /* AKSignalManager.m in Sources */,
+				C558F1111F14AFC5005ACBD1 /* ALAssociatedWeakObject.m in Sources */,
+				C558F0FC1F14AFC4005ACBD1 /* ALSQLClause+SQLOperation.m in Sources */,
 				C567BD331E48175800C7C79A /* AKHContentView.m in Sources */,
 				C567BD361E48175800C7C79A /* AKHScrollViewController.m in Sources */,
+				C558F11F1F14AFC5005ACBD1 /* ALModel_Define.m in Sources */,
 				C567BD041E48175800C7C79A /* AKBaseRequest.m in Sources */,
 				C567BF321E48175900C7C79A /* AKMediator+ShareModule.m in Sources */,
 				C567BF441E48175900C7C79A /* AKDBManager+User.m in Sources */,
@@ -3345,10 +3682,12 @@
 				C567BE211E48175800C7C79A /* AKRequestManager+LoginModule.m in Sources */,
 				C567BF3E1E48175900C7C79A /* AKTableViewCell.m in Sources */,
 				C567BF1A1E48175900C7C79A /* MainTableView.m in Sources */,
+				C558F11E1F14AFC5005ACBD1 /* ALModel+JSON.m in Sources */,
 				C567BF471E48175900C7C79A /* AKDBManager+UserGroupMember.m in Sources */,
 				C5EA4DC01E557BA30047A519 /* NSDate+Time.m in Sources */,
 				C567BE341E48175800C7C79A /* AKRequestManager+NewsModule.m in Sources */,
 				C567BD431E48175800C7C79A /* SGDownloadQueue.m in Sources */,
+				C558F0F81F14AFC4005ACBD1 /* ALDatabase.m in Sources */,
 				C567BE441E48175800C7C79A /* BannerCell.m in Sources */,
 				C567BEB61E48175800C7C79A /* BookChapter.m in Sources */,
 				C567BD451E48175800C7C79A /* AKDownloadGroupModel.m in Sources */,
@@ -3373,8 +3712,10 @@
 				C567BF331E48175900C7C79A /* ServiceShare.m in Sources */,
 				C529A7C61E6FE89300B94FCE /* YDirectoryViewCell.m in Sources */,
 				C529A7C41E6FE89300B94FCE /* AKHotNovelViewController.m in Sources */,
+				C558F10F1F14AFC5005ACBD1 /* AL_RC4.m in Sources */,
 				C573156C1E5432070099D9F7 /* AKDBManager+Book.m in Sources */,
 				C567BD3E1E48175800C7C79A /* NSString+SGHashString.m in Sources */,
+				C558F1171F14AFC5005ACBD1 /* ALStringInflector.m in Sources */,
 				C567BEB81E48175800C7C79A /* BookDocument.m in Sources */,
 				C529A7CC1E6FE89300B94FCE /* YSummaryViewController.m in Sources */,
 				C567BD0D1E48175800C7C79A /* UIView+Animation.m in Sources */,
@@ -3382,12 +3723,17 @@
 				C567BF091E48175900C7C79A /* CustomPopupView.m in Sources */,
 				C5EA4DBD1E55777C0047A519 /* NSString+Category.m in Sources */,
 				C567BF521E48175900C7C79A /* AKRequestManager+WallpaperModule.m in Sources */,
+				C558F10A1F14AFC4005ACBD1 /* AL_Base64.m in Sources */,
 				C567BF0B1E48175900C7C79A /* MJChiBaoZiFooter.m in Sources */,
 				C567BFA41E482E1300C7C79A /* AKPopupBaseAction.m in Sources */,
 				C567BF5B1E48175900C7C79A /* OUNavigationController.m in Sources */,
+				C558F10E1F14AFC5005ACBD1 /* AL_MD5.m in Sources */,
 				C567BF4C1E48175900C7C79A /* AKUser.m in Sources */,
+				C558F1081F14AFC4005ACBD1 /* NSDate+ALExtensions.m in Sources */,
 				C567BEFD1E48175800C7C79A /* CustomNumbersModel.m in Sources */,
+				C558F1141F14AFC5005ACBD1 /* ALLogger.m in Sources */,
 				C529A7D91E6FE91D00B94FCE /* BookCollMainCell.m in Sources */,
+				C558F1091F14AFC4005ACBD1 /* NSString+ALHelper.m in Sources */,
 				C567BEFF1E48175900C7C79A /* CustomNumbersRightHeaderView.m in Sources */,
 				C567BF431E48175900C7C79A /* AKDataCenter+UserModule.m in Sources */,
 				C5A7301D1DE2BB3400DB2788 /* ViewController.m in Sources */,
@@ -3397,6 +3743,7 @@
 				C567BEA71E48175800C7C79A /* KeepOutViewController.m in Sources */,
 				C567BEF11E48175800C7C79A /* CustomBtn.m in Sources */,
 				C567BF151E48175900C7C79A /* OpenShare.m in Sources */,
+				C558F0FA1F14AFC4005ACBD1 /* ALFMDatabaseQueue.m in Sources */,
 				C567BD2C1E48175800C7C79A /* AKCYLPlusButton.m in Sources */,
 				C567BEA91E48175800C7C79A /* PageAnimationViewController.m in Sources */,
 				C567BE511E48175800C7C79A /* AKPopupViewController.m in Sources */,
@@ -3404,6 +3751,8 @@
 				C567BEB51E48175800C7C79A /* BookCategory.m in Sources */,
 				C567BE7A1E48175800C7C79A /* EmojiPictographs.m in Sources */,
 				C567BF3A1E48175900C7C79A /* AKButton.m in Sources */,
+				C558F1201F14AFC5005ACBD1 /* ALHTTPRequest+Helper.m in Sources */,
+				C558F0FF1F14AFC4005ACBD1 /* ALSQLInsertStatement.m in Sources */,
 				C567BEEE1E48175800C7C79A /* BSNumbersView.m in Sources */,
 				C567BF461E48175900C7C79A /* AKDBManager+UserGroup.m in Sources */,
 				C567BF361E48175900C7C79A /* AKSignalManager+ThemeModule.m in Sources */,
@@ -3411,20 +3760,25 @@
 				C567BEA61E48175800C7C79A /* BackViewController.m in Sources */,
 				C567BD2D1E48175800C7C79A /* AKBaseTableView.m in Sources */,
 				C567BF531E48175900C7C79A /* AKWallpaperViewController.m in Sources */,
+				C558F0FE1F14AFC4005ACBD1 /* ALSQLDeleteStatement.m in Sources */,
+				C558F1121F14AFC5005ACBD1 /* ALDevice.m in Sources */,
 				C5BFDEE71E51B54B003CFEC4 /* AKDBManager.m in Sources */,
 				C567BE501E48175800C7C79A /* AKPopupManager.m in Sources */,
 				C567BE261E48175800C7C79A /* AKLoginButton.m in Sources */,
 				C529A7BD1E6FE89300B94FCE /* BookDetailIntroduceCell.m in Sources */,
 				C529A7C81E6FE89300B94FCE /* YDirectoryViewController.m in Sources */,
+				C558F1071F14AFC4005ACBD1 /* NSCache+ALExtensions.m in Sources */,
 				C567BD3F1E48175800C7C79A /* SGCacheManager.m in Sources */,
 				C529A7D31E6FE89300B94FCE /* YMenuViewController.m in Sources */,
 				C567BE421E48175800C7C79A /* AKCustomTableHandler.m in Sources */,
 				C5813C001E6034D500AD2F41 /* DLRadioButton.m in Sources */,
 				C567BD321E48175800C7C79A /* AKThemeManager+HSelectionList.m in Sources */,
 				C567BF111E48175900C7C79A /* OpenShare+QQ.m in Sources */,
+				C558F0FD1F14AFC4005ACBD1 /* ALSQLClause.m in Sources */,
 				C567BF3D1E48175900C7C79A /* AKLabel.m in Sources */,
 				C567BEF51E48175800C7C79A /* BVCropPhotoView.m in Sources */,
 				C567BD161E48175800C7C79A /* AKRequestManager.m in Sources */,
+				C558F1021F14AFC4005ACBD1 /* ALSQLUpdateStatement.m in Sources */,
 				C5E40D771E6EB03500FA8F71 /* AKReaderSetting.m in Sources */,
 				C567BE7D1E48175800C7C79A /* CoverPatternsViewController.m in Sources */,
 				C567BE371E48175800C7C79A /* AKNewsViewController.m in Sources */,
@@ -3460,6 +3814,7 @@
 				C567BD311E48175800C7C79A /* AKWaterFallView.m in Sources */,
 				C567BE391E48175800C7C79A /* NSTimer+Addition.m in Sources */,
 				C567BE451E48175800C7C79A /* LoopInfoView.m in Sources */,
+				C558F1011F14AFC4005ACBD1 /* ALSQLStatement.m in Sources */,
 				C567BEA51E48175800C7C79A /* AnimationViewController.m in Sources */,
 				C567BEBC1E48175800C7C79A /* BookSource.m in Sources */,
 				C567BF0D1E48175900C7C79A /* CustomRuleView.m in Sources */,
@@ -3471,16 +3826,21 @@
 				C567BF4B1E48175900C7C79A /* AKUserManager.m in Sources */,
 				C567BF4D1E48175900C7C79A /* AKUserDetail.m in Sources */,
 				C567BD271E48175800C7C79A /* AKCollectionFactory.m in Sources */,
+				C558F1041F14AFC4005ACBD1 /* BlocksKitExtension.m in Sources */,
 				C567BD211E48175800C7C79A /* AKChannelTagHeadView.m in Sources */,
 				C567BD151E48175800C7C79A /* AKMediator.m in Sources */,
 				C529A7D01E6FE89300B94FCE /* YBottomButton.m in Sources */,
+				C558F11B1F14AFC5005ACBD1 /* __ALModel+ActiveRecord.m in Sources */,
 				C567BF8B1E481D9000C7C79A /* MMDateView.m in Sources */,
+				C558F1031F14AFC4005ACBD1 /* AL_URLHelper.m in Sources */,
 				C567BF4A1E48175900C7C79A /* GVUserDefaults+UserModule.m in Sources */,
+				C558F10B1F14AFC5005ACBD1 /* AL_CRC.m in Sources */,
 				C567BF191E48175900C7C79A /* MainCollectionView.m in Sources */,
 				C567BEF01E48175800C7C79A /* NSString+BSNumbersExtension.m in Sources */,
 				C529A7C11E6FE89300B94FCE /* AKDownloadListTableCell.m in Sources */,
 				C567BE241E48175800C7C79A /* ThirdLoginAPI.m in Sources */,
 				C57315701E5452CC0099D9F7 /* Aspect+ReaderModule.m in Sources */,
+				C558F1061F14AFC4005ACBD1 /* NSBundle+ALBundleInfo.m in Sources */,
 				C567BEFB1E48175800C7C79A /* CustomNumbersLeftHeaderView.m in Sources */,
 				C567BE9F1E48175800C7C79A /* CursorView.m in Sources */,
 				C529A7B31E6FE89300B94FCE /* AKBookShelfViewController.m in Sources */,
@@ -3497,15 +3857,20 @@
 				C567BF4F1E48175900C7C79A /* AKUserGroupMember.m in Sources */,
 				C567BE361E48175800C7C79A /* GVUserDefaults+NewsModule.m in Sources */,
 				C567BF511E48175900C7C79A /* ServiceUser.m in Sources */,
+				C558F1181F14AFC5005ACBD1 /* HHTimer.m in Sources */,
 				C529A7C31E6FE89300B94FCE /* AKHotNovelHandler.m in Sources */,
 				C567BD071E48175800C7C79A /* HexColor.m in Sources */,
+				C558F10D1F14AFC5005ACBD1 /* AL_JSON.m in Sources */,
 				C567BEF41E48175800C7C79A /* CustomTremblingView.m in Sources */,
+				C558F0FB1F14AFC4005ACBD1 /* ALSQLClause+SQLFunctions.m in Sources */,
 				C567BEBE1E48175800C7C79A /* AKReaderHotListAPI.m in Sources */,
 				C567BF451E48175900C7C79A /* AKDBManager+UserDetail.m in Sources */,
+				C558F1131F14AFC5005ACBD1 /* ALLock.m in Sources */,
 				C567BF011E48175900C7C79A /* CustomNumbersView.m in Sources */,
 				C5E40D701E6EA92900FA8F71 /* AKLanguageHelper.m in Sources */,
 				C567BEB21E48175800C7C79A /* AKReaderManager.m in Sources */,
 				C567BD111E48175800C7C79A /* DeviceHelper.m in Sources */,
+				C558F11D1F14AFC5005ACBD1 /* ALModel+ActiveRecord.m in Sources */,
 				C567BD171E48175800C7C79A /* AKResourceManager.m in Sources */,
 				C567BF101E48175900C7C79A /* OpenShare+Alipay.m in Sources */,
 				C567BF121E48175900C7C79A /* OpenShare+Renren.m in Sources */,
@@ -3524,11 +3889,13 @@
 				C567BE221E48175800C7C79A /* AKLoginViewController.m in Sources */,
 				C567BEA11E48175800C7C79A /* InputTextView.m in Sources */,
 				C567BF031E48175900C7C79A /* CustomSearchViewController.m in Sources */,
+				C558F1161F14AFC5005ACBD1 /* ALOrderedMap.m in Sources */,
 				C567BEB31E48175800C7C79A /* Book.m in Sources */,
 				C567BE661E48175800C7C79A /* RootViewController.m in Sources */,
 				C529A7BB1E6FE89300B94FCE /* BookDetailChapterCell.m in Sources */,
 				C567BE7C1E48175800C7C79A /* AutomaticReadingViewController.m in Sources */,
 				C567BE3C1E48175800C7C79A /* Content.m in Sources */,
+				C558F1211F14AFC5005ACBD1 /* ALHTTPRequest.m in Sources */,
 				C567BD441E48175800C7C79A /* AKDownloadManager.m in Sources */,
 				C567BEAD1E48175800C7C79A /* PageGenerationHeader.m in Sources */,
 				C5BFDEEC1E51B615003CFEC4 /* NSString+Tools.m in Sources */,
@@ -3536,9 +3903,12 @@
 				C567BEB91E48175800C7C79A /* BookEveryUrl.m in Sources */,
 				C567BEA31E48175800C7C79A /* NoteContentButton.m in Sources */,
 				C567BEF61E48175800C7C79A /* DVCropViewController.m in Sources */,
+				C558F1051F14AFC4005ACBD1 /* NSArray+ArrayExtensions.m in Sources */,
 				C5A7301A1DE2BB3400DB2788 /* AppDelegate.m in Sources */,
+				C558F1191F14AFC5005ACBD1 /* SafeBlocksChain.m in Sources */,
 				C567BF381E48175900C7C79A /* AKNavigationController.m in Sources */,
 				C529A7D11E6FE89300B94FCE /* YThemeViewCell.m in Sources */,
+				C558F10C1F14AFC5005ACBD1 /* AL_DES.m in Sources */,
 				C5813C091E60610400AD2F41 /* TBSlidingViewController.m in Sources */,
 				C567BD2A1E48175800C7C79A /* AKMJRefreshHeader.m in Sources */,
 				C567BE471E48175800C7C79A /* TopLoopView.m in Sources */,
@@ -3546,20 +3916,25 @@
 				C5A730171DE2BB3400DB2788 /* main.m in Sources */,
 				C567BF481E48175900C7C79A /* AKMediator+UserModule.m in Sources */,
 				C567BD351E48175800C7C79A /* AKHScrollTitleLabel.m in Sources */,
+				C558F1241F14AFC5005ACBD1 /* NSURLSessionAdaptor.m in Sources */,
 				C567BEBD1E48175800C7C79A /* AKBookDetailAPI.m in Sources */,
 				C567BE4A1E48175800C7C79A /* MultiPictureContentCell.m in Sources */,
 				C567BD3C1E48175800C7C79A /* HSDownloadManager.m in Sources */,
 				C567BE3F1E48175800C7C79A /* AKNewsContentListAPI.m in Sources */,
 				C567BD221E48175800C7C79A /* AKChannelTagView.m in Sources */,
 				C567BE381E48175800C7C79A /* HWWeakTimer.m in Sources */,
+				C558F1221F14AFC5005ACBD1 /* ALHTTPResponse.m in Sources */,
 				C567BD061E48175800C7C79A /* AKTimer.m in Sources */,
+				C558F0F91F14AFC4005ACBD1 /* ALDBMigrationHelper.m in Sources */,
 				C57315741E556F8B0099D9F7 /* LocationHelper.m in Sources */,
 				C529A7B41E6FE89300B94FCE /* YBookViewCell.m in Sources */,
 				C567BE781E48175800C7C79A /* EmojiEmoticons.m in Sources */,
 				C567BD051E48175800C7C79A /* AKBaseViewController.m in Sources */,
 				C567BD0E1E48175800C7C79A /* UIView+Frame.m in Sources */,
 				C529A7C01E6FE89300B94FCE /* AKDownloadViewController.m in Sources */,
+				C558F1001F14AFC4005ACBD1 /* ALSQLSelectStatement.m in Sources */,
 				C567BF8E1E481D9000C7C79A /* MMPopupItem.m in Sources */,
+				C558F1231F14AFC5005ACBD1 /* ASIHTTPRequestQueueAdaptor.m in Sources */,
 				C567BD0A1E48175800C7C79A /* NSObject+CategoryWithProperty.m in Sources */,
 				C567BE791E48175800C7C79A /* EmojiMapSymbols.m in Sources */,
 				C567BD281E48175800C7C79A /* AKCollectionLayout.m in Sources */,
@@ -3577,14 +3952,18 @@
 				C567BEB01E48175800C7C79A /* FormatString.m in Sources */,
 				C567BE7B1E48175800C7C79A /* EmojiTransport.m in Sources */,
 				C567BEFE1E48175800C7C79A /* CustomNumbersPlainFlowLayout.m in Sources */,
+				C558F0851F135BA5005ACBD1 /* AKPopupAttributes.m in Sources */,
 				C567BE7E1E48175800C7C79A /* ScrollModeViewController.m in Sources */,
 				C567BE431E48175800C7C79A /* AKCustomTableView.m in Sources */,
 				C567BD091E48175800C7C79A /* NSFileManager+Paths.m in Sources */,
 				C5E40D7C1E6EB67100FA8F71 /* ReaderEngineThemeFactory.m in Sources */,
 				C567BEAB1E48175800C7C79A /* ReaderEngineManager.m in Sources */,
 				C567BF491E48175900C7C79A /* AKSignalManager+UserModule.m in Sources */,
+				C558F1151F14AFC5005ACBD1 /* ALOCRuntime.m in Sources */,
 				C567BEB41E48175800C7C79A /* BookAuthor.m in Sources */,
+				C558F11C1F14AFC5005ACBD1 /* ALDBColumnInfo.m in Sources */,
 				C567BD291E48175800C7C79A /* AKMJRefreshFooter.m in Sources */,
+				C558F1101F14AFC5005ACBD1 /* AL_SHA1.m in Sources */,
 				C567BF551E48175900C7C79A /* AKCustomCollectionHandler.m in Sources */,
 				C567BE3E1E48175800C7C79A /* Tag.m in Sources */,
 				C567BE271E48175800C7C79A /* AKLoginButtonGroup.m in Sources */,
@@ -3597,6 +3976,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C582013F1E7FA667005D0C23 /* AKDataCenterTest.m in Sources */,
 				C5A730301DE2BB3500DB2788 /* ProjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

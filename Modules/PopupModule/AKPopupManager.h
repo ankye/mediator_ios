@@ -14,6 +14,7 @@
 #import "MMSheetView.h"
 #import "MMPinView.h"
 #import "MMDateView.h"
+#import "AKPopupAttributes.h"
 
 #define AK_POPUP_MANAGER [AKPopupManager sharedInstance]
 
@@ -27,7 +28,7 @@ SINGLETON_INTR(AKPopupManager)
 
 
 //STPopupStyleBottomSheet 类型只支持 AKPopupActionTypeBottom
-+(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose onCompleted:(AKPopupOnCompleted)onCompleted;
++(AKPopupAttributes*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose onCompleted:(AKPopupOnCompleted)onCompleted;
 
 /**
  弹出窗，注入视图View
@@ -35,7 +36,7 @@ SINGLETON_INTR(AKPopupManager)
  @param customView 定制的显示视图
  @param attributes 属性字典，参考构建者 [AKPopupManager buildPopupAttributes]
  */
--(void)showView:(AKBasePopupView*)customView withAttributes:(NSMutableDictionary*)attributes;
+-(void)showView:(AKBasePopupView*)customView withAttributes:(AKPopupAttributes*)attributes;
 
 /**
  弹出窗，注入Controller
@@ -43,7 +44,7 @@ SINGLETON_INTR(AKPopupManager)
  @param controller 定制的Controller
  @param attributes 属性字典，参考构建者 [AKPopupManager buildPopupAttributes]
  */
--(void)showController:(UIViewController*)controller withAttributes:(NSMutableDictionary*)attributes;
+-(void)showController:(UIViewController*)controller withAttributes:(AKPopupAttributes*)attributes;
 
 -(void)hidden;
 
@@ -58,14 +59,14 @@ SINGLETON_INTR(AKPopupManager)
 +(void)showProgressHUDAtView:(UIView*)view;
 +(void)hideProgressHUDAtView:(UIView*)view;
 
--(void)showConfirmAlert:(NSString*)title withDetail:(NSString*)detail withAttributes:(NSMutableDictionary*)attributes;
+-(void)showConfirmAlert:(NSString*)title withDetail:(NSString*)detail withAttributes:(AKPopupAttributes*)attributes;
 
--(void)showChooseAlert:(NSString*)title withDetail:(NSString*)detail withItems:(NSArray*)items withAttributes:(NSMutableDictionary*)attributes;
+-(void)showChooseAlert:(NSString*)title withDetail:(NSString*)detail withItems:(NSArray*)items withAttributes:(AKPopupAttributes*)attributes;
 
--(void)showInputAlert:(NSString*)title withDetail:(NSString*)detail withPlaceholder:(NSString*)placeholder withHandler:(MMPopupInputHandler)handler withAttributes:(NSMutableDictionary*)attributes;
+-(void)showInputAlert:(NSString*)title withDetail:(NSString*)detail withPlaceholder:(NSString*)placeholder withHandler:(MMPopupInputHandler)handler withAttributes:(AKPopupAttributes*)attributes;
 
--(void)showSheetAlert:(NSString*)title withItems:(NSArray*)items withAttributes:(NSMutableDictionary*)attributes;
+-(void)showSheetAlert:(NSString*)title withItems:(NSArray*)items withAttributes:(AKPopupAttributes*)attributes;
 
--(void)showDateAlert:(NSMutableDictionary*)attributes;
+-(void)showDateAlert:(AKPopupAttributes*)attributes;
 
 @end

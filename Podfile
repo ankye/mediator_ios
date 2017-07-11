@@ -20,6 +20,11 @@ target 'Project' do
         pod 'M13BadgeView'
         pod 'MJRefresh'
         pod 'BButton'
+        #DB Module
+        pod 'ASIHTTPRequest/Core'
+        pod 'Reachability'
+        pod 'ObjcAssociatedObjectHelpers/Core'
+        
         #map Module
         pod 'AMapFoundation'
         pod 'AMap3DMap'
@@ -58,4 +63,7 @@ target 'Project' do
 
 
 
+end
+pre_install do
+    system("sed -i '' '/BKMacros/d' Pods/BlocksKit/BlocksKit/BlocksKit.h")
 end

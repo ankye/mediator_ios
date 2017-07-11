@@ -256,14 +256,14 @@
         [tableView setEditing:NO animated:YES];
         
         
-        NSMutableDictionary* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSDictionary *attributes) {
+        AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSMutableDictionary *extend) {
             NSLog(@"确定点击");
             if(channel == 2){
                 
             }
-       } onClose:^(NSDictionary *attributes) {
+       } onClose:^(NSMutableDictionary *extend) {
            NSLog(@"确定关闭");
-       } onCompleted:^(NSDictionary *attributes) {
+       } onCompleted:^(NSMutableDictionary *extend) {
            NSLog(@"关闭完成");
        }];
         

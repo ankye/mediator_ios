@@ -26,6 +26,7 @@
     [self setupNav];
     [self setupViews];
     [self setupHandler];
+   
     // Do any additional setup after loading the view.
 }
 
@@ -80,6 +81,29 @@
         make.left.right.bottom.equalTo(self.view);
         make.top.mas_offset(SCREEN_NAV_HEIGHT);
     }];
+    
+  
+
+    
+}
+
+-(void)showTips:(AKPopupPriority)priority withTitle:(NSString*)title
+{
+ 
+    AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeFade onClick:^(NSInteger channel, NSMutableDictionary *extend) {
+        NSLog(@"确定点击");
+        if(channel == 2){
+            
+        }
+    } onClose:^(NSMutableDictionary *extend) {
+        NSLog(@"确定关闭");
+    } onCompleted:^(NSMutableDictionary *extend) {
+        NSLog(@"关闭完成");
+    }];
+    
+    attributes.priority = priority;
+    
+    [[AKPopupManager sharedInstance] showChooseAlert:title withDetail:@"删除后需要重新下载！" withItems:nil withAttributes:attributes];
 }
 
 -(void)setupHandler

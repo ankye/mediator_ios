@@ -15,13 +15,14 @@
 #import "AKPopupFromSideAction.h"
 #import "AKPopupFromSideSpringAction.h"
 #import "AKPopupViewController.h"
-
+#import "AKPopupAttributes.h"
+#import "AKPopupFadeAction.h"
 
 @interface AKPopupManager()
 
 @property (nonatomic,strong) STPopupController*     popupController;
 @property (nonatomic,strong) NSMutableArray*        popupQueue;
-@property (nonatomic,copy) NSMutableDictionary*   currentAttributes;
+@property (nonatomic,strong) AKPopupAttributes*   currentAttributes;
 
 @end
 
@@ -40,27 +41,19 @@ SINGLETON_IMPL(AKPopupManager)
     return self;
 }
 
-+(NSMutableDictionary*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose  onCompleted:(AKPopupOnCompleted)onCompleted
++(AKPopupAttributes*)buildPopupAttributes:(BOOL)showBG showNav:(BOOL)showNav style:(STPopupStyle)style actionType:(AKPopupActionType)actionType onClick:(AKPopupOnClick)onClick onClose:(AKPopupOnClose)onClose  onCompleted:(AKPopupOnCompleted)onCompleted
 {
-    NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    dic[AK_Popup_ShowBG] =  @(showBG);
-    dic[AK_Popup_ShowNav] = @(showNav);
-    dic[AK_Popup_OnClick] = onClick;
-    dic[AK_Popup_OnClose] = onClose;
-    dic[AK_Popup_OnCompleted] = onCompleted;
+    AKPopupAttributes* attr =  [[AKPopupAttributes alloc] init];
     
-    if(style){
-        dic[AK_Popup_Style] = @(style);
-    }else{
-        dic[AK_Popup_Style] = @(STPopupStyleFormSheet);
-    }
-    //目前只支持 AKPopupActionTypeBottom
-    if(STPopupStyleBottomSheet == style){
-        actionType = AKPopupActionTypeBottom;
-    }
-     dic[AK_Popup_ActionType] = @(actionType);
+    attr.showBG =  showBG;
+    attr.showNav = showNav;
+    attr.onClick = onClick;
+    attr.onClose = onClose;
+    attr.onCompleted = onCompleted;
+    attr.style = style;
+    attr.actionType = actionType;
     
-    return dic;
+    return attr;
 }
 
 
@@ -68,15 +61,39 @@ SINGLETON_IMPL(AKPopupManager)
 //最终显示弹窗的地方
 -(void)show
 {
-    if(self.currentAttributes || [self.popupQueue count] == 0){
+    if( [self.popupQueue count] == 0){
         return;
     }
-    
+    if(self.currentAttributes){
+        if( self.currentAttributes.priority != AKPopupPriorityForceShow && self.currentAttributes.locked == NO){
+            AKPopupAttributes* attributes = [self.popupQueue objectAtIndex:0];
+            if(attributes.priority == AKPopupPriorityForceShow){
+                [self hidden];
+                NSInteger index = 0;
+                AKPopupAttributes* tempAttrs = nil;
+                for(NSInteger i=0; i<[self.popupQueue count]; i++){
+                    tempAttrs = [self.popupQueue objectAtIndex:i];
+                    if(tempAttrs.priority == AKPopupPriorityForceShow){
+                        index = i;
+                    }else{
+                        break;
+                    }
+                }
+                
+                [self.popupQueue insertObject:self.currentAttributes atIndex:index+1];
+            
+            }
+            return;
+        }else{
+            return;
+        }
+    }
     self.currentAttributes = [self.popupQueue objectAtIndex:0];
+    self.currentAttributes.locked = NO;
     [self.popupQueue removeObjectAtIndex:0];
-    NSMutableDictionary* attributes = self.currentAttributes;
+    AKPopupAttributes* attributes = self.currentAttributes;
     
-    AKPopupViewController* controller = attributes[AK_Popup_Controller];
+    AKPopupViewController* controller = (AKPopupViewController*)attributes.controller;
     
     self.popupController = [[STPopupController alloc] initWithRootViewController:controller];
     self.popupController.containerView.layer.cornerRadius = 4;
@@ -84,15 +101,15 @@ SINGLETON_IMPL(AKPopupManager)
     
  
     
-    AKPopupActionType actionType = [attributes[AK_Popup_ActionType] integerValue];
+    AKPopupActionType actionType = attributes.actionType;
     
     AKPopupBaseAction* action = [self createAction:actionType];
     
     action.onCompleted = ^(){
         self.popupController = nil;
-        AKPopupOnCompleted onCompleted = [self.currentAttributes objectForKey:AK_Popup_OnCompleted];
+        AKPopupOnCompleted onCompleted = self.currentAttributes.onCompleted; 
         if(onCompleted){
-            onCompleted(self.currentAttributes);
+            onCompleted(nil);
         }
         self.currentAttributes = nil;
         [self show];
@@ -101,11 +118,11 @@ SINGLETON_IMPL(AKPopupManager)
     
     self.popupController.transitioning = controller.popupAction;
     
-    self.popupController.style = [attributes[AK_Popup_Style] integerValue];
+    self.popupController.style = attributes.style;
     
     
     
-    if([attributes[AK_Popup_ShowBG] boolValue]){
+    if(attributes.showBG){
         if (NSClassFromString(@"UIBlurEffect")) {
             UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
             self.popupController.backgroundView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
@@ -116,7 +133,7 @@ SINGLETON_IMPL(AKPopupManager)
     
     [self.popupController.backgroundView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidden)]];
     
-    if([attributes[AK_Popup_ShowNav] boolValue]) {
+    if(attributes.showNav) {
         
         [STPopupNavigationBar appearance].barTintColor = [UIColor colorWithRed:0.20 green:0.60 blue:0.86 alpha:1.0];
         [STPopupNavigationBar appearance].tintColor = [UIColor whiteColor];
@@ -170,7 +187,9 @@ SINGLETON_IMPL(AKPopupManager)
         case AKPopupActionTypeSpringRight:
             return [[AKPopupFromSideSpringAction alloc] initWithDirection:AKPopupActionDirectionRight];
             break;
-            
+        case AKPopupActionTypeFade:
+            return [[AKPopupFadeAction alloc] init];
+            break;
         default:
             return [[AKPopupFromSideAction alloc] initWithDirection:AKPopupActionDirectionTop];
 
@@ -184,30 +203,39 @@ SINGLETON_IMPL(AKPopupManager)
     
 }
 
--(void)showController:(UIViewController*)controller withAttributes:(NSMutableDictionary *)attributes
+-(void)showController:(UIViewController*)controller withAttributes:(AKPopupAttributes *)attributes
 {
-    attributes[AK_Popup_Controller] = controller;
+
+    attributes.controller = controller;
+    
     [self.popupQueue addObject:attributes];
+    
+    [self.popupQueue sortUsingComparator:^NSComparisonResult(AKPopupAttributes* obj1,AKPopupAttributes* obj2){
+        return obj1.priority < obj2.priority;
+    }];
+    
     
     [self show];
     
 }
 
--(void)showView:(AKBasePopupView*)customView withAttributes:(NSMutableDictionary *)attributes
+
+
+-(void)showView:(AKBasePopupView*)customView withAttributes:(AKPopupAttributes *)attributes
 {
     
     AKPopupViewController* vc = [[AKPopupViewController alloc] initWithView:customView];
-    AKPopupOnClose closeBlock = [attributes objectForKey:AK_Popup_OnClose];
+    AKPopupOnClose closeBlock = attributes.onClose;
     @weakify(self);
-    attributes[AK_Popup_OnClose] = ^( NSDictionary* attributes){
+    attributes.onClose =  ^( NSMutableDictionary* extend){
         
         @strongify(self);
         [self hidden];
-        closeBlock(attributes);
+        closeBlock(extend);
         
     };
-    customView.onClick = [attributes objectForKey:AK_Popup_OnClick];
-    customView.onClose = [attributes objectForKey:AK_Popup_OnClose];
+    customView.onClick = attributes.onClick;
+    customView.onClose = attributes.onClose;
     
    
     [self showController:vc withAttributes:attributes];
@@ -217,6 +245,10 @@ SINGLETON_IMPL(AKPopupManager)
 
 -(void)hidden
 {
+    if(self.currentAttributes){
+        self.currentAttributes.locked = YES;
+    }
+   
     [self.popupController popViewControllerAnimated:YES]; // Popup will be dismissed if there is only one view controller in the popup view controller stack
     [self.popupController dismiss];
     self.popupController = nil;
@@ -268,46 +300,47 @@ SINGLETON_IMPL(AKPopupManager)
     });
 }
 
--(void)showConfirmAlert:(NSString*)title withDetail:(NSString*)detail withAttributes:(NSMutableDictionary*)attributes
+-(void)showConfirmAlert:(NSString*)title withDetail:(NSString*)detail withAttributes:(AKPopupAttributes*)attributes
 {
     MMAlertView *alertView = [[MMAlertView alloc] initWithConfirmTitle:title detail:detail];
     [self showView:alertView withAttributes:attributes];
     
 }
 
--(void)showChooseAlert:(NSString*)title withDetail:(NSString*)detail withItems:(NSArray*)items withAttributes:(NSMutableDictionary*)attributes
+-(void)showChooseAlert:(NSString*)title withDetail:(NSString*)detail withItems:(NSArray*)items withAttributes:(AKPopupAttributes*)attributes
 {
     if(items == nil){
         items =
-        @[MMItemMake(@"取消", MMItemTypeNormal, 1),
-          MMItemMake(@"确认", MMItemTypeHighlight, 2)
+        @[MMItemMake(@"Cancel", MMItemTypeNormal, 1),
+          MMItemMake(@"Confirm", MMItemTypeHighlight, 2)
           ];
     }
     MMAlertView *alertView = [[MMAlertView alloc] initWithTitle:title detail:detail items:items];
      [self showView:alertView withAttributes:attributes];
 }
 
--(void)showInputAlert:(NSString*)title withDetail:(NSString*)detail withPlaceholder:(NSString*)placeholder withHandler:(MMPopupInputHandler)handler withAttributes:(NSMutableDictionary*)attributes
+-(void)showInputAlert:(NSString*)title withDetail:(NSString*)detail withPlaceholder:(NSString*)placeholder withHandler:(MMPopupInputHandler)handler withAttributes:(AKPopupAttributes*)attributes
 {
     MMAlertView *alertView = [[MMAlertView alloc] initWithInputTitle:title detail:detail placeholder:placeholder handler:handler];
     [self showView:alertView withAttributes:attributes];
 
 }
 
--(void)showSheetAlert:(NSString*)title withItems:(NSArray*)items withAttributes:(NSMutableDictionary*)attributes
+-(void)showSheetAlert:(NSString*)title withItems:(NSArray*)items withAttributes:(AKPopupAttributes*)attributes
 {
     
     MMSheetView *sheetView = [[MMSheetView alloc] initWithTitle:title items:items];
-    attributes[AK_Popup_Style] = @(STPopupStyleBottomSheet);
+    attributes.style = STPopupStyleBottomSheet;
+    
     [self showView:sheetView withAttributes:attributes];
 }
 
 
--(void)showDateAlert:(NSMutableDictionary*)attributes
+-(void)showDateAlert:(AKPopupAttributes*)attributes
 {
     MMDateView *view = [[MMDateView alloc] init];
-    attributes[AK_Popup_Style] = @(STPopupStyleBottomSheet);
-    
+    attributes.style = STPopupStyleBottomSheet;
+   
     [self showView:view withAttributes:attributes];
 }
 

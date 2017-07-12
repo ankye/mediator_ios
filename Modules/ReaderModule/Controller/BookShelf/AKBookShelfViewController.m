@@ -90,14 +90,14 @@
 -(void)showTips:(AKPopupPriority)priority withTitle:(NSString*)title
 {
  
-    AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeFade onClick:^(NSInteger channel, NSMutableDictionary *extend) {
+    AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeFade onClick:^(NSInteger channel, NSDictionary *extend) {
         NSLog(@"确定点击");
         if(channel == 2){
             
         }
-    } onClose:^(NSMutableDictionary *extend) {
+    } onClose:^(NSDictionary *extend) {
         NSLog(@"确定关闭");
-    } onCompleted:^(NSMutableDictionary *extend) {
+    } onCompleted:^(NSDictionary *extend) {
         NSLog(@"关闭完成");
     }];
     

@@ -28,7 +28,7 @@
 
 
 #import "LoggerModule.h"
-#import "UserModule.h"
+#import "UserModuleMediator.h"
 #import "LoginModule.h"
 
 //#import "MapModule.h"

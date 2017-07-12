@@ -227,7 +227,7 @@ SINGLETON_IMPL(AKPopupManager)
     AKPopupViewController* vc = [[AKPopupViewController alloc] initWithView:customView];
     AKPopupOnClose closeBlock = attributes.onClose;
     @weakify(self);
-    attributes.onClose =  ^( NSMutableDictionary* extend){
+    attributes.onClose =  ^( NSDictionary* extend){
         
         @strongify(self);
         [self hidden];

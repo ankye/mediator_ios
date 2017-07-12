@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookEveryUrl : AKBaseModel
+@interface BookEveryUrl : ALModel
 
 @property (nonatomic, copy) NSString *dir;
 

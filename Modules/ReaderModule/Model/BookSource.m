@@ -10,16 +10,16 @@
 
 @implementation BookSource
 
--(void)fillData:(id<AKDataObjectProtocol>)object
-{
-    BookSource* temp = (BookSource*)object;
-    
-    self.orderid = temp.orderid;
-    self.sitekey = temp.sitekey;
-    self.sitehost = temp.sitehost;
-    self.siteurl = temp.siteurl;
-    self.siteid = temp.siteid;
-    self.sitename = temp.sitename;
-
-}
+//-(void)fillData:(id<AKDataObjectProtocol>)object
+//{
+//    BookSource* temp = (BookSource*)object;
+//    
+//    self.orderid = temp.orderid;
+//    self.sitekey = temp.sitekey;
+//    self.sitehost = temp.sitehost;
+//    self.siteurl = temp.siteurl;
+//    self.siteid = temp.siteid;
+//    self.sitename = temp.sitename;
+//
+//}
 @end

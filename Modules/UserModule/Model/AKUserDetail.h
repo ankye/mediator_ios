@@ -6,52 +6,49 @@
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "AKBaseModel.h"
-#import "AKUserDetailProtocol.h"
 
-@interface AKUserDetail : AKBaseModel<AKUserDetailProtocol>
+@interface AKUserDetail : ALModel 
 
 
-@property (nonatomic, strong) NSString *uid;
+@property (nonatomic, copy) NSString* uid;
 //性别
 @property (nonatomic, assign) NSInteger sex;
 //地区
-@property (nonatomic, strong) NSString *location;
+@property (nonatomic, copy) NSString *location;
 //手机号
-@property (nonatomic, strong) NSString *phoneNumber;
+@property (nonatomic, copy) NSString *phoneNumber;
 //qq号
-@property (nonatomic, strong) NSString *qqNumber;
+@property (nonatomic, copy) NSString *qqNumber;
 //email地址
-@property (nonatomic, strong) NSString *email;
+@property (nonatomic, copy) NSString *email;
 //相册
 @property (nonatomic, strong) NSMutableArray *albumArray;
 //个人签名
-@property (nonatomic, strong) NSString *motto;
+@property (nonatomic, copy) NSString *motto;
 //朋友圈
-@property (nonatomic, strong) NSString *momentsWallURL;
+@property (nonatomic, copy) NSString *momentsWallURL;
 //地址
-@property (nonatomic, strong)NSString *address;
+@property (nonatomic, copy)NSString *address;
 // 生日
-@property (nonatomic, strong)NSString * birthday;
+@property (nonatomic, copy)NSString * birthday;
 // 故乡
-@property (nonatomic, strong)NSString * hometown;
+@property (nonatomic, copy)NSString * hometown;
 //纬度
 @property (nonatomic,assign) double latitude;
 //经度
 @property (nonatomic,assign) double longitude;
 
 /// 备注信息
-@property (nonatomic, strong) NSString *remarkInfo;
+@property (nonatomic, copy) NSString *remarkInfo;
 
 /// 备注图片（本地地址）
-@property (nonatomic, strong) NSString *remarkImagePath;
+@property (nonatomic, copy) NSString *remarkImagePath;
 
 /// 备注图片 (URL)
-@property (nonatomic, strong) NSString *remarkImageURL;
+@property (nonatomic, copy) NSString *remarkImageURL;
 
 /// 标签
-@property (nonatomic, strong) NSMutableArray *tags;
+@property (nonatomic, copy) NSMutableArray *tags;
 
--(void)fillData:(id<AKUserDetailProtocol>)user;
 
 @end

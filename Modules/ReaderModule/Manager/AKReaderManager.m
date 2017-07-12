@@ -46,15 +46,15 @@ SINGLETON_IMPL(AKReaderManager)
 
 -(void)loadBookShelf
 {
-    NSArray* data = [AK_DB_MANAGER book_queryAll];
-    NSInteger count = [data count];
-    [_bookShelf removeAllObjects];
-    for(NSInteger i=0; i< count; i++){
-        Book* book = [data objectAtIndex:i];
-        book = [self addBook:book];
-        [_bookShelf addObject:book];
-    }
-    AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
+//    NSArray* data = [AK_DB_MANAGER book_queryAll];
+//    NSInteger count = [data count];
+//    [_bookShelf removeAllObjects];
+//    for(NSInteger i=0; i< count; i++){
+//        Book* book = [data objectAtIndex:i];
+//        book = [self addBook:book];
+//        [_bookShelf addObject:book];
+//    }
+//    AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
 }
 
 -(Book*)addBook:(Book*)book
@@ -62,7 +62,7 @@ SINGLETON_IMPL(AKReaderManager)
     Book* tempBook = [_books objectForKey:book.novel.Id];
     
     if(tempBook){
-        [tempBook fillData:book];
+      //  [tempBook fillData:book];
     }else{
         tempBook = book;
         [_books setObject:book forKey:book.novel.Id];
@@ -80,15 +80,15 @@ SINGLETON_IMPL(AKReaderManager)
 {
     book.isBookmark = !book.isBookmark;
     [_bookShelf addObject:book];
-    [[AKDBManager sharedInstance] book_insertOrReplace:book];
+ //   [[AKDBManager sharedInstance] book_insertOrReplace:book];
     AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
 }
 -(void)unBookmark:(Book*)book
 {
-    book.isBookmark = !book.isBookmark;
-    [_bookShelf removeObject:book];
-    [[AKDBManager sharedInstance] book_deleteByID:book.novel.Id];
-    AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
+//    book.isBookmark = !book.isBookmark;
+//    [_bookShelf removeObject:book];
+//    [[AKDBManager sharedInstance] book_deleteByID:book.novel.Id];
+//    AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
 }
 
 

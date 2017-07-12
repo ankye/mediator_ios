@@ -256,14 +256,14 @@
         [tableView setEditing:NO animated:YES];
         
         
-        AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSMutableDictionary *extend) {
+        AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSDictionary *extend) {
             NSLog(@"确定点击");
             if(channel == 2){
                 
             }
-       } onClose:^(NSMutableDictionary *extend) {
+       } onClose:^(NSDictionary *extend) {
            NSLog(@"确定关闭");
-       } onCompleted:^(NSMutableDictionary *extend) {
+       } onCompleted:^(NSDictionary *extend) {
            NSLog(@"关闭完成");
        }];
         

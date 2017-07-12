@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookLastUpdate : AKBaseModel
+@interface BookLastUpdate : ALModel
 
 @property (nonatomic, copy) NSString *siteid;
 /**

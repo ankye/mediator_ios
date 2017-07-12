@@ -11,6 +11,6 @@
 @implementation Aspect_ReaderModule
 +(void)load
 {
-    [AK_DB_MANAGER book_createTable];
+//    [AK_DB_MANAGER book_createTable];
 }
 @end

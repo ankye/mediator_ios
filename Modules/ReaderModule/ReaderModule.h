@@ -9,7 +9,6 @@
 #ifndef ReaderModule_h
 #define ReaderModule_h
 
-#import "AKDBManager+Book.h"
 #import "AKRequestManager+ReaderModule.h"
 
 

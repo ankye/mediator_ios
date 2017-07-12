@@ -17,12 +17,12 @@ typedef void(^CompleteFunc)() ;
 
 
 //popup点击事件回调，通过点击channel来判断需要的逻辑
-typedef void(^AKPopupOnClick)(NSInteger channel,NSMutableDictionary* extend);
+typedef void(^AKPopupOnClick)(NSInteger channel,NSDictionary* extend);
 
 //onClose关闭事件回调
-typedef void(^AKPopupOnClose)( NSMutableDictionary* extend);
+typedef void(^AKPopupOnClose)( NSDictionary* extend);
 //onCompleted弹窗完成回调
-typedef void(^AKPopupOnCompleted)( NSMutableDictionary* extend);
+typedef void(^AKPopupOnCompleted)( NSDictionary* extend);
 
 //弹窗key定义
 //#define AK_Popup_Controller     @"controller"       //controller

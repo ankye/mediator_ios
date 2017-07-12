@@ -6,26 +6,24 @@
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "AKBaseModel.h"
-#import "AKUserGroupMemberProtocol.h"
-
-@interface AKUserGroupMember : AKBaseModel <AKUserGroupMemberProtocol>
 
 
-@property (nonatomic, strong) NSString *uid;
+@interface AKUserGroupMember :ALModel
+
+@property (nonatomic, copy) NSString* uid;
 
 //group ID
-@property (nonatomic, strong) NSString *gid;
+@property (nonatomic, copy) NSString *gid;
 
-@property (nonatomic, strong) NSString *fid;
+@property (nonatomic, copy) NSString *fid;
 
-@property (nonatomic, strong) NSString *username;
+@property (nonatomic, copy) NSString *username;
 
-@property (nonatomic, strong) NSString *nickname;
+@property (nonatomic, copy) NSString *nickname;
 
-@property (nonatomic, strong) NSString *avatar;
+@property (nonatomic, copy) NSString *avatar;
 
-@property (nonatomic, strong) NSString *remark;
+@property (nonatomic, copy) NSString *remark;
 
 
 

@@ -45,11 +45,11 @@
         
 //        [AK_MEDIATOR im_requestIMServerList];
 //       
-//        if(![AK_MEDIATOR user_isUserLogin]){
-//            UIViewController* loginController = [AK_MEDIATOR login_viewControllerForLogin];
-//            [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
-//        }
-//       
+        if(![AK_MEDIATOR user_isUserLogin]){
+            UIViewController* loginController = [AK_MEDIATOR login_viewControllerForLogin];
+            [[AppHelper getRootController] presentViewController:loginController animated:YES completion:nil];
+        }
+//
    
        
         

@@ -21,7 +21,7 @@ typedef enum : NSUInteger {
     BOOK_CACHE_STATUS_ALL_END,
 } BOOK_CACHE_STATUS;
 
-@interface Book : AKBaseModel
+@interface Book : ALModel
 
 @property (nonatomic, strong) BookAuthor *author;
 

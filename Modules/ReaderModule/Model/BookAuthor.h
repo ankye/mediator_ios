@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookAuthor : AKBaseModel
+@interface BookAuthor : ALModel
 
 @property (nonatomic, copy) NSString *name;
 

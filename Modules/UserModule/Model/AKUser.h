@@ -5,40 +5,34 @@
 //  Created by ankye on 2016/12/9.
 //  Copyright © 2016年 ankye. All rights reserved.
 //
-
-#import "AKBaseModel.h"
-#import "AKUserProtocol.h"
-#import "AKUserChatSettingProtocol.h"
-#import "AKUserDetailProtocol.h"
-#import "AKUserWeiboProtocol.h"
-#import "AKUserHonorProtocol.h"
+#import "AKUserDetail.h"
 
 
-@interface AKUser : AKBaseModel<AKUserProtocol>
+@interface AKUser : ALModel
 
 /// 用户ID
-@property (nonatomic, strong) NSString *uid;
+@property (nonatomic, copy) NSString  *uid;
 
 //靓号
-@property (nonatomic, strong) NSString *usernum;
+@property (nonatomic, copy) NSString *usernum;
 
 /// 用户名
-@property (nonatomic, strong) NSString *username;
+@property (nonatomic, copy) NSString *username;
 
 /// 昵称
-@property (nonatomic, strong) NSString *nickname;
+@property (nonatomic, copy) NSString *nickname;
 
 /// 头像URL
-@property (nonatomic, strong) NSString *avatar;
+@property (nonatomic, copy) NSString *avatar;
 
 /// 头像hd URL
-@property (nonatomic, strong) NSString *avatarHD;
+@property (nonatomic, copy) NSString *avatarHD;
 
 /// 头像Path
-@property (nonatomic, strong) NSString *avatarPath;
+@property (nonatomic, copy) NSString *avatarPath;
 
 /// 备注名
-@property (nonatomic, strong) NSString *remarkName;
+@property (nonatomic, copy) NSString *remarkName;
 
 //钱
 @property (nonatomic, strong) NSNumber *money;
@@ -55,17 +49,40 @@
 
 #pragma mark - 列表用
 
-@property (nonatomic, strong) NSString *pinyin;
+@property (nonatomic, copy) NSString *pinyin;
 
-@property (nonatomic, strong) NSString *pinyinInitial;
-
-
-@property (nonatomic,strong) id<AKUserDetailProtocol,AKDataObjectProtocol> detail;
-@property (nonatomic,strong) id<AKUserHonorProtocol,AKDataObjectProtocol> honor;
-@property (nonatomic,strong) id<AKUserWeiboProtocol,AKDataObjectProtocol> weibo;
-@property (nonatomic,strong) id<AKUserChatSettingProtocol,AKDataObjectProtocol> chatSetting;
+@property (nonatomic, copy) NSString *pinyinInitial;
 
 
--(void)fillData:(AKUser*)data;
+@property (nonatomic,strong)AKUserDetail* detail;
+
+/**
+ * @return The name of database table that associates with this model.
+ * Normally, the model name should be a noun of English. so the default value return would be the pluralize of model name.
+ * a) If the model name ends with "Model", the subfix "Model" will be removed in the table name.
+ * b) If the model name is not ends with English letter, the subfix "_list" will be added to table name.
+ * c) If the model name is CamelCase style, the table name will be converted to lowercase words and joined with "_".
+ *
+ * eg: "UserModel" => "users", "fileMeta" => "file_metas".
+ */
++ (nullable NSString *)tableName;
+
+/**
+ *  @return The database identifier (normally the database file path) that associates with this model.
+ *  Return nil if the model doesn't bind to any database.
+ */
++ (nullable NSString *)databaseIdentifier;
+
++ (nullable NSArray<NSArray<NSString *> *> *)uniqueKeys;
+
+
+
+//@property (nonatomic,strong) id<AKUserDetailProtocol,AKDataObjectProtocol> detail;
+//@property (nonatomic,strong) id<AKUserHonorProtocol,AKDataObjectProtocol> honor;
+//@property (nonatomic,strong) id<AKUserWeiboProtocol,AKDataObjectProtocol> weibo;
+//@property (nonatomic,strong) id<AKUserChatSettingProtocol,AKDataObjectProtocol> chatSetting;
+//
+
+//-(void)fillData:(AKUser*)data;
 
 @end

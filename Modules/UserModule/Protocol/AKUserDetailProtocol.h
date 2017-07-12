@@ -51,6 +51,6 @@
 /// 标签
 @property (nonatomic, strong) NSMutableArray *tags;
 
--(void)fillData:(id<AKUserDetailProtocol>)user;
+//-(void)fillData:(id<AKUserDetailProtocol>)user;
 
 @end

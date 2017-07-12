@@ -6,9 +6,8 @@
 //  Copyright © 2016年 ankye. All rights reserved.
 //
 
-#import "AKBaseModel.h"
 
-@interface AKNewsChannel : AKBaseModel
+@interface AKNewsChannel : ALModel
 
 -(id)initWithChannel:(NSString*)cid withName:(NSString*)name withFixed:(BOOL)fixed;
 

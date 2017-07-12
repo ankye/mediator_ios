@@ -13,9 +13,9 @@
 
 
 
-AKDB_CREATE_TABLE_INTR(book)
-
-AKDB_INSERT_OR_REPLACE_INTR(book,Book)
+//AKDB_CREATE_TABLE_INTR(book)
+//
+//AKDB_INSERT_OR_REPLACE_INTR(book,Book)
 
 
 -(BOOL)book_updateByID:(NSString*)bookid withAttirbutes:(NSDictionary*)attributes;

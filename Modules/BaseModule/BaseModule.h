@@ -18,7 +18,6 @@
 #import "AKMacro.h"
 #import "AKAppDelegate.h"
 #import "AKBaseViewController.h"
-#import "AKBaseModel.h"
 #import "AKDataCenter.h"
 #import "AKResourceManager.h"
 

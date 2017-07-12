@@ -9,7 +9,11 @@
 #ifndef UserModuleDefine_h
 #define UserModuleDefine_h
 
-#define KAK_TLUSER_DBNAME @"TLUser"
+//db file name as user.db
+#define KAK_USER_DBNAME @"user"
+
+//datacenter group key set
+#define  KAK_USER_GROUP_KEY @"AKUser"
 
 
 #endif /* UserModuleDefine_h */

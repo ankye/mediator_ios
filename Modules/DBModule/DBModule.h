@@ -9,6 +9,6 @@
 #ifndef DBModule_h
 #define DBModule_h
 
-#import "AKDBManager.h"
+#import "patchwork.h"
 
 #endif /* DBModule_h */

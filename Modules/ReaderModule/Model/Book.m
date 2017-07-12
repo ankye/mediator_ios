@@ -65,49 +65,49 @@
 }
 
 
-
--(void)fillData:(id<AKDataObjectProtocol>)object
-{
-    Book* temp = (Book*)object;
-    
-    if(temp.isLoadLocal){
-        self.read_chapter_section = temp.read_chapter_section;
-        self.read_chapter_row = temp.read_chapter_row;
-        self.download_chapter_row = temp.download_chapter_row;
-        self.download_chapter_section = temp.download_chapter_section;
-        
-        self.hasSticky = temp.hasSticky;
-        self.isBookmark = temp.isBookmark;
-        self.bookCacheStatus = temp.bookCacheStatus;
-        self.extType = temp.extType;
-        self.source.siteid = temp.source.siteid;
-        
-        self.novel.Id = temp.novel.Id;
-        self.novel.name = temp.novel.name;
-        self.novel.cover =temp.novel.cover;
-        self.novel.intro = temp.novel.intro;
-    
-        self.author.name =temp.author.name;
-    
-        self.category.Id = temp.category.Id;
-        self.category.name = temp.category.name;
-    
-        self.last.time = temp.last.time;
-        self.last.name = temp.last.name;
-        
-    }else{
-        
-        [self.author fillData:temp.author];
-        [self.category fillData:temp.category];
-        [self.source fillData:temp.source];
-        [self.novel fillData:temp.novel];
-        [self.last fillData:temp.last];
-        [self.url fillData:temp.url];
-    }
-    
-    [self refreshBasicData];
-
-}
+//
+//-(void)fillData:(id<AKDataObjectProtocol>)object
+//{
+//    Book* temp = (Book*)object;
+//    
+//    if(temp.isLoadLocal){
+//        self.read_chapter_section = temp.read_chapter_section;
+//        self.read_chapter_row = temp.read_chapter_row;
+//        self.download_chapter_row = temp.download_chapter_row;
+//        self.download_chapter_section = temp.download_chapter_section;
+//        
+//        self.hasSticky = temp.hasSticky;
+//        self.isBookmark = temp.isBookmark;
+//        self.bookCacheStatus = temp.bookCacheStatus;
+//        self.extType = temp.extType;
+//        self.source.siteid = temp.source.siteid;
+//        
+//        self.novel.Id = temp.novel.Id;
+//        self.novel.name = temp.novel.name;
+//        self.novel.cover =temp.novel.cover;
+//        self.novel.intro = temp.novel.intro;
+//    
+//        self.author.name =temp.author.name;
+//    
+//        self.category.Id = temp.category.Id;
+//        self.category.name = temp.category.name;
+//    
+//        self.last.time = temp.last.time;
+//        self.last.name = temp.last.name;
+//        
+//    }else{
+//        
+//        [self.author fillData:temp.author];
+//        [self.category fillData:temp.category];
+//        [self.source fillData:temp.source];
+//        [self.novel fillData:temp.novel];
+//        [self.last fillData:temp.last];
+//        [self.url fillData:temp.url];
+//    }
+//    
+//    [self refreshBasicData];
+//
+//}
 
 -(void)resultSetToModel:(FMResultSet *)retSet
 {

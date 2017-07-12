@@ -124,7 +124,7 @@
 
     if (!self.book.isBookmark) {
        
-        AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSMutableDictionary *extend) {
+        AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleFormSheet actionType:AKPopupActionTypeTop onClick:^(NSInteger channel, NSDictionary *extend) {
             switch (channel) {
                 case 1:{
                     //do clean book
@@ -139,9 +139,9 @@
                 default:
                     break;
             }
-        } onClose:^(NSMutableDictionary *extend) {
+        } onClose:^(NSDictionary *extend) {
             
-        } onCompleted:^(NSMutableDictionary *extend) {
+        } onCompleted:^(NSDictionary *extend) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[UIApplication sharedApplication] setStatusBarHidden:NO];
                 [self.navigationController popViewControllerAnimated:YES];
@@ -525,7 +525,7 @@
 
 -(void)chooseDownloadChapter
 {
-    AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleBottomSheet actionType:AKPopupActionTypeBottom onClick:^(NSInteger channel, NSMutableDictionary *extend) {
+    AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleBottomSheet actionType:AKPopupActionTypeBottom onClick:^(NSInteger channel, NSDictionary *extend) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -533,9 +533,9 @@
         });
         
         
-    } onClose:^(NSMutableDictionary *extend) {
+    } onClose:^(NSDictionary *extend) {
         
-    } onCompleted:^(NSMutableDictionary *extend) {
+    } onCompleted:^(NSDictionary *extend) {
         
     }];
     
@@ -550,7 +550,7 @@
 
 -(void)choosePageEffect
 {
-    AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleBottomSheet actionType:AKPopupActionTypeBottom onClick:^(NSInteger channel, NSMutableDictionary *extend) {
+    AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleBottomSheet actionType:AKPopupActionTypeBottom onClick:^(NSInteger channel, NSDictionary *extend) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.pageGenerationManager setAnimationTypes: channel];
@@ -558,9 +558,9 @@
         });
         
         
-    } onClose:^(NSMutableDictionary *extend) {
+    } onClose:^(NSDictionary *extend) {
         
-    } onCompleted:^(NSMutableDictionary *extend) {
+    } onCompleted:^(NSDictionary *extend) {
         
     }];
     
@@ -576,7 +576,7 @@
 
 -(void)chooseFont
 {
-    AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleBottomSheet actionType:AKPopupActionTypeBottom onClick:^(NSInteger channel, NSMutableDictionary *extend) {
+    AKPopupAttributes* attributes = [AKPopupManager buildPopupAttributes:NO showNav:NO style:STPopupStyleBottomSheet actionType:AKPopupActionTypeBottom onClick:^(NSInteger channel, NSDictionary *extend) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSString* fontName = [UIFont systemFontOfSize:12].fontName;
@@ -590,9 +590,9 @@
         });
         
         
-    } onClose:^(NSMutableDictionary *extend) {
+    } onClose:^(NSDictionary *extend) {
         
-    } onCompleted:^(NSMutableDictionary *extend) {
+    } onCompleted:^(NSDictionary *extend) {
         
     }];
     

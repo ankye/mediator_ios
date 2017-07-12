@@ -7,37 +7,53 @@
 //
 
 #import "AKUserGroup.h"
+#import "UserModuleDefine.h"
 
 @implementation AKUserGroup
 
-- (id) initWithGroupName:(NSString *)name members:(NSMutableArray *)members
++ (NSString *)databaseIdentifier {
+    return [FileHelper getFMDBPath:KAK_USER_DBNAME];
+}
+
++ (nullable NSString *)tableName
 {
-    if (self = [super init]) {
-        self.name = name;
-        if(members == nil){
-            self.members = [[NSMutableArray alloc] init];
-        }else{
-            self.members = members;
-        }
-    }
-    return self;
+    return @"user_group";
+}
+
++ (nullable NSArray<NSArray<NSString *> *> *)uniqueKeys
+{
+    return @[@[@"gid",@"uid"]];
 }
 
 
-
-- (NSInteger) count
-{
-    return self.members.count;
-}
-
-- (void)addMember:(id)anObject
-{
-    [self.members addObject:anObject];
-}
-
-- (id) memberAtIndex:(NSUInteger)index
-{
-    return [self.members objectAtIndex:index];
-}
+//- (id) initWithGroupName:(NSString *)name members:(NSMutableArray *)members
+//{
+//    if (self = [super init]) {
+//        self.name = name;
+//        if(members == nil){
+//            self.members = [[NSMutableArray alloc] init];
+//        }else{
+//            self.members = members;
+//        }
+//    }
+//    return self;
+//}
+//
+//
+//
+//- (NSInteger) count
+//{
+//    return self.members.count;
+//}
+//
+//- (void)addMember:(id)anObject
+//{
+//    [self.members addObject:anObject];
+//}
+//
+//- (id) memberAtIndex:(NSUInteger)index
+//{
+//    return [self.members objectAtIndex:index];
+//}
 
 @end

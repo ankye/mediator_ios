@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BookSource : AKBaseModel
+@interface BookSource : ALModel
 
 @property (nonatomic, copy) NSString *orderid;
 

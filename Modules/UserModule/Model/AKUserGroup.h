@@ -8,29 +8,29 @@
 
 #import <Foundation/Foundation.h>
 #import "AKUser.h"
-#import "AKUserGroup.h"
-#import "AKUserGroupProtocol.h"
 
-@interface AKUserGroup : AKBaseModel<AKUserGroupProtocol>
 
-@property (nonatomic, strong) NSString *uid;
+@interface AKUserGroup : ALModel
+
+@property (nonatomic, copy) NSString* uid;
 
 //group ID
-@property (nonatomic, strong) NSString *gid;
+@property (nonatomic, copy) NSString *gid;
 
 ///组名
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, copy) NSString *name;
 //组成员
-@property (nonatomic, strong) NSMutableArray *members;
+@property (nonatomic, copy) NSMutableArray *members;
 
 
-@property (nonatomic, assign, readonly) NSInteger count;
+//@property (nonatomic, assign, readonly) NSInteger count;
 
-- (id) initWithGroupName:(NSString *)name members:(NSMutableArray *)members;
 
-- (void)addMember:(id)anObject;
-
-- (id) memberAtIndex:(NSUInteger)index;
+//- (id) initWithGroupName:(NSString *)name members:(NSMutableArray *)members;
+//
+//- (void)addMember:(id)anObject;
+//
+//- (id) memberAtIndex:(NSUInteger)index;
 
 
 @end

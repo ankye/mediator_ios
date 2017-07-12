@@ -14,19 +14,19 @@
     return @{@"Id":@"id"};
 }
 
--(void)fillData:(id<AKDataObjectProtocol>)object
-{
-    BookLastUpdate* temp = (BookLastUpdate*)object;
-    
-    self.siteid = temp.siteid;
-    self.time = temp.time;
-    self.timeName = temp.timeName;
-    self.Id = temp.Id;
-    self.oid = temp.oid;
-    self.sign = temp.sign;
-    self.name = temp.name;
-    self.url = temp.url;
-    self.isNewChapter = temp.isNewChapter;
-
-}
+//-(void)fillData:(id<AKDataObjectProtocol>)object
+//{
+//    BookLastUpdate* temp = (BookLastUpdate*)object;
+//    
+//    self.siteid = temp.siteid;
+//    self.time = temp.time;
+//    self.timeName = temp.timeName;
+//    self.Id = temp.Id;
+//    self.oid = temp.oid;
+//    self.sign = temp.sign;
+//    self.name = temp.name;
+//    self.url = temp.url;
+//    self.isNewChapter = temp.isNewChapter;
+//
+//}
 @end

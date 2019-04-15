@@ -46,15 +46,17 @@ SINGLETON_IMPL(AKReaderManager)
 
 -(void)loadBookShelf
 {
-//    NSArray* data = [AK_DB_MANAGER book_queryAll];
-//    NSInteger count = [data count];
-//    [_bookShelf removeAllObjects];
-//    for(NSInteger i=0; i< count; i++){
-//        Book* book = [data objectAtIndex:i];
-//        book = [self addBook:book];
-//        [_bookShelf addObject:book];
-//    }
-//    AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
+    
+    NSArray* data = [Book fetcher].FETCH_MODELS();
+  
+    NSInteger count = [data count];
+    [_bookShelf removeAllObjects];
+    for(NSInteger i=0; i< count; i++){
+        Book* book = [data objectAtIndex:i];
+        book = [self addBook:book];
+        [_bookShelf addObject:book];
+    }
+    AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
 }
 
 -(Book*)addBook:(Book*)book
@@ -80,15 +82,17 @@ SINGLETON_IMPL(AKReaderManager)
 {
     book.isBookmark = !book.isBookmark;
     [_bookShelf addObject:book];
+    [book saveOrReplce:YES];
  //   [[AKDBManager sharedInstance] book_insertOrReplace:book];
     AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
 }
 -(void)unBookmark:(Book*)book
 {
-//    book.isBookmark = !book.isBookmark;
-//    [_bookShelf removeObject:book];
+    book.isBookmark = !book.isBookmark;
+    [_bookShelf removeObject:book];
+    [book deleteRecord];
 //    [[AKDBManager sharedInstance] book_deleteByID:book.novel.Id];
-//    AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
+    AK_SIGNAL_MANAGER.onBookShelfChange.fire(_bookShelf);
 }
 
 

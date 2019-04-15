@@ -39,10 +39,14 @@
  */
 -(AKUser*)user_me;
 
-
+/**
+ 获取单个用户信息
+ */
 -(AKUser*)user_getUserInfo:(NSString*)uid;
 
-
+/**
+ 更新用户信息
+ */
 -(AKUser*)user_updateUserInfo:(NSMutableDictionary*)params;
 
 

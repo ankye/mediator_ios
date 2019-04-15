@@ -1,25 +1,25 @@
 PODS:
   - AFMInfoBanner (1.2.1):
     - CVKHierarchySearcher (~> 0.2)
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - AMap3DMap (5.2.1):
-    - AMapFoundation (~> 1.3)
-  - AMapFoundation (1.4.1)
-  - AMapLocation (2.4.0):
+  - AMap3DMap (6.7.0):
+    - AMapFoundation (~> 1.5)
+  - AMapFoundation (1.5.6)
+  - AMapLocation (2.6.1):
     - AMapFoundation (~> 1.4)
   - ASIHTTPRequest/Core (1.8.2):
     - Reachability
@@ -40,69 +40,208 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - CHTCollectionViewWaterfallLayout (0.9.6):
-    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.6)
-  - CHTCollectionViewWaterfallLayout/ObjC (0.9.6)
-  - CocoaLumberjack (3.2.0):
-    - CocoaLumberjack/Default (= 3.2.0)
-    - CocoaLumberjack/Extensions (= 3.2.0)
-  - CocoaLumberjack/Default (3.2.0)
-  - CocoaLumberjack/Extensions (3.2.0):
-    - CocoaLumberjack/Default
+  - CHTCollectionViewWaterfallLayout (0.9.7):
+    - CHTCollectionViewWaterfallLayout/ObjC (= 0.9.7)
+  - CHTCollectionViewWaterfallLayout/ObjC (0.9.7)
+  - CocoaLumberjack (3.5.1):
+    - CocoaLumberjack/Core (= 3.5.1)
+  - CocoaLumberjack/Core (3.5.1)
   - CVKHierarchySearcher (0.2.0)
-  - CYLTabBarController (1.13.1)
+  - CYLTabBarController (1.19.2)
   - DACircularProgress (2.3.1)
-  - FMDB (2.7.2):
-    - FMDB/standard (= 2.7.2)
-  - FMDB/standard (2.7.2)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - GVUserDefaults (1.0.2)
-  - JKCategories (1.5)
+  - JKCategories (1.8.1):
+    - JKCategories/CoreData (= 1.8.1)
+    - JKCategories/CoreLocation (= 1.8.1)
+    - JKCategories/Foundation (= 1.8.1)
+    - JKCategories/MapKit (= 1.8.1)
+    - JKCategories/QuartzCore (= 1.8.1)
+    - JKCategories/UIKit (= 1.8.1)
+  - JKCategories/CoreData (1.8.1):
+    - JKCategories/CoreData/NSFetchRequest (= 1.8.1)
+    - JKCategories/CoreData/NSManagedObject (= 1.8.1)
+    - JKCategories/CoreData/NSManagedObjectContext (= 1.8.1)
+  - JKCategories/CoreData/NSFetchRequest (1.8.1)
+  - JKCategories/CoreData/NSManagedObject (1.8.1):
+    - JKCategories/CoreData/NSManagedObjectContext
+  - JKCategories/CoreData/NSManagedObjectContext (1.8.1):
+    - JKCategories/CoreData/NSFetchRequest
+  - JKCategories/CoreLocation (1.8.1):
+    - JKCategories/CoreLocation/CLLocation (= 1.8.1)
+  - JKCategories/CoreLocation/CLLocation (1.8.1)
+  - JKCategories/Foundation (1.8.1):
+    - JKCategories/Foundation/NSArray (= 1.8.1)
+    - JKCategories/Foundation/NSBundle (= 1.8.1)
+    - JKCategories/Foundation/NSData (= 1.8.1)
+    - JKCategories/Foundation/NSDate (= 1.8.1)
+    - JKCategories/Foundation/NSDateFormatter (= 1.8.1)
+    - JKCategories/Foundation/NSDictionary (= 1.8.1)
+    - JKCategories/Foundation/NSException (= 1.8.1)
+    - JKCategories/Foundation/NSFileHandle (= 1.8.1)
+    - JKCategories/Foundation/NSFileManager (= 1.8.1)
+    - JKCategories/Foundation/NSHTTPCookieStorage (= 1.8.1)
+    - JKCategories/Foundation/NSIndexPath (= 1.8.1)
+    - JKCategories/Foundation/NSInvocation (= 1.8.1)
+    - JKCategories/Foundation/NSNotificationCenter (= 1.8.1)
+    - JKCategories/Foundation/NSNumber (= 1.8.1)
+    - JKCategories/Foundation/NSObject (= 1.8.1)
+    - JKCategories/Foundation/NSRunLoop (= 1.8.1)
+    - JKCategories/Foundation/NSSet (= 1.8.1)
+    - JKCategories/Foundation/NSString (= 1.8.1)
+    - JKCategories/Foundation/NSTimer (= 1.8.1)
+    - JKCategories/Foundation/NSURL (= 1.8.1)
+    - JKCategories/Foundation/NSURLConnection (= 1.8.1)
+    - JKCategories/Foundation/NSURLRequest (= 1.8.1)
+    - JKCategories/Foundation/NSURLSession (= 1.8.1)
+    - JKCategories/Foundation/NSUserDefaults (= 1.8.1)
+  - JKCategories/Foundation/NSArray (1.8.1)
+  - JKCategories/Foundation/NSBundle (1.8.1)
+  - JKCategories/Foundation/NSData (1.8.1)
+  - JKCategories/Foundation/NSDate (1.8.1)
+  - JKCategories/Foundation/NSDateFormatter (1.8.1)
+  - JKCategories/Foundation/NSDictionary (1.8.1)
+  - JKCategories/Foundation/NSException (1.8.1)
+  - JKCategories/Foundation/NSFileHandle (1.8.1)
+  - JKCategories/Foundation/NSFileManager (1.8.1)
+  - JKCategories/Foundation/NSHTTPCookieStorage (1.8.1)
+  - JKCategories/Foundation/NSIndexPath (1.8.1)
+  - JKCategories/Foundation/NSInvocation (1.8.1)
+  - JKCategories/Foundation/NSNotificationCenter (1.8.1)
+  - JKCategories/Foundation/NSNumber (1.8.1)
+  - JKCategories/Foundation/NSObject (1.8.1)
+  - JKCategories/Foundation/NSRunLoop (1.8.1)
+  - JKCategories/Foundation/NSSet (1.8.1)
+  - JKCategories/Foundation/NSString (1.8.1):
+    - JKCategories/Foundation/NSData
+  - JKCategories/Foundation/NSTimer (1.8.1)
+  - JKCategories/Foundation/NSURL (1.8.1)
+  - JKCategories/Foundation/NSURLConnection (1.8.1)
+  - JKCategories/Foundation/NSURLRequest (1.8.1)
+  - JKCategories/Foundation/NSURLSession (1.8.1)
+  - JKCategories/Foundation/NSUserDefaults (1.8.1)
+  - JKCategories/MapKit (1.8.1):
+    - JKCategories/MapKit/MKMapView (= 1.8.1)
+  - JKCategories/MapKit/MKMapView (1.8.1)
+  - JKCategories/QuartzCore (1.8.1):
+    - JKCategories/QuartzCore/CAAnimation (= 1.8.1)
+    - JKCategories/QuartzCore/CALayer (= 1.8.1)
+    - JKCategories/QuartzCore/CAMediaTimingFunction (= 1.8.1)
+    - JKCategories/QuartzCore/CAShapeLayer (= 1.8.1)
+    - JKCategories/QuartzCore/CATransaction (= 1.8.1)
+  - JKCategories/QuartzCore/CAAnimation (1.8.1)
+  - JKCategories/QuartzCore/CALayer (1.8.1)
+  - JKCategories/QuartzCore/CAMediaTimingFunction (1.8.1)
+  - JKCategories/QuartzCore/CAShapeLayer (1.8.1)
+  - JKCategories/QuartzCore/CATransaction (1.8.1)
+  - JKCategories/UIKit (1.8.1):
+    - JKCategories/UIKit/UIAlertView (= 1.8.1)
+    - JKCategories/UIKit/UIApplication (= 1.8.1)
+    - JKCategories/UIKit/UIBarButtonItem (= 1.8.1)
+    - JKCategories/UIKit/UIBezierPath (= 1.8.1)
+    - JKCategories/UIKit/UIButton (= 1.8.1)
+    - JKCategories/UIKit/UIColor (= 1.8.1)
+    - JKCategories/UIKit/UIControl (= 1.8.1)
+    - JKCategories/UIKit/UIDevice (= 1.8.1)
+    - JKCategories/UIKit/UIFont (= 1.8.1)
+    - JKCategories/UIKit/UIImage (= 1.8.1)
+    - JKCategories/UIKit/UIImageView (= 1.8.1)
+    - JKCategories/UIKit/UILable (= 1.8.1)
+    - JKCategories/UIKit/UINavigationBar (= 1.8.1)
+    - JKCategories/UIKit/UINavigationController (= 1.8.1)
+    - JKCategories/UIKit/UINavigationItem (= 1.8.1)
+    - JKCategories/UIKit/UIPopoverController (= 1.8.1)
+    - JKCategories/UIKit/UIResponder (= 1.8.1)
+    - JKCategories/UIKit/UIScreen (= 1.8.1)
+    - JKCategories/UIKit/UIScrollView (= 1.8.1)
+    - JKCategories/UIKit/UISearchBar (= 1.8.1)
+    - JKCategories/UIKit/UISplitViewController (= 1.8.1)
+    - JKCategories/UIKit/UITableView (= 1.8.1)
+    - JKCategories/UIKit/UITableViewCell (= 1.8.1)
+    - JKCategories/UIKit/UITextField (= 1.8.1)
+    - JKCategories/UIKit/UITextView (= 1.8.1)
+    - JKCategories/UIKit/UIView (= 1.8.1)
+    - JKCategories/UIKit/UIViewController (= 1.8.1)
+    - JKCategories/UIKit/UIWebView (= 1.8.1)
+    - JKCategories/UIKit/UIWindow (= 1.8.1)
+  - JKCategories/UIKit/UIAlertView (1.8.1)
+  - JKCategories/UIKit/UIApplication (1.8.1)
+  - JKCategories/UIKit/UIBarButtonItem (1.8.1)
+  - JKCategories/UIKit/UIBezierPath (1.8.1)
+  - JKCategories/UIKit/UIButton (1.8.1)
+  - JKCategories/UIKit/UIColor (1.8.1)
+  - JKCategories/UIKit/UIControl (1.8.1)
+  - JKCategories/UIKit/UIDevice (1.8.1)
+  - JKCategories/UIKit/UIFont (1.8.1)
+  - JKCategories/UIKit/UIImage (1.8.1)
+  - JKCategories/UIKit/UIImageView (1.8.1)
+  - JKCategories/UIKit/UILable (1.8.1)
+  - JKCategories/UIKit/UINavigationBar (1.8.1)
+  - JKCategories/UIKit/UINavigationController (1.8.1)
+  - JKCategories/UIKit/UINavigationItem (1.8.1)
+  - JKCategories/UIKit/UIPopoverController (1.8.1)
+  - JKCategories/UIKit/UIResponder (1.8.1)
+  - JKCategories/UIKit/UIScreen (1.8.1)
+  - JKCategories/UIKit/UIScrollView (1.8.1)
+  - JKCategories/UIKit/UISearchBar (1.8.1)
+  - JKCategories/UIKit/UISplitViewController (1.8.1)
+  - JKCategories/UIKit/UITableView (1.8.1)
+  - JKCategories/UIKit/UITableViewCell (1.8.1)
+  - JKCategories/UIKit/UITextField (1.8.1)
+  - JKCategories/UIKit/UITextView (1.8.1)
+  - JKCategories/UIKit/UIView (1.8.1)
+  - JKCategories/UIKit/UIViewController (1.8.1)
+  - JKCategories/UIKit/UIWebView (1.8.1):
+    - JKCategories/UIKit/UIColor
+  - JKCategories/UIKit/UIWindow (1.8.1)
   - M13BadgeView (1.0.4)
-  - Masonry (1.0.2)
+  - Masonry (1.1.0)
   - MBProgressHUD (0.9.2)
-  - MJExtension (3.0.13)
-  - MJRefresh (3.1.12)
+  - MJExtension (3.0.15.1)
+  - MJRefresh (3.1.15.7)
   - MWPhotoBrowser (2.1.2):
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
-    - SDWebImage (!= 3.7.2, ~> 3.7)
+    - "SDWebImage (!= 3.7.2, ~> 3.7)"
   - ObjcAssociatedObjectHelpers/Core (2.0.1)
-  - pop (1.0.10)
+  - pop (1.0.12)
   - Reachability (3.2)
-  - ReactiveObjC (3.0.0)
-  - RTRootNavigationController (0.6.1):
-    - RTRootNavigationController/Core (= 0.6.1)
-  - RTRootNavigationController/Core (0.6.1)
+  - ReactiveObjC (3.1.0)
+  - RTRootNavigationController (0.7.1):
+    - RTRootNavigationController/Core (= 0.7.1)
+  - RTRootNavigationController/Core (0.7.1)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SIAlertView (1.3)
   - SocketRocket (0.5.1)
-  - STPopup (1.8.2)
-  - SVProgressHUD (2.1.2)
+  - STPopup (1.8.4)
+  - SVProgressHUD (2.2.5)
   - UberSignals (2.5.1)
   - UMengAnalytics (4.2.4)
-  - UMengUShare/Core (6.4.5):
+  - UMengUShare/Core (6.4.8.2):
     - UMengUShare/Network
-  - UMengUShare/Network (6.4.5)
-  - UMengUShare/Social/QQ (6.4.5):
+  - UMengUShare/Network (6.4.8.2)
+  - UMengUShare/Social/QQ (6.4.8.2):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedQQ
-  - UMengUShare/Social/ReducedQQ (6.4.5):
+  - UMengUShare/Social/ReducedQQ (6.4.8.2):
     - UMengUShare/Core
-  - UMengUShare/Social/ReducedSina (6.4.5):
+  - UMengUShare/Social/ReducedSina (6.4.8.2):
     - UMengUShare/Core
-  - UMengUShare/Social/ReducedWeChat (6.4.5):
+  - UMengUShare/Social/ReducedWeChat (6.4.8.2):
     - UMengUShare/Core
-  - UMengUShare/Social/Sina (6.4.5):
+  - UMengUShare/Social/Sina (6.4.8.2):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedSina
-  - UMengUShare/Social/WeChat (6.4.5):
+  - UMengUShare/Social/WeChat (6.4.8.2):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedWeChat
-  - UMengUShare/UI (6.4.5):
+  - UMengUShare/UI (6.4.8.2):
     - UMengUShare/Core
-  - YTKNetwork (2.0.3):
+  - YTKNetwork (2.0.4):
     - AFNetworking (~> 3.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -148,46 +287,87 @@ DEPENDENCIES:
   - YTKNetwork
   - YYKit
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFMInfoBanner
+    - AFNetworking
+    - AMap3DMap
+    - AMapFoundation
+    - AMapLocation
+    - ASIHTTPRequest
+    - Aspects
+    - BButton
+    - BlocksKit
+    - CHTCollectionViewWaterfallLayout
+    - CocoaLumberjack
+    - CVKHierarchySearcher
+    - CYLTabBarController
+    - DACircularProgress
+    - FMDB
+    - GVUserDefaults
+    - JKCategories
+    - M13BadgeView
+    - Masonry
+    - MBProgressHUD
+    - MJExtension
+    - MJRefresh
+    - MWPhotoBrowser
+    - ObjcAssociatedObjectHelpers
+    - pop
+    - Reachability
+    - ReactiveObjC
+    - RTRootNavigationController
+    - SDWebImage
+    - SIAlertView
+    - SocketRocket
+    - STPopup
+    - SVProgressHUD
+    - UberSignals
+    - UMengAnalytics
+    - UMengUShare
+    - YTKNetwork
+    - YYKit
+
 SPEC CHECKSUMS:
   AFMInfoBanner: a7bcfd409faa624f043e604ae4fb789c84b22815
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  AMap3DMap: 5a98d7c08d23a7f07853e7ee2fa7650057b75896
-  AMapFoundation: 9cc5198980873cca29bb70466a84b3bd922c0e65
-  AMapLocation: 47b62b5381a66e4d0c2931b70ffde72682427896
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AMap3DMap: 7bb992e6bfb99e34e6c7a368958dde9d743a23f1
+  AMapFoundation: 20fce2a12cd152e1092afdd04379cdac21932185
+  AMapLocation: cf024b53dc03663efb4ea4bcce27d4cce58bb97a
   ASIHTTPRequest: ec013992946676b7978dcbde6396d57312d21db4
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BButton: ab0f2ed3b998ae73c5188b57d270d81e4a1eeb27
   BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
-  CHTCollectionViewWaterfallLayout: f4dab06db57b36dcf29e802594175acc76c56615
-  CocoaLumberjack: 9b4aed7073d242f29cc2f62068d995faf67f703a
+  CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
+  CocoaLumberjack: 2101f8a5508197a305e737d16c5c2e9e2157628c
   CVKHierarchySearcher: 7be8d3bcbcc6f86ff07f785e6c632b5e40da2553
-  CYLTabBarController: 97f6b486f9e6c613d69e9c111cc9c2c5db7000ce
+  CYLTabBarController: 5b364d6be617331a07f3f3f0ea537f7950501042
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
-  FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GVUserDefaults: 52d48cf8ba578b40a1a76312b196dfc9134ba36a
-  JKCategories: 863f4c7ed2d521ee6bf72ceea97948da23bb5af4
+  JKCategories: d5fecfa4f790685ea20daea319f74a8701d4c3ab
   M13BadgeView: 700dd0714fdc837c0cf1c8c004454963ec22441f
-  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
-  MJExtension: 5932755f451458eefa24239358817f8d291240c7
-  MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   ObjcAssociatedObjectHelpers: 686c291f292c26a49b9b1fa7d58130a8d35d59d2
-  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
-  RTRootNavigationController: c184e30945fa11d80fd102b3f254a12f30e4d6e3
+  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  RTRootNavigationController: afa6913402be26f8326f7f37fc1550aa67baddcc
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SIAlertView: 20c794b55eaf44d888773ea51647cf8907723919
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
-  STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
-  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  STPopup: bc6a263e068cf654300c91bf91faeb9cb709cc4b
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UberSignals: 93c65dea6101652826b6648347288c54c9031239
   UMengAnalytics: ef8d45f94c0e5771dc364cf6a5731d9d3b101da2
-  UMengUShare: a5711c54e640b04e3048e931d2b88d50f9cfa55c
-  YTKNetwork: c4b0c29c9d639dc050d475de69ee626d53eac598
+  UMengUShare: 370d180101e13ee0227ae657ab119ba97243d2b3
+  YTKNetwork: df8a7a5597bda1664a4efaa7ef871a818a887fe0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
 PODFILE CHECKSUM: d66b06ecb805a79cf778ba883387e9cd4fa2ccb3
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3

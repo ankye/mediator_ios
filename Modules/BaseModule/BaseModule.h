@@ -15,6 +15,8 @@
 #import <AFMInfoBanner/AFMInfoBanner.h>
 #import <ReactiveObjC/ReactiveObjC.h>
 
+#import "patchwork.h"
+
 #import "AKMacro.h"
 #import "AKAppDelegate.h"
 #import "AKBaseViewController.h"

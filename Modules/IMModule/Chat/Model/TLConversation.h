@@ -11,15 +11,15 @@
 @interface TLConversation : NSObject
 
 
-/**
- *  会话类型（个人，讨论组，企业号）
- */
-@property (nonatomic, assign) TLConversationType convType;
-
-/**
- *  消息提醒类型
- */
-@property (nonatomic, assign) TLMessageRemindType remindType;
+///**
+// *  会话类型（个人，讨论组，企业号）
+// */
+//@property (nonatomic, assign) TLConversationType convType;
+//
+///**
+// *  消息提醒类型
+// */
+//@property (nonatomic, assign) TLMessageRemindType remindType;
 
 /**
  *  用户ID
@@ -54,7 +54,7 @@
 /**
  *  提示红点类型
  */
-@property (nonatomic, assign, readonly) TLClueType clueType;
+//@property (nonatomic, assign, readonly) TLClueType clueType;
 
 
 @property (nonatomic, assign, readonly) BOOL isRead;

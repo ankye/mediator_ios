@@ -1,13 +1,16 @@
 //
-//  AKMediator+LoginModule.h
+//  LoginModuleMediator.h
 //  Project
 //
-//  Created by ankye on 2016/11/21.
-//  Copyright © 2016年 ankye. All rights reserved.
+//  Created by ankye sheng on 2017/7/12.
+//  Copyright © 2017年 ankye. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "ServiceLogin.h"
+
+
+#import "AKRequestManager+LoginModule.h"
 
 @interface AKMediator (LoginModule)
 

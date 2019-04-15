@@ -11,7 +11,7 @@
 @interface AKUser : ALModel
 
 /// 用户ID
-@property (nonatomic, copy) NSString  *uid;
+@property (nonatomic, copy) NSString  * uid;
 
 //靓号
 @property (nonatomic, copy) NSString *usernum;

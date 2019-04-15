@@ -1,12 +1,12 @@
 //
-//  AKMediator+LoginModule.m
+//  LoginModuleMediator.m
 //  Project
 //
-//  Created by ankye on 2016/11/18.
-//  Copyright © 2016年 ankye. All rights reserved.
+//  Created by ankye sheng on 2017/7/12.
+//  Copyright © 2017年 ankye. All rights reserved.
 //
 
-#import "AKMediator+LoginModule.h"
+#import "LoginModuleMediator.h"
 
 NSString * const kAKMLoginModuleLoginService = @"Login";
 NSString * const kAKMLoginModuleFetchLoginVC = @"fetchLoginViewController";

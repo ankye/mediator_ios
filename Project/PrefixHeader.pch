@@ -22,14 +22,14 @@
 
 #import "BaseModule.h"
 #import "PopupModule.h"
-#import "DBModule.h"
 
 #import "ThemeModule.h"
 
 
 #import "LoggerModule.h"
 #import "UserModuleMediator.h"
-#import "LoginModule.h"
+#import "LoginModuleMediator.h"
+
 
 //#import "MapModule.h"
 #import "ShareModule.h"
